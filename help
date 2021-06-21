@@ -1,0 +1,74 @@
+step 1: First go to proj directory and create a file with name "CMakeLists"
+
+step 2: paste this code inside 
+"
+project( <root-name-folder> )
+
+set ( CMAKE_C_STANDARD 11 )
+
+add_executable( <root-name-folder> <files>)
+
+"
+
+
+
+##########################################
+To analyse a single file:
+##########################################
+step 3:
+clang-tidy-12 -checks='modernize-use-override' test.cpp -- -std=c11
+
+
+
+
+
+
+
+
+##########################################
+FOR A GENERAL PROJECT WITH A LOT OF FILES:
+##########################################
+
+step 3: "cd build" and  "cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .."
+
+step 4: run-clang-tidy 
+note:I run code inside ".../build" directory
+
+step 5: run-clang-tidy -header-filter='.*' -checks='-*,modernize-use-override' -fix
+note:I run code inside ".../build" directory
+
+
+
+
+
+
+
+
+##########################################
+To list all checks:
+##########################################
+clang-tidy-12 -checks=* -p ./build/ *.c -fix -list-checks
+
+##########################################
+To fix with all checks:
+##########################################
+clang-tidy-12 -checks=* -p ./build/ *.c -fix
+
+
+
+
+
+##########################################
+TO disable some check that we want to avoid:
+##########################################
+clang-tidy -checks='*,-X' -header-filter="^include" -p . src/*.cpp
+
+
+
+interestant links:
+https://www.kdab.com/clang-tidy-part-1-modernize-source-code-using-c11c14/
+https://www.youtube.com/watch?v=OchPaGEH4TE&t=284s
+https://baptiste-wicht.com/posts/2017/03/clang-tidy-static-analysis-integration-in-sonarqube.html
+
+
+

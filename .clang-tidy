@@ -1,0 +1,4 @@
+Checks: '-*, portability-*'
+HeaderFilterRegex: '^(?!src).+'
+FormatStyle: file
+WarningsAsErrors: '*'
