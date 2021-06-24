@@ -104,7 +104,7 @@ fi
 # Step 3: static analysis.
 #
 
-#make check
+#make cppcheck
 #if is_repo_dirty
 #then
 #	echo "Run \`make check\' locally to fix this."
