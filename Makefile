@@ -1,5 +1,3 @@
-export BASEDIR=$(pwd)
-
 .PHONY: all
 all:
 	intercept-build make -f bao.mk
@@ -17,17 +15,12 @@ format:
 .PHONY: cppcheck
 cppcheck:
 	@echo "Checking..."
-	@find src/ \(-name \*.c \)| xargs cppcheck --error-exitcode=1 --dump 
-	@find src/ \(-name \*.c.dump\) | xargs python $(BASEDIR)/fenxi/scripts/misra.py --rule-texts=$(BASEDIR)/fenxi/scripts/rules.txt
-	@find . \(-name \*.c.dump\) | xargs rm
-	@find . \(-name \*.c.dump.dump\) | xargs rm
-	@find . \(-name \*.c.dump.dump.dump\) | xargs rm
-	@find . \(-name \*.c.dump.dump.dump.dump\) | xargs rm
-#@find src/ \( -name \*.c.dump \) | xargs -r0 mv -t $(BASEDIR)/fenxi/
-#-t means target directory
+	@find . -type f -name "*.c" | xargs cppcheck --dump
+#retirei o parametro de retorno de retorno de erro
+	@find . -type f -name "*.c.dump" | xargs ./fenxi/scripts/misra.py --rule-texts=./fenxi/scripts/rules.txt --cli
+# --cli -> Addon is executed from cppcheck
+	@find . -type f -name "*.dump" -print0 | xargs -I {} -0 rm -v "{}"
 
-#cppcheck --error-exitcode=1 --dump --cppcheck-build-dir=.  *.c
-#python $BASEDIR/misra.py --rule-texts=$BASEDIR/rules.txt ./$(BASEDIR)/lsl.xml
 
 #clang-tidy is a clang-based C++ “linter” tool.
 #Its purpose is to provide an extensible framework for diagnosing and fixing typical programming errors, like style violations,
