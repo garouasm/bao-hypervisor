@@ -36,9 +36,9 @@ format:
 .PHONY: cppcheck
 cppcheck:
 	@echo "Running $(shell $(CPPCHECK) --version) ..."
-	@find . -type f -name "*.c" | xargs cppcheck --dump
+	@find . -type f -name "*.c" | xargs cppcheck --xml --dump 2> $(fenxi_dir)/cppcheck_report.xml
 #retirei o parametro de retorno de retorno de erro
-	@find . -type f -name "*.c.dump" | xargs $(fenxi_dir)/scripts/misra.py --rule-texts=$(fenxi_dir)/scripts/rules.txt --cli
+	@find . -type f -name "*.c.dump" | xargs $(fenxi_dir)/scripts/misra.py --rule-texts=$(fenxi_dir)/scripts/rules.txt --cli 1> $(fenxi_dir)/misrac_report.xml
 # --cli -> Addon is executed from cppcheck
 	@find . -type f -name "*.dump" -print0 | xargs -I {} -0 rm -v "{}"
 	@echo "$(shell $(CPPCHECK) --version) is finished."
