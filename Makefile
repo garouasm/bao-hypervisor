@@ -7,8 +7,8 @@ CLANG_TIDY   := clang-tidy-10
 ifeq (, $(shell which $(CLANG_FORMAT)))
 $(error "No $(CLANG_FORMAT) installed, please proceed to the instalation.")
 endif
-ifeq (, $(shell which $(CPPCHECK )))
-$(error "No $(CPPCHECK ) installed, please proceed to the instalation.")
+ifeq (, $(shell which $(CPPCHECK)))
+$(error "No $(CPPCHECK) installed, please proceed to the instalation.")
 endif
 ifeq (, $(shell which $(CLANG_TIDY)))
 $(error "No $(CLANG_TIDY) installed, please proceed to the instalation.")
@@ -58,6 +58,6 @@ tidy:
 	
 
 .PHONY: coverity
-tidy:
+coverity:
 	@echo "Coveritying..."
 	
