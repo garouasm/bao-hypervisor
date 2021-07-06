@@ -1,0 +1,99 @@
+# Fail on any error.
+set -e
+# Fail on any part of a pipeline failing.
+set -o pipefail
+# Treat unset variables as an error.
+set -u
+# Display commands being run.
+set -x
+
+# Returns absolute path to a file or a directory. The path must exist.
+function abs_path() {
+	local rel_path="$1"
+	if [ -d "$rel_path" ]
+	then
+		# Parameter is a directory
+		local rel_dir="$rel_path"
+		local rel_base=""
+	elif [ -f "$rel_path" ]
+	then
+		# Parameter is a regular file
+		local rel_dir="$(dirname "$rel_path")"
+		local rel_base="/$(basename "$rel_path")"
+	else
+		# File does not exist
+		echo "File not found: $rel_path" >&2
+		exit 1
+	fi
+	echo "$(cd $rel_dir && pwd)$rel_base"
+	return 0
+}
+
+# Returns true if the environment contains Fenxi build variables.
+function is_fenxi_build() {
+	[ -v FENXI_JOB_NAME ]
+	return $?
+}
+
+# Returns true if the environment contains Jenkins build variables.
+function is_jenkins_build() {
+	[ -v JENKINS_HOME ]
+	return $?
+}
+
+# Returns true if the `.repo_manifest` folder exists. The folder should contain
+# the manifest and be present in all Repo builds. Eventually this should be
+# obsolete as we switch exclusively to Repo.
+function is_repo_build() {
+	[ -d "${ROOT_DIR}/.repo_manifest" ]
+	return $?
+}
+
+# Prepares the source directory for building. This includes setting global
+# variables and workaronuds for different build environments.
+function init_build() {
+	##
+	## Find Hafnium's root directory.
+	##
+	ROOT_DIR="$(abs_path $(get_script_dir)/../..)"
+	# Temporary workaround for Repo builds. Check if there is a project
+	# folder specific to Repo builds in a parent directory. If it is, the
+	# root is further one level up.
+	if [ -d "${ROOT_DIR}/../.repo_manifest" ]
+	then
+		ROOT_DIR="$(dirname ${ROOT_DIR})"
+	fi
+
+	##
+	## Paths to tools
+	##
+	CLANG="${ROOT_DIR}/prebuilts/linux-x64/clang/bin/clang"
+	REPO="${ROOT_DIR}/prebuilts/generic/repo/repo"
+
+	##
+	## Workarounds for Fenxi+Repo builds.
+	##
+	if is_fenxi_build && is_repo_build
+	then
+		# Fenxi does not correctly initialize the `.repo` folder which
+		# causes `is_repo_dirty` checks to fail. We check out the
+		# manifest as one of the projects and use it to initialize the
+		# `.repo` folder here.
+		(cd "${ROOT_DIR}/.repo_manifest" && git branch master)
+		(cd "${ROOT_DIR}" && "${REPO}" init -u .repo_manifest)
+		# Fenxi does not support '<linkfile>' manifest tags. Parse the
+		# manifest and symlink files here.
+		"$(get_script_dir)/symlink_repo.py" "${ROOT_DIR}"
+	fi
+
+	##
+	## Temporary workaround for b/152398137 (all symlinks dirty on Fenxi).
+	## The `is_fenxi_build` check does not work inside container builds.
+	## Use an environment variable with HAFNIUM_ prefix to pass that
+	## information into the container (run_in_container.sh propagates them).
+	##
+	if is_fenxi_build
+	then
+		export HAFNIUM_IGNORE_SUBMODULE_STATUS=true
+	fi
+}
