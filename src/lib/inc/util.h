@@ -21,7 +21,7 @@
 
 /* align VAL to TO which must be power a two */
 #define ALIGN(VAL, TO) ((((VAL) + (TO)-1) / (TO)) * TO)
-#define NUM_PAGES(SZ) (ALIGN(SZ, PAGE_SIZE)/PAGE_SIZE)
+#define NUM_PAGES(SZ) (ALIGN(SZ, PAGE_SIZE) / PAGE_SIZE)
 #define PAGE_OFFSET_MASK ((PAGE_SIZE)-1)
 #define PAGE_FRAME_MASK (~(PAGE_OFFSET_MASK))
 
@@ -37,8 +37,8 @@
 /* Previous Power Of Two */
 #define PPOT(VAL) (NPOT((VAL)) - (NPOT((VAL)) >> 1))
 
-#define STR(s)  #s
-#define XSTR(s)  STR(s)
+#define STR(s) #s
+#define XSTR(s) STR(s)
 
 #ifndef __ASSEMBLER__
 

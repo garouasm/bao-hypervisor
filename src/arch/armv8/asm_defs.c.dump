@@ -1,0 +1,478 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/arch/armv8/asm_defs.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;bao.h&gt;"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;cpu.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="include"/>
+    <tok fileIndex="0" linenr="18" column="10" str="&lt;vm.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="include"/>
+    <tok fileIndex="0" linenr="19" column="10" str="&lt;platform.h&gt;"/>
+    <tok fileIndex="0" linenr="21" column="1" str="void"/>
+    <tok fileIndex="0" linenr="21" column="6" str="cpu_defines"/>
+    <tok fileIndex="0" linenr="21" column="17" str="("/>
+    <tok fileIndex="0" linenr="21" column="18" str=")"/>
+    <tok fileIndex="0" linenr="21" column="20" str="__attribute__"/>
+    <tok fileIndex="0" linenr="21" column="33" str="("/>
+    <tok fileIndex="0" linenr="21" column="34" str="("/>
+    <tok fileIndex="0" linenr="21" column="35" str="used"/>
+    <tok fileIndex="0" linenr="21" column="39" str=")"/>
+    <tok fileIndex="0" linenr="21" column="40" str=")"/>
+    <tok fileIndex="0" linenr="21" column="41" str=";"/>
+    <tok fileIndex="0" linenr="22" column="1" str="void"/>
+    <tok fileIndex="0" linenr="22" column="6" str="cpu_defines"/>
+    <tok fileIndex="0" linenr="22" column="17" str="("/>
+    <tok fileIndex="0" linenr="22" column="18" str=")"/>
+    <tok fileIndex="0" linenr="23" column="1" str="{"/>
+    <tok fileIndex="0" linenr="24" column="5" str="DEFINE_SIZE"/>
+    <tok fileIndex="0" linenr="24" column="16" str="("/>
+    <tok fileIndex="0" linenr="24" column="17" str="CPU_SIZE"/>
+    <tok fileIndex="0" linenr="24" column="25" str=","/>
+    <tok fileIndex="0" linenr="24" column="27" str="struct"/>
+    <tok fileIndex="0" linenr="24" column="34" str="cpu"/>
+    <tok fileIndex="0" linenr="24" column="37" str=")"/>
+    <tok fileIndex="0" linenr="24" column="38" str=";"/>
+    <tok fileIndex="0" linenr="26" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="26" column="18" str="("/>
+    <tok fileIndex="0" linenr="26" column="19" str="CPU_ROOT_PT_OFF"/>
+    <tok fileIndex="0" linenr="26" column="34" str=","/>
+    <tok fileIndex="0" linenr="26" column="36" str="struct"/>
+    <tok fileIndex="0" linenr="26" column="43" str="cpu"/>
+    <tok fileIndex="0" linenr="26" column="46" str=","/>
+    <tok fileIndex="0" linenr="26" column="48" str="root_pt"/>
+    <tok fileIndex="0" linenr="26" column="55" str=")"/>
+    <tok fileIndex="0" linenr="26" column="56" str=";"/>
+    <tok fileIndex="0" linenr="28" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="28" column="18" str="("/>
+    <tok fileIndex="0" linenr="28" column="19" str="CPU_STACK_OFF"/>
+    <tok fileIndex="0" linenr="28" column="32" str=","/>
+    <tok fileIndex="0" linenr="28" column="34" str="struct"/>
+    <tok fileIndex="0" linenr="28" column="41" str="cpu"/>
+    <tok fileIndex="0" linenr="28" column="44" str=","/>
+    <tok fileIndex="0" linenr="28" column="46" str="stack"/>
+    <tok fileIndex="0" linenr="28" column="51" str=")"/>
+    <tok fileIndex="0" linenr="28" column="52" str=";"/>
+    <tok fileIndex="0" linenr="29" column="5" str="DEFINE_SIZE"/>
+    <tok fileIndex="0" linenr="29" column="16" str="("/>
+    <tok fileIndex="0" linenr="29" column="17" str="CPU_STACK_SIZE"/>
+    <tok fileIndex="0" linenr="29" column="31" str=","/>
+    <tok fileIndex="0" linenr="29" column="33" str="("/>
+    <tok fileIndex="0" linenr="29" column="34" str="("/>
+    <tok fileIndex="0" linenr="29" column="35" str="struct"/>
+    <tok fileIndex="0" linenr="29" column="42" str="cpu"/>
+    <tok fileIndex="0" linenr="29" column="45" str="*"/>
+    <tok fileIndex="0" linenr="29" column="46" str=")"/>
+    <tok fileIndex="0" linenr="29" column="47" str="NULL"/>
+    <tok fileIndex="0" linenr="29" column="51" str=")"/>
+    <tok fileIndex="0" linenr="29" column="52" str="-&gt;"/>
+    <tok fileIndex="0" linenr="29" column="54" str="stack"/>
+    <tok fileIndex="0" linenr="29" column="59" str=")"/>
+    <tok fileIndex="0" linenr="29" column="60" str=";"/>
+    <tok fileIndex="0" linenr="31" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="31" column="18" str="("/>
+    <tok fileIndex="0" linenr="31" column="19" str="CPU_IF_OFF"/>
+    <tok fileIndex="0" linenr="31" column="29" str=","/>
+    <tok fileIndex="0" linenr="31" column="31" str="struct"/>
+    <tok fileIndex="0" linenr="31" column="38" str="cpu"/>
+    <tok fileIndex="0" linenr="31" column="41" str=","/>
+    <tok fileIndex="0" linenr="31" column="43" str="interface"/>
+    <tok fileIndex="0" linenr="31" column="52" str=")"/>
+    <tok fileIndex="0" linenr="31" column="53" str=";"/>
+    <tok fileIndex="0" linenr="32" column="5" str="DEFINE_SIZE"/>
+    <tok fileIndex="0" linenr="32" column="16" str="("/>
+    <tok fileIndex="0" linenr="32" column="17" str="CPU_IF_SIZE"/>
+    <tok fileIndex="0" linenr="32" column="28" str=","/>
+    <tok fileIndex="0" linenr="32" column="30" str="("/>
+    <tok fileIndex="0" linenr="32" column="31" str="("/>
+    <tok fileIndex="0" linenr="32" column="32" str="struct"/>
+    <tok fileIndex="0" linenr="32" column="39" str="cpu"/>
+    <tok fileIndex="0" linenr="32" column="42" str="*"/>
+    <tok fileIndex="0" linenr="32" column="43" str=")"/>
+    <tok fileIndex="0" linenr="32" column="44" str="NULL"/>
+    <tok fileIndex="0" linenr="32" column="48" str=")"/>
+    <tok fileIndex="0" linenr="32" column="49" str="-&gt;"/>
+    <tok fileIndex="0" linenr="32" column="51" str="interface"/>
+    <tok fileIndex="0" linenr="32" column="60" str=")"/>
+    <tok fileIndex="0" linenr="32" column="61" str=";"/>
+    <tok fileIndex="0" linenr="34" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="34" column="18" str="("/>
+    <tok fileIndex="0" linenr="34" column="19" str="CPU_VCPU_OFF"/>
+    <tok fileIndex="0" linenr="34" column="31" str=","/>
+    <tok fileIndex="0" linenr="34" column="33" str="struct"/>
+    <tok fileIndex="0" linenr="34" column="40" str="cpu"/>
+    <tok fileIndex="0" linenr="34" column="43" str=","/>
+    <tok fileIndex="0" linenr="34" column="45" str="vcpu"/>
+    <tok fileIndex="0" linenr="34" column="49" str=")"/>
+    <tok fileIndex="0" linenr="34" column="50" str=";"/>
+    <tok fileIndex="0" linenr="36" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="36" column="18" str="("/>
+    <tok fileIndex="0" linenr="36" column="19" str="CPU_ARCH_OFF"/>
+    <tok fileIndex="0" linenr="36" column="31" str=","/>
+    <tok fileIndex="0" linenr="36" column="33" str="struct"/>
+    <tok fileIndex="0" linenr="36" column="40" str="cpu"/>
+    <tok fileIndex="0" linenr="36" column="43" str=","/>
+    <tok fileIndex="0" linenr="36" column="45" str="arch"/>
+    <tok fileIndex="0" linenr="36" column="49" str=")"/>
+    <tok fileIndex="0" linenr="36" column="50" str=";"/>
+    <tok fileIndex="0" linenr="37" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="37" column="18" str="("/>
+    <tok fileIndex="0" linenr="37" column="19" str="CPU_ARCH_OFFSTATE_OFF"/>
+    <tok fileIndex="0" linenr="37" column="40" str=","/>
+    <tok fileIndex="0" linenr="37" column="42" str="struct"/>
+    <tok fileIndex="0" linenr="37" column="49" str="cpu_arch"/>
+    <tok fileIndex="0" linenr="37" column="57" str=","/>
+    <tok fileIndex="0" linenr="37" column="59" str="psci_off_state"/>
+    <tok fileIndex="0" linenr="37" column="73" str=")"/>
+    <tok fileIndex="0" linenr="37" column="74" str=";"/>
+    <tok fileIndex="0" linenr="38" column="1" str="}"/>
+    <tok fileIndex="0" linenr="40" column="1" str="void"/>
+    <tok fileIndex="0" linenr="40" column="6" str="vcpu_defines"/>
+    <tok fileIndex="0" linenr="40" column="18" str="("/>
+    <tok fileIndex="0" linenr="40" column="19" str=")"/>
+    <tok fileIndex="0" linenr="40" column="21" str="__attribute__"/>
+    <tok fileIndex="0" linenr="40" column="34" str="("/>
+    <tok fileIndex="0" linenr="40" column="35" str="("/>
+    <tok fileIndex="0" linenr="40" column="36" str="used"/>
+    <tok fileIndex="0" linenr="40" column="40" str=")"/>
+    <tok fileIndex="0" linenr="40" column="41" str=")"/>
+    <tok fileIndex="0" linenr="40" column="42" str=";"/>
+    <tok fileIndex="0" linenr="41" column="1" str="void"/>
+    <tok fileIndex="0" linenr="41" column="6" str="vcpu_defines"/>
+    <tok fileIndex="0" linenr="41" column="18" str="("/>
+    <tok fileIndex="0" linenr="41" column="19" str=")"/>
+    <tok fileIndex="0" linenr="42" column="1" str="{"/>
+    <tok fileIndex="0" linenr="43" column="5" str="DEFINE_SIZE"/>
+    <tok fileIndex="0" linenr="43" column="16" str="("/>
+    <tok fileIndex="0" linenr="43" column="17" str="VCPU_ARCH_SIZE"/>
+    <tok fileIndex="0" linenr="43" column="31" str=","/>
+    <tok fileIndex="0" linenr="43" column="33" str="vcpu_arch_t"/>
+    <tok fileIndex="0" linenr="43" column="44" str=")"/>
+    <tok fileIndex="0" linenr="43" column="45" str=";"/>
+    <tok fileIndex="0" linenr="44" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="44" column="18" str="("/>
+    <tok fileIndex="0" linenr="44" column="19" str="VCPU_REGS_OFF"/>
+    <tok fileIndex="0" linenr="44" column="32" str=","/>
+    <tok fileIndex="0" linenr="44" column="34" str="struct"/>
+    <tok fileIndex="0" linenr="44" column="41" str="vcpu"/>
+    <tok fileIndex="0" linenr="44" column="45" str=","/>
+    <tok fileIndex="0" linenr="44" column="47" str="regs"/>
+    <tok fileIndex="0" linenr="44" column="51" str=")"/>
+    <tok fileIndex="0" linenr="44" column="52" str=";"/>
+    <tok fileIndex="0" linenr="45" column="5" str="DEFINE_SIZE"/>
+    <tok fileIndex="0" linenr="45" column="16" str="("/>
+    <tok fileIndex="0" linenr="45" column="17" str="VCPU_REGS_SIZE"/>
+    <tok fileIndex="0" linenr="45" column="31" str=","/>
+    <tok fileIndex="0" linenr="45" column="33" str="struct"/>
+    <tok fileIndex="0" linenr="45" column="40" str="arch_regs"/>
+    <tok fileIndex="0" linenr="45" column="49" str=")"/>
+    <tok fileIndex="0" linenr="45" column="50" str=";"/>
+    <tok fileIndex="0" linenr="46" column="1" str="}"/>
+    <tok fileIndex="0" linenr="48" column="1" str="void"/>
+    <tok fileIndex="0" linenr="48" column="6" str="platform_defines"/>
+    <tok fileIndex="0" linenr="48" column="22" str="("/>
+    <tok fileIndex="0" linenr="48" column="23" str=")"/>
+    <tok fileIndex="0" linenr="48" column="25" str="__attribute__"/>
+    <tok fileIndex="0" linenr="48" column="38" str="("/>
+    <tok fileIndex="0" linenr="48" column="39" str="("/>
+    <tok fileIndex="0" linenr="48" column="40" str="used"/>
+    <tok fileIndex="0" linenr="48" column="44" str=")"/>
+    <tok fileIndex="0" linenr="48" column="45" str=")"/>
+    <tok fileIndex="0" linenr="48" column="46" str=";"/>
+    <tok fileIndex="0" linenr="49" column="1" str="void"/>
+    <tok fileIndex="0" linenr="49" column="6" str="platform_defines"/>
+    <tok fileIndex="0" linenr="49" column="22" str="("/>
+    <tok fileIndex="0" linenr="49" column="23" str=")"/>
+    <tok fileIndex="0" linenr="50" column="1" str="{"/>
+    <tok fileIndex="0" linenr="51" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="51" column="18" str="("/>
+    <tok fileIndex="0" linenr="51" column="19" str="PLAT_CPUNUM_OFF"/>
+    <tok fileIndex="0" linenr="51" column="34" str=","/>
+    <tok fileIndex="0" linenr="51" column="36" str="struct"/>
+    <tok fileIndex="0" linenr="51" column="43" str="platform_desc"/>
+    <tok fileIndex="0" linenr="51" column="56" str=","/>
+    <tok fileIndex="0" linenr="51" column="58" str="cpu_num"/>
+    <tok fileIndex="0" linenr="51" column="65" str=")"/>
+    <tok fileIndex="0" linenr="51" column="66" str=";"/>
+    <tok fileIndex="0" linenr="52" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="52" column="18" str="("/>
+    <tok fileIndex="0" linenr="52" column="19" str="PLAT_ARCH_OFF"/>
+    <tok fileIndex="0" linenr="52" column="32" str=","/>
+    <tok fileIndex="0" linenr="52" column="34" str="struct"/>
+    <tok fileIndex="0" linenr="52" column="41" str="platform_desc"/>
+    <tok fileIndex="0" linenr="52" column="54" str=","/>
+    <tok fileIndex="0" linenr="52" column="56" str="arch"/>
+    <tok fileIndex="0" linenr="52" column="60" str=")"/>
+    <tok fileIndex="0" linenr="52" column="61" str=";"/>
+    <tok fileIndex="0" linenr="53" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="53" column="18" str="("/>
+    <tok fileIndex="0" linenr="53" column="19" str="PLAT_ARCH_CLUSTERS_OFF"/>
+    <tok fileIndex="0" linenr="53" column="41" str=","/>
+    <tok fileIndex="0" linenr="53" column="43" str="struct"/>
+    <tok fileIndex="0" linenr="53" column="50" str="arch_platform"/>
+    <tok fileIndex="0" linenr="53" column="63" str=","/>
+    <tok fileIndex="0" linenr="53" column="65" str="clusters"/>
+    <tok fileIndex="0" linenr="53" column="73" str=")"/>
+    <tok fileIndex="0" linenr="53" column="74" str=";"/>
+    <tok fileIndex="0" linenr="54" column="5" str="DEFINE_OFFSET"/>
+    <tok fileIndex="0" linenr="54" column="18" str="("/>
+    <tok fileIndex="0" linenr="54" column="19" str="PLAT_CLUSTERS_CORES_NUM_OFF"/>
+    <tok fileIndex="0" linenr="54" column="46" str=","/>
+    <tok fileIndex="0" linenr="54" column="48" str="struct"/>
+    <tok fileIndex="0" linenr="54" column="55" str="clusters"/>
+    <tok fileIndex="0" linenr="54" column="63" str=","/>
+    <tok fileIndex="0" linenr="54" column="65" str="core_num"/>
+    <tok fileIndex="0" linenr="54" column="73" str=")"/>
+    <tok fileIndex="0" linenr="54" column="74" str=";"/>
+    <tok fileIndex="0" linenr="55" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/arch/armv8/asm_defs.c" linenr="16" str="#include &lt;bao.h&gt;"/>
+    <directive file="src/arch/armv8/asm_defs.c" linenr="17" str="#include &lt;cpu.h&gt;"/>
+    <directive file="src/arch/armv8/asm_defs.c" linenr="18" str="#include &lt;vm.h&gt;"/>
+    <directive file="src/arch/armv8/asm_defs.c" linenr="19" str="#include &lt;platform.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aac53c30" file="src/arch/armv8/asm_defs.c" linenr="21" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aacd9cc0" file="src/arch/armv8/asm_defs.c" linenr="21" column="6" str="cpu_defines" scope="0x55c5aac789a0" type="name" function="0x55c5aac796c0" astParent="0x55c5aacd2ab0"/>
+    <token id="0x55c5aacd2ab0" file="src/arch/armv8/asm_defs.c" linenr="21" column="17" str="(" scope="0x55c5aac789a0" link="0x55c5aacda5c0" astOperand1="0x55c5aacd9cc0" valueType-type="void"/>
+    <token id="0x55c5aacda5c0" file="src/arch/armv8/asm_defs.c" linenr="21" column="18" str=")" scope="0x55c5aac789a0" link="0x55c5aacd2ab0"/>
+    <token id="0x55c5aac53ac0" file="src/arch/armv8/asm_defs.c" linenr="21" column="41" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac53720" file="src/arch/armv8/asm_defs.c" linenr="22" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac555d0" file="src/arch/armv8/asm_defs.c" linenr="22" column="6" str="cpu_defines" scope="0x55c5aac789a0" type="name" function="0x55c5aac796c0" astParent="0x55c5aac55630"/>
+    <token id="0x55c5aac55630" file="src/arch/armv8/asm_defs.c" linenr="22" column="17" str="(" scope="0x55c5aac789a0" link="0x55c5aac79c80" astOperand1="0x55c5aac555d0" valueType-type="void"/>
+    <token id="0x55c5aac79c80" file="src/arch/armv8/asm_defs.c" linenr="22" column="18" str=")" scope="0x55c5aac789a0" link="0x55c5aac55630"/>
+    <token id="0x55c5aac79ce0" file="src/arch/armv8/asm_defs.c" linenr="23" column="1" str="{" scope="0x55c5aac781c0" link="0x55c5aac71760"/>
+    <token id="0x55c5aac54590" file="src/arch/armv8/asm_defs.c" linenr="24" column="5" str="DEFINE_SIZE" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac545f0"/>
+    <token id="0x55c5aac545f0" file="src/arch/armv8/asm_defs.c" linenr="24" column="16" str="(" scope="0x55c5aac781c0" link="0x55c5aac549b0" astOperand1="0x55c5aac54590" astOperand2="0x55c5aac77c00"/>
+    <token id="0x55c5aac77ba0" file="src/arch/armv8/asm_defs.c" linenr="24" column="17" str="CPU_SIZE" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac77c00"/>
+    <token id="0x55c5aac77c00" file="src/arch/armv8/asm_defs.c" linenr="24" column="25" str="," scope="0x55c5aac781c0" astParent="0x55c5aac545f0" astOperand1="0x55c5aac77ba0" astOperand2="0x55c5aac53fe0"/>
+    <token id="0x55c5aac53f80" file="src/arch/armv8/asm_defs.c" linenr="24" column="27" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac53fe0" file="src/arch/armv8/asm_defs.c" linenr="24" column="34" str="cpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac77c00"/>
+    <token id="0x55c5aac549b0" file="src/arch/armv8/asm_defs.c" linenr="24" column="37" str=")" scope="0x55c5aac781c0" link="0x55c5aac545f0"/>
+    <token id="0x55c5aac54a10" file="src/arch/armv8/asm_defs.c" linenr="24" column="38" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac52b00" file="src/arch/armv8/asm_defs.c" linenr="26" column="5" str="DEFINE_OFFSET" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac52b60"/>
+    <token id="0x55c5aac52b60" file="src/arch/armv8/asm_defs.c" linenr="26" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aac526e0" astOperand1="0x55c5aac52b00" astOperand2="0x55c5aac7f6f0"/>
+    <token id="0x55c5aac668b0" file="src/arch/armv8/asm_defs.c" linenr="26" column="19" str="CPU_ROOT_PT_OFF" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac66910"/>
+    <token id="0x55c5aac66910" file="src/arch/armv8/asm_defs.c" linenr="26" column="34" str="," scope="0x55c5aac781c0" astParent="0x55c5aac7f6f0" astOperand1="0x55c5aac668b0" astOperand2="0x55c5aac52d50"/>
+    <token id="0x55c5aac52cf0" file="src/arch/armv8/asm_defs.c" linenr="26" column="36" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac52d50" file="src/arch/armv8/asm_defs.c" linenr="26" column="43" str="cpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac66910"/>
+    <token id="0x55c5aac7f6f0" file="src/arch/armv8/asm_defs.c" linenr="26" column="46" str="," scope="0x55c5aac781c0" astParent="0x55c5aac52b60" astOperand1="0x55c5aac66910" astOperand2="0x55c5aac7f750"/>
+    <token id="0x55c5aac7f750" file="src/arch/armv8/asm_defs.c" linenr="26" column="48" str="root_pt" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac7f6f0"/>
+    <token id="0x55c5aac526e0" file="src/arch/armv8/asm_defs.c" linenr="26" column="55" str=")" scope="0x55c5aac781c0" link="0x55c5aac52b60"/>
+    <token id="0x55c5aac52740" file="src/arch/armv8/asm_defs.c" linenr="26" column="56" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac79520" file="src/arch/armv8/asm_defs.c" linenr="28" column="5" str="DEFINE_OFFSET" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac79580"/>
+    <token id="0x55c5aac79580" file="src/arch/armv8/asm_defs.c" linenr="28" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aac74f40" astOperand1="0x55c5aac79520" astOperand2="0x55c5aac66f20"/>
+    <token id="0x55c5aac790c0" file="src/arch/armv8/asm_defs.c" linenr="28" column="19" str="CPU_STACK_OFF" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac79120"/>
+    <token id="0x55c5aac79120" file="src/arch/armv8/asm_defs.c" linenr="28" column="32" str="," scope="0x55c5aac781c0" astParent="0x55c5aac66f20" astOperand1="0x55c5aac790c0" astOperand2="0x55c5aac66e00"/>
+    <token id="0x55c5aac79870" file="src/arch/armv8/asm_defs.c" linenr="28" column="34" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac66e00" file="src/arch/armv8/asm_defs.c" linenr="28" column="41" str="cpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac79120"/>
+    <token id="0x55c5aac66f20" file="src/arch/armv8/asm_defs.c" linenr="28" column="44" str="," scope="0x55c5aac781c0" astParent="0x55c5aac79580" astOperand1="0x55c5aac79120" astOperand2="0x55c5aac66f80"/>
+    <token id="0x55c5aac66f80" file="src/arch/armv8/asm_defs.c" linenr="28" column="46" str="stack" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac66f20"/>
+    <token id="0x55c5aac74f40" file="src/arch/armv8/asm_defs.c" linenr="28" column="51" str=")" scope="0x55c5aac781c0" link="0x55c5aac79580"/>
+    <token id="0x55c5aac75060" file="src/arch/armv8/asm_defs.c" linenr="28" column="52" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac75180" file="src/arch/armv8/asm_defs.c" linenr="29" column="5" str="DEFINE_SIZE" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac67970"/>
+    <token id="0x55c5aac67970" file="src/arch/armv8/asm_defs.c" linenr="29" column="16" str="(" scope="0x55c5aac781c0" link="0x55c5aac68810" astOperand1="0x55c5aac75180" astOperand2="0x55c5aac67bb0"/>
+    <token id="0x55c5aac67a90" file="src/arch/armv8/asm_defs.c" linenr="29" column="17" str="CPU_STACK_SIZE" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac67bb0"/>
+    <token id="0x55c5aac67bb0" file="src/arch/armv8/asm_defs.c" linenr="29" column="31" str="," scope="0x55c5aac781c0" astParent="0x55c5aac67970" astOperand1="0x55c5aac67a90" astOperand2="0x55c5aac685d0"/>
+    <token id="0x55c5aac67cd0" file="src/arch/armv8/asm_defs.c" linenr="29" column="33" str="(" scope="0x55c5aac781c0" link="0x55c5aac684b0"/>
+    <token id="0x55c5aac67df0" file="src/arch/armv8/asm_defs.c" linenr="29" column="34" str="(" scope="0x55c5aac781c0" link="0x55c5aac68270" values="0x55c5aace39c0" astParent="0x55c5aac685d0" astOperand1="0x55c5aac68390" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac67f10" file="src/arch/armv8/asm_defs.c" linenr="29" column="35" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac68030" file="src/arch/armv8/asm_defs.c" linenr="29" column="42" str="cpu" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac68150" file="src/arch/armv8/asm_defs.c" linenr="29" column="45" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aac68270" file="src/arch/armv8/asm_defs.c" linenr="29" column="46" str=")" scope="0x55c5aac781c0" link="0x55c5aac67df0"/>
+    <token id="0x55c5aac68390" file="src/arch/armv8/asm_defs.c" linenr="29" column="47" str="NULL" scope="0x55c5aac781c0" type="name" values="0x55c5aacda5a0" astParent="0x55c5aac67df0"/>
+    <token id="0x55c5aac684b0" file="src/arch/armv8/asm_defs.c" linenr="29" column="51" str=")" scope="0x55c5aac781c0" link="0x55c5aac67cd0"/>
+    <token id="0x55c5aac685d0" file="src/arch/armv8/asm_defs.c" linenr="29" column="52" str="." scope="0x55c5aac781c0" astParent="0x55c5aac67bb0" astOperand1="0x55c5aac67df0" astOperand2="0x55c5aac686f0" originalName="->"/>
+    <token id="0x55c5aac686f0" file="src/arch/armv8/asm_defs.c" linenr="29" column="54" str="stack" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac685d0"/>
+    <token id="0x55c5aac68810" file="src/arch/armv8/asm_defs.c" linenr="29" column="59" str=")" scope="0x55c5aac781c0" link="0x55c5aac67970"/>
+    <token id="0x55c5aac68930" file="src/arch/armv8/asm_defs.c" linenr="29" column="60" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac68a50" file="src/arch/armv8/asm_defs.c" linenr="31" column="5" str="DEFINE_OFFSET" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac68b70"/>
+    <token id="0x55c5aac68b70" file="src/arch/armv8/asm_defs.c" linenr="31" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aac69350" astOperand1="0x55c5aac68a50" astOperand2="0x55c5aac69110"/>
+    <token id="0x55c5aac68c90" file="src/arch/armv8/asm_defs.c" linenr="31" column="19" str="CPU_IF_OFF" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac68db0"/>
+    <token id="0x55c5aac68db0" file="src/arch/armv8/asm_defs.c" linenr="31" column="29" str="," scope="0x55c5aac781c0" astParent="0x55c5aac69110" astOperand1="0x55c5aac68c90" astOperand2="0x55c5aac68ff0"/>
+    <token id="0x55c5aac68ed0" file="src/arch/armv8/asm_defs.c" linenr="31" column="31" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac68ff0" file="src/arch/armv8/asm_defs.c" linenr="31" column="38" str="cpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac68db0"/>
+    <token id="0x55c5aac69110" file="src/arch/armv8/asm_defs.c" linenr="31" column="41" str="," scope="0x55c5aac781c0" astParent="0x55c5aac68b70" astOperand1="0x55c5aac68db0" astOperand2="0x55c5aac69230"/>
+    <token id="0x55c5aac69230" file="src/arch/armv8/asm_defs.c" linenr="31" column="43" str="interface" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac69110"/>
+    <token id="0x55c5aac69350" file="src/arch/armv8/asm_defs.c" linenr="31" column="52" str=")" scope="0x55c5aac781c0" link="0x55c5aac68b70"/>
+    <token id="0x55c5aac69470" file="src/arch/armv8/asm_defs.c" linenr="31" column="53" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac69590" file="src/arch/armv8/asm_defs.c" linenr="32" column="5" str="DEFINE_SIZE" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac696b0"/>
+    <token id="0x55c5aac696b0" file="src/arch/armv8/asm_defs.c" linenr="32" column="16" str="(" scope="0x55c5aac781c0" link="0x55c5aac6a550" astOperand1="0x55c5aac69590" astOperand2="0x55c5aac698f0"/>
+    <token id="0x55c5aac697d0" file="src/arch/armv8/asm_defs.c" linenr="32" column="17" str="CPU_IF_SIZE" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac698f0"/>
+    <token id="0x55c5aac698f0" file="src/arch/armv8/asm_defs.c" linenr="32" column="28" str="," scope="0x55c5aac781c0" astParent="0x55c5aac696b0" astOperand1="0x55c5aac697d0" astOperand2="0x55c5aac6a310"/>
+    <token id="0x55c5aac69a10" file="src/arch/armv8/asm_defs.c" linenr="32" column="30" str="(" scope="0x55c5aac781c0" link="0x55c5aac6a1f0"/>
+    <token id="0x55c5aac69b30" file="src/arch/armv8/asm_defs.c" linenr="32" column="31" str="(" scope="0x55c5aac781c0" link="0x55c5aac69fb0" values="0x55c5aace1850" astParent="0x55c5aac6a310" astOperand1="0x55c5aac6a0d0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac69c50" file="src/arch/armv8/asm_defs.c" linenr="32" column="32" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac69d70" file="src/arch/armv8/asm_defs.c" linenr="32" column="39" str="cpu" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac69e90" file="src/arch/armv8/asm_defs.c" linenr="32" column="42" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aac69fb0" file="src/arch/armv8/asm_defs.c" linenr="32" column="43" str=")" scope="0x55c5aac781c0" link="0x55c5aac69b30"/>
+    <token id="0x55c5aac6a0d0" file="src/arch/armv8/asm_defs.c" linenr="32" column="44" str="NULL" scope="0x55c5aac781c0" type="name" values="0x55c5aac6b5c0" astParent="0x55c5aac69b30"/>
+    <token id="0x55c5aac6a1f0" file="src/arch/armv8/asm_defs.c" linenr="32" column="48" str=")" scope="0x55c5aac781c0" link="0x55c5aac69a10"/>
+    <token id="0x55c5aac6a310" file="src/arch/armv8/asm_defs.c" linenr="32" column="49" str="." scope="0x55c5aac781c0" astParent="0x55c5aac698f0" astOperand1="0x55c5aac69b30" astOperand2="0x55c5aac6a430" originalName="->"/>
+    <token id="0x55c5aac6a430" file="src/arch/armv8/asm_defs.c" linenr="32" column="51" str="interface" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6a310"/>
+    <token id="0x55c5aac6a550" file="src/arch/armv8/asm_defs.c" linenr="32" column="60" str=")" scope="0x55c5aac781c0" link="0x55c5aac696b0"/>
+    <token id="0x55c5aac6a670" file="src/arch/armv8/asm_defs.c" linenr="32" column="61" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac6a790" file="src/arch/armv8/asm_defs.c" linenr="34" column="5" str="DEFINE_OFFSET" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6f6c0"/>
+    <token id="0x55c5aac6f6c0" file="src/arch/armv8/asm_defs.c" linenr="34" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aac6fea0" astOperand1="0x55c5aac6a790" astOperand2="0x55c5aac6fc60"/>
+    <token id="0x55c5aac6f7e0" file="src/arch/armv8/asm_defs.c" linenr="34" column="19" str="CPU_VCPU_OFF" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6f900"/>
+    <token id="0x55c5aac6f900" file="src/arch/armv8/asm_defs.c" linenr="34" column="31" str="," scope="0x55c5aac781c0" astParent="0x55c5aac6fc60" astOperand1="0x55c5aac6f7e0" astOperand2="0x55c5aac6fb40"/>
+    <token id="0x55c5aac6fa20" file="src/arch/armv8/asm_defs.c" linenr="34" column="33" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac6fb40" file="src/arch/armv8/asm_defs.c" linenr="34" column="40" str="cpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6f900"/>
+    <token id="0x55c5aac6fc60" file="src/arch/armv8/asm_defs.c" linenr="34" column="43" str="," scope="0x55c5aac781c0" astParent="0x55c5aac6f6c0" astOperand1="0x55c5aac6f900" astOperand2="0x55c5aac6fd80"/>
+    <token id="0x55c5aac6fd80" file="src/arch/armv8/asm_defs.c" linenr="34" column="45" str="vcpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6fc60"/>
+    <token id="0x55c5aac6fea0" file="src/arch/armv8/asm_defs.c" linenr="34" column="49" str=")" scope="0x55c5aac781c0" link="0x55c5aac6f6c0"/>
+    <token id="0x55c5aac6ffc0" file="src/arch/armv8/asm_defs.c" linenr="34" column="50" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac700e0" file="src/arch/armv8/asm_defs.c" linenr="36" column="5" str="DEFINE_OFFSET" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70200"/>
+    <token id="0x55c5aac70200" file="src/arch/armv8/asm_defs.c" linenr="36" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aac709e0" astOperand1="0x55c5aac700e0" astOperand2="0x55c5aac707a0"/>
+    <token id="0x55c5aac70320" file="src/arch/armv8/asm_defs.c" linenr="36" column="19" str="CPU_ARCH_OFF" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70440"/>
+    <token id="0x55c5aac70440" file="src/arch/armv8/asm_defs.c" linenr="36" column="31" str="," scope="0x55c5aac781c0" astParent="0x55c5aac707a0" astOperand1="0x55c5aac70320" astOperand2="0x55c5aac70680"/>
+    <token id="0x55c5aac70560" file="src/arch/armv8/asm_defs.c" linenr="36" column="33" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac70680" file="src/arch/armv8/asm_defs.c" linenr="36" column="40" str="cpu" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70440"/>
+    <token id="0x55c5aac707a0" file="src/arch/armv8/asm_defs.c" linenr="36" column="43" str="," scope="0x55c5aac781c0" astParent="0x55c5aac70200" astOperand1="0x55c5aac70440" astOperand2="0x55c5aac708c0"/>
+    <token id="0x55c5aac708c0" file="src/arch/armv8/asm_defs.c" linenr="36" column="45" str="arch" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac707a0"/>
+    <token id="0x55c5aac709e0" file="src/arch/armv8/asm_defs.c" linenr="36" column="49" str=")" scope="0x55c5aac781c0" link="0x55c5aac70200"/>
+    <token id="0x55c5aac70b00" file="src/arch/armv8/asm_defs.c" linenr="36" column="50" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac70c20" file="src/arch/armv8/asm_defs.c" linenr="37" column="5" str="DEFINE_OFFSET" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70d40"/>
+    <token id="0x55c5aac70d40" file="src/arch/armv8/asm_defs.c" linenr="37" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aac71520" astOperand1="0x55c5aac70c20" astOperand2="0x55c5aac712e0"/>
+    <token id="0x55c5aac70e60" file="src/arch/armv8/asm_defs.c" linenr="37" column="19" str="CPU_ARCH_OFFSTATE_OFF" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70f80"/>
+    <token id="0x55c5aac70f80" file="src/arch/armv8/asm_defs.c" linenr="37" column="40" str="," scope="0x55c5aac781c0" astParent="0x55c5aac712e0" astOperand1="0x55c5aac70e60" astOperand2="0x55c5aac711c0"/>
+    <token id="0x55c5aac710a0" file="src/arch/armv8/asm_defs.c" linenr="37" column="42" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac711c0" file="src/arch/armv8/asm_defs.c" linenr="37" column="49" str="cpu_arch" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70f80"/>
+    <token id="0x55c5aac712e0" file="src/arch/armv8/asm_defs.c" linenr="37" column="57" str="," scope="0x55c5aac781c0" astParent="0x55c5aac70d40" astOperand1="0x55c5aac70f80" astOperand2="0x55c5aac71400"/>
+    <token id="0x55c5aac71400" file="src/arch/armv8/asm_defs.c" linenr="37" column="59" str="psci_off_state" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac712e0"/>
+    <token id="0x55c5aac71520" file="src/arch/armv8/asm_defs.c" linenr="37" column="73" str=")" scope="0x55c5aac781c0" link="0x55c5aac70d40"/>
+    <token id="0x55c5aac71640" file="src/arch/armv8/asm_defs.c" linenr="37" column="74" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac71760" file="src/arch/armv8/asm_defs.c" linenr="38" column="1" str="}" scope="0x55c5aac781c0" link="0x55c5aac79ce0"/>
+    <token id="0x55c5aac71880" file="src/arch/armv8/asm_defs.c" linenr="40" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac719a0" file="src/arch/armv8/asm_defs.c" linenr="40" column="6" str="vcpu_defines" scope="0x55c5aac789a0" type="name" function="0x55c5aacd4cc0" astParent="0x55c5aac71ac0"/>
+    <token id="0x55c5aac71ac0" file="src/arch/armv8/asm_defs.c" linenr="40" column="18" str="(" scope="0x55c5aac789a0" link="0x55c5aac71be0" astOperand1="0x55c5aac719a0" valueType-type="void"/>
+    <token id="0x55c5aac71be0" file="src/arch/armv8/asm_defs.c" linenr="40" column="19" str=")" scope="0x55c5aac789a0" link="0x55c5aac71ac0"/>
+    <token id="0x55c5aac71d00" file="src/arch/armv8/asm_defs.c" linenr="40" column="42" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac724e0" file="src/arch/armv8/asm_defs.c" linenr="41" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac72600" file="src/arch/armv8/asm_defs.c" linenr="41" column="6" str="vcpu_defines" scope="0x55c5aac789a0" type="name" function="0x55c5aacd4cc0" astParent="0x55c5aac72720"/>
+    <token id="0x55c5aac72720" file="src/arch/armv8/asm_defs.c" linenr="41" column="18" str="(" scope="0x55c5aac789a0" link="0x55c5aac72840" astOperand1="0x55c5aac72600" valueType-type="void"/>
+    <token id="0x55c5aac72840" file="src/arch/armv8/asm_defs.c" linenr="41" column="19" str=")" scope="0x55c5aac789a0" link="0x55c5aac72720"/>
+    <token id="0x55c5aac72960" file="src/arch/armv8/asm_defs.c" linenr="42" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aac6d990"/>
+    <token id="0x55c5aac6bd70" file="src/arch/armv8/asm_defs.c" linenr="43" column="5" str="DEFINE_SIZE" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6be90"/>
+    <token id="0x55c5aac6be90" file="src/arch/armv8/asm_defs.c" linenr="43" column="16" str="(" scope="0x55c5aac785a0" link="0x55c5aac6c310" astOperand1="0x55c5aac6bd70" astOperand2="0x55c5aac6c0d0"/>
+    <token id="0x55c5aac6bfb0" file="src/arch/armv8/asm_defs.c" linenr="43" column="17" str="VCPU_ARCH_SIZE" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6c0d0"/>
+    <token id="0x55c5aac6c0d0" file="src/arch/armv8/asm_defs.c" linenr="43" column="31" str="," scope="0x55c5aac785a0" astParent="0x55c5aac6be90" astOperand1="0x55c5aac6bfb0" astOperand2="0x55c5aac6c1f0"/>
+    <token id="0x55c5aac6c1f0" file="src/arch/armv8/asm_defs.c" linenr="43" column="33" str="vcpu_arch_t" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6c0d0"/>
+    <token id="0x55c5aac6c310" file="src/arch/armv8/asm_defs.c" linenr="43" column="44" str=")" scope="0x55c5aac785a0" link="0x55c5aac6be90"/>
+    <token id="0x55c5aac6c430" file="src/arch/armv8/asm_defs.c" linenr="43" column="45" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac6c550" file="src/arch/armv8/asm_defs.c" linenr="44" column="5" str="DEFINE_OFFSET" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6c670"/>
+    <token id="0x55c5aac6c670" file="src/arch/armv8/asm_defs.c" linenr="44" column="18" str="(" scope="0x55c5aac785a0" link="0x55c5aac6ce50" astOperand1="0x55c5aac6c550" astOperand2="0x55c5aac6cc10"/>
+    <token id="0x55c5aac6c790" file="src/arch/armv8/asm_defs.c" linenr="44" column="19" str="VCPU_REGS_OFF" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6c8b0"/>
+    <token id="0x55c5aac6c8b0" file="src/arch/armv8/asm_defs.c" linenr="44" column="32" str="," scope="0x55c5aac785a0" astParent="0x55c5aac6cc10" astOperand1="0x55c5aac6c790" astOperand2="0x55c5aac6caf0"/>
+    <token id="0x55c5aac6c9d0" file="src/arch/armv8/asm_defs.c" linenr="44" column="34" str="struct" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac6caf0" file="src/arch/armv8/asm_defs.c" linenr="44" column="41" str="vcpu" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6c8b0"/>
+    <token id="0x55c5aac6cc10" file="src/arch/armv8/asm_defs.c" linenr="44" column="45" str="," scope="0x55c5aac785a0" astParent="0x55c5aac6c670" astOperand1="0x55c5aac6c8b0" astOperand2="0x55c5aac6cd30"/>
+    <token id="0x55c5aac6cd30" file="src/arch/armv8/asm_defs.c" linenr="44" column="47" str="regs" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6cc10"/>
+    <token id="0x55c5aac6ce50" file="src/arch/armv8/asm_defs.c" linenr="44" column="51" str=")" scope="0x55c5aac785a0" link="0x55c5aac6c670"/>
+    <token id="0x55c5aac6cf70" file="src/arch/armv8/asm_defs.c" linenr="44" column="52" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac6d090" file="src/arch/armv8/asm_defs.c" linenr="45" column="5" str="DEFINE_SIZE" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6d1b0"/>
+    <token id="0x55c5aac6d1b0" file="src/arch/armv8/asm_defs.c" linenr="45" column="16" str="(" scope="0x55c5aac785a0" link="0x55c5aac6d750" astOperand1="0x55c5aac6d090" astOperand2="0x55c5aac6d3f0"/>
+    <token id="0x55c5aac6d2d0" file="src/arch/armv8/asm_defs.c" linenr="45" column="17" str="VCPU_REGS_SIZE" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6d3f0"/>
+    <token id="0x55c5aac6d3f0" file="src/arch/armv8/asm_defs.c" linenr="45" column="31" str="," scope="0x55c5aac785a0" astParent="0x55c5aac6d1b0" astOperand1="0x55c5aac6d2d0" astOperand2="0x55c5aac6d630"/>
+    <token id="0x55c5aac6d510" file="src/arch/armv8/asm_defs.c" linenr="45" column="33" str="struct" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac6d630" file="src/arch/armv8/asm_defs.c" linenr="45" column="40" str="arch_regs" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac6d3f0"/>
+    <token id="0x55c5aac6d750" file="src/arch/armv8/asm_defs.c" linenr="45" column="49" str=")" scope="0x55c5aac785a0" link="0x55c5aac6d1b0"/>
+    <token id="0x55c5aac6d870" file="src/arch/armv8/asm_defs.c" linenr="45" column="50" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac6d990" file="src/arch/armv8/asm_defs.c" linenr="46" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aac72960"/>
+    <token id="0x55c5aac6dab0" file="src/arch/armv8/asm_defs.c" linenr="48" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac6dbd0" file="src/arch/armv8/asm_defs.c" linenr="48" column="6" str="platform_defines" scope="0x55c5aac789a0" type="name" function="0x55c5aac4ca80" astParent="0x55c5aac6dcf0"/>
+    <token id="0x55c5aac6dcf0" file="src/arch/armv8/asm_defs.c" linenr="48" column="22" str="(" scope="0x55c5aac789a0" link="0x55c5aac6de10" astOperand1="0x55c5aac6dbd0" valueType-type="void"/>
+    <token id="0x55c5aac6de10" file="src/arch/armv8/asm_defs.c" linenr="48" column="23" str=")" scope="0x55c5aac789a0" link="0x55c5aac6dcf0"/>
+    <token id="0x55c5aac6df30" file="src/arch/armv8/asm_defs.c" linenr="48" column="46" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac6e710" file="src/arch/armv8/asm_defs.c" linenr="49" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac6e830" file="src/arch/armv8/asm_defs.c" linenr="49" column="6" str="platform_defines" scope="0x55c5aac789a0" type="name" function="0x55c5aac4ca80" astParent="0x55c5aac6e950"/>
+    <token id="0x55c5aac6e950" file="src/arch/armv8/asm_defs.c" linenr="49" column="22" str="(" scope="0x55c5aac789a0" link="0x55c5aac6ea70" astOperand1="0x55c5aac6e830" valueType-type="void"/>
+    <token id="0x55c5aac6ea70" file="src/arch/armv8/asm_defs.c" linenr="49" column="23" str=")" scope="0x55c5aac789a0" link="0x55c5aac6e950"/>
+    <token id="0x55c5aac6eb90" file="src/arch/armv8/asm_defs.c" linenr="50" column="1" str="{" scope="0x55c5aac783b0" link="0x55c5aac58b60"/>
+    <token id="0x55c5aac6ecb0" file="src/arch/armv8/asm_defs.c" linenr="51" column="5" str="DEFINE_OFFSET" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac6edd0"/>
+    <token id="0x55c5aac6edd0" file="src/arch/armv8/asm_defs.c" linenr="51" column="18" str="(" scope="0x55c5aac783b0" link="0x55c5aac56760" astOperand1="0x55c5aac6ecb0" astOperand2="0x55c5aac6f370"/>
+    <token id="0x55c5aac6eef0" file="src/arch/armv8/asm_defs.c" linenr="51" column="19" str="PLAT_CPUNUM_OFF" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac6f010"/>
+    <token id="0x55c5aac6f010" file="src/arch/armv8/asm_defs.c" linenr="51" column="34" str="," scope="0x55c5aac783b0" astParent="0x55c5aac6f370" astOperand1="0x55c5aac6eef0" astOperand2="0x55c5aac6f250"/>
+    <token id="0x55c5aac6f130" file="src/arch/armv8/asm_defs.c" linenr="51" column="36" str="struct" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac6f250" file="src/arch/armv8/asm_defs.c" linenr="51" column="43" str="platform_desc" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac6f010"/>
+    <token id="0x55c5aac6f370" file="src/arch/armv8/asm_defs.c" linenr="51" column="56" str="," scope="0x55c5aac783b0" astParent="0x55c5aac6edd0" astOperand1="0x55c5aac6f010" astOperand2="0x55c5aac56640"/>
+    <token id="0x55c5aac56640" file="src/arch/armv8/asm_defs.c" linenr="51" column="58" str="cpu_num" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac6f370"/>
+    <token id="0x55c5aac56760" file="src/arch/armv8/asm_defs.c" linenr="51" column="65" str=")" scope="0x55c5aac783b0" link="0x55c5aac6edd0"/>
+    <token id="0x55c5aac56880" file="src/arch/armv8/asm_defs.c" linenr="51" column="66" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac569a0" file="src/arch/armv8/asm_defs.c" linenr="52" column="5" str="DEFINE_OFFSET" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac56ac0"/>
+    <token id="0x55c5aac56ac0" file="src/arch/armv8/asm_defs.c" linenr="52" column="18" str="(" scope="0x55c5aac783b0" link="0x55c5aac572a0" astOperand1="0x55c5aac569a0" astOperand2="0x55c5aac57060"/>
+    <token id="0x55c5aac56be0" file="src/arch/armv8/asm_defs.c" linenr="52" column="19" str="PLAT_ARCH_OFF" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac56d00"/>
+    <token id="0x55c5aac56d00" file="src/arch/armv8/asm_defs.c" linenr="52" column="32" str="," scope="0x55c5aac783b0" astParent="0x55c5aac57060" astOperand1="0x55c5aac56be0" astOperand2="0x55c5aac56f40"/>
+    <token id="0x55c5aac56e20" file="src/arch/armv8/asm_defs.c" linenr="52" column="34" str="struct" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac56f40" file="src/arch/armv8/asm_defs.c" linenr="52" column="41" str="platform_desc" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac56d00"/>
+    <token id="0x55c5aac57060" file="src/arch/armv8/asm_defs.c" linenr="52" column="54" str="," scope="0x55c5aac783b0" astParent="0x55c5aac56ac0" astOperand1="0x55c5aac56d00" astOperand2="0x55c5aac57180"/>
+    <token id="0x55c5aac57180" file="src/arch/armv8/asm_defs.c" linenr="52" column="56" str="arch" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac57060"/>
+    <token id="0x55c5aac572a0" file="src/arch/armv8/asm_defs.c" linenr="52" column="60" str=")" scope="0x55c5aac783b0" link="0x55c5aac56ac0"/>
+    <token id="0x55c5aac573c0" file="src/arch/armv8/asm_defs.c" linenr="52" column="61" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac574e0" file="src/arch/armv8/asm_defs.c" linenr="53" column="5" str="DEFINE_OFFSET" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac57600"/>
+    <token id="0x55c5aac57600" file="src/arch/armv8/asm_defs.c" linenr="53" column="18" str="(" scope="0x55c5aac783b0" link="0x55c5aac57de0" astOperand1="0x55c5aac574e0" astOperand2="0x55c5aac57ba0"/>
+    <token id="0x55c5aac57720" file="src/arch/armv8/asm_defs.c" linenr="53" column="19" str="PLAT_ARCH_CLUSTERS_OFF" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac57840"/>
+    <token id="0x55c5aac57840" file="src/arch/armv8/asm_defs.c" linenr="53" column="41" str="," scope="0x55c5aac783b0" astParent="0x55c5aac57ba0" astOperand1="0x55c5aac57720" astOperand2="0x55c5aac57a80"/>
+    <token id="0x55c5aac57960" file="src/arch/armv8/asm_defs.c" linenr="53" column="43" str="struct" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac57a80" file="src/arch/armv8/asm_defs.c" linenr="53" column="50" str="arch_platform" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac57840"/>
+    <token id="0x55c5aac57ba0" file="src/arch/armv8/asm_defs.c" linenr="53" column="63" str="," scope="0x55c5aac783b0" astParent="0x55c5aac57600" astOperand1="0x55c5aac57840" astOperand2="0x55c5aac57cc0"/>
+    <token id="0x55c5aac57cc0" file="src/arch/armv8/asm_defs.c" linenr="53" column="65" str="clusters" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac57ba0"/>
+    <token id="0x55c5aac57de0" file="src/arch/armv8/asm_defs.c" linenr="53" column="73" str=")" scope="0x55c5aac783b0" link="0x55c5aac57600"/>
+    <token id="0x55c5aac57f00" file="src/arch/armv8/asm_defs.c" linenr="53" column="74" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac58020" file="src/arch/armv8/asm_defs.c" linenr="54" column="5" str="DEFINE_OFFSET" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac58140"/>
+    <token id="0x55c5aac58140" file="src/arch/armv8/asm_defs.c" linenr="54" column="18" str="(" scope="0x55c5aac783b0" link="0x55c5aac58920" astOperand1="0x55c5aac58020" astOperand2="0x55c5aac586e0"/>
+    <token id="0x55c5aac58260" file="src/arch/armv8/asm_defs.c" linenr="54" column="19" str="PLAT_CLUSTERS_CORES_NUM_OFF" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac58380"/>
+    <token id="0x55c5aac58380" file="src/arch/armv8/asm_defs.c" linenr="54" column="46" str="," scope="0x55c5aac783b0" astParent="0x55c5aac586e0" astOperand1="0x55c5aac58260" astOperand2="0x55c5aac585c0"/>
+    <token id="0x55c5aac584a0" file="src/arch/armv8/asm_defs.c" linenr="54" column="48" str="struct" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac585c0" file="src/arch/armv8/asm_defs.c" linenr="54" column="55" str="clusters" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac58380"/>
+    <token id="0x55c5aac586e0" file="src/arch/armv8/asm_defs.c" linenr="54" column="63" str="," scope="0x55c5aac783b0" astParent="0x55c5aac58140" astOperand1="0x55c5aac58380" astOperand2="0x55c5aac58800"/>
+    <token id="0x55c5aac58800" file="src/arch/armv8/asm_defs.c" linenr="54" column="65" str="core_num" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac586e0"/>
+    <token id="0x55c5aac58920" file="src/arch/armv8/asm_defs.c" linenr="54" column="73" str=")" scope="0x55c5aac783b0" link="0x55c5aac58140"/>
+    <token id="0x55c5aac58a40" file="src/arch/armv8/asm_defs.c" linenr="54" column="74" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac58b60" file="src/arch/armv8/asm_defs.c" linenr="55" column="1" str="}" scope="0x55c5aac783b0" link="0x55c5aac6eb90"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac789a0" type="Global">
+      <functionList>
+        <function id="0x55c5aac796c0" tokenDef="0x55c5aacd9cc0" name="cpu_defines" type="Function"/>
+        <function id="0x55c5aacd4cc0" tokenDef="0x55c5aac719a0" name="vcpu_defines" type="Function"/>
+        <function id="0x55c5aac4ca80" tokenDef="0x55c5aac6dbd0" name="platform_defines" type="Function"/>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac781c0" type="Function" className="cpu_defines" bodyStart="0x55c5aac79ce0" bodyEnd="0x55c5aac71760" nestedIn="0x55c5aac789a0" function="0x55c5aac796c0"/>
+    <scope id="0x55c5aac785a0" type="Function" className="vcpu_defines" bodyStart="0x55c5aac72960" bodyEnd="0x55c5aac6d990" nestedIn="0x55c5aac789a0" function="0x55c5aacd4cc0"/>
+    <scope id="0x55c5aac783b0" type="Function" className="platform_defines" bodyStart="0x55c5aac6eb90" bodyEnd="0x55c5aac58b60" nestedIn="0x55c5aac789a0" function="0x55c5aac4ca80"/>
+  </scopes>
+  <variables>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aace39c0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aacda5a0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aace1850">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac6b5c0">
+      <value intvalue="0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

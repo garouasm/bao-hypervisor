@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/platform/drivers/nxp_uart/nxp_uart.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;drivers/nxp_uart.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="void"/>
+    <tok fileIndex="0" linenr="18" column="6" str="uart_init"/>
+    <tok fileIndex="0" linenr="18" column="15" str="("/>
+    <tok fileIndex="0" linenr="18" column="16" str="volatile"/>
+    <tok fileIndex="0" linenr="18" column="25" str="struct"/>
+    <tok fileIndex="0" linenr="18" column="32" str="lpuart"/>
+    <tok fileIndex="0" linenr="18" column="39" str="*"/>
+    <tok fileIndex="0" linenr="18" column="40" str="uart"/>
+    <tok fileIndex="0" linenr="18" column="44" str=")"/>
+    <tok fileIndex="0" linenr="19" column="1" str="{"/>
+    <tok fileIndex="0" linenr="20" column="5" str="uart"/>
+    <tok fileIndex="0" linenr="20" column="9" str="-&gt;"/>
+    <tok fileIndex="0" linenr="20" column="11" str="global"/>
+    <tok fileIndex="0" linenr="20" column="18" str="|="/>
+    <tok fileIndex="0" linenr="20" column="21" str="LPUART_GLOBAL_RST_BIT"/>
+    <tok fileIndex="0" linenr="20" column="42" str=";"/>
+    <tok fileIndex="0" linenr="21" column="5" str="uart"/>
+    <tok fileIndex="0" linenr="21" column="9" str="-&gt;"/>
+    <tok fileIndex="0" linenr="21" column="11" str="global"/>
+    <tok fileIndex="0" linenr="21" column="18" str="&amp;="/>
+    <tok fileIndex="0" linenr="21" column="21" str="~"/>
+    <tok fileIndex="0" linenr="21" column="22" str="LPUART_GLOBAL_RST_BIT"/>
+    <tok fileIndex="0" linenr="21" column="43" str=";"/>
+    <tok fileIndex="0" linenr="23" column="5" str="uart"/>
+    <tok fileIndex="0" linenr="23" column="9" str="-&gt;"/>
+    <tok fileIndex="0" linenr="23" column="11" str="baud"/>
+    <tok fileIndex="0" linenr="23" column="16" str="="/>
+    <tok fileIndex="0" linenr="23" column="18" str="LPUART_BAUD_80MHZ_115200"/>
+    <tok fileIndex="0" linenr="23" column="42" str=";"/>
+    <tok fileIndex="0" linenr="24" column="1" str="}"/>
+    <tok fileIndex="0" linenr="26" column="1" str="void"/>
+    <tok fileIndex="0" linenr="26" column="6" str="uart_enable"/>
+    <tok fileIndex="0" linenr="26" column="17" str="("/>
+    <tok fileIndex="0" linenr="26" column="18" str="volatile"/>
+    <tok fileIndex="0" linenr="26" column="27" str="struct"/>
+    <tok fileIndex="0" linenr="26" column="34" str="lpuart"/>
+    <tok fileIndex="0" linenr="26" column="41" str="*"/>
+    <tok fileIndex="0" linenr="26" column="42" str="uart"/>
+    <tok fileIndex="0" linenr="26" column="46" str=")"/>
+    <tok fileIndex="0" linenr="27" column="1" str="{"/>
+    <tok fileIndex="0" linenr="28" column="5" str="uart"/>
+    <tok fileIndex="0" linenr="28" column="9" str="-&gt;"/>
+    <tok fileIndex="0" linenr="28" column="11" str="ctrl"/>
+    <tok fileIndex="0" linenr="28" column="16" str="="/>
+    <tok fileIndex="0" linenr="28" column="18" str="LPUART_CTRL_TE_BIT"/>
+    <tok fileIndex="0" linenr="28" column="36" str=";"/>
+    <tok fileIndex="0" linenr="29" column="1" str="}"/>
+    <tok fileIndex="0" linenr="31" column="1" str="void"/>
+    <tok fileIndex="0" linenr="31" column="6" str="uart_putc"/>
+    <tok fileIndex="0" linenr="31" column="15" str="("/>
+    <tok fileIndex="0" linenr="31" column="16" str="volatile"/>
+    <tok fileIndex="0" linenr="31" column="25" str="struct"/>
+    <tok fileIndex="0" linenr="31" column="32" str="lpuart"/>
+    <tok fileIndex="0" linenr="31" column="39" str="*"/>
+    <tok fileIndex="0" linenr="31" column="40" str="uart"/>
+    <tok fileIndex="0" linenr="31" column="44" str=","/>
+    <tok fileIndex="0" linenr="31" column="46" str="char"/>
+    <tok fileIndex="0" linenr="31" column="51" str="c"/>
+    <tok fileIndex="0" linenr="31" column="52" str=")"/>
+    <tok fileIndex="0" linenr="32" column="1" str="{"/>
+    <tok fileIndex="0" linenr="33" column="5" str="while"/>
+    <tok fileIndex="0" linenr="33" column="11" str="("/>
+    <tok fileIndex="0" linenr="33" column="12" str="!"/>
+    <tok fileIndex="0" linenr="33" column="13" str="("/>
+    <tok fileIndex="0" linenr="33" column="14" str="uart"/>
+    <tok fileIndex="0" linenr="33" column="18" str="-&gt;"/>
+    <tok fileIndex="0" linenr="33" column="20" str="stat"/>
+    <tok fileIndex="0" linenr="33" column="25" str="&amp;"/>
+    <tok fileIndex="0" linenr="33" column="27" str="LPUART_STAT_TDRE_BIT"/>
+    <tok fileIndex="0" linenr="33" column="47" str=")"/>
+    <tok fileIndex="0" linenr="33" column="48" str=")"/>
+    <tok fileIndex="0" linenr="34" column="9" str=";"/>
+    <tok fileIndex="0" linenr="35" column="5" str="uart"/>
+    <tok fileIndex="0" linenr="35" column="9" str="-&gt;"/>
+    <tok fileIndex="0" linenr="35" column="11" str="data"/>
+    <tok fileIndex="0" linenr="35" column="16" str="="/>
+    <tok fileIndex="0" linenr="35" column="18" str="c"/>
+    <tok fileIndex="0" linenr="35" column="19" str=";"/>
+    <tok fileIndex="0" linenr="36" column="1" str="}"/>
+    <tok fileIndex="0" linenr="38" column="1" str="void"/>
+    <tok fileIndex="0" linenr="38" column="6" str="uart_puts"/>
+    <tok fileIndex="0" linenr="38" column="15" str="("/>
+    <tok fileIndex="0" linenr="38" column="16" str="volatile"/>
+    <tok fileIndex="0" linenr="38" column="25" str="struct"/>
+    <tok fileIndex="0" linenr="38" column="32" str="lpuart"/>
+    <tok fileIndex="0" linenr="38" column="39" str="*"/>
+    <tok fileIndex="0" linenr="38" column="40" str="uart"/>
+    <tok fileIndex="0" linenr="38" column="44" str=","/>
+    <tok fileIndex="0" linenr="38" column="46" str="char"/>
+    <tok fileIndex="0" linenr="38" column="51" str="const"/>
+    <tok fileIndex="0" linenr="38" column="57" str="*"/>
+    <tok fileIndex="0" linenr="38" column="58" str="str"/>
+    <tok fileIndex="0" linenr="38" column="61" str=")"/>
+    <tok fileIndex="0" linenr="39" column="1" str="{"/>
+    <tok fileIndex="0" linenr="40" column="5" str="while"/>
+    <tok fileIndex="0" linenr="40" column="11" str="("/>
+    <tok fileIndex="0" linenr="40" column="12" str="*"/>
+    <tok fileIndex="0" linenr="40" column="13" str="str"/>
+    <tok fileIndex="0" linenr="40" column="16" str=")"/>
+    <tok fileIndex="0" linenr="40" column="18" str="{"/>
+    <tok fileIndex="0" linenr="41" column="9" str="uart_putc"/>
+    <tok fileIndex="0" linenr="41" column="18" str="("/>
+    <tok fileIndex="0" linenr="41" column="19" str="uart"/>
+    <tok fileIndex="0" linenr="41" column="23" str=","/>
+    <tok fileIndex="0" linenr="41" column="25" str="*"/>
+    <tok fileIndex="0" linenr="41" column="26" str="str"/>
+    <tok fileIndex="0" linenr="41" column="29" str="++"/>
+    <tok fileIndex="0" linenr="41" column="31" str=")"/>
+    <tok fileIndex="0" linenr="41" column="32" str=";"/>
+    <tok fileIndex="0" linenr="42" column="5" str="}"/>
+    <tok fileIndex="0" linenr="43" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="16" str="#include &lt;drivers/nxp_uart.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aace3aa0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab1d33a0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="6" str="uart_init" scope="0x55c5aac781c0" type="name" function="0x55c5aac69e20" astParent="0x55c5aad18870"/>
+    <token id="0x55c5aad18870" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="15" str="(" scope="0x55c5aac781c0" link="0x55c5aac78090" astOperand1="0x55c5ab1d33a0" astOperand2="0x55c5aac5cb40" valueType-type="void"/>
+    <token id="0x55c5aaca2950" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="16" str="volatile" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac5ca80" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="25" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac5cae0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="32" str="lpuart" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac5cb40"/>
+    <token id="0x55c5aac5cb40" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="39" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aad18870" astOperand1="0x55c5aac5cae0" astOperand2="0x55c5aac6f480"/>
+    <token id="0x55c5aac6f480" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="40" str="uart" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aace4080" astParent="0x55c5aac5cb40" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac78090" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="18" column="44" str=")" scope="0x55c5aac781c0" link="0x55c5aad18870"/>
+    <token id="0x55c5aac78530" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="19" column="1" str="{" scope="0x55c5aac789a0" link="0x55c5aace6620"/>
+    <token id="0x55c5aae56a00" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="20" column="5" str="uart" scope="0x55c5aac789a0" type="name" varId="1" variable="0x55c5aace4080" astParent="0x55c5aac7bba0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac7bba0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="20" column="9" str="." scope="0x55c5aac789a0" astParent="0x55c5aac65e90" astOperand1="0x55c5aae56a00" astOperand2="0x55c5aaca7900" originalName="->"/>
+    <token id="0x55c5aaca7900" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="20" column="11" str="global" scope="0x55c5aac789a0" type="name" varId="2" astParent="0x55c5aac7bba0"/>
+    <token id="0x55c5aac65e90" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="20" column="18" str="|=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac7bba0" astOperand2="0x55c5aaf883e0"/>
+    <token id="0x55c5aaf883e0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="20" column="21" str="LPUART_GLOBAL_RST_BIT" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac65e90"/>
+    <token id="0x55c5aaca2c70" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="20" column="42" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5ab0b1160" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="5" str="uart" scope="0x55c5aac789a0" type="name" varId="1" variable="0x55c5aace4080" astParent="0x55c5aac74370" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac74370" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="9" str="." scope="0x55c5aac789a0" astParent="0x55c5ab0b04b0" astOperand1="0x55c5ab0b1160" astOperand2="0x55c5aace4010" originalName="->"/>
+    <token id="0x55c5aace4010" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="11" str="global" scope="0x55c5aac789a0" type="name" varId="2" astParent="0x55c5aac74370"/>
+    <token id="0x55c5ab0b04b0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="18" str="&amp;=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac74370" astOperand2="0x55c5aac7b6c0"/>
+    <token id="0x55c5aac7b6c0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="21" str="~" scope="0x55c5aac789a0" type="op" astParent="0x55c5ab0b04b0" astOperand1="0x55c5aacbcb20"/>
+    <token id="0x55c5aacbcb20" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="22" str="LPUART_GLOBAL_RST_BIT" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac7b6c0"/>
+    <token id="0x55c5aace26e0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="21" column="43" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aaca8290" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="23" column="5" str="uart" scope="0x55c5aac789a0" type="name" varId="1" variable="0x55c5aace4080" astParent="0x55c5ab0b0a60" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0b0a60" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="23" column="9" str="." scope="0x55c5aac789a0" astParent="0x55c5aac66020" astOperand1="0x55c5aaca8290" astOperand2="0x55c5ab0a1b30" originalName="->"/>
+    <token id="0x55c5ab0a1b30" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="23" column="11" str="baud" scope="0x55c5aac789a0" type="name" varId="3" astParent="0x55c5ab0b0a60"/>
+    <token id="0x55c5aac66020" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="23" column="16" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0b0a60" astOperand2="0x55c5aafacde0"/>
+    <token id="0x55c5aafacde0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="23" column="18" str="LPUART_BAUD_80MHZ_115200" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac66020"/>
+    <token id="0x55c5ab1d11d0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="23" column="42" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aace6620" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="24" column="1" str="}" scope="0x55c5aac789a0" link="0x55c5aac78530"/>
+    <token id="0x55c5aac59ef0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac62600" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="6" str="uart_enable" scope="0x55c5aac781c0" type="name" function="0x55c5ab1d3430" astParent="0x55c5aac5d2a0"/>
+    <token id="0x55c5aac5d2a0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="17" str="(" scope="0x55c5aac781c0" link="0x55c5ab0ad370" astOperand1="0x55c5aac62600" astOperand2="0x55c5aac6ed70" valueType-type="void"/>
+    <token id="0x55c5ab1c16e0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="18" str="volatile" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab1d14e0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="27" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aad6a0b0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="34" str="lpuart" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6ed70"/>
+    <token id="0x55c5aac6ed70" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="41" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aac5d2a0" astOperand1="0x55c5aad6a0b0" astOperand2="0x55c5aae3b890"/>
+    <token id="0x55c5aae3b890" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="42" str="uart" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacbc6f0" astParent="0x55c5aac6ed70" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0ad370" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="26" column="46" str=")" scope="0x55c5aac781c0" link="0x55c5aac5d2a0"/>
+    <token id="0x55c5ab0b2380" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="27" column="1" str="{" scope="0x55c5aac75e20" link="0x55c5aac77110"/>
+    <token id="0x55c5aace6990" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="28" column="5" str="uart" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aacbc6f0" astParent="0x55c5aace69f0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aace69f0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="28" column="9" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0aa910" astOperand1="0x55c5aace6990" astOperand2="0x55c5ab0aa8b0" originalName="->"/>
+    <token id="0x55c5ab0aa8b0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="28" column="11" str="ctrl" scope="0x55c5aac75e20" type="name" varId="5" astParent="0x55c5aace69f0"/>
+    <token id="0x55c5ab0aa910" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="28" column="16" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" astOperand1="0x55c5aace69f0" astOperand2="0x55c5aae549c0"/>
+    <token id="0x55c5aae549c0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="28" column="18" str="LPUART_CTRL_TE_BIT" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0aa910"/>
+    <token id="0x55c5aae54a20" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="28" column="36" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aac77110" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="29" column="1" str="}" scope="0x55c5aac75e20" link="0x55c5ab0b2380"/>
+    <token id="0x55c5aac6b850" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aad45640" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="6" str="uart_putc" scope="0x55c5aac781c0" type="name" function="0x55c5aac69ce0" astParent="0x55c5aace1690"/>
+    <token id="0x55c5aace1690" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="15" str="(" scope="0x55c5aac781c0" link="0x55c5aac7b350" astOperand1="0x55c5aad45640" astOperand2="0x55c5aac755c0" valueType-type="void"/>
+    <token id="0x55c5aace17b0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="16" str="volatile" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab1d1730" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="25" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab1d1790" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="32" str="lpuart" scope="0x55c5aac781c0" type="name" astParent="0x55c5aace3b20"/>
+    <token id="0x55c5aace3b20" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="39" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aac755c0" astOperand1="0x55c5ab1d1790" astOperand2="0x55c5aace3c40"/>
+    <token id="0x55c5aace3c40" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="40" str="uart" scope="0x55c5aac781c0" type="name" varId="6" variable="0x55c5aacbc7d0" astParent="0x55c5aace3b20" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac755c0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="44" str="," scope="0x55c5aac781c0" astParent="0x55c5aace1690" astOperand1="0x55c5aace3b20" astOperand2="0x55c5aac7b230"/>
+    <token id="0x55c5aac75620" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="46" str="char" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac7b230" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="51" str="c" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aac62680" astParent="0x55c5aac755c0" valueType-type="char" valueType-sign="signed"/>
+    <token id="0x55c5aac7b350" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="31" column="52" str=")" scope="0x55c5aac781c0" link="0x55c5aace1690"/>
+    <token id="0x55c5aaf87fd0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="32" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aace2210"/>
+    <token id="0x55c5aaf880f0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="5" str="while" scope="0x55c5aac785a0" type="name" astParent="0x55c5aaf88210"/>
+    <token id="0x55c5aaf88210" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="11" str="(" scope="0x55c5aac785a0" link="0x55c5aace0aa0" astOperand1="0x55c5aaf880f0" astOperand2="0x55c5aaca7c10"/>
+    <token id="0x55c5aaca7c10" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="12" str="!" scope="0x55c5aac785a0" type="op" isLogicalOp="True" astParent="0x55c5aaf88210" astOperand1="0x55c5aac66ac0" valueType-type="bool"/>
+    <token id="0x55c5aaca7d30" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="13" str="(" scope="0x55c5aac785a0" link="0x55c5aace0980"/>
+    <token id="0x55c5aaca7e50" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="14" str="uart" scope="0x55c5aac785a0" type="name" varId="6" variable="0x55c5aacbc7d0" astParent="0x55c5aac66880" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac66880" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="18" str="." scope="0x55c5aac785a0" astParent="0x55c5aac66ac0" astOperand1="0x55c5aaca7e50" astOperand2="0x55c5aac669a0" originalName="->"/>
+    <token id="0x55c5aac669a0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="20" str="stat" scope="0x55c5aac785a0" type="name" varId="8" astParent="0x55c5aac66880"/>
+    <token id="0x55c5aac66ac0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="25" str="&amp;" scope="0x55c5aac785a0" type="op" astParent="0x55c5aaca7c10" astOperand1="0x55c5aac66880" astOperand2="0x55c5aace0860"/>
+    <token id="0x55c5aace0860" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="27" str="LPUART_STAT_TDRE_BIT" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac66ac0"/>
+    <token id="0x55c5aace0980" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="47" str=")" scope="0x55c5aac785a0" link="0x55c5aaca7d30"/>
+    <token id="0x55c5aace0aa0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="48" str=")" scope="0x55c5aac785a0" link="0x55c5aaf88210"/>
+    <token id="0x55c5ab0b2970" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="33" column="0" str="{" scope="0x55c5aac7b730" link="0x55c5ab0b2a90"/>
+    <token id="0x55c5aac52720" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="34" column="9" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0b2a90" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="34" column="0" str="}" scope="0x55c5aac7b730" link="0x55c5ab0b2970"/>
+    <token id="0x55c5aac52840" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="35" column="5" str="uart" scope="0x55c5aac785a0" type="name" varId="6" variable="0x55c5aacbc7d0" astParent="0x55c5aac52960" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac52960" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="35" column="9" str="." scope="0x55c5aac785a0" astParent="0x55c5aac731f0" astOperand1="0x55c5aac52840" astOperand2="0x55c5aac529c0" originalName="->"/>
+    <token id="0x55c5aac529c0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="35" column="11" str="data" scope="0x55c5aac785a0" type="name" varId="9" astParent="0x55c5aac52960"/>
+    <token id="0x55c5aac731f0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="35" column="16" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac52960" astOperand2="0x55c5aac73310"/>
+    <token id="0x55c5aac73310" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="35" column="18" str="c" scope="0x55c5aac785a0" type="name" varId="7" variable="0x55c5aac62680" astParent="0x55c5aac731f0" valueType-type="char" valueType-sign="signed"/>
+    <token id="0x55c5aace20f0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="35" column="19" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aace2210" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="36" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aaf87fd0"/>
+    <token id="0x55c5aace2330" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aace2450" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="6" str="uart_puts" scope="0x55c5aac781c0" type="name" function="0x55c5aac698e0" astParent="0x55c5aac5d510"/>
+    <token id="0x55c5aac5d510" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="15" str="(" scope="0x55c5aac781c0" link="0x55c5aac72eb0" astOperand1="0x55c5aace2450" astOperand2="0x55c5aac65230" valueType-type="void"/>
+    <token id="0x55c5aac5d630" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="16" str="volatile" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac5d750" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="25" str="struct" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0ad920" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="32" str="lpuart" scope="0x55c5aac781c0" type="name" astParent="0x55c5ab0ada40"/>
+    <token id="0x55c5ab0ada40" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="39" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aac65230" astOperand1="0x55c5ab0ad920" astOperand2="0x55c5ab0adb60"/>
+    <token id="0x55c5ab0adb60" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="40" str="uart" scope="0x55c5aac781c0" type="name" varId="10" variable="0x55c5aac56050" astParent="0x55c5ab0ada40" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac65230" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="44" str="," scope="0x55c5aac781c0" astParent="0x55c5aac5d510" astOperand1="0x55c5ab0ada40" astOperand2="0x55c5aac72c70"/>
+    <token id="0x55c5aac65470" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="0" str="const" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac65350" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="46" str="char" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac72c70"/>
+    <token id="0x55c5aac72c70" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="57" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aac65230" astOperand1="0x55c5aac65350" astOperand2="0x55c5aac72d90"/>
+    <token id="0x55c5aac72d90" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="58" str="str" scope="0x55c5aac781c0" type="name" varId="11" variable="0x55c5aac74e80" astParent="0x55c5aac72c70" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac72eb0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="38" column="61" str=")" scope="0x55c5aac781c0" link="0x55c5aac5d510"/>
+    <token id="0x55c5aac55da0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="39" column="1" str="{" scope="0x55c5aac76850" link="0x55c5aac654d0"/>
+    <token id="0x55c5aac55ec0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="40" column="5" str="while" scope="0x55c5aac76850" type="name" astParent="0x55c5aac55fe0"/>
+    <token id="0x55c5aac55fe0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="40" column="11" str="(" scope="0x55c5aac76850" link="0x55c5aaca91e0" astOperand1="0x55c5aac55ec0" astOperand2="0x55c5aaca8fa0"/>
+    <token id="0x55c5aaca8fa0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="40" column="12" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aac55fe0" astOperand1="0x55c5aaca90c0" valueType-type="char" valueType-sign="signed" valueType-constness="1"/>
+    <token id="0x55c5aaca90c0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="40" column="13" str="str" scope="0x55c5aac76850" type="name" varId="11" variable="0x55c5aac74e80" astParent="0x55c5aaca8fa0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aaca91e0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="40" column="16" str=")" scope="0x55c5aac76850" link="0x55c5aac55fe0"/>
+    <token id="0x55c5aace78c0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="40" column="18" str="{" scope="0x55c5aacbc050" link="0x55c5aac5ac60"/>
+    <token id="0x55c5aace79e0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="9" str="uart_putc" scope="0x55c5aacbc050" type="name" function="0x55c5aac69ce0" astParent="0x55c5aace7b00"/>
+    <token id="0x55c5aace7b00" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="18" str="(" scope="0x55c5aacbc050" link="0x55c5aac5aa20" astOperand1="0x55c5aace79e0" astOperand2="0x55c5ab0b2510" valueType-type="void"/>
+    <token id="0x55c5aac5d7b0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="19" str="uart" scope="0x55c5aacbc050" type="name" varId="10" variable="0x55c5aac56050" astParent="0x55c5ab0b2510" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0b2510" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="23" str="," scope="0x55c5aacbc050" astParent="0x55c5aace7b00" astOperand1="0x55c5aac5d7b0" astOperand2="0x55c5ab0b2630"/>
+    <token id="0x55c5ab0b2630" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="25" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5ab0b2510" astOperand1="0x55c5ab0adbc0" valueType-type="char" valueType-sign="signed" valueType-constness="1"/>
+    <token id="0x55c5ab0b2750" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="26" str="str" scope="0x55c5aacbc050" type="name" varId="11" variable="0x55c5aac74e80" astParent="0x55c5ab0adbc0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5ab0adbc0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="29" str="++" scope="0x55c5aacbc050" type="op" astParent="0x55c5ab0b2630" astOperand1="0x55c5ab0b2750" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac5aa20" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="31" str=")" scope="0x55c5aacbc050" link="0x55c5aace7b00"/>
+    <token id="0x55c5aac5ab40" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="41" column="32" str=";" scope="0x55c5aacbc050"/>
+    <token id="0x55c5aac5ac60" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="42" column="5" str="}" scope="0x55c5aacbc050" link="0x55c5aace78c0"/>
+    <token id="0x55c5aac654d0" file="src/platform/drivers/nxp_uart/nxp_uart.c" linenr="43" column="1" str="}" scope="0x55c5aac76850" link="0x55c5aac55da0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac781c0" type="Global">
+      <functionList>
+        <function id="0x55c5aac69e20" tokenDef="0x55c5ab1d33a0" name="uart_init" type="Function">
+          <arg nr="1" variable="0x55c5aace4080"/>
+        </function>
+        <function id="0x55c5ab1d3430" tokenDef="0x55c5aac62600" name="uart_enable" type="Function">
+          <arg nr="1" variable="0x55c5aacbc6f0"/>
+        </function>
+        <function id="0x55c5aac69ce0" tokenDef="0x55c5aad45640" name="uart_putc" type="Function">
+          <arg nr="1" variable="0x55c5aacbc7d0"/>
+          <arg nr="2" variable="0x55c5aac62680"/>
+        </function>
+        <function id="0x55c5aac698e0" tokenDef="0x55c5aace2450" name="uart_puts" type="Function">
+          <arg nr="1" variable="0x55c5aac56050"/>
+          <arg nr="2" variable="0x55c5aac74e80"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac789a0" type="Function" className="uart_init" bodyStart="0x55c5aac78530" bodyEnd="0x55c5aace6620" nestedIn="0x55c5aac781c0" function="0x55c5aac69e20"/>
+    <scope id="0x55c5aac75e20" type="Function" className="uart_enable" bodyStart="0x55c5ab0b2380" bodyEnd="0x55c5aac77110" nestedIn="0x55c5aac781c0" function="0x55c5ab1d3430"/>
+    <scope id="0x55c5aac785a0" type="Function" className="uart_putc" bodyStart="0x55c5aaf87fd0" bodyEnd="0x55c5aace2210" nestedIn="0x55c5aac781c0" function="0x55c5aac69ce0"/>
+    <scope id="0x55c5aac7b730" type="While" bodyStart="0x55c5ab0b2970" bodyEnd="0x55c5ab0b2a90" nestedIn="0x55c5aac785a0"/>
+    <scope id="0x55c5aac76850" type="Function" className="uart_puts" bodyStart="0x55c5aac55da0" bodyEnd="0x55c5aac654d0" nestedIn="0x55c5aac781c0" function="0x55c5aac698e0"/>
+    <scope id="0x55c5aacbc050" type="While" bodyStart="0x55c5aace78c0" bodyEnd="0x55c5aac5ac60" nestedIn="0x55c5aac76850"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac56050" nameToken="0x55c5ab0adb60" typeStartToken="0x55c5ab0ad920" typeEndToken="0x55c5ab0ada40" access="Argument" scope="0x55c5aac76850" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac62680" nameToken="0x55c5aac7b230" typeStartToken="0x55c5aac75620" typeEndToken="0x55c5aac75620" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac74e80" nameToken="0x55c5aac72d90" typeStartToken="0x55c5aac65350" typeEndToken="0x55c5aac72c70" access="Argument" scope="0x55c5aac76850" constness="1" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacbc6f0" nameToken="0x55c5aae3b890" typeStartToken="0x55c5aad6a0b0" typeEndToken="0x55c5aac6ed70" access="Argument" scope="0x55c5aac75e20" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacbc7d0" nameToken="0x55c5aace3c40" typeStartToken="0x55c5ab1d1790" typeEndToken="0x55c5aace3b20" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace4080" nameToken="0x55c5aac6f480" typeStartToken="0x55c5aac5cae0" typeEndToken="0x55c5aac5cb40" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+  </valueflow>
+</dump>
+</dumps>

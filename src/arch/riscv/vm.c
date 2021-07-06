@@ -32,9 +32,10 @@ void vm_arch_init(vm_t *vm, const vm_config_t *config)
     vplic_init(vm, platform.arch.plic_base);
 }
 
-void vcpu_arch_init(vcpu_t *vcpu, vm_t *vm) {
+void vcpu_arch_init(vcpu_t *vcpu, vm_t *vm)
+{
     vcpu->arch.sbi_ctx.lock = SPINLOCK_INITVAL;
-    vcpu->arch.sbi_ctx.state = vcpu->id == 0 ?  STARTED : STOPPED;
+    vcpu->arch.sbi_ctx.state = vcpu->id == 0 ? STARTED : STOPPED;
 }
 
 void vcpu_arch_reset(vcpu_t *vcpu, uint64_t entry)
@@ -94,76 +95,93 @@ static int find_max_alignment(uintptr_t addr)
     return 1;
 }
 
-static inline uint64_t hlvb(uintptr_t addr){
+static inline uint64_t hlvb(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x30, %0, %1, x0\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x30, %0, %1, x0\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-static inline uint64_t hlvbu(uintptr_t addr){
+static inline uint64_t hlvbu(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x30, %0, %1, x1\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x30, %0, %1, x1\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-
-static inline uint64_t hlvh(uintptr_t addr){
+static inline uint64_t hlvh(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x32, %0, %1, x0\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x32, %0, %1, x0\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-static inline uint64_t hlvhu(uintptr_t addr){
+static inline uint64_t hlvhu(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x32, %0, %1, x1\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x32, %0, %1, x1\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-static inline uint64_t hlvxhu(uintptr_t addr){
+static inline uint64_t hlvxhu(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x32, %0, %1, x3\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x32, %0, %1, x3\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-uint64_t hlvw(uintptr_t addr){
+uint64_t hlvw(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x34, %0, %1, x0\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x34, %0, %1, x0\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-static inline uint64_t hlvwu(uintptr_t addr){
+static inline uint64_t hlvwu(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x34, %0, %1, x1\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x34, %0, %1, x1\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-uint64_t hlvxwu(uintptr_t addr){
+uint64_t hlvxwu(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x34, %0, %1, x3\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x34, %0, %1, x3\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
-static inline uint64_t hlvd(uintptr_t addr){
+static inline uint64_t hlvd(uintptr_t addr)
+{
     uint64_t value;
-    asm volatile(
-        ".insn r 0x73, 0x4, 0x36, %0, %1, x0\n\t"
-        : "=r"(value): "r"(addr) : "memory");
+    asm volatile(".insn r 0x73, 0x4, 0x36, %0, %1, x0\n\t"
+                 : "=r"(value)
+                 : "r"(addr)
+                 : "memory");
     return value;
 }
 
@@ -199,43 +217,43 @@ static inline uint64_t hlvd(uintptr_t addr){
         }                                                                    \
     })
 
-
 bool vm_readmem(vm_t *vm, void *dest, uintptr_t vmaddr, size_t n, bool exec)
 {
-    if(n == 0) return true;
+    if (n == 0) return true;
 
     if (vm == cpu.vcpu->vm) {
         while (n > 0 && !cpu.arch.hlv_except) {
             int width = find_max_alignment(((uintptr_t)dest) | vmaddr);
-            while(width > n) width = PPOT(width);
+            while (width > n) width = PPOT(width);
             /**
              * You can only load aligned halfword or word instructions.
              */
-            if(exec && width == 8) width = 4;
-            if(exec && width == 1) break;
+            if (exec && width == 8) width = 4;
+            if (exec && width == 1) break;
             size_t count = n / width;
             for (int i = 0; i < count; i++) {
-                if(exec) VM_LOAD_EXEC(width, dest, vmaddr);
-                else VM_LOAD(width, dest, vmaddr);
+                if (exec)
+                    VM_LOAD_EXEC(width, dest, vmaddr);
+                else
+                    VM_LOAD(width, dest, vmaddr);
                 dest += width;
                 vmaddr += width;
             }
             n -= (count * width);
         }
-    } 
+    }
 
     bool hlv_except = cpu.arch.hlv_except;
-    cpu.arch.hlv_except = false; 
+    cpu.arch.hlv_except = false;
 
     return n == 0 && !hlv_except;
 }
 
-void vcpu_arch_run(vcpu_t *vcpu){
-
-    if(vcpu->arch.sbi_ctx.state == STARTED){
+void vcpu_arch_run(vcpu_t *vcpu)
+{
+    if (vcpu->arch.sbi_ctx.state == STARTED) {
         vcpu_arch_entry();
     } else {
         cpu_idle();
-    }    
-
+    }
 }

@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/platform/tx2/tx2_desc.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *      Gero Schwaericke &lt;gero.schwaericke@tum.de&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;platform.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="struct"/>
+    <tok fileIndex="0" linenr="19" column="8" str="platform_desc"/>
+    <tok fileIndex="0" linenr="19" column="22" str="platform"/>
+    <tok fileIndex="0" linenr="19" column="31" str="="/>
+    <tok fileIndex="0" linenr="19" column="33" str="{"/>
+    <tok fileIndex="0" linenr="20" column="5" str="."/>
+    <tok fileIndex="0" linenr="20" column="6" str="cpu_num"/>
+    <tok fileIndex="0" linenr="20" column="14" str="="/>
+    <tok fileIndex="0" linenr="20" column="16" str="6"/>
+    <tok fileIndex="0" linenr="20" column="17" str=","/>
+    <tok fileIndex="0" linenr="21" column="5" str="."/>
+    <tok fileIndex="0" linenr="21" column="6" str="region_num"/>
+    <tok fileIndex="0" linenr="21" column="17" str="="/>
+    <tok fileIndex="0" linenr="21" column="19" str="1"/>
+    <tok fileIndex="0" linenr="21" column="20" str=","/>
+    <tok fileIndex="0" linenr="22" column="5" str="."/>
+    <tok fileIndex="0" linenr="22" column="6" str="regions"/>
+    <tok fileIndex="0" linenr="22" column="14" str="="/>
+    <tok fileIndex="0" linenr="23" column="9" str="("/>
+    <tok fileIndex="0" linenr="23" column="10" str="struct"/>
+    <tok fileIndex="0" linenr="23" column="17" str="mem_region"/>
+    <tok fileIndex="0" linenr="23" column="27" str="["/>
+    <tok fileIndex="0" linenr="23" column="28" str="]"/>
+    <tok fileIndex="0" linenr="23" column="29" str=")"/>
+    <tok fileIndex="0" linenr="23" column="30" str="{"/>
+    <tok fileIndex="0" linenr="24" column="13" str="{"/>
+    <tok fileIndex="0" linenr="24" column="14" str="."/>
+    <tok fileIndex="0" linenr="24" column="15" str="base"/>
+    <tok fileIndex="0" linenr="24" column="20" str="="/>
+    <tok fileIndex="0" linenr="24" column="22" str="0x80000000"/>
+    <tok fileIndex="0" linenr="24" column="32" str=","/>
+    <tok fileIndex="0" linenr="24" column="34" str="."/>
+    <tok fileIndex="0" linenr="24" column="35" str="size"/>
+    <tok fileIndex="0" linenr="24" column="40" str="="/>
+    <tok fileIndex="0" linenr="24" column="42" str="0x200000000"/>
+    <tok fileIndex="0" linenr="24" column="53" str="}"/>
+    <tok fileIndex="0" linenr="24" column="54" str=","/>
+    <tok fileIndex="0" linenr="25" column="9" str="}"/>
+    <tok fileIndex="0" linenr="25" column="10" str=","/>
+    <tok fileIndex="0" linenr="27" column="5" str="."/>
+    <tok fileIndex="0" linenr="27" column="6" str="console"/>
+    <tok fileIndex="0" linenr="27" column="14" str="="/>
+    <tok fileIndex="0" linenr="27" column="16" str="{"/>
+    <tok fileIndex="0" linenr="27" column="17" str="."/>
+    <tok fileIndex="0" linenr="27" column="18" str="base"/>
+    <tok fileIndex="0" linenr="27" column="23" str="="/>
+    <tok fileIndex="0" linenr="27" column="25" str="0x03100000"/>
+    <tok fileIndex="0" linenr="27" column="35" str="}"/>
+    <tok fileIndex="0" linenr="27" column="36" str=","/>
+    <tok fileIndex="0" linenr="29" column="5" str="."/>
+    <tok fileIndex="0" linenr="29" column="6" str="arch"/>
+    <tok fileIndex="0" linenr="29" column="11" str="="/>
+    <tok fileIndex="0" linenr="29" column="13" str="{"/>
+    <tok fileIndex="0" linenr="29" column="14" str="."/>
+    <tok fileIndex="0" linenr="29" column="15" str="gic"/>
+    <tok fileIndex="0" linenr="29" column="19" str="="/>
+    <tok fileIndex="0" linenr="29" column="21" str="{"/>
+    <tok fileIndex="0" linenr="29" column="22" str="."/>
+    <tok fileIndex="0" linenr="29" column="23" str="gicd_addr"/>
+    <tok fileIndex="0" linenr="29" column="33" str="="/>
+    <tok fileIndex="0" linenr="29" column="35" str="0x03881000"/>
+    <tok fileIndex="0" linenr="29" column="45" str=","/>
+    <tok fileIndex="0" linenr="30" column="22" str="."/>
+    <tok fileIndex="0" linenr="30" column="23" str="gicc_addr"/>
+    <tok fileIndex="0" linenr="30" column="33" str="="/>
+    <tok fileIndex="0" linenr="30" column="35" str="0x03882000"/>
+    <tok fileIndex="0" linenr="30" column="45" str=","/>
+    <tok fileIndex="0" linenr="31" column="22" str="."/>
+    <tok fileIndex="0" linenr="31" column="23" str="gich_addr"/>
+    <tok fileIndex="0" linenr="31" column="33" str="="/>
+    <tok fileIndex="0" linenr="31" column="35" str="0x03884000"/>
+    <tok fileIndex="0" linenr="31" column="45" str=","/>
+    <tok fileIndex="0" linenr="32" column="22" str="."/>
+    <tok fileIndex="0" linenr="32" column="23" str="gicv_addr"/>
+    <tok fileIndex="0" linenr="32" column="33" str="="/>
+    <tok fileIndex="0" linenr="32" column="35" str="0x03886000"/>
+    <tok fileIndex="0" linenr="32" column="45" str=","/>
+    <tok fileIndex="0" linenr="33" column="22" str="."/>
+    <tok fileIndex="0" linenr="33" column="23" str="maintenance_id"/>
+    <tok fileIndex="0" linenr="33" column="38" str="="/>
+    <tok fileIndex="0" linenr="33" column="40" str="25"/>
+    <tok fileIndex="0" linenr="33" column="42" str="}"/>
+    <tok fileIndex="0" linenr="33" column="43" str=","/>
+    <tok fileIndex="0" linenr="35" column="14" str="."/>
+    <tok fileIndex="0" linenr="35" column="15" str="clusters"/>
+    <tok fileIndex="0" linenr="35" column="24" str="="/>
+    <tok fileIndex="0" linenr="36" column="18" str="{"/>
+    <tok fileIndex="0" linenr="37" column="22" str="."/>
+    <tok fileIndex="0" linenr="37" column="23" str="num"/>
+    <tok fileIndex="0" linenr="37" column="27" str="="/>
+    <tok fileIndex="0" linenr="37" column="29" str="2"/>
+    <tok fileIndex="0" linenr="37" column="30" str=","/>
+    <tok fileIndex="0" linenr="38" column="22" str="."/>
+    <tok fileIndex="0" linenr="38" column="23" str="core_num"/>
+    <tok fileIndex="0" linenr="38" column="32" str="="/>
+    <tok fileIndex="0" linenr="38" column="34" str="("/>
+    <tok fileIndex="0" linenr="38" column="35" str="uint8_t"/>
+    <tok fileIndex="0" linenr="38" column="42" str="["/>
+    <tok fileIndex="0" linenr="38" column="43" str="]"/>
+    <tok fileIndex="0" linenr="38" column="44" str=")"/>
+    <tok fileIndex="0" linenr="38" column="45" str="{"/>
+    <tok fileIndex="0" linenr="38" column="46" str="2"/>
+    <tok fileIndex="0" linenr="38" column="47" str=","/>
+    <tok fileIndex="0" linenr="38" column="49" str="4"/>
+    <tok fileIndex="0" linenr="38" column="50" str="}"/>
+    <tok fileIndex="0" linenr="38" column="51" str=","/>
+    <tok fileIndex="0" linenr="39" column="18" str="}"/>
+    <tok fileIndex="0" linenr="39" column="19" str=","/>
+    <tok fileIndex="0" linenr="41" column="14" str="."/>
+    <tok fileIndex="0" linenr="41" column="15" str="smmu"/>
+    <tok fileIndex="0" linenr="41" column="20" str="="/>
+    <tok fileIndex="0" linenr="42" column="18" str="{"/>
+    <tok fileIndex="0" linenr="43" column="22" str="."/>
+    <tok fileIndex="0" linenr="43" column="23" str="base"/>
+    <tok fileIndex="0" linenr="43" column="28" str="="/>
+    <tok fileIndex="0" linenr="43" column="30" str="0x12000000"/>
+    <tok fileIndex="0" linenr="43" column="40" str=","/>
+    <tok fileIndex="0" linenr="44" column="22" str="."/>
+    <tok fileIndex="0" linenr="44" column="23" str="interrupt_id"/>
+    <tok fileIndex="0" linenr="44" column="36" str="="/>
+    <tok fileIndex="0" linenr="44" column="38" str="187"/>
+    <tok fileIndex="0" linenr="44" column="41" str=","/>
+    <tok fileIndex="0" linenr="45" column="22" str="."/>
+    <tok fileIndex="0" linenr="45" column="23" str="global_mask"/>
+    <tok fileIndex="0" linenr="45" column="35" str="="/>
+    <tok fileIndex="0" linenr="45" column="37" str="0x7f80"/>
+    <tok fileIndex="0" linenr="45" column="43" str=","/>
+    <tok fileIndex="0" linenr="46" column="18" str="}"/>
+    <tok fileIndex="0" linenr="46" column="19" str="}"/>
+    <tok fileIndex="0" linenr="48" column="1" str="}"/>
+    <tok fileIndex="0" linenr="48" column="2" str=";"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/platform/tx2/tx2_desc.c" linenr="17" str="#include &lt;platform.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aad45530" file="src/platform/tx2/tx2_desc.c" linenr="19" column="1" str="struct" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5ab0b0130" file="src/platform/tx2/tx2_desc.c" linenr="19" column="8" str="platform_desc" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaca8900" file="src/platform/tx2/tx2_desc.c" linenr="19" column="22" str="platform" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac5cb20" valueType-type="record"/>
+    <token id="0x55c5aac65e90" file="src/platform/tx2/tx2_desc.c" linenr="19" column="31" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aaca8da0" file="src/platform/tx2/tx2_desc.c" linenr="19" column="22" str="platform" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac5cb20" astParent="0x55c5ab0b1750" valueType-type="record"/>
+    <token id="0x55c5ab0b1750" file="src/platform/tx2/tx2_desc.c" linenr="19" column="31" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aaca8da0" astOperand2="0x55c5aac99500" valueType-type="record"/>
+    <token id="0x55c5aac99500" file="src/platform/tx2/tx2_desc.c" linenr="19" column="33" str="{" scope="0x55c5aac76850" link="0x55c5aaca8b60" astParent="0x55c5ab0b1750" astOperand1="0x55c5aafacd90"/>
+    <token id="0x55c5aaca2950" file="src/platform/tx2/tx2_desc.c" linenr="20" column="5" str="." scope="0x55c5aac76850" astParent="0x55c5aad3bf80" astOperand1="0x55c5aad3c0a0"/>
+    <token id="0x55c5aad3c0a0" file="src/platform/tx2/tx2_desc.c" linenr="20" column="6" str="cpu_num" scope="0x55c5aac76850" type="name" varId="2" astParent="0x55c5aaca2950"/>
+    <token id="0x55c5aad3bf80" file="src/platform/tx2/tx2_desc.c" linenr="20" column="14" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aad3be00" astOperand1="0x55c5aaca2950" astOperand2="0x55c5aace03c0"/>
+    <token id="0x55c5aace03c0" file="src/platform/tx2/tx2_desc.c" linenr="20" column="16" str="6" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aaca82e0" astParent="0x55c5aad3bf80" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad3be00" file="src/platform/tx2/tx2_desc.c" linenr="20" column="17" str="," scope="0x55c5aac76850" astParent="0x55c5aace3aa0" astOperand1="0x55c5aad3bf80" astOperand2="0x55c5ab1c1bf0"/>
+    <token id="0x55c5aac52c70" file="src/platform/tx2/tx2_desc.c" linenr="21" column="5" str="." scope="0x55c5aac76850" astParent="0x55c5ab1c1bf0" astOperand1="0x55c5aac78c00"/>
+    <token id="0x55c5aac78c00" file="src/platform/tx2/tx2_desc.c" linenr="21" column="6" str="region_num" scope="0x55c5aac76850" type="name" varId="3" astParent="0x55c5aac52c70"/>
+    <token id="0x55c5ab1c1bf0" file="src/platform/tx2/tx2_desc.c" linenr="21" column="17" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aad3be00" astOperand1="0x55c5aac52c70" astOperand2="0x55c5aad18870"/>
+    <token id="0x55c5aad18870" file="src/platform/tx2/tx2_desc.c" linenr="21" column="19" str="1" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac7a3f0" astParent="0x55c5ab1c1bf0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace3aa0" file="src/platform/tx2/tx2_desc.c" linenr="21" column="20" str="," scope="0x55c5aac76850" astParent="0x55c5aac59ed0" astOperand1="0x55c5aad3be00" astOperand2="0x55c5ab1d1fd0"/>
+    <token id="0x55c5aaca7900" file="src/platform/tx2/tx2_desc.c" linenr="22" column="5" str="." scope="0x55c5aac76850" astParent="0x55c5ab1d1fd0" astOperand1="0x55c5aaca3000"/>
+    <token id="0x55c5aaca3000" file="src/platform/tx2/tx2_desc.c" linenr="22" column="6" str="regions" scope="0x55c5aac76850" type="name" varId="4" astParent="0x55c5aaca7900"/>
+    <token id="0x55c5ab1d1fd0" file="src/platform/tx2/tx2_desc.c" linenr="22" column="14" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aace3aa0" astOperand1="0x55c5aaca7900" astOperand2="0x55c5aac65470"/>
+    <token id="0x55c5aac65470" file="src/platform/tx2/tx2_desc.c" linenr="23" column="9" str="(" scope="0x55c5aac76850" link="0x55c5aac74370" astParent="0x55c5ab1d1fd0" astOperand1="0x55c5ab0b1160"/>
+    <token id="0x55c5aaca91e0" file="src/platform/tx2/tx2_desc.c" linenr="23" column="10" str="struct" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac5ce00" file="src/platform/tx2/tx2_desc.c" linenr="23" column="17" str="mem_region" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aace0710" file="src/platform/tx2/tx2_desc.c" linenr="23" column="27" str="[" scope="0x55c5aac76850" link="0x55c5aac7a410"/>
+    <token id="0x55c5aac7a410" file="src/platform/tx2/tx2_desc.c" linenr="23" column="28" str="]" scope="0x55c5aac76850" link="0x55c5aace0710"/>
+    <token id="0x55c5aac74370" file="src/platform/tx2/tx2_desc.c" linenr="23" column="29" str=")" scope="0x55c5aac76850" link="0x55c5aac65470"/>
+    <token id="0x55c5ab0b1160" file="src/platform/tx2/tx2_desc.c" linenr="23" column="30" str="{" scope="0x55c5aac76850" link="0x55c5aace6600" astParent="0x55c5aac65470" astOperand1="0x55c5aaf88210"/>
+    <token id="0x55c5aaf88210" file="src/platform/tx2/tx2_desc.c" linenr="24" column="13" str="{" scope="0x55c5aac76850" link="0x55c5aacdf6c0" astParent="0x55c5ab0b1160" astOperand1="0x55c5aace2970"/>
+    <token id="0x55c5aae3b820" file="src/platform/tx2/tx2_desc.c" linenr="24" column="14" str="." scope="0x55c5aac76850" astParent="0x55c5ab0a1b30" astOperand1="0x55c5aac65e20"/>
+    <token id="0x55c5aac65e20" file="src/platform/tx2/tx2_desc.c" linenr="24" column="15" str="base" scope="0x55c5aac76850" type="name" astParent="0x55c5aae3b820"/>
+    <token id="0x55c5ab0a1b30" file="src/platform/tx2/tx2_desc.c" linenr="24" column="20" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aace2970" astOperand1="0x55c5aae3b820" astOperand2="0x55c5ab0b0a60"/>
+    <token id="0x55c5ab0b0a60" file="src/platform/tx2/tx2_desc.c" linenr="24" column="22" str="2147483648U" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac6d970" astParent="0x55c5ab0a1b30" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aace2970" file="src/platform/tx2/tx2_desc.c" linenr="24" column="32" str="," scope="0x55c5aac76850" astParent="0x55c5aaf88210" astOperand1="0x55c5ab0a1b30" astOperand2="0x55c5aac6ed70"/>
+    <token id="0x55c5aac66ac0" file="src/platform/tx2/tx2_desc.c" linenr="24" column="34" str="." scope="0x55c5aac76850" astParent="0x55c5aac6ed70" astOperand1="0x55c5ab0adb60"/>
+    <token id="0x55c5ab0adb60" file="src/platform/tx2/tx2_desc.c" linenr="24" column="35" str="size" scope="0x55c5aac76850" type="name" astParent="0x55c5aac66ac0"/>
+    <token id="0x55c5aac6ed70" file="src/platform/tx2/tx2_desc.c" linenr="24" column="40" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aace2970" astOperand1="0x55c5aac66ac0" astOperand2="0x55c5ab0ad600"/>
+    <token id="0x55c5ab0ad600" file="src/platform/tx2/tx2_desc.c" linenr="24" column="42" str="8589934592" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac6b970" astParent="0x55c5aac6ed70" valueType-type="long" valueType-sign="signed"/>
+    <token id="0x55c5aacdf6c0" file="src/platform/tx2/tx2_desc.c" linenr="24" column="53" str="}" scope="0x55c5aac76850" link="0x55c5aaf88210"/>
+    <token id="0x55c5ab0ad370" file="src/platform/tx2/tx2_desc.c" linenr="24" column="54" str="," scope="0x55c5aac76850"/>
+    <token id="0x55c5aace6600" file="src/platform/tx2/tx2_desc.c" linenr="25" column="9" str="}" scope="0x55c5aac76850" link="0x55c5ab0b1160"/>
+    <token id="0x55c5aac59ed0" file="src/platform/tx2/tx2_desc.c" linenr="25" column="10" str="," scope="0x55c5aac76850" astParent="0x55c5aafacd90" astOperand1="0x55c5aace3aa0" astOperand2="0x55c5ab0b22e0"/>
+    <token id="0x55c5aac5d280" file="src/platform/tx2/tx2_desc.c" linenr="27" column="5" str="." scope="0x55c5aac76850" astParent="0x55c5ab0b22e0" astOperand1="0x55c5ab0b2280"/>
+    <token id="0x55c5ab0b2280" file="src/platform/tx2/tx2_desc.c" linenr="27" column="6" str="console" scope="0x55c5aac76850" type="name" varId="5" astParent="0x55c5aac5d280"/>
+    <token id="0x55c5ab0b22e0" file="src/platform/tx2/tx2_desc.c" linenr="27" column="14" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aac59ed0" astOperand1="0x55c5aac5d280" astOperand2="0x55c5ab0aa930"/>
+    <token id="0x55c5ab0aa930" file="src/platform/tx2/tx2_desc.c" linenr="27" column="16" str="{" scope="0x55c5aac76850" link="0x55c5aafacc70" astParent="0x55c5ab0b22e0" astOperand1="0x55c5aac7bb00"/>
+    <token id="0x55c5ab0aa990" file="src/platform/tx2/tx2_desc.c" linenr="27" column="17" str="." scope="0x55c5aac76850" astParent="0x55c5aac7bb00" astOperand1="0x55c5aac7baa0"/>
+    <token id="0x55c5aac7baa0" file="src/platform/tx2/tx2_desc.c" linenr="27" column="18" str="base" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0aa990"/>
+    <token id="0x55c5aac7bb00" file="src/platform/tx2/tx2_desc.c" linenr="27" column="23" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5ab0aa930" astOperand1="0x55c5ab0aa990" astOperand2="0x55c5aacc3de0"/>
+    <token id="0x55c5aacc3de0" file="src/platform/tx2/tx2_desc.c" linenr="27" column="25" str="51380224" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aacba8f0" astParent="0x55c5aac7bb00" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aafacc70" file="src/platform/tx2/tx2_desc.c" linenr="27" column="35" str="}" scope="0x55c5aac76850" link="0x55c5ab0aa930"/>
+    <token id="0x55c5aafacd90" file="src/platform/tx2/tx2_desc.c" linenr="27" column="36" str="," scope="0x55c5aac76850" astParent="0x55c5aac99500" astOperand1="0x55c5aac59ed0" astOperand2="0x55c5ab1d1060"/>
+    <token id="0x55c5aac66670" file="src/platform/tx2/tx2_desc.c" linenr="29" column="5" str="." scope="0x55c5aac76850" astParent="0x55c5ab1d1060" astOperand1="0x55c5aac666d0"/>
+    <token id="0x55c5aac666d0" file="src/platform/tx2/tx2_desc.c" linenr="29" column="6" str="arch" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aac66670"/>
+    <token id="0x55c5ab1d1060" file="src/platform/tx2/tx2_desc.c" linenr="29" column="11" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aafacd90" astOperand1="0x55c5aac66670" astOperand2="0x55c5ab1d1180"/>
+    <token id="0x55c5ab1d1180" file="src/platform/tx2/tx2_desc.c" linenr="29" column="13" str="{" scope="0x55c5aac76850" link="0x55c5aaca8a40" astParent="0x55c5ab1d1060" astOperand1="0x55c5ab0b0510"/>
+    <token id="0x55c5aae54f20" file="src/platform/tx2/tx2_desc.c" linenr="29" column="14" str="." scope="0x55c5aac76850" astParent="0x55c5aace44f0" astOperand1="0x55c5aae54f80"/>
+    <token id="0x55c5aae54f80" file="src/platform/tx2/tx2_desc.c" linenr="29" column="15" str="gic" scope="0x55c5aac76850" type="name" astParent="0x55c5aae54f20"/>
+    <token id="0x55c5aace44f0" file="src/platform/tx2/tx2_desc.c" linenr="29" column="19" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aac7a040" astOperand1="0x55c5aae54f20" astOperand2="0x55c5aace4610"/>
+    <token id="0x55c5aace4610" file="src/platform/tx2/tx2_desc.c" linenr="29" column="21" str="{" scope="0x55c5aac76850" link="0x55c5aac79f20" astParent="0x55c5aace44f0" astOperand1="0x55c5aace4010"/>
+    <token id="0x55c5aac77be0" file="src/platform/tx2/tx2_desc.c" linenr="29" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aace08c0" astOperand1="0x55c5aace07a0"/>
+    <token id="0x55c5aace07a0" file="src/platform/tx2/tx2_desc.c" linenr="29" column="23" str="gicd_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aac77be0"/>
+    <token id="0x55c5aace08c0" file="src/platform/tx2/tx2_desc.c" linenr="29" column="33" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aaca7b50" astOperand1="0x55c5aac77be0" astOperand2="0x55c5aace09e0"/>
+    <token id="0x55c5aace09e0" file="src/platform/tx2/tx2_desc.c" linenr="29" column="35" str="59248640" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5ab1d14a0" astParent="0x55c5aace08c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca7b50" file="src/platform/tx2/tx2_desc.c" linenr="29" column="45" str="," scope="0x55c5aac76850" astParent="0x55c5aaccc200" astOperand1="0x55c5aace08c0" astOperand2="0x55c5aaccbfc0"/>
+    <token id="0x55c5aaca7c70" file="src/platform/tx2/tx2_desc.c" linenr="30" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aaccbfc0" astOperand1="0x55c5aaca7d90"/>
+    <token id="0x55c5aaca7d90" file="src/platform/tx2/tx2_desc.c" linenr="30" column="23" str="gicc_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aaca7c70"/>
+    <token id="0x55c5aaccbfc0" file="src/platform/tx2/tx2_desc.c" linenr="30" column="33" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aaca7b50" astOperand1="0x55c5aaca7c70" astOperand2="0x55c5aaccc0e0"/>
+    <token id="0x55c5aaccc0e0" file="src/platform/tx2/tx2_desc.c" linenr="30" column="35" str="59252736" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5ab1ce650" astParent="0x55c5aaccbfc0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccc200" file="src/platform/tx2/tx2_desc.c" linenr="30" column="45" str="," scope="0x55c5aac76850" astParent="0x55c5aac5d510" astOperand1="0x55c5aaca7b50" astOperand2="0x55c5aace22d0"/>
+    <token id="0x55c5aaccc320" file="src/platform/tx2/tx2_desc.c" linenr="31" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aace22d0" astOperand1="0x55c5aace21b0"/>
+    <token id="0x55c5aace21b0" file="src/platform/tx2/tx2_desc.c" linenr="31" column="23" str="gich_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aaccc320"/>
+    <token id="0x55c5aace22d0" file="src/platform/tx2/tx2_desc.c" linenr="31" column="33" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aaccc200" astOperand1="0x55c5aaccc320" astOperand2="0x55c5aace23f0"/>
+    <token id="0x55c5aace23f0" file="src/platform/tx2/tx2_desc.c" linenr="31" column="35" str="59260928" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aad43090" astParent="0x55c5aace22d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5d510" file="src/platform/tx2/tx2_desc.c" linenr="31" column="45" str="," scope="0x55c5aac76850" astParent="0x55c5aace4010" astOperand1="0x55c5aaccc200" astOperand2="0x55c5aace3dd0"/>
+    <token id="0x55c5aac5d630" file="src/platform/tx2/tx2_desc.c" linenr="32" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aace3dd0" astOperand1="0x55c5aac5d750"/>
+    <token id="0x55c5aac5d750" file="src/platform/tx2/tx2_desc.c" linenr="32" column="23" str="gicv_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5d630"/>
+    <token id="0x55c5aace3dd0" file="src/platform/tx2/tx2_desc.c" linenr="32" column="33" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aac5d510" astOperand1="0x55c5aac5d630" astOperand2="0x55c5aace3ef0"/>
+    <token id="0x55c5aace3ef0" file="src/platform/tx2/tx2_desc.c" linenr="32" column="35" str="59269120" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aaca88e0" astParent="0x55c5aace3dd0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace4010" file="src/platform/tx2/tx2_desc.c" linenr="32" column="45" str="," scope="0x55c5aac76850" astParent="0x55c5aace4610" astOperand1="0x55c5aac5d510" astOperand2="0x55c5ab0b04b0"/>
+    <token id="0x55c5ab0b0270" file="src/platform/tx2/tx2_desc.c" linenr="33" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5ab0b04b0" astOperand1="0x55c5ab0b0390"/>
+    <token id="0x55c5ab0b0390" file="src/platform/tx2/tx2_desc.c" linenr="33" column="23" str="maintenance_id" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0b0270"/>
+    <token id="0x55c5ab0b04b0" file="src/platform/tx2/tx2_desc.c" linenr="33" column="38" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aace4010" astOperand1="0x55c5ab0b0270" astOperand2="0x55c5aac79e00"/>
+    <token id="0x55c5aac79e00" file="src/platform/tx2/tx2_desc.c" linenr="33" column="40" str="25" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5ab0aafd0" astParent="0x55c5ab0b04b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac79f20" file="src/platform/tx2/tx2_desc.c" linenr="33" column="42" str="}" scope="0x55c5aac76850" link="0x55c5aace4610"/>
+    <token id="0x55c5aac7a040" file="src/platform/tx2/tx2_desc.c" linenr="33" column="43" str="," scope="0x55c5aac76850" astParent="0x55c5ab0b0510" astOperand1="0x55c5aace44f0" astOperand2="0x55c5aac55fe0"/>
+    <token id="0x55c5aac55da0" file="src/platform/tx2/tx2_desc.c" linenr="35" column="14" str="." scope="0x55c5aac76850" astParent="0x55c5aac55fe0" astOperand1="0x55c5aac55ec0"/>
+    <token id="0x55c5aac55ec0" file="src/platform/tx2/tx2_desc.c" linenr="35" column="15" str="clusters" scope="0x55c5aac76850" type="name" astParent="0x55c5aac55da0"/>
+    <token id="0x55c5aac55fe0" file="src/platform/tx2/tx2_desc.c" linenr="35" column="24" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aac7a040" astOperand1="0x55c5aac55da0" astOperand2="0x55c5aaca8410"/>
+    <token id="0x55c5aaca8410" file="src/platform/tx2/tx2_desc.c" linenr="36" column="18" str="{" scope="0x55c5aac76850" link="0x55c5ab0b2bb0" astParent="0x55c5aac55fe0" astOperand1="0x55c5aac5ac60"/>
+    <token id="0x55c5aaca8530" file="src/platform/tx2/tx2_desc.c" linenr="37" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aac5aa20" astOperand1="0x55c5aaca8650"/>
+    <token id="0x55c5aaca8650" file="src/platform/tx2/tx2_desc.c" linenr="37" column="23" str="num" scope="0x55c5aac76850" type="name" astParent="0x55c5aaca8530"/>
+    <token id="0x55c5aac5aa20" file="src/platform/tx2/tx2_desc.c" linenr="37" column="27" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aac5ac60" astOperand1="0x55c5aaca8530" astOperand2="0x55c5aac5ab40"/>
+    <token id="0x55c5aac5ab40" file="src/platform/tx2/tx2_desc.c" linenr="37" column="29" str="2" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aace3c80" astParent="0x55c5aac5aa20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5ac60" file="src/platform/tx2/tx2_desc.c" linenr="37" column="30" str="," scope="0x55c5aac76850" astParent="0x55c5aaca8410" astOperand1="0x55c5aac5aa20" astOperand2="0x55c5aace7b00"/>
+    <token id="0x55c5aace78c0" file="src/platform/tx2/tx2_desc.c" linenr="38" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aace7b00" astOperand1="0x55c5aace79e0"/>
+    <token id="0x55c5aace79e0" file="src/platform/tx2/tx2_desc.c" linenr="38" column="23" str="core_num" scope="0x55c5aac76850" type="name" astParent="0x55c5aace78c0"/>
+    <token id="0x55c5aace7b00" file="src/platform/tx2/tx2_desc.c" linenr="38" column="32" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aac5ac60" astOperand1="0x55c5aace78c0" astOperand2="0x55c5aace2450"/>
+    <token id="0x55c5aace2450" file="src/platform/tx2/tx2_desc.c" linenr="38" column="34" str="(" scope="0x55c5aac76850" link="0x55c5aac5d7b0" astParent="0x55c5aace7b00" astOperand1="0x55c5ab0b2510"/>
+    <token id="0x55c5ab1d18a0" file="src/platform/tx2/tx2_desc.c" linenr="38" column="35" str="uint8_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5ab1d19c0" file="src/platform/tx2/tx2_desc.c" linenr="38" column="42" str="[" scope="0x55c5aac76850" link="0x55c5ab1d1ae0"/>
+    <token id="0x55c5ab1d1ae0" file="src/platform/tx2/tx2_desc.c" linenr="38" column="43" str="]" scope="0x55c5aac76850" link="0x55c5ab1d19c0"/>
+    <token id="0x55c5aac5d7b0" file="src/platform/tx2/tx2_desc.c" linenr="38" column="44" str=")" scope="0x55c5aac76850" link="0x55c5aace2450"/>
+    <token id="0x55c5ab0b2510" file="src/platform/tx2/tx2_desc.c" linenr="38" column="45" str="{" scope="0x55c5aac76850" link="0x55c5ab0b2970" astParent="0x55c5aace2450" astOperand1="0x55c5ab0b2750"/>
+    <token id="0x55c5ab0b2630" file="src/platform/tx2/tx2_desc.c" linenr="38" column="46" str="2" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aace0240" astParent="0x55c5ab0b2750" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0b2750" file="src/platform/tx2/tx2_desc.c" linenr="38" column="47" str="," scope="0x55c5aac76850" astParent="0x55c5ab0b2510" astOperand1="0x55c5ab0b2630" astOperand2="0x55c5aace4070"/>
+    <token id="0x55c5aace4070" file="src/platform/tx2/tx2_desc.c" linenr="38" column="49" str="4" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac6f400" astParent="0x55c5ab0b2750" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0b2970" file="src/platform/tx2/tx2_desc.c" linenr="38" column="50" str="}" scope="0x55c5aac76850" link="0x55c5ab0b2510"/>
+    <token id="0x55c5ab0b2a90" file="src/platform/tx2/tx2_desc.c" linenr="38" column="51" str="," scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0b2bb0" file="src/platform/tx2/tx2_desc.c" linenr="39" column="18" str="}" scope="0x55c5aac76850" link="0x55c5aaca8410"/>
+    <token id="0x55c5ab0b0510" file="src/platform/tx2/tx2_desc.c" linenr="39" column="19" str="," scope="0x55c5aac76850" astParent="0x55c5ab1d1180" astOperand1="0x55c5aac7a040" astOperand2="0x55c5ab1d2520"/>
+    <token id="0x55c5ab1d22e0" file="src/platform/tx2/tx2_desc.c" linenr="41" column="14" str="." scope="0x55c5aac76850" astParent="0x55c5ab1d2520" astOperand1="0x55c5ab1d2400"/>
+    <token id="0x55c5ab1d2400" file="src/platform/tx2/tx2_desc.c" linenr="41" column="15" str="smmu" scope="0x55c5aac76850" type="name" astParent="0x55c5ab1d22e0"/>
+    <token id="0x55c5ab1d2520" file="src/platform/tx2/tx2_desc.c" linenr="41" column="20" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5ab0b0510" astOperand1="0x55c5ab1d22e0" astOperand2="0x55c5aac7a0a0"/>
+    <token id="0x55c5aac7a0a0" file="src/platform/tx2/tx2_desc.c" linenr="42" column="18" str="{" scope="0x55c5aac76850" link="0x55c5aacbcb00" astParent="0x55c5ab1d2520" astOperand1="0x55c5aaf8cdd0"/>
+    <token id="0x55c5aaca25b0" file="src/platform/tx2/tx2_desc.c" linenr="43" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aaca27f0" astOperand1="0x55c5aaca26d0"/>
+    <token id="0x55c5aaca26d0" file="src/platform/tx2/tx2_desc.c" linenr="43" column="23" str="base" scope="0x55c5aac76850" type="name" astParent="0x55c5aaca25b0"/>
+    <token id="0x55c5aaca27f0" file="src/platform/tx2/tx2_desc.c" linenr="43" column="28" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aad23d70" astOperand1="0x55c5aaca25b0" astOperand2="0x55c5aac56040"/>
+    <token id="0x55c5aac56040" file="src/platform/tx2/tx2_desc.c" linenr="43" column="30" str="301989888" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5ab1cfad0" astParent="0x55c5aaca27f0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad23d70" file="src/platform/tx2/tx2_desc.c" linenr="43" column="40" str="," scope="0x55c5aac76850" astParent="0x55c5aaf8cdd0" astOperand1="0x55c5aaca27f0" astOperand2="0x55c5aad240d0"/>
+    <token id="0x55c5aad23e90" file="src/platform/tx2/tx2_desc.c" linenr="44" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aad240d0" astOperand1="0x55c5aad23fb0"/>
+    <token id="0x55c5aad23fb0" file="src/platform/tx2/tx2_desc.c" linenr="44" column="23" str="interrupt_id" scope="0x55c5aac76850" type="name" astParent="0x55c5aad23e90"/>
+    <token id="0x55c5aad240d0" file="src/platform/tx2/tx2_desc.c" linenr="44" column="36" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aad23d70" astOperand1="0x55c5aad23e90" astOperand2="0x55c5aaf8ccb0"/>
+    <token id="0x55c5aaf8ccb0" file="src/platform/tx2/tx2_desc.c" linenr="44" column="38" str="187" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aaccb810" astParent="0x55c5aad240d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaf8cdd0" file="src/platform/tx2/tx2_desc.c" linenr="44" column="41" str="," scope="0x55c5aac76850" astParent="0x55c5aac7a0a0" astOperand1="0x55c5aad23d70" astOperand2="0x55c5aacbc7a0"/>
+    <token id="0x55c5aaf8cef0" file="src/platform/tx2/tx2_desc.c" linenr="45" column="22" str="." scope="0x55c5aac76850" astParent="0x55c5aacbc7a0" astOperand1="0x55c5aaf8d010"/>
+    <token id="0x55c5aaf8d010" file="src/platform/tx2/tx2_desc.c" linenr="45" column="23" str="global_mask" scope="0x55c5aac76850" type="name" astParent="0x55c5aaf8cef0"/>
+    <token id="0x55c5aacbc7a0" file="src/platform/tx2/tx2_desc.c" linenr="45" column="35" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aaf8cdd0" astOperand1="0x55c5aaf8cef0" astOperand2="0x55c5aacbc8c0"/>
+    <token id="0x55c5aacbc8c0" file="src/platform/tx2/tx2_desc.c" linenr="45" column="37" str="32640" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aace67d0" astParent="0x55c5aacbc7a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbc9e0" file="src/platform/tx2/tx2_desc.c" linenr="45" column="43" str="," scope="0x55c5aac76850"/>
+    <token id="0x55c5aacbcb00" file="src/platform/tx2/tx2_desc.c" linenr="46" column="18" str="}" scope="0x55c5aac76850" link="0x55c5aac7a0a0"/>
+    <token id="0x55c5aaca8a40" file="src/platform/tx2/tx2_desc.c" linenr="46" column="19" str="}" scope="0x55c5aac76850" link="0x55c5ab1d1180"/>
+    <token id="0x55c5aaca8b60" file="src/platform/tx2/tx2_desc.c" linenr="48" column="1" str="}" scope="0x55c5aac76850" link="0x55c5aac99500"/>
+    <token id="0x55c5aaca8c80" file="src/platform/tx2/tx2_desc.c" linenr="48" column="2" str=";" scope="0x55c5aac76850"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac76850" type="Global">
+      <varlist>
+        <var id="0x55c5aac5cb20"/>
+      </varlist>
+    </scope>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac5cb20" nameToken="0x55c5aaca8900" typeStartToken="0x55c5ab0b0130" typeEndToken="0x55c5ab0b0130" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aaca82e0">
+      <value intvalue="6" known="true"/>
+    </values>
+    <values id="0x55c5aac7a3f0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aac6d970">
+      <value intvalue="2147483648" known="true"/>
+    </values>
+    <values id="0x55c5aac6b970">
+      <value intvalue="8589934592" known="true"/>
+    </values>
+    <values id="0x55c5aacba8f0">
+      <value intvalue="51380224" known="true"/>
+    </values>
+    <values id="0x55c5ab1d14a0">
+      <value intvalue="59248640" known="true"/>
+    </values>
+    <values id="0x55c5ab1ce650">
+      <value intvalue="59252736" known="true"/>
+    </values>
+    <values id="0x55c5aad43090">
+      <value intvalue="59260928" known="true"/>
+    </values>
+    <values id="0x55c5aaca88e0">
+      <value intvalue="59269120" known="true"/>
+    </values>
+    <values id="0x55c5ab0aafd0">
+      <value intvalue="25" known="true"/>
+    </values>
+    <values id="0x55c5aace3c80">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0x55c5aace0240">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0x55c5aac6f400">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5ab1cfad0">
+      <value intvalue="301989888" known="true"/>
+    </values>
+    <values id="0x55c5aaccb810">
+      <value intvalue="187" known="true"/>
+    </values>
+    <values id="0x55c5aace67d0">
+      <value intvalue="32640" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

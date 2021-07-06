@@ -40,7 +40,7 @@ struct arch_platform {
         struct smmu_group {
             uint16_t group_mask;
             uint16_t group_id;
-        } *smmu_groups;
+        } * smmu_groups;
 
     } smmu;
 
@@ -58,5 +58,5 @@ struct platform_desc;
 uint64_t platform_arch_cpuid_to_mpdir(const struct platform_desc* plat,
                                       uint64_t cpuid);
 int64_t platform_arch_mpidr_to_cpuid(const struct platform_desc* plat,
-                                      uint64_t mpidr);
+                                     uint64_t mpidr);
 #endif /* __ARCH_PLATFORM_H__ */

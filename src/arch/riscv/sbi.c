@@ -47,9 +47,9 @@
 #define SBI_SEND_IPI_FID (0x0)
 
 #define SBI_EXTID_HSM (0x48534D)
-#define SBI_HART_START_FID  (0)
-#define SBI_HART_STOP_FID   (1)
-#define SBI_HART_STATUS_FID   (2)
+#define SBI_HART_START_FID (0)
+#define SBI_HART_STOP_FID (1)
+#define SBI_HART_STATUS_FID (2)
 
 #define SBI_EXTID_RFNC (0x52464E43)
 #define SBI_REMOTE_FENCE_I_FID (0)
@@ -195,20 +195,18 @@ struct sbiret sbi_remote_hfence_vvma(const unsigned long hart_mask,
 struct sbiret sbi_hart_start(unsigned long hartid, unsigned long start_addr,
                              unsigned long priv)
 {
-    return sbi_ecall(SBI_EXTID_HSM, SBI_HART_START_FID, hartid,
-                     start_addr, priv, 0, 0, 0);    
+    return sbi_ecall(SBI_EXTID_HSM, SBI_HART_START_FID, hartid, start_addr,
+                     priv, 0, 0, 0);
 }
 
 struct sbiret sbi_hart_stop()
 {
-    return sbi_ecall(SBI_EXTID_HSM, SBI_HART_STOP_FID, 0,
-                     0, 0, 0, 0, 0);   
+    return sbi_ecall(SBI_EXTID_HSM, SBI_HART_STOP_FID, 0, 0, 0, 0, 0, 0);
 }
 
 struct sbiret sbi_hart_status(unsigned long hartid)
 {
-    return sbi_ecall(SBI_EXTID_HSM, SBI_HART_STATUS_FID, hartid,
-                     0, 0, 0, 0, 0);   
+    return sbi_ecall(SBI_EXTID_HSM, SBI_HART_STATUS_FID, hartid, 0, 0, 0, 0, 0);
 }
 
 static unsigned long ext_table[] = {SBI_LGCY_EXTID_SETTIMER,
@@ -237,11 +235,11 @@ void sbi_msg_handler(uint32_t event, uint64_t data)
             break;
         case HART_START: {
             spin_lock(&cpu.vcpu->arch.sbi_ctx.lock);
-            if(cpu.vcpu->arch.sbi_ctx.state == START_PENDING) {
+            if (cpu.vcpu->arch.sbi_ctx.state == START_PENDING) {
                 vcpu_arch_reset(cpu.vcpu, cpu.vcpu->arch.sbi_ctx.start_addr);
-                vcpu_writereg(cpu.vcpu, REG_A1, cpu.vcpu->arch.sbi_ctx.priv); 
+                vcpu_writereg(cpu.vcpu, REG_A1, cpu.vcpu->arch.sbi_ctx.priv);
                 cpu.vcpu->arch.sbi_ctx.state = STARTED;
-            } 
+            }
             spin_unlock(&cpu.vcpu->arch.sbi_ctx.lock);
         } break;
         default:
@@ -284,8 +282,8 @@ struct sbiret sbi_ipi_handler(unsigned long fid)
     for (size_t i = 0; i < sizeof(hart_mask) * 8; i++) {
         if (bitmap_get((bitmap_t)&hart_mask, i)) {
             uint64_t vhart_id = hart_mask_base + i;
-            int64_t phart_id = vm_translate_to_pcpuid(cpu.vcpu->vm, vhart_id); 
-            if(phart_id >= 0) cpu_send_msg(phart_id, &msg);
+            int64_t phart_id = vm_translate_to_pcpuid(cpu.vcpu->vm, vhart_id);
+            if (phart_id >= 0) cpu_send_msg(phart_id, &msg);
         }
     }
 
@@ -330,9 +328,10 @@ struct sbiret sbi_rfence_handler(unsigned long fid)
     unsigned long asid = vcpu_readreg(cpu.vcpu, REG_A4);
 
     const size_t hart_mask_width = sizeof(hart_mask) * 8;
-    if ((hart_mask_base != 0) && ((hart_mask_base >= hart_mask_width) ||
-        (bitmap_find_nth((bitmap_t)&hart_mask, hart_mask_width, 1,
-                        hart_mask_width - hart_mask_base, true) > 0))) {
+    if ((hart_mask_base != 0) &&
+        ((hart_mask_base >= hart_mask_width) ||
+         (bitmap_find_nth((bitmap_t)&hart_mask, hart_mask_width, 1,
+                          hart_mask_width - hart_mask_base, true) > 0))) {
         WARNING("sbi invalid hart_mask");
         return (struct sbiret){SBI_ERR_INVALID_PARAM};
     }
@@ -350,7 +349,8 @@ struct sbiret sbi_rfence_handler(unsigned long fid)
             ret = sbi_remote_hfence_vvma(phart_mask, 0, start_addr, size);
             break;
         case SBI_REMOTE_SFENCE_VMA_ASID_FID:
-            ret = sbi_remote_hfence_vvma_asid(phart_mask, 0, start_addr, size, asid);
+            ret = sbi_remote_hfence_vvma_asid(phart_mask, 0, start_addr, size,
+                                              asid);
             break;
         default:
             ret.error = SBI_ERR_NOT_SUPPORTED;
@@ -359,18 +359,18 @@ struct sbiret sbi_rfence_handler(unsigned long fid)
     return ret;
 }
 
-struct sbiret sbi_hsm_start_handler() {
-    
+struct sbiret sbi_hsm_start_handler()
+{
     struct sbiret ret;
     uint64_t vhart_id = vcpu_readreg(cpu.vcpu, REG_A0);
-    
-    if(vhart_id == cpu.vcpu->id){
+
+    if (vhart_id == cpu.vcpu->id) {
         ret.error = SBI_ERR_ALREADY_AVAILABLE;
     } else {
         vcpu_t *vcpu = vm_get_vcpu(cpu.vcpu->vm, vhart_id);
-        if(vcpu == NULL) {
+        if (vcpu == NULL) {
             ret.error = SBI_ERR_INVALID_PARAM;
-        } else { 
+        } else {
             spin_lock(&vcpu->arch.sbi_ctx.lock);
             if (vcpu->arch.sbi_ctx.state == STARTED) {
                 ret.error = SBI_ERR_ALREADY_AVAILABLE;
@@ -385,29 +385,27 @@ struct sbiret sbi_hsm_start_handler() {
 
                 fence_sync_write();
 
-                cpu_msg_t msg = {
-                    .handler = SBI_MSG_ID,
-                    .event = HART_START,
-                    .data = 0xdeadbeef
-                };
+                cpu_msg_t msg = {.handler = SBI_MSG_ID,
+                                 .event = HART_START,
+                                 .data = 0xdeadbeef};
                 cpu_send_msg(vcpu->phys_id, &msg);
-               
-                ret.error = SBI_SUCCESS; 
+
+                ret.error = SBI_SUCCESS;
             }
             spin_unlock(&vcpu->arch.sbi_ctx.lock);
-       }
-   }
+        }
+    }
 
     return ret;
 }
 
-struct sbiret sbi_hsm_status_handler() {
-
+struct sbiret sbi_hsm_status_handler()
+{
     struct sbiret ret;
     uint64_t vhart_id = vcpu_readreg(cpu.vcpu, REG_A0);
     vcpu_t *vhart = vm_get_vcpu(cpu.vcpu->vm, vhart_id);
 
-    if(vhart != NULL) { 
+    if (vhart != NULL) {
         ret.error = SBI_SUCCESS;
         ret.value = vhart->arch.sbi_ctx.state;
     } else {
@@ -417,42 +415,41 @@ struct sbiret sbi_hsm_status_handler() {
     return ret;
 }
 
-struct sbiret sbi_hsm_handler(unsigned long fid){
-
+struct sbiret sbi_hsm_handler(unsigned long fid)
+{
     struct sbiret ret;
 
-    switch(fid) {
+    switch (fid) {
         case SBI_HART_START_FID:
             ret = sbi_hsm_start_handler();
-        break;
+            break;
         case SBI_HART_STATUS_FID:
-            ret = sbi_hsm_status_handler(); 
-        break;
+            ret = sbi_hsm_status_handler();
+            break;
         default:
             ret.error = SBI_ERR_NOT_SUPPORTED;
-   }
+    }
 
-   return ret; 
+    return ret;
 }
 
-
-struct sbiret sbi_bao_handler(unsigned long fid){
-
+struct sbiret sbi_bao_handler(unsigned long fid)
+{
     struct sbiret ret;
 
     uint64_t arg0 = vcpu_readreg(cpu.vcpu, REG_A0);
     uint64_t arg1 = vcpu_readreg(cpu.vcpu, REG_A1);
     uint64_t arg2 = vcpu_readreg(cpu.vcpu, REG_A2);
 
-    switch(fid) {
+    switch (fid) {
         case HC_IPC:
-                ret.error = ipc_hypercall(arg0, arg1, arg2);
+            ret.error = ipc_hypercall(arg0, arg1, arg2);
             break;
         default:
             ret.error = -HC_E_INVAL_ID;
-   }
+    }
 
-   return ret;
+    return ret;
 }
 
 void sbi_lgcy_sendipi_handler()
@@ -506,7 +503,7 @@ void sbi_lgcy_rfence_handler(unsigned long extid)
     }
 }
 
-void sbi_lgcy_putchar_handler() 
+void sbi_lgcy_putchar_handler()
 {
     char c = (char)vcpu_readreg(cpu.vcpu, REG_A0);
     sbi_console_putchar(c);
@@ -534,8 +531,6 @@ void sbi_lgcy_handler(unsigned long extid)
                     extid);
     }
 }
-
-
 
 size_t sbi_vs_handler()
 {

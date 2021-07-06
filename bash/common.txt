@@ -49,49 +49,19 @@ function is_repo_build() {
 	return $?
 }
 
-# Prepares the source directory for building. This includes setting global
-# variables and workaronuds for different build environments.
-function init_build() {
-	##
-	## Find Hafnium's root directory.
-	##
-	ROOT_DIR="$(abs_path $(get_script_dir)/../..)"
-	# Temporary workaround for Repo builds. Check if there is a project
-	# folder specific to Repo builds in a parent directory. If it is, the
-	# root is further one level up.
-	if [ -d "${ROOT_DIR}/../.repo_manifest" ]
-	then
-		ROOT_DIR="$(dirname ${ROOT_DIR})"
-	fi
+# Returns absolute path to the directory containing the source file that called
+# this function.
+function get_script_dir() {
+	local caller_path="${BASH_SOURCE[1]}"
+	local caller_abs_path="$(abs_path $caller_path)"
+	dirname "$caller_abs_path"
+}
 
-	##
-	## Paths to tools
-	##
+function init_build() {
+	ROOT_DIR="$(abs_path $(get_script_dir)/../..)"
 	CLANG="${ROOT_DIR}/prebuilts/linux-x64/clang/bin/clang"
 	REPO="${ROOT_DIR}/prebuilts/generic/repo/repo"
 
-	##
-	## Workarounds for Fenxi+Repo builds.
-	##
-	if is_fenxi_build && is_repo_build
-	then
-		# Fenxi does not correctly initialize the `.repo` folder which
-		# causes `is_repo_dirty` checks to fail. We check out the
-		# manifest as one of the projects and use it to initialize the
-		# `.repo` folder here.
-		(cd "${ROOT_DIR}/.repo_manifest" && git branch master)
-		(cd "${ROOT_DIR}" && "${REPO}" init -u .repo_manifest)
-		# Fenxi does not support '<linkfile>' manifest tags. Parse the
-		# manifest and symlink files here.
-		"$(get_script_dir)/symlink_repo.py" "${ROOT_DIR}"
-	fi
-
-	##
-	## Temporary workaround for b/152398137 (all symlinks dirty on Fenxi).
-	## The `is_fenxi_build` check does not work inside container builds.
-	## Use an environment variable with HAFNIUM_ prefix to pass that
-	## information into the container (run_in_container.sh propagates them).
-	##
 	if is_fenxi_build
 	then
 		export HAFNIUM_IGNORE_SUBMODULE_STATUS=true

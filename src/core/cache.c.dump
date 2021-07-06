@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/core/cache.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;cache.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="static"/>
+    <tok fileIndex="0" linenr="18" column="8" str="cache_t"/>
+    <tok fileIndex="0" linenr="18" column="16" str="cache_dscr"/>
+    <tok fileIndex="0" linenr="18" column="26" str=";"/>
+    <tok fileIndex="0" linenr="20" column="1" str="size_t"/>
+    <tok fileIndex="0" linenr="20" column="8" str="COLOR_NUM"/>
+    <tok fileIndex="0" linenr="20" column="18" str="="/>
+    <tok fileIndex="0" linenr="20" column="20" str="1"/>
+    <tok fileIndex="0" linenr="20" column="21" str=";"/>
+    <tok fileIndex="0" linenr="21" column="1" str="size_t"/>
+    <tok fileIndex="0" linenr="21" column="8" str="COLOR_SIZE"/>
+    <tok fileIndex="0" linenr="21" column="19" str="="/>
+    <tok fileIndex="0" linenr="21" column="21" str="1"/>
+    <tok fileIndex="0" linenr="21" column="22" str=";"/>
+    <tok fileIndex="0" linenr="23" column="1" str="static"/>
+    <tok fileIndex="0" linenr="23" column="8" str="void"/>
+    <tok fileIndex="0" linenr="23" column="13" str="cache_calc_colors"/>
+    <tok fileIndex="0" linenr="23" column="30" str="("/>
+    <tok fileIndex="0" linenr="23" column="31" str="cache_t"/>
+    <tok fileIndex="0" linenr="23" column="38" str="*"/>
+    <tok fileIndex="0" linenr="23" column="40" str="dscrp"/>
+    <tok fileIndex="0" linenr="23" column="45" str=","/>
+    <tok fileIndex="0" linenr="23" column="47" str="int"/>
+    <tok fileIndex="0" linenr="23" column="51" str="page_size"/>
+    <tok fileIndex="0" linenr="23" column="60" str=")"/>
+    <tok fileIndex="0" linenr="24" column="1" str="{"/>
+    <tok fileIndex="0" linenr="25" column="5" str="if"/>
+    <tok fileIndex="0" linenr="25" column="8" str="("/>
+    <tok fileIndex="0" linenr="25" column="9" str="dscrp"/>
+    <tok fileIndex="0" linenr="25" column="14" str="-&gt;"/>
+    <tok fileIndex="0" linenr="25" column="16" str="lvls"/>
+    <tok fileIndex="0" linenr="25" column="21" str="=="/>
+    <tok fileIndex="0" linenr="25" column="24" str="0"/>
+    <tok fileIndex="0" linenr="25" column="25" str=")"/>
+    <tok fileIndex="0" linenr="25" column="27" str="{"/>
+    <tok fileIndex="0" linenr="26" column="9" str="/* No cache? */"/>
+    <tok fileIndex="0" linenr="27" column="9" str="return"/>
+    <tok fileIndex="0" linenr="27" column="15" str=";"/>
+    <tok fileIndex="0" linenr="28" column="5" str="}"/>
+    <tok fileIndex="0" linenr="30" column="5" str="size_t"/>
+    <tok fileIndex="0" linenr="30" column="12" str="llc"/>
+    <tok fileIndex="0" linenr="30" column="16" str="="/>
+    <tok fileIndex="0" linenr="30" column="18" str="dscrp"/>
+    <tok fileIndex="0" linenr="30" column="23" str="-&gt;"/>
+    <tok fileIndex="0" linenr="30" column="25" str="min_shared_lvl"/>
+    <tok fileIndex="0" linenr="30" column="39" str=";"/>
+    <tok fileIndex="0" linenr="32" column="5" str="if"/>
+    <tok fileIndex="0" linenr="32" column="8" str="("/>
+    <tok fileIndex="0" linenr="32" column="9" str="("/>
+    <tok fileIndex="0" linenr="32" column="10" str="dscrp"/>
+    <tok fileIndex="0" linenr="32" column="15" str="-&gt;"/>
+    <tok fileIndex="0" linenr="32" column="17" str="type"/>
+    <tok fileIndex="0" linenr="32" column="21" str="["/>
+    <tok fileIndex="0" linenr="32" column="22" str="llc"/>
+    <tok fileIndex="0" linenr="32" column="25" str="]"/>
+    <tok fileIndex="0" linenr="32" column="27" str="!="/>
+    <tok fileIndex="0" linenr="32" column="30" str="UNIFIED"/>
+    <tok fileIndex="0" linenr="32" column="37" str=")"/>
+    <tok fileIndex="0" linenr="32" column="39" str="||"/>
+    <tok fileIndex="0" linenr="32" column="42" str="("/>
+    <tok fileIndex="0" linenr="32" column="43" str="dscrp"/>
+    <tok fileIndex="0" linenr="32" column="48" str="-&gt;"/>
+    <tok fileIndex="0" linenr="32" column="50" str="indexed"/>
+    <tok fileIndex="0" linenr="32" column="57" str="["/>
+    <tok fileIndex="0" linenr="32" column="58" str="llc"/>
+    <tok fileIndex="0" linenr="32" column="61" str="]"/>
+    <tok fileIndex="0" linenr="32" column="62" str="["/>
+    <tok fileIndex="0" linenr="32" column="63" str="0"/>
+    <tok fileIndex="0" linenr="32" column="64" str="]"/>
+    <tok fileIndex="0" linenr="32" column="66" str="!="/>
+    <tok fileIndex="0" linenr="32" column="69" str="PIPT"/>
+    <tok fileIndex="0" linenr="32" column="73" str=")"/>
+    <tok fileIndex="0" linenr="32" column="74" str=")"/>
+    <tok fileIndex="0" linenr="33" column="9" str="return"/>
+    <tok fileIndex="0" linenr="33" column="15" str=";"/>
+    <tok fileIndex="0" linenr="35" column="5" str="size_t"/>
+    <tok fileIndex="0" linenr="35" column="12" str="llc_way_size"/>
+    <tok fileIndex="0" linenr="35" column="25" str="="/>
+    <tok fileIndex="0" linenr="36" column="9" str="dscrp"/>
+    <tok fileIndex="0" linenr="36" column="14" str="-&gt;"/>
+    <tok fileIndex="0" linenr="36" column="16" str="numset"/>
+    <tok fileIndex="0" linenr="36" column="22" str="["/>
+    <tok fileIndex="0" linenr="36" column="23" str="llc"/>
+    <tok fileIndex="0" linenr="36" column="26" str="]"/>
+    <tok fileIndex="0" linenr="36" column="27" str="["/>
+    <tok fileIndex="0" linenr="36" column="28" str="UNIFIED"/>
+    <tok fileIndex="0" linenr="36" column="35" str="]"/>
+    <tok fileIndex="0" linenr="36" column="37" str="*"/>
+    <tok fileIndex="0" linenr="36" column="39" str="dscrp"/>
+    <tok fileIndex="0" linenr="36" column="44" str="-&gt;"/>
+    <tok fileIndex="0" linenr="36" column="46" str="line_size"/>
+    <tok fileIndex="0" linenr="36" column="55" str="["/>
+    <tok fileIndex="0" linenr="36" column="56" str="llc"/>
+    <tok fileIndex="0" linenr="36" column="59" str="]"/>
+    <tok fileIndex="0" linenr="36" column="60" str="["/>
+    <tok fileIndex="0" linenr="36" column="61" str="UNIFIED"/>
+    <tok fileIndex="0" linenr="36" column="68" str="]"/>
+    <tok fileIndex="0" linenr="36" column="69" str=";"/>
+    <tok fileIndex="0" linenr="38" column="5" str="size_t"/>
+    <tok fileIndex="0" linenr="38" column="12" str="flc_way_size"/>
+    <tok fileIndex="0" linenr="38" column="25" str="="/>
+    <tok fileIndex="0" linenr="38" column="27" str="0"/>
+    <tok fileIndex="0" linenr="38" column="28" str=";"/>
+    <tok fileIndex="0" linenr="39" column="5" str="if"/>
+    <tok fileIndex="0" linenr="39" column="8" str="("/>
+    <tok fileIndex="0" linenr="39" column="9" str="("/>
+    <tok fileIndex="0" linenr="39" column="10" str="dscrp"/>
+    <tok fileIndex="0" linenr="39" column="15" str="-&gt;"/>
+    <tok fileIndex="0" linenr="39" column="17" str="type"/>
+    <tok fileIndex="0" linenr="39" column="21" str="["/>
+    <tok fileIndex="0" linenr="39" column="22" str="0"/>
+    <tok fileIndex="0" linenr="39" column="23" str="]"/>
+    <tok fileIndex="0" linenr="39" column="25" str="!="/>
+    <tok fileIndex="0" linenr="39" column="28" str="UNIFIED"/>
+    <tok fileIndex="0" linenr="39" column="35" str=")"/>
+    <tok fileIndex="0" linenr="39" column="36" str=")"/>
+    <tok fileIndex="0" linenr="39" column="38" str="{"/>
+    <tok fileIndex="0" linenr="40" column="9" str="flc_way_size"/>
+    <tok fileIndex="0" linenr="40" column="22" str="="/>
+    <tok fileIndex="0" linenr="40" column="24" str="dscrp"/>
+    <tok fileIndex="0" linenr="40" column="29" str="-&gt;"/>
+    <tok fileIndex="0" linenr="40" column="31" str="numset"/>
+    <tok fileIndex="0" linenr="40" column="37" str="["/>
+    <tok fileIndex="0" linenr="40" column="38" str="0"/>
+    <tok fileIndex="0" linenr="40" column="39" str="]"/>
+    <tok fileIndex="0" linenr="40" column="40" str="["/>
+    <tok fileIndex="0" linenr="40" column="41" str="0"/>
+    <tok fileIndex="0" linenr="40" column="42" str="]"/>
+    <tok fileIndex="0" linenr="40" column="44" str="*"/>
+    <tok fileIndex="0" linenr="40" column="46" str="dscrp"/>
+    <tok fileIndex="0" linenr="40" column="51" str="-&gt;"/>
+    <tok fileIndex="0" linenr="40" column="53" str="line_size"/>
+    <tok fileIndex="0" linenr="40" column="62" str="["/>
+    <tok fileIndex="0" linenr="40" column="63" str="0"/>
+    <tok fileIndex="0" linenr="40" column="64" str="]"/>
+    <tok fileIndex="0" linenr="40" column="65" str="["/>
+    <tok fileIndex="0" linenr="40" column="66" str="0"/>
+    <tok fileIndex="0" linenr="40" column="67" str="]"/>
+    <tok fileIndex="0" linenr="40" column="68" str=";"/>
+    <tok fileIndex="0" linenr="41" column="9" str="size_t"/>
+    <tok fileIndex="0" linenr="41" column="16" str="flc_i_way_size"/>
+    <tok fileIndex="0" linenr="41" column="31" str="="/>
+    <tok fileIndex="0" linenr="41" column="33" str="dscrp"/>
+    <tok fileIndex="0" linenr="41" column="38" str="-&gt;"/>
+    <tok fileIndex="0" linenr="41" column="40" str="numset"/>
+    <tok fileIndex="0" linenr="41" column="46" str="["/>
+    <tok fileIndex="0" linenr="41" column="47" str="0"/>
+    <tok fileIndex="0" linenr="41" column="48" str="]"/>
+    <tok fileIndex="0" linenr="41" column="49" str="["/>
+    <tok fileIndex="0" linenr="41" column="50" str="1"/>
+    <tok fileIndex="0" linenr="41" column="51" str="]"/>
+    <tok fileIndex="0" linenr="41" column="53" str="*"/>
+    <tok fileIndex="0" linenr="41" column="55" str="dscrp"/>
+    <tok fileIndex="0" linenr="41" column="60" str="-&gt;"/>
+    <tok fileIndex="0" linenr="41" column="62" str="line_size"/>
+    <tok fileIndex="0" linenr="41" column="71" str="["/>
+    <tok fileIndex="0" linenr="41" column="72" str="0"/>
+    <tok fileIndex="0" linenr="41" column="73" str="]"/>
+    <tok fileIndex="0" linenr="41" column="74" str="["/>
+    <tok fileIndex="0" linenr="41" column="75" str="1"/>
+    <tok fileIndex="0" linenr="41" column="76" str="]"/>
+    <tok fileIndex="0" linenr="41" column="77" str=";"/>
+    <tok fileIndex="0" linenr="42" column="9" str="if"/>
+    <tok fileIndex="0" linenr="42" column="12" str="("/>
+    <tok fileIndex="0" linenr="42" column="13" str="("/>
+    <tok fileIndex="0" linenr="42" column="14" str="("/>
+    <tok fileIndex="0" linenr="42" column="15" str="dscrp"/>
+    <tok fileIndex="0" linenr="42" column="20" str="-&gt;"/>
+    <tok fileIndex="0" linenr="42" column="22" str="indexed"/>
+    <tok fileIndex="0" linenr="42" column="29" str="["/>
+    <tok fileIndex="0" linenr="42" column="30" str="0"/>
+    <tok fileIndex="0" linenr="42" column="31" str="]"/>
+    <tok fileIndex="0" linenr="42" column="32" str="["/>
+    <tok fileIndex="0" linenr="42" column="33" str="0"/>
+    <tok fileIndex="0" linenr="42" column="34" str="]"/>
+    <tok fileIndex="0" linenr="42" column="36" str="=="/>
+    <tok fileIndex="0" linenr="42" column="39" str="PIPT"/>
+    <tok fileIndex="0" linenr="42" column="43" str=")"/>
+    <tok fileIndex="0" linenr="42" column="45" str="||"/>
+    <tok fileIndex="0" linenr="43" column="14" str="("/>
+    <tok fileIndex="0" linenr="43" column="15" str="flc_i_way_size"/>
+    <tok fileIndex="0" linenr="43" column="30" str="&lt;"/>
+    <tok fileIndex="0" linenr="43" column="32" str="flc_way_size"/>
+    <tok fileIndex="0" linenr="43" column="44" str=")"/>
+    <tok fileIndex="0" linenr="43" column="45" str=")"/>
+    <tok fileIndex="0" linenr="43" column="47" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="44" column="13" str="("/>
+    <tok fileIndex="0" linenr="44" column="14" str="dscrp"/>
+    <tok fileIndex="0" linenr="44" column="19" str="-&gt;"/>
+    <tok fileIndex="0" linenr="44" column="21" str="indexed"/>
+    <tok fileIndex="0" linenr="44" column="28" str="["/>
+    <tok fileIndex="0" linenr="44" column="29" str="0"/>
+    <tok fileIndex="0" linenr="44" column="30" str="]"/>
+    <tok fileIndex="0" linenr="44" column="31" str="["/>
+    <tok fileIndex="0" linenr="44" column="32" str="1"/>
+    <tok fileIndex="0" linenr="44" column="33" str="]"/>
+    <tok fileIndex="0" linenr="44" column="35" str="=="/>
+    <tok fileIndex="0" linenr="44" column="38" str="PIPT"/>
+    <tok fileIndex="0" linenr="44" column="42" str=")"/>
+    <tok fileIndex="0" linenr="44" column="43" str=")"/>
+    <tok fileIndex="0" linenr="44" column="45" str="{"/>
+    <tok fileIndex="0" linenr="45" column="13" str="flc_way_size"/>
+    <tok fileIndex="0" linenr="45" column="26" str="="/>
+    <tok fileIndex="0" linenr="45" column="28" str="flc_i_way_size"/>
+    <tok fileIndex="0" linenr="45" column="42" str=";"/>
+    <tok fileIndex="0" linenr="46" column="9" str="}"/>
+    <tok fileIndex="0" linenr="47" column="5" str="}"/>
+    <tok fileIndex="0" linenr="49" column="5" str="size_t"/>
+    <tok fileIndex="0" linenr="49" column="12" str="llc_num_colors"/>
+    <tok fileIndex="0" linenr="49" column="27" str="="/>
+    <tok fileIndex="0" linenr="49" column="29" str="llc_way_size"/>
+    <tok fileIndex="0" linenr="49" column="42" str="/"/>
+    <tok fileIndex="0" linenr="49" column="44" str="page_size"/>
+    <tok fileIndex="0" linenr="49" column="53" str=";"/>
+    <tok fileIndex="0" linenr="50" column="5" str="size_t"/>
+    <tok fileIndex="0" linenr="50" column="12" str="flc_num_colors"/>
+    <tok fileIndex="0" linenr="50" column="27" str="="/>
+    <tok fileIndex="0" linenr="50" column="29" str="flc_way_size"/>
+    <tok fileIndex="0" linenr="50" column="42" str="/"/>
+    <tok fileIndex="0" linenr="50" column="44" str="page_size"/>
+    <tok fileIndex="0" linenr="50" column="53" str=";"/>
+    <tok fileIndex="0" linenr="52" column="5" str="COLOR_SIZE"/>
+    <tok fileIndex="0" linenr="52" column="16" str="="/>
+    <tok fileIndex="0" linenr="52" column="18" str="flc_num_colors"/>
+    <tok fileIndex="0" linenr="52" column="32" str=";"/>
+    <tok fileIndex="0" linenr="53" column="5" str="COLOR_NUM"/>
+    <tok fileIndex="0" linenr="53" column="15" str="="/>
+    <tok fileIndex="0" linenr="53" column="17" str="llc_num_colors"/>
+    <tok fileIndex="0" linenr="53" column="32" str="/"/>
+    <tok fileIndex="0" linenr="53" column="34" str="COLOR_SIZE"/>
+    <tok fileIndex="0" linenr="53" column="44" str=";"/>
+    <tok fileIndex="0" linenr="54" column="1" str="}"/>
+    <tok fileIndex="0" linenr="56" column="1" str="void"/>
+    <tok fileIndex="0" linenr="56" column="6" str="cache_enumerate"/>
+    <tok fileIndex="0" linenr="56" column="21" str="("/>
+    <tok fileIndex="0" linenr="56" column="22" str=")"/>
+    <tok fileIndex="0" linenr="57" column="1" str="{"/>
+    <tok fileIndex="0" linenr="58" column="5" str="cache_arch_enumerate"/>
+    <tok fileIndex="0" linenr="58" column="25" str="("/>
+    <tok fileIndex="0" linenr="58" column="26" str="&amp;"/>
+    <tok fileIndex="0" linenr="58" column="27" str="cache_dscr"/>
+    <tok fileIndex="0" linenr="58" column="37" str=")"/>
+    <tok fileIndex="0" linenr="58" column="38" str=";"/>
+    <tok fileIndex="0" linenr="59" column="5" str="cache_calc_colors"/>
+    <tok fileIndex="0" linenr="59" column="22" str="("/>
+    <tok fileIndex="0" linenr="59" column="23" str="&amp;"/>
+    <tok fileIndex="0" linenr="59" column="24" str="cache_dscr"/>
+    <tok fileIndex="0" linenr="59" column="34" str=","/>
+    <tok fileIndex="0" linenr="59" column="36" str="PAGE_SIZE"/>
+    <tok fileIndex="0" linenr="59" column="45" str=")"/>
+    <tok fileIndex="0" linenr="59" column="46" str=";"/>
+    <tok fileIndex="0" linenr="60" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/core/cache.c" linenr="16" str="#include &lt;cache.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aad65e70" file="src/core/cache.c" linenr="18" column="1" str="static" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aad66020" file="src/core/cache.c" linenr="18" column="8" str="cache_t" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aad65ed0" file="src/core/cache.c" linenr="18" column="16" str="cache_dscr" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aad5ab90"/>
+    <token id="0x55c5aad66310" file="src/core/cache.c" linenr="18" column="26" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aad66500" file="src/core/cache.c" linenr="20" column="1" str="long" scope="0x55c5aac75e20" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aad665b0" file="src/core/cache.c" linenr="20" column="8" str="COLOR_NUM" scope="0x55c5aac75e20" type="name" varId="2" variable="0x55c5aac97ff0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac5ad40" file="src/core/cache.c" linenr="20" column="18" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aacacb00" file="src/core/cache.c" linenr="20" column="8" str="COLOR_NUM" scope="0x55c5aac75e20" type="name" varId="2" variable="0x55c5aac97ff0" astParent="0x55c5aac60160" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac60160" file="src/core/cache.c" linenr="20" column="18" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" astOperand1="0x55c5aacacb00" astOperand2="0x55c5aacbab90" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacbab90" file="src/core/cache.c" linenr="20" column="20" str="1" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5aac62940" astParent="0x55c5aac60160" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac626c0" file="src/core/cache.c" linenr="20" column="21" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aac67800" file="src/core/cache.c" linenr="21" column="1" str="long" scope="0x55c5aac75e20" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aaca8290" file="src/core/cache.c" linenr="21" column="8" str="COLOR_SIZE" scope="0x55c5aac75e20" type="name" varId="3" variable="0x55c5aac980d0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac55c40" file="src/core/cache.c" linenr="21" column="19" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aac60280" file="src/core/cache.c" linenr="21" column="8" str="COLOR_SIZE" scope="0x55c5aac75e20" type="name" varId="3" variable="0x55c5aac980d0" astParent="0x55c5aac603a0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac603a0" file="src/core/cache.c" linenr="21" column="19" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" astOperand1="0x55c5aac60280" astOperand2="0x55c5aac5d7b0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac5d7b0" file="src/core/cache.c" linenr="21" column="21" str="1" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5ab0b0d20" astParent="0x55c5aac603a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace2450" file="src/core/cache.c" linenr="21" column="22" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5ab0b2c90" file="src/core/cache.c" linenr="23" column="1" str="static" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aac75250" file="src/core/cache.c" linenr="23" column="8" str="void" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aad45370" file="src/core/cache.c" linenr="23" column="13" str="cache_calc_colors" scope="0x55c5aac75e20" type="name" function="0x55c5aacca390" astParent="0x55c5aac5dc70"/>
+    <token id="0x55c5aac5dc70" file="src/core/cache.c" linenr="23" column="30" str="(" scope="0x55c5aac75e20" link="0x55c5aac74340" astOperand1="0x55c5aad45370" astOperand2="0x55c5aace7880" valueType-type="void"/>
+    <token id="0x55c5aac5d310" file="src/core/cache.c" linenr="23" column="31" str="cache_t" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0b2b20"/>
+    <token id="0x55c5ab0b2b20" file="src/core/cache.c" linenr="23" column="38" str="*" scope="0x55c5aac75e20" type="op" isArithmeticalOp="True" astParent="0x55c5aace7880" astOperand1="0x55c5aac5d310" astOperand2="0x55c5ab0b2b80"/>
+    <token id="0x55c5ab0b2b80" file="src/core/cache.c" linenr="23" column="40" str="dscrp" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5ab0b2b20"/>
+    <token id="0x55c5aace7880" file="src/core/cache.c" linenr="23" column="45" str="," scope="0x55c5aac75e20" astParent="0x55c5aac5dc70" astOperand1="0x55c5ab0b2b20" astOperand2="0x55c5aac742e0"/>
+    <token id="0x55c5aace78e0" file="src/core/cache.c" linenr="23" column="47" str="int" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aac742e0" file="src/core/cache.c" linenr="23" column="51" str="page_size" scope="0x55c5aac75e20" type="name" varId="5" variable="0x55c5aac54d70" astParent="0x55c5aace7880" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac74340" file="src/core/cache.c" linenr="23" column="60" str=")" scope="0x55c5aac75e20" link="0x55c5aac5dc70"/>
+    <token id="0x55c5aaca85c0" file="src/core/cache.c" linenr="24" column="1" str="{" scope="0x55c5aac789a0" link="0x55c5aafe32a0"/>
+    <token id="0x55c5aaca8620" file="src/core/cache.c" linenr="25" column="5" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace3d90"/>
+    <token id="0x55c5aace3d90" file="src/core/cache.c" linenr="25" column="8" str="(" scope="0x55c5aac789a0" link="0x55c5aac77f80" astOperand1="0x55c5aaca8620" astOperand2="0x55c5aac667c0"/>
+    <token id="0x55c5aace3df0" file="src/core/cache.c" linenr="25" column="9" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5ab0b0780"/>
+    <token id="0x55c5ab0b0780" file="src/core/cache.c" linenr="25" column="14" str="." scope="0x55c5aac789a0" astParent="0x55c5aac667c0" astOperand1="0x55c5aace3df0" astOperand2="0x55c5ab0b07e0" originalName="->"/>
+    <token id="0x55c5ab0b07e0" file="src/core/cache.c" linenr="25" column="16" str="lvls" scope="0x55c5aac789a0" type="name" varId="6" astParent="0x55c5ab0b0780"/>
+    <token id="0x55c5aac667c0" file="src/core/cache.c" linenr="25" column="21" str="==" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aace3d90" astOperand1="0x55c5ab0b0780" astOperand2="0x55c5aac66820" valueType-type="bool"/>
+    <token id="0x55c5aac66820" file="src/core/cache.c" linenr="25" column="24" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aace6c50" astParent="0x55c5aac667c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac77f80" file="src/core/cache.c" linenr="25" column="25" str=")" scope="0x55c5aac789a0" link="0x55c5aace3d90"/>
+    <token id="0x55c5aac77fe0" file="src/core/cache.c" linenr="25" column="27" str="{" scope="0x55c5aac781c0" link="0x55c5aad1b0c0"/>
+    <token id="0x55c5aac59a30" file="src/core/cache.c" linenr="27" column="9" str="return" scope="0x55c5aac781c0" type="name" valueType-type="void"/>
+    <token id="0x55c5aac59a90" file="src/core/cache.c" linenr="27" column="15" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aad1b0c0" file="src/core/cache.c" linenr="28" column="5" str="}" scope="0x55c5aac781c0" link="0x55c5aac77fe0"/>
+    <token id="0x55c5aad1b120" file="src/core/cache.c" linenr="30" column="5" str="long" scope="0x55c5aac789a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aae54d00" file="src/core/cache.c" linenr="30" column="12" str="llc" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5aac981b0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aaf7bd90" file="src/core/cache.c" linenr="30" column="16" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac604c0" file="src/core/cache.c" linenr="30" column="12" str="llc" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5aac981b0" astParent="0x55c5aac605e0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac605e0" file="src/core/cache.c" linenr="30" column="16" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac604c0" astOperand2="0x55c5ab0a4060" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a3f40" file="src/core/cache.c" linenr="30" column="18" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5ab0a4060"/>
+    <token id="0x55c5ab0a4060" file="src/core/cache.c" linenr="30" column="23" str="." scope="0x55c5aac789a0" astParent="0x55c5aac605e0" astOperand1="0x55c5ab0a3f40" astOperand2="0x55c5ab0a40c0" originalName="->"/>
+    <token id="0x55c5ab0a40c0" file="src/core/cache.c" linenr="30" column="25" str="min_shared_lvl" scope="0x55c5aac789a0" type="name" varId="8" astParent="0x55c5ab0a4060"/>
+    <token id="0x55c5aac55ae0" file="src/core/cache.c" linenr="30" column="39" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac79b70" file="src/core/cache.c" linenr="32" column="5" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac79c90"/>
+    <token id="0x55c5aac79c90" file="src/core/cache.c" linenr="32" column="8" str="(" scope="0x55c5aac789a0" link="0x55c5aacdb740" astOperand1="0x55c5aac79b70" astOperand2="0x55c5aac76f50"/>
+    <token id="0x55c5aac77510" file="src/core/cache.c" linenr="32" column="9" str="(" scope="0x55c5aac789a0" link="0x55c5aac76e30"/>
+    <token id="0x55c5aac77630" file="src/core/cache.c" linenr="32" column="10" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aac77750"/>
+    <token id="0x55c5aac77750" file="src/core/cache.c" linenr="32" column="15" str="." scope="0x55c5aac789a0" astParent="0x55c5aac77990" astOperand1="0x55c5aac77630" astOperand2="0x55c5aac77870" originalName="->"/>
+    <token id="0x55c5aac77870" file="src/core/cache.c" linenr="32" column="17" str="type" scope="0x55c5aac789a0" type="name" varId="9" astParent="0x55c5aac77750"/>
+    <token id="0x55c5aac77990" file="src/core/cache.c" linenr="32" column="21" str="[" scope="0x55c5aac789a0" link="0x55c5aac76ad0" astParent="0x55c5aac76bf0" astOperand1="0x55c5aac77750" astOperand2="0x55c5aac769b0"/>
+    <token id="0x55c5aac769b0" file="src/core/cache.c" linenr="32" column="22" str="llc" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5aac981b0" astParent="0x55c5aac77990" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac76ad0" file="src/core/cache.c" linenr="32" column="25" str="]" scope="0x55c5aac789a0" link="0x55c5aac77990"/>
+    <token id="0x55c5aac76bf0" file="src/core/cache.c" linenr="32" column="27" str="!=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aac76f50" astOperand1="0x55c5aac77990" astOperand2="0x55c5aac76d10" valueType-type="bool"/>
+    <token id="0x55c5aac76d10" file="src/core/cache.c" linenr="32" column="30" str="UNIFIED" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac76bf0"/>
+    <token id="0x55c5aac76e30" file="src/core/cache.c" linenr="32" column="37" str=")" scope="0x55c5aac789a0" link="0x55c5aac77510"/>
+    <token id="0x55c5aac76f50" file="src/core/cache.c" linenr="32" column="39" str="||" scope="0x55c5aac789a0" type="op" isLogicalOp="True" astParent="0x55c5aac79c90" astOperand1="0x55c5aac76bf0" astOperand2="0x55c5aac791d0" valueType-type="bool"/>
+    <token id="0x55c5aacdfb70" file="src/core/cache.c" linenr="32" column="42" str="(" scope="0x55c5aac789a0" link="0x55c5aacdb620"/>
+    <token id="0x55c5aacdfc90" file="src/core/cache.c" linenr="32" column="43" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aacdfdb0"/>
+    <token id="0x55c5aacdfdb0" file="src/core/cache.c" linenr="32" column="48" str="." scope="0x55c5aac789a0" astParent="0x55c5aacdfff0" astOperand1="0x55c5aacdfc90" astOperand2="0x55c5aacdfed0" originalName="->"/>
+    <token id="0x55c5aacdfed0" file="src/core/cache.c" linenr="32" column="50" str="indexed" scope="0x55c5aac789a0" type="name" varId="10" astParent="0x55c5aacdfdb0"/>
+    <token id="0x55c5aacdfff0" file="src/core/cache.c" linenr="32" column="57" str="[" scope="0x55c5aac789a0" link="0x55c5aac78d50" astParent="0x55c5aac78e70" astOperand1="0x55c5aacdfdb0" astOperand2="0x55c5aace0110"/>
+    <token id="0x55c5aace0110" file="src/core/cache.c" linenr="32" column="58" str="llc" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5aac981b0" astParent="0x55c5aacdfff0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac78d50" file="src/core/cache.c" linenr="32" column="61" str="]" scope="0x55c5aac789a0" link="0x55c5aacdfff0"/>
+    <token id="0x55c5aac78e70" file="src/core/cache.c" linenr="32" column="62" str="[" scope="0x55c5aac789a0" link="0x55c5aac790b0" astParent="0x55c5aac791d0" astOperand1="0x55c5aacdfff0" astOperand2="0x55c5aac78f90"/>
+    <token id="0x55c5aac78f90" file="src/core/cache.c" linenr="32" column="63" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5ab0ad450" astParent="0x55c5aac78e70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac790b0" file="src/core/cache.c" linenr="32" column="64" str="]" scope="0x55c5aac789a0" link="0x55c5aac78e70"/>
+    <token id="0x55c5aac791d0" file="src/core/cache.c" linenr="32" column="66" str="!=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aac76f50" astOperand1="0x55c5aac78e70" astOperand2="0x55c5aac792f0" valueType-type="bool"/>
+    <token id="0x55c5aac792f0" file="src/core/cache.c" linenr="32" column="69" str="PIPT" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac791d0"/>
+    <token id="0x55c5aacdb620" file="src/core/cache.c" linenr="32" column="73" str=")" scope="0x55c5aac789a0" link="0x55c5aacdfb70"/>
+    <token id="0x55c5aacdb740" file="src/core/cache.c" linenr="32" column="74" str=")" scope="0x55c5aac789a0" link="0x55c5aac79c90"/>
+    <token id="0x55c5aacac8c0" file="src/core/cache.c" linenr="32" column="0" str="{" scope="0x55c5aac7b730" link="0x55c5aacac9e0"/>
+    <token id="0x55c5aacdb860" file="src/core/cache.c" linenr="33" column="9" str="return" scope="0x55c5aac7b730" type="name" valueType-type="void"/>
+    <token id="0x55c5aacdb980" file="src/core/cache.c" linenr="33" column="15" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aacac9e0" file="src/core/cache.c" linenr="33" column="0" str="}" scope="0x55c5aac7b730" link="0x55c5aacac8c0"/>
+    <token id="0x55c5aacdbaa0" file="src/core/cache.c" linenr="35" column="5" str="long" scope="0x55c5aac789a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aacdbbc0" file="src/core/cache.c" linenr="35" column="12" str="llc_way_size" scope="0x55c5aac789a0" type="name" varId="11" variable="0x55c5aac61ea0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aace5e00" file="src/core/cache.c" linenr="35" column="25" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac60700" file="src/core/cache.c" linenr="35" column="12" str="llc_way_size" scope="0x55c5aac789a0" type="name" varId="11" variable="0x55c5aac61ea0" astParent="0x55c5aac60820" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac60820" file="src/core/cache.c" linenr="35" column="25" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac60700" astOperand2="0x55c5aac98a50" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aace5f20" file="src/core/cache.c" linenr="36" column="9" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aace6040"/>
+    <token id="0x55c5aace6040" file="src/core/cache.c" linenr="36" column="14" str="." scope="0x55c5aac789a0" astParent="0x55c5aace6280" astOperand1="0x55c5aace5f20" astOperand2="0x55c5aace6160" originalName="->"/>
+    <token id="0x55c5aace6160" file="src/core/cache.c" linenr="36" column="16" str="numset" scope="0x55c5aac789a0" type="name" varId="12" astParent="0x55c5aace6040"/>
+    <token id="0x55c5aace6280" file="src/core/cache.c" linenr="36" column="22" str="[" scope="0x55c5aac789a0" link="0x55c5aac985d0" astParent="0x55c5aac986f0" astOperand1="0x55c5aace6040" astOperand2="0x55c5aace63a0"/>
+    <token id="0x55c5aace63a0" file="src/core/cache.c" linenr="36" column="23" str="llc" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5aac981b0" astParent="0x55c5aace6280" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac985d0" file="src/core/cache.c" linenr="36" column="26" str="]" scope="0x55c5aac789a0" link="0x55c5aace6280"/>
+    <token id="0x55c5aac986f0" file="src/core/cache.c" linenr="36" column="27" str="[" scope="0x55c5aac789a0" link="0x55c5aac98930" astParent="0x55c5aac98a50" astOperand1="0x55c5aace6280" astOperand2="0x55c5aac98810"/>
+    <token id="0x55c5aac98810" file="src/core/cache.c" linenr="36" column="28" str="UNIFIED" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac986f0"/>
+    <token id="0x55c5aac98930" file="src/core/cache.c" linenr="36" column="35" str="]" scope="0x55c5aac789a0" link="0x55c5aac986f0"/>
+    <token id="0x55c5aac98a50" file="src/core/cache.c" linenr="36" column="37" str="*" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aac60820" astOperand1="0x55c5aac986f0" astOperand2="0x55c5aace1fa0"/>
+    <token id="0x55c5aac98b70" file="src/core/cache.c" linenr="36" column="39" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aace1a00"/>
+    <token id="0x55c5aace1a00" file="src/core/cache.c" linenr="36" column="44" str="." scope="0x55c5aac789a0" astParent="0x55c5aace1c40" astOperand1="0x55c5aac98b70" astOperand2="0x55c5aace1b20" originalName="->"/>
+    <token id="0x55c5aace1b20" file="src/core/cache.c" linenr="36" column="46" str="line_size" scope="0x55c5aac789a0" type="name" varId="13" astParent="0x55c5aace1a00"/>
+    <token id="0x55c5aace1c40" file="src/core/cache.c" linenr="36" column="55" str="[" scope="0x55c5aac789a0" link="0x55c5aace1e80" astParent="0x55c5aace1fa0" astOperand1="0x55c5aace1a00" astOperand2="0x55c5aace1d60"/>
+    <token id="0x55c5aace1d60" file="src/core/cache.c" linenr="36" column="56" str="llc" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5aac981b0" astParent="0x55c5aace1c40" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aace1e80" file="src/core/cache.c" linenr="36" column="59" str="]" scope="0x55c5aac789a0" link="0x55c5aace1c40"/>
+    <token id="0x55c5aace1fa0" file="src/core/cache.c" linenr="36" column="60" str="[" scope="0x55c5aac789a0" link="0x55c5aad458e0" astParent="0x55c5aac98a50" astOperand1="0x55c5aace1c40" astOperand2="0x55c5aace6400"/>
+    <token id="0x55c5aace6400" file="src/core/cache.c" linenr="36" column="61" str="UNIFIED" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace1fa0"/>
+    <token id="0x55c5aad458e0" file="src/core/cache.c" linenr="36" column="68" str="]" scope="0x55c5aac789a0" link="0x55c5aace1fa0"/>
+    <token id="0x55c5aad45a00" file="src/core/cache.c" linenr="36" column="69" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aad45b20" file="src/core/cache.c" linenr="38" column="5" str="long" scope="0x55c5aac789a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aad45c40" file="src/core/cache.c" linenr="38" column="12" str="flc_way_size" scope="0x55c5aac789a0" type="name" varId="14" variable="0x55c5aac61f80" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aad45d60" file="src/core/cache.c" linenr="38" column="25" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac60940" file="src/core/cache.c" linenr="38" column="12" str="flc_way_size" scope="0x55c5aac789a0" type="name" varId="14" variable="0x55c5aac61f80" astParent="0x55c5aac60a60" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac60a60" file="src/core/cache.c" linenr="38" column="25" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac60940" astOperand2="0x55c5aad45e80" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aad45e80" file="src/core/cache.c" linenr="38" column="27" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aae56a70" astParent="0x55c5aac60a60" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac98bd0" file="src/core/cache.c" linenr="38" column="28" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aaccc080" file="src/core/cache.c" linenr="39" column="5" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aaccc1a0"/>
+    <token id="0x55c5aaccc1a0" file="src/core/cache.c" linenr="39" column="8" str="(" scope="0x55c5aac789a0" link="0x55c5aac67200" astOperand1="0x55c5aaccc080" astOperand2="0x55c5aac66ea0"/>
+    <token id="0x55c5aaccc3e0" file="src/core/cache.c" linenr="39" column="10" str="dscrp" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aaccc500"/>
+    <token id="0x55c5aaccc500" file="src/core/cache.c" linenr="39" column="15" str="." scope="0x55c5aac789a0" astParent="0x55c5aac76fb0" astOperand1="0x55c5aaccc3e0" astOperand2="0x55c5aaccc620" originalName="->"/>
+    <token id="0x55c5aaccc620" file="src/core/cache.c" linenr="39" column="17" str="type" scope="0x55c5aac789a0" type="name" varId="9" astParent="0x55c5aaccc500"/>
+    <token id="0x55c5aac76fb0" file="src/core/cache.c" linenr="39" column="21" str="[" scope="0x55c5aac789a0" link="0x55c5aac66d80" astParent="0x55c5aac66ea0" astOperand1="0x55c5aaccc500" astOperand2="0x55c5aac66c60"/>
+    <token id="0x55c5aac66c60" file="src/core/cache.c" linenr="39" column="22" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aacdbcb0" astParent="0x55c5aac76fb0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac66d80" file="src/core/cache.c" linenr="39" column="23" str="]" scope="0x55c5aac789a0" link="0x55c5aac76fb0"/>
+    <token id="0x55c5aac66ea0" file="src/core/cache.c" linenr="39" column="25" str="!=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aaccc1a0" astOperand1="0x55c5aac76fb0" astOperand2="0x55c5aac66fc0" valueType-type="bool"/>
+    <token id="0x55c5aac66fc0" file="src/core/cache.c" linenr="39" column="28" str="UNIFIED" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac66ea0"/>
+    <token id="0x55c5aac67200" file="src/core/cache.c" linenr="39" column="36" str=")" scope="0x55c5aac789a0" link="0x55c5aaccc1a0"/>
+    <token id="0x55c5ab0abdf0" file="src/core/cache.c" linenr="39" column="38" str="{" scope="0x55c5aac76850" link="0x55c5aacd9c50"/>
+    <token id="0x55c5ab0abf10" file="src/core/cache.c" linenr="40" column="9" str="flc_way_size" scope="0x55c5aac76850" type="name" varId="14" variable="0x55c5aac61f80" astParent="0x55c5ab0ac030" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0ac030" file="src/core/cache.c" linenr="40" column="22" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0abf10" astOperand2="0x55c5ab072440" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0ac150" file="src/core/cache.c" linenr="40" column="24" str="dscrp" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5ab0ac270"/>
+    <token id="0x55c5ab0ac270" file="src/core/cache.c" linenr="40" column="29" str="." scope="0x55c5aac76850" astParent="0x55c5ab0ac4b0" astOperand1="0x55c5ab0ac150" astOperand2="0x55c5ab0ac390" originalName="->"/>
+    <token id="0x55c5ab0ac390" file="src/core/cache.c" linenr="40" column="31" str="numset" scope="0x55c5aac76850" type="name" varId="12" astParent="0x55c5ab0ac270"/>
+    <token id="0x55c5ab0ac4b0" file="src/core/cache.c" linenr="40" column="37" str="[" scope="0x55c5aac76850" link="0x55c5ab071fc0" astParent="0x55c5ab0720e0" astOperand1="0x55c5ab0ac270" astOperand2="0x55c5ab071ea0"/>
+    <token id="0x55c5ab071ea0" file="src/core/cache.c" linenr="40" column="38" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac78c40" astParent="0x55c5ab0ac4b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab071fc0" file="src/core/cache.c" linenr="40" column="39" str="]" scope="0x55c5aac76850" link="0x55c5ab0ac4b0"/>
+    <token id="0x55c5ab0720e0" file="src/core/cache.c" linenr="40" column="40" str="[" scope="0x55c5aac76850" link="0x55c5ab072320" astParent="0x55c5ab072440" astOperand1="0x55c5ab0ac4b0" astOperand2="0x55c5ab072200"/>
+    <token id="0x55c5ab072200" file="src/core/cache.c" linenr="40" column="41" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aace7600" astParent="0x55c5ab0720e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab072320" file="src/core/cache.c" linenr="40" column="42" str="]" scope="0x55c5aac76850" link="0x55c5ab0720e0"/>
+    <token id="0x55c5ab072440" file="src/core/cache.c" linenr="40" column="44" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5ab0ac030" astOperand1="0x55c5ab0720e0" astOperand2="0x55c5aac5a6c0"/>
+    <token id="0x55c5ab072560" file="src/core/cache.c" linenr="40" column="46" str="dscrp" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aac5a120"/>
+    <token id="0x55c5aac5a120" file="src/core/cache.c" linenr="40" column="51" str="." scope="0x55c5aac76850" astParent="0x55c5aac5a360" astOperand1="0x55c5ab072560" astOperand2="0x55c5aac5a240" originalName="->"/>
+    <token id="0x55c5aac5a240" file="src/core/cache.c" linenr="40" column="53" str="line_size" scope="0x55c5aac76850" type="name" varId="13" astParent="0x55c5aac5a120"/>
+    <token id="0x55c5aac5a360" file="src/core/cache.c" linenr="40" column="62" str="[" scope="0x55c5aac76850" link="0x55c5aac5a5a0" astParent="0x55c5aac5a6c0" astOperand1="0x55c5aac5a120" astOperand2="0x55c5aac5a480"/>
+    <token id="0x55c5aac5a480" file="src/core/cache.c" linenr="40" column="63" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aaccb880" astParent="0x55c5aac5a360" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5a5a0" file="src/core/cache.c" linenr="40" column="64" str="]" scope="0x55c5aac76850" link="0x55c5aac5a360"/>
+    <token id="0x55c5aac5a6c0" file="src/core/cache.c" linenr="40" column="65" str="[" scope="0x55c5aac76850" link="0x55c5aaf87a70" astParent="0x55c5ab072440" astOperand1="0x55c5aac5a360" astOperand2="0x55c5aac5a7e0"/>
+    <token id="0x55c5aac5a7e0" file="src/core/cache.c" linenr="40" column="66" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac64d70" astParent="0x55c5aac5a6c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaf87a70" file="src/core/cache.c" linenr="40" column="67" str="]" scope="0x55c5aac76850" link="0x55c5aac5a6c0"/>
+    <token id="0x55c5aaf87b90" file="src/core/cache.c" linenr="40" column="68" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aaf87cb0" file="src/core/cache.c" linenr="41" column="9" str="long" scope="0x55c5aac76850" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aaf87dd0" file="src/core/cache.c" linenr="41" column="16" str="flc_i_way_size" scope="0x55c5aac76850" type="name" varId="15" variable="0x55c5aaccd0c0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aaf87ef0" file="src/core/cache.c" linenr="41" column="31" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac61760" file="src/core/cache.c" linenr="41" column="16" str="flc_i_way_size" scope="0x55c5aac76850" type="name" varId="15" variable="0x55c5aaccd0c0" astParent="0x55c5aac61880" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac61880" file="src/core/cache.c" linenr="41" column="31" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aac61760" astOperand2="0x55c5aac73330" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aaf88010" file="src/core/cache.c" linenr="41" column="33" str="dscrp" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aaf88130"/>
+    <token id="0x55c5aaf88130" file="src/core/cache.c" linenr="41" column="38" str="." scope="0x55c5aac76850" astParent="0x55c5aac72c70" astOperand1="0x55c5aaf88010" astOperand2="0x55c5aaf88250" originalName="->"/>
+    <token id="0x55c5aaf88250" file="src/core/cache.c" linenr="41" column="40" str="numset" scope="0x55c5aac76850" type="name" varId="12" astParent="0x55c5aaf88130"/>
+    <token id="0x55c5aac72c70" file="src/core/cache.c" linenr="41" column="46" str="[" scope="0x55c5aac76850" link="0x55c5aac72eb0" astParent="0x55c5aac72fd0" astOperand1="0x55c5aaf88130" astOperand2="0x55c5aac72d90"/>
+    <token id="0x55c5aac72d90" file="src/core/cache.c" linenr="41" column="47" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac99210" astParent="0x55c5aac72c70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac72eb0" file="src/core/cache.c" linenr="41" column="48" str="]" scope="0x55c5aac76850" link="0x55c5aac72c70"/>
+    <token id="0x55c5aac72fd0" file="src/core/cache.c" linenr="41" column="49" str="[" scope="0x55c5aac76850" link="0x55c5aac73210" astParent="0x55c5aac73330" astOperand1="0x55c5aac72c70" astOperand2="0x55c5aac730f0"/>
+    <token id="0x55c5aac730f0" file="src/core/cache.c" linenr="41" column="50" str="1" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5ab0b0e00" astParent="0x55c5aac72fd0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac73210" file="src/core/cache.c" linenr="41" column="51" str="]" scope="0x55c5aac76850" link="0x55c5aac72fd0"/>
+    <token id="0x55c5aac73330" file="src/core/cache.c" linenr="41" column="53" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aac61880" astOperand1="0x55c5aac72fd0" astOperand2="0x55c5aace0a50"/>
+    <token id="0x55c5aace0390" file="src/core/cache.c" linenr="41" column="55" str="dscrp" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aace04b0"/>
+    <token id="0x55c5aace04b0" file="src/core/cache.c" linenr="41" column="60" str="." scope="0x55c5aac76850" astParent="0x55c5aace06f0" astOperand1="0x55c5aace0390" astOperand2="0x55c5aace05d0" originalName="->"/>
+    <token id="0x55c5aace05d0" file="src/core/cache.c" linenr="41" column="62" str="line_size" scope="0x55c5aac76850" type="name" varId="13" astParent="0x55c5aace04b0"/>
+    <token id="0x55c5aace06f0" file="src/core/cache.c" linenr="41" column="71" str="[" scope="0x55c5aac76850" link="0x55c5aace0930" astParent="0x55c5aace0a50" astOperand1="0x55c5aace04b0" astOperand2="0x55c5aace0810"/>
+    <token id="0x55c5aace0810" file="src/core/cache.c" linenr="41" column="72" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac98490" astParent="0x55c5aace06f0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace0930" file="src/core/cache.c" linenr="41" column="73" str="]" scope="0x55c5aac76850" link="0x55c5aace06f0"/>
+    <token id="0x55c5aace0a50" file="src/core/cache.c" linenr="41" column="74" str="[" scope="0x55c5aac76850" link="0x55c5aad463d0" astParent="0x55c5aac73330" astOperand1="0x55c5aace06f0" astOperand2="0x55c5aac73390"/>
+    <token id="0x55c5aac73390" file="src/core/cache.c" linenr="41" column="75" str="1" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aaf88420" astParent="0x55c5aace0a50" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad463d0" file="src/core/cache.c" linenr="41" column="76" str="]" scope="0x55c5aac76850" link="0x55c5aace0a50"/>
+    <token id="0x55c5aad464f0" file="src/core/cache.c" linenr="41" column="77" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aad46610" file="src/core/cache.c" linenr="42" column="9" str="if" scope="0x55c5aac76850" type="name" astParent="0x55c5aad46730"/>
+    <token id="0x55c5aad46730" file="src/core/cache.c" linenr="42" column="12" str="(" scope="0x55c5aac76850" link="0x55c5aaccd050" astOperand1="0x55c5aad46610" astOperand2="0x55c5aaca2ee0"/>
+    <token id="0x55c5aad46850" file="src/core/cache.c" linenr="42" column="13" str="(" scope="0x55c5aac76850" link="0x55c5aaca2dc0"/>
+    <token id="0x55c5aad46970" file="src/core/cache.c" linenr="42" column="14" str="(" scope="0x55c5aac76850" link="0x55c5aaccda10"/>
+    <token id="0x55c5aad46a90" file="src/core/cache.c" linenr="42" column="15" str="dscrp" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aad46bb0"/>
+    <token id="0x55c5aad46bb0" file="src/core/cache.c" linenr="42" column="20" str="." scope="0x55c5aac76850" astParent="0x55c5aac60ed0" astOperand1="0x55c5aad46a90" astOperand2="0x55c5aac60db0" originalName="->"/>
+    <token id="0x55c5aac60db0" file="src/core/cache.c" linenr="42" column="22" str="indexed" scope="0x55c5aac76850" type="name" varId="10" astParent="0x55c5aad46bb0"/>
+    <token id="0x55c5aac60ed0" file="src/core/cache.c" linenr="42" column="29" str="[" scope="0x55c5aac76850" link="0x55c5aac61110" astParent="0x55c5aac61230" astOperand1="0x55c5aad46bb0" astOperand2="0x55c5aac60ff0"/>
+    <token id="0x55c5aac60ff0" file="src/core/cache.c" linenr="42" column="30" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aae2a3b0" astParent="0x55c5aac60ed0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac61110" file="src/core/cache.c" linenr="42" column="31" str="]" scope="0x55c5aac76850" link="0x55c5aac60ed0"/>
+    <token id="0x55c5aac61230" file="src/core/cache.c" linenr="42" column="32" str="[" scope="0x55c5aac76850" link="0x55c5aac61470" astParent="0x55c5aac61590" astOperand1="0x55c5aac60ed0" astOperand2="0x55c5aac61350"/>
+    <token id="0x55c5aac61350" file="src/core/cache.c" linenr="42" column="33" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aad45780" astParent="0x55c5aac61230" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac61470" file="src/core/cache.c" linenr="42" column="34" str="]" scope="0x55c5aac76850" link="0x55c5aac61230"/>
+    <token id="0x55c5aac61590" file="src/core/cache.c" linenr="42" column="36" str="==" scope="0x55c5aac76850" type="op" isComparisonOp="True" astParent="0x55c5aaccdb30" astOperand1="0x55c5aac61230" astOperand2="0x55c5aaccd8f0" valueType-type="bool"/>
+    <token id="0x55c5aaccd8f0" file="src/core/cache.c" linenr="42" column="39" str="PIPT" scope="0x55c5aac76850" type="name" astParent="0x55c5aac61590"/>
+    <token id="0x55c5aaccda10" file="src/core/cache.c" linenr="42" column="43" str=")" scope="0x55c5aac76850" link="0x55c5aad46970"/>
+    <token id="0x55c5aaccdb30" file="src/core/cache.c" linenr="42" column="45" str="||" scope="0x55c5aac76850" type="op" isLogicalOp="True" astParent="0x55c5aaca2ee0" astOperand1="0x55c5aac61590" astOperand2="0x55c5aaccde90" valueType-type="bool"/>
+    <token id="0x55c5aaccdc50" file="src/core/cache.c" linenr="43" column="14" str="(" scope="0x55c5aac76850" link="0x55c5aacce0d0"/>
+    <token id="0x55c5aaccdd70" file="src/core/cache.c" linenr="43" column="15" str="flc_i_way_size" scope="0x55c5aac76850" type="name" varId="15" variable="0x55c5aaccd0c0" astParent="0x55c5aaccde90" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aaccde90" file="src/core/cache.c" linenr="43" column="30" str="&lt;" scope="0x55c5aac76850" type="op" isComparisonOp="True" astParent="0x55c5aaccdb30" astOperand1="0x55c5aaccdd70" astOperand2="0x55c5aaccdfb0" valueType-type="bool"/>
+    <token id="0x55c5aaccdfb0" file="src/core/cache.c" linenr="43" column="32" str="flc_way_size" scope="0x55c5aac76850" type="name" varId="14" variable="0x55c5aac61f80" astParent="0x55c5aaccde90" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacce0d0" file="src/core/cache.c" linenr="43" column="44" str=")" scope="0x55c5aac76850" link="0x55c5aaccdc50"/>
+    <token id="0x55c5aaca2dc0" file="src/core/cache.c" linenr="43" column="45" str=")" scope="0x55c5aac76850" link="0x55c5aad46850"/>
+    <token id="0x55c5aaca2ee0" file="src/core/cache.c" linenr="43" column="47" str="&amp;&amp;" scope="0x55c5aac76850" type="op" isLogicalOp="True" astParent="0x55c5aad46730" astOperand1="0x55c5aaccdb30" astOperand2="0x55c5aaccccf0" valueType-type="bool"/>
+    <token id="0x55c5aaca3000" file="src/core/cache.c" linenr="44" column="13" str="(" scope="0x55c5aac76850" link="0x55c5aacccf30"/>
+    <token id="0x55c5aaca3120" file="src/core/cache.c" linenr="44" column="14" str="dscrp" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac54c90" astParent="0x55c5aaca3240"/>
+    <token id="0x55c5aaca3240" file="src/core/cache.c" linenr="44" column="19" str="." scope="0x55c5aac76850" astParent="0x55c5aaca3480" astOperand1="0x55c5aaca3120" astOperand2="0x55c5aaca3360" originalName="->"/>
+    <token id="0x55c5aaca3360" file="src/core/cache.c" linenr="44" column="21" str="indexed" scope="0x55c5aac76850" type="name" varId="10" astParent="0x55c5aaca3240"/>
+    <token id="0x55c5aaca3480" file="src/core/cache.c" linenr="44" column="28" str="[" scope="0x55c5aac76850" link="0x55c5aaccc870" astParent="0x55c5aaccc990" astOperand1="0x55c5aaca3240" astOperand2="0x55c5aaca35a0"/>
+    <token id="0x55c5aaca35a0" file="src/core/cache.c" linenr="44" column="29" str="0" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aad66100" astParent="0x55c5aaca3480" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccc870" file="src/core/cache.c" linenr="44" column="30" str="]" scope="0x55c5aac76850" link="0x55c5aaca3480"/>
+    <token id="0x55c5aaccc990" file="src/core/cache.c" linenr="44" column="31" str="[" scope="0x55c5aac76850" link="0x55c5aacccbd0" astParent="0x55c5aaccccf0" astOperand1="0x55c5aaca3480" astOperand2="0x55c5aacccab0"/>
+    <token id="0x55c5aacccab0" file="src/core/cache.c" linenr="44" column="32" str="1" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aac53240" astParent="0x55c5aaccc990" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacccbd0" file="src/core/cache.c" linenr="44" column="33" str="]" scope="0x55c5aac76850" link="0x55c5aaccc990"/>
+    <token id="0x55c5aaccccf0" file="src/core/cache.c" linenr="44" column="35" str="==" scope="0x55c5aac76850" type="op" isComparisonOp="True" astParent="0x55c5aaca2ee0" astOperand1="0x55c5aaccc990" astOperand2="0x55c5aaccce10" valueType-type="bool"/>
+    <token id="0x55c5aaccce10" file="src/core/cache.c" linenr="44" column="38" str="PIPT" scope="0x55c5aac76850" type="name" astParent="0x55c5aaccccf0"/>
+    <token id="0x55c5aacccf30" file="src/core/cache.c" linenr="44" column="42" str=")" scope="0x55c5aac76850" link="0x55c5aaca3000"/>
+    <token id="0x55c5aaccd050" file="src/core/cache.c" linenr="44" column="43" str=")" scope="0x55c5aac76850" link="0x55c5aad46730"/>
+    <token id="0x55c5aacd9590" file="src/core/cache.c" linenr="44" column="45" str="{" scope="0x55c5aac785a0" link="0x55c5aacd9b30"/>
+    <token id="0x55c5aacd96b0" file="src/core/cache.c" linenr="45" column="13" str="flc_way_size" scope="0x55c5aac785a0" type="name" varId="14" variable="0x55c5aac61f80" astParent="0x55c5aacd97d0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacd97d0" file="src/core/cache.c" linenr="45" column="26" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd96b0" astOperand2="0x55c5aacd98f0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacd98f0" file="src/core/cache.c" linenr="45" column="28" str="flc_i_way_size" scope="0x55c5aac785a0" type="name" varId="15" variable="0x55c5aaccd0c0" astParent="0x55c5aacd97d0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacd9a10" file="src/core/cache.c" linenr="45" column="42" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aacd9b30" file="src/core/cache.c" linenr="46" column="9" str="}" scope="0x55c5aac785a0" link="0x55c5aacd9590"/>
+    <token id="0x55c5aacd9c50" file="src/core/cache.c" linenr="47" column="5" str="}" scope="0x55c5aac76850" link="0x55c5ab0abdf0"/>
+    <token id="0x55c5aacd9d70" file="src/core/cache.c" linenr="49" column="5" str="long" scope="0x55c5aac789a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aacce130" file="src/core/cache.c" linenr="49" column="12" str="llc_num_colors" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aac62060" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafac260" file="src/core/cache.c" linenr="49" column="27" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac619a0" file="src/core/cache.c" linenr="49" column="12" str="llc_num_colors" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aac62060" astParent="0x55c5aac61ac0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac61ac0" file="src/core/cache.c" linenr="49" column="27" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac619a0" astOperand2="0x55c5aafac4a0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafac380" file="src/core/cache.c" linenr="49" column="29" str="llc_way_size" scope="0x55c5aac789a0" type="name" varId="11" variable="0x55c5aac61ea0" astParent="0x55c5aafac4a0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafac4a0" file="src/core/cache.c" linenr="49" column="42" str="/" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aac61ac0" astOperand1="0x55c5aafac380" astOperand2="0x55c5aafac5c0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafac5c0" file="src/core/cache.c" linenr="49" column="44" str="page_size" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5aac54d70" astParent="0x55c5aafac4a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aafac6e0" file="src/core/cache.c" linenr="49" column="53" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aafac800" file="src/core/cache.c" linenr="50" column="5" str="long" scope="0x55c5aac789a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aafac920" file="src/core/cache.c" linenr="50" column="12" str="flc_num_colors" scope="0x55c5aac789a0" type="name" varId="17" variable="0x55c5aace15e0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafaca40" file="src/core/cache.c" linenr="50" column="27" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac61be0" file="src/core/cache.c" linenr="50" column="12" str="flc_num_colors" scope="0x55c5aac789a0" type="name" varId="17" variable="0x55c5aace15e0" astParent="0x55c5aac61d00" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac61d00" file="src/core/cache.c" linenr="50" column="27" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac61be0" astOperand2="0x55c5aac73670" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafacb60" file="src/core/cache.c" linenr="50" column="29" str="flc_way_size" scope="0x55c5aac789a0" type="name" varId="14" variable="0x55c5aac61f80" values="0x55c5ab0b0ab0" astParent="0x55c5aac73670" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73670" file="src/core/cache.c" linenr="50" column="42" str="/" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aac61d00" astOperand1="0x55c5aafacb60" astOperand2="0x55c5aac73790" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73790" file="src/core/cache.c" linenr="50" column="44" str="page_size" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5aac54d70" astParent="0x55c5aac73670" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac738b0" file="src/core/cache.c" linenr="50" column="53" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac739d0" file="src/core/cache.c" linenr="52" column="5" str="COLOR_SIZE" scope="0x55c5aac789a0" type="name" varId="3" variable="0x55c5aac980d0" astParent="0x55c5aac73af0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73af0" file="src/core/cache.c" linenr="52" column="16" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac739d0" astOperand2="0x55c5aac73c10" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73c10" file="src/core/cache.c" linenr="52" column="18" str="flc_num_colors" scope="0x55c5aac789a0" type="name" varId="17" variable="0x55c5aace15e0" astParent="0x55c5aac73af0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73d30" file="src/core/cache.c" linenr="52" column="32" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac73e50" file="src/core/cache.c" linenr="53" column="5" str="COLOR_NUM" scope="0x55c5aac789a0" type="name" varId="2" variable="0x55c5aac97ff0" astParent="0x55c5aac73f70" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73f70" file="src/core/cache.c" linenr="53" column="15" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac73e50" astOperand2="0x55c5aafe2f40" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac73fd0" file="src/core/cache.c" linenr="53" column="17" str="llc_num_colors" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aac62060" astParent="0x55c5aafe2f40" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafe2f40" file="src/core/cache.c" linenr="53" column="32" str="/" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aac73f70" astOperand1="0x55c5aac73fd0" astOperand2="0x55c5aafe3060" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafe3060" file="src/core/cache.c" linenr="53" column="34" str="COLOR_SIZE" scope="0x55c5aac789a0" type="name" varId="3" variable="0x55c5aac980d0" astParent="0x55c5aafe2f40" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafe3180" file="src/core/cache.c" linenr="53" column="44" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aafe32a0" file="src/core/cache.c" linenr="54" column="1" str="}" scope="0x55c5aac789a0" link="0x55c5aaca85c0"/>
+    <token id="0x55c5aafe33c0" file="src/core/cache.c" linenr="56" column="1" str="void" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aafe34e0" file="src/core/cache.c" linenr="56" column="6" str="cache_enumerate" scope="0x55c5aac75e20" type="name" function="0x55c5aacca2f0" astParent="0x55c5aafe3600"/>
+    <token id="0x55c5aafe3600" file="src/core/cache.c" linenr="56" column="21" str="(" scope="0x55c5aac75e20" link="0x55c5aafe3720" astOperand1="0x55c5aafe34e0" valueType-type="void"/>
+    <token id="0x55c5aafe3720" file="src/core/cache.c" linenr="56" column="22" str=")" scope="0x55c5aac75e20" link="0x55c5aafe3600"/>
+    <token id="0x55c5aaca3600" file="src/core/cache.c" linenr="57" column="1" str="{" scope="0x55c5aac783b0" link="0x55c5aacac7a0"/>
+    <token id="0x55c5aace0c70" file="src/core/cache.c" linenr="58" column="5" str="cache_arch_enumerate" scope="0x55c5aac783b0" type="name" astParent="0x55c5aace0d90"/>
+    <token id="0x55c5aace0d90" file="src/core/cache.c" linenr="58" column="25" str="(" scope="0x55c5aac783b0" link="0x55c5aace10f0" astOperand1="0x55c5aace0c70" astOperand2="0x55c5aace0eb0"/>
+    <token id="0x55c5aace0eb0" file="src/core/cache.c" linenr="58" column="26" str="&amp;" scope="0x55c5aac783b0" type="op" values="0x55c5aac78970" astParent="0x55c5aace0d90" astOperand1="0x55c5aace0fd0"/>
+    <token id="0x55c5aace0fd0" file="src/core/cache.c" linenr="58" column="27" str="cache_dscr" scope="0x55c5aac783b0" type="name" varId="1" variable="0x55c5aad5ab90" astParent="0x55c5aace0eb0"/>
+    <token id="0x55c5aace10f0" file="src/core/cache.c" linenr="58" column="37" str=")" scope="0x55c5aac783b0" link="0x55c5aace0d90"/>
+    <token id="0x55c5aace1210" file="src/core/cache.c" linenr="58" column="38" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aace1330" file="src/core/cache.c" linenr="59" column="5" str="cache_calc_colors" scope="0x55c5aac783b0" type="name" function="0x55c5aacca390" astParent="0x55c5aace1450"/>
+    <token id="0x55c5aace1450" file="src/core/cache.c" linenr="59" column="22" str="(" scope="0x55c5aac783b0" link="0x55c5aacac560" astOperand1="0x55c5aace1330" astOperand2="0x55c5aacac320" valueType-type="void"/>
+    <token id="0x55c5aace1570" file="src/core/cache.c" linenr="59" column="23" str="&amp;" scope="0x55c5aac783b0" type="op" values="0x55c5aafb4af0" astParent="0x55c5aacac320" astOperand1="0x55c5aacac200"/>
+    <token id="0x55c5aacac200" file="src/core/cache.c" linenr="59" column="24" str="cache_dscr" scope="0x55c5aac783b0" type="name" varId="1" variable="0x55c5aad5ab90" astParent="0x55c5aace1570"/>
+    <token id="0x55c5aacac320" file="src/core/cache.c" linenr="59" column="34" str="," scope="0x55c5aac783b0" astParent="0x55c5aace1450" astOperand1="0x55c5aace1570" astOperand2="0x55c5aacac440"/>
+    <token id="0x55c5aacac440" file="src/core/cache.c" linenr="59" column="36" str="PAGE_SIZE" scope="0x55c5aac783b0" type="name" astParent="0x55c5aacac320"/>
+    <token id="0x55c5aacac560" file="src/core/cache.c" linenr="59" column="45" str=")" scope="0x55c5aac783b0" link="0x55c5aace1450"/>
+    <token id="0x55c5aacac680" file="src/core/cache.c" linenr="59" column="46" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aacac7a0" file="src/core/cache.c" linenr="60" column="1" str="}" scope="0x55c5aac783b0" link="0x55c5aaca3600"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac75e20" type="Global">
+      <functionList>
+        <function id="0x55c5aacca390" tokenDef="0x55c5aad45370" name="cache_calc_colors" type="Function" isStatic="true">
+          <arg nr="1" variable="0x55c5aac54c90"/>
+          <arg nr="2" variable="0x55c5aac54d70"/>
+        </function>
+        <function id="0x55c5aacca2f0" tokenDef="0x55c5aafe34e0" name="cache_enumerate" type="Function"/>
+      </functionList>
+      <varlist>
+        <var id="0x55c5aad5ab90"/>
+        <var id="0x55c5aac97ff0"/>
+        <var id="0x55c5aac980d0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac789a0" type="Function" className="cache_calc_colors" bodyStart="0x55c5aaca85c0" bodyEnd="0x55c5aafe32a0" nestedIn="0x55c5aac75e20" function="0x55c5aacca390">
+      <varlist>
+        <var id="0x55c5aac981b0"/>
+        <var id="0x55c5aac61ea0"/>
+        <var id="0x55c5aac61f80"/>
+        <var id="0x55c5aac62060"/>
+        <var id="0x55c5aace15e0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac781c0" type="If" bodyStart="0x55c5aac77fe0" bodyEnd="0x55c5aad1b0c0" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5aac7b730" type="If" bodyStart="0x55c5aacac8c0" bodyEnd="0x55c5aacac9e0" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5aac76850" type="If" bodyStart="0x55c5ab0abdf0" bodyEnd="0x55c5aacd9c50" nestedIn="0x55c5aac789a0">
+      <varlist>
+        <var id="0x55c5aaccd0c0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac785a0" type="If" bodyStart="0x55c5aacd9590" bodyEnd="0x55c5aacd9b30" nestedIn="0x55c5aac76850"/>
+    <scope id="0x55c5aac783b0" type="Function" className="cache_enumerate" bodyStart="0x55c5aaca3600" bodyEnd="0x55c5aacac7a0" nestedIn="0x55c5aac75e20" function="0x55c5aacca2f0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac54c90" nameToken="0x55c5ab0b2b80" typeStartToken="0x55c5aac5d310" typeEndToken="0x55c5ab0b2b20" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac54d70" nameToken="0x55c5aac742e0" typeStartToken="0x55c5aace78e0" typeEndToken="0x55c5aace78e0" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac61ea0" nameToken="0x55c5aacdbbc0" typeStartToken="0x55c5aacdbaa0" typeEndToken="0x55c5aacdbaa0" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac61f80" nameToken="0x55c5aad45c40" typeStartToken="0x55c5aad45b20" typeEndToken="0x55c5aad45b20" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac62060" nameToken="0x55c5aacce130" typeStartToken="0x55c5aacd9d70" typeEndToken="0x55c5aacd9d70" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac97ff0" nameToken="0x55c5aad665b0" typeStartToken="0x55c5aad66500" typeEndToken="0x55c5aad66500" access="Global" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac980d0" nameToken="0x55c5aaca8290" typeStartToken="0x55c5aac67800" typeEndToken="0x55c5aac67800" access="Global" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac981b0" nameToken="0x55c5aae54d00" typeStartToken="0x55c5aad1b120" typeEndToken="0x55c5aad1b120" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaccd0c0" nameToken="0x55c5aaf87dd0" typeStartToken="0x55c5aaf87cb0" typeEndToken="0x55c5aaf87cb0" access="Local" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace15e0" nameToken="0x55c5aafac920" typeStartToken="0x55c5aafac800" typeEndToken="0x55c5aafac800" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aad5ab90" nameToken="0x55c5aad65ed0" typeStartToken="0x55c5aad66020" typeEndToken="0x55c5aad66020" access="Global" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="true"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aac62940">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5ab0b0d20">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aace6c50">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5ab0ad450">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aae56a70">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aacdbcb0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac78c40">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aace7600">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aaccb880">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac64d70">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac99210">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5ab0b0e00">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aac98490">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aaf88420">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aae2a3b0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aad45780">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aad66100">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac53240">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5ab0b0ab0">
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0x55c5aac78970">
+      <value lifetime="0x55c5aace0fd0" possible="true"/>
+    </values>
+    <values id="0x55c5aafb4af0">
+      <value lifetime="0x55c5aacac200" possible="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

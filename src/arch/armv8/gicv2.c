@@ -93,11 +93,11 @@ static inline void gicc_init()
     gicc.CTLR |= GICC_CTLR_EN_BIT | GICC_CTLR_EOImodeNS_BIT;
 
     gich.HCR |= GICH_HCR_LRENPIE_BIT;
-    
+
     uint64_t sgi_targets = gicd.ITARGETSR[0] & BIT_MASK(0, GIC_TARGET_BITS);
-    int64_t gic_cpu_id = 
+    int64_t gic_cpu_id =
         bitmap_find_nth((bitmap_t)&sgi_targets, GIC_TARGET_BITS, 1, 0, true);
-    if(gic_cpu_id < 0) {
+    if (gic_cpu_id < 0) {
         ERROR("cant find gic cpu id");
     }
 
@@ -180,31 +180,35 @@ void gic_map_mmio()
                 NUM_PAGES(sizeof(gicd)));
 }
 
-uint32_t gicc_iar() {
+uint32_t gicc_iar()
+{
     return gicc.IAR;
 }
 
-void gicc_eoir(uint32_t eoir) {
-     gicc.EOIR = eoir;
+void gicc_eoir(uint32_t eoir)
+{
+    gicc.EOIR = eoir;
 }
 
-void gicc_dir(uint32_t dir) {
-     gicc.DIR = dir;
+void gicc_dir(uint32_t dir)
+{
+    gicc.DIR = dir;
 }
 
 void gic_send_sgi(uint64_t cpu_target, uint64_t sgi_num)
 {
     if (sgi_num < GIC_MAX_SGIS && cpu_target < GIC_MAX_TARGETS) {
-        gicd.SGIR = 
+        gicd.SGIR =
             (1UL << (GICD_SGIR_CPUTRGLST_OFF + gic_cpu_map[cpu_target])) |
             (sgi_num & GICD_SGIR_SGIINTID_MSK);
     }
 }
 
-static inline uint8_t gic_translate_cpu_to_trgt(uint8_t cpu_targets) {
+static inline uint8_t gic_translate_cpu_to_trgt(uint8_t cpu_targets)
+{
     uint8_t gic_targets = 0;
-    for(int i = 0; i < GIC_MAX_TARGETS; i++) {
-        if((1 << i) & cpu_targets) {
+    for (int i = 0; i < GIC_MAX_TARGETS; i++) {
+        if ((1 << i) & cpu_targets) {
             gic_targets |= (1 << gic_cpu_map[i]);
         }
     }
@@ -219,7 +223,8 @@ void gicd_set_trgt(uint64_t int_id, uint8_t cpu_targets)
 
     spin_lock(&gicd_lock);
 
-    gicd.ITARGETSR[reg_ind] = (gicd.ITARGETSR[reg_ind] & ~mask) | 
+    gicd.ITARGETSR[reg_ind] =
+        (gicd.ITARGETSR[reg_ind] & ~mask) |
         ((gic_translate_cpu_to_trgt(cpu_targets) << off) & mask);
 
     spin_unlock(&gicd_lock);

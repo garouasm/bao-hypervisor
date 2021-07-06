@@ -22,20 +22,18 @@
 
 static inline void tlb_hyp_inv_va(void* va)
 {
-    asm volatile(
-        "dsb  ish\n\t"
-        "tlbi vae2is, %0\n\t"
-        "dsb  ish\n\t"
-        "isb\n\t" ::"r"(((uint64_t)va) >> 12));
+    asm volatile("dsb  ish\n\t"
+                 "tlbi vae2is, %0\n\t"
+                 "dsb  ish\n\t"
+                 "isb\n\t" ::"r"(((uint64_t)va) >> 12));
 }
 
 static inline void tlb_hyp_inv_all()
 {
-    asm volatile(
-        "dsb  ish\n\t"
-        "tlbi alle2is\n\t"
-        "dsb  ish\n\t"
-        "isb\n\t");
+    asm volatile("dsb  ish\n\t"
+                 "tlbi alle2is\n\t"
+                 "dsb  ish\n\t"
+                 "isb\n\t");
 }
 
 static inline void tlb_vm_inv_va(uint64_t vmid, void* va)

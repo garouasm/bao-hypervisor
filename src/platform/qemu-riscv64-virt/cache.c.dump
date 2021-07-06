@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/platform/qemu-riscv64-virt/cache.c"/>
+    <tok fileIndex="0" linenr="2" column="1" str="#"/>
+    <tok fileIndex="0" linenr="2" column="2" str="include"/>
+    <tok fileIndex="0" linenr="2" column="10" str="&lt;bao.h&gt;"/>
+    <tok fileIndex="0" linenr="3" column="1" str="#"/>
+    <tok fileIndex="0" linenr="3" column="2" str="include"/>
+    <tok fileIndex="0" linenr="3" column="10" str="&lt;cache.h&gt;"/>
+    <tok fileIndex="0" linenr="5" column="1" str="void"/>
+    <tok fileIndex="0" linenr="5" column="6" str="cache_flush_range"/>
+    <tok fileIndex="0" linenr="5" column="23" str="("/>
+    <tok fileIndex="0" linenr="5" column="24" str="void"/>
+    <tok fileIndex="0" linenr="5" column="28" str="*"/>
+    <tok fileIndex="0" linenr="5" column="30" str="base"/>
+    <tok fileIndex="0" linenr="5" column="34" str=","/>
+    <tok fileIndex="0" linenr="5" column="36" str="uint64_t"/>
+    <tok fileIndex="0" linenr="5" column="45" str="size"/>
+    <tok fileIndex="0" linenr="5" column="49" str=")"/>
+    <tok fileIndex="0" linenr="6" column="1" str="{"/>
+    <tok fileIndex="0" linenr="7" column="5" str="/* There really is no cache in qemu */"/>
+    <tok fileIndex="0" linenr="8" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/platform/qemu-riscv64-virt/cache.c" linenr="2" str="#include &lt;bao.h&gt;"/>
+    <directive file="src/platform/qemu-riscv64-virt/cache.c" linenr="3" str="#include &lt;cache.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aaca8900" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5ab0b0130" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="6" str="cache_flush_range" scope="0x55c5aacbc050" type="name" function="0x55c5aac541b0" astParent="0x55c5aac5d7c0"/>
+    <token id="0x55c5aac5d7c0" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="23" str="(" scope="0x55c5aacbc050" link="0x55c5aace4610" astOperand1="0x55c5ab0b0130" astOperand2="0x55c5aae54f80" valueType-type="void"/>
+    <token id="0x55c5aace2460" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="24" str="void" scope="0x55c5aacbc050" type="name" astParent="0x55c5aac52840"/>
+    <token id="0x55c5aac52840" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="28" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aae54f80" astOperand1="0x55c5aace2460" astOperand2="0x55c5aace0240"/>
+    <token id="0x55c5aace0240" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="30" str="base" scope="0x55c5aacbc050" type="name" varId="1" variable="0x55c5aac7a740" astParent="0x55c5aac52840" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aae54f80" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="34" str="," scope="0x55c5aacbc050" astParent="0x55c5aac5d7c0" astOperand1="0x55c5aac52840" astOperand2="0x55c5aaccb4e0"/>
+    <token id="0x55c5aace3c40" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="36" str="uint64_t" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aaccb4e0" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="45" str="size" scope="0x55c5aacbc050" type="name" varId="2" variable="0x55c5aac750d0" astParent="0x55c5aae54f80" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aace4610" file="src/platform/qemu-riscv64-virt/cache.c" linenr="5" column="49" str=")" scope="0x55c5aacbc050" link="0x55c5aac5d7c0"/>
+    <token id="0x55c5aac78c00" file="src/platform/qemu-riscv64-virt/cache.c" linenr="6" column="1" str="{" scope="0x55c5aac76850" link="0x55c5ab1ce750"/>
+    <token id="0x55c5ab1ce750" file="src/platform/qemu-riscv64-virt/cache.c" linenr="8" column="1" str="}" scope="0x55c5aac76850" link="0x55c5aac78c00"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aacbc050" type="Global">
+      <functionList>
+        <function id="0x55c5aac541b0" tokenDef="0x55c5ab0b0130" name="cache_flush_range" type="Function">
+          <arg nr="1" variable="0x55c5aac7a740"/>
+          <arg nr="2" variable="0x55c5aac750d0"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac76850" type="Function" className="cache_flush_range" bodyStart="0x55c5aac78c00" bodyEnd="0x55c5ab1ce750" nestedIn="0x55c5aacbc050" function="0x55c5aac541b0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac750d0" nameToken="0x55c5aaccb4e0" typeStartToken="0x55c5aace3c40" typeEndToken="0x55c5aace3c40" access="Argument" scope="0x55c5aac76850" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac7a740" nameToken="0x55c5aace0240" typeStartToken="0x55c5aace2460" typeEndToken="0x55c5aac52840" access="Argument" scope="0x55c5aac76850" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+  </valueflow>
+</dump>
+</dumps>

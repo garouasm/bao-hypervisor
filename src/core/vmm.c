@@ -28,12 +28,11 @@ struct config* vm_config_ptr;
 
 void vmm_init()
 {
-    if(vm_config_ptr->vmlist_size == 0){
-        if(cpu.id == CPU_MASTER)
-            INFO("No virtual machines to run.");
+    if (vm_config_ptr->vmlist_size == 0) {
+        if (cpu.id == CPU_MASTER) INFO("No virtual machines to run.");
         cpu_idle();
-    } 
-    
+    }
+
     vmm_arch_init();
 
     volatile static struct vm_assignment {
@@ -62,7 +61,7 @@ void vmm_init()
     bool master = false;
     bool assigned = false;
     size_t vm_id = 0;
-    vm_config_t *vm_config = NULL;
+    vm_config_t* vm_config = NULL;
 
     /**
      * Assign cpus according to vm affinity.
@@ -130,7 +129,8 @@ void vmm_init()
             vm_assign[vm_id].vm_shared_table =
                 *pt_get_pte(&cpu.as.pt, 0, (void*)BAO_VM_BASE);
         } else {
-            while (vm_assign[vm_id].vm_shared_table == 0);
+            while (vm_assign[vm_id].vm_shared_table == 0)
+                ;
             pte_t* pte = pt_get_pte(&cpu.as.pt, 0, (void*)BAO_VM_BASE);
             *pte = vm_assign[vm_id].vm_shared_table;
             fence_sync_write();

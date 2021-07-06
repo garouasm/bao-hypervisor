@@ -57,7 +57,7 @@ typedef struct vm {
     BITMAP_ALLOC(interrupt_bitmap, MAX_INTERRUPTS);
 
     size_t ipc_num;
-    ipc_t *ipcs;
+    ipc_t* ipcs;
 } vm_t;
 
 typedef struct vcpu {

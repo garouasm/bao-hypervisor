@@ -28,7 +28,7 @@ static unsigned long read_ins(uintptr_t ins_addr)
         succ = vm_readmem(cpu.vcpu->vm, &ins, ins_addr, 4, true);
     }
 
-    if(!succ){
+    if (!succ) {
         ERROR("failed to read guest instruction");
         /**
          * TODO: maybe the best is to inject the instuction fault in the
@@ -62,9 +62,10 @@ static inline int ins_ldst_decode(uintptr_t ins, emul_access_t *emul)
         }
 
         int funct3 = INS_FUNCT3(ins);
-        emul->width = (funct3 & 3) == 0
-                          ? 1
-                          : (funct3 & 3) == 1 ? 2 : (funct3 & 3) == 2 ? 4 : 8;
+        emul->width = (funct3 & 3) == 0   ? 1
+                      : (funct3 & 3) == 1 ? 2
+                      : (funct3 & 3) == 2 ? 4
+                                          : 8;
         emul->reg_width = REGLEN;
         emul->write = (INS_OPCODE(ins) == MATCH_STORE);
         emul->reg = emul->write ? INS_RS2(ins) : INS_RD(ins);
@@ -75,14 +76,14 @@ static inline int ins_ldst_decode(uintptr_t ins, emul_access_t *emul)
 }
 
 size_t guest_page_fault_handler()
-{   
+{
     /**
-     * If this was caused by an hypervisor access using hlv instructions, 
+     * If this was caused by an hypervisor access using hlv instructions,
      * just mark it as such, and return.
      * TODO: should we proceed with emulation even if this is a hypervisor
-     * access? 
+     * access?
      */
-    if(!(CSRR(CSR_HSTATUS) & HSTATUS_SPV)){
+    if (!(CSRR(CSR_HSTATUS) & HSTATUS_SPV)) {
         cpu.arch.hlv_except = true;
         return 4;
     }

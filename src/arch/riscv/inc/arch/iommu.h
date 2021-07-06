@@ -21,8 +21,6 @@
  */
 
 typedef struct {
-
 } iommu_vm_arch_t;
-
 
 #endif

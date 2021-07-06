@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/arch/riscv/cache.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;cache.h&gt;"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;platform.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="/** * The riscv spec does not include cache maintenance. There are current * efforts to define and standardize a set of cache management instructions, * but for now this is platform dependent. */"/>
+    <tok fileIndex="0" linenr="25" column="1" str="void"/>
+    <tok fileIndex="0" linenr="25" column="6" str="cache_arch_enumerate"/>
+    <tok fileIndex="0" linenr="25" column="26" str="("/>
+    <tok fileIndex="0" linenr="25" column="27" str="cache_t"/>
+    <tok fileIndex="0" linenr="25" column="34" str="*"/>
+    <tok fileIndex="0" linenr="25" column="36" str="dscrp"/>
+    <tok fileIndex="0" linenr="25" column="41" str=")"/>
+    <tok fileIndex="0" linenr="26" column="1" str="{"/>
+    <tok fileIndex="0" linenr="27" column="5" str="/**x     * Currently the typical of way for system software to discover cachex     * topology is to read it of a dtb passed by the bootloader. As we are notx     * implementing an fdt parser, a platform port must add it to the platformx     * description.x     */"/>
+    <tok fileIndex="0" linenr="33" column="5" str="*"/>
+    <tok fileIndex="0" linenr="33" column="6" str="dscrp"/>
+    <tok fileIndex="0" linenr="33" column="12" str="="/>
+    <tok fileIndex="0" linenr="33" column="14" str="platform"/>
+    <tok fileIndex="0" linenr="33" column="22" str="."/>
+    <tok fileIndex="0" linenr="33" column="23" str="cache"/>
+    <tok fileIndex="0" linenr="33" column="28" str=";"/>
+    <tok fileIndex="0" linenr="34" column="1" str="}"/>
+    <tok fileIndex="0" linenr="36" column="1" str="__attribute__"/>
+    <tok fileIndex="0" linenr="36" column="14" str="("/>
+    <tok fileIndex="0" linenr="36" column="15" str="("/>
+    <tok fileIndex="0" linenr="36" column="16" str="weak"/>
+    <tok fileIndex="0" linenr="36" column="20" str=")"/>
+    <tok fileIndex="0" linenr="36" column="21" str=")"/>
+    <tok fileIndex="0" linenr="36" column="23" str="void"/>
+    <tok fileIndex="0" linenr="36" column="28" str="cache_flush_range"/>
+    <tok fileIndex="0" linenr="36" column="45" str="("/>
+    <tok fileIndex="0" linenr="36" column="46" str="void"/>
+    <tok fileIndex="0" linenr="36" column="50" str="*"/>
+    <tok fileIndex="0" linenr="36" column="52" str="base"/>
+    <tok fileIndex="0" linenr="36" column="56" str=","/>
+    <tok fileIndex="0" linenr="36" column="58" str="uint64_t"/>
+    <tok fileIndex="0" linenr="36" column="67" str="size"/>
+    <tok fileIndex="0" linenr="36" column="71" str=")"/>
+    <tok fileIndex="0" linenr="37" column="1" str="{"/>
+    <tok fileIndex="0" linenr="38" column="5" str="/**x     * A platform must define its custom cache flush operation, otherwisex     * certain mechanisms such as coloring and hypervisor relocation willx     * most probably fail.x     */"/>
+    <tok fileIndex="0" linenr="43" column="5" str="WARNING"/>
+    <tok fileIndex="0" linenr="43" column="12" str="("/>
+    <tok fileIndex="0" linenr="43" column="13" str="&quot;trying to flush caches but the operation is not defined for this &quot;"/>
+    <tok fileIndex="0" linenr="44" column="13" str="&quot;platform&quot;"/>
+    <tok fileIndex="0" linenr="44" column="23" str=")"/>
+    <tok fileIndex="0" linenr="44" column="24" str=";"/>
+    <tok fileIndex="0" linenr="45" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/arch/riscv/cache.c" linenr="16" str="#include &lt;cache.h&gt;"/>
+    <directive file="src/arch/riscv/cache.c" linenr="17" str="#include &lt;platform.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aac79340" file="src/arch/riscv/cache.c" linenr="25" column="1" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aace4a50" file="src/arch/riscv/cache.c" linenr="25" column="6" str="cache_arch_enumerate" scope="0x55c5aac789a0" type="name" function="0x55c5aace5d50" astParent="0x55c5aace68d0"/>
+    <token id="0x55c5aace68d0" file="src/arch/riscv/cache.c" linenr="25" column="26" str="(" scope="0x55c5aac789a0" link="0x55c5ab0b1160" astOperand1="0x55c5aace4a50" astOperand2="0x55c5aad21550" valueType-type="void"/>
+    <token id="0x55c5aac76020" file="src/arch/riscv/cache.c" linenr="25" column="27" str="cache_t" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad21550"/>
+    <token id="0x55c5aad21550" file="src/arch/riscv/cache.c" linenr="25" column="34" str="*" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aace68d0" astOperand1="0x55c5aac76020" astOperand2="0x55c5aac7a160"/>
+    <token id="0x55c5aac7a160" file="src/arch/riscv/cache.c" linenr="25" column="36" str="dscrp" scope="0x55c5aac789a0" type="name" varId="1" variable="0x55c5aace53f0" astParent="0x55c5aad21550"/>
+    <token id="0x55c5ab0b1160" file="src/arch/riscv/cache.c" linenr="25" column="41" str=")" scope="0x55c5aac789a0" link="0x55c5aace68d0"/>
+    <token id="0x55c5ab0b1790" file="src/arch/riscv/cache.c" linenr="26" column="1" str="{" scope="0x55c5aac783b0" link="0x55c5aac5ec40"/>
+    <token id="0x55c5ab0b2cb0" file="src/arch/riscv/cache.c" linenr="33" column="5" str="*" scope="0x55c5aac783b0" type="op" isArithmeticalOp="True" astParent="0x55c5aac5d2a0" astOperand1="0x55c5aaca86f0"/>
+    <token id="0x55c5aaca86f0" file="src/arch/riscv/cache.c" linenr="33" column="6" str="dscrp" scope="0x55c5aac783b0" type="name" varId="1" variable="0x55c5aace53f0" astParent="0x55c5ab0b2cb0"/>
+    <token id="0x55c5aac5d2a0" file="src/arch/riscv/cache.c" linenr="33" column="12" str="=" scope="0x55c5aac783b0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0b2cb0" astOperand2="0x55c5aac65e90"/>
+    <token id="0x55c5aac65530" file="src/arch/riscv/cache.c" linenr="33" column="14" str="platform" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac65e90"/>
+    <token id="0x55c5aac65e90" file="src/arch/riscv/cache.c" linenr="33" column="22" str="." scope="0x55c5aac783b0" astParent="0x55c5aac5d2a0" astOperand1="0x55c5aac65530" astOperand2="0x55c5aac6f480"/>
+    <token id="0x55c5aac6f480" file="src/arch/riscv/cache.c" linenr="33" column="23" str="cache" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac65e90"/>
+    <token id="0x55c5aad18880" file="src/arch/riscv/cache.c" linenr="33" column="28" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac5ec40" file="src/arch/riscv/cache.c" linenr="34" column="1" str="}" scope="0x55c5aac783b0" link="0x55c5ab0b1790"/>
+    <token id="0x55c5aae49b70" file="src/arch/riscv/cache.c" linenr="36" column="23" str="void" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aace64f0" file="src/arch/riscv/cache.c" linenr="36" column="28" str="cache_flush_range" scope="0x55c5aac789a0" type="name" function="0x55c5aace63e0" astParent="0x55c5aac55960"/>
+    <token id="0x55c5aac55960" file="src/arch/riscv/cache.c" linenr="36" column="45" str="(" scope="0x55c5aac789a0" link="0x55c5aac65d80" astOperand1="0x55c5aace64f0" astOperand2="0x55c5aac59d60" valueType-type="void"/>
+    <token id="0x55c5aac559c0" file="src/arch/riscv/cache.c" linenr="36" column="46" str="void" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace66a0"/>
+    <token id="0x55c5aace66a0" file="src/arch/riscv/cache.c" linenr="36" column="50" str="*" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aac59d60" astOperand1="0x55c5aac559c0" astOperand2="0x55c5aace6700"/>
+    <token id="0x55c5aace6700" file="src/arch/riscv/cache.c" linenr="36" column="52" str="base" scope="0x55c5aac789a0" type="name" varId="2" variable="0x55c5aace5310" astParent="0x55c5aace66a0" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac59d60" file="src/arch/riscv/cache.c" linenr="36" column="56" str="," scope="0x55c5aac789a0" astParent="0x55c5aac55960" astOperand1="0x55c5aace66a0" astOperand2="0x55c5aac65d20"/>
+    <token id="0x55c5aac59dc0" file="src/arch/riscv/cache.c" linenr="36" column="58" str="uint64_t" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac65d20" file="src/arch/riscv/cache.c" linenr="36" column="67" str="size" scope="0x55c5aac789a0" type="name" varId="3" variable="0x55c5aace51c0" astParent="0x55c5aac59d60" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac65d80" file="src/arch/riscv/cache.c" linenr="36" column="71" str=")" scope="0x55c5aac789a0" link="0x55c5aac55960"/>
+    <token id="0x55c5aac65170" file="src/arch/riscv/cache.c" linenr="37" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aac55b50"/>
+    <token id="0x55c5aac651d0" file="src/arch/riscv/cache.c" linenr="43" column="5" str="WARNING" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab0b0ba0"/>
+    <token id="0x55c5ab0b0ba0" file="src/arch/riscv/cache.c" linenr="43" column="12" str="(" scope="0x55c5aac785a0" link="0x55c5aac78070" astOperand1="0x55c5aac651d0" astOperand2="0x55c5ab0b0c00"/>
+    <token id="0x55c5ab0b0c00" file="src/arch/riscv/cache.c" linenr="43" column="13" str="&quot;trying to flush caches but the operation is not defined for this platform&quot;" scope="0x55c5aac785a0" type="string" strlen="73" values="0x55c5aac64750" astParent="0x55c5ab0b0ba0" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac78070" file="src/arch/riscv/cache.c" linenr="44" column="23" str=")" scope="0x55c5aac785a0" link="0x55c5ab0b0ba0"/>
+    <token id="0x55c5aac65fc0" file="src/arch/riscv/cache.c" linenr="44" column="24" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac55b50" file="src/arch/riscv/cache.c" linenr="45" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aac65170"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac789a0" type="Global">
+      <functionList>
+        <function id="0x55c5aace5d50" tokenDef="0x55c5aace4a50" name="cache_arch_enumerate" type="Function">
+          <arg nr="1" variable="0x55c5aace53f0"/>
+        </function>
+        <function id="0x55c5aace63e0" tokenDef="0x55c5aace64f0" name="cache_flush_range" type="Function">
+          <arg nr="1" variable="0x55c5aace5310"/>
+          <arg nr="2" variable="0x55c5aace51c0"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac783b0" type="Function" className="cache_arch_enumerate" bodyStart="0x55c5ab0b1790" bodyEnd="0x55c5aac5ec40" nestedIn="0x55c5aac789a0" function="0x55c5aace5d50"/>
+    <scope id="0x55c5aac785a0" type="Function" className="cache_flush_range" bodyStart="0x55c5aac65170" bodyEnd="0x55c5aac55b50" nestedIn="0x55c5aac789a0" function="0x55c5aace63e0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aace51c0" nameToken="0x55c5aac65d20" typeStartToken="0x55c5aac59dc0" typeEndToken="0x55c5aac59dc0" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace5310" nameToken="0x55c5aace6700" typeStartToken="0x55c5aac559c0" typeEndToken="0x55c5aace66a0" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace53f0" nameToken="0x55c5aac7a160" typeStartToken="0x55c5aac76020" typeEndToken="0x55c5aad21550" access="Argument" scope="0x55c5aac783b0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aac64750">
+      <value tokvalue="0x55c5ab0b0c00" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

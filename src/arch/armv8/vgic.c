@@ -28,7 +28,8 @@ extern volatile const uint64_t VGIC_IPI_ID;
     (((offset) >= offsetof(gicd_t, REG)) && \
      (offset) < (offsetof(gicd_t, REG) + sizeof(gicd.REG)))
 #define GICD_REG_GROUP(REG) ((offsetof(gicd_t, REG) & 0xff80) >> 7)
-#define GICD_REG_MASK(ADDR) ((ADDR)&(GIC_VERSION == GICV2 ? 0xfffULL : 0xffffULL))
+#define GICD_REG_MASK(ADDR) \
+    ((ADDR) & (GIC_VERSION == GICV2 ? 0xfffULL : 0xffffULL))
 #define GICD_REG_IND(REG) (offsetof(gicd_t, REG) & 0x7f)
 
 #define VGIC_MSG_DATA(VM_ID, VGICRID, INT_ID, REG, VAL)                 \
@@ -1088,11 +1089,11 @@ void gic_maintenance_handler(uint64_t arg)
     }
 }
 
-uint64_t vgic_get_itln(const struct gic_dscrp *gic_dscrp) {
-
+uint64_t vgic_get_itln(const struct gic_dscrp *gic_dscrp)
+{
     /**
      * By default the guest sees the real platforms interrupt line number
-     * in the virtual gic. However a user can control this using the 
+     * in the virtual gic. However a user can control this using the
      * interrupt_num in the platform description configuration which be at
      * least the number os ppis and a multiple of 32.
      */
@@ -1100,9 +1101,9 @@ uint64_t vgic_get_itln(const struct gic_dscrp *gic_dscrp) {
     uint64_t vtyper_itln =
         bit_extract(gicd.TYPER, GICD_TYPER_ITLN_OFF, GICD_TYPER_ITLN_LEN);
 
-    if(gic_dscrp->interrupt_num > GIC_MAX_PPIS) {
-        vtyper_itln = (ALIGN(gic_dscrp->interrupt_num, 32)/32 - 1) & 
-            BIT_MASK(0, GICD_TYPER_ITLN_LEN);
+    if (gic_dscrp->interrupt_num > GIC_MAX_PPIS) {
+        vtyper_itln = (ALIGN(gic_dscrp->interrupt_num, 32) / 32 - 1) &
+                      BIT_MASK(0, GICD_TYPER_ITLN_LEN);
     }
 
     return vtyper_itln;

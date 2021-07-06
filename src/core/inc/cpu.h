@@ -67,10 +67,10 @@ void cpu_send_msg(uint64_t cpu, cpu_msg_t* msg);
 
 typedef void (*cpu_msg_handler_t)(uint32_t event, uint64_t data);
 
-#define CPU_MSG_HANDLER(handler, handler_id)                    \
-    __attribute__((section(".ipi_cpumsg_handlers"), used))      \
-        cpu_msg_handler_t __cpumsg_handler_##handler = handler; \
-    __attribute__((section(".ipi_cpumsg_handlers_id"),          \
+#define CPU_MSG_HANDLER(handler, handler_id)                \
+    __attribute__((section(".ipi_cpumsg_handlers"), used))  \
+    cpu_msg_handler_t __cpumsg_handler_##handler = handler; \
+    __attribute__((section(".ipi_cpumsg_handlers_id"),      \
                    used)) volatile const uint64_t handler_id;
 
 typedef struct {
@@ -96,14 +96,16 @@ static inline void cpu_sync_barrier(cpu_synctoken_t* token)
 
     uint64_t next_count = 0;
 
-    while (!token->ready);
+    while (!token->ready)
+        ;
 
     spin_lock(&token->lock);
     token->count++;
     next_count = ALIGN(token->count, token->n);
     spin_unlock(&token->lock);
 
-    while (token->count < next_count);
+    while (token->count < next_count)
+        ;
 }
 
 static inline cpuif_t* cpu_if(uint64_t cpu_id)

@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/arch/riscv/cpu.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;bao.h&gt;"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;cpu.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="include"/>
+    <tok fileIndex="0" linenr="18" column="10" str="&lt;arch/sbi.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="include"/>
+    <tok fileIndex="0" linenr="19" column="10" str="&lt;platform.h&gt;"/>
+    <tok fileIndex="0" linenr="21" column="1" str="uint64_t"/>
+    <tok fileIndex="0" linenr="21" column="10" str="CPU_MASTER"/>
+    <tok fileIndex="0" linenr="21" column="21" str="__attribute__"/>
+    <tok fileIndex="0" linenr="21" column="34" str="("/>
+    <tok fileIndex="0" linenr="21" column="35" str="("/>
+    <tok fileIndex="0" linenr="21" column="36" str="section"/>
+    <tok fileIndex="0" linenr="21" column="43" str="("/>
+    <tok fileIndex="0" linenr="21" column="44" str="&quot;.data&quot;"/>
+    <tok fileIndex="0" linenr="21" column="51" str=")"/>
+    <tok fileIndex="0" linenr="21" column="52" str=")"/>
+    <tok fileIndex="0" linenr="21" column="53" str=")"/>
+    <tok fileIndex="0" linenr="21" column="54" str=";"/>
+    <tok fileIndex="0" linenr="23" column="1" str="/* Perform architecture dependent cpu cores initializations */"/>
+    <tok fileIndex="0" linenr="24" column="1" str="void"/>
+    <tok fileIndex="0" linenr="24" column="6" str="cpu_arch_init"/>
+    <tok fileIndex="0" linenr="24" column="19" str="("/>
+    <tok fileIndex="0" linenr="24" column="20" str="uint64_t"/>
+    <tok fileIndex="0" linenr="24" column="29" str="cpuid"/>
+    <tok fileIndex="0" linenr="24" column="34" str=","/>
+    <tok fileIndex="0" linenr="24" column="36" str="uint64_t"/>
+    <tok fileIndex="0" linenr="24" column="45" str="load_addr"/>
+    <tok fileIndex="0" linenr="24" column="54" str=")"/>
+    <tok fileIndex="0" linenr="25" column="1" str="{"/>
+    <tok fileIndex="0" linenr="26" column="5" str="if"/>
+    <tok fileIndex="0" linenr="26" column="8" str="("/>
+    <tok fileIndex="0" linenr="26" column="9" str="cpuid"/>
+    <tok fileIndex="0" linenr="26" column="15" str="=="/>
+    <tok fileIndex="0" linenr="26" column="18" str="CPU_MASTER"/>
+    <tok fileIndex="0" linenr="26" column="28" str=")"/>
+    <tok fileIndex="0" linenr="26" column="30" str="{"/>
+    <tok fileIndex="0" linenr="27" column="9" str="sbi_init"/>
+    <tok fileIndex="0" linenr="27" column="17" str="("/>
+    <tok fileIndex="0" linenr="27" column="18" str=")"/>
+    <tok fileIndex="0" linenr="27" column="19" str=";"/>
+    <tok fileIndex="0" linenr="28" column="9" str="for"/>
+    <tok fileIndex="0" linenr="28" column="13" str="("/>
+    <tok fileIndex="0" linenr="28" column="14" str="int"/>
+    <tok fileIndex="0" linenr="28" column="18" str="hartid"/>
+    <tok fileIndex="0" linenr="28" column="25" str="="/>
+    <tok fileIndex="0" linenr="28" column="27" str="0"/>
+    <tok fileIndex="0" linenr="28" column="28" str=";"/>
+    <tok fileIndex="0" linenr="28" column="30" str="hartid"/>
+    <tok fileIndex="0" linenr="28" column="37" str="&lt;"/>
+    <tok fileIndex="0" linenr="28" column="39" str="platform"/>
+    <tok fileIndex="0" linenr="28" column="47" str="."/>
+    <tok fileIndex="0" linenr="28" column="48" str="cpu_num"/>
+    <tok fileIndex="0" linenr="28" column="55" str=";"/>
+    <tok fileIndex="0" linenr="28" column="57" str="hartid"/>
+    <tok fileIndex="0" linenr="28" column="63" str="++"/>
+    <tok fileIndex="0" linenr="28" column="65" str=")"/>
+    <tok fileIndex="0" linenr="28" column="67" str="{"/>
+    <tok fileIndex="0" linenr="29" column="13" str="if"/>
+    <tok fileIndex="0" linenr="29" column="16" str="("/>
+    <tok fileIndex="0" linenr="29" column="17" str="hartid"/>
+    <tok fileIndex="0" linenr="29" column="24" str="=="/>
+    <tok fileIndex="0" linenr="29" column="27" str="cpuid"/>
+    <tok fileIndex="0" linenr="29" column="32" str=")"/>
+    <tok fileIndex="0" linenr="29" column="34" str="continue"/>
+    <tok fileIndex="0" linenr="29" column="42" str=";"/>
+    <tok fileIndex="0" linenr="30" column="13" str="struct"/>
+    <tok fileIndex="0" linenr="30" column="20" str="sbiret"/>
+    <tok fileIndex="0" linenr="30" column="27" str="ret"/>
+    <tok fileIndex="0" linenr="30" column="31" str="="/>
+    <tok fileIndex="0" linenr="30" column="33" str="sbi_hart_start"/>
+    <tok fileIndex="0" linenr="30" column="47" str="("/>
+    <tok fileIndex="0" linenr="30" column="48" str="hartid"/>
+    <tok fileIndex="0" linenr="30" column="54" str=","/>
+    <tok fileIndex="0" linenr="30" column="56" str="load_addr"/>
+    <tok fileIndex="0" linenr="30" column="65" str=","/>
+    <tok fileIndex="0" linenr="30" column="67" str="0"/>
+    <tok fileIndex="0" linenr="30" column="68" str=")"/>
+    <tok fileIndex="0" linenr="30" column="69" str=";"/>
+    <tok fileIndex="0" linenr="31" column="13" str="if"/>
+    <tok fileIndex="0" linenr="31" column="16" str="("/>
+    <tok fileIndex="0" linenr="31" column="17" str="ret"/>
+    <tok fileIndex="0" linenr="31" column="20" str="."/>
+    <tok fileIndex="0" linenr="31" column="21" str="error"/>
+    <tok fileIndex="0" linenr="31" column="27" str="&lt;"/>
+    <tok fileIndex="0" linenr="31" column="29" str="0"/>
+    <tok fileIndex="0" linenr="31" column="30" str=")"/>
+    <tok fileIndex="0" linenr="31" column="32" str="{"/>
+    <tok fileIndex="0" linenr="32" column="17" str="WARNING"/>
+    <tok fileIndex="0" linenr="32" column="24" str="("/>
+    <tok fileIndex="0" linenr="32" column="25" str="&quot;failed to wake up hart %d&quot;"/>
+    <tok fileIndex="0" linenr="32" column="52" str=","/>
+    <tok fileIndex="0" linenr="32" column="54" str="hartid"/>
+    <tok fileIndex="0" linenr="32" column="60" str=")"/>
+    <tok fileIndex="0" linenr="32" column="61" str=";"/>
+    <tok fileIndex="0" linenr="33" column="13" str="}"/>
+    <tok fileIndex="0" linenr="34" column="9" str="}"/>
+    <tok fileIndex="0" linenr="35" column="5" str="}"/>
+    <tok fileIndex="0" linenr="36" column="1" str="}"/>
+    <tok fileIndex="0" linenr="38" column="1" str="void"/>
+    <tok fileIndex="0" linenr="38" column="6" str="cpu_arch_idle"/>
+    <tok fileIndex="0" linenr="38" column="19" str="("/>
+    <tok fileIndex="0" linenr="38" column="20" str=")"/>
+    <tok fileIndex="0" linenr="39" column="1" str="{"/>
+    <tok fileIndex="0" linenr="40" column="5" str="asm"/>
+    <tok fileIndex="0" linenr="40" column="9" str="volatile"/>
+    <tok fileIndex="0" linenr="40" column="17" str="("/>
+    <tok fileIndex="0" linenr="40" column="18" str="&quot;wfi\n\t&quot;"/>
+    <tok fileIndex="0" linenr="40" column="28" str="::"/>
+    <tok fileIndex="0" linenr="40" column="30" str=":"/>
+    <tok fileIndex="0" linenr="40" column="32" str="&quot;memory&quot;"/>
+    <tok fileIndex="0" linenr="40" column="40" str=")"/>
+    <tok fileIndex="0" linenr="40" column="41" str=";"/>
+    <tok fileIndex="0" linenr="41" column="5" str="asm"/>
+    <tok fileIndex="0" linenr="41" column="9" str="volatile"/>
+    <tok fileIndex="0" linenr="41" column="17" str="("/>
+    <tok fileIndex="0" linenr="41" column="18" str="&quot;mv sp, %0\n\r&quot;"/>
+    <tok fileIndex="0" linenr="42" column="18" str="&quot;j cpu_idle_wakeup\n\r&quot;"/>
+    <tok fileIndex="0" linenr="42" column="42" str="::"/>
+    <tok fileIndex="0" linenr="42" column="44" str="&quot;r&quot;"/>
+    <tok fileIndex="0" linenr="42" column="47" str="("/>
+    <tok fileIndex="0" linenr="42" column="48" str="&amp;"/>
+    <tok fileIndex="0" linenr="42" column="49" str="cpu"/>
+    <tok fileIndex="0" linenr="42" column="52" str="."/>
+    <tok fileIndex="0" linenr="42" column="53" str="stack"/>
+    <tok fileIndex="0" linenr="42" column="58" str="["/>
+    <tok fileIndex="0" linenr="42" column="59" str="STACK_SIZE"/>
+    <tok fileIndex="0" linenr="42" column="69" str="]"/>
+    <tok fileIndex="0" linenr="42" column="70" str=")"/>
+    <tok fileIndex="0" linenr="42" column="71" str=")"/>
+    <tok fileIndex="0" linenr="42" column="72" str=";"/>
+    <tok fileIndex="0" linenr="43" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/arch/riscv/cpu.c" linenr="16" str="#include &lt;bao.h&gt;"/>
+    <directive file="src/arch/riscv/cpu.c" linenr="17" str="#include &lt;cpu.h&gt;"/>
+    <directive file="src/arch/riscv/cpu.c" linenr="18" str="#include &lt;arch/sbi.h&gt;"/>
+    <directive file="src/arch/riscv/cpu.c" linenr="19" str="#include &lt;platform.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aac6f480" file="src/arch/riscv/cpu.c" linenr="21" column="1" str="uint64_t" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aace17b0" file="src/arch/riscv/cpu.c" linenr="21" column="10" str="CPU_MASTER" scope="0x55c5aac783b0" type="name" varId="1" variable="0x55c5aace5460" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac666d0" file="src/arch/riscv/cpu.c" linenr="21" column="54" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac79d40" file="src/arch/riscv/cpu.c" linenr="24" column="1" str="void" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac79da0" file="src/arch/riscv/cpu.c" linenr="24" column="6" str="cpu_arch_init" scope="0x55c5aac783b0" type="name" function="0x55c5aace63e0" astParent="0x55c5aace5de0"/>
+    <token id="0x55c5aace5de0" file="src/arch/riscv/cpu.c" linenr="24" column="19" str="(" scope="0x55c5aac783b0" link="0x55c5aaca24f0" astOperand1="0x55c5aac79da0" astOperand2="0x55c5aace6220" valueType-type="void"/>
+    <token id="0x55c5aace5e40" file="src/arch/riscv/cpu.c" linenr="24" column="20" str="uint64_t" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aace61c0" file="src/arch/riscv/cpu.c" linenr="24" column="29" str="cpuid" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aace7350" astParent="0x55c5aace6220" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aace6220" file="src/arch/riscv/cpu.c" linenr="24" column="34" str="," scope="0x55c5aac783b0" astParent="0x55c5aace5de0" astOperand1="0x55c5aace61c0" astOperand2="0x55c5aac6eb70"/>
+    <token id="0x55c5aac6eb10" file="src/arch/riscv/cpu.c" linenr="24" column="36" str="uint64_t" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac6eb70" file="src/arch/riscv/cpu.c" linenr="24" column="45" str="load_addr" scope="0x55c5aac783b0" type="name" varId="3" variable="0x55c5aac74420" astParent="0x55c5aace6220" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca24f0" file="src/arch/riscv/cpu.c" linenr="24" column="54" str=")" scope="0x55c5aac783b0" link="0x55c5aace5de0"/>
+    <token id="0x55c5aaca2550" file="src/arch/riscv/cpu.c" linenr="25" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aac5c210"/>
+    <token id="0x55c5ab0b0830" file="src/arch/riscv/cpu.c" linenr="26" column="5" str="if" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab0b0890"/>
+    <token id="0x55c5ab0b0890" file="src/arch/riscv/cpu.c" linenr="26" column="8" str="(" scope="0x55c5aac785a0" link="0x55c5aac77c00" astOperand1="0x55c5ab0b0830" astOperand2="0x55c5aac5d230"/>
+    <token id="0x55c5aac5d1d0" file="src/arch/riscv/cpu.c" linenr="26" column="9" str="cpuid" scope="0x55c5aac785a0" type="name" varId="2" variable="0x55c5aace7350" astParent="0x55c5aac5d230" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac5d230" file="src/arch/riscv/cpu.c" linenr="26" column="15" str="==" scope="0x55c5aac785a0" type="op" isComparisonOp="True" astParent="0x55c5ab0b0890" astOperand1="0x55c5aac5d1d0" astOperand2="0x55c5aac77ba0" valueType-type="bool"/>
+    <token id="0x55c5aac77ba0" file="src/arch/riscv/cpu.c" linenr="26" column="18" str="CPU_MASTER" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aace5460" astParent="0x55c5aac5d230" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac77c00" file="src/arch/riscv/cpu.c" linenr="26" column="28" str=")" scope="0x55c5aac785a0" link="0x55c5ab0b0890"/>
+    <token id="0x55c5aac55ed0" file="src/arch/riscv/cpu.c" linenr="26" column="30" str="{" scope="0x55c5aac789a0" link="0x55c5aac5c0f0"/>
+    <token id="0x55c5aac55f30" file="src/arch/riscv/cpu.c" linenr="27" column="9" str="sbi_init" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac75160"/>
+    <token id="0x55c5aac75160" file="src/arch/riscv/cpu.c" linenr="27" column="17" str="(" scope="0x55c5aac789a0" link="0x55c5aac751c0" astOperand1="0x55c5aac55f30"/>
+    <token id="0x55c5aac751c0" file="src/arch/riscv/cpu.c" linenr="27" column="18" str=")" scope="0x55c5aac789a0" link="0x55c5aac75160"/>
+    <token id="0x55c5aac597c0" file="src/arch/riscv/cpu.c" linenr="27" column="19" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac59820" file="src/arch/riscv/cpu.c" linenr="28" column="9" str="for" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab0b29b0"/>
+    <token id="0x55c5ab0b29b0" file="src/arch/riscv/cpu.c" linenr="28" column="13" str="(" scope="0x55c5aac789a0" link="0x55c5aace5580" astOperand1="0x55c5aac59820" astOperand2="0x55c5aace7920"/>
+    <token id="0x55c5ab0b2a10" file="src/arch/riscv/cpu.c" linenr="28" column="14" str="int" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5ab0b2ba0" file="src/arch/riscv/cpu.c" linenr="28" column="18" str="hartid" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0b0450" astParent="0x55c5ab0b2c00" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0b2c00" file="src/arch/riscv/cpu.c" linenr="28" column="25" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astParent="0x55c5aace7920" astOperand1="0x55c5ab0b2ba0" astOperand2="0x55c5aace78c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace78c0" file="src/arch/riscv/cpu.c" linenr="28" column="27" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aac7bbe0" astParent="0x55c5ab0b2c00" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace7920" file="src/arch/riscv/cpu.c" linenr="28" column="28" str=";" scope="0x55c5aac789a0" astParent="0x55c5ab0b29b0" astOperand1="0x55c5ab0b2c00" astOperand2="0x55c5aac790c0"/>
+    <token id="0x55c5aad6a040" file="src/arch/riscv/cpu.c" linenr="28" column="30" str="hartid" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0b0450" astParent="0x55c5ab0adb90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0adb90" file="src/arch/riscv/cpu.c" linenr="28" column="37" str="&lt;" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aac790c0" astOperand1="0x55c5aad6a040" astOperand2="0x55c5aac74250" valueType-type="bool"/>
+    <token id="0x55c5aac74130" file="src/arch/riscv/cpu.c" linenr="28" column="39" str="platform" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac74250"/>
+    <token id="0x55c5aac74250" file="src/arch/riscv/cpu.c" linenr="28" column="47" str="." scope="0x55c5aac789a0" astParent="0x55c5ab0adb90" astOperand1="0x55c5aac74130" astOperand2="0x55c5aac742b0"/>
+    <token id="0x55c5aac742b0" file="src/arch/riscv/cpu.c" linenr="28" column="48" str="cpu_num" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac74250"/>
+    <token id="0x55c5aac790c0" file="src/arch/riscv/cpu.c" linenr="28" column="55" str=";" scope="0x55c5aac789a0" astParent="0x55c5aace7920" astOperand1="0x55c5ab0adb90" astOperand2="0x55c5aac79300"/>
+    <token id="0x55c5aac791e0" file="src/arch/riscv/cpu.c" linenr="28" column="57" str="hartid" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0b0450" astParent="0x55c5aac79300" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac79300" file="src/arch/riscv/cpu.c" linenr="28" column="63" str="++" scope="0x55c5aac789a0" type="op" astParent="0x55c5aac790c0" astOperand1="0x55c5aac791e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5580" file="src/arch/riscv/cpu.c" linenr="28" column="65" str=")" scope="0x55c5aac789a0" link="0x55c5ab0b29b0"/>
+    <token id="0x55c5aace56a0" file="src/arch/riscv/cpu.c" linenr="28" column="67" str="{" scope="0x55c5aac75e20" link="0x55c5aac5bfd0"/>
+    <token id="0x55c5aace57c0" file="src/arch/riscv/cpu.c" linenr="29" column="13" str="if" scope="0x55c5aac75e20" type="name" astParent="0x55c5aace58e0"/>
+    <token id="0x55c5aace58e0" file="src/arch/riscv/cpu.c" linenr="29" column="16" str="(" scope="0x55c5aac75e20" link="0x55c5ab0abeb0" astOperand1="0x55c5aace57c0" astOperand2="0x55c5aace5b20"/>
+    <token id="0x55c5aace5a00" file="src/arch/riscv/cpu.c" linenr="29" column="17" str="hartid" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5ab0b0450" astParent="0x55c5aace5b20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5b20" file="src/arch/riscv/cpu.c" linenr="29" column="24" str="==" scope="0x55c5aac75e20" type="op" isComparisonOp="True" astParent="0x55c5aace58e0" astOperand1="0x55c5aace5a00" astOperand2="0x55c5aace5c40" valueType-type="bool"/>
+    <token id="0x55c5aace5c40" file="src/arch/riscv/cpu.c" linenr="29" column="27" str="cpuid" scope="0x55c5aac75e20" type="name" varId="2" variable="0x55c5aace7350" astParent="0x55c5aace5b20" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0abeb0" file="src/arch/riscv/cpu.c" linenr="29" column="32" str=")" scope="0x55c5aac75e20" link="0x55c5aace58e0"/>
+    <token id="0x55c5aac6ef10" file="src/arch/riscv/cpu.c" linenr="29" column="0" str="{" scope="0x55c5aac76850" link="0x55c5aac5ce00"/>
+    <token id="0x55c5ab0abfd0" file="src/arch/riscv/cpu.c" linenr="29" column="34" str="continue" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5ab0ac0f0" file="src/arch/riscv/cpu.c" linenr="29" column="42" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5ce00" file="src/arch/riscv/cpu.c" linenr="29" column="0" str="}" scope="0x55c5aac76850" link="0x55c5aac6ef10"/>
+    <token id="0x55c5ab0ac210" file="src/arch/riscv/cpu.c" linenr="30" column="13" str="struct" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5ab0ac330" file="src/arch/riscv/cpu.c" linenr="30" column="20" str="sbiret" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5ab0ac450" file="src/arch/riscv/cpu.c" linenr="30" column="27" str="ret" scope="0x55c5aac75e20" type="name" varId="5" variable="0x55c5aace73c0" valueType-type="record"/>
+    <token id="0x55c5ab0ac570" file="src/arch/riscv/cpu.c" linenr="30" column="31" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aad45740" file="src/arch/riscv/cpu.c" linenr="30" column="27" str="ret" scope="0x55c5aac75e20" type="name" varId="5" variable="0x55c5aace73c0" astParent="0x55c5aac5e030" valueType-type="record"/>
+    <token id="0x55c5aac5e030" file="src/arch/riscv/cpu.c" linenr="30" column="31" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" astOperand1="0x55c5aad45740" astOperand2="0x55c5aac52d50" valueType-type="record"/>
+    <token id="0x55c5aac52c30" file="src/arch/riscv/cpu.c" linenr="30" column="33" str="sbi_hart_start" scope="0x55c5aac75e20" type="name" astParent="0x55c5aac52d50"/>
+    <token id="0x55c5aac52d50" file="src/arch/riscv/cpu.c" linenr="30" column="47" str="(" scope="0x55c5aac75e20" link="0x55c5aace5ca0" astParent="0x55c5aac5e030" astOperand1="0x55c5aac52c30" astOperand2="0x55c5aac531d0"/>
+    <token id="0x55c5aac52e70" file="src/arch/riscv/cpu.c" linenr="30" column="48" str="hartid" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5ab0b0450" astParent="0x55c5aac52f90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac52f90" file="src/arch/riscv/cpu.c" linenr="30" column="54" str="," scope="0x55c5aac75e20" astParent="0x55c5aac531d0" astOperand1="0x55c5aac52e70" astOperand2="0x55c5aac530b0"/>
+    <token id="0x55c5aac530b0" file="src/arch/riscv/cpu.c" linenr="30" column="56" str="load_addr" scope="0x55c5aac75e20" type="name" varId="3" variable="0x55c5aac74420" astParent="0x55c5aac52f90" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac531d0" file="src/arch/riscv/cpu.c" linenr="30" column="65" str="," scope="0x55c5aac75e20" astParent="0x55c5aac52d50" astOperand1="0x55c5aac52f90" astOperand2="0x55c5aac532f0"/>
+    <token id="0x55c5aac532f0" file="src/arch/riscv/cpu.c" linenr="30" column="67" str="0" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5ab0b3820" astParent="0x55c5aac531d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5ca0" file="src/arch/riscv/cpu.c" linenr="30" column="68" str=")" scope="0x55c5aac75e20" link="0x55c5aac52d50"/>
+    <token id="0x55c5aad463d0" file="src/arch/riscv/cpu.c" linenr="30" column="69" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aad464f0" file="src/arch/riscv/cpu.c" linenr="31" column="13" str="if" scope="0x55c5aac75e20" type="name" astParent="0x55c5aad46610"/>
+    <token id="0x55c5aad46610" file="src/arch/riscv/cpu.c" linenr="31" column="16" str="(" scope="0x55c5aac75e20" link="0x55c5aafe2e80" astOperand1="0x55c5aad464f0" astOperand2="0x55c5aad46a90"/>
+    <token id="0x55c5aad46730" file="src/arch/riscv/cpu.c" linenr="31" column="17" str="ret" scope="0x55c5aac75e20" type="name" varId="5" variable="0x55c5aace73c0" astParent="0x55c5aad46850" valueType-type="record"/>
+    <token id="0x55c5aad46850" file="src/arch/riscv/cpu.c" linenr="31" column="20" str="." scope="0x55c5aac75e20" astParent="0x55c5aad46a90" astOperand1="0x55c5aad46730" astOperand2="0x55c5aad46970"/>
+    <token id="0x55c5aad46970" file="src/arch/riscv/cpu.c" linenr="31" column="21" str="error" scope="0x55c5aac75e20" type="name" varId="6" astParent="0x55c5aad46850"/>
+    <token id="0x55c5aad46a90" file="src/arch/riscv/cpu.c" linenr="31" column="27" str="&lt;" scope="0x55c5aac75e20" type="op" isComparisonOp="True" astParent="0x55c5aad46610" astOperand1="0x55c5aad46850" astOperand2="0x55c5aad46bb0" valueType-type="bool"/>
+    <token id="0x55c5aad46bb0" file="src/arch/riscv/cpu.c" linenr="31" column="29" str="0" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5ab0b17d0" astParent="0x55c5aad46a90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aafe2e80" file="src/arch/riscv/cpu.c" linenr="31" column="30" str=")" scope="0x55c5aac75e20" link="0x55c5aad46610"/>
+    <token id="0x55c5aafe2fa0" file="src/arch/riscv/cpu.c" linenr="31" column="32" str="{" scope="0x55c5aac7b730" link="0x55c5aafe37e0"/>
+    <token id="0x55c5aafe30c0" file="src/arch/riscv/cpu.c" linenr="32" column="17" str="WARNING" scope="0x55c5aac7b730" type="name" astParent="0x55c5aafe31e0"/>
+    <token id="0x55c5aafe31e0" file="src/arch/riscv/cpu.c" linenr="32" column="24" str="(" scope="0x55c5aac7b730" link="0x55c5aafe3660" astOperand1="0x55c5aafe30c0" astOperand2="0x55c5aafe3420"/>
+    <token id="0x55c5aafe3300" file="src/arch/riscv/cpu.c" linenr="32" column="25" str="&quot;failed to wake up hart %d&quot;" scope="0x55c5aac7b730" type="string" strlen="25" values="0x55c5ab09e610" astParent="0x55c5aafe3420" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aafe3420" file="src/arch/riscv/cpu.c" linenr="32" column="52" str="," scope="0x55c5aac7b730" astParent="0x55c5aafe31e0" astOperand1="0x55c5aafe3300" astOperand2="0x55c5aafe3540"/>
+    <token id="0x55c5aafe3540" file="src/arch/riscv/cpu.c" linenr="32" column="54" str="hartid" scope="0x55c5aac7b730" type="name" varId="4" variable="0x55c5ab0b0450" astParent="0x55c5aafe3420" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aafe3660" file="src/arch/riscv/cpu.c" linenr="32" column="60" str=")" scope="0x55c5aac7b730" link="0x55c5aafe31e0"/>
+    <token id="0x55c5aafe3780" file="src/arch/riscv/cpu.c" linenr="32" column="61" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aafe37e0" file="src/arch/riscv/cpu.c" linenr="33" column="13" str="}" scope="0x55c5aac7b730" link="0x55c5aafe2fa0"/>
+    <token id="0x55c5aac5bfd0" file="src/arch/riscv/cpu.c" linenr="34" column="9" str="}" scope="0x55c5aac75e20" link="0x55c5aace56a0"/>
+    <token id="0x55c5aac5c0f0" file="src/arch/riscv/cpu.c" linenr="35" column="5" str="}" scope="0x55c5aac789a0" link="0x55c5aac55ed0"/>
+    <token id="0x55c5aac5c210" file="src/arch/riscv/cpu.c" linenr="36" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aaca2550"/>
+    <token id="0x55c5aac5c330" file="src/arch/riscv/cpu.c" linenr="38" column="1" str="void" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac5c450" file="src/arch/riscv/cpu.c" linenr="38" column="6" str="cpu_arch_idle" scope="0x55c5aac783b0" type="name" function="0x55c5aace5d50" astParent="0x55c5aac5c570"/>
+    <token id="0x55c5aac5c570" file="src/arch/riscv/cpu.c" linenr="38" column="19" str="(" scope="0x55c5aac783b0" link="0x55c5aac5c690" astOperand1="0x55c5aac5c450" valueType-type="void"/>
+    <token id="0x55c5aac5c690" file="src/arch/riscv/cpu.c" linenr="38" column="20" str=")" scope="0x55c5aac783b0" link="0x55c5aac5c570"/>
+    <token id="0x55c5aac5c7b0" file="src/arch/riscv/cpu.c" linenr="39" column="1" str="{" scope="0x55c5aac781c0" link="0x55c5aace4ff0"/>
+    <token id="0x55c5aac5c8d0" file="src/arch/riscv/cpu.c" linenr="40" column="5" str="asm" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac5e150"/>
+    <token id="0x55c5aac5e150" file="src/arch/riscv/cpu.c" linenr="40" column="0" str="(" scope="0x55c5aac781c0" link="0x55c5aac5e390" astOperand1="0x55c5aac5c8d0" astOperand2="0x55c5aac5e270"/>
+    <token id="0x55c5aac5e270" file="src/arch/riscv/cpu.c" linenr="40" column="0" str="&quot;&quot;wfi\n\t&quot; :: : &quot;memory&quot;&quot;" scope="0x55c5aac781c0" type="string" strlen="21" values="0x55c5ab0b3e40" astParent="0x55c5aac5e150" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac5e390" file="src/arch/riscv/cpu.c" linenr="40" column="0" str=")" scope="0x55c5aac781c0" link="0x55c5aac5e150"/>
+    <token id="0x55c5aac5e6f0" file="src/arch/riscv/cpu.c" linenr="40" column="41" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac5e810" file="src/arch/riscv/cpu.c" linenr="41" column="5" str="asm" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac5e930"/>
+    <token id="0x55c5aac5e930" file="src/arch/riscv/cpu.c" linenr="42" column="0" str="(" scope="0x55c5aac781c0" link="0x55c5ab0acc40" astOperand1="0x55c5aac5e810" astOperand2="0x55c5ab0aca00"/>
+    <token id="0x55c5ab0aca00" file="src/arch/riscv/cpu.c" linenr="42" column="0" str="&quot;&quot;mv sp, %0\n\rj cpu_idle_wakeup\n\r&quot; :: &quot;r&quot; ( &amp; cpu . stack [ STACK_SIZE ] )&quot;" scope="0x55c5aac781c0" type="string" strlen="72" values="0x55c5ab0b33d0" astParent="0x55c5aac5e930" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5ab0acc40" file="src/arch/riscv/cpu.c" linenr="42" column="0" str=")" scope="0x55c5aac781c0" link="0x55c5aac5e930"/>
+    <token id="0x55c5aace4ed0" file="src/arch/riscv/cpu.c" linenr="42" column="72" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aace4ff0" file="src/arch/riscv/cpu.c" linenr="43" column="1" str="}" scope="0x55c5aac781c0" link="0x55c5aac5c7b0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac783b0" type="Global">
+      <functionList>
+        <function id="0x55c5aace63e0" tokenDef="0x55c5aac79da0" name="cpu_arch_init" type="Function">
+          <arg nr="1" variable="0x55c5aace7350"/>
+          <arg nr="2" variable="0x55c5aac74420"/>
+        </function>
+        <function id="0x55c5aace5d50" tokenDef="0x55c5aac5c450" name="cpu_arch_idle" type="Function"/>
+      </functionList>
+      <varlist>
+        <var id="0x55c5aace5460"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac785a0" type="Function" className="cpu_arch_init" bodyStart="0x55c5aaca2550" bodyEnd="0x55c5aac5c210" nestedIn="0x55c5aac783b0" function="0x55c5aace63e0"/>
+    <scope id="0x55c5aac789a0" type="If" bodyStart="0x55c5aac55ed0" bodyEnd="0x55c5aac5c0f0" nestedIn="0x55c5aac785a0"/>
+    <scope id="0x55c5aac75e20" type="For" bodyStart="0x55c5aace56a0" bodyEnd="0x55c5aac5bfd0" nestedIn="0x55c5aac789a0">
+      <varlist>
+        <var id="0x55c5ab0b0450"/>
+        <var id="0x55c5aace73c0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac76850" type="If" bodyStart="0x55c5aac6ef10" bodyEnd="0x55c5aac5ce00" nestedIn="0x55c5aac75e20"/>
+    <scope id="0x55c5aac7b730" type="If" bodyStart="0x55c5aafe2fa0" bodyEnd="0x55c5aafe37e0" nestedIn="0x55c5aac75e20"/>
+    <scope id="0x55c5aac781c0" type="Function" className="cpu_arch_idle" bodyStart="0x55c5aac5c7b0" bodyEnd="0x55c5aace4ff0" nestedIn="0x55c5aac783b0" function="0x55c5aace5d50"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac74420" nameToken="0x55c5aac6eb70" typeStartToken="0x55c5aac6eb10" typeEndToken="0x55c5aac6eb10" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace5460" nameToken="0x55c5aace17b0" typeStartToken="0x55c5aac6f480" typeEndToken="0x55c5aac6f480" access="Global" scope="0x55c5aac783b0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace7350" nameToken="0x55c5aace61c0" typeStartToken="0x55c5aace5e40" typeEndToken="0x55c5aace5e40" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace73c0" nameToken="0x55c5ab0ac450" typeStartToken="0x55c5ab0ac330" typeEndToken="0x55c5ab0ac330" access="Local" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0b0450" nameToken="0x55c5ab0b2ba0" typeStartToken="0x55c5ab0b2a10" typeEndToken="0x55c5ab0b2a10" access="Local" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aac7bbe0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5ab0b3820">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5ab0b17d0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5ab09e610">
+      <value tokvalue="0x55c5aafe3300" known="true"/>
+    </values>
+    <values id="0x55c5ab0b3e40">
+      <value tokvalue="0x55c5aac5e270" known="true"/>
+    </values>
+    <values id="0x55c5ab0b33d0">
+      <value tokvalue="0x55c5ab0aca00" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

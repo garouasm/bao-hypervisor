@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/arch/riscv/config.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;config.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="void"/>
+    <tok fileIndex="0" linenr="18" column="6" str="config_arch_adjust_to_va"/>
+    <tok fileIndex="0" linenr="18" column="30" str="("/>
+    <tok fileIndex="0" linenr="18" column="31" str="struct"/>
+    <tok fileIndex="0" linenr="18" column="38" str="config"/>
+    <tok fileIndex="0" linenr="18" column="45" str="*"/>
+    <tok fileIndex="0" linenr="18" column="46" str="config"/>
+    <tok fileIndex="0" linenr="18" column="52" str=","/>
+    <tok fileIndex="0" linenr="18" column="54" str="uint64_t"/>
+    <tok fileIndex="0" linenr="18" column="63" str="phys"/>
+    <tok fileIndex="0" linenr="18" column="67" str=")"/>
+    <tok fileIndex="0" linenr="18" column="69" str="{"/>
+    <tok fileIndex="0" linenr="18" column="70" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/arch/riscv/config.c" linenr="16" str="#include &lt;config.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aac795c0" file="src/arch/riscv/config.c" linenr="18" column="1" str="void" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac742c0" file="src/arch/riscv/config.c" linenr="18" column="6" str="config_arch_adjust_to_va" scope="0x55c5aac785a0" type="name" function="0x55c5aace63e0" astParent="0x55c5aac74260"/>
+    <token id="0x55c5aac74260" file="src/arch/riscv/config.c" linenr="18" column="30" str="(" scope="0x55c5aac785a0" link="0x55c5aace68d0" astOperand1="0x55c5aac742c0" astOperand2="0x55c5ab0b1930" valueType-type="void"/>
+    <token id="0x55c5aac59ed0" file="src/arch/riscv/config.c" linenr="18" column="31" str="struct" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5ab0aadc0" file="src/arch/riscv/config.c" linenr="18" column="38" str="config" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac664c0"/>
+    <token id="0x55c5aac664c0" file="src/arch/riscv/config.c" linenr="18" column="45" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5ab0b1930" astOperand1="0x55c5ab0aadc0" astOperand2="0x55c5aace39e0"/>
+    <token id="0x55c5aace39e0" file="src/arch/riscv/config.c" linenr="18" column="46" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aace5460" astParent="0x55c5aac664c0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0b1930" file="src/arch/riscv/config.c" linenr="18" column="52" str="," scope="0x55c5aac785a0" astParent="0x55c5aac74260" astOperand1="0x55c5aac664c0" astOperand2="0x55c5aac76020"/>
+    <token id="0x55c5aaca12c0" file="src/arch/riscv/config.c" linenr="18" column="54" str="uint64_t" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac76020" file="src/arch/riscv/config.c" linenr="18" column="63" str="phys" scope="0x55c5aac785a0" type="name" varId="2" variable="0x55c5ab0b0450" astParent="0x55c5ab0b1930" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aace68d0" file="src/arch/riscv/config.c" linenr="18" column="67" str=")" scope="0x55c5aac785a0" link="0x55c5aac74260"/>
+    <token id="0x55c5ab0b1610" file="src/arch/riscv/config.c" linenr="18" column="69" str="{" scope="0x55c5aac783b0" link="0x55c5aaca9290"/>
+    <token id="0x55c5aaca9290" file="src/arch/riscv/config.c" linenr="18" column="70" str="}" scope="0x55c5aac783b0" link="0x55c5ab0b1610"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac785a0" type="Global">
+      <functionList>
+        <function id="0x55c5aace63e0" tokenDef="0x55c5aac742c0" name="config_arch_adjust_to_va" type="Function">
+          <arg nr="1" variable="0x55c5aace5460"/>
+          <arg nr="2" variable="0x55c5ab0b0450"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac783b0" type="Function" className="config_arch_adjust_to_va" bodyStart="0x55c5ab0b1610" bodyEnd="0x55c5aaca9290" nestedIn="0x55c5aac785a0" function="0x55c5aace63e0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aace5460" nameToken="0x55c5aace39e0" typeStartToken="0x55c5ab0aadc0" typeEndToken="0x55c5aac664c0" access="Argument" scope="0x55c5aac783b0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0b0450" nameToken="0x55c5aac76020" typeStartToken="0x55c5aaca12c0" typeEndToken="0x55c5aaca12c0" access="Argument" scope="0x55c5aac783b0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+  </valueflow>
+</dump>
+</dumps>

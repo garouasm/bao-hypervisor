@@ -197,7 +197,7 @@ void vgic_cpu_init(vcpu_t *vcpu)
         vcpu->arch.vgic_priv.interrupts[i].prio = GIC_LOWEST_PRIO;
         vcpu->arch.vgic_priv.interrupts[i].cfg = 0;
         vcpu->arch.vgic_priv.interrupts[i].sgi.act = 0;
-        vcpu->arch.vgic_priv.interrupts[i].sgi.pend = 0;                              
+        vcpu->arch.vgic_priv.interrupts[i].sgi.pend = 0;
         vcpu->arch.vgic_priv.interrupts[i].hw = false;
         vcpu->arch.vgic_priv.interrupts[i].in_lr = false;
         vcpu->arch.vgic_priv.interrupts[i].enabled = false;

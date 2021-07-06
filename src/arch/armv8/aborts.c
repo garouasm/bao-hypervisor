@@ -23,9 +23,9 @@
 
 typedef void (*abort_handler_t)(uint32_t, uint64_t, uint64_t);
 
-void internal_abort_handler(uint64_t gprs[]) {
-
-    for(int i = 0; i < 31; i++) {
+void internal_abort_handler(uint64_t gprs[])
+{
+    for (int i = 0; i < 31; i++) {
         printk("x%d:\t\t0x%0lx\n", i, gprs[i]);
     }
     printk("SP_EL2:\t\t0x%0lx\n", gprs[32]);
@@ -105,10 +105,10 @@ void hvc64_handler(uint32_t iss, uint64_t far, uint64_t il)
     uint64_t x3 = cpu.vcpu->regs->x[3];
 
     int64_t ret = -HC_E_INVAL_ID;
-    switch(hvc_fid){
+    switch (hvc_fid) {
         case HC_IPC:
             ret = ipc_hypercall(x1, x2, x3);
-        break;
+            break;
     }
 
     vcpu_writereg(cpu.vcpu, 0, ret);
@@ -118,12 +118,13 @@ void sysreg_handler(uint32_t iss, uint64_t far, uint64_t il)
 {
     uint64_t reg_addr = iss & ESR_ISS_SYSREG_ADDR;
     emul_handler_t handler = vm_emul_get_reg(cpu.vcpu->vm, reg_addr);
-    if(handler != NULL){
+    if (handler != NULL) {
         emul_access_t emul;
         emul.addr = reg_addr;
         emul.width = 8;
         emul.write = iss & ESR_ISS_SYSREG_DIR ? false : true;
-        emul.reg = bit_extract(iss, ESR_ISS_SYSREG_REG_OFF, ESR_ISS_SYSREG_REG_LEN);
+        emul.reg =
+            bit_extract(iss, ESR_ISS_SYSREG_REG_OFF, ESR_ISS_SYSREG_REG_LEN);
         emul.reg_width = 8;
         emul.sign_ext = false;
 
@@ -134,8 +135,8 @@ void sysreg_handler(uint32_t iss, uint64_t far, uint64_t il)
             ERROR("register access emulation failed (0x%x)", reg_addr);
         }
     } else {
-        ERROR("no emulation handler for register access (0x%x at 0x%x)", reg_addr,
-              cpu.vcpu->regs->elr_el2);
+        ERROR("no emulation handler for register access (0x%x at 0x%x)",
+              reg_addr, cpu.vcpu->regs->elr_el2);
     }
 }
 

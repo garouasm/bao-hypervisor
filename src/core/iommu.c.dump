@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/core/iommu.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      David Cerdeira &lt;davidmcerdeira@gmail.com&gt;x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *      Angelo Ruocco &lt;angeloruocco90@gmail.com&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="include"/>
+    <tok fileIndex="0" linenr="18" column="10" str="&lt;iommu.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="include"/>
+    <tok fileIndex="0" linenr="19" column="10" str="&lt;vm.h&gt;"/>
+    <tok fileIndex="0" linenr="21" column="1" str="struct"/>
+    <tok fileIndex="0" linenr="21" column="8" str="iommu_device"/>
+    <tok fileIndex="0" linenr="21" column="21" str="{"/>
+    <tok fileIndex="0" linenr="22" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="22" column="14" str="id"/>
+    <tok fileIndex="0" linenr="22" column="16" str=";"/>
+    <tok fileIndex="0" linenr="23" column="1" str="}"/>
+    <tok fileIndex="0" linenr="23" column="2" str=";"/>
+    <tok fileIndex="0" linenr="25" column="1" str="struct"/>
+    <tok fileIndex="0" linenr="25" column="8" str="iommu_dev_node"/>
+    <tok fileIndex="0" linenr="25" column="23" str="{"/>
+    <tok fileIndex="0" linenr="26" column="5" str="node_t"/>
+    <tok fileIndex="0" linenr="26" column="12" str="node"/>
+    <tok fileIndex="0" linenr="26" column="16" str=";"/>
+    <tok fileIndex="0" linenr="27" column="5" str="struct"/>
+    <tok fileIndex="0" linenr="27" column="12" str="iommu_device"/>
+    <tok fileIndex="0" linenr="27" column="25" str="dev"/>
+    <tok fileIndex="0" linenr="27" column="28" str=";"/>
+    <tok fileIndex="0" linenr="28" column="1" str="}"/>
+    <tok fileIndex="0" linenr="28" column="2" str=";"/>
+    <tok fileIndex="0" linenr="30" column="1" str="/* Mainly for HW initialization. */"/>
+    <tok fileIndex="0" linenr="31" column="1" str="void"/>
+    <tok fileIndex="0" linenr="31" column="6" str="iommu_init"/>
+    <tok fileIndex="0" linenr="31" column="16" str="("/>
+    <tok fileIndex="0" linenr="31" column="17" str=")"/>
+    <tok fileIndex="0" linenr="32" column="1" str="{"/>
+    <tok fileIndex="0" linenr="33" column="5" str="iommu_arch_init"/>
+    <tok fileIndex="0" linenr="33" column="20" str="("/>
+    <tok fileIndex="0" linenr="33" column="21" str=")"/>
+    <tok fileIndex="0" linenr="33" column="22" str=";"/>
+    <tok fileIndex="0" linenr="34" column="1" str="}"/>
+    <tok fileIndex="0" linenr="36" column="1" str="/* Configure architecture dependent stuff. */"/>
+    <tok fileIndex="0" linenr="37" column="1" str="int"/>
+    <tok fileIndex="0" linenr="37" column="5" str="iommu_vm_init"/>
+    <tok fileIndex="0" linenr="37" column="18" str="("/>
+    <tok fileIndex="0" linenr="37" column="19" str="vm_t"/>
+    <tok fileIndex="0" linenr="37" column="24" str="*"/>
+    <tok fileIndex="0" linenr="37" column="25" str="vm"/>
+    <tok fileIndex="0" linenr="37" column="27" str=","/>
+    <tok fileIndex="0" linenr="37" column="29" str="const"/>
+    <tok fileIndex="0" linenr="37" column="35" str="vm_config_t"/>
+    <tok fileIndex="0" linenr="37" column="47" str="*"/>
+    <tok fileIndex="0" linenr="37" column="48" str="config"/>
+    <tok fileIndex="0" linenr="37" column="54" str=")"/>
+    <tok fileIndex="0" linenr="38" column="1" str="{"/>
+    <tok fileIndex="0" linenr="39" column="5" str="objcache_init"/>
+    <tok fileIndex="0" linenr="39" column="18" str="("/>
+    <tok fileIndex="0" linenr="39" column="19" str="&amp;"/>
+    <tok fileIndex="0" linenr="39" column="20" str="vm"/>
+    <tok fileIndex="0" linenr="39" column="22" str="-&gt;"/>
+    <tok fileIndex="0" linenr="39" column="24" str="iommu"/>
+    <tok fileIndex="0" linenr="39" column="29" str="."/>
+    <tok fileIndex="0" linenr="39" column="30" str="dev_oc"/>
+    <tok fileIndex="0" linenr="39" column="36" str=","/>
+    <tok fileIndex="0" linenr="39" column="38" str="sizeof"/>
+    <tok fileIndex="0" linenr="39" column="44" str="("/>
+    <tok fileIndex="0" linenr="39" column="45" str="struct"/>
+    <tok fileIndex="0" linenr="39" column="52" str="iommu_dev_node"/>
+    <tok fileIndex="0" linenr="39" column="66" str=")"/>
+    <tok fileIndex="0" linenr="39" column="67" str=","/>
+    <tok fileIndex="0" linenr="40" column="19" str="SEC_HYP_GLOBAL"/>
+    <tok fileIndex="0" linenr="40" column="33" str=","/>
+    <tok fileIndex="0" linenr="40" column="35" str="false"/>
+    <tok fileIndex="0" linenr="40" column="40" str=")"/>
+    <tok fileIndex="0" linenr="40" column="41" str=";"/>
+    <tok fileIndex="0" linenr="42" column="5" str="return"/>
+    <tok fileIndex="0" linenr="42" column="12" str="iommu_arch_vm_init"/>
+    <tok fileIndex="0" linenr="42" column="30" str="("/>
+    <tok fileIndex="0" linenr="42" column="31" str="vm"/>
+    <tok fileIndex="0" linenr="42" column="33" str=","/>
+    <tok fileIndex="0" linenr="42" column="35" str="config"/>
+    <tok fileIndex="0" linenr="42" column="41" str=")"/>
+    <tok fileIndex="0" linenr="42" column="42" str=";"/>
+    <tok fileIndex="0" linenr="43" column="1" str="}"/>
+    <tok fileIndex="0" linenr="45" column="1" str="/* Allows vms to add devices to their address space. */"/>
+    <tok fileIndex="0" linenr="46" column="1" str="int"/>
+    <tok fileIndex="0" linenr="46" column="5" str="iommu_vm_add_device"/>
+    <tok fileIndex="0" linenr="46" column="24" str="("/>
+    <tok fileIndex="0" linenr="46" column="25" str="vm_t"/>
+    <tok fileIndex="0" linenr="46" column="30" str="*"/>
+    <tok fileIndex="0" linenr="46" column="31" str="vm"/>
+    <tok fileIndex="0" linenr="46" column="33" str=","/>
+    <tok fileIndex="0" linenr="46" column="35" str="int"/>
+    <tok fileIndex="0" linenr="46" column="39" str="dev_id"/>
+    <tok fileIndex="0" linenr="46" column="45" str=")"/>
+    <tok fileIndex="0" linenr="47" column="1" str="{"/>
+    <tok fileIndex="0" linenr="48" column="5" str="int"/>
+    <tok fileIndex="0" linenr="48" column="9" str="res"/>
+    <tok fileIndex="0" linenr="48" column="13" str="="/>
+    <tok fileIndex="0" linenr="48" column="15" str="-"/>
+    <tok fileIndex="0" linenr="48" column="16" str="1"/>
+    <tok fileIndex="0" linenr="48" column="17" str=";"/>
+    <tok fileIndex="0" linenr="50" column="5" str="/*x     * If dev_id == 0 assume global mask includesx     * the relevant devices for this VM.x     *x     * Assume there's no device id = 0 */"/>
+    <tok fileIndex="0" linenr="55" column="5" str="if"/>
+    <tok fileIndex="0" linenr="55" column="8" str="("/>
+    <tok fileIndex="0" linenr="55" column="9" str="dev_id"/>
+    <tok fileIndex="0" linenr="55" column="16" str="!="/>
+    <tok fileIndex="0" linenr="55" column="19" str="0"/>
+    <tok fileIndex="0" linenr="55" column="20" str=")"/>
+    <tok fileIndex="0" linenr="55" column="22" str="{"/>
+    <tok fileIndex="0" linenr="56" column="9" str="/* Stream id is valid. Match this device with this VM specifically. */"/>
+    <tok fileIndex="0" linenr="57" column="9" str="res"/>
+    <tok fileIndex="0" linenr="57" column="13" str="="/>
+    <tok fileIndex="0" linenr="57" column="15" str="iommu_arch_vm_add_device"/>
+    <tok fileIndex="0" linenr="57" column="39" str="("/>
+    <tok fileIndex="0" linenr="57" column="40" str="vm"/>
+    <tok fileIndex="0" linenr="57" column="42" str=","/>
+    <tok fileIndex="0" linenr="57" column="44" str="dev_id"/>
+    <tok fileIndex="0" linenr="57" column="50" str=")"/>
+    <tok fileIndex="0" linenr="57" column="51" str=";"/>
+    <tok fileIndex="0" linenr="58" column="5" str="}"/>
+    <tok fileIndex="0" linenr="60" column="5" str="if"/>
+    <tok fileIndex="0" linenr="60" column="8" str="("/>
+    <tok fileIndex="0" linenr="60" column="9" str="res"/>
+    <tok fileIndex="0" linenr="60" column="13" str="&gt;="/>
+    <tok fileIndex="0" linenr="60" column="16" str="0"/>
+    <tok fileIndex="0" linenr="60" column="17" str=")"/>
+    <tok fileIndex="0" linenr="60" column="19" str="{"/>
+    <tok fileIndex="0" linenr="61" column="9" str="struct"/>
+    <tok fileIndex="0" linenr="61" column="16" str="iommu_dev_node"/>
+    <tok fileIndex="0" linenr="61" column="31" str="*"/>
+    <tok fileIndex="0" linenr="61" column="32" str="ptr"/>
+    <tok fileIndex="0" linenr="61" column="36" str="="/>
+    <tok fileIndex="0" linenr="61" column="38" str="objcache_alloc"/>
+    <tok fileIndex="0" linenr="61" column="52" str="("/>
+    <tok fileIndex="0" linenr="61" column="53" str="&amp;"/>
+    <tok fileIndex="0" linenr="61" column="54" str="vm"/>
+    <tok fileIndex="0" linenr="61" column="56" str="-&gt;"/>
+    <tok fileIndex="0" linenr="61" column="58" str="iommu"/>
+    <tok fileIndex="0" linenr="61" column="63" str="."/>
+    <tok fileIndex="0" linenr="61" column="64" str="dev_oc"/>
+    <tok fileIndex="0" linenr="61" column="70" str=")"/>
+    <tok fileIndex="0" linenr="61" column="71" str=";"/>
+    <tok fileIndex="0" linenr="62" column="9" str="if"/>
+    <tok fileIndex="0" linenr="62" column="12" str="("/>
+    <tok fileIndex="0" linenr="62" column="13" str="ptr"/>
+    <tok fileIndex="0" linenr="62" column="17" str="!="/>
+    <tok fileIndex="0" linenr="62" column="20" str="NULL"/>
+    <tok fileIndex="0" linenr="62" column="24" str=")"/>
+    <tok fileIndex="0" linenr="62" column="26" str="{"/>
+    <tok fileIndex="0" linenr="63" column="13" str="ptr"/>
+    <tok fileIndex="0" linenr="63" column="16" str="-&gt;"/>
+    <tok fileIndex="0" linenr="63" column="18" str="dev"/>
+    <tok fileIndex="0" linenr="63" column="21" str="."/>
+    <tok fileIndex="0" linenr="63" column="22" str="id"/>
+    <tok fileIndex="0" linenr="63" column="25" str="="/>
+    <tok fileIndex="0" linenr="63" column="27" str="dev_id"/>
+    <tok fileIndex="0" linenr="63" column="33" str=";"/>
+    <tok fileIndex="0" linenr="64" column="13" str="list_push"/>
+    <tok fileIndex="0" linenr="64" column="22" str="("/>
+    <tok fileIndex="0" linenr="64" column="23" str="&amp;"/>
+    <tok fileIndex="0" linenr="64" column="24" str="vm"/>
+    <tok fileIndex="0" linenr="64" column="26" str="-&gt;"/>
+    <tok fileIndex="0" linenr="64" column="28" str="iommu"/>
+    <tok fileIndex="0" linenr="64" column="33" str="."/>
+    <tok fileIndex="0" linenr="64" column="34" str="dev_list"/>
+    <tok fileIndex="0" linenr="64" column="42" str=","/>
+    <tok fileIndex="0" linenr="64" column="44" str="("/>
+    <tok fileIndex="0" linenr="64" column="45" str="void"/>
+    <tok fileIndex="0" linenr="64" column="50" str="*"/>
+    <tok fileIndex="0" linenr="64" column="51" str=")"/>
+    <tok fileIndex="0" linenr="64" column="52" str="ptr"/>
+    <tok fileIndex="0" linenr="64" column="55" str=")"/>
+    <tok fileIndex="0" linenr="64" column="56" str=";"/>
+    <tok fileIndex="0" linenr="65" column="9" str="}"/>
+    <tok fileIndex="0" linenr="65" column="11" str="else"/>
+    <tok fileIndex="0" linenr="65" column="16" str="{"/>
+    <tok fileIndex="0" linenr="66" column="13" str="res"/>
+    <tok fileIndex="0" linenr="66" column="17" str="="/>
+    <tok fileIndex="0" linenr="66" column="19" str="-"/>
+    <tok fileIndex="0" linenr="66" column="20" str="1"/>
+    <tok fileIndex="0" linenr="66" column="21" str=";"/>
+    <tok fileIndex="0" linenr="67" column="9" str="}"/>
+    <tok fileIndex="0" linenr="68" column="5" str="}"/>
+    <tok fileIndex="0" linenr="70" column="5" str="return"/>
+    <tok fileIndex="0" linenr="70" column="12" str="res"/>
+    <tok fileIndex="0" linenr="70" column="15" str=";"/>
+    <tok fileIndex="0" linenr="71" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/core/iommu.c" linenr="18" str="#include &lt;iommu.h&gt;"/>
+    <directive file="src/core/iommu.c" linenr="19" str="#include &lt;vm.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aacd9a10" file="src/core/iommu.c" linenr="21" column="1" str="struct" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aad6a120" file="src/core/iommu.c" linenr="21" column="8" str="iommu_device" scope="0x55c5aacbc050" type="name" type-scope="0x55c5aac76850"/>
+    <token id="0x55c5aac64520" file="src/core/iommu.c" linenr="21" column="21" str="{" scope="0x55c5aac76850" link="0x55c5ab0ad9e0"/>
+    <token id="0x55c5aaca2d00" file="src/core/iommu.c" linenr="22" column="5" str="uint32_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaccb420" file="src/core/iommu.c" linenr="22" column="14" str="id" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aaccde00" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac79e40" file="src/core/iommu.c" linenr="22" column="16" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0ad9e0" file="src/core/iommu.c" linenr="23" column="1" str="}" scope="0x55c5aac76850" link="0x55c5aac64520"/>
+    <token id="0x55c5aac55c50" file="src/core/iommu.c" linenr="23" column="2" str=";" scope="0x55c5aacbc050"/>
+    <token id="0x55c5aad6a040" file="src/core/iommu.c" linenr="25" column="1" str="struct" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5ab0acb00" file="src/core/iommu.c" linenr="25" column="8" str="iommu_dev_node" scope="0x55c5aacbc050" type="name" type-scope="0x55c5aac7b730"/>
+    <token id="0x55c5aaf7be80" file="src/core/iommu.c" linenr="25" column="23" str="{" scope="0x55c5aac7b730" link="0x55c5ab0aaa30"/>
+    <token id="0x55c5aac78510" file="src/core/iommu.c" linenr="26" column="5" str="node_t" scope="0x55c5aac7b730" type="name"/>
+    <token id="0x55c5aad45740" file="src/core/iommu.c" linenr="26" column="12" str="node" scope="0x55c5aac7b730" type="name" varId="2" variable="0x55c5aaccdee0"/>
+    <token id="0x55c5aafacdf0" file="src/core/iommu.c" linenr="26" column="16" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aaca28f0" file="src/core/iommu.c" linenr="27" column="5" str="struct" scope="0x55c5aac7b730" type="name"/>
+    <token id="0x55c5aac625c0" file="src/core/iommu.c" linenr="27" column="12" str="iommu_device" scope="0x55c5aac7b730" type="name" type-scope="0x55c5aac76850"/>
+    <token id="0x55c5aac75860" file="src/core/iommu.c" linenr="27" column="25" str="dev" scope="0x55c5aac7b730" type="name" varId="3" variable="0x55c5aac97d00" valueType-type="record" valueType-typeScope="0x55c5aac76850"/>
+    <token id="0x55c5aac6b940" file="src/core/iommu.c" linenr="27" column="28" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0aaa30" file="src/core/iommu.c" linenr="28" column="1" str="}" scope="0x55c5aac7b730" link="0x55c5aaf7be80"/>
+    <token id="0x55c5aace26e0" file="src/core/iommu.c" linenr="28" column="2" str=";" scope="0x55c5aacbc050"/>
+    <token id="0x55c5aace2970" file="src/core/iommu.c" linenr="31" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac97230" file="src/core/iommu.c" linenr="31" column="6" str="iommu_init" scope="0x55c5aacbc050" type="name" function="0x55c5aacca2f0" astParent="0x55c5aac75250"/>
+    <token id="0x55c5aac75250" file="src/core/iommu.c" linenr="31" column="16" str="(" scope="0x55c5aacbc050" link="0x55c5ab0b1150" astOperand1="0x55c5aac97230" valueType-type="void"/>
+    <token id="0x55c5ab0b1150" file="src/core/iommu.c" linenr="31" column="17" str=")" scope="0x55c5aacbc050" link="0x55c5aac75250"/>
+    <token id="0x55c5aafadee0" file="src/core/iommu.c" linenr="32" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aac59ed0"/>
+    <token id="0x55c5aac664c0" file="src/core/iommu.c" linenr="33" column="5" str="iommu_arch_init" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab0aadc0"/>
+    <token id="0x55c5ab0aadc0" file="src/core/iommu.c" linenr="33" column="20" str="(" scope="0x55c5aac785a0" link="0x55c5aacdf6c0" astOperand1="0x55c5aac664c0"/>
+    <token id="0x55c5aacdf6c0" file="src/core/iommu.c" linenr="33" column="21" str=")" scope="0x55c5aac785a0" link="0x55c5ab0aadc0"/>
+    <token id="0x55c5ab0b2c10" file="src/core/iommu.c" linenr="33" column="22" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac59ed0" file="src/core/iommu.c" linenr="34" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aafadee0"/>
+    <token id="0x55c5ab0ad370" file="src/core/iommu.c" linenr="37" column="1" str="int" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aace6600" file="src/core/iommu.c" linenr="37" column="5" str="iommu_vm_init" scope="0x55c5aacbc050" type="name" function="0x55c5aacca390" astParent="0x55c5aace24f0"/>
+    <token id="0x55c5aace24f0" file="src/core/iommu.c" linenr="37" column="18" str="(" scope="0x55c5aacbc050" link="0x55c5aac59dc0" astOperand1="0x55c5aace6600" astOperand2="0x55c5aacdf550" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace2550" file="src/core/iommu.c" linenr="37" column="19" str="vm_t" scope="0x55c5aacbc050" type="name" astParent="0x55c5aacce0b0"/>
+    <token id="0x55c5aacce0b0" file="src/core/iommu.c" linenr="37" column="24" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aacdf550" astOperand1="0x55c5aace2550" astOperand2="0x55c5aacce110"/>
+    <token id="0x55c5aacce110" file="src/core/iommu.c" linenr="37" column="25" str="vm" scope="0x55c5aacbc050" type="name" varId="4" variable="0x55c5aac5a130" astParent="0x55c5aacce0b0"/>
+    <token id="0x55c5aacdf550" file="src/core/iommu.c" linenr="37" column="27" str="," scope="0x55c5aacbc050" astParent="0x55c5aace24f0" astOperand1="0x55c5aacce0b0" astOperand2="0x55c5aacbc860"/>
+    <token id="0x55c5aacdf5b0" file="src/core/iommu.c" linenr="37" column="29" str="const" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aacbc800" file="src/core/iommu.c" linenr="37" column="35" str="vm_config_t" scope="0x55c5aacbc050" type="name" astParent="0x55c5aacbc860"/>
+    <token id="0x55c5aacbc860" file="src/core/iommu.c" linenr="37" column="47" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aacdf550" astOperand1="0x55c5aacbc800" astOperand2="0x55c5aac59d60"/>
+    <token id="0x55c5aac59d60" file="src/core/iommu.c" linenr="37" column="48" str="config" scope="0x55c5aacbc050" type="name" varId="5" variable="0x55c5aac5a210" astParent="0x55c5aacbc860"/>
+    <token id="0x55c5aac59dc0" file="src/core/iommu.c" linenr="37" column="54" str=")" scope="0x55c5aacbc050" link="0x55c5aace24f0"/>
+    <token id="0x55c5aac5d2a0" file="src/core/iommu.c" linenr="38" column="1" str="{" scope="0x55c5aac75e20" link="0x55c5aacbab70"/>
+    <token id="0x55c5aac5d300" file="src/core/iommu.c" linenr="39" column="5" str="objcache_init" scope="0x55c5aac75e20" type="name" astParent="0x55c5aae54db0"/>
+    <token id="0x55c5aae54db0" file="src/core/iommu.c" linenr="39" column="18" str="(" scope="0x55c5aac75e20" link="0x55c5aacbab10" astOperand1="0x55c5aac5d300" astOperand2="0x55c5aacba8d0"/>
+    <token id="0x55c5aac77dd0" file="src/core/iommu.c" linenr="39" column="19" str="&amp;" scope="0x55c5aac75e20" type="op" values="0x55c5aac75c70" astParent="0x55c5ab0b2b30" astOperand1="0x55c5ab0b29b0"/>
+    <token id="0x55c5aaca22a0" file="src/core/iommu.c" linenr="39" column="20" str="vm" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aac5a130" astParent="0x55c5aac7bb60"/>
+    <token id="0x55c5aac7bb60" file="src/core/iommu.c" linenr="39" column="22" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0b29b0" astOperand1="0x55c5aaca22a0" astOperand2="0x55c5aac52e20" originalName="->"/>
+    <token id="0x55c5aac52e20" file="src/core/iommu.c" linenr="39" column="24" str="iommu" scope="0x55c5aac75e20" type="name" varId="6" astParent="0x55c5aac7bb60"/>
+    <token id="0x55c5ab0b29b0" file="src/core/iommu.c" linenr="39" column="29" str="." scope="0x55c5aac75e20" astParent="0x55c5aac77dd0" astOperand1="0x55c5aac7bb60" astOperand2="0x55c5ab0b2ad0"/>
+    <token id="0x55c5ab0b2ad0" file="src/core/iommu.c" linenr="39" column="30" str="dev_oc" scope="0x55c5aac75e20" type="name" varId="7" astParent="0x55c5ab0b29b0"/>
+    <token id="0x55c5ab0b2b30" file="src/core/iommu.c" linenr="39" column="36" str="," scope="0x55c5aac75e20" astParent="0x55c5aacba690" astOperand1="0x55c5aac77dd0" astOperand2="0x55c5aac63730"/>
+    <token id="0x55c5ab0b2740" file="src/core/iommu.c" linenr="39" column="38" str="sizeof" scope="0x55c5aac75e20" type="name" astParent="0x55c5aac63730"/>
+    <token id="0x55c5aac63730" file="src/core/iommu.c" linenr="39" column="44" str="(" scope="0x55c5aac75e20" link="0x55c5aac63a90" astParent="0x55c5ab0b2b30" astOperand1="0x55c5ab0b2740" astOperand2="0x55c5aac63970" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac63850" file="src/core/iommu.c" linenr="39" column="45" str="struct" scope="0x55c5aac75e20" type="name" valueType-type="record" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac63970" file="src/core/iommu.c" linenr="39" column="52" str="iommu_dev_node" scope="0x55c5aac75e20" type="name" type-scope="0x55c5aac7b730" astParent="0x55c5aac63730"/>
+    <token id="0x55c5aac63a90" file="src/core/iommu.c" linenr="39" column="66" str=")" scope="0x55c5aac75e20" link="0x55c5aac63730"/>
+    <token id="0x55c5aacba690" file="src/core/iommu.c" linenr="39" column="67" str="," scope="0x55c5aac75e20" astParent="0x55c5aacba8d0" astOperand1="0x55c5ab0b2b30" astOperand2="0x55c5aacba7b0"/>
+    <token id="0x55c5aacba7b0" file="src/core/iommu.c" linenr="40" column="19" str="SEC_HYP_GLOBAL" scope="0x55c5aac75e20" type="name" astParent="0x55c5aacba690"/>
+    <token id="0x55c5aacba8d0" file="src/core/iommu.c" linenr="40" column="33" str="," scope="0x55c5aac75e20" astParent="0x55c5aae54db0" astOperand1="0x55c5aacba690" astOperand2="0x55c5aacba9f0"/>
+    <token id="0x55c5aacba9f0" file="src/core/iommu.c" linenr="40" column="35" str="false" scope="0x55c5aac75e20" type="name" astParent="0x55c5aacba8d0" valueType-type="bool"/>
+    <token id="0x55c5aacbab10" file="src/core/iommu.c" linenr="40" column="40" str=")" scope="0x55c5aac75e20" link="0x55c5aae54db0"/>
+    <token id="0x55c5aad23d70" file="src/core/iommu.c" linenr="40" column="41" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aad23e90" file="src/core/iommu.c" linenr="42" column="5" str="return" scope="0x55c5aac75e20" type="name" astOperand1="0x55c5aad240d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad23fb0" file="src/core/iommu.c" linenr="42" column="12" str="iommu_arch_vm_init" scope="0x55c5aac75e20" type="name" astParent="0x55c5aad240d0"/>
+    <token id="0x55c5aad240d0" file="src/core/iommu.c" linenr="42" column="30" str="(" scope="0x55c5aac75e20" link="0x55c5aae55540" astParent="0x55c5aad23e90" astOperand1="0x55c5aad23fb0" astOperand2="0x55c5aae55300"/>
+    <token id="0x55c5aad241f0" file="src/core/iommu.c" linenr="42" column="31" str="vm" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aac5a130" astParent="0x55c5aae55300"/>
+    <token id="0x55c5aae55300" file="src/core/iommu.c" linenr="42" column="33" str="," scope="0x55c5aac75e20" astParent="0x55c5aad240d0" astOperand1="0x55c5aad241f0" astOperand2="0x55c5aae55420"/>
+    <token id="0x55c5aae55420" file="src/core/iommu.c" linenr="42" column="35" str="config" scope="0x55c5aac75e20" type="name" varId="5" variable="0x55c5aac5a210" astParent="0x55c5aae55300"/>
+    <token id="0x55c5aae55540" file="src/core/iommu.c" linenr="42" column="41" str=")" scope="0x55c5aac75e20" link="0x55c5aad240d0"/>
+    <token id="0x55c5aae55660" file="src/core/iommu.c" linenr="42" column="42" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aacbab70" file="src/core/iommu.c" linenr="43" column="1" str="}" scope="0x55c5aac75e20" link="0x55c5aac5d2a0"/>
+    <token id="0x55c5aaca1730" file="src/core/iommu.c" linenr="46" column="1" str="int" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aaca1850" file="src/core/iommu.c" linenr="46" column="5" str="iommu_vm_add_device" scope="0x55c5aacbc050" type="name" function="0x55c5aafac070" astParent="0x55c5aaca1970"/>
+    <token id="0x55c5aaca1970" file="src/core/iommu.c" linenr="46" column="24" str="(" scope="0x55c5aacbc050" link="0x55c5aac791d0" astOperand1="0x55c5aaca1850" astOperand2="0x55c5aac78e70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca1a90" file="src/core/iommu.c" linenr="46" column="25" str="vm_t" scope="0x55c5aacbc050" type="name" astParent="0x55c5aae55780"/>
+    <token id="0x55c5aae55780" file="src/core/iommu.c" linenr="46" column="30" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aac78e70" astOperand1="0x55c5aaca1a90" astOperand2="0x55c5aac78d50"/>
+    <token id="0x55c5aac78d50" file="src/core/iommu.c" linenr="46" column="31" str="vm" scope="0x55c5aacbc050" type="name" varId="8" variable="0x55c5aac5a2f0" astParent="0x55c5aae55780"/>
+    <token id="0x55c5aac78e70" file="src/core/iommu.c" linenr="46" column="33" str="," scope="0x55c5aacbc050" astParent="0x55c5aaca1970" astOperand1="0x55c5aae55780" astOperand2="0x55c5aac790b0"/>
+    <token id="0x55c5aac78f90" file="src/core/iommu.c" linenr="46" column="35" str="int" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac790b0" file="src/core/iommu.c" linenr="46" column="39" str="dev_id" scope="0x55c5aacbc050" type="name" varId="9" variable="0x55c5aac5a3d0" astParent="0x55c5aac78e70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac791d0" file="src/core/iommu.c" linenr="46" column="45" str=")" scope="0x55c5aacbc050" link="0x55c5aaca1970"/>
+    <token id="0x55c5aac79230" file="src/core/iommu.c" linenr="47" column="1" str="{" scope="0x55c5aac789a0" link="0x55c5aaccc1a0"/>
+    <token id="0x55c5aac536c0" file="src/core/iommu.c" linenr="48" column="5" str="int" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac537e0" file="src/core/iommu.c" linenr="48" column="9" str="res" scope="0x55c5aac789a0" type="name" varId="10" variable="0x55c5aac97d70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac53900" file="src/core/iommu.c" linenr="48" column="13" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aad458e0" file="src/core/iommu.c" linenr="48" column="9" str="res" scope="0x55c5aac789a0" type="name" varId="10" variable="0x55c5aac97d70" astParent="0x55c5aac53a20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac53a20" file="src/core/iommu.c" linenr="48" column="13" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aad458e0" astOperand2="0x55c5aaca1bb0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca1bb0" file="src/core/iommu.c" linenr="48" column="16" str="-1" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aac51c70" astParent="0x55c5aac53a20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac74570" file="src/core/iommu.c" linenr="48" column="17" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac74690" file="src/core/iommu.c" linenr="55" column="5" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac747b0"/>
+    <token id="0x55c5aac747b0" file="src/core/iommu.c" linenr="55" column="8" str="(" scope="0x55c5aac789a0" link="0x55c5ab0acd60" astOperand1="0x55c5aac74690" astOperand2="0x55c5aac749f0"/>
+    <token id="0x55c5aac748d0" file="src/core/iommu.c" linenr="55" column="9" str="dev_id" scope="0x55c5aac789a0" type="name" varId="9" variable="0x55c5aac5a3d0" astParent="0x55c5aac749f0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac749f0" file="src/core/iommu.c" linenr="55" column="16" str="!=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aac747b0" astOperand1="0x55c5aac748d0" astOperand2="0x55c5ab0acc40" valueType-type="bool"/>
+    <token id="0x55c5ab0acc40" file="src/core/iommu.c" linenr="55" column="19" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aac78c40" astParent="0x55c5aac749f0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0acd60" file="src/core/iommu.c" linenr="55" column="20" str=")" scope="0x55c5aac789a0" link="0x55c5aac747b0"/>
+    <token id="0x55c5ab0ace80" file="src/core/iommu.c" linenr="55" column="22" str="{" scope="0x55c5aac781c0" link="0x55c5aac79890"/>
+    <token id="0x55c5ab0acfa0" file="src/core/iommu.c" linenr="57" column="9" str="res" scope="0x55c5aac781c0" type="name" varId="10" variable="0x55c5aac97d70" astParent="0x55c5ab0ad0c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0ad0c0" file="src/core/iommu.c" linenr="57" column="13" str="=" scope="0x55c5aac781c0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0acfa0" astOperand2="0x55c5aad44f50" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad44e30" file="src/core/iommu.c" linenr="57" column="15" str="iommu_arch_vm_add_device" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad44f50"/>
+    <token id="0x55c5aad44f50" file="src/core/iommu.c" linenr="57" column="39" str="(" scope="0x55c5aac781c0" link="0x55c5aac74a50" astParent="0x55c5ab0ad0c0" astOperand1="0x55c5aad44e30" astOperand2="0x55c5aad45190"/>
+    <token id="0x55c5aad45070" file="src/core/iommu.c" linenr="57" column="40" str="vm" scope="0x55c5aac781c0" type="name" varId="8" variable="0x55c5aac5a2f0" astParent="0x55c5aad45190"/>
+    <token id="0x55c5aad45190" file="src/core/iommu.c" linenr="57" column="42" str="," scope="0x55c5aac781c0" astParent="0x55c5aad44f50" astOperand1="0x55c5aad45070" astOperand2="0x55c5aad452b0"/>
+    <token id="0x55c5aad452b0" file="src/core/iommu.c" linenr="57" column="44" str="dev_id" scope="0x55c5aac781c0" type="name" varId="9" variable="0x55c5aac5a3d0" values="0x55c5aac78190" astParent="0x55c5aad45190" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac74a50" file="src/core/iommu.c" linenr="57" column="50" str=")" scope="0x55c5aac781c0" link="0x55c5aad44f50"/>
+    <token id="0x55c5aac79770" file="src/core/iommu.c" linenr="57" column="51" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac79890" file="src/core/iommu.c" linenr="58" column="5" str="}" scope="0x55c5aac781c0" link="0x55c5ab0ace80"/>
+    <token id="0x55c5aac799b0" file="src/core/iommu.c" linenr="60" column="5" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac79ad0"/>
+    <token id="0x55c5aac79ad0" file="src/core/iommu.c" linenr="60" column="8" str="(" scope="0x55c5aac789a0" link="0x55c5aac976b0" astOperand1="0x55c5aac799b0" astOperand2="0x55c5ab0ad120"/>
+    <token id="0x55c5aac79bf0" file="src/core/iommu.c" linenr="60" column="9" str="res" scope="0x55c5aac789a0" type="name" varId="10" variable="0x55c5aac97d70" values="0x55c5aaccb880" astParent="0x55c5ab0ad120" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0ad120" file="src/core/iommu.c" linenr="60" column="13" str="&gt;=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" values="0x55c5aae54900" astParent="0x55c5aac79ad0" astOperand1="0x55c5aac79bf0" astOperand2="0x55c5aac97590" valueType-type="bool"/>
+    <token id="0x55c5aac97590" file="src/core/iommu.c" linenr="60" column="16" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aac64d70" astParent="0x55c5ab0ad120" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac976b0" file="src/core/iommu.c" linenr="60" column="17" str=")" scope="0x55c5aac789a0" link="0x55c5aac79ad0"/>
+    <token id="0x55c5aac977d0" file="src/core/iommu.c" linenr="60" column="19" str="{" scope="0x55c5ab0ac040" link="0x55c5aad45d60"/>
+    <token id="0x55c5aac978f0" file="src/core/iommu.c" linenr="61" column="9" str="struct" scope="0x55c5ab0ac040" type="name"/>
+    <token id="0x55c5aac97a10" file="src/core/iommu.c" linenr="61" column="16" str="iommu_dev_node" scope="0x55c5ab0ac040" type="name" type-scope="0x55c5aac7b730" astParent="0x55c5aac77450"/>
+    <token id="0x55c5aac77450" file="src/core/iommu.c" linenr="61" column="31" str="*" scope="0x55c5ab0ac040" type="op" isArithmeticalOp="True" astOperand1="0x55c5aac97a10" astOperand2="0x55c5aac77570"/>
+    <token id="0x55c5aac77570" file="src/core/iommu.c" linenr="61" column="32" str="ptr" scope="0x55c5ab0ac040" type="name" varId="11" variable="0x55c5ab0ac500" astParent="0x55c5aac77450" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac77690" file="src/core/iommu.c" linenr="61" column="36" str=";" scope="0x55c5ab0ac040"/>
+    <token id="0x55c5aaccc540" file="src/core/iommu.c" linenr="61" column="32" str="ptr" scope="0x55c5ab0ac040" type="name" varId="11" variable="0x55c5ab0ac500" astParent="0x55c5aaccc660" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aaccc660" file="src/core/iommu.c" linenr="61" column="36" str="=" scope="0x55c5ab0ac040" type="op" isAssignmentOp="True" astOperand1="0x55c5aaccc540" astOperand2="0x55c5aac778d0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac777b0" file="src/core/iommu.c" linenr="61" column="38" str="objcache_alloc" scope="0x55c5ab0ac040" type="name" astParent="0x55c5aac778d0"/>
+    <token id="0x55c5aac778d0" file="src/core/iommu.c" linenr="61" column="52" str="(" scope="0x55c5ab0ac040" link="0x55c5aac77a50" values="0x55c5aac6f4c0" astParent="0x55c5aaccc660" astOperand1="0x55c5aac777b0" astOperand2="0x55c5aac779f0"/>
+    <token id="0x55c5aac779f0" file="src/core/iommu.c" linenr="61" column="53" str="&amp;" scope="0x55c5ab0ac040" type="op" values="0x55c5aaca80b0" astParent="0x55c5aac778d0" astOperand1="0x55c5aac76dd0"/>
+    <token id="0x55c5aac76a70" file="src/core/iommu.c" linenr="61" column="54" str="vm" scope="0x55c5ab0ac040" type="name" varId="8" variable="0x55c5aac5a2f0" astParent="0x55c5aac76b90"/>
+    <token id="0x55c5aac76b90" file="src/core/iommu.c" linenr="61" column="56" str="." scope="0x55c5ab0ac040" astParent="0x55c5aac76dd0" astOperand1="0x55c5aac76a70" astOperand2="0x55c5aac76cb0" originalName="->"/>
+    <token id="0x55c5aac76cb0" file="src/core/iommu.c" linenr="61" column="58" str="iommu" scope="0x55c5ab0ac040" type="name" varId="12" astParent="0x55c5aac76b90"/>
+    <token id="0x55c5aac76dd0" file="src/core/iommu.c" linenr="61" column="63" str="." scope="0x55c5ab0ac040" astParent="0x55c5aac779f0" astOperand1="0x55c5aac76b90" astOperand2="0x55c5aac76ef0"/>
+    <token id="0x55c5aac76ef0" file="src/core/iommu.c" linenr="61" column="64" str="dev_oc" scope="0x55c5ab0ac040" type="name" varId="13" astParent="0x55c5aac76dd0"/>
+    <token id="0x55c5aac77a50" file="src/core/iommu.c" linenr="61" column="70" str=")" scope="0x55c5ab0ac040" link="0x55c5aac778d0"/>
+    <token id="0x55c5aac63e60" file="src/core/iommu.c" linenr="61" column="71" str=";" scope="0x55c5ab0ac040"/>
+    <token id="0x55c5aac63f80" file="src/core/iommu.c" linenr="62" column="9" str="if" scope="0x55c5ab0ac040" type="name" astParent="0x55c5aac640a0"/>
+    <token id="0x55c5aac640a0" file="src/core/iommu.c" linenr="62" column="12" str="(" scope="0x55c5ab0ac040" link="0x55c5aacdfb70" astOperand1="0x55c5aac63f80" astOperand2="0x55c5aac642e0"/>
+    <token id="0x55c5aac641c0" file="src/core/iommu.c" linenr="62" column="13" str="ptr" scope="0x55c5ab0ac040" type="name" varId="11" variable="0x55c5ab0ac500" values="0x55c5aac64750" astParent="0x55c5aac642e0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac642e0" file="src/core/iommu.c" linenr="62" column="17" str="!=" scope="0x55c5ab0ac040" type="op" isComparisonOp="True" values="0x55c5aaccb400" astParent="0x55c5aac640a0" astOperand1="0x55c5aac641c0" astOperand2="0x55c5aac64400" valueType-type="bool"/>
+    <token id="0x55c5aac64400" file="src/core/iommu.c" linenr="62" column="20" str="NULL" scope="0x55c5ab0ac040" type="name" values="0x55c5aacdbcb0" astParent="0x55c5aac642e0"/>
+    <token id="0x55c5aacdfb70" file="src/core/iommu.c" linenr="62" column="24" str=")" scope="0x55c5ab0ac040" link="0x55c5aac640a0"/>
+    <token id="0x55c5aacdfc90" file="src/core/iommu.c" linenr="62" column="26" str="{" scope="0x55c5ab0ac1b0" link="0x55c5aace1c40"/>
+    <token id="0x55c5aacdfdb0" file="src/core/iommu.c" linenr="63" column="13" str="ptr" scope="0x55c5ab0ac1b0" type="name" varId="11" variable="0x55c5ab0ac500" values="0x55c5aace6bc0" astParent="0x55c5aacdfed0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aacdfed0" file="src/core/iommu.c" linenr="63" column="16" str="." scope="0x55c5ab0ac1b0" astParent="0x55c5aace0110" astOperand1="0x55c5aacdfdb0" astOperand2="0x55c5aacdfff0" originalName="->" valueType-type="record" valueType-typeScope="0x55c5aac76850"/>
+    <token id="0x55c5aacdfff0" file="src/core/iommu.c" linenr="63" column="18" str="dev" scope="0x55c5ab0ac1b0" type="name" varId="14" variable="0x55c5aac97d00" astParent="0x55c5aacdfed0" valueType-type="record" valueType-typeScope="0x55c5aac76850"/>
+    <token id="0x55c5aace0110" file="src/core/iommu.c" linenr="63" column="21" str="." scope="0x55c5ab0ac1b0" astParent="0x55c5aac97fb0" astOperand1="0x55c5aacdfed0" astOperand2="0x55c5aac97e90" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac97e90" file="src/core/iommu.c" linenr="63" column="22" str="id" scope="0x55c5ab0ac1b0" type="name" varId="15" variable="0x55c5aaccde00" astParent="0x55c5aace0110" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac97fb0" file="src/core/iommu.c" linenr="63" column="25" str="=" scope="0x55c5ab0ac1b0" type="op" isAssignmentOp="True" astOperand1="0x55c5aace0110" astOperand2="0x55c5aac980d0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac980d0" file="src/core/iommu.c" linenr="63" column="27" str="dev_id" scope="0x55c5ab0ac1b0" type="name" varId="9" variable="0x55c5aac5a3d0" astParent="0x55c5aac97fb0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac981f0" file="src/core/iommu.c" linenr="63" column="33" str=";" scope="0x55c5ab0ac1b0"/>
+    <token id="0x55c5aac98310" file="src/core/iommu.c" linenr="64" column="13" str="list_push" scope="0x55c5ab0ac1b0" type="name" astParent="0x55c5aac98430"/>
+    <token id="0x55c5aac98430" file="src/core/iommu.c" linenr="64" column="22" str="(" scope="0x55c5ab0ac1b0" link="0x55c5aace1a00" astOperand1="0x55c5aac98310" astOperand2="0x55c5aac985d0"/>
+    <token id="0x55c5aace5e00" file="src/core/iommu.c" linenr="64" column="23" str="&amp;" scope="0x55c5ab0ac1b0" type="op" values="0x55c5aace7100" astParent="0x55c5aac985d0" astOperand1="0x55c5aace6280"/>
+    <token id="0x55c5aace5f20" file="src/core/iommu.c" linenr="64" column="24" str="vm" scope="0x55c5ab0ac1b0" type="name" varId="8" variable="0x55c5aac5a2f0" astParent="0x55c5aace6040"/>
+    <token id="0x55c5aace6040" file="src/core/iommu.c" linenr="64" column="26" str="." scope="0x55c5ab0ac1b0" astParent="0x55c5aace6280" astOperand1="0x55c5aace5f20" astOperand2="0x55c5aace6160" originalName="->"/>
+    <token id="0x55c5aace6160" file="src/core/iommu.c" linenr="64" column="28" str="iommu" scope="0x55c5ab0ac1b0" type="name" varId="12" astParent="0x55c5aace6040"/>
+    <token id="0x55c5aace6280" file="src/core/iommu.c" linenr="64" column="33" str="." scope="0x55c5ab0ac1b0" astParent="0x55c5aace5e00" astOperand1="0x55c5aace6040" astOperand2="0x55c5aace63a0"/>
+    <token id="0x55c5aace63a0" file="src/core/iommu.c" linenr="64" column="34" str="dev_list" scope="0x55c5ab0ac1b0" type="name" varId="16" astParent="0x55c5aace6280"/>
+    <token id="0x55c5aac985d0" file="src/core/iommu.c" linenr="64" column="42" str="," scope="0x55c5ab0ac1b0" astParent="0x55c5aac98430" astOperand1="0x55c5aace5e00" astOperand2="0x55c5aac986f0"/>
+    <token id="0x55c5aac986f0" file="src/core/iommu.c" linenr="64" column="44" str="(" scope="0x55c5ab0ac1b0" link="0x55c5aac98a50" values="0x55c5ab0b0d20" astParent="0x55c5aac985d0" astOperand1="0x55c5aac98b70" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac98810" file="src/core/iommu.c" linenr="64" column="45" str="void" scope="0x55c5ab0ac1b0" type="name"/>
+    <token id="0x55c5aac98930" file="src/core/iommu.c" linenr="64" column="50" str="*" scope="0x55c5ab0ac1b0" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aac98a50" file="src/core/iommu.c" linenr="64" column="51" str=")" scope="0x55c5ab0ac1b0" link="0x55c5aac986f0"/>
+    <token id="0x55c5aac98b70" file="src/core/iommu.c" linenr="64" column="52" str="ptr" scope="0x55c5ab0ac1b0" type="name" varId="11" variable="0x55c5ab0ac500" values="0x55c5aace6ba0" astParent="0x55c5aac986f0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aace1a00" file="src/core/iommu.c" linenr="64" column="55" str=")" scope="0x55c5ab0ac1b0" link="0x55c5aac98430"/>
+    <token id="0x55c5aace1b20" file="src/core/iommu.c" linenr="64" column="56" str=";" scope="0x55c5ab0ac1b0"/>
+    <token id="0x55c5aace1c40" file="src/core/iommu.c" linenr="65" column="9" str="}" scope="0x55c5ab0ac1b0" link="0x55c5aacdfc90"/>
+    <token id="0x55c5aace1d60" file="src/core/iommu.c" linenr="65" column="11" str="else" scope="0x55c5ab0ac040" type="name"/>
+    <token id="0x55c5aace1e80" file="src/core/iommu.c" linenr="65" column="16" str="{" scope="0x55c5ab0ac320" link="0x55c5aad45c40"/>
+    <token id="0x55c5aace1fa0" file="src/core/iommu.c" linenr="66" column="13" str="res" scope="0x55c5ab0ac320" type="name" varId="10" variable="0x55c5aac97d70" astParent="0x55c5aace6400" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace6400" file="src/core/iommu.c" linenr="66" column="17" str="=" scope="0x55c5ab0ac320" type="op" isAssignmentOp="True" astOperand1="0x55c5aace1fa0" astOperand2="0x55c5aad45a00" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad45a00" file="src/core/iommu.c" linenr="66" column="20" str="-1" scope="0x55c5ab0ac320" type="number" isInt="True" values="0x55c5aace67d0" astParent="0x55c5aace6400" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad45b20" file="src/core/iommu.c" linenr="66" column="21" str=";" scope="0x55c5ab0ac320"/>
+    <token id="0x55c5aad45c40" file="src/core/iommu.c" linenr="67" column="9" str="}" scope="0x55c5ab0ac320" link="0x55c5aace1e80"/>
+    <token id="0x55c5aad45d60" file="src/core/iommu.c" linenr="68" column="5" str="}" scope="0x55c5ab0ac040" link="0x55c5aac977d0"/>
+    <token id="0x55c5aad45e80" file="src/core/iommu.c" linenr="70" column="5" str="return" scope="0x55c5aac789a0" type="name" astOperand1="0x55c5aac98bd0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac98bd0" file="src/core/iommu.c" linenr="70" column="12" str="res" scope="0x55c5aac789a0" type="name" varId="10" variable="0x55c5aac97d70" values="0x55c5aac62940" astParent="0x55c5aad45e80" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccc080" file="src/core/iommu.c" linenr="70" column="15" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aaccc1a0" file="src/core/iommu.c" linenr="71" column="1" str="}" scope="0x55c5aac789a0" link="0x55c5aac79230"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aacbc050" type="Global">
+      <functionList>
+        <function id="0x55c5aacca2f0" tokenDef="0x55c5aac97230" name="iommu_init" type="Function"/>
+        <function id="0x55c5aacca390" tokenDef="0x55c5aace6600" name="iommu_vm_init" type="Function">
+          <arg nr="1" variable="0x55c5aac5a130"/>
+          <arg nr="2" variable="0x55c5aac5a210"/>
+        </function>
+        <function id="0x55c5aafac070" tokenDef="0x55c5aaca1850" name="iommu_vm_add_device" type="Function">
+          <arg nr="1" variable="0x55c5aac5a2f0"/>
+          <arg nr="2" variable="0x55c5aac5a3d0"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac76850" type="Struct" className="iommu_device" bodyStart="0x55c5aac64520" bodyEnd="0x55c5ab0ad9e0" nestedIn="0x55c5aacbc050">
+      <varlist>
+        <var id="0x55c5aaccde00"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac7b730" type="Struct" className="iommu_dev_node" bodyStart="0x55c5aaf7be80" bodyEnd="0x55c5ab0aaa30" nestedIn="0x55c5aacbc050">
+      <varlist>
+        <var id="0x55c5aaccdee0"/>
+        <var id="0x55c5aac97d00"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac785a0" type="Function" className="iommu_init" bodyStart="0x55c5aafadee0" bodyEnd="0x55c5aac59ed0" nestedIn="0x55c5aacbc050" function="0x55c5aacca2f0"/>
+    <scope id="0x55c5aac75e20" type="Function" className="iommu_vm_init" bodyStart="0x55c5aac5d2a0" bodyEnd="0x55c5aacbab70" nestedIn="0x55c5aacbc050" function="0x55c5aacca390"/>
+    <scope id="0x55c5aac789a0" type="Function" className="iommu_vm_add_device" bodyStart="0x55c5aac79230" bodyEnd="0x55c5aaccc1a0" nestedIn="0x55c5aacbc050" function="0x55c5aafac070">
+      <varlist>
+        <var id="0x55c5aac97d70"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac781c0" type="If" bodyStart="0x55c5ab0ace80" bodyEnd="0x55c5aac79890" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5ab0ac040" type="If" bodyStart="0x55c5aac977d0" bodyEnd="0x55c5aad45d60" nestedIn="0x55c5aac789a0">
+      <varlist>
+        <var id="0x55c5ab0ac500"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5ab0ac1b0" type="If" bodyStart="0x55c5aacdfc90" bodyEnd="0x55c5aace1c40" nestedIn="0x55c5ab0ac040"/>
+    <scope id="0x55c5ab0ac320" type="Else" bodyStart="0x55c5aace1e80" bodyEnd="0x55c5aad45c40" nestedIn="0x55c5ab0ac040"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac5a130" nameToken="0x55c5aacce110" typeStartToken="0x55c5aace2550" typeEndToken="0x55c5aacce0b0" access="Argument" scope="0x55c5aac75e20" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5a210" nameToken="0x55c5aac59d60" typeStartToken="0x55c5aacbc800" typeEndToken="0x55c5aacbc860" access="Argument" scope="0x55c5aac75e20" constness="1" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5a2f0" nameToken="0x55c5aac78d50" typeStartToken="0x55c5aaca1a90" typeEndToken="0x55c5aae55780" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5a3d0" nameToken="0x55c5aac790b0" typeStartToken="0x55c5aac78f90" typeEndToken="0x55c5aac78f90" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac97d00" nameToken="0x55c5aac75860" typeStartToken="0x55c5aac625c0" typeEndToken="0x55c5aac625c0" access="Public" scope="0x55c5aac7b730" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac97d70" nameToken="0x55c5aac537e0" typeStartToken="0x55c5aac536c0" typeEndToken="0x55c5aac536c0" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaccde00" nameToken="0x55c5aaccb420" typeStartToken="0x55c5aaca2d00" typeEndToken="0x55c5aaca2d00" access="Public" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaccdee0" nameToken="0x55c5aad45740" typeStartToken="0x55c5aac78510" typeEndToken="0x55c5aac78510" access="Public" scope="0x55c5aac7b730" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0ac500" nameToken="0x55c5aac77570" typeStartToken="0x55c5aac97a10" typeEndToken="0x55c5aac77450" access="Local" scope="0x55c5ab0ac040" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="true" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aac75c70">
+      <value lifetime="0x55c5ab0b2ad0" possible="true"/>
+    </values>
+    <values id="0x55c5aac51c70">
+      <value intvalue="-1" known="true"/>
+    </values>
+    <values id="0x55c5aac78c40">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac78190">
+      <value intvalue="0" condition-line="55" impossible="true"/>
+    </values>
+    <values id="0x55c5aaccb880">
+      <value intvalue="-1" possible="true"/>
+    </values>
+    <values id="0x55c5aae54900">
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0x55c5aac64d70">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac6f4c0">
+      <value intvalue="0" condition-line="62" possible="true"/>
+    </values>
+    <values id="0x55c5aaca80b0">
+      <value lifetime="0x55c5aac76ef0" possible="true"/>
+    </values>
+    <values id="0x55c5aac64750">
+      <value intvalue="0" condition-line="62" possible="true"/>
+    </values>
+    <values id="0x55c5aaccb400">
+      <value intvalue="0" condition-line="62" possible="true"/>
+    </values>
+    <values id="0x55c5aacdbcb0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aace6bc0">
+      <value intvalue="0" condition-line="62" impossible="true"/>
+    </values>
+    <values id="0x55c5aace7100">
+      <value lifetime="0x55c5aace63a0" possible="true"/>
+    </values>
+    <values id="0x55c5ab0b0d20">
+      <value intvalue="0" condition-line="62" impossible="true"/>
+    </values>
+    <values id="0x55c5aace6ba0">
+      <value intvalue="0" condition-line="62" impossible="true"/>
+    </values>
+    <values id="0x55c5aace67d0">
+      <value intvalue="-1" known="true"/>
+    </values>
+    <values id="0x55c5aac62940">
+      <value intvalue="-1" possible="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

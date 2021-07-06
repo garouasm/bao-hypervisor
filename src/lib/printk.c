@@ -44,14 +44,15 @@ uint64_t vsprintk(char *buf, const char *fmt, va_list args)
                 zero_padding = 1;
             }
 
-           if (*fmt == 'l') {
+            if (*fmt == 'l') {
                 ++fmt;
                 is_long = 1;
-           }
+            }
 
             switch (*fmt) {
                 case 'x': {
-                    uint64_t number = is_long ? va_arg(args, uint64_t) : va_arg(args, uint32_t);
+                    uint64_t number = is_long ? va_arg(args, uint64_t)
+                                              : va_arg(args, uint32_t);
                     int length = is_long ? 16 : 8;
                     int length_in_bits = is_long ? 64 : 32;
                     int byte = 0;
@@ -61,14 +62,14 @@ uint64_t vsprintk(char *buf, const char *fmt, va_list args)
                     for (i = 0; i < length; i++) {
                         byte = number >> (length_in_bits - ((i + 1) * 4));
                         byte = byte & 0xF;
-                        if (byte != 0 || i == length-1) {
+                        if (byte != 0 || i == length - 1) {
                             keep_zeros = true;
                         }
                         if (keep_zeros || zero_padding) {
                             if ((byte >= 0) && (byte <= 9)) {
                                 byte += 0x30;
                             } else {
-                                byte += (0x61-0xa);
+                                byte += (0x61 - 0xa);
                             }
                             *str++ = byte;
                         }
@@ -80,19 +81,21 @@ uint64_t vsprintk(char *buf, const char *fmt, va_list args)
                 case 'i':
                 case 'd': {
                     uint64_t i, j, max_num_zeros, num_of_digits_uint64_t,
-                        number, divisor_value_uint64_t,
-                        new_div_val = 1, sw_quotient_value = 0;
+                        number, divisor_value_uint64_t, new_div_val = 1,
+                                                        sw_quotient_value = 0;
                     bool keep_zeros = false;
 
                     if (!is_unsigned) {
-                        int64_t number_signed = is_long ? va_arg(args, int64_t) : va_arg(args, int32_t);
+                        int64_t number_signed = is_long ? va_arg(args, int64_t)
+                                                        : va_arg(args, int32_t);
                         if (number_signed < 0) {
                             *str++ = 0x2d;
                             number_signed = -(number_signed);
                         }
                         number = number_signed;
                     } else {
-                        number = is_long ? va_arg(args, uint64_t) : va_arg(args, uint32_t);
+                        number = is_long ? va_arg(args, uint64_t)
+                                         : va_arg(args, uint32_t);
                     }
 
                     divisor_value_uint64_t = 1000000000;

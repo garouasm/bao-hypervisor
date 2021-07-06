@@ -1,0 +1,1052 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/core/config.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;config.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="define"/>
+    <tok fileIndex="0" linenr="18" column="9" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="18" column="19" str="("/>
+    <tok fileIndex="0" linenr="18" column="20" str="p"/>
+    <tok fileIndex="0" linenr="18" column="21" str=","/>
+    <tok fileIndex="0" linenr="18" column="23" str="o"/>
+    <tok fileIndex="0" linenr="18" column="24" str=")"/>
+    <tok fileIndex="0" linenr="18" column="31" str="("/>
+    <tok fileIndex="0" linenr="18" column="32" str="("/>
+    <tok fileIndex="0" linenr="18" column="33" str="p"/>
+    <tok fileIndex="0" linenr="18" column="34" str=")"/>
+    <tok fileIndex="0" linenr="18" column="36" str="="/>
+    <tok fileIndex="0" linenr="18" column="38" str="("/>
+    <tok fileIndex="0" linenr="18" column="39" str="p"/>
+    <tok fileIndex="0" linenr="18" column="40" str=")"/>
+    <tok fileIndex="0" linenr="18" column="42" str="?"/>
+    <tok fileIndex="0" linenr="18" column="44" str="("/>
+    <tok fileIndex="0" linenr="18" column="45" str="typeof"/>
+    <tok fileIndex="0" linenr="18" column="51" str="("/>
+    <tok fileIndex="0" linenr="18" column="52" str="p"/>
+    <tok fileIndex="0" linenr="18" column="53" str=")"/>
+    <tok fileIndex="0" linenr="18" column="54" str=")"/>
+    <tok fileIndex="0" linenr="18" column="55" str="("/>
+    <tok fileIndex="0" linenr="18" column="56" str="("/>
+    <tok fileIndex="0" linenr="18" column="57" str="void"/>
+    <tok fileIndex="0" linenr="18" column="62" str="*"/>
+    <tok fileIndex="0" linenr="18" column="63" str=")"/>
+    <tok fileIndex="0" linenr="18" column="64" str="("/>
+    <tok fileIndex="0" linenr="18" column="65" str="p"/>
+    <tok fileIndex="0" linenr="18" column="66" str=")"/>
+    <tok fileIndex="0" linenr="18" column="68" str="+"/>
+    <tok fileIndex="0" linenr="18" column="70" str="("/>
+    <tok fileIndex="0" linenr="18" column="71" str="uint64_t"/>
+    <tok fileIndex="0" linenr="18" column="79" str=")"/>
+    <tok fileIndex="0" linenr="18" column="80" str="("/>
+    <tok fileIndex="0" linenr="18" column="81" str="o"/>
+    <tok fileIndex="0" linenr="18" column="82" str=")"/>
+    <tok fileIndex="0" linenr="18" column="83" str=")"/>
+    <tok fileIndex="0" linenr="18" column="85" str=":"/>
+    <tok fileIndex="0" linenr="18" column="87" str="("/>
+    <tok fileIndex="0" linenr="18" column="88" str="p"/>
+    <tok fileIndex="0" linenr="18" column="89" str=")"/>
+    <tok fileIndex="0" linenr="18" column="90" str=")"/>
+    <tok fileIndex="0" linenr="21" column="1" str="void"/>
+    <tok fileIndex="0" linenr="21" column="6" str="config_adjust_to_va"/>
+    <tok fileIndex="0" linenr="21" column="25" str="("/>
+    <tok fileIndex="0" linenr="21" column="26" str="struct"/>
+    <tok fileIndex="0" linenr="21" column="33" str="config"/>
+    <tok fileIndex="0" linenr="21" column="40" str="*"/>
+    <tok fileIndex="0" linenr="21" column="41" str="config"/>
+    <tok fileIndex="0" linenr="21" column="47" str=","/>
+    <tok fileIndex="0" linenr="21" column="49" str="uint64_t"/>
+    <tok fileIndex="0" linenr="21" column="58" str="phys"/>
+    <tok fileIndex="0" linenr="21" column="62" str=")"/>
+    <tok fileIndex="0" linenr="22" column="1" str="{"/>
+    <tok fileIndex="0" linenr="23" column="5" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="23" column="15" str="("/>
+    <tok fileIndex="0" linenr="23" column="16" str="config"/>
+    <tok fileIndex="0" linenr="23" column="22" str="-&gt;"/>
+    <tok fileIndex="0" linenr="23" column="24" str="shmemlist"/>
+    <tok fileIndex="0" linenr="23" column="33" str=","/>
+    <tok fileIndex="0" linenr="23" column="35" str="config"/>
+    <tok fileIndex="0" linenr="23" column="41" str=")"/>
+    <tok fileIndex="0" linenr="23" column="42" str=";"/>
+    <tok fileIndex="0" linenr="25" column="5" str="for"/>
+    <tok fileIndex="0" linenr="25" column="9" str="("/>
+    <tok fileIndex="0" linenr="25" column="10" str="int"/>
+    <tok fileIndex="0" linenr="25" column="14" str="i"/>
+    <tok fileIndex="0" linenr="25" column="16" str="="/>
+    <tok fileIndex="0" linenr="25" column="18" str="0"/>
+    <tok fileIndex="0" linenr="25" column="19" str=";"/>
+    <tok fileIndex="0" linenr="25" column="21" str="i"/>
+    <tok fileIndex="0" linenr="25" column="23" str="&lt;"/>
+    <tok fileIndex="0" linenr="25" column="25" str="config"/>
+    <tok fileIndex="0" linenr="25" column="31" str="-&gt;"/>
+    <tok fileIndex="0" linenr="25" column="33" str="vmlist_size"/>
+    <tok fileIndex="0" linenr="25" column="44" str=";"/>
+    <tok fileIndex="0" linenr="25" column="46" str="i"/>
+    <tok fileIndex="0" linenr="25" column="47" str="++"/>
+    <tok fileIndex="0" linenr="25" column="49" str=")"/>
+    <tok fileIndex="0" linenr="25" column="51" str="{"/>
+    <tok fileIndex="0" linenr="26" column="9" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="26" column="19" str="("/>
+    <tok fileIndex="0" linenr="26" column="20" str="config"/>
+    <tok fileIndex="0" linenr="26" column="26" str="-&gt;"/>
+    <tok fileIndex="0" linenr="26" column="28" str="vmlist"/>
+    <tok fileIndex="0" linenr="26" column="34" str="["/>
+    <tok fileIndex="0" linenr="26" column="35" str="i"/>
+    <tok fileIndex="0" linenr="26" column="36" str="]"/>
+    <tok fileIndex="0" linenr="26" column="37" str="."/>
+    <tok fileIndex="0" linenr="26" column="38" str="image"/>
+    <tok fileIndex="0" linenr="26" column="43" str="."/>
+    <tok fileIndex="0" linenr="26" column="44" str="load_addr"/>
+    <tok fileIndex="0" linenr="26" column="53" str=","/>
+    <tok fileIndex="0" linenr="26" column="55" str="phys"/>
+    <tok fileIndex="0" linenr="26" column="59" str=")"/>
+    <tok fileIndex="0" linenr="26" column="60" str=";"/>
+    <tok fileIndex="0" linenr="28" column="9" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="28" column="19" str="("/>
+    <tok fileIndex="0" linenr="28" column="20" str="config"/>
+    <tok fileIndex="0" linenr="28" column="26" str="-&gt;"/>
+    <tok fileIndex="0" linenr="28" column="28" str="vmlist"/>
+    <tok fileIndex="0" linenr="28" column="34" str="["/>
+    <tok fileIndex="0" linenr="28" column="35" str="i"/>
+    <tok fileIndex="0" linenr="28" column="36" str="]"/>
+    <tok fileIndex="0" linenr="28" column="37" str="."/>
+    <tok fileIndex="0" linenr="28" column="38" str="platform"/>
+    <tok fileIndex="0" linenr="28" column="46" str="."/>
+    <tok fileIndex="0" linenr="28" column="47" str="regions"/>
+    <tok fileIndex="0" linenr="28" column="54" str=","/>
+    <tok fileIndex="0" linenr="28" column="56" str="config"/>
+    <tok fileIndex="0" linenr="28" column="62" str=")"/>
+    <tok fileIndex="0" linenr="28" column="63" str=";"/>
+    <tok fileIndex="0" linenr="30" column="9" str="if"/>
+    <tok fileIndex="0" linenr="30" column="12" str="("/>
+    <tok fileIndex="0" linenr="30" column="13" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="30" column="23" str="("/>
+    <tok fileIndex="0" linenr="30" column="24" str="config"/>
+    <tok fileIndex="0" linenr="30" column="30" str="-&gt;"/>
+    <tok fileIndex="0" linenr="30" column="32" str="vmlist"/>
+    <tok fileIndex="0" linenr="30" column="38" str="["/>
+    <tok fileIndex="0" linenr="30" column="39" str="i"/>
+    <tok fileIndex="0" linenr="30" column="40" str="]"/>
+    <tok fileIndex="0" linenr="30" column="41" str="."/>
+    <tok fileIndex="0" linenr="30" column="42" str="platform"/>
+    <tok fileIndex="0" linenr="30" column="50" str="."/>
+    <tok fileIndex="0" linenr="30" column="51" str="devs"/>
+    <tok fileIndex="0" linenr="30" column="55" str=","/>
+    <tok fileIndex="0" linenr="30" column="57" str="config"/>
+    <tok fileIndex="0" linenr="30" column="63" str=")"/>
+    <tok fileIndex="0" linenr="30" column="64" str=")"/>
+    <tok fileIndex="0" linenr="30" column="66" str="{"/>
+    <tok fileIndex="0" linenr="31" column="13" str="for"/>
+    <tok fileIndex="0" linenr="31" column="17" str="("/>
+    <tok fileIndex="0" linenr="31" column="18" str="int"/>
+    <tok fileIndex="0" linenr="31" column="22" str="j"/>
+    <tok fileIndex="0" linenr="31" column="24" str="="/>
+    <tok fileIndex="0" linenr="31" column="26" str="0"/>
+    <tok fileIndex="0" linenr="31" column="27" str=";"/>
+    <tok fileIndex="0" linenr="31" column="29" str="j"/>
+    <tok fileIndex="0" linenr="31" column="31" str="&lt;"/>
+    <tok fileIndex="0" linenr="31" column="33" str="config"/>
+    <tok fileIndex="0" linenr="31" column="39" str="-&gt;"/>
+    <tok fileIndex="0" linenr="31" column="41" str="vmlist"/>
+    <tok fileIndex="0" linenr="31" column="47" str="["/>
+    <tok fileIndex="0" linenr="31" column="48" str="i"/>
+    <tok fileIndex="0" linenr="31" column="49" str="]"/>
+    <tok fileIndex="0" linenr="31" column="50" str="."/>
+    <tok fileIndex="0" linenr="31" column="51" str="platform"/>
+    <tok fileIndex="0" linenr="31" column="59" str="."/>
+    <tok fileIndex="0" linenr="31" column="60" str="dev_num"/>
+    <tok fileIndex="0" linenr="31" column="67" str=";"/>
+    <tok fileIndex="0" linenr="31" column="69" str="j"/>
+    <tok fileIndex="0" linenr="31" column="70" str="++"/>
+    <tok fileIndex="0" linenr="31" column="72" str=")"/>
+    <tok fileIndex="0" linenr="31" column="74" str="{"/>
+    <tok fileIndex="0" linenr="32" column="17" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="32" column="27" str="("/>
+    <tok fileIndex="0" linenr="32" column="28" str="config"/>
+    <tok fileIndex="0" linenr="32" column="34" str="-&gt;"/>
+    <tok fileIndex="0" linenr="32" column="36" str="vmlist"/>
+    <tok fileIndex="0" linenr="32" column="42" str="["/>
+    <tok fileIndex="0" linenr="32" column="43" str="i"/>
+    <tok fileIndex="0" linenr="32" column="44" str="]"/>
+    <tok fileIndex="0" linenr="32" column="45" str="."/>
+    <tok fileIndex="0" linenr="32" column="46" str="platform"/>
+    <tok fileIndex="0" linenr="32" column="54" str="."/>
+    <tok fileIndex="0" linenr="32" column="55" str="devs"/>
+    <tok fileIndex="0" linenr="32" column="59" str="["/>
+    <tok fileIndex="0" linenr="32" column="60" str="j"/>
+    <tok fileIndex="0" linenr="32" column="61" str="]"/>
+    <tok fileIndex="0" linenr="32" column="62" str="."/>
+    <tok fileIndex="0" linenr="32" column="63" str="interrupts"/>
+    <tok fileIndex="0" linenr="32" column="73" str=","/>
+    <tok fileIndex="0" linenr="33" column="28" str="config"/>
+    <tok fileIndex="0" linenr="33" column="34" str=")"/>
+    <tok fileIndex="0" linenr="33" column="35" str=";"/>
+    <tok fileIndex="0" linenr="34" column="13" str="}"/>
+    <tok fileIndex="0" linenr="35" column="9" str="}"/>
+    <tok fileIndex="0" linenr="37" column="9" str="if"/>
+    <tok fileIndex="0" linenr="37" column="12" str="("/>
+    <tok fileIndex="0" linenr="37" column="13" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="37" column="23" str="("/>
+    <tok fileIndex="0" linenr="37" column="24" str="config"/>
+    <tok fileIndex="0" linenr="37" column="30" str="-&gt;"/>
+    <tok fileIndex="0" linenr="37" column="32" str="vmlist"/>
+    <tok fileIndex="0" linenr="37" column="38" str="["/>
+    <tok fileIndex="0" linenr="37" column="39" str="i"/>
+    <tok fileIndex="0" linenr="37" column="40" str="]"/>
+    <tok fileIndex="0" linenr="37" column="41" str="."/>
+    <tok fileIndex="0" linenr="37" column="42" str="platform"/>
+    <tok fileIndex="0" linenr="37" column="50" str="."/>
+    <tok fileIndex="0" linenr="37" column="51" str="ipcs"/>
+    <tok fileIndex="0" linenr="37" column="55" str=","/>
+    <tok fileIndex="0" linenr="37" column="57" str="config"/>
+    <tok fileIndex="0" linenr="37" column="63" str=")"/>
+    <tok fileIndex="0" linenr="37" column="64" str=")"/>
+    <tok fileIndex="0" linenr="37" column="66" str="{"/>
+    <tok fileIndex="0" linenr="38" column="13" str="for"/>
+    <tok fileIndex="0" linenr="38" column="17" str="("/>
+    <tok fileIndex="0" linenr="38" column="18" str="int"/>
+    <tok fileIndex="0" linenr="38" column="22" str="j"/>
+    <tok fileIndex="0" linenr="38" column="24" str="="/>
+    <tok fileIndex="0" linenr="38" column="26" str="0"/>
+    <tok fileIndex="0" linenr="38" column="27" str=";"/>
+    <tok fileIndex="0" linenr="38" column="29" str="j"/>
+    <tok fileIndex="0" linenr="38" column="31" str="&lt;"/>
+    <tok fileIndex="0" linenr="38" column="33" str="config"/>
+    <tok fileIndex="0" linenr="38" column="39" str="-&gt;"/>
+    <tok fileIndex="0" linenr="38" column="41" str="vmlist"/>
+    <tok fileIndex="0" linenr="38" column="47" str="["/>
+    <tok fileIndex="0" linenr="38" column="48" str="i"/>
+    <tok fileIndex="0" linenr="38" column="49" str="]"/>
+    <tok fileIndex="0" linenr="38" column="50" str="."/>
+    <tok fileIndex="0" linenr="38" column="51" str="platform"/>
+    <tok fileIndex="0" linenr="38" column="59" str="."/>
+    <tok fileIndex="0" linenr="38" column="60" str="ipc_num"/>
+    <tok fileIndex="0" linenr="38" column="67" str=";"/>
+    <tok fileIndex="0" linenr="38" column="69" str="j"/>
+    <tok fileIndex="0" linenr="38" column="70" str="++"/>
+    <tok fileIndex="0" linenr="38" column="72" str=")"/>
+    <tok fileIndex="0" linenr="38" column="74" str="{"/>
+    <tok fileIndex="0" linenr="39" column="17" str="adjust_ptr"/>
+    <tok fileIndex="0" linenr="39" column="27" str="("/>
+    <tok fileIndex="0" linenr="39" column="28" str="config"/>
+    <tok fileIndex="0" linenr="39" column="34" str="-&gt;"/>
+    <tok fileIndex="0" linenr="39" column="36" str="vmlist"/>
+    <tok fileIndex="0" linenr="39" column="42" str="["/>
+    <tok fileIndex="0" linenr="39" column="43" str="i"/>
+    <tok fileIndex="0" linenr="39" column="44" str="]"/>
+    <tok fileIndex="0" linenr="39" column="45" str="."/>
+    <tok fileIndex="0" linenr="39" column="46" str="platform"/>
+    <tok fileIndex="0" linenr="39" column="54" str="."/>
+    <tok fileIndex="0" linenr="39" column="55" str="ipcs"/>
+    <tok fileIndex="0" linenr="39" column="59" str="["/>
+    <tok fileIndex="0" linenr="39" column="60" str="j"/>
+    <tok fileIndex="0" linenr="39" column="61" str="]"/>
+    <tok fileIndex="0" linenr="39" column="62" str="."/>
+    <tok fileIndex="0" linenr="39" column="63" str="interrupts"/>
+    <tok fileIndex="0" linenr="39" column="73" str=","/>
+    <tok fileIndex="0" linenr="40" column="28" str="config"/>
+    <tok fileIndex="0" linenr="40" column="34" str=")"/>
+    <tok fileIndex="0" linenr="40" column="35" str=";"/>
+    <tok fileIndex="0" linenr="41" column="13" str="}"/>
+    <tok fileIndex="0" linenr="42" column="9" str="}"/>
+    <tok fileIndex="0" linenr="43" column="5" str="}"/>
+    <tok fileIndex="0" linenr="45" column="5" str="config_arch_adjust_to_va"/>
+    <tok fileIndex="0" linenr="45" column="29" str="("/>
+    <tok fileIndex="0" linenr="45" column="30" str="config"/>
+    <tok fileIndex="0" linenr="45" column="36" str=","/>
+    <tok fileIndex="0" linenr="45" column="38" str="phys"/>
+    <tok fileIndex="0" linenr="45" column="42" str=")"/>
+    <tok fileIndex="0" linenr="45" column="43" str=";"/>
+    <tok fileIndex="0" linenr="46" column="1" str="}"/>
+    <tok fileIndex="0" linenr="48" column="1" str="bool"/>
+    <tok fileIndex="0" linenr="48" column="6" str="config_is_builtin"/>
+    <tok fileIndex="0" linenr="48" column="23" str="("/>
+    <tok fileIndex="0" linenr="48" column="24" str=")"/>
+    <tok fileIndex="0" linenr="49" column="1" str="{"/>
+    <tok fileIndex="0" linenr="50" column="5" str="extern"/>
+    <tok fileIndex="0" linenr="50" column="12" str="uint8_t"/>
+    <tok fileIndex="0" linenr="50" column="20" str="_config_start"/>
+    <tok fileIndex="0" linenr="50" column="33" str=","/>
+    <tok fileIndex="0" linenr="50" column="35" str="_config_end"/>
+    <tok fileIndex="0" linenr="50" column="46" str=";"/>
+    <tok fileIndex="0" linenr="51" column="5" str="return"/>
+    <tok fileIndex="0" linenr="51" column="12" str="&amp;"/>
+    <tok fileIndex="0" linenr="51" column="13" str="_config_start"/>
+    <tok fileIndex="0" linenr="51" column="27" str="!="/>
+    <tok fileIndex="0" linenr="51" column="30" str="&amp;"/>
+    <tok fileIndex="0" linenr="51" column="31" str="_config_end"/>
+    <tok fileIndex="0" linenr="51" column="42" str=";"/>
+    <tok fileIndex="0" linenr="52" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/core/config.c" linenr="16" str="#include &lt;config.h&gt;"/>
+    <directive file="src/core/config.c" linenr="18" str="#define adjust_ptr(p, o) ((p) = (p) ? (typeof(p))((void *)(p) + (uint64_t)(o)) : (p))"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aad65e70" file="src/core/config.c" linenr="21" column="1" str="void" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac62130" file="src/core/config.c" linenr="21" column="6" str="config_adjust_to_va" scope="0x55c5aac783b0" type="name" function="0x55c5aacca2f0" astParent="0x55c5aac670e0"/>
+    <token id="0x55c5aac670e0" file="src/core/config.c" linenr="21" column="25" str="(" scope="0x55c5aac783b0" link="0x55c5aac67800" astOperand1="0x55c5aac62130" astOperand2="0x55c5aac626c0" valueType-type="void"/>
+    <token id="0x55c5aaccc2c0" file="src/core/config.c" linenr="21" column="26" str="struct" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac529c0" file="src/core/config.c" linenr="21" column="33" str="config" scope="0x55c5aac783b0" type="name" astParent="0x55c5aace0130"/>
+    <token id="0x55c5aace0130" file="src/core/config.c" linenr="21" column="40" str="*" scope="0x55c5aac783b0" type="op" isArithmeticalOp="True" astParent="0x55c5aac626c0" astOperand1="0x55c5aac529c0" astOperand2="0x55c5aacbab90"/>
+    <token id="0x55c5aacbab90" file="src/core/config.c" linenr="21" column="41" str="config" scope="0x55c5aac783b0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aace0130" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac626c0" file="src/core/config.c" linenr="21" column="47" str="," scope="0x55c5aac783b0" astParent="0x55c5aac670e0" astOperand1="0x55c5aace0130" astOperand2="0x55c5aaca8df0"/>
+    <token id="0x55c5aaca2950" file="src/core/config.c" linenr="21" column="49" str="uint64_t" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aaca8df0" file="src/core/config.c" linenr="21" column="58" str="phys" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aac706c0" astParent="0x55c5aac626c0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac67800" file="src/core/config.c" linenr="21" column="62" str=")" scope="0x55c5aac783b0" link="0x55c5aac670e0"/>
+    <token id="0x55c5aac5ad40" file="src/core/config.c" linenr="22" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aaca9e50"/>
+    <token id="0x55c5aac7b6b0" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac79cb0"/>
+    <token id="0x55c5ab0b2c90" file="src/core/config.c" linenr="23" column="5" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aace6780" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aace6780" file="src/core/config.c" linenr="23" column="5" str="." scope="0x55c5aac785a0" astParent="0x55c5aad45370" astOperand1="0x55c5ab0b2c90" astOperand2="0x55c5aac5d7b0" originalName="->"/>
+    <token id="0x55c5aac5d7b0" file="src/core/config.c" linenr="23" column="5" str="shmemlist" scope="0x55c5aac785a0" type="name" varId="3" astParent="0x55c5aace6780"/>
+    <token id="0x55c5aac79cb0" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac7b6b0"/>
+    <token id="0x55c5aad45370" file="src/core/config.c" linenr="23" column="5" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" isExpandedMacro="True" astOperand1="0x55c5aace6780" astOperand2="0x55c5aaca8fc0"/>
+    <token id="0x55c5aac55750" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aaca8f60"/>
+    <token id="0x55c5aacd5d00" file="src/core/config.c" linenr="23" column="5" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aaccc230" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaccc230" file="src/core/config.c" linenr="23" column="5" str="." scope="0x55c5aac785a0" astParent="0x55c5aaca8fc0" astOperand1="0x55c5aacd5d00" astOperand2="0x55c5aac59ab0" originalName="->"/>
+    <token id="0x55c5aac59ab0" file="src/core/config.c" linenr="23" column="5" str="shmemlist" scope="0x55c5aac785a0" type="name" varId="3" astParent="0x55c5aaccc230"/>
+    <token id="0x55c5aaca8f60" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac55750"/>
+    <token id="0x55c5aaca8fc0" file="src/core/config.c" linenr="23" column="5" str="?" scope="0x55c5aac785a0" isExpandedMacro="True" astParent="0x55c5aad45370" astOperand1="0x55c5aaccc230" astOperand2="0x55c5aac5c510"/>
+    <token id="0x55c5aaca83d0" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5ab0ac880" astParent="0x55c5aac5c510" astOperand1="0x55c5aac77b20"/>
+    <token id="0x55c5aaca8430" file="src/core/config.c" linenr="23" column="5" str="typeof" scope="0x55c5aac785a0" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac55f50" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5ab0ac820"/>
+    <token id="0x55c5aac55fb0" file="src/core/config.c" linenr="23" column="5" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac740f0" file="src/core/config.c" linenr="23" column="5" str="." scope="0x55c5aac785a0" originalName="->"/>
+    <token id="0x55c5aac74150" file="src/core/config.c" linenr="23" column="5" str="shmemlist" scope="0x55c5aac785a0" type="name" varId="3"/>
+    <token id="0x55c5ab0ac820" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac55f50"/>
+    <token id="0x55c5ab0ac880" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aaca83d0"/>
+    <token id="0x55c5aaccc040" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac5c3f0"/>
+    <token id="0x55c5aaccc0a0" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aace3d90" astParent="0x55c5aac77b20" astOperand1="0x55c5aac75140" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac74ef0" file="src/core/config.c" linenr="23" column="5" str="void" scope="0x55c5aac785a0" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac74f50" file="src/core/config.c" linenr="23" column="5" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5aace3d90" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aaccc0a0"/>
+    <token id="0x55c5aace3df0" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5ab0ad940"/>
+    <token id="0x55c5aac750e0" file="src/core/config.c" linenr="23" column="5" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac75140" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac75140" file="src/core/config.c" linenr="23" column="5" str="." scope="0x55c5aac785a0" astParent="0x55c5aaccc0a0" astOperand1="0x55c5aac750e0" astOperand2="0x55c5ab0ad8e0" originalName="->"/>
+    <token id="0x55c5ab0ad8e0" file="src/core/config.c" linenr="23" column="5" str="shmemlist" scope="0x55c5aac785a0" type="name" varId="3" astParent="0x55c5aac75140"/>
+    <token id="0x55c5ab0ad940" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aace3df0"/>
+    <token id="0x55c5aac77b20" file="src/core/config.c" linenr="23" column="5" str="+" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aaca83d0" astOperand1="0x55c5aaccc0a0" astOperand2="0x55c5aac77b80" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac77b80" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5ab0acad0" astParent="0x55c5aac77b20" astOperand1="0x55c5aae54bc0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaccc710" file="src/core/config.c" linenr="23" column="5" str="uint64_t" scope="0x55c5aac785a0" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5ab0acad0" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac77b80"/>
+    <token id="0x55c5aac55c10" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac5c2d0"/>
+    <token id="0x55c5aae54bc0" file="src/core/config.c" linenr="23" column="5" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac77b80" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac5c2d0" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac55c10"/>
+    <token id="0x55c5aac5c3f0" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aaccc040"/>
+    <token id="0x55c5aac5c510" file="src/core/config.c" linenr="23" column="5" str=":" scope="0x55c5aac785a0" isExpandedMacro="True" astParent="0x55c5aaca8fc0" astOperand1="0x55c5aaca83d0" astOperand2="0x55c5aac5c870"/>
+    <token id="0x55c5aac5c630" file="src/core/config.c" linenr="23" column="5" str="(" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac5e030"/>
+    <token id="0x55c5aac5c750" file="src/core/config.c" linenr="23" column="5" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac5c870" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac5c870" file="src/core/config.c" linenr="23" column="5" str="." scope="0x55c5aac785a0" astParent="0x55c5aac5c510" astOperand1="0x55c5aac5c750" astOperand2="0x55c5aac5df10" originalName="->"/>
+    <token id="0x55c5aac5df10" file="src/core/config.c" linenr="23" column="5" str="shmemlist" scope="0x55c5aac785a0" type="name" varId="3" astParent="0x55c5aac5c870"/>
+    <token id="0x55c5aac5e030" file="src/core/config.c" linenr="23" column="5" str=")" scope="0x55c5aac785a0" isExpandedMacro="True" link="0x55c5aac5c630"/>
+    <token id="0x55c5aac5e150" file="src/core/config.c" linenr="23" column="42" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac5e390" file="src/core/config.c" linenr="25" column="5" str="for" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac5e4b0"/>
+    <token id="0x55c5aac5e4b0" file="src/core/config.c" linenr="25" column="9" str="(" scope="0x55c5aac785a0" link="0x55c5aae56320" astOperand1="0x55c5aac5e390" astOperand2="0x55c5aae55900"/>
+    <token id="0x55c5aac5e5d0" file="src/core/config.c" linenr="25" column="10" str="int" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac5e6f0" file="src/core/config.c" linenr="25" column="14" str="i" scope="0x55c5aac785a0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac5e810" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5e810" file="src/core/config.c" linenr="25" column="16" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astParent="0x55c5aae55900" astOperand1="0x55c5aac5e6f0" astOperand2="0x55c5aac5e930" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5e930" file="src/core/config.c" linenr="25" column="18" str="0" scope="0x55c5aac785a0" type="number" isInt="True" values="0x55c5aac51c70" astParent="0x55c5aac5e810" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae55900" file="src/core/config.c" linenr="25" column="19" str=";" scope="0x55c5aac785a0" astParent="0x55c5aac5e4b0" astOperand1="0x55c5aac5e810" astOperand2="0x55c5aae55fc0"/>
+    <token id="0x55c5aae55a20" file="src/core/config.c" linenr="25" column="21" str="i" scope="0x55c5aac785a0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aae55b40" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae55b40" file="src/core/config.c" linenr="25" column="23" str="&lt;" scope="0x55c5aac785a0" type="op" isComparisonOp="True" astParent="0x55c5aae55fc0" astOperand1="0x55c5aae55a20" astOperand2="0x55c5aae55d80" valueType-type="bool"/>
+    <token id="0x55c5aae55c60" file="src/core/config.c" linenr="25" column="25" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aae55d80" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aae55d80" file="src/core/config.c" linenr="25" column="31" str="." scope="0x55c5aac785a0" astParent="0x55c5aae55b40" astOperand1="0x55c5aae55c60" astOperand2="0x55c5aae55ea0" originalName="->"/>
+    <token id="0x55c5aae55ea0" file="src/core/config.c" linenr="25" column="33" str="vmlist_size" scope="0x55c5aac785a0" type="name" varId="5" astParent="0x55c5aae55d80"/>
+    <token id="0x55c5aae55fc0" file="src/core/config.c" linenr="25" column="44" str=";" scope="0x55c5aac785a0" astParent="0x55c5aae55900" astOperand1="0x55c5aae55b40" astOperand2="0x55c5aae56200"/>
+    <token id="0x55c5aae560e0" file="src/core/config.c" linenr="25" column="46" str="i" scope="0x55c5aac785a0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aae56200" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae56200" file="src/core/config.c" linenr="25" column="47" str="++" scope="0x55c5aac785a0" type="op" astParent="0x55c5aae55fc0" astOperand1="0x55c5aae560e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae56320" file="src/core/config.c" linenr="25" column="49" str=")" scope="0x55c5aac785a0" link="0x55c5aac5e4b0"/>
+    <token id="0x55c5aae56440" file="src/core/config.c" linenr="25" column="51" str="{" scope="0x55c5aac76850" link="0x55c5aaca9550"/>
+    <token id="0x55c5aafacf90" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac6dbf0"/>
+    <token id="0x55c5aafad1d0" file="src/core/config.c" linenr="26" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aafad2f0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aafad2f0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aafad530" astOperand1="0x55c5aafad1d0" astOperand2="0x55c5aafad410" originalName="->"/>
+    <token id="0x55c5aafad410" file="src/core/config.c" linenr="26" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aafad2f0"/>
+    <token id="0x55c5aafad530" file="src/core/config.c" linenr="26" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aafad770" astParent="0x55c5aafad890" astOperand1="0x55c5aafad2f0" astOperand2="0x55c5aafad650"/>
+    <token id="0x55c5aafad650" file="src/core/config.c" linenr="26" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aafad530" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aafad770" file="src/core/config.c" linenr="26" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aafad530"/>
+    <token id="0x55c5aafad890" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aafadad0" astOperand1="0x55c5aafad530" astOperand2="0x55c5aafad9b0"/>
+    <token id="0x55c5aafad9b0" file="src/core/config.c" linenr="26" column="9" str="image" scope="0x55c5aac76850" type="name" astParent="0x55c5aafad890"/>
+    <token id="0x55c5aafadad0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac6dd10" astOperand1="0x55c5aafad890" astOperand2="0x55c5aafadbf0"/>
+    <token id="0x55c5aafadbf0" file="src/core/config.c" linenr="26" column="9" str="load_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aafadad0"/>
+    <token id="0x55c5aac6dbf0" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aafacf90"/>
+    <token id="0x55c5aac6dd10" file="src/core/config.c" linenr="26" column="9" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" isExpandedMacro="True" astOperand1="0x55c5aafadad0" astOperand2="0x55c5aaf6c760"/>
+    <token id="0x55c5aac6de30" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6c640"/>
+    <token id="0x55c5aac6df50" file="src/core/config.c" linenr="26" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac6e070" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac6e070" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac6e2b0" astOperand1="0x55c5aac6df50" astOperand2="0x55c5aac6e190" originalName="->"/>
+    <token id="0x55c5aac6e190" file="src/core/config.c" linenr="26" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aac6e070"/>
+    <token id="0x55c5aac6e2b0" file="src/core/config.c" linenr="26" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aac6e4f0" astParent="0x55c5aac6e610" astOperand1="0x55c5aac6e070" astOperand2="0x55c5aac6e3d0"/>
+    <token id="0x55c5aac6e3d0" file="src/core/config.c" linenr="26" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac6e2b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6e4f0" file="src/core/config.c" linenr="26" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aac6e2b0"/>
+    <token id="0x55c5aac6e610" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac6e850" astOperand1="0x55c5aac6e2b0" astOperand2="0x55c5aac6e730"/>
+    <token id="0x55c5aac6e730" file="src/core/config.c" linenr="26" column="9" str="image" scope="0x55c5aac76850" type="name" astParent="0x55c5aac6e610"/>
+    <token id="0x55c5aac6e850" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aaf6c760" astOperand1="0x55c5aac6e610" astOperand2="0x55c5aaf6c520"/>
+    <token id="0x55c5aaf6c520" file="src/core/config.c" linenr="26" column="9" str="load_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aac6e850"/>
+    <token id="0x55c5aaf6c640" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac6de30"/>
+    <token id="0x55c5aaf6c760" file="src/core/config.c" linenr="26" column="9" str="?" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aac6dd10" astOperand1="0x55c5aac6e850" astOperand2="0x55c5aace2f60"/>
+    <token id="0x55c5aaf6c880" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0ab420" astParent="0x55c5aace2f60" astOperand1="0x55c5aac7ad60"/>
+    <token id="0x55c5aaf6c9a0" file="src/core/config.c" linenr="26" column="9" str="typeof" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aaf6cac0" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0ab300"/>
+    <token id="0x55c5aaf6cbe0" file="src/core/config.c" linenr="26" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaf6cd00" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" originalName="->"/>
+    <token id="0x55c5aaf6ce20" file="src/core/config.c" linenr="26" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6"/>
+    <token id="0x55c5aaf6cf40" file="src/core/config.c" linenr="26" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aaf6d180"/>
+    <token id="0x55c5aaf6d060" file="src/core/config.c" linenr="26" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaf6d180" file="src/core/config.c" linenr="26" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aaf6cf40"/>
+    <token id="0x55c5aac5c8d0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0aafa0" file="src/core/config.c" linenr="26" column="9" str="image" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5ab0ab0c0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0ab1e0" file="src/core/config.c" linenr="26" column="9" str="load_addr" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5ab0ab300" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6cac0"/>
+    <token id="0x55c5ab0ab420" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6c880"/>
+    <token id="0x55c5ab0ab540" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace2e40"/>
+    <token id="0x55c5ab0ab660" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0ab9c0" astParent="0x55c5aac7ad60" astOperand1="0x55c5aac7aa00" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5ab0ab780" file="src/core/config.c" linenr="26" column="9" str="void" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5ab0ab8a0" file="src/core/config.c" linenr="26" column="9" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5ab0ab9c0" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0ab660"/>
+    <token id="0x55c5ab0abae0" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac7ac40"/>
+    <token id="0x55c5ab0abc00" file="src/core/config.c" linenr="26" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0abd20" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0abd20" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac7a460" astOperand1="0x55c5ab0abc00" astOperand2="0x55c5aac7a340" originalName="->"/>
+    <token id="0x55c5aac7a340" file="src/core/config.c" linenr="26" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5ab0abd20"/>
+    <token id="0x55c5aac7a460" file="src/core/config.c" linenr="26" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aac7a6a0" astParent="0x55c5aac7a7c0" astOperand1="0x55c5ab0abd20" astOperand2="0x55c5aac7a580"/>
+    <token id="0x55c5aac7a580" file="src/core/config.c" linenr="26" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac7a460" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac7a6a0" file="src/core/config.c" linenr="26" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aac7a460"/>
+    <token id="0x55c5aac7a7c0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac7aa00" astOperand1="0x55c5aac7a460" astOperand2="0x55c5aac7a8e0"/>
+    <token id="0x55c5aac7a8e0" file="src/core/config.c" linenr="26" column="9" str="image" scope="0x55c5aac76850" type="name" astParent="0x55c5aac7a7c0"/>
+    <token id="0x55c5aac7aa00" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5ab0ab660" astOperand1="0x55c5aac7a7c0" astOperand2="0x55c5aac7ab20"/>
+    <token id="0x55c5aac7ab20" file="src/core/config.c" linenr="26" column="9" str="load_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aac7aa00"/>
+    <token id="0x55c5aac7ac40" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0abae0"/>
+    <token id="0x55c5aac7ad60" file="src/core/config.c" linenr="26" column="9" str="+" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aaf6c880" astOperand1="0x55c5ab0ab660" astOperand2="0x55c5aac7ae80" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac7ae80" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac7b0c0" astParent="0x55c5aac7ad60" astOperand1="0x55c5aace2c00" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac7afa0" file="src/core/config.c" linenr="26" column="9" str="uint64_t" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac7b0c0" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac7ae80"/>
+    <token id="0x55c5aace2ae0" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace2d20"/>
+    <token id="0x55c5aace2c00" file="src/core/config.c" linenr="26" column="9" str="phys" scope="0x55c5aac76850" type="name" varId="2" variable="0x55c5aac706c0" astParent="0x55c5aac7ae80" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aace2d20" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace2ae0"/>
+    <token id="0x55c5aace2e40" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0ab540"/>
+    <token id="0x55c5aace2f60" file="src/core/config.c" linenr="26" column="9" str=":" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aaf6c760" astOperand1="0x55c5aaf6c880" astOperand2="0x55c5aac5afd0"/>
+    <token id="0x55c5aace3080" file="src/core/config.c" linenr="26" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac5b210"/>
+    <token id="0x55c5aace31a0" file="src/core/config.c" linenr="26" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aace32c0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aace32c0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aace3500" astOperand1="0x55c5aace31a0" astOperand2="0x55c5aace33e0" originalName="->"/>
+    <token id="0x55c5aace33e0" file="src/core/config.c" linenr="26" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aace32c0"/>
+    <token id="0x55c5aace3500" file="src/core/config.c" linenr="26" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aace3740" astParent="0x55c5aace3860" astOperand1="0x55c5aace32c0" astOperand2="0x55c5aace3620"/>
+    <token id="0x55c5aace3620" file="src/core/config.c" linenr="26" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aace3500" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace3740" file="src/core/config.c" linenr="26" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aace3500"/>
+    <token id="0x55c5aace3860" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac5afd0" astOperand1="0x55c5aace3500" astOperand2="0x55c5aac5aeb0"/>
+    <token id="0x55c5aac5aeb0" file="src/core/config.c" linenr="26" column="9" str="image" scope="0x55c5aac76850" type="name" astParent="0x55c5aace3860"/>
+    <token id="0x55c5aac5afd0" file="src/core/config.c" linenr="26" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aace2f60" astOperand1="0x55c5aace3860" astOperand2="0x55c5aac5b0f0"/>
+    <token id="0x55c5aac5b0f0" file="src/core/config.c" linenr="26" column="9" str="load_addr" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5afd0"/>
+    <token id="0x55c5aac5b210" file="src/core/config.c" linenr="26" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace3080"/>
+    <token id="0x55c5aac5b330" file="src/core/config.c" linenr="26" column="60" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5b570" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac54580"/>
+    <token id="0x55c5aac5b7b0" file="src/core/config.c" linenr="28" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac5b8d0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac5b8d0" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac5bb10" astOperand1="0x55c5aac5b7b0" astOperand2="0x55c5aac5b9f0" originalName="->"/>
+    <token id="0x55c5aac5b9f0" file="src/core/config.c" linenr="28" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aac5b8d0"/>
+    <token id="0x55c5aac5bb10" file="src/core/config.c" linenr="28" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aac5bc90" astParent="0x55c5aac54100" astOperand1="0x55c5aac5b8d0" astOperand2="0x55c5aac5bc30"/>
+    <token id="0x55c5aac5bc30" file="src/core/config.c" linenr="28" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac5bb10" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5bc90" file="src/core/config.c" linenr="28" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aac5bb10"/>
+    <token id="0x55c5aac54100" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac54340" astOperand1="0x55c5aac5bb10" astOperand2="0x55c5aac54220"/>
+    <token id="0x55c5aac54220" file="src/core/config.c" linenr="28" column="9" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aac54100"/>
+    <token id="0x55c5aac54340" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac546a0" astOperand1="0x55c5aac54100" astOperand2="0x55c5aac54460"/>
+    <token id="0x55c5aac54460" file="src/core/config.c" linenr="28" column="9" str="regions" scope="0x55c5aac76850" type="name" astParent="0x55c5aac54340"/>
+    <token id="0x55c5aac54580" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac5b570"/>
+    <token id="0x55c5aac546a0" file="src/core/config.c" linenr="28" column="9" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" isExpandedMacro="True" astOperand1="0x55c5aac54340" astOperand2="0x55c5aaccaae0"/>
+    <token id="0x55c5aac547c0" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacca9c0"/>
+    <token id="0x55c5aac548e0" file="src/core/config.c" linenr="28" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac54a00" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac54a00" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac54c40" astOperand1="0x55c5aac548e0" astOperand2="0x55c5aac54b20" originalName="->"/>
+    <token id="0x55c5aac54b20" file="src/core/config.c" linenr="28" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aac54a00"/>
+    <token id="0x55c5aac54c40" file="src/core/config.c" linenr="28" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aacca420" astParent="0x55c5aacca540" astOperand1="0x55c5aac54a00" astOperand2="0x55c5aac54d60"/>
+    <token id="0x55c5aac54d60" file="src/core/config.c" linenr="28" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac54c40" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacca420" file="src/core/config.c" linenr="28" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aac54c40"/>
+    <token id="0x55c5aacca540" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aacca780" astOperand1="0x55c5aac54c40" astOperand2="0x55c5aacca660"/>
+    <token id="0x55c5aacca660" file="src/core/config.c" linenr="28" column="9" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aacca540"/>
+    <token id="0x55c5aacca780" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aaccaae0" astOperand1="0x55c5aacca540" astOperand2="0x55c5aacca8a0"/>
+    <token id="0x55c5aacca8a0" file="src/core/config.c" linenr="28" column="9" str="regions" scope="0x55c5aac76850" type="name" astParent="0x55c5aacca780"/>
+    <token id="0x55c5aacca9c0" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac547c0"/>
+    <token id="0x55c5aaccaae0" file="src/core/config.c" linenr="28" column="9" str="?" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aac546a0" astOperand1="0x55c5aacca780" astOperand2="0x55c5aac97860"/>
+    <token id="0x55c5aaccac00" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccda30" astParent="0x55c5aac97860" astOperand1="0x55c5ab0aebe0"/>
+    <token id="0x55c5aaccad20" file="src/core/config.c" linenr="28" column="9" str="typeof" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aaccae40" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccd910"/>
+    <token id="0x55c5aaccaf60" file="src/core/config.c" linenr="28" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaccb080" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" originalName="->"/>
+    <token id="0x55c5aaccb1a0" file="src/core/config.c" linenr="28" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6"/>
+    <token id="0x55c5aaccb2c0" file="src/core/config.c" linenr="28" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aaccd370"/>
+    <token id="0x55c5aaccd250" file="src/core/config.c" linenr="28" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccd370" file="src/core/config.c" linenr="28" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aaccb2c0"/>
+    <token id="0x55c5aaccd490" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5aaccd5b0" file="src/core/config.c" linenr="28" column="9" str="platform" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaccd6d0" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5aaccd7f0" file="src/core/config.c" linenr="28" column="9" str="regions" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaccd910" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccae40"/>
+    <token id="0x55c5aaccda30" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccac00"/>
+    <token id="0x55c5aaccdb50" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac97740"/>
+    <token id="0x55c5aaccdc70" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccdfd0" astParent="0x55c5ab0aebe0" astOperand1="0x55c5ab0ae880" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aaccdd90" file="src/core/config.c" linenr="28" column="9" str="void" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aaccdeb0" file="src/core/config.c" linenr="28" column="9" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5aaccdfd0" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccdc70"/>
+    <token id="0x55c5aacce0f0" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0aeac0"/>
+    <token id="0x55c5ab0adf80" file="src/core/config.c" linenr="28" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0ae0a0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0ae0a0" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5ab0ae2e0" astOperand1="0x55c5ab0adf80" astOperand2="0x55c5ab0ae1c0" originalName="->"/>
+    <token id="0x55c5ab0ae1c0" file="src/core/config.c" linenr="28" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5ab0ae0a0"/>
+    <token id="0x55c5ab0ae2e0" file="src/core/config.c" linenr="28" column="9" str="[" scope="0x55c5aac76850" link="0x55c5ab0ae520" astParent="0x55c5ab0ae640" astOperand1="0x55c5ab0ae0a0" astOperand2="0x55c5ab0ae400"/>
+    <token id="0x55c5ab0ae400" file="src/core/config.c" linenr="28" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0ae2e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0ae520" file="src/core/config.c" linenr="28" column="9" str="]" scope="0x55c5aac76850" link="0x55c5ab0ae2e0"/>
+    <token id="0x55c5ab0ae640" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5ab0ae880" astOperand1="0x55c5ab0ae2e0" astOperand2="0x55c5ab0ae760"/>
+    <token id="0x55c5ab0ae760" file="src/core/config.c" linenr="28" column="9" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0ae640"/>
+    <token id="0x55c5ab0ae880" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aaccdc70" astOperand1="0x55c5ab0ae640" astOperand2="0x55c5ab0ae9a0"/>
+    <token id="0x55c5ab0ae9a0" file="src/core/config.c" linenr="28" column="9" str="regions" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0ae880"/>
+    <token id="0x55c5ab0aeac0" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacce0f0"/>
+    <token id="0x55c5ab0aebe0" file="src/core/config.c" linenr="28" column="9" str="+" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aaccac00" astOperand1="0x55c5aaccdc70" astOperand2="0x55c5ab0aed00" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5ab0aed00" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac972c0" astParent="0x55c5ab0aebe0" astOperand1="0x55c5aac97500" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0aee20" file="src/core/config.c" linenr="28" column="9" str="uint64_t" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac972c0" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0aed00"/>
+    <token id="0x55c5aac973e0" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac97620"/>
+    <token id="0x55c5aac97500" file="src/core/config.c" linenr="28" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0aed00" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac97620" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac973e0"/>
+    <token id="0x55c5aac97740" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaccdb50"/>
+    <token id="0x55c5aac97860" file="src/core/config.c" linenr="28" column="9" str=":" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aaccaae0" astOperand1="0x55c5aaccac00" astOperand2="0x55c5ab0aeff0"/>
+    <token id="0x55c5aac97980" file="src/core/config.c" linenr="28" column="9" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0af230"/>
+    <token id="0x55c5aac97aa0" file="src/core/config.c" linenr="28" column="9" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac97bc0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac97bc0" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac97e00" astOperand1="0x55c5aac97aa0" astOperand2="0x55c5aac97ce0" originalName="->"/>
+    <token id="0x55c5aac97ce0" file="src/core/config.c" linenr="28" column="9" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aac97bc0"/>
+    <token id="0x55c5aac97e00" file="src/core/config.c" linenr="28" column="9" str="[" scope="0x55c5aac76850" link="0x55c5aac98040" astParent="0x55c5aac98160" astOperand1="0x55c5aac97bc0" astOperand2="0x55c5aac97f20"/>
+    <token id="0x55c5aac97f20" file="src/core/config.c" linenr="28" column="9" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac97e00" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac98040" file="src/core/config.c" linenr="28" column="9" str="]" scope="0x55c5aac76850" link="0x55c5aac97e00"/>
+    <token id="0x55c5aac98160" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5ab0aeff0" astOperand1="0x55c5aac97e00" astOperand2="0x55c5aac98280"/>
+    <token id="0x55c5aac98280" file="src/core/config.c" linenr="28" column="9" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aac98160"/>
+    <token id="0x55c5ab0aeff0" file="src/core/config.c" linenr="28" column="9" str="." scope="0x55c5aac76850" astParent="0x55c5aac97860" astOperand1="0x55c5aac98160" astOperand2="0x55c5ab0af110"/>
+    <token id="0x55c5ab0af110" file="src/core/config.c" linenr="28" column="9" str="regions" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0aeff0"/>
+    <token id="0x55c5ab0af230" file="src/core/config.c" linenr="28" column="9" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac97980"/>
+    <token id="0x55c5ab0af350" file="src/core/config.c" linenr="28" column="63" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0af590" file="src/core/config.c" linenr="30" column="9" str="if" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0af6b0"/>
+    <token id="0x55c5ab0af6b0" file="src/core/config.c" linenr="30" column="12" str="(" scope="0x55c5aac76850" link="0x55c5aac5ed50" astOperand1="0x55c5ab0af590" astOperand2="0x55c5ab0a6ea0"/>
+    <token id="0x55c5ab0af8f0" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0a6d80"/>
+    <token id="0x55c5ab0afa10" file="src/core/config.c" linenr="30" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0afb30" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0afb30" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab0afd70" astOperand1="0x55c5ab0afa10" astOperand2="0x55c5ab0afc50" originalName="->"/>
+    <token id="0x55c5ab0afc50" file="src/core/config.c" linenr="30" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5ab0afb30"/>
+    <token id="0x55c5ab0afd70" file="src/core/config.c" linenr="30" column="13" str="[" scope="0x55c5aac76850" link="0x55c5ab0affb0" astParent="0x55c5ab0a6900" astOperand1="0x55c5ab0afb30" astOperand2="0x55c5ab0afe90"/>
+    <token id="0x55c5ab0afe90" file="src/core/config.c" linenr="30" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0afd70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0affb0" file="src/core/config.c" linenr="30" column="13" str="]" scope="0x55c5aac76850" link="0x55c5ab0afd70"/>
+    <token id="0x55c5ab0a6900" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab0a6b40" astOperand1="0x55c5ab0afd70" astOperand2="0x55c5ab0a6a20"/>
+    <token id="0x55c5ab0a6a20" file="src/core/config.c" linenr="30" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0a6900"/>
+    <token id="0x55c5ab0a6b40" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab0a6ea0" astOperand1="0x55c5ab0a6900" astOperand2="0x55c5ab0a6c60"/>
+    <token id="0x55c5ab0a6c60" file="src/core/config.c" linenr="30" column="13" str="devs" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0a6b40"/>
+    <token id="0x55c5ab0a6d80" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0af8f0"/>
+    <token id="0x55c5ab0a6ea0" file="src/core/config.c" linenr="30" column="13" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" isExpandedMacro="True" astParent="0x55c5ab0af6b0" astOperand1="0x55c5ab0a6b40" astOperand2="0x55c5aace4b70"/>
+    <token id="0x55c5ab0a6fc0" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace4a50"/>
+    <token id="0x55c5ab0a70e0" file="src/core/config.c" linenr="30" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0a7200" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0a7200" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab0a7440" astOperand1="0x55c5ab0a70e0" astOperand2="0x55c5ab0a7320" originalName="->"/>
+    <token id="0x55c5ab0a7320" file="src/core/config.c" linenr="30" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5ab0a7200"/>
+    <token id="0x55c5ab0a7440" file="src/core/config.c" linenr="30" column="13" str="[" scope="0x55c5aac76850" link="0x55c5ab0a7680" astParent="0x55c5ab0a77a0" astOperand1="0x55c5ab0a7200" astOperand2="0x55c5ab0a7560"/>
+    <token id="0x55c5ab0a7560" file="src/core/config.c" linenr="30" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0a7440" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a7680" file="src/core/config.c" linenr="30" column="13" str="]" scope="0x55c5aac76850" link="0x55c5ab0a7440"/>
+    <token id="0x55c5ab0a77a0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab0a79e0" astOperand1="0x55c5ab0a7440" astOperand2="0x55c5ab0a78c0"/>
+    <token id="0x55c5ab0a78c0" file="src/core/config.c" linenr="30" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0a77a0"/>
+    <token id="0x55c5ab0a79e0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aace4b70" astOperand1="0x55c5ab0a77a0" astOperand2="0x55c5aace4930"/>
+    <token id="0x55c5aace4930" file="src/core/config.c" linenr="30" column="13" str="devs" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0a79e0"/>
+    <token id="0x55c5aace4a50" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab0a6fc0"/>
+    <token id="0x55c5aace4b70" file="src/core/config.c" linenr="30" column="13" str="?" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5ab0a6ea0" astOperand1="0x55c5ab0a79e0" astOperand2="0x55c5aaf6dc60"/>
+    <token id="0x55c5aace4c90" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace5c50" astParent="0x55c5aaf6dc60" astOperand1="0x55c5aaca0c70"/>
+    <token id="0x55c5aace4db0" file="src/core/config.c" linenr="30" column="13" str="typeof" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aace4ed0" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace5b30"/>
+    <token id="0x55c5aace4ff0" file="src/core/config.c" linenr="30" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aace5110" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" originalName="->"/>
+    <token id="0x55c5aace5230" file="src/core/config.c" linenr="30" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6"/>
+    <token id="0x55c5aace5350" file="src/core/config.c" linenr="30" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aace5590"/>
+    <token id="0x55c5aace5470" file="src/core/config.c" linenr="30" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5590" file="src/core/config.c" linenr="30" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aace5350"/>
+    <token id="0x55c5aace56b0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5aace57d0" file="src/core/config.c" linenr="30" column="13" str="platform" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aace58f0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5aace5a10" file="src/core/config.c" linenr="30" column="13" str="devs" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aace5b30" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace4ed0"/>
+    <token id="0x55c5aace5c50" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aace4c90"/>
+    <token id="0x55c5aac9f950" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6db40"/>
+    <token id="0x55c5aac9fa70" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac9fdd0" astParent="0x55c5aaca0c70" astOperand1="0x55c5aaca0910" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac9fb90" file="src/core/config.c" linenr="30" column="13" str="void" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac9fcb0" file="src/core/config.c" linenr="30" column="13" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5aac9fdd0" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac9fa70"/>
+    <token id="0x55c5aac9fef0" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaca0b50"/>
+    <token id="0x55c5aaca0010" file="src/core/config.c" linenr="30" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aaca0130" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaca0130" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aaca0370" astOperand1="0x55c5aaca0010" astOperand2="0x55c5aaca0250" originalName="->"/>
+    <token id="0x55c5aaca0250" file="src/core/config.c" linenr="30" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aaca0130"/>
+    <token id="0x55c5aaca0370" file="src/core/config.c" linenr="30" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aaca05b0" astParent="0x55c5aaca06d0" astOperand1="0x55c5aaca0130" astOperand2="0x55c5aaca0490"/>
+    <token id="0x55c5aaca0490" file="src/core/config.c" linenr="30" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aaca0370" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca05b0" file="src/core/config.c" linenr="30" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aaca0370"/>
+    <token id="0x55c5aaca06d0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aaca0910" astOperand1="0x55c5aaca0370" astOperand2="0x55c5aaca07f0"/>
+    <token id="0x55c5aaca07f0" file="src/core/config.c" linenr="30" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aaca06d0"/>
+    <token id="0x55c5aaca0910" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aac9fa70" astOperand1="0x55c5aaca06d0" astOperand2="0x55c5aaca0a30"/>
+    <token id="0x55c5aaca0a30" file="src/core/config.c" linenr="30" column="13" str="devs" scope="0x55c5aac76850" type="name" astParent="0x55c5aaca0910"/>
+    <token id="0x55c5aaca0b50" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac9fef0"/>
+    <token id="0x55c5aaca0c70" file="src/core/config.c" linenr="30" column="13" str="+" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aace4c90" astOperand1="0x55c5aac9fa70" astOperand2="0x55c5aaca0cd0" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aaca0cd0" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6d6c0" astParent="0x55c5aaca0c70" astOperand1="0x55c5aaf6d900" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaf6d5a0" file="src/core/config.c" linenr="30" column="13" str="uint64_t" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aaf6d6c0" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaca0cd0"/>
+    <token id="0x55c5aaf6d7e0" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6da20"/>
+    <token id="0x55c5aaf6d900" file="src/core/config.c" linenr="30" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aaca0cd0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaf6da20" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6d7e0"/>
+    <token id="0x55c5aaf6db40" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac9f950"/>
+    <token id="0x55c5aaf6dc60" file="src/core/config.c" linenr="30" column="13" str=":" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aace4b70" astOperand1="0x55c5aace4c90" astOperand2="0x55c5aaf6e7a0"/>
+    <token id="0x55c5aaf6dd80" file="src/core/config.c" linenr="30" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac5eb10"/>
+    <token id="0x55c5aaf6dea0" file="src/core/config.c" linenr="30" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aaf6dfc0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaf6dfc0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aaf6e200" astOperand1="0x55c5aaf6dea0" astOperand2="0x55c5aaf6e0e0" originalName="->"/>
+    <token id="0x55c5aaf6e0e0" file="src/core/config.c" linenr="30" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aaf6dfc0"/>
+    <token id="0x55c5aaf6e200" file="src/core/config.c" linenr="30" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aaf6e440" astParent="0x55c5aaf6e560" astOperand1="0x55c5aaf6dfc0" astOperand2="0x55c5aaf6e320"/>
+    <token id="0x55c5aaf6e320" file="src/core/config.c" linenr="30" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aaf6e200" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaf6e440" file="src/core/config.c" linenr="30" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aaf6e200"/>
+    <token id="0x55c5aaf6e560" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aaf6e7a0" astOperand1="0x55c5aaf6e200" astOperand2="0x55c5aaf6e680"/>
+    <token id="0x55c5aaf6e680" file="src/core/config.c" linenr="30" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aaf6e560"/>
+    <token id="0x55c5aaf6e7a0" file="src/core/config.c" linenr="30" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aaf6dc60" astOperand1="0x55c5aaf6e560" astOperand2="0x55c5ab0aee80"/>
+    <token id="0x55c5ab0aee80" file="src/core/config.c" linenr="30" column="13" str="devs" scope="0x55c5aac76850" type="name" astParent="0x55c5aaf6e7a0"/>
+    <token id="0x55c5aac5eb10" file="src/core/config.c" linenr="30" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aaf6dd80"/>
+    <token id="0x55c5aac5ed50" file="src/core/config.c" linenr="30" column="64" str=")" scope="0x55c5aac76850" link="0x55c5ab0af6b0"/>
+    <token id="0x55c5aac5ee70" file="src/core/config.c" linenr="30" column="66" str="{" scope="0x55c5aac7b730" link="0x55c5aac6d210"/>
+    <token id="0x55c5aac5ef90" file="src/core/config.c" linenr="31" column="13" str="for" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac5f0b0"/>
+    <token id="0x55c5aac5f0b0" file="src/core/config.c" linenr="31" column="17" str="(" scope="0x55c5aac7b730" link="0x55c5aaccea60" astOperand1="0x55c5aac5ef90" astOperand2="0x55c5aac5f650"/>
+    <token id="0x55c5aac5f1d0" file="src/core/config.c" linenr="31" column="18" str="int" scope="0x55c5aac7b730" type="name"/>
+    <token id="0x55c5aac5f2f0" file="src/core/config.c" linenr="31" column="22" str="j" scope="0x55c5aac7b730" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aac5f410" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5f410" file="src/core/config.c" linenr="31" column="24" str="=" scope="0x55c5aac7b730" type="op" isAssignmentOp="True" astParent="0x55c5aac5f650" astOperand1="0x55c5aac5f2f0" astOperand2="0x55c5aac5f530" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5f530" file="src/core/config.c" linenr="31" column="26" str="0" scope="0x55c5aac7b730" type="number" isInt="True" values="0x55c5aac78970" astParent="0x55c5aac5f410" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5f650" file="src/core/config.c" linenr="31" column="27" str=";" scope="0x55c5aac7b730" astParent="0x55c5aac5f0b0" astOperand1="0x55c5aac5f410" astOperand2="0x55c5aacce700"/>
+    <token id="0x55c5aac5f770" file="src/core/config.c" linenr="31" column="29" str="j" scope="0x55c5aac7b730" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aac5f890" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5f890" file="src/core/config.c" linenr="31" column="31" str="&lt;" scope="0x55c5aac7b730" type="op" isComparisonOp="True" astParent="0x55c5aacce700" astOperand1="0x55c5aac5f770" astOperand2="0x55c5aacce4c0" valueType-type="bool"/>
+    <token id="0x55c5aac5f9b0" file="src/core/config.c" linenr="31" column="33" str="config" scope="0x55c5aac7b730" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac5fad0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac5fad0" file="src/core/config.c" linenr="31" column="39" str="." scope="0x55c5aac7b730" astParent="0x55c5aac5fd10" astOperand1="0x55c5aac5f9b0" astOperand2="0x55c5aac5fbf0" originalName="->"/>
+    <token id="0x55c5aac5fbf0" file="src/core/config.c" linenr="31" column="41" str="vmlist" scope="0x55c5aac7b730" type="name" varId="6" astParent="0x55c5aac5fad0"/>
+    <token id="0x55c5aac5fd10" file="src/core/config.c" linenr="31" column="47" str="[" scope="0x55c5aac7b730" link="0x55c5ab0a7a40" astParent="0x55c5aacce280" astOperand1="0x55c5aac5fad0" astOperand2="0x55c5aac5fe30"/>
+    <token id="0x55c5aac5fe30" file="src/core/config.c" linenr="31" column="48" str="i" scope="0x55c5aac7b730" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac5fd10" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a7a40" file="src/core/config.c" linenr="31" column="49" str="]" scope="0x55c5aac7b730" link="0x55c5aac5fd10"/>
+    <token id="0x55c5aacce280" file="src/core/config.c" linenr="31" column="50" str="." scope="0x55c5aac7b730" astParent="0x55c5aacce4c0" astOperand1="0x55c5aac5fd10" astOperand2="0x55c5aacce3a0"/>
+    <token id="0x55c5aacce3a0" file="src/core/config.c" linenr="31" column="51" str="platform" scope="0x55c5aac7b730" type="name" astParent="0x55c5aacce280"/>
+    <token id="0x55c5aacce4c0" file="src/core/config.c" linenr="31" column="59" str="." scope="0x55c5aac7b730" astParent="0x55c5aac5f890" astOperand1="0x55c5aacce280" astOperand2="0x55c5aacce5e0"/>
+    <token id="0x55c5aacce5e0" file="src/core/config.c" linenr="31" column="60" str="dev_num" scope="0x55c5aac7b730" type="name" astParent="0x55c5aacce4c0"/>
+    <token id="0x55c5aacce700" file="src/core/config.c" linenr="31" column="67" str=";" scope="0x55c5aac7b730" astParent="0x55c5aac5f650" astOperand1="0x55c5aac5f890" astOperand2="0x55c5aacce940"/>
+    <token id="0x55c5aacce820" file="src/core/config.c" linenr="31" column="69" str="j" scope="0x55c5aac7b730" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aacce940" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacce940" file="src/core/config.c" linenr="31" column="70" str="++" scope="0x55c5aac7b730" type="op" astParent="0x55c5aacce700" astOperand1="0x55c5aacce820" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccea60" file="src/core/config.c" linenr="31" column="72" str=")" scope="0x55c5aac7b730" link="0x55c5aac5f0b0"/>
+    <token id="0x55c5aacceb80" file="src/core/config.c" linenr="31" column="74" str="{" scope="0x55c5aac781c0" link="0x55c5aac6d0f0"/>
+    <token id="0x55c5aacceca0" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aad1b930"/>
+    <token id="0x55c5aacceee0" file="src/core/config.c" linenr="32" column="17" str="config" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aaccf000" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaccf000" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aaccf240" astOperand1="0x55c5aacceee0" astOperand2="0x55c5aaccf120" originalName="->"/>
+    <token id="0x55c5aaccf120" file="src/core/config.c" linenr="32" column="17" str="vmlist" scope="0x55c5aac781c0" type="name" varId="6" astParent="0x55c5aaccf000"/>
+    <token id="0x55c5aaccf240" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aaccf480" astParent="0x55c5aaccf5a0" astOperand1="0x55c5aaccf000" astOperand2="0x55c5aaccf360"/>
+    <token id="0x55c5aaccf360" file="src/core/config.c" linenr="32" column="17" str="i" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aaccf240" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccf480" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aaccf240"/>
+    <token id="0x55c5aaccf5a0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aaccf7e0" astOperand1="0x55c5aaccf240" astOperand2="0x55c5aaccf6c0"/>
+    <token id="0x55c5aaccf6c0" file="src/core/config.c" linenr="32" column="17" str="platform" scope="0x55c5aac781c0" type="name" astParent="0x55c5aaccf5a0"/>
+    <token id="0x55c5aaccf7e0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aaccfa20" astOperand1="0x55c5aaccf5a0" astOperand2="0x55c5aaccf900"/>
+    <token id="0x55c5aaccf900" file="src/core/config.c" linenr="32" column="17" str="devs" scope="0x55c5aac781c0" type="name" astParent="0x55c5aaccf7e0"/>
+    <token id="0x55c5aaccfa20" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aad1b5d0" astParent="0x55c5aad1b6f0" astOperand1="0x55c5aaccf7e0" astOperand2="0x55c5aad1b4b0"/>
+    <token id="0x55c5aad1b4b0" file="src/core/config.c" linenr="32" column="17" str="j" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aaccfa20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad1b5d0" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aaccfa20"/>
+    <token id="0x55c5aad1b6f0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aad1ba50" astOperand1="0x55c5aaccfa20" astOperand2="0x55c5aad1b810"/>
+    <token id="0x55c5aad1b810" file="src/core/config.c" linenr="32" column="17" str="interrupts" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad1b6f0"/>
+    <token id="0x55c5aad1b930" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacceca0"/>
+    <token id="0x55c5aad1ba50" file="src/core/config.c" linenr="32" column="17" str="=" scope="0x55c5aac781c0" type="op" isAssignmentOp="True" isExpandedMacro="True" astOperand1="0x55c5aad1b6f0" astOperand2="0x55c5aac629a0"/>
+    <token id="0x55c5aad1bb70" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aad1cd70"/>
+    <token id="0x55c5aad1bc90" file="src/core/config.c" linenr="32" column="17" str="config" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aad1bdb0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aad1bdb0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aad1bff0" astOperand1="0x55c5aad1bc90" astOperand2="0x55c5aad1bed0" originalName="->"/>
+    <token id="0x55c5aad1bed0" file="src/core/config.c" linenr="32" column="17" str="vmlist" scope="0x55c5aac781c0" type="name" varId="6" astParent="0x55c5aad1bdb0"/>
+    <token id="0x55c5aad1bff0" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aad1c230" astParent="0x55c5aad1c350" astOperand1="0x55c5aad1bdb0" astOperand2="0x55c5aad1c110"/>
+    <token id="0x55c5aad1c110" file="src/core/config.c" linenr="32" column="17" str="i" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aad1bff0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad1c230" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aad1bff0"/>
+    <token id="0x55c5aad1c350" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aad1c590" astOperand1="0x55c5aad1bff0" astOperand2="0x55c5aad1c470"/>
+    <token id="0x55c5aad1c470" file="src/core/config.c" linenr="32" column="17" str="platform" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad1c350"/>
+    <token id="0x55c5aad1c590" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aad1c7d0" astOperand1="0x55c5aad1c350" astOperand2="0x55c5aad1c6b0"/>
+    <token id="0x55c5aad1c6b0" file="src/core/config.c" linenr="32" column="17" str="devs" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad1c590"/>
+    <token id="0x55c5aad1c7d0" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aad1ca10" astParent="0x55c5aad1cb30" astOperand1="0x55c5aad1c590" astOperand2="0x55c5aad1c8f0"/>
+    <token id="0x55c5aad1c8f0" file="src/core/config.c" linenr="32" column="17" str="j" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aad1c7d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad1ca10" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aad1c7d0"/>
+    <token id="0x55c5aad1cb30" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aac629a0" astOperand1="0x55c5aad1c7d0" astOperand2="0x55c5aad1cc50"/>
+    <token id="0x55c5aad1cc50" file="src/core/config.c" linenr="32" column="17" str="interrupts" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad1cb30"/>
+    <token id="0x55c5aad1cd70" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aad1bb70"/>
+    <token id="0x55c5aac629a0" file="src/core/config.c" linenr="32" column="17" str="?" scope="0x55c5aac781c0" isExpandedMacro="True" astParent="0x55c5aad1ba50" astOperand1="0x55c5aad1cb30" astOperand2="0x55c5aacdbae0"/>
+    <token id="0x55c5aac62ac0" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac64020" astParent="0x55c5aacdbae0" astOperand1="0x55c5aacdb1e0"/>
+    <token id="0x55c5aac62be0" file="src/core/config.c" linenr="32" column="17" str="typeof" scope="0x55c5aac781c0" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac62d00" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac63f00"/>
+    <token id="0x55c5aac62e20" file="src/core/config.c" linenr="32" column="17" str="config" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac62f40" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" originalName="->"/>
+    <token id="0x55c5aac63060" file="src/core/config.c" linenr="32" column="17" str="vmlist" scope="0x55c5aac781c0" type="name" varId="6"/>
+    <token id="0x55c5aac63180" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aac633c0"/>
+    <token id="0x55c5aac632a0" file="src/core/config.c" linenr="32" column="17" str="i" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacd54a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac633c0" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aac63180"/>
+    <token id="0x55c5aac634e0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac63600" file="src/core/config.c" linenr="32" column="17" str="platform" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac63720" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac63840" file="src/core/config.c" linenr="32" column="17" str="devs" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac63960" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aac63ba0"/>
+    <token id="0x55c5aac63a80" file="src/core/config.c" linenr="32" column="17" str="j" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aac55080" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac63ba0" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aac63960"/>
+    <token id="0x55c5aac63cc0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac63de0" file="src/core/config.c" linenr="32" column="17" str="interrupts" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac63f00" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac62d00"/>
+    <token id="0x55c5aac64020" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac62ac0"/>
+    <token id="0x55c5aac64140" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdb9c0"/>
+    <token id="0x55c5aac64260" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac645c0" astParent="0x55c5aacdb1e0" astOperand1="0x55c5aacdae80" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac64380" file="src/core/config.c" linenr="32" column="17" str="void" scope="0x55c5aac781c0" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aac644a0" file="src/core/config.c" linenr="32" column="17" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5aac645c0" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac64260"/>
+    <token id="0x55c5aacd9ec0" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdb0c0"/>
+    <token id="0x55c5aacd9fe0" file="src/core/config.c" linenr="32" column="17" str="config" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aacda100" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacda100" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aacda340" astOperand1="0x55c5aacd9fe0" astOperand2="0x55c5aacda220" originalName="->"/>
+    <token id="0x55c5aacda220" file="src/core/config.c" linenr="32" column="17" str="vmlist" scope="0x55c5aac781c0" type="name" varId="6" astParent="0x55c5aacda100"/>
+    <token id="0x55c5aacda340" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aacda580" astParent="0x55c5aacda6a0" astOperand1="0x55c5aacda100" astOperand2="0x55c5aacda460"/>
+    <token id="0x55c5aacda460" file="src/core/config.c" linenr="32" column="17" str="i" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aacda340" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacda580" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aacda340"/>
+    <token id="0x55c5aacda6a0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aacda8e0" astOperand1="0x55c5aacda340" astOperand2="0x55c5aacda7c0"/>
+    <token id="0x55c5aacda7c0" file="src/core/config.c" linenr="32" column="17" str="platform" scope="0x55c5aac781c0" type="name" astParent="0x55c5aacda6a0"/>
+    <token id="0x55c5aacda8e0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aacdab20" astOperand1="0x55c5aacda6a0" astOperand2="0x55c5aacdaa00"/>
+    <token id="0x55c5aacdaa00" file="src/core/config.c" linenr="32" column="17" str="devs" scope="0x55c5aac781c0" type="name" astParent="0x55c5aacda8e0"/>
+    <token id="0x55c5aacdab20" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aacdad60" astParent="0x55c5aacdae80" astOperand1="0x55c5aacda8e0" astOperand2="0x55c5aacdac40"/>
+    <token id="0x55c5aacdac40" file="src/core/config.c" linenr="32" column="17" str="j" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aacdab20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacdad60" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aacdab20"/>
+    <token id="0x55c5aacdae80" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aac64260" astOperand1="0x55c5aacdab20" astOperand2="0x55c5aacdafa0"/>
+    <token id="0x55c5aacdafa0" file="src/core/config.c" linenr="32" column="17" str="interrupts" scope="0x55c5aac781c0" type="name" astParent="0x55c5aacdae80"/>
+    <token id="0x55c5aacdb0c0" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacd9ec0"/>
+    <token id="0x55c5aacdb1e0" file="src/core/config.c" linenr="32" column="17" str="+" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aac62ac0" astOperand1="0x55c5aac64260" astOperand2="0x55c5aacdb300" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aacdb300" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdb540" astParent="0x55c5aacdb1e0" astOperand1="0x55c5aacdb780" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdb420" file="src/core/config.c" linenr="32" column="17" str="uint64_t" scope="0x55c5aac781c0" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aacdb540" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdb300"/>
+    <token id="0x55c5aacdb660" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdb8a0"/>
+    <token id="0x55c5aacdb780" file="src/core/config.c" linenr="32" column="17" str="config" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aacdb300" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacdb8a0" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdb660"/>
+    <token id="0x55c5aacdb9c0" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac64140"/>
+    <token id="0x55c5aacdbae0" file="src/core/config.c" linenr="32" column="17" str=":" scope="0x55c5aac781c0" isExpandedMacro="True" astParent="0x55c5aac629a0" astOperand1="0x55c5aac62ac0" astOperand2="0x55c5aac6cb50"/>
+    <token id="0x55c5aacdbc00" file="src/core/config.c" linenr="32" column="17" str="(" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aac6cd90"/>
+    <token id="0x55c5aac6bcb0" file="src/core/config.c" linenr="32" column="17" str="config" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac6bdd0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac6bdd0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aac6c010" astOperand1="0x55c5aac6bcb0" astOperand2="0x55c5aac6bef0" originalName="->"/>
+    <token id="0x55c5aac6bef0" file="src/core/config.c" linenr="32" column="17" str="vmlist" scope="0x55c5aac781c0" type="name" varId="6" astParent="0x55c5aac6bdd0"/>
+    <token id="0x55c5aac6c010" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aac6c250" astParent="0x55c5aac6c370" astOperand1="0x55c5aac6bdd0" astOperand2="0x55c5aac6c130"/>
+    <token id="0x55c5aac6c130" file="src/core/config.c" linenr="32" column="17" str="i" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aac6c010" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6c250" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aac6c010"/>
+    <token id="0x55c5aac6c370" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aac6c5b0" astOperand1="0x55c5aac6c010" astOperand2="0x55c5aac6c490"/>
+    <token id="0x55c5aac6c490" file="src/core/config.c" linenr="32" column="17" str="platform" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6c370"/>
+    <token id="0x55c5aac6c5b0" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aac6c7f0" astOperand1="0x55c5aac6c370" astOperand2="0x55c5aac6c6d0"/>
+    <token id="0x55c5aac6c6d0" file="src/core/config.c" linenr="32" column="17" str="devs" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6c5b0"/>
+    <token id="0x55c5aac6c7f0" file="src/core/config.c" linenr="32" column="17" str="[" scope="0x55c5aac781c0" link="0x55c5aac6ca30" astParent="0x55c5aac6cb50" astOperand1="0x55c5aac6c5b0" astOperand2="0x55c5aac6c910"/>
+    <token id="0x55c5aac6c910" file="src/core/config.c" linenr="32" column="17" str="j" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aac55080" astParent="0x55c5aac6c7f0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6ca30" file="src/core/config.c" linenr="32" column="17" str="]" scope="0x55c5aac781c0" link="0x55c5aac6c7f0"/>
+    <token id="0x55c5aac6cb50" file="src/core/config.c" linenr="32" column="17" str="." scope="0x55c5aac781c0" astParent="0x55c5aacdbae0" astOperand1="0x55c5aac6c7f0" astOperand2="0x55c5aac6cc70"/>
+    <token id="0x55c5aac6cc70" file="src/core/config.c" linenr="32" column="17" str="interrupts" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6cb50"/>
+    <token id="0x55c5aac6cd90" file="src/core/config.c" linenr="32" column="17" str=")" scope="0x55c5aac781c0" isExpandedMacro="True" link="0x55c5aacdbc00"/>
+    <token id="0x55c5aac6ceb0" file="src/core/config.c" linenr="33" column="35" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac6d0f0" file="src/core/config.c" linenr="34" column="13" str="}" scope="0x55c5aac781c0" link="0x55c5aacceb80"/>
+    <token id="0x55c5aac6d210" file="src/core/config.c" linenr="35" column="9" str="}" scope="0x55c5aac7b730" link="0x55c5aac5ee70"/>
+    <token id="0x55c5aac6d330" file="src/core/config.c" linenr="37" column="9" str="if" scope="0x55c5aac76850" type="name" astParent="0x55c5aac6d450"/>
+    <token id="0x55c5aac6d450" file="src/core/config.c" linenr="37" column="12" str="(" scope="0x55c5aac76850" link="0x55c5ab0711e0" astOperand1="0x55c5aac6d330" astOperand2="0x55c5aacbb860"/>
+    <token id="0x55c5aac6d690" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacbb740"/>
+    <token id="0x55c5aac6d7b0" file="src/core/config.c" linenr="37" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aac6d8d0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aac6d8d0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacbaf60" astOperand1="0x55c5aac6d7b0" astOperand2="0x55c5aacbae40" originalName="->"/>
+    <token id="0x55c5aacbae40" file="src/core/config.c" linenr="37" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aac6d8d0"/>
+    <token id="0x55c5aacbaf60" file="src/core/config.c" linenr="37" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aacbb1a0" astParent="0x55c5aacbb2c0" astOperand1="0x55c5aac6d8d0" astOperand2="0x55c5aacbb080"/>
+    <token id="0x55c5aacbb080" file="src/core/config.c" linenr="37" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aacbaf60" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbb1a0" file="src/core/config.c" linenr="37" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aacbaf60"/>
+    <token id="0x55c5aacbb2c0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacbb500" astOperand1="0x55c5aacbaf60" astOperand2="0x55c5aacbb3e0"/>
+    <token id="0x55c5aacbb3e0" file="src/core/config.c" linenr="37" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aacbb2c0"/>
+    <token id="0x55c5aacbb500" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacbb860" astOperand1="0x55c5aacbb2c0" astOperand2="0x55c5aacbb620"/>
+    <token id="0x55c5aacbb620" file="src/core/config.c" linenr="37" column="13" str="ipcs" scope="0x55c5aac76850" type="name" astParent="0x55c5aacbb500"/>
+    <token id="0x55c5aacbb740" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aac6d690"/>
+    <token id="0x55c5aacbb860" file="src/core/config.c" linenr="37" column="13" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" isExpandedMacro="True" astParent="0x55c5aac6d450" astOperand1="0x55c5aacbb500" astOperand2="0x55c5aacbc700"/>
+    <token id="0x55c5aacbb980" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacbc5e0"/>
+    <token id="0x55c5aacbbaa0" file="src/core/config.c" linenr="37" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aacbbbc0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacbbbc0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacbbe00" astOperand1="0x55c5aacbbaa0" astOperand2="0x55c5aacbbce0" originalName="->"/>
+    <token id="0x55c5aacbbce0" file="src/core/config.c" linenr="37" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aacbbbc0"/>
+    <token id="0x55c5aacbbe00" file="src/core/config.c" linenr="37" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aacbc040" astParent="0x55c5aacbc160" astOperand1="0x55c5aacbbbc0" astOperand2="0x55c5aacbbf20"/>
+    <token id="0x55c5aacbbf20" file="src/core/config.c" linenr="37" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aacbbe00" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbc040" file="src/core/config.c" linenr="37" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aacbbe00"/>
+    <token id="0x55c5aacbc160" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacbc3a0" astOperand1="0x55c5aacbbe00" astOperand2="0x55c5aacbc280"/>
+    <token id="0x55c5aacbc280" file="src/core/config.c" linenr="37" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aacbc160"/>
+    <token id="0x55c5aacbc3a0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacbc700" astOperand1="0x55c5aacbc160" astOperand2="0x55c5aacbc4c0"/>
+    <token id="0x55c5aacbc4c0" file="src/core/config.c" linenr="37" column="13" str="ipcs" scope="0x55c5aac76850" type="name" astParent="0x55c5aacbc3a0"/>
+    <token id="0x55c5aacbc5e0" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacbb980"/>
+    <token id="0x55c5aacbc700" file="src/core/config.c" linenr="37" column="13" str="?" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aacbb860" astOperand1="0x55c5aacbc3a0" astOperand2="0x55c5ab070220"/>
+    <token id="0x55c5aacbc820" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc0240" astParent="0x55c5ab070220" astOperand1="0x55c5aacc1680"/>
+    <token id="0x55c5aacbc940" file="src/core/config.c" linenr="37" column="13" str="typeof" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aacbca60" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc0120"/>
+    <token id="0x55c5aac6d930" file="src/core/config.c" linenr="37" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacbf700" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" originalName="->"/>
+    <token id="0x55c5aacbf820" file="src/core/config.c" linenr="37" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6"/>
+    <token id="0x55c5aacbf940" file="src/core/config.c" linenr="37" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aacbfb80"/>
+    <token id="0x55c5aacbfa60" file="src/core/config.c" linenr="37" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbfb80" file="src/core/config.c" linenr="37" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aacbf940"/>
+    <token id="0x55c5aacbfca0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5aacbfdc0" file="src/core/config.c" linenr="37" column="13" str="platform" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacbfee0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850"/>
+    <token id="0x55c5aacc0000" file="src/core/config.c" linenr="37" column="13" str="ipcs" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacc0120" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacbca60"/>
+    <token id="0x55c5aacc0240" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacbc820"/>
+    <token id="0x55c5aacc0360" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab070100"/>
+    <token id="0x55c5aacc0480" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc07e0" astParent="0x55c5aacc1680" astOperand1="0x55c5aacc1320" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aacc05a0" file="src/core/config.c" linenr="37" column="13" str="void" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aacc06c0" file="src/core/config.c" linenr="37" column="13" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5aacc07e0" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc0480"/>
+    <token id="0x55c5aacc0900" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc1560"/>
+    <token id="0x55c5aacc0a20" file="src/core/config.c" linenr="37" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aacc0b40" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacc0b40" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacc0d80" astOperand1="0x55c5aacc0a20" astOperand2="0x55c5aacc0c60" originalName="->"/>
+    <token id="0x55c5aacc0c60" file="src/core/config.c" linenr="37" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5aacc0b40"/>
+    <token id="0x55c5aacc0d80" file="src/core/config.c" linenr="37" column="13" str="[" scope="0x55c5aac76850" link="0x55c5aacc0fc0" astParent="0x55c5aacc10e0" astOperand1="0x55c5aacc0b40" astOperand2="0x55c5aacc0ea0"/>
+    <token id="0x55c5aacc0ea0" file="src/core/config.c" linenr="37" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aacc0d80" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacc0fc0" file="src/core/config.c" linenr="37" column="13" str="]" scope="0x55c5aac76850" link="0x55c5aacc0d80"/>
+    <token id="0x55c5aacc10e0" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacc1320" astOperand1="0x55c5aacc0d80" astOperand2="0x55c5aacc1200"/>
+    <token id="0x55c5aacc1200" file="src/core/config.c" linenr="37" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aacc10e0"/>
+    <token id="0x55c5aacc1320" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aacc0480" astOperand1="0x55c5aacc10e0" astOperand2="0x55c5aacc1440"/>
+    <token id="0x55c5aacc1440" file="src/core/config.c" linenr="37" column="13" str="ipcs" scope="0x55c5aac76850" type="name" astParent="0x55c5aacc1320"/>
+    <token id="0x55c5aacc1560" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc0900"/>
+    <token id="0x55c5aacc1680" file="src/core/config.c" linenr="37" column="13" str="+" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aacbc820" astOperand1="0x55c5aacc0480" astOperand2="0x55c5aacc17a0" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aacc17a0" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc19e0" astParent="0x55c5aacc1680" astOperand1="0x55c5aacc1c20" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacc18c0" file="src/core/config.c" linenr="37" column="13" str="uint64_t" scope="0x55c5aac76850" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aacc19e0" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc17a0"/>
+    <token id="0x55c5aacc1b00" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab06ffe0"/>
+    <token id="0x55c5aacc1c20" file="src/core/config.c" linenr="37" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aacc17a0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab06ffe0" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc1b00"/>
+    <token id="0x55c5ab070100" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5aacc0360"/>
+    <token id="0x55c5ab070220" file="src/core/config.c" linenr="37" column="13" str=":" scope="0x55c5aac76850" isExpandedMacro="True" astParent="0x55c5aacbc700" astOperand1="0x55c5aacbc820" astOperand2="0x55c5ab070d60"/>
+    <token id="0x55c5ab070340" file="src/core/config.c" linenr="37" column="13" str="(" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab070fa0"/>
+    <token id="0x55c5ab070460" file="src/core/config.c" linenr="37" column="13" str="config" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab070580" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab070580" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab0707c0" astOperand1="0x55c5ab070460" astOperand2="0x55c5ab0706a0" originalName="->"/>
+    <token id="0x55c5ab0706a0" file="src/core/config.c" linenr="37" column="13" str="vmlist" scope="0x55c5aac76850" type="name" varId="6" astParent="0x55c5ab070580"/>
+    <token id="0x55c5ab0707c0" file="src/core/config.c" linenr="37" column="13" str="[" scope="0x55c5aac76850" link="0x55c5ab070a00" astParent="0x55c5ab070b20" astOperand1="0x55c5ab070580" astOperand2="0x55c5ab0708e0"/>
+    <token id="0x55c5ab0708e0" file="src/core/config.c" linenr="37" column="13" str="i" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0707c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab070a00" file="src/core/config.c" linenr="37" column="13" str="]" scope="0x55c5aac76850" link="0x55c5ab0707c0"/>
+    <token id="0x55c5ab070b20" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab070d60" astOperand1="0x55c5ab0707c0" astOperand2="0x55c5ab070c40"/>
+    <token id="0x55c5ab070c40" file="src/core/config.c" linenr="37" column="13" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5ab070b20"/>
+    <token id="0x55c5ab070d60" file="src/core/config.c" linenr="37" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5ab070220" astOperand1="0x55c5ab070b20" astOperand2="0x55c5ab070e80"/>
+    <token id="0x55c5ab070e80" file="src/core/config.c" linenr="37" column="13" str="ipcs" scope="0x55c5aac76850" type="name" astParent="0x55c5ab070d60"/>
+    <token id="0x55c5ab070fa0" file="src/core/config.c" linenr="37" column="13" str=")" scope="0x55c5aac76850" isExpandedMacro="True" link="0x55c5ab070340"/>
+    <token id="0x55c5ab0711e0" file="src/core/config.c" linenr="37" column="64" str=")" scope="0x55c5aac76850" link="0x55c5aac6d450"/>
+    <token id="0x55c5ab071300" file="src/core/config.c" linenr="37" column="66" str="{" scope="0x55c5aac789a0" link="0x55c5aaca9430"/>
+    <token id="0x55c5ab071420" file="src/core/config.c" linenr="38" column="13" str="for" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab071540"/>
+    <token id="0x55c5ab071540" file="src/core/config.c" linenr="38" column="17" str="(" scope="0x55c5aac789a0" link="0x55c5ab09f6f0" astOperand1="0x55c5ab071420" astOperand2="0x55c5ab071ae0"/>
+    <token id="0x55c5ab071660" file="src/core/config.c" linenr="38" column="18" str="int" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5ab071780" file="src/core/config.c" linenr="38" column="22" str="j" scope="0x55c5aac789a0" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5ab0718a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0718a0" file="src/core/config.c" linenr="38" column="24" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astParent="0x55c5ab071ae0" astOperand1="0x55c5ab071780" astOperand2="0x55c5ab0719c0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0719c0" file="src/core/config.c" linenr="38" column="26" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aacdbcb0" astParent="0x55c5ab0718a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab071ae0" file="src/core/config.c" linenr="38" column="27" str=";" scope="0x55c5aac789a0" astParent="0x55c5ab071540" astOperand1="0x55c5ab0718a0" astOperand2="0x55c5ab09f390"/>
+    <token id="0x55c5ab071c00" file="src/core/config.c" linenr="38" column="29" str="j" scope="0x55c5aac789a0" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5ab071d20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab071d20" file="src/core/config.c" linenr="38" column="31" str="&lt;" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5ab09f390" astOperand1="0x55c5ab071c00" astOperand2="0x55c5ab09f150" valueType-type="bool"/>
+    <token id="0x55c5ab071e40" file="src/core/config.c" linenr="38" column="33" str="config" scope="0x55c5aac789a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab071f60" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab071f60" file="src/core/config.c" linenr="38" column="39" str="." scope="0x55c5aac789a0" astParent="0x55c5ab0721a0" astOperand1="0x55c5ab071e40" astOperand2="0x55c5ab072080" originalName="->"/>
+    <token id="0x55c5ab072080" file="src/core/config.c" linenr="38" column="41" str="vmlist" scope="0x55c5aac789a0" type="name" varId="6" astParent="0x55c5ab071f60"/>
+    <token id="0x55c5ab0721a0" file="src/core/config.c" linenr="38" column="47" str="[" scope="0x55c5aac789a0" link="0x55c5ab0723e0" astParent="0x55c5ab072500" astOperand1="0x55c5ab071f60" astOperand2="0x55c5ab0722c0"/>
+    <token id="0x55c5ab0722c0" file="src/core/config.c" linenr="38" column="48" str="i" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0721a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0723e0" file="src/core/config.c" linenr="38" column="49" str="]" scope="0x55c5aac789a0" link="0x55c5ab0721a0"/>
+    <token id="0x55c5ab072500" file="src/core/config.c" linenr="38" column="50" str="." scope="0x55c5aac789a0" astParent="0x55c5ab09f150" astOperand1="0x55c5ab0721a0" astOperand2="0x55c5ab072620"/>
+    <token id="0x55c5ab072620" file="src/core/config.c" linenr="38" column="51" str="platform" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab072500"/>
+    <token id="0x55c5ab09f150" file="src/core/config.c" linenr="38" column="59" str="." scope="0x55c5aac789a0" astParent="0x55c5ab071d20" astOperand1="0x55c5ab072500" astOperand2="0x55c5ab09f270"/>
+    <token id="0x55c5ab09f270" file="src/core/config.c" linenr="38" column="60" str="ipc_num" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab09f150"/>
+    <token id="0x55c5ab09f390" file="src/core/config.c" linenr="38" column="67" str=";" scope="0x55c5aac789a0" astParent="0x55c5ab071ae0" astOperand1="0x55c5ab071d20" astOperand2="0x55c5ab09f5d0"/>
+    <token id="0x55c5ab09f4b0" file="src/core/config.c" linenr="38" column="69" str="j" scope="0x55c5aac789a0" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5ab09f5d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab09f5d0" file="src/core/config.c" linenr="38" column="70" str="++" scope="0x55c5aac789a0" type="op" astParent="0x55c5ab09f390" astOperand1="0x55c5ab09f4b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab09f6f0" file="src/core/config.c" linenr="38" column="72" str=")" scope="0x55c5aac789a0" link="0x55c5ab071540"/>
+    <token id="0x55c5ab09f810" file="src/core/config.c" linenr="38" column="74" str="{" scope="0x55c5aac75e20" link="0x55c5aaca9310"/>
+    <token id="0x55c5ab09f930" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a0c50"/>
+    <token id="0x55c5ab09fb70" file="src/core/config.c" linenr="39" column="17" str="config" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab09fc90" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab09fc90" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab09fed0" astOperand1="0x55c5ab09fb70" astOperand2="0x55c5ab09fdb0" originalName="->"/>
+    <token id="0x55c5ab09fdb0" file="src/core/config.c" linenr="39" column="17" str="vmlist" scope="0x55c5aac75e20" type="name" varId="6" astParent="0x55c5ab09fc90"/>
+    <token id="0x55c5ab09fed0" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0a0110" astParent="0x55c5ab0a0230" astOperand1="0x55c5ab09fc90" astOperand2="0x55c5ab09fff0"/>
+    <token id="0x55c5ab09fff0" file="src/core/config.c" linenr="39" column="17" str="i" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab09fed0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a0110" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5ab09fed0"/>
+    <token id="0x55c5ab0a0230" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a0470" astOperand1="0x55c5ab09fed0" astOperand2="0x55c5ab0a0350"/>
+    <token id="0x55c5ab0a0350" file="src/core/config.c" linenr="39" column="17" str="platform" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a0230"/>
+    <token id="0x55c5ab0a0470" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a06b0" astOperand1="0x55c5ab0a0230" astOperand2="0x55c5ab0a0590"/>
+    <token id="0x55c5ab0a0590" file="src/core/config.c" linenr="39" column="17" str="ipcs" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a0470"/>
+    <token id="0x55c5ab0a06b0" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0a08f0" astParent="0x55c5ab0a0a10" astOperand1="0x55c5ab0a0470" astOperand2="0x55c5ab0a07d0"/>
+    <token id="0x55c5ab0a07d0" file="src/core/config.c" linenr="39" column="17" str="j" scope="0x55c5aac75e20" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5ab0a06b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a08f0" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5ab0a06b0"/>
+    <token id="0x55c5ab0a0a10" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a0d70" astOperand1="0x55c5ab0a06b0" astOperand2="0x55c5ab0a0b30"/>
+    <token id="0x55c5ab0a0b30" file="src/core/config.c" linenr="39" column="17" str="interrupts" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a0a10"/>
+    <token id="0x55c5ab0a0c50" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab09f930"/>
+    <token id="0x55c5ab0a0d70" file="src/core/config.c" linenr="39" column="17" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" isExpandedMacro="True" astOperand1="0x55c5ab0a0a10" astOperand2="0x55c5aacbd390"/>
+    <token id="0x55c5ab0a0e90" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbd270"/>
+    <token id="0x55c5ab0a0fb0" file="src/core/config.c" linenr="39" column="17" str="config" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0a10d0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0a10d0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a1310" astOperand1="0x55c5ab0a0fb0" astOperand2="0x55c5ab0a11f0" originalName="->"/>
+    <token id="0x55c5ab0a11f0" file="src/core/config.c" linenr="39" column="17" str="vmlist" scope="0x55c5aac75e20" type="name" varId="6" astParent="0x55c5ab0a10d0"/>
+    <token id="0x55c5ab0a1310" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0a1550" astParent="0x55c5ab0a1670" astOperand1="0x55c5ab0a10d0" astOperand2="0x55c5ab0a1430"/>
+    <token id="0x55c5ab0a1430" file="src/core/config.c" linenr="39" column="17" str="i" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0a1310" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a1550" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5ab0a1310"/>
+    <token id="0x55c5ab0a1670" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a18b0" astOperand1="0x55c5ab0a1310" astOperand2="0x55c5ab0a1790"/>
+    <token id="0x55c5ab0a1790" file="src/core/config.c" linenr="39" column="17" str="platform" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a1670"/>
+    <token id="0x55c5ab0a18b0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5aacbccd0" astOperand1="0x55c5ab0a1670" astOperand2="0x55c5aacbcbb0"/>
+    <token id="0x55c5aacbcbb0" file="src/core/config.c" linenr="39" column="17" str="ipcs" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a18b0"/>
+    <token id="0x55c5aacbccd0" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5aacbcf10" astParent="0x55c5aacbd030" astOperand1="0x55c5ab0a18b0" astOperand2="0x55c5aacbcdf0"/>
+    <token id="0x55c5aacbcdf0" file="src/core/config.c" linenr="39" column="17" str="j" scope="0x55c5aac75e20" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5aacbccd0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbcf10" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5aacbccd0"/>
+    <token id="0x55c5aacbd030" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5aacbd390" astOperand1="0x55c5aacbccd0" astOperand2="0x55c5aacbd150"/>
+    <token id="0x55c5aacbd150" file="src/core/config.c" linenr="39" column="17" str="interrupts" scope="0x55c5aac75e20" type="name" astParent="0x55c5aacbd030"/>
+    <token id="0x55c5aacbd270" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a0e90"/>
+    <token id="0x55c5aacbd390" file="src/core/config.c" linenr="39" column="17" str="?" scope="0x55c5aac75e20" isExpandedMacro="True" astParent="0x55c5ab0a0d70" astOperand1="0x55c5aacbd030" astOperand2="0x55c5ab0a9200"/>
+    <token id="0x55c5aacbd4b0" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbea10" astParent="0x55c5ab0a9200" astOperand1="0x55c5ab0a8900"/>
+    <token id="0x55c5aacbd5d0" file="src/core/config.c" linenr="39" column="17" str="typeof" scope="0x55c5aac75e20" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aacbd6f0" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbe8f0"/>
+    <token id="0x55c5aacbd810" file="src/core/config.c" linenr="39" column="17" str="config" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aac705e0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacbd930" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" originalName="->"/>
+    <token id="0x55c5aacbda50" file="src/core/config.c" linenr="39" column="17" str="vmlist" scope="0x55c5aac75e20" type="name" varId="6"/>
+    <token id="0x55c5aacbdb70" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5aacbddb0"/>
+    <token id="0x55c5aacbdc90" file="src/core/config.c" linenr="39" column="17" str="i" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aacd54a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbddb0" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5aacbdb70"/>
+    <token id="0x55c5aacbded0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20"/>
+    <token id="0x55c5aacbdff0" file="src/core/config.c" linenr="39" column="17" str="platform" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aacbe110" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20"/>
+    <token id="0x55c5aacbe230" file="src/core/config.c" linenr="39" column="17" str="ipcs" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aacbe350" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5aacbe590"/>
+    <token id="0x55c5aacbe470" file="src/core/config.c" linenr="39" column="17" str="j" scope="0x55c5aac75e20" type="name" varId="8" variable="0x55c5aac54fa0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacbe590" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5aacbe350"/>
+    <token id="0x55c5aacbe6b0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20"/>
+    <token id="0x55c5aacbe7d0" file="src/core/config.c" linenr="39" column="17" str="interrupts" scope="0x55c5aac75e20" type="name"/>
+    <token id="0x55c5aacbe8f0" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbd6f0"/>
+    <token id="0x55c5aacbea10" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbd4b0"/>
+    <token id="0x55c5aacbeb30" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a90e0"/>
+    <token id="0x55c5aacbec50" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbefb0" astParent="0x55c5ab0a8900" astOperand1="0x55c5ab0a85a0" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aacbed70" file="src/core/config.c" linenr="39" column="17" str="void" scope="0x55c5aac75e20" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5aacbee90" file="src/core/config.c" linenr="39" column="17" str="*" scope="0x55c5aac75e20" type="op" isArithmeticalOp="True" isExpandedMacro="True"/>
+    <token id="0x55c5aacbefb0" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbec50"/>
+    <token id="0x55c5aacbf0d0" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a87e0"/>
+    <token id="0x55c5aacbf1f0" file="src/core/config.c" linenr="39" column="17" str="config" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aacbf310" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aacbf310" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5aacbf550" astOperand1="0x55c5aacbf1f0" astOperand2="0x55c5aacbf430" originalName="->"/>
+    <token id="0x55c5aacbf430" file="src/core/config.c" linenr="39" column="17" str="vmlist" scope="0x55c5aac75e20" type="name" varId="6" astParent="0x55c5aacbf310"/>
+    <token id="0x55c5aacbf550" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0a7ca0" astParent="0x55c5ab0a7dc0" astOperand1="0x55c5aacbf310" astOperand2="0x55c5aacbf5b0"/>
+    <token id="0x55c5aacbf5b0" file="src/core/config.c" linenr="39" column="17" str="i" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5aacbf550" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a7ca0" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5aacbf550"/>
+    <token id="0x55c5ab0a7dc0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a8000" astOperand1="0x55c5aacbf550" astOperand2="0x55c5ab0a7ee0"/>
+    <token id="0x55c5ab0a7ee0" file="src/core/config.c" linenr="39" column="17" str="platform" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a7dc0"/>
+    <token id="0x55c5ab0a8000" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a8240" astOperand1="0x55c5ab0a7dc0" astOperand2="0x55c5ab0a8120"/>
+    <token id="0x55c5ab0a8120" file="src/core/config.c" linenr="39" column="17" str="ipcs" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a8000"/>
+    <token id="0x55c5ab0a8240" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0a8480" astParent="0x55c5ab0a85a0" astOperand1="0x55c5ab0a8000" astOperand2="0x55c5ab0a8360"/>
+    <token id="0x55c5ab0a8360" file="src/core/config.c" linenr="39" column="17" str="j" scope="0x55c5aac75e20" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5ab0a8240" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a8480" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5ab0a8240"/>
+    <token id="0x55c5ab0a85a0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5aacbec50" astOperand1="0x55c5ab0a8240" astOperand2="0x55c5ab0a86c0"/>
+    <token id="0x55c5ab0a86c0" file="src/core/config.c" linenr="39" column="17" str="interrupts" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a85a0"/>
+    <token id="0x55c5ab0a87e0" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbf0d0"/>
+    <token id="0x55c5ab0a8900" file="src/core/config.c" linenr="39" column="17" str="+" scope="0x55c5aac75e20" type="op" isArithmeticalOp="True" isExpandedMacro="True" astParent="0x55c5aacbd4b0" astOperand1="0x55c5aacbec50" astOperand2="0x55c5ab0a8a20" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5ab0a8a20" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a8c60" astParent="0x55c5ab0a8900" astOperand1="0x55c5ab0a8ea0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0a8b40" file="src/core/config.c" linenr="39" column="17" str="uint64_t" scope="0x55c5aac75e20" type="name" isExpandedMacro="True"/>
+    <token id="0x55c5ab0a8c60" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a8a20"/>
+    <token id="0x55c5ab0a8d80" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a8fc0"/>
+    <token id="0x55c5ab0a8ea0" file="src/core/config.c" linenr="39" column="17" str="config" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0a8a20" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0a8fc0" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a8d80"/>
+    <token id="0x55c5ab0a90e0" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5aacbeb30"/>
+    <token id="0x55c5ab0a9200" file="src/core/config.c" linenr="39" column="17" str=":" scope="0x55c5aac75e20" isExpandedMacro="True" astParent="0x55c5aacbd390" astOperand1="0x55c5aacbd4b0" astOperand2="0x55c5ab0aa2e0"/>
+    <token id="0x55c5ab0a9320" file="src/core/config.c" linenr="39" column="17" str="(" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0aa520"/>
+    <token id="0x55c5ab0a9440" file="src/core/config.c" linenr="39" column="17" str="config" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5ab0a9560" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5ab0a9560" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a97a0" astOperand1="0x55c5ab0a9440" astOperand2="0x55c5ab0a9680" originalName="->"/>
+    <token id="0x55c5ab0a9680" file="src/core/config.c" linenr="39" column="17" str="vmlist" scope="0x55c5aac75e20" type="name" varId="6" astParent="0x55c5ab0a9560"/>
+    <token id="0x55c5ab0a97a0" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0a99e0" astParent="0x55c5ab0a9b00" astOperand1="0x55c5ab0a9560" astOperand2="0x55c5ab0a98c0"/>
+    <token id="0x55c5ab0a98c0" file="src/core/config.c" linenr="39" column="17" str="i" scope="0x55c5aac75e20" type="name" varId="4" variable="0x55c5aacd54a0" astParent="0x55c5ab0a97a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0a99e0" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5ab0a97a0"/>
+    <token id="0x55c5ab0a9b00" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a9d40" astOperand1="0x55c5ab0a97a0" astOperand2="0x55c5ab0a9c20"/>
+    <token id="0x55c5ab0a9c20" file="src/core/config.c" linenr="39" column="17" str="platform" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a9b00"/>
+    <token id="0x55c5ab0a9d40" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a9f80" astOperand1="0x55c5ab0a9b00" astOperand2="0x55c5ab0a9e60"/>
+    <token id="0x55c5ab0a9e60" file="src/core/config.c" linenr="39" column="17" str="ipcs" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0a9d40"/>
+    <token id="0x55c5ab0a9f80" file="src/core/config.c" linenr="39" column="17" str="[" scope="0x55c5aac75e20" link="0x55c5ab0aa1c0" astParent="0x55c5ab0aa2e0" astOperand1="0x55c5ab0a9d40" astOperand2="0x55c5ab0aa0a0"/>
+    <token id="0x55c5ab0aa0a0" file="src/core/config.c" linenr="39" column="17" str="j" scope="0x55c5aac75e20" type="name" varId="8" variable="0x55c5aac54fa0" astParent="0x55c5ab0a9f80" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0aa1c0" file="src/core/config.c" linenr="39" column="17" str="]" scope="0x55c5aac75e20" link="0x55c5ab0a9f80"/>
+    <token id="0x55c5ab0aa2e0" file="src/core/config.c" linenr="39" column="17" str="." scope="0x55c5aac75e20" astParent="0x55c5ab0a9200" astOperand1="0x55c5ab0a9f80" astOperand2="0x55c5ab0aa400"/>
+    <token id="0x55c5ab0aa400" file="src/core/config.c" linenr="39" column="17" str="interrupts" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab0aa2e0"/>
+    <token id="0x55c5ab0aa520" file="src/core/config.c" linenr="39" column="17" str=")" scope="0x55c5aac75e20" isExpandedMacro="True" link="0x55c5ab0a9320"/>
+    <token id="0x55c5ab0aa640" file="src/core/config.c" linenr="40" column="35" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aaca9310" file="src/core/config.c" linenr="41" column="13" str="}" scope="0x55c5aac75e20" link="0x55c5ab09f810"/>
+    <token id="0x55c5aaca9430" file="src/core/config.c" linenr="42" column="9" str="}" scope="0x55c5aac789a0" link="0x55c5ab071300"/>
+    <token id="0x55c5aaca9550" file="src/core/config.c" linenr="43" column="5" str="}" scope="0x55c5aac76850" link="0x55c5aae56440"/>
+    <token id="0x55c5aaca9670" file="src/core/config.c" linenr="45" column="5" str="config_arch_adjust_to_va" scope="0x55c5aac785a0" type="name" astParent="0x55c5aaca9790"/>
+    <token id="0x55c5aaca9790" file="src/core/config.c" linenr="45" column="29" str="(" scope="0x55c5aac785a0" link="0x55c5aaca9c10" astOperand1="0x55c5aaca9670" astOperand2="0x55c5aaca99d0"/>
+    <token id="0x55c5aaca98b0" file="src/core/config.c" linenr="45" column="30" str="config" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5aac705e0" astParent="0x55c5aaca99d0" valueType-type="record" valueType-pointer="1"/>
+    <token id="0x55c5aaca99d0" file="src/core/config.c" linenr="45" column="36" str="," scope="0x55c5aac785a0" astParent="0x55c5aaca9790" astOperand1="0x55c5aaca98b0" astOperand2="0x55c5aaca9af0"/>
+    <token id="0x55c5aaca9af0" file="src/core/config.c" linenr="45" column="38" str="phys" scope="0x55c5aac785a0" type="name" varId="2" variable="0x55c5aac706c0" astParent="0x55c5aaca99d0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca9c10" file="src/core/config.c" linenr="45" column="42" str=")" scope="0x55c5aac785a0" link="0x55c5aaca9790"/>
+    <token id="0x55c5aaca9d30" file="src/core/config.c" linenr="45" column="43" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aaca9e50" file="src/core/config.c" linenr="46" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aac5ad40"/>
+    <token id="0x55c5aaca9f70" file="src/core/config.c" linenr="48" column="1" str="bool" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aacaa090" file="src/core/config.c" linenr="48" column="6" str="config_is_builtin" scope="0x55c5aac783b0" type="name" function="0x55c5aacca390" astParent="0x55c5aacaa1b0"/>
+    <token id="0x55c5aacaa1b0" file="src/core/config.c" linenr="48" column="23" str="(" scope="0x55c5aac783b0" link="0x55c5aacaa2d0" astOperand1="0x55c5aacaa090" valueType-type="bool"/>
+    <token id="0x55c5aacaa2d0" file="src/core/config.c" linenr="48" column="24" str=")" scope="0x55c5aac783b0" link="0x55c5aacaa1b0"/>
+    <token id="0x55c5aacaa3f0" file="src/core/config.c" linenr="49" column="1" str="{" scope="0x55c5aac70390" link="0x55c5aacab3b0"/>
+    <token id="0x55c5aacaa510" file="src/core/config.c" linenr="50" column="5" str="extern" scope="0x55c5aac70390" type="name"/>
+    <token id="0x55c5aacaa630" file="src/core/config.c" linenr="50" column="12" str="uint8_t" scope="0x55c5aac70390" type="name"/>
+    <token id="0x55c5aacaa750" file="src/core/config.c" linenr="50" column="20" str="_config_start" scope="0x55c5aac70390" type="name" varId="9" variable="0x55c5aac54ec0" valueType-type="char" valueType-sign="unsigned"/>
+    <token id="0x55c5aacaa870" file="src/core/config.c" linenr="50" column="33" str=";" scope="0x55c5aac70390"/>
+    <token id="0x55c5aacab4d0" file="src/core/config.c" linenr="50" column="5" str="extern" scope="0x55c5aac70390" type="name"/>
+    <token id="0x55c5aacab5f0" file="src/core/config.c" linenr="50" column="12" str="uint8_t" scope="0x55c5aac70390" type="name"/>
+    <token id="0x55c5aacaa990" file="src/core/config.c" linenr="50" column="35" str="_config_end" scope="0x55c5aac70390" type="name" varId="10" variable="0x55c5aac70500" valueType-type="char" valueType-sign="unsigned"/>
+    <token id="0x55c5aacaaab0" file="src/core/config.c" linenr="50" column="46" str=";" scope="0x55c5aac70390"/>
+    <token id="0x55c5aacaabd0" file="src/core/config.c" linenr="51" column="5" str="return" scope="0x55c5aac70390" type="name" astOperand1="0x55c5aacaaf30" valueType-type="bool"/>
+    <token id="0x55c5aacaacf0" file="src/core/config.c" linenr="51" column="12" str="&amp;" scope="0x55c5aac70390" type="op" values="0x55c5aace7580" astParent="0x55c5aacaaf30" astOperand1="0x55c5aacaae10" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="0x55c5aacaae10" file="src/core/config.c" linenr="51" column="13" str="_config_start" scope="0x55c5aac70390" type="name" varId="9" variable="0x55c5aac54ec0" astParent="0x55c5aacaacf0" valueType-type="char" valueType-sign="unsigned"/>
+    <token id="0x55c5aacaaf30" file="src/core/config.c" linenr="51" column="27" str="!=" scope="0x55c5aac70390" type="op" isComparisonOp="True" astParent="0x55c5aacaabd0" astOperand1="0x55c5aacaacf0" astOperand2="0x55c5aacab050" valueType-type="bool"/>
+    <token id="0x55c5aacab050" file="src/core/config.c" linenr="51" column="30" str="&amp;" scope="0x55c5aac70390" type="op" values="0x55c5aac62940" astParent="0x55c5aacaaf30" astOperand1="0x55c5aacab170" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="0x55c5aacab170" file="src/core/config.c" linenr="51" column="31" str="_config_end" scope="0x55c5aac70390" type="name" varId="10" variable="0x55c5aac70500" astParent="0x55c5aacab050" valueType-type="char" valueType-sign="unsigned"/>
+    <token id="0x55c5aacab290" file="src/core/config.c" linenr="51" column="42" str=";" scope="0x55c5aac70390"/>
+    <token id="0x55c5aacab3b0" file="src/core/config.c" linenr="52" column="1" str="}" scope="0x55c5aac70390" link="0x55c5aacaa3f0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac783b0" type="Global">
+      <functionList>
+        <function id="0x55c5aacca2f0" tokenDef="0x55c5aac62130" name="config_adjust_to_va" type="Function">
+          <arg nr="1" variable="0x55c5aac705e0"/>
+          <arg nr="2" variable="0x55c5aac706c0"/>
+        </function>
+        <function id="0x55c5aacca390" tokenDef="0x55c5aacaa090" name="config_is_builtin" type="Function"/>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac785a0" type="Function" className="config_adjust_to_va" bodyStart="0x55c5aac5ad40" bodyEnd="0x55c5aaca9e50" nestedIn="0x55c5aac783b0" function="0x55c5aacca2f0"/>
+    <scope id="0x55c5aac76850" type="For" bodyStart="0x55c5aae56440" bodyEnd="0x55c5aaca9550" nestedIn="0x55c5aac785a0">
+      <varlist>
+        <var id="0x55c5aacd54a0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac7b730" type="If" bodyStart="0x55c5aac5ee70" bodyEnd="0x55c5aac6d210" nestedIn="0x55c5aac76850"/>
+    <scope id="0x55c5aac781c0" type="For" bodyStart="0x55c5aacceb80" bodyEnd="0x55c5aac6d0f0" nestedIn="0x55c5aac7b730">
+      <varlist>
+        <var id="0x55c5aac55080"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac789a0" type="If" bodyStart="0x55c5ab071300" bodyEnd="0x55c5aaca9430" nestedIn="0x55c5aac76850"/>
+    <scope id="0x55c5aac75e20" type="For" bodyStart="0x55c5ab09f810" bodyEnd="0x55c5aaca9310" nestedIn="0x55c5aac789a0">
+      <varlist>
+        <var id="0x55c5aac54fa0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac70390" type="Function" className="config_is_builtin" bodyStart="0x55c5aacaa3f0" bodyEnd="0x55c5aacab3b0" nestedIn="0x55c5aac783b0" function="0x55c5aacca390">
+      <varlist>
+        <var id="0x55c5aac54ec0"/>
+        <var id="0x55c5aac70500"/>
+      </varlist>
+    </scope>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac54ec0" nameToken="0x55c5aacaa750" typeStartToken="0x55c5aacaa630" typeEndToken="0x55c5aacaa630" access="Local" scope="0x55c5aac70390" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="true" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac54fa0" nameToken="0x55c5ab071780" typeStartToken="0x55c5ab071660" typeEndToken="0x55c5ab071660" access="Local" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac55080" nameToken="0x55c5aac5f2f0" typeStartToken="0x55c5aac5f1d0" typeEndToken="0x55c5aac5f1d0" access="Local" scope="0x55c5aac781c0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac70500" nameToken="0x55c5aacaa990" typeStartToken="0x55c5aacab5f0" typeEndToken="0x55c5aacab5f0" access="Local" scope="0x55c5aac70390" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="true" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac705e0" nameToken="0x55c5aacbab90" typeStartToken="0x55c5aac529c0" typeEndToken="0x55c5aace0130" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac706c0" nameToken="0x55c5aaca8df0" typeStartToken="0x55c5aaca2950" typeEndToken="0x55c5aaca2950" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd54a0" nameToken="0x55c5aac5e6f0" typeStartToken="0x55c5aac5e5d0" typeEndToken="0x55c5aac5e5d0" access="Local" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aac51c70">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac78970">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aacdbcb0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aace7580">
+      <value lifetime="0x55c5aacaae10" possible="true"/>
+    </values>
+    <values id="0x55c5aac62940">
+      <value lifetime="0x55c5aacab170" possible="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

@@ -41,8 +41,8 @@ static inline void tlb_hyp_inv_all()
 
 static inline void tlb_vm_inv_va(uint64_t vmid, void* va)
 {
-    sbi_remote_hfence_gvma_vmid((1 << platform.cpu_num)- 1, 0, (unsigned long)va,
-                                PAGE_SIZE, vmid);
+    sbi_remote_hfence_gvma_vmid((1 << platform.cpu_num) - 1, 0,
+                                (unsigned long)va, PAGE_SIZE, vmid);
 }
 
 static inline void tlb_vm_inv_all(uint64_t vmid)

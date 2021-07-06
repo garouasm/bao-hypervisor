@@ -18,7 +18,8 @@
 #include <platform.h>
 #include <cpu.h>
 
-static inline void as_map_physical_identity(addr_space_t *as) {
+static inline void as_map_physical_identity(addr_space_t *as)
+{
     const int lvl = 0;
     size_t lvl_size = pt_lvlsize(&as->pt, lvl);
     uintptr_t lvl_mask = ~(lvl_size - 1);
@@ -45,24 +46,23 @@ static inline void as_map_physical_identity(addr_space_t *as) {
     }
 }
 
-void as_arch_init(addr_space_t *as) {
-
-    if(as->type == AS_HYP) {
+void as_arch_init(addr_space_t *as)
+{
+    if (as->type == AS_HYP) {
         as_map_physical_identity(as);
     }
-
 }
 
 bool mem_translate(addr_space_t *as, void *va, uint64_t *pa)
 {
-    pte_t* pte = &(as->pt.root[PTE_INDEX(0, (uintptr_t)va)]);
+    pte_t *pte = &(as->pt.root[PTE_INDEX(0, (uintptr_t)va)]);
     size_t lvl = 0;
     for (int i = 0; i < as->pt.dscr->lvls; i++) {
         if (!pte_valid(pte) || !pte_table(&as->pt, pte, i)) {
             lvl = i;
-            break;  
+            break;
         }
-        pte = (pte_t*)pte_addr(pte);
+        pte = (pte_t *)pte_addr(pte);
         int index = PTE_INDEX(i + 1, (uintptr_t)va);
         pte = &pte[index];
     }

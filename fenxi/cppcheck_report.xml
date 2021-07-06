@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.90"/>
+    <errors>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="configs/example/config.c" line="22" column="13"/>
+        </error>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: (struct cpu*)NULL" verbose="Null pointer dereference: (struct cpu*)NULL" cwe="476">
+            <location file="src/arch/armv8/asm_defs.c" line="29" column="34" info="Null pointer dereference"/>
+            <symbol>(struct cpu*)NULL</symbol>
+        </error>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: (struct cpu*)NULL" verbose="Null pointer dereference: (struct cpu*)NULL" cwe="476">
+            <location file="src/arch/armv8/asm_defs.c" line="32" column="31" info="Null pointer dereference"/>
+            <symbol>(struct cpu*)NULL</symbol>
+        </error>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: (struct cpu*)NULL" verbose="Null pointer dereference: (struct cpu*)NULL" cwe="476">
+            <location file="src/arch/riscv/asm_defs.c" line="15" column="34" info="Null pointer dereference"/>
+            <symbol>(struct cpu*)NULL</symbol>
+        </error>
+        <error id="nullPointer" severity="error" msg="Null pointer dereference: (struct cpu*)NULL" verbose="Null pointer dereference: (struct cpu*)NULL" cwe="476">
+            <location file="src/arch/riscv/asm_defs.c" line="18" column="31" info="Null pointer dereference"/>
+            <symbol>(struct cpu*)NULL</symbol>
+        </error>
+        <error id="objectIndex" severity="warning" msg="The address of local variable &apos;_ipi_cpumsg_handlers_id_start&apos; might be accessed at non-zero index." verbose="The address of local variable &apos;_ipi_cpumsg_handlers_id_start&apos; might be accessed at non-zero index." cwe="758">
+            <location file="src/core/cpu.c" line="55" column="45"/>
+            <location file="src/core/cpu.c" line="55" column="14" info="Address of variable taken here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="882" column="46"/>
+            <location file="src/core/mem.c" line="882" column="48" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="16" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="882" column="34" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="30" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="883" column="48"/>
+            <location file="src/core/mem.c" line="883" column="50" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="32" column="59" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="883" column="35" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="33" column="5" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="906" column="46"/>
+            <location file="src/core/mem.c" line="906" column="48" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="16" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="906" column="34" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="30" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="907" column="48"/>
+            <location file="src/core/mem.c" line="907" column="50" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="32" column="59" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="907" column="35" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="33" column="5" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="1092" column="46"/>
+            <location file="src/core/mem.c" line="1092" column="48" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="16" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="1092" column="34" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="30" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="1152" column="46"/>
+            <location file="src/core/mem.c" line="1152" column="48" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="16" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="1152" column="34" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="30" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="1155" column="48"/>
+            <location file="src/core/mem.c" line="1155" column="50" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="32" column="59" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="1155" column="35" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="33" column="5" info="Variable declared here."/>
+        </error>
+        <error id="comparePointers" severity="error" msg="Subtracting pointers that point to different objects" verbose="Subtracting pointers that point to different objects" cwe="570">
+            <location file="src/core/mem.c" line="1367" column="43"/>
+            <location file="src/core/mem.c" line="1367" column="45" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="31" column="16" info="Variable declared here."/>
+            <location file="src/core/mem.c" line="1367" column="28" info="Address of variable taken here."/>
+            <location file="src/core/mem.c" line="32" column="59" info="Variable declared here."/>
+        </error>
+    </errors>
+</results>

@@ -1,0 +1,1432 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/arch/riscv/sync_exceptions.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;bao.h&gt;"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;cpu.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="include"/>
+    <tok fileIndex="0" linenr="18" column="10" str="&lt;vm.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="include"/>
+    <tok fileIndex="0" linenr="19" column="10" str="&lt;arch/encoding.h&gt;"/>
+    <tok fileIndex="0" linenr="20" column="1" str="#"/>
+    <tok fileIndex="0" linenr="20" column="2" str="include"/>
+    <tok fileIndex="0" linenr="20" column="10" str="&lt;arch/csrs.h&gt;"/>
+    <tok fileIndex="0" linenr="22" column="1" str="static"/>
+    <tok fileIndex="0" linenr="22" column="8" str="unsigned"/>
+    <tok fileIndex="0" linenr="22" column="17" str="long"/>
+    <tok fileIndex="0" linenr="22" column="22" str="read_ins"/>
+    <tok fileIndex="0" linenr="22" column="30" str="("/>
+    <tok fileIndex="0" linenr="22" column="31" str="uintptr_t"/>
+    <tok fileIndex="0" linenr="22" column="41" str="ins_addr"/>
+    <tok fileIndex="0" linenr="22" column="49" str=")"/>
+    <tok fileIndex="0" linenr="23" column="1" str="{"/>
+    <tok fileIndex="0" linenr="24" column="5" str="unsigned"/>
+    <tok fileIndex="0" linenr="24" column="14" str="long"/>
+    <tok fileIndex="0" linenr="24" column="19" str="ins"/>
+    <tok fileIndex="0" linenr="24" column="23" str="="/>
+    <tok fileIndex="0" linenr="24" column="25" str="0"/>
+    <tok fileIndex="0" linenr="24" column="26" str=";"/>
+    <tok fileIndex="0" linenr="26" column="5" str="bool"/>
+    <tok fileIndex="0" linenr="26" column="10" str="succ"/>
+    <tok fileIndex="0" linenr="26" column="15" str="="/>
+    <tok fileIndex="0" linenr="26" column="17" str="vm_readmem"/>
+    <tok fileIndex="0" linenr="26" column="27" str="("/>
+    <tok fileIndex="0" linenr="26" column="28" str="cpu"/>
+    <tok fileIndex="0" linenr="26" column="31" str="."/>
+    <tok fileIndex="0" linenr="26" column="32" str="vcpu"/>
+    <tok fileIndex="0" linenr="26" column="36" str="-&gt;"/>
+    <tok fileIndex="0" linenr="26" column="38" str="vm"/>
+    <tok fileIndex="0" linenr="26" column="40" str=","/>
+    <tok fileIndex="0" linenr="26" column="42" str="&amp;"/>
+    <tok fileIndex="0" linenr="26" column="43" str="ins"/>
+    <tok fileIndex="0" linenr="26" column="46" str=","/>
+    <tok fileIndex="0" linenr="26" column="48" str="ins_addr"/>
+    <tok fileIndex="0" linenr="26" column="56" str=","/>
+    <tok fileIndex="0" linenr="26" column="58" str="2"/>
+    <tok fileIndex="0" linenr="26" column="59" str=","/>
+    <tok fileIndex="0" linenr="26" column="61" str="true"/>
+    <tok fileIndex="0" linenr="26" column="65" str=")"/>
+    <tok fileIndex="0" linenr="26" column="66" str=";"/>
+    <tok fileIndex="0" linenr="27" column="5" str="if"/>
+    <tok fileIndex="0" linenr="27" column="8" str="("/>
+    <tok fileIndex="0" linenr="27" column="9" str="succ"/>
+    <tok fileIndex="0" linenr="27" column="14" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="27" column="17" str="("/>
+    <tok fileIndex="0" linenr="27" column="18" str="("/>
+    <tok fileIndex="0" linenr="27" column="19" str="ins"/>
+    <tok fileIndex="0" linenr="27" column="23" str="&amp;"/>
+    <tok fileIndex="0" linenr="27" column="25" str="0x3"/>
+    <tok fileIndex="0" linenr="27" column="28" str=")"/>
+    <tok fileIndex="0" linenr="27" column="30" str="=="/>
+    <tok fileIndex="0" linenr="27" column="33" str="3"/>
+    <tok fileIndex="0" linenr="27" column="34" str=")"/>
+    <tok fileIndex="0" linenr="27" column="35" str=")"/>
+    <tok fileIndex="0" linenr="27" column="37" str="{"/>
+    <tok fileIndex="0" linenr="28" column="9" str="succ"/>
+    <tok fileIndex="0" linenr="28" column="14" str="="/>
+    <tok fileIndex="0" linenr="28" column="16" str="vm_readmem"/>
+    <tok fileIndex="0" linenr="28" column="26" str="("/>
+    <tok fileIndex="0" linenr="28" column="27" str="cpu"/>
+    <tok fileIndex="0" linenr="28" column="30" str="."/>
+    <tok fileIndex="0" linenr="28" column="31" str="vcpu"/>
+    <tok fileIndex="0" linenr="28" column="35" str="-&gt;"/>
+    <tok fileIndex="0" linenr="28" column="37" str="vm"/>
+    <tok fileIndex="0" linenr="28" column="39" str=","/>
+    <tok fileIndex="0" linenr="28" column="41" str="&amp;"/>
+    <tok fileIndex="0" linenr="28" column="42" str="ins"/>
+    <tok fileIndex="0" linenr="28" column="45" str=","/>
+    <tok fileIndex="0" linenr="28" column="47" str="ins_addr"/>
+    <tok fileIndex="0" linenr="28" column="55" str=","/>
+    <tok fileIndex="0" linenr="28" column="57" str="4"/>
+    <tok fileIndex="0" linenr="28" column="58" str=","/>
+    <tok fileIndex="0" linenr="28" column="60" str="true"/>
+    <tok fileIndex="0" linenr="28" column="64" str=")"/>
+    <tok fileIndex="0" linenr="28" column="65" str=";"/>
+    <tok fileIndex="0" linenr="29" column="5" str="}"/>
+    <tok fileIndex="0" linenr="31" column="5" str="if"/>
+    <tok fileIndex="0" linenr="31" column="8" str="("/>
+    <tok fileIndex="0" linenr="31" column="9" str="!"/>
+    <tok fileIndex="0" linenr="31" column="10" str="succ"/>
+    <tok fileIndex="0" linenr="31" column="14" str=")"/>
+    <tok fileIndex="0" linenr="31" column="16" str="{"/>
+    <tok fileIndex="0" linenr="32" column="9" str="ERROR"/>
+    <tok fileIndex="0" linenr="32" column="14" str="("/>
+    <tok fileIndex="0" linenr="32" column="15" str="&quot;failed to read guest instruction&quot;"/>
+    <tok fileIndex="0" linenr="32" column="49" str=")"/>
+    <tok fileIndex="0" linenr="32" column="50" str=";"/>
+    <tok fileIndex="0" linenr="33" column="9" str="/**x         * TODO: maybe the best is to inject the instuction fault in thex         * guest instead of stopping altogetherx         */"/>
+    <tok fileIndex="0" linenr="37" column="5" str="}"/>
+    <tok fileIndex="0" linenr="39" column="5" str="return"/>
+    <tok fileIndex="0" linenr="39" column="12" str="ins"/>
+    <tok fileIndex="0" linenr="39" column="15" str=";"/>
+    <tok fileIndex="0" linenr="40" column="1" str="}"/>
+    <tok fileIndex="0" linenr="42" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="42" column="9" str="size_t"/>
+    <tok fileIndex="0" linenr="42" column="16" str="("/>
+    <tok fileIndex="0" linenr="42" column="17" str="*"/>
+    <tok fileIndex="0" linenr="42" column="18" str="sync_handler_t"/>
+    <tok fileIndex="0" linenr="42" column="32" str=")"/>
+    <tok fileIndex="0" linenr="42" column="33" str="("/>
+    <tok fileIndex="0" linenr="42" column="34" str=")"/>
+    <tok fileIndex="0" linenr="42" column="35" str=";"/>
+    <tok fileIndex="0" linenr="44" column="1" str="extern"/>
+    <tok fileIndex="0" linenr="44" column="8" str="size_t"/>
+    <tok fileIndex="0" linenr="44" column="15" str="sbi_vs_handler"/>
+    <tok fileIndex="0" linenr="44" column="29" str="("/>
+    <tok fileIndex="0" linenr="44" column="30" str=")"/>
+    <tok fileIndex="0" linenr="44" column="31" str=";"/>
+    <tok fileIndex="0" linenr="46" column="1" str="static"/>
+    <tok fileIndex="0" linenr="46" column="8" str="inline"/>
+    <tok fileIndex="0" linenr="46" column="15" str="int"/>
+    <tok fileIndex="0" linenr="46" column="19" str="ins_ldst_decode"/>
+    <tok fileIndex="0" linenr="46" column="34" str="("/>
+    <tok fileIndex="0" linenr="46" column="35" str="uintptr_t"/>
+    <tok fileIndex="0" linenr="46" column="45" str="ins"/>
+    <tok fileIndex="0" linenr="46" column="48" str=","/>
+    <tok fileIndex="0" linenr="46" column="50" str="emul_access_t"/>
+    <tok fileIndex="0" linenr="46" column="64" str="*"/>
+    <tok fileIndex="0" linenr="46" column="65" str="emul"/>
+    <tok fileIndex="0" linenr="46" column="69" str=")"/>
+    <tok fileIndex="0" linenr="47" column="1" str="{"/>
+    <tok fileIndex="0" linenr="48" column="5" str="if"/>
+    <tok fileIndex="0" linenr="48" column="8" str="("/>
+    <tok fileIndex="0" linenr="48" column="9" str="INS_COMPRESSED"/>
+    <tok fileIndex="0" linenr="48" column="23" str="("/>
+    <tok fileIndex="0" linenr="48" column="24" str="ins"/>
+    <tok fileIndex="0" linenr="48" column="27" str=")"/>
+    <tok fileIndex="0" linenr="48" column="28" str=")"/>
+    <tok fileIndex="0" linenr="48" column="30" str="{"/>
+    <tok fileIndex="0" linenr="49" column="9" str="if"/>
+    <tok fileIndex="0" linenr="49" column="12" str="("/>
+    <tok fileIndex="0" linenr="49" column="13" str="INS_C_OPCODE"/>
+    <tok fileIndex="0" linenr="49" column="25" str="("/>
+    <tok fileIndex="0" linenr="49" column="26" str="ins"/>
+    <tok fileIndex="0" linenr="49" column="29" str=")"/>
+    <tok fileIndex="0" linenr="49" column="31" str="!="/>
+    <tok fileIndex="0" linenr="49" column="34" str="MATCH_C_LOAD"/>
+    <tok fileIndex="0" linenr="49" column="47" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="50" column="13" str="INS_C_OPCODE"/>
+    <tok fileIndex="0" linenr="50" column="25" str="("/>
+    <tok fileIndex="0" linenr="50" column="26" str="ins"/>
+    <tok fileIndex="0" linenr="50" column="29" str=")"/>
+    <tok fileIndex="0" linenr="50" column="31" str="!="/>
+    <tok fileIndex="0" linenr="50" column="34" str="MATCH_C_STORE"/>
+    <tok fileIndex="0" linenr="50" column="47" str=")"/>
+    <tok fileIndex="0" linenr="50" column="49" str="{"/>
+    <tok fileIndex="0" linenr="51" column="13" str="return"/>
+    <tok fileIndex="0" linenr="51" column="20" str="-"/>
+    <tok fileIndex="0" linenr="51" column="21" str="1"/>
+    <tok fileIndex="0" linenr="51" column="22" str=";"/>
+    <tok fileIndex="0" linenr="52" column="9" str="}"/>
+    <tok fileIndex="0" linenr="54" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="54" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="54" column="15" str="width"/>
+    <tok fileIndex="0" linenr="54" column="21" str="="/>
+    <tok fileIndex="0" linenr="54" column="23" str="4"/>
+    <tok fileIndex="0" linenr="54" column="24" str=";"/>
+    <tok fileIndex="0" linenr="55" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="55" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="55" column="15" str="reg_width"/>
+    <tok fileIndex="0" linenr="55" column="25" str="="/>
+    <tok fileIndex="0" linenr="55" column="27" str="REGLEN"/>
+    <tok fileIndex="0" linenr="55" column="33" str=";"/>
+    <tok fileIndex="0" linenr="56" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="56" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="56" column="15" str="write"/>
+    <tok fileIndex="0" linenr="56" column="21" str="="/>
+    <tok fileIndex="0" linenr="56" column="23" str="("/>
+    <tok fileIndex="0" linenr="56" column="24" str="INS_C_OPCODE"/>
+    <tok fileIndex="0" linenr="56" column="36" str="("/>
+    <tok fileIndex="0" linenr="56" column="37" str="ins"/>
+    <tok fileIndex="0" linenr="56" column="40" str=")"/>
+    <tok fileIndex="0" linenr="56" column="42" str="=="/>
+    <tok fileIndex="0" linenr="56" column="45" str="MATCH_C_STORE"/>
+    <tok fileIndex="0" linenr="56" column="58" str=")"/>
+    <tok fileIndex="0" linenr="56" column="59" str=";"/>
+    <tok fileIndex="0" linenr="57" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="57" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="57" column="15" str="reg"/>
+    <tok fileIndex="0" linenr="57" column="19" str="="/>
+    <tok fileIndex="0" linenr="57" column="21" str="INS_C_RD_RS2"/>
+    <tok fileIndex="0" linenr="57" column="33" str="("/>
+    <tok fileIndex="0" linenr="57" column="34" str="ins"/>
+    <tok fileIndex="0" linenr="57" column="37" str=")"/>
+    <tok fileIndex="0" linenr="57" column="39" str="+"/>
+    <tok fileIndex="0" linenr="57" column="41" str="8"/>
+    <tok fileIndex="0" linenr="57" column="42" str=";"/>
+    <tok fileIndex="0" linenr="58" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="58" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="58" column="15" str="sign_ext"/>
+    <tok fileIndex="0" linenr="58" column="24" str="="/>
+    <tok fileIndex="0" linenr="58" column="26" str="true"/>
+    <tok fileIndex="0" linenr="58" column="30" str=";"/>
+    <tok fileIndex="0" linenr="59" column="5" str="}"/>
+    <tok fileIndex="0" linenr="59" column="7" str="else"/>
+    <tok fileIndex="0" linenr="59" column="12" str="{"/>
+    <tok fileIndex="0" linenr="60" column="9" str="if"/>
+    <tok fileIndex="0" linenr="60" column="12" str="("/>
+    <tok fileIndex="0" linenr="60" column="13" str="INS_OPCODE"/>
+    <tok fileIndex="0" linenr="60" column="23" str="("/>
+    <tok fileIndex="0" linenr="60" column="24" str="ins"/>
+    <tok fileIndex="0" linenr="60" column="27" str=")"/>
+    <tok fileIndex="0" linenr="60" column="29" str="!="/>
+    <tok fileIndex="0" linenr="60" column="32" str="MATCH_LOAD"/>
+    <tok fileIndex="0" linenr="60" column="43" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="60" column="46" str="INS_OPCODE"/>
+    <tok fileIndex="0" linenr="60" column="56" str="("/>
+    <tok fileIndex="0" linenr="60" column="57" str="ins"/>
+    <tok fileIndex="0" linenr="60" column="60" str=")"/>
+    <tok fileIndex="0" linenr="60" column="62" str="!="/>
+    <tok fileIndex="0" linenr="60" column="65" str="MATCH_STORE"/>
+    <tok fileIndex="0" linenr="60" column="76" str=")"/>
+    <tok fileIndex="0" linenr="60" column="78" str="{"/>
+    <tok fileIndex="0" linenr="61" column="13" str="return"/>
+    <tok fileIndex="0" linenr="61" column="20" str="-"/>
+    <tok fileIndex="0" linenr="61" column="21" str="1"/>
+    <tok fileIndex="0" linenr="61" column="22" str=";"/>
+    <tok fileIndex="0" linenr="62" column="9" str="}"/>
+    <tok fileIndex="0" linenr="64" column="9" str="int"/>
+    <tok fileIndex="0" linenr="64" column="13" str="funct3"/>
+    <tok fileIndex="0" linenr="64" column="20" str="="/>
+    <tok fileIndex="0" linenr="64" column="22" str="INS_FUNCT3"/>
+    <tok fileIndex="0" linenr="64" column="32" str="("/>
+    <tok fileIndex="0" linenr="64" column="33" str="ins"/>
+    <tok fileIndex="0" linenr="64" column="36" str=")"/>
+    <tok fileIndex="0" linenr="64" column="37" str=";"/>
+    <tok fileIndex="0" linenr="65" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="65" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="65" column="15" str="width"/>
+    <tok fileIndex="0" linenr="65" column="21" str="="/>
+    <tok fileIndex="0" linenr="65" column="23" str="("/>
+    <tok fileIndex="0" linenr="65" column="24" str="funct3"/>
+    <tok fileIndex="0" linenr="65" column="31" str="&amp;"/>
+    <tok fileIndex="0" linenr="65" column="33" str="3"/>
+    <tok fileIndex="0" linenr="65" column="34" str=")"/>
+    <tok fileIndex="0" linenr="65" column="36" str="=="/>
+    <tok fileIndex="0" linenr="65" column="39" str="0"/>
+    <tok fileIndex="0" linenr="65" column="43" str="?"/>
+    <tok fileIndex="0" linenr="65" column="45" str="1"/>
+    <tok fileIndex="0" linenr="66" column="23" str=":"/>
+    <tok fileIndex="0" linenr="66" column="25" str="("/>
+    <tok fileIndex="0" linenr="66" column="26" str="funct3"/>
+    <tok fileIndex="0" linenr="66" column="33" str="&amp;"/>
+    <tok fileIndex="0" linenr="66" column="35" str="3"/>
+    <tok fileIndex="0" linenr="66" column="36" str=")"/>
+    <tok fileIndex="0" linenr="66" column="38" str="=="/>
+    <tok fileIndex="0" linenr="66" column="41" str="1"/>
+    <tok fileIndex="0" linenr="66" column="43" str="?"/>
+    <tok fileIndex="0" linenr="66" column="45" str="2"/>
+    <tok fileIndex="0" linenr="67" column="23" str=":"/>
+    <tok fileIndex="0" linenr="67" column="25" str="("/>
+    <tok fileIndex="0" linenr="67" column="26" str="funct3"/>
+    <tok fileIndex="0" linenr="67" column="33" str="&amp;"/>
+    <tok fileIndex="0" linenr="67" column="35" str="3"/>
+    <tok fileIndex="0" linenr="67" column="36" str=")"/>
+    <tok fileIndex="0" linenr="67" column="38" str="=="/>
+    <tok fileIndex="0" linenr="67" column="41" str="2"/>
+    <tok fileIndex="0" linenr="67" column="43" str="?"/>
+    <tok fileIndex="0" linenr="67" column="45" str="4"/>
+    <tok fileIndex="0" linenr="68" column="43" str=":"/>
+    <tok fileIndex="0" linenr="68" column="45" str="8"/>
+    <tok fileIndex="0" linenr="68" column="46" str=";"/>
+    <tok fileIndex="0" linenr="69" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="69" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="69" column="15" str="reg_width"/>
+    <tok fileIndex="0" linenr="69" column="25" str="="/>
+    <tok fileIndex="0" linenr="69" column="27" str="REGLEN"/>
+    <tok fileIndex="0" linenr="69" column="33" str=";"/>
+    <tok fileIndex="0" linenr="70" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="70" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="70" column="15" str="write"/>
+    <tok fileIndex="0" linenr="70" column="21" str="="/>
+    <tok fileIndex="0" linenr="70" column="23" str="("/>
+    <tok fileIndex="0" linenr="70" column="24" str="INS_OPCODE"/>
+    <tok fileIndex="0" linenr="70" column="34" str="("/>
+    <tok fileIndex="0" linenr="70" column="35" str="ins"/>
+    <tok fileIndex="0" linenr="70" column="38" str=")"/>
+    <tok fileIndex="0" linenr="70" column="40" str="=="/>
+    <tok fileIndex="0" linenr="70" column="43" str="MATCH_STORE"/>
+    <tok fileIndex="0" linenr="70" column="54" str=")"/>
+    <tok fileIndex="0" linenr="70" column="55" str=";"/>
+    <tok fileIndex="0" linenr="71" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="71" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="71" column="15" str="reg"/>
+    <tok fileIndex="0" linenr="71" column="19" str="="/>
+    <tok fileIndex="0" linenr="71" column="21" str="emul"/>
+    <tok fileIndex="0" linenr="71" column="25" str="-&gt;"/>
+    <tok fileIndex="0" linenr="71" column="27" str="write"/>
+    <tok fileIndex="0" linenr="71" column="33" str="?"/>
+    <tok fileIndex="0" linenr="71" column="35" str="INS_RS2"/>
+    <tok fileIndex="0" linenr="71" column="42" str="("/>
+    <tok fileIndex="0" linenr="71" column="43" str="ins"/>
+    <tok fileIndex="0" linenr="71" column="46" str=")"/>
+    <tok fileIndex="0" linenr="71" column="48" str=":"/>
+    <tok fileIndex="0" linenr="71" column="50" str="INS_RD"/>
+    <tok fileIndex="0" linenr="71" column="56" str="("/>
+    <tok fileIndex="0" linenr="71" column="57" str="ins"/>
+    <tok fileIndex="0" linenr="71" column="60" str=")"/>
+    <tok fileIndex="0" linenr="71" column="61" str=";"/>
+    <tok fileIndex="0" linenr="72" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="72" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="72" column="15" str="sign_ext"/>
+    <tok fileIndex="0" linenr="72" column="24" str="="/>
+    <tok fileIndex="0" linenr="72" column="26" str="!"/>
+    <tok fileIndex="0" linenr="72" column="27" str="("/>
+    <tok fileIndex="0" linenr="72" column="28" str="funct3"/>
+    <tok fileIndex="0" linenr="72" column="35" str="&amp;"/>
+    <tok fileIndex="0" linenr="72" column="37" str="0x4"/>
+    <tok fileIndex="0" linenr="72" column="40" str=")"/>
+    <tok fileIndex="0" linenr="72" column="41" str=";"/>
+    <tok fileIndex="0" linenr="73" column="5" str="}"/>
+    <tok fileIndex="0" linenr="75" column="5" str="return"/>
+    <tok fileIndex="0" linenr="75" column="12" str="0"/>
+    <tok fileIndex="0" linenr="75" column="13" str=";"/>
+    <tok fileIndex="0" linenr="76" column="1" str="}"/>
+    <tok fileIndex="0" linenr="78" column="1" str="size_t"/>
+    <tok fileIndex="0" linenr="78" column="8" str="guest_page_fault_handler"/>
+    <tok fileIndex="0" linenr="78" column="32" str="("/>
+    <tok fileIndex="0" linenr="78" column="33" str=")"/>
+    <tok fileIndex="0" linenr="79" column="1" str="{"/>
+    <tok fileIndex="0" linenr="80" column="5" str="/**x     * If this was caused by an hypervisor access using hlv instructions,x     * just mark it as such, and return.x     * TODO: should we proceed with emulation even if this is a hypervisorx     * access?x     */"/>
+    <tok fileIndex="0" linenr="86" column="5" str="if"/>
+    <tok fileIndex="0" linenr="86" column="8" str="("/>
+    <tok fileIndex="0" linenr="86" column="9" str="!"/>
+    <tok fileIndex="0" linenr="86" column="10" str="("/>
+    <tok fileIndex="0" linenr="86" column="11" str="CSRR"/>
+    <tok fileIndex="0" linenr="86" column="15" str="("/>
+    <tok fileIndex="0" linenr="86" column="16" str="CSR_HSTATUS"/>
+    <tok fileIndex="0" linenr="86" column="27" str=")"/>
+    <tok fileIndex="0" linenr="86" column="29" str="&amp;"/>
+    <tok fileIndex="0" linenr="86" column="31" str="HSTATUS_SPV"/>
+    <tok fileIndex="0" linenr="86" column="42" str=")"/>
+    <tok fileIndex="0" linenr="86" column="43" str=")"/>
+    <tok fileIndex="0" linenr="86" column="45" str="{"/>
+    <tok fileIndex="0" linenr="87" column="9" str="cpu"/>
+    <tok fileIndex="0" linenr="87" column="12" str="."/>
+    <tok fileIndex="0" linenr="87" column="13" str="arch"/>
+    <tok fileIndex="0" linenr="87" column="17" str="."/>
+    <tok fileIndex="0" linenr="87" column="18" str="hlv_except"/>
+    <tok fileIndex="0" linenr="87" column="29" str="="/>
+    <tok fileIndex="0" linenr="87" column="31" str="true"/>
+    <tok fileIndex="0" linenr="87" column="35" str=";"/>
+    <tok fileIndex="0" linenr="88" column="9" str="return"/>
+    <tok fileIndex="0" linenr="88" column="16" str="4"/>
+    <tok fileIndex="0" linenr="88" column="17" str=";"/>
+    <tok fileIndex="0" linenr="89" column="5" str="}"/>
+    <tok fileIndex="0" linenr="91" column="5" str="uintptr_t"/>
+    <tok fileIndex="0" linenr="91" column="15" str="addr"/>
+    <tok fileIndex="0" linenr="91" column="20" str="="/>
+    <tok fileIndex="0" linenr="91" column="22" str="CSRR"/>
+    <tok fileIndex="0" linenr="91" column="26" str="("/>
+    <tok fileIndex="0" linenr="91" column="27" str="CSR_HTVAL"/>
+    <tok fileIndex="0" linenr="91" column="36" str=")"/>
+    <tok fileIndex="0" linenr="91" column="38" str="&lt;&lt;"/>
+    <tok fileIndex="0" linenr="91" column="41" str="2"/>
+    <tok fileIndex="0" linenr="91" column="42" str=";"/>
+    <tok fileIndex="0" linenr="93" column="5" str="emul_handler_t"/>
+    <tok fileIndex="0" linenr="93" column="20" str="handler"/>
+    <tok fileIndex="0" linenr="93" column="28" str="="/>
+    <tok fileIndex="0" linenr="93" column="30" str="vm_emul_get_mem"/>
+    <tok fileIndex="0" linenr="93" column="45" str="("/>
+    <tok fileIndex="0" linenr="93" column="46" str="cpu"/>
+    <tok fileIndex="0" linenr="93" column="49" str="."/>
+    <tok fileIndex="0" linenr="93" column="50" str="vcpu"/>
+    <tok fileIndex="0" linenr="93" column="54" str="-&gt;"/>
+    <tok fileIndex="0" linenr="93" column="56" str="vm"/>
+    <tok fileIndex="0" linenr="93" column="58" str=","/>
+    <tok fileIndex="0" linenr="93" column="60" str="addr"/>
+    <tok fileIndex="0" linenr="93" column="64" str=")"/>
+    <tok fileIndex="0" linenr="93" column="65" str=";"/>
+    <tok fileIndex="0" linenr="94" column="5" str="if"/>
+    <tok fileIndex="0" linenr="94" column="8" str="("/>
+    <tok fileIndex="0" linenr="94" column="9" str="handler"/>
+    <tok fileIndex="0" linenr="94" column="17" str="!="/>
+    <tok fileIndex="0" linenr="94" column="20" str="NULL"/>
+    <tok fileIndex="0" linenr="94" column="24" str=")"/>
+    <tok fileIndex="0" linenr="94" column="26" str="{"/>
+    <tok fileIndex="0" linenr="95" column="9" str="uintptr_t"/>
+    <tok fileIndex="0" linenr="95" column="19" str="ins_addr"/>
+    <tok fileIndex="0" linenr="95" column="28" str="="/>
+    <tok fileIndex="0" linenr="95" column="30" str="CSRR"/>
+    <tok fileIndex="0" linenr="95" column="34" str="("/>
+    <tok fileIndex="0" linenr="95" column="35" str="sepc"/>
+    <tok fileIndex="0" linenr="95" column="39" str=")"/>
+    <tok fileIndex="0" linenr="95" column="40" str=";"/>
+    <tok fileIndex="0" linenr="96" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="96" column="18" str="long"/>
+    <tok fileIndex="0" linenr="96" column="23" str="ins"/>
+    <tok fileIndex="0" linenr="96" column="27" str="="/>
+    <tok fileIndex="0" linenr="96" column="29" str="read_ins"/>
+    <tok fileIndex="0" linenr="96" column="37" str="("/>
+    <tok fileIndex="0" linenr="96" column="38" str="ins_addr"/>
+    <tok fileIndex="0" linenr="96" column="46" str=")"/>
+    <tok fileIndex="0" linenr="96" column="47" str=";"/>
+    <tok fileIndex="0" linenr="98" column="9" str="emul_access_t"/>
+    <tok fileIndex="0" linenr="98" column="23" str="emul"/>
+    <tok fileIndex="0" linenr="98" column="27" str=";"/>
+    <tok fileIndex="0" linenr="99" column="9" str="if"/>
+    <tok fileIndex="0" linenr="99" column="12" str="("/>
+    <tok fileIndex="0" linenr="99" column="13" str="ins_ldst_decode"/>
+    <tok fileIndex="0" linenr="99" column="28" str="("/>
+    <tok fileIndex="0" linenr="99" column="29" str="ins"/>
+    <tok fileIndex="0" linenr="99" column="32" str=","/>
+    <tok fileIndex="0" linenr="99" column="34" str="&amp;"/>
+    <tok fileIndex="0" linenr="99" column="35" str="emul"/>
+    <tok fileIndex="0" linenr="99" column="39" str=")"/>
+    <tok fileIndex="0" linenr="99" column="41" str="&lt;"/>
+    <tok fileIndex="0" linenr="99" column="43" str="0"/>
+    <tok fileIndex="0" linenr="99" column="44" str=")"/>
+    <tok fileIndex="0" linenr="99" column="46" str="{"/>
+    <tok fileIndex="0" linenr="100" column="13" str="ERROR"/>
+    <tok fileIndex="0" linenr="100" column="18" str="("/>
+    <tok fileIndex="0" linenr="100" column="19" str="&quot;cant decode ld/st instruction&quot;"/>
+    <tok fileIndex="0" linenr="100" column="50" str=")"/>
+    <tok fileIndex="0" linenr="100" column="51" str=";"/>
+    <tok fileIndex="0" linenr="101" column="9" str="}"/>
+    <tok fileIndex="0" linenr="102" column="9" str="emul"/>
+    <tok fileIndex="0" linenr="102" column="13" str="."/>
+    <tok fileIndex="0" linenr="102" column="14" str="addr"/>
+    <tok fileIndex="0" linenr="102" column="19" str="="/>
+    <tok fileIndex="0" linenr="102" column="21" str="addr"/>
+    <tok fileIndex="0" linenr="102" column="25" str=";"/>
+    <tok fileIndex="0" linenr="104" column="9" str="/**x         * TODO: check if the access is aligned.x         * If not, inject an exception in the vm.x         */"/>
+    <tok fileIndex="0" linenr="109" column="9" str="if"/>
+    <tok fileIndex="0" linenr="109" column="12" str="("/>
+    <tok fileIndex="0" linenr="109" column="13" str="handler"/>
+    <tok fileIndex="0" linenr="109" column="20" str="("/>
+    <tok fileIndex="0" linenr="109" column="21" str="&amp;"/>
+    <tok fileIndex="0" linenr="109" column="22" str="emul"/>
+    <tok fileIndex="0" linenr="109" column="26" str=")"/>
+    <tok fileIndex="0" linenr="109" column="27" str=")"/>
+    <tok fileIndex="0" linenr="109" column="29" str="{"/>
+    <tok fileIndex="0" linenr="110" column="13" str="return"/>
+    <tok fileIndex="0" linenr="110" column="20" str="INS_SIZE"/>
+    <tok fileIndex="0" linenr="110" column="28" str="("/>
+    <tok fileIndex="0" linenr="110" column="29" str="ins"/>
+    <tok fileIndex="0" linenr="110" column="32" str=")"/>
+    <tok fileIndex="0" linenr="110" column="33" str=";"/>
+    <tok fileIndex="0" linenr="111" column="9" str="}"/>
+    <tok fileIndex="0" linenr="111" column="11" str="else"/>
+    <tok fileIndex="0" linenr="111" column="16" str="{"/>
+    <tok fileIndex="0" linenr="112" column="13" str="ERROR"/>
+    <tok fileIndex="0" linenr="112" column="18" str="("/>
+    <tok fileIndex="0" linenr="112" column="19" str="&quot;emulation handler failed (0x%x at 0x%x)&quot;"/>
+    <tok fileIndex="0" linenr="112" column="60" str=","/>
+    <tok fileIndex="0" linenr="112" column="62" str="addr"/>
+    <tok fileIndex="0" linenr="112" column="66" str=","/>
+    <tok fileIndex="0" linenr="112" column="68" str="CSRR"/>
+    <tok fileIndex="0" linenr="112" column="72" str="("/>
+    <tok fileIndex="0" linenr="112" column="73" str="sepc"/>
+    <tok fileIndex="0" linenr="112" column="77" str=")"/>
+    <tok fileIndex="0" linenr="112" column="78" str=")"/>
+    <tok fileIndex="0" linenr="112" column="79" str=";"/>
+    <tok fileIndex="0" linenr="113" column="9" str="}"/>
+    <tok fileIndex="0" linenr="114" column="5" str="}"/>
+    <tok fileIndex="0" linenr="114" column="7" str="else"/>
+    <tok fileIndex="0" linenr="114" column="12" str="{"/>
+    <tok fileIndex="0" linenr="115" column="9" str="ERROR"/>
+    <tok fileIndex="0" linenr="115" column="14" str="("/>
+    <tok fileIndex="0" linenr="115" column="15" str="&quot;no emulation handler for abort(0x%x at 0x%x)&quot;"/>
+    <tok fileIndex="0" linenr="115" column="61" str=","/>
+    <tok fileIndex="0" linenr="115" column="63" str="addr"/>
+    <tok fileIndex="0" linenr="115" column="67" str=","/>
+    <tok fileIndex="0" linenr="115" column="69" str="CSRR"/>
+    <tok fileIndex="0" linenr="115" column="73" str="("/>
+    <tok fileIndex="0" linenr="115" column="74" str="sepc"/>
+    <tok fileIndex="0" linenr="115" column="78" str=")"/>
+    <tok fileIndex="0" linenr="115" column="79" str=")"/>
+    <tok fileIndex="0" linenr="115" column="80" str=";"/>
+    <tok fileIndex="0" linenr="116" column="5" str="}"/>
+    <tok fileIndex="0" linenr="117" column="1" str="}"/>
+    <tok fileIndex="0" linenr="119" column="1" str="sync_handler_t"/>
+    <tok fileIndex="0" linenr="119" column="16" str="sync_handler_table"/>
+    <tok fileIndex="0" linenr="119" column="34" str="["/>
+    <tok fileIndex="0" linenr="119" column="35" str="]"/>
+    <tok fileIndex="0" linenr="119" column="37" str="="/>
+    <tok fileIndex="0" linenr="119" column="39" str="{"/>
+    <tok fileIndex="0" linenr="120" column="5" str="["/>
+    <tok fileIndex="0" linenr="120" column="6" str="SCAUSE_CODE_ECV"/>
+    <tok fileIndex="0" linenr="120" column="21" str="]"/>
+    <tok fileIndex="0" linenr="120" column="23" str="="/>
+    <tok fileIndex="0" linenr="120" column="25" str="sbi_vs_handler"/>
+    <tok fileIndex="0" linenr="120" column="39" str=","/>
+    <tok fileIndex="0" linenr="121" column="5" str="["/>
+    <tok fileIndex="0" linenr="121" column="6" str="SCAUSE_CODE_LGPF"/>
+    <tok fileIndex="0" linenr="121" column="22" str="]"/>
+    <tok fileIndex="0" linenr="121" column="24" str="="/>
+    <tok fileIndex="0" linenr="121" column="26" str="guest_page_fault_handler"/>
+    <tok fileIndex="0" linenr="121" column="50" str=","/>
+    <tok fileIndex="0" linenr="122" column="5" str="["/>
+    <tok fileIndex="0" linenr="122" column="6" str="SCAUSE_CODE_SGPF"/>
+    <tok fileIndex="0" linenr="122" column="22" str="]"/>
+    <tok fileIndex="0" linenr="122" column="24" str="="/>
+    <tok fileIndex="0" linenr="122" column="26" str="guest_page_fault_handler"/>
+    <tok fileIndex="0" linenr="122" column="50" str=","/>
+    <tok fileIndex="0" linenr="123" column="1" str="}"/>
+    <tok fileIndex="0" linenr="123" column="2" str=";"/>
+    <tok fileIndex="0" linenr="125" column="1" str="static"/>
+    <tok fileIndex="0" linenr="125" column="8" str="const"/>
+    <tok fileIndex="0" linenr="125" column="14" str="size_t"/>
+    <tok fileIndex="0" linenr="125" column="21" str="sync_handler_table_size"/>
+    <tok fileIndex="0" linenr="125" column="45" str="="/>
+    <tok fileIndex="0" linenr="126" column="5" str="sizeof"/>
+    <tok fileIndex="0" linenr="126" column="11" str="("/>
+    <tok fileIndex="0" linenr="126" column="12" str="sync_handler_table"/>
+    <tok fileIndex="0" linenr="126" column="30" str=")"/>
+    <tok fileIndex="0" linenr="126" column="32" str="/"/>
+    <tok fileIndex="0" linenr="126" column="34" str="sizeof"/>
+    <tok fileIndex="0" linenr="126" column="40" str="("/>
+    <tok fileIndex="0" linenr="126" column="41" str="sync_handler_t"/>
+    <tok fileIndex="0" linenr="126" column="55" str=")"/>
+    <tok fileIndex="0" linenr="126" column="56" str=";"/>
+    <tok fileIndex="0" linenr="128" column="1" str="void"/>
+    <tok fileIndex="0" linenr="128" column="6" str="sync_exception_handler"/>
+    <tok fileIndex="0" linenr="128" column="28" str="("/>
+    <tok fileIndex="0" linenr="128" column="29" str=")"/>
+    <tok fileIndex="0" linenr="129" column="1" str="{"/>
+    <tok fileIndex="0" linenr="130" column="5" str="size_t"/>
+    <tok fileIndex="0" linenr="130" column="12" str="pc_step"/>
+    <tok fileIndex="0" linenr="130" column="20" str="="/>
+    <tok fileIndex="0" linenr="130" column="22" str="0"/>
+    <tok fileIndex="0" linenr="130" column="23" str=";"/>
+    <tok fileIndex="0" linenr="131" column="5" str="unsigned"/>
+    <tok fileIndex="0" linenr="131" column="14" str="long"/>
+    <tok fileIndex="0" linenr="131" column="19" str="_scause"/>
+    <tok fileIndex="0" linenr="131" column="27" str="="/>
+    <tok fileIndex="0" linenr="131" column="29" str="CSRR"/>
+    <tok fileIndex="0" linenr="131" column="33" str="("/>
+    <tok fileIndex="0" linenr="131" column="34" str="scause"/>
+    <tok fileIndex="0" linenr="131" column="40" str=")"/>
+    <tok fileIndex="0" linenr="131" column="41" str=";"/>
+    <tok fileIndex="0" linenr="133" column="5" str="// TODO: Do we need to check call comes from VS-mode and not VU-mode"/>
+    <tok fileIndex="0" linenr="134" column="5" str="// or U-mode ?"/>
+    <tok fileIndex="0" linenr="136" column="5" str="if"/>
+    <tok fileIndex="0" linenr="136" column="8" str="("/>
+    <tok fileIndex="0" linenr="136" column="9" str="_scause"/>
+    <tok fileIndex="0" linenr="136" column="17" str="&lt;"/>
+    <tok fileIndex="0" linenr="136" column="19" str="sync_handler_table_size"/>
+    <tok fileIndex="0" linenr="136" column="43" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="136" column="46" str="sync_handler_table"/>
+    <tok fileIndex="0" linenr="136" column="64" str="["/>
+    <tok fileIndex="0" linenr="136" column="65" str="_scause"/>
+    <tok fileIndex="0" linenr="136" column="72" str="]"/>
+    <tok fileIndex="0" linenr="136" column="73" str=")"/>
+    <tok fileIndex="0" linenr="136" column="75" str="{"/>
+    <tok fileIndex="0" linenr="137" column="9" str="pc_step"/>
+    <tok fileIndex="0" linenr="137" column="17" str="="/>
+    <tok fileIndex="0" linenr="137" column="19" str="sync_handler_table"/>
+    <tok fileIndex="0" linenr="137" column="37" str="["/>
+    <tok fileIndex="0" linenr="137" column="38" str="_scause"/>
+    <tok fileIndex="0" linenr="137" column="45" str="]"/>
+    <tok fileIndex="0" linenr="137" column="46" str="("/>
+    <tok fileIndex="0" linenr="137" column="47" str=")"/>
+    <tok fileIndex="0" linenr="137" column="48" str=";"/>
+    <tok fileIndex="0" linenr="138" column="5" str="}"/>
+    <tok fileIndex="0" linenr="138" column="7" str="else"/>
+    <tok fileIndex="0" linenr="138" column="12" str="{"/>
+    <tok fileIndex="0" linenr="139" column="9" str="ERROR"/>
+    <tok fileIndex="0" linenr="139" column="14" str="("/>
+    <tok fileIndex="0" linenr="139" column="15" str="&quot;unkown synchronous exception (%d)&quot;"/>
+    <tok fileIndex="0" linenr="139" column="50" str=","/>
+    <tok fileIndex="0" linenr="139" column="52" str="_scause"/>
+    <tok fileIndex="0" linenr="139" column="59" str=")"/>
+    <tok fileIndex="0" linenr="139" column="60" str=";"/>
+    <tok fileIndex="0" linenr="140" column="5" str="}"/>
+    <tok fileIndex="0" linenr="142" column="5" str="cpu"/>
+    <tok fileIndex="0" linenr="142" column="8" str="."/>
+    <tok fileIndex="0" linenr="142" column="9" str="vcpu"/>
+    <tok fileIndex="0" linenr="142" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="142" column="15" str="regs"/>
+    <tok fileIndex="0" linenr="142" column="19" str="-&gt;"/>
+    <tok fileIndex="0" linenr="142" column="21" str="sepc"/>
+    <tok fileIndex="0" linenr="142" column="26" str="+="/>
+    <tok fileIndex="0" linenr="142" column="29" str="pc_step"/>
+    <tok fileIndex="0" linenr="142" column="36" str=";"/>
+    <tok fileIndex="0" linenr="143" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/arch/riscv/sync_exceptions.c" linenr="16" str="#include &lt;bao.h&gt;"/>
+    <directive file="src/arch/riscv/sync_exceptions.c" linenr="17" str="#include &lt;cpu.h&gt;"/>
+    <directive file="src/arch/riscv/sync_exceptions.c" linenr="18" str="#include &lt;vm.h&gt;"/>
+    <directive file="src/arch/riscv/sync_exceptions.c" linenr="19" str="#include &lt;arch/encoding.h&gt;"/>
+    <directive file="src/arch/riscv/sync_exceptions.c" linenr="20" str="#include &lt;arch/csrs.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aac77a90" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="1" str="static" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac77000" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="17" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true"/>
+    <token id="0x55c5ab0a1e00" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="22" str="read_ins" scope="0x55c5aac785a0" type="name" function="0x55c5ab0b0ec0" astParent="0x55c5aad4ee80"/>
+    <token id="0x55c5aad4ee80" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="30" str="(" scope="0x55c5aac785a0" link="0x55c5aad28760" astOperand1="0x55c5ab0a1e00" astOperand2="0x55c5aad24280" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca1c60" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="31" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" originalName="uintptr_t"/>
+    <token id="0x55c5aad24280" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="41" str="ins_addr" scope="0x55c5aac785a0" type="name" varId="1" variable="0x55c5ab070810" astParent="0x55c5aad4ee80" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad28760" file="src/arch/riscv/sync_exceptions.c" linenr="22" column="49" str=")" scope="0x55c5aac785a0" link="0x55c5aad4ee80"/>
+    <token id="0x55c5aad48d80" file="src/arch/riscv/sync_exceptions.c" linenr="23" column="1" str="{" scope="0x55c5aac783b0" link="0x55c5aac6e070"/>
+    <token id="0x55c5aafab4e0" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="14" str="long" scope="0x55c5aac783b0" type="name" isUnsigned="true"/>
+    <token id="0x55c5ab0aaa30" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="19" str="ins" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aafabd00" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aae55790" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="23" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac5baf0" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="19" str="ins" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aafabd00" astParent="0x55c5ab0aeac0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0aeac0" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="23" str="=" scope="0x55c5aac783b0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac5baf0" astOperand2="0x55c5aac74a60" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac74a60" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="25" str="0" scope="0x55c5aac783b0" type="number" isInt="True" values="0x55c5aaf88420" astParent="0x55c5ab0aeac0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace0120" file="src/arch/riscv/sync_exceptions.c" linenr="24" column="26" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aacdf3c0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="5" str="bool" scope="0x55c5aac783b0" type="name"/>
+    <token id="0x55c5aac5e950" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="10" str="succ" scope="0x55c5aac783b0" type="name" varId="3" variable="0x55c5aafac9e0" valueType-type="bool"/>
+    <token id="0x55c5aace0af0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="15" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5ab0ab9c0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="10" str="succ" scope="0x55c5aac783b0" type="name" varId="3" variable="0x55c5aafac9e0" astParent="0x55c5aacc18a0" valueType-type="bool"/>
+    <token id="0x55c5aacc18a0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="15" str="=" scope="0x55c5aac783b0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0ab9c0" astOperand2="0x55c5ab0a5c00" valueType-type="bool"/>
+    <token id="0x55c5aacba5d0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="17" str="vm_readmem" scope="0x55c5aac783b0" type="name" astParent="0x55c5ab0a5c00"/>
+    <token id="0x55c5ab0a5c00" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="27" str="(" scope="0x55c5aac783b0" link="0x55c5aacba080" values="0x55c5aaccdf70" astParent="0x55c5aacc18a0" astOperand1="0x55c5aacba5d0" astOperand2="0x55c5aace0610"/>
+    <token id="0x55c5aac76a30" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="28" str="cpu" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac76a90"/>
+    <token id="0x55c5aac76a90" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="31" str="." scope="0x55c5aac783b0" astParent="0x55c5aac79710" astOperand1="0x55c5aac76a30" astOperand2="0x55c5aac796b0"/>
+    <token id="0x55c5aac796b0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="32" str="vcpu" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac76a90"/>
+    <token id="0x55c5aac79710" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="36" str="." scope="0x55c5aac783b0" astParent="0x55c5aaca1ab0" astOperand1="0x55c5aac76a90" astOperand2="0x55c5aaca1a50" originalName="->"/>
+    <token id="0x55c5aaca1a50" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="38" str="vm" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac79710"/>
+    <token id="0x55c5aaca1ab0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="40" str="," scope="0x55c5aac783b0" astParent="0x55c5aad44f80" astOperand1="0x55c5aac79710" astOperand2="0x55c5aaca1670"/>
+    <token id="0x55c5aaca1670" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="42" str="&amp;" scope="0x55c5aac783b0" type="op" values="0x55c5aaccddd0" astParent="0x55c5aaca1ab0" astOperand1="0x55c5aaca16d0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="0x55c5aaca16d0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="43" str="ins" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aafabd00" values="0x55c5aacce020" astParent="0x55c5aaca1670" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aad44f80" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="46" str="," scope="0x55c5aac783b0" astParent="0x55c5aae55620" astOperand1="0x55c5aaca1ab0" astOperand2="0x55c5aad44fe0"/>
+    <token id="0x55c5aad44fe0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="48" str="ins_addr" scope="0x55c5aac783b0" type="name" varId="1" variable="0x55c5ab070810" astParent="0x55c5aad44f80" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aae55620" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="56" str="," scope="0x55c5aac783b0" astParent="0x55c5aace0610" astOperand1="0x55c5aad44f80" astOperand2="0x55c5aae55680"/>
+    <token id="0x55c5aae55680" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="58" str="2" scope="0x55c5aac783b0" type="number" isInt="True" values="0x55c5aad18730" astParent="0x55c5aae55620" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace0610" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="59" str="," scope="0x55c5aac783b0" astParent="0x55c5ab0a5c00" astOperand1="0x55c5aae55620" astOperand2="0x55c5aace0670"/>
+    <token id="0x55c5aace0670" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="61" str="true" scope="0x55c5aac783b0" type="name" astParent="0x55c5aace0610" valueType-type="bool"/>
+    <token id="0x55c5aacba080" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="65" str=")" scope="0x55c5aac783b0" link="0x55c5ab0a5c00"/>
+    <token id="0x55c5aacba0e0" file="src/arch/riscv/sync_exceptions.c" linenr="26" column="66" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aae55430" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="5" str="if" scope="0x55c5aac783b0" type="name" astParent="0x55c5aae55490"/>
+    <token id="0x55c5aae55490" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="8" str="(" scope="0x55c5aac783b0" link="0x55c5aacd5d10" astOperand1="0x55c5aae55430" astOperand2="0x55c5aac52fb0"/>
+    <token id="0x55c5aac52f50" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="9" str="succ" scope="0x55c5aac783b0" type="name" varId="3" variable="0x55c5aafac9e0" values="0x55c5aacce040" astParent="0x55c5aac52fb0" valueType-type="bool"/>
+    <token id="0x55c5aac52fb0" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="14" str="&amp;&amp;" scope="0x55c5aac783b0" type="op" isLogicalOp="True" astParent="0x55c5aae55490" astOperand1="0x55c5aac52f50" astOperand2="0x55c5aacd59b0" valueType-type="bool"/>
+    <token id="0x55c5aac52b70" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="17" str="(" scope="0x55c5aac783b0" link="0x55c5aacd5bf0"/>
+    <token id="0x55c5aac52bd0" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="18" str="(" scope="0x55c5aac783b0" link="0x55c5aac75890"/>
+    <token id="0x55c5ab0a5630" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="19" str="ins" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aafabd00" astParent="0x55c5ab0a5750" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0a5750" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="23" str="&amp;" scope="0x55c5aac783b0" type="op" astParent="0x55c5aacd59b0" astOperand1="0x55c5ab0a5630" astOperand2="0x55c5ab0a57b0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0a57b0" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="25" str="3" scope="0x55c5aac783b0" type="number" isInt="True" values="0x55c5ab09e850" astParent="0x55c5ab0a5750" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac75890" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="28" str=")" scope="0x55c5aac783b0" link="0x55c5aac52bd0"/>
+    <token id="0x55c5aacd59b0" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="30" str="==" scope="0x55c5aac783b0" type="op" isComparisonOp="True" astParent="0x55c5aac52fb0" astOperand1="0x55c5ab0a5750" astOperand2="0x55c5aacd5ad0" valueType-type="bool"/>
+    <token id="0x55c5aacd5ad0" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="33" str="3" scope="0x55c5aac783b0" type="number" isInt="True" values="0x55c5aac4bf40" astParent="0x55c5aacd59b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacd5bf0" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="34" str=")" scope="0x55c5aac783b0" link="0x55c5aac52b70"/>
+    <token id="0x55c5aacd5d10" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="35" str=")" scope="0x55c5aac783b0" link="0x55c5aae55490"/>
+    <token id="0x55c5aad09550" file="src/arch/riscv/sync_exceptions.c" linenr="27" column="37" str="{" scope="0x55c5aac76850" link="0x55c5aac66ba0"/>
+    <token id="0x55c5aad09670" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="9" str="succ" scope="0x55c5aac76850" type="name" varId="3" variable="0x55c5aafac9e0" astParent="0x55c5aad09790" valueType-type="bool"/>
+    <token id="0x55c5aad09790" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="14" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aad09670" astOperand2="0x55c5aad099d0" valueType-type="bool"/>
+    <token id="0x55c5aad098b0" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="16" str="vm_readmem" scope="0x55c5aac76850" type="name" astParent="0x55c5aad099d0"/>
+    <token id="0x55c5aad099d0" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="26" str="(" scope="0x55c5aac76850" link="0x55c5aae56260" astParent="0x55c5aad09790" astOperand1="0x55c5aad098b0" astOperand2="0x55c5aae56020"/>
+    <token id="0x55c5aad09af0" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="27" str="cpu" scope="0x55c5aac76850" type="name" astParent="0x55c5aad09c10"/>
+    <token id="0x55c5aad09c10" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="30" str="." scope="0x55c5aac76850" astParent="0x55c5aad09e50" astOperand1="0x55c5aad09af0" astOperand2="0x55c5aad09d30"/>
+    <token id="0x55c5aad09d30" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="31" str="vcpu" scope="0x55c5aac76850" type="name" astParent="0x55c5aad09c10"/>
+    <token id="0x55c5aad09e50" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="35" str="." scope="0x55c5aac76850" astParent="0x55c5aae55840" astOperand1="0x55c5aad09c10" astOperand2="0x55c5aad09f70" originalName="->"/>
+    <token id="0x55c5aad09f70" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="37" str="vm" scope="0x55c5aac76850" type="name" astParent="0x55c5aad09e50"/>
+    <token id="0x55c5aae55840" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="39" str="," scope="0x55c5aac76850" astParent="0x55c5aae55ba0" astOperand1="0x55c5aad09e50" astOperand2="0x55c5aae55960"/>
+    <token id="0x55c5aae55960" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="41" str="&amp;" scope="0x55c5aac76850" type="op" values="0x55c5aaccddf0" astParent="0x55c5aae55840" astOperand1="0x55c5aae55a80" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="0x55c5aae55a80" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="42" str="ins" scope="0x55c5aac76850" type="name" varId="2" variable="0x55c5aafabd00" astParent="0x55c5aae55960" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aae55ba0" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="45" str="," scope="0x55c5aac76850" astParent="0x55c5aae55de0" astOperand1="0x55c5aae55840" astOperand2="0x55c5aae55cc0"/>
+    <token id="0x55c5aae55cc0" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="47" str="ins_addr" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5ab070810" astParent="0x55c5aae55ba0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aae55de0" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="55" str="," scope="0x55c5aac76850" astParent="0x55c5aae56020" astOperand1="0x55c5aae55ba0" astOperand2="0x55c5aae55f00"/>
+    <token id="0x55c5aae55f00" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="57" str="4" scope="0x55c5aac76850" type="number" isInt="True" values="0x55c5aae56570" astParent="0x55c5aae55de0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae56020" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="58" str="," scope="0x55c5aac76850" astParent="0x55c5aad099d0" astOperand1="0x55c5aae55de0" astOperand2="0x55c5aae56140"/>
+    <token id="0x55c5aae56140" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="60" str="true" scope="0x55c5aac76850" type="name" astParent="0x55c5aae56020" valueType-type="bool"/>
+    <token id="0x55c5aae56260" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="64" str=")" scope="0x55c5aac76850" link="0x55c5aad099d0"/>
+    <token id="0x55c5aae56380" file="src/arch/riscv/sync_exceptions.c" linenr="28" column="65" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac66ba0" file="src/arch/riscv/sync_exceptions.c" linenr="29" column="5" str="}" scope="0x55c5aac76850" link="0x55c5aad09550"/>
+    <token id="0x55c5aac66cc0" file="src/arch/riscv/sync_exceptions.c" linenr="31" column="5" str="if" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac66de0"/>
+    <token id="0x55c5aac66de0" file="src/arch/riscv/sync_exceptions.c" linenr="31" column="8" str="(" scope="0x55c5aac783b0" link="0x55c5aac67140" astOperand1="0x55c5aac66cc0" astOperand2="0x55c5aac66f00"/>
+    <token id="0x55c5aac66f00" file="src/arch/riscv/sync_exceptions.c" linenr="31" column="9" str="!" scope="0x55c5aac783b0" type="op" isLogicalOp="True" values="0x55c5aacce120" astParent="0x55c5aac66de0" astOperand1="0x55c5aac67020" valueType-type="bool"/>
+    <token id="0x55c5aac67020" file="src/arch/riscv/sync_exceptions.c" linenr="31" column="10" str="succ" scope="0x55c5aac783b0" type="name" varId="3" variable="0x55c5aafac9e0" values="0x55c5aacce060" astParent="0x55c5aac66f00" valueType-type="bool"/>
+    <token id="0x55c5aac67140" file="src/arch/riscv/sync_exceptions.c" linenr="31" column="14" str=")" scope="0x55c5aac783b0" link="0x55c5aac66de0"/>
+    <token id="0x55c5aac67260" file="src/arch/riscv/sync_exceptions.c" linenr="31" column="16" str="{" scope="0x55c5aac7b730" link="0x55c5aac6dbf0"/>
+    <token id="0x55c5aac67380" file="src/arch/riscv/sync_exceptions.c" linenr="32" column="9" str="ERROR" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac674a0"/>
+    <token id="0x55c5aac674a0" file="src/arch/riscv/sync_exceptions.c" linenr="32" column="14" str="(" scope="0x55c5aac7b730" link="0x55c5aac676e0" astOperand1="0x55c5aac67380" astOperand2="0x55c5aac675c0"/>
+    <token id="0x55c5aac675c0" file="src/arch/riscv/sync_exceptions.c" linenr="32" column="15" str="&quot;failed to read guest instruction&quot;" scope="0x55c5aac7b730" type="string" strlen="32" values="0x55c5aaccdd30" astParent="0x55c5aac674a0" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac676e0" file="src/arch/riscv/sync_exceptions.c" linenr="32" column="49" str=")" scope="0x55c5aac7b730" link="0x55c5aac674a0"/>
+    <token id="0x55c5aac67800" file="src/arch/riscv/sync_exceptions.c" linenr="32" column="50" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac6dbf0" file="src/arch/riscv/sync_exceptions.c" linenr="37" column="5" str="}" scope="0x55c5aac7b730" link="0x55c5aac67260"/>
+    <token id="0x55c5aac6dd10" file="src/arch/riscv/sync_exceptions.c" linenr="39" column="5" str="return" scope="0x55c5aac783b0" type="name" astOperand1="0x55c5aac6de30" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6de30" file="src/arch/riscv/sync_exceptions.c" linenr="39" column="12" str="ins" scope="0x55c5aac783b0" type="name" varId="2" variable="0x55c5aafabd00" astParent="0x55c5aac6dd10" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6df50" file="src/arch/riscv/sync_exceptions.c" linenr="39" column="15" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac6e070" file="src/arch/riscv/sync_exceptions.c" linenr="40" column="1" str="}" scope="0x55c5aac783b0" link="0x55c5aad48d80"/>
+    <token id="0x55c5aac5b1f0" file="src/arch/riscv/sync_exceptions.c" linenr="44" column="1" str="extern" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac5b310" file="src/arch/riscv/sync_exceptions.c" linenr="44" column="8" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aac5b430" file="src/arch/riscv/sync_exceptions.c" linenr="44" column="15" str="sbi_vs_handler" scope="0x55c5aac785a0" type="name" function="0x55c5aafac070" astParent="0x55c5aac5b550"/>
+    <token id="0x55c5aac5b550" file="src/arch/riscv/sync_exceptions.c" linenr="44" column="29" str="(" scope="0x55c5aac785a0" link="0x55c5aac5b670" astOperand1="0x55c5aac5b430" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac5b670" file="src/arch/riscv/sync_exceptions.c" linenr="44" column="30" str=")" scope="0x55c5aac785a0" link="0x55c5aac5b550"/>
+    <token id="0x55c5aac5b790" file="src/arch/riscv/sync_exceptions.c" linenr="44" column="31" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac5b8b0" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="1" str="static" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac5b9d0" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="15" str="int" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac5bc10" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="19" str="ins_ldst_decode" scope="0x55c5aac785a0" type="name" function="0x55c5aafac4b0" astParent="0x55c5aad3acf0"/>
+    <token id="0x55c5aad3acf0" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="34" str="(" scope="0x55c5aac785a0" link="0x55c5aad3b4d0" astOperand1="0x55c5aac5bc10" astOperand2="0x55c5aad3b050" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad3ae10" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="35" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" originalName="uintptr_t"/>
+    <token id="0x55c5aad3af30" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="45" str="ins" scope="0x55c5aac785a0" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aad3b050" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad3b050" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="48" str="," scope="0x55c5aac785a0" astParent="0x55c5aad3acf0" astOperand1="0x55c5aad3af30" astOperand2="0x55c5aad3b290"/>
+    <token id="0x55c5aad3b170" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="50" str="emul_access_t" scope="0x55c5aac785a0" type="name" astParent="0x55c5aad3b290"/>
+    <token id="0x55c5aad3b290" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="64" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aad3b050" astOperand1="0x55c5aad3b170" astOperand2="0x55c5aad3b3b0"/>
+    <token id="0x55c5aad3b3b0" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="65" str="emul" scope="0x55c5aac785a0" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aad3b290"/>
+    <token id="0x55c5aad3b4d0" file="src/arch/riscv/sync_exceptions.c" linenr="46" column="69" str=")" scope="0x55c5aac785a0" link="0x55c5aad3acf0"/>
+    <token id="0x55c5aad3b5f0" file="src/arch/riscv/sync_exceptions.c" linenr="47" column="1" str="{" scope="0x55c5aac781c0" link="0x55c5aac5f2f0"/>
+    <token id="0x55c5aad3b710" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="5" str="if" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad3b830"/>
+    <token id="0x55c5aad3b830" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="8" str="(" scope="0x55c5aac781c0" link="0x55c5aad10570" astOperand1="0x55c5aad3b710" astOperand2="0x55c5aad3ba70"/>
+    <token id="0x55c5aad3b950" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="9" str="INS_COMPRESSED" scope="0x55c5aac781c0" type="name" astParent="0x55c5aad3ba70"/>
+    <token id="0x55c5aad3ba70" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="23" str="(" scope="0x55c5aac781c0" link="0x55c5aad10450" astParent="0x55c5aad3b830" astOperand1="0x55c5aad3b950" astOperand2="0x55c5aad3bad0"/>
+    <token id="0x55c5aad3bad0" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="24" str="ins" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aad3ba70" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad10450" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="27" str=")" scope="0x55c5aac781c0" link="0x55c5aad3ba70"/>
+    <token id="0x55c5aad10570" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="28" str=")" scope="0x55c5aac781c0" link="0x55c5aad3b830"/>
+    <token id="0x55c5aad10690" file="src/arch/riscv/sync_exceptions.c" linenr="48" column="30" str="{" scope="0x55c5aac789a0" link="0x55c5aacb9440"/>
+    <token id="0x55c5aad107b0" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="9" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad108d0"/>
+    <token id="0x55c5aad108d0" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="12" str="(" scope="0x55c5aac789a0" link="0x55c5ab0ab660" astOperand1="0x55c5aad107b0" astOperand2="0x55c5aad110b0"/>
+    <token id="0x55c5aad109f0" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="13" str="INS_C_OPCODE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad10b10"/>
+    <token id="0x55c5aad10b10" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="25" str="(" scope="0x55c5aac789a0" link="0x55c5aad10d50" astParent="0x55c5aad10e70" astOperand1="0x55c5aad109f0" astOperand2="0x55c5aad10c30"/>
+    <token id="0x55c5aad10c30" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="26" str="ins" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aad10b10" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad10d50" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="29" str=")" scope="0x55c5aac789a0" link="0x55c5aad10b10"/>
+    <token id="0x55c5aad10e70" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="31" str="!=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aad110b0" astOperand1="0x55c5aad10b10" astOperand2="0x55c5aad10f90" valueType-type="bool"/>
+    <token id="0x55c5aad10f90" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="34" str="MATCH_C_LOAD" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad10e70"/>
+    <token id="0x55c5aad110b0" file="src/arch/riscv/sync_exceptions.c" linenr="49" column="47" str="&amp;&amp;" scope="0x55c5aac789a0" type="op" isLogicalOp="True" astParent="0x55c5aad108d0" astOperand1="0x55c5aad10e70" astOperand2="0x55c5ab0ab420" valueType-type="bool"/>
+    <token id="0x55c5ab0aafa0" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="13" str="INS_C_OPCODE" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab0ab0c0"/>
+    <token id="0x55c5ab0ab0c0" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="25" str="(" scope="0x55c5aac789a0" link="0x55c5ab0ab300" astParent="0x55c5ab0ab420" astOperand1="0x55c5ab0aafa0" astOperand2="0x55c5ab0ab1e0"/>
+    <token id="0x55c5ab0ab1e0" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="26" str="ins" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5ab0ab0c0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5ab0ab300" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="29" str=")" scope="0x55c5aac789a0" link="0x55c5ab0ab0c0"/>
+    <token id="0x55c5ab0ab420" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="31" str="!=" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aad110b0" astOperand1="0x55c5ab0ab0c0" astOperand2="0x55c5ab0ab540" valueType-type="bool"/>
+    <token id="0x55c5ab0ab540" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="34" str="MATCH_C_STORE" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab0ab420"/>
+    <token id="0x55c5ab0ab660" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="47" str=")" scope="0x55c5aac789a0" link="0x55c5aad108d0"/>
+    <token id="0x55c5ab0ab780" file="src/arch/riscv/sync_exceptions.c" linenr="50" column="49" str="{" scope="0x55c5aac75e20" link="0x55c5ab0abd20"/>
+    <token id="0x55c5ab0ab8a0" file="src/arch/riscv/sync_exceptions.c" linenr="51" column="13" str="return" scope="0x55c5aac75e20" type="name" astOperand1="0x55c5ab0abae0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0abae0" file="src/arch/riscv/sync_exceptions.c" linenr="51" column="21" str="-1" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5aac64d70" astParent="0x55c5ab0ab8a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0abc00" file="src/arch/riscv/sync_exceptions.c" linenr="51" column="22" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5ab0abd20" file="src/arch/riscv/sync_exceptions.c" linenr="52" column="9" str="}" scope="0x55c5aac75e20" link="0x55c5ab0ab780"/>
+    <token id="0x55c5aac7a340" file="src/arch/riscv/sync_exceptions.c" linenr="54" column="9" str="emul" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aac7a460"/>
+    <token id="0x55c5aac7a460" file="src/arch/riscv/sync_exceptions.c" linenr="54" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac7a6a0" astOperand1="0x55c5aac7a340" astOperand2="0x55c5aac7a580" originalName="->"/>
+    <token id="0x55c5aac7a580" file="src/arch/riscv/sync_exceptions.c" linenr="54" column="15" str="width" scope="0x55c5aac789a0" type="name" varId="6" astParent="0x55c5aac7a460"/>
+    <token id="0x55c5aac7a6a0" file="src/arch/riscv/sync_exceptions.c" linenr="54" column="21" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac7a460" astOperand2="0x55c5aac7a7c0"/>
+    <token id="0x55c5aac7a7c0" file="src/arch/riscv/sync_exceptions.c" linenr="54" column="23" str="4" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5ab0aab80" astParent="0x55c5aac7a6a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac7a8e0" file="src/arch/riscv/sync_exceptions.c" linenr="54" column="24" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac7aa00" file="src/arch/riscv/sync_exceptions.c" linenr="55" column="9" str="emul" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aac7ab20"/>
+    <token id="0x55c5aac7ab20" file="src/arch/riscv/sync_exceptions.c" linenr="55" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac7ad60" astOperand1="0x55c5aac7aa00" astOperand2="0x55c5aac7ac40" originalName="->"/>
+    <token id="0x55c5aac7ac40" file="src/arch/riscv/sync_exceptions.c" linenr="55" column="15" str="reg_width" scope="0x55c5aac789a0" type="name" varId="7" astParent="0x55c5aac7ab20"/>
+    <token id="0x55c5aac7ad60" file="src/arch/riscv/sync_exceptions.c" linenr="55" column="25" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac7ab20" astOperand2="0x55c5aac7ae80"/>
+    <token id="0x55c5aac7ae80" file="src/arch/riscv/sync_exceptions.c" linenr="55" column="27" str="REGLEN" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac7ad60"/>
+    <token id="0x55c5aac7afa0" file="src/arch/riscv/sync_exceptions.c" linenr="55" column="33" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac7b0c0" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="9" str="emul" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aac618e0"/>
+    <token id="0x55c5aac618e0" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac61b20" astOperand1="0x55c5aac7b0c0" astOperand2="0x55c5aac61a00" originalName="->"/>
+    <token id="0x55c5aac61a00" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="15" str="write" scope="0x55c5aac789a0" type="name" varId="8" astParent="0x55c5aac618e0"/>
+    <token id="0x55c5aac61b20" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="21" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac618e0" astOperand2="0x55c5aac621e0"/>
+    <token id="0x55c5aac61c40" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="24" str="INS_C_OPCODE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac61e80"/>
+    <token id="0x55c5aac61e80" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="36" str="(" scope="0x55c5aac789a0" link="0x55c5aac620c0" astParent="0x55c5aac621e0" astOperand1="0x55c5aac61c40" astOperand2="0x55c5aac61fa0"/>
+    <token id="0x55c5aac61fa0" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="37" str="ins" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aac61e80" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac620c0" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="40" str=")" scope="0x55c5aac789a0" link="0x55c5aac61e80"/>
+    <token id="0x55c5aac621e0" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="42" str="==" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aac61b20" astOperand1="0x55c5aac61e80" astOperand2="0x55c5aac62300" valueType-type="bool"/>
+    <token id="0x55c5aac62300" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="45" str="MATCH_C_STORE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac621e0"/>
+    <token id="0x55c5aac62420" file="src/arch/riscv/sync_exceptions.c" linenr="56" column="59" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac62660" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="9" str="emul" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aac626c0"/>
+    <token id="0x55c5aac626c0" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aaf6c700" astOperand1="0x55c5aac62660" astOperand2="0x55c5aaf6c5e0" originalName="->"/>
+    <token id="0x55c5aaf6c5e0" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="15" str="reg" scope="0x55c5aac789a0" type="name" varId="9" astParent="0x55c5aac626c0"/>
+    <token id="0x55c5aaf6c700" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="19" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac626c0" astOperand2="0x55c5aaf6cca0"/>
+    <token id="0x55c5aaf6c820" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="21" str="INS_C_RD_RS2" scope="0x55c5aac789a0" type="name" astParent="0x55c5aaf6c940"/>
+    <token id="0x55c5aaf6c940" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="33" str="(" scope="0x55c5aac789a0" link="0x55c5aaf6cb80" astParent="0x55c5aaf6cca0" astOperand1="0x55c5aaf6c820" astOperand2="0x55c5aaf6ca60"/>
+    <token id="0x55c5aaf6ca60" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="34" str="ins" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aaf6c940" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aaf6cb80" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="37" str=")" scope="0x55c5aac789a0" link="0x55c5aaf6c940"/>
+    <token id="0x55c5aaf6cca0" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="39" str="+" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aaf6c700" astOperand1="0x55c5aaf6c940" astOperand2="0x55c5aaf6cdc0"/>
+    <token id="0x55c5aaf6cdc0" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="41" str="8" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aafac100" astParent="0x55c5aaf6cca0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaf6cee0" file="src/arch/riscv/sync_exceptions.c" linenr="57" column="42" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aaf6d000" file="src/arch/riscv/sync_exceptions.c" linenr="58" column="9" str="emul" scope="0x55c5aac789a0" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aaf6d120"/>
+    <token id="0x55c5aaf6d120" file="src/arch/riscv/sync_exceptions.c" linenr="58" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aacb90e0" astOperand1="0x55c5aaf6d000" astOperand2="0x55c5aaf6d240" originalName="->"/>
+    <token id="0x55c5aaf6d240" file="src/arch/riscv/sync_exceptions.c" linenr="58" column="15" str="sign_ext" scope="0x55c5aac789a0" type="name" varId="10" astParent="0x55c5aaf6d120"/>
+    <token id="0x55c5aacb90e0" file="src/arch/riscv/sync_exceptions.c" linenr="58" column="24" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aaf6d120" astOperand2="0x55c5aacb9200"/>
+    <token id="0x55c5aacb9200" file="src/arch/riscv/sync_exceptions.c" linenr="58" column="26" str="true" scope="0x55c5aac789a0" type="name" astParent="0x55c5aacb90e0" valueType-type="bool"/>
+    <token id="0x55c5aacb9320" file="src/arch/riscv/sync_exceptions.c" linenr="58" column="30" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aacb9440" file="src/arch/riscv/sync_exceptions.c" linenr="59" column="5" str="}" scope="0x55c5aac789a0" link="0x55c5aad10690"/>
+    <token id="0x55c5aacb9560" file="src/arch/riscv/sync_exceptions.c" linenr="59" column="7" str="else" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aacb9680" file="src/arch/riscv/sync_exceptions.c" linenr="59" column="12" str="{" scope="0x55c5aacdac20" link="0x55c5aac5ee70"/>
+    <token id="0x55c5aacb97a0" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="9" str="if" scope="0x55c5aacdac20" type="name" astParent="0x55c5aacb98c0"/>
+    <token id="0x55c5aacb98c0" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="12" str="(" scope="0x55c5aacdac20" link="0x55c5ab0ae760" astOperand1="0x55c5aacb97a0" astOperand2="0x55c5ab0adf80"/>
+    <token id="0x55c5aacb99e0" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="13" str="INS_OPCODE" scope="0x55c5aacdac20" type="name" astParent="0x55c5aacb9b00"/>
+    <token id="0x55c5aacb9b00" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="23" str="(" scope="0x55c5aacdac20" link="0x55c5aacb9d40" astParent="0x55c5aacb9e60" astOperand1="0x55c5aacb99e0" astOperand2="0x55c5aacb9c20"/>
+    <token id="0x55c5aacb9c20" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="24" str="ins" scope="0x55c5aacdac20" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aacb9b00" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aacb9d40" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="27" str=")" scope="0x55c5aacdac20" link="0x55c5aacb9b00"/>
+    <token id="0x55c5aacb9e60" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="29" str="!=" scope="0x55c5aacdac20" type="op" isComparisonOp="True" astParent="0x55c5ab0adf80" astOperand1="0x55c5aacb9b00" astOperand2="0x55c5aacb9f80" valueType-type="bool"/>
+    <token id="0x55c5aacb9f80" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="32" str="MATCH_LOAD" scope="0x55c5aacdac20" type="name" astParent="0x55c5aacb9e60"/>
+    <token id="0x55c5ab0adf80" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="43" str="&amp;&amp;" scope="0x55c5aacdac20" type="op" isLogicalOp="True" astParent="0x55c5aacb98c0" astOperand1="0x55c5aacb9e60" astOperand2="0x55c5ab0ae520" valueType-type="bool"/>
+    <token id="0x55c5ab0ae0a0" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="46" str="INS_OPCODE" scope="0x55c5aacdac20" type="name" astParent="0x55c5ab0ae1c0"/>
+    <token id="0x55c5ab0ae1c0" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="56" str="(" scope="0x55c5aacdac20" link="0x55c5ab0ae400" astParent="0x55c5ab0ae520" astOperand1="0x55c5ab0ae0a0" astOperand2="0x55c5ab0ae2e0"/>
+    <token id="0x55c5ab0ae2e0" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="57" str="ins" scope="0x55c5aacdac20" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5ab0ae1c0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5ab0ae400" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="60" str=")" scope="0x55c5aacdac20" link="0x55c5ab0ae1c0"/>
+    <token id="0x55c5ab0ae520" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="62" str="!=" scope="0x55c5aacdac20" type="op" isComparisonOp="True" astParent="0x55c5ab0adf80" astOperand1="0x55c5ab0ae1c0" astOperand2="0x55c5ab0ae640" valueType-type="bool"/>
+    <token id="0x55c5ab0ae640" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="65" str="MATCH_STORE" scope="0x55c5aacdac20" type="name" astParent="0x55c5ab0ae520"/>
+    <token id="0x55c5ab0ae760" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="76" str=")" scope="0x55c5aacdac20" link="0x55c5aacb98c0"/>
+    <token id="0x55c5ab0ae880" file="src/arch/riscv/sync_exceptions.c" linenr="60" column="78" str="{" scope="0x55c5aacdad90" link="0x55c5ab0aee20"/>
+    <token id="0x55c5ab0ae9a0" file="src/arch/riscv/sync_exceptions.c" linenr="61" column="13" str="return" scope="0x55c5aacdad90" type="name" astOperand1="0x55c5ab0aebe0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0aebe0" file="src/arch/riscv/sync_exceptions.c" linenr="61" column="21" str="-1" scope="0x55c5aacdad90" type="number" isInt="True" values="0x55c5ab0b11a0" astParent="0x55c5ab0ae9a0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0aed00" file="src/arch/riscv/sync_exceptions.c" linenr="61" column="22" str=";" scope="0x55c5aacdad90"/>
+    <token id="0x55c5ab0aee20" file="src/arch/riscv/sync_exceptions.c" linenr="62" column="9" str="}" scope="0x55c5aacdad90" link="0x55c5ab0ae880"/>
+    <token id="0x55c5ab0aeff0" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="9" str="int" scope="0x55c5aacdac20" type="name"/>
+    <token id="0x55c5ab0af110" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="13" str="funct3" scope="0x55c5aacdac20" type="name" varId="11" variable="0x55c5ab070110" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0af230" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="20" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5aacc19c0" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="13" str="funct3" scope="0x55c5aacdac20" type="name" varId="11" variable="0x55c5ab070110" astParent="0x55c5aacc1ae0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacc1ae0" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="20" str="=" scope="0x55c5aacdac20" type="op" isAssignmentOp="True" astOperand1="0x55c5aacc19c0" astOperand2="0x55c5ab0af470" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0af350" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="22" str="INS_FUNCT3" scope="0x55c5aacdac20" type="name" astParent="0x55c5ab0af470"/>
+    <token id="0x55c5ab0af470" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="32" str="(" scope="0x55c5aacdac20" link="0x55c5ab0af6b0" astParent="0x55c5aacc1ae0" astOperand1="0x55c5ab0af350" astOperand2="0x55c5ab0af590"/>
+    <token id="0x55c5ab0af590" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="33" str="ins" scope="0x55c5aacdac20" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5ab0af470" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5ab0af6b0" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="36" str=")" scope="0x55c5aacdac20" link="0x55c5ab0af470"/>
+    <token id="0x55c5ab0af7d0" file="src/arch/riscv/sync_exceptions.c" linenr="64" column="37" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5ab0af8f0" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="9" str="emul" scope="0x55c5aacdac20" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5ab0afa10"/>
+    <token id="0x55c5ab0afa10" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="13" str="." scope="0x55c5aacdac20" astParent="0x55c5ab0afc50" astOperand1="0x55c5ab0af8f0" astOperand2="0x55c5ab0afb30" originalName="->"/>
+    <token id="0x55c5ab0afb30" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="15" str="width" scope="0x55c5aacdac20" type="name" varId="6" astParent="0x55c5ab0afa10"/>
+    <token id="0x55c5ab0afc50" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="21" str="=" scope="0x55c5aacdac20" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0afa10" astOperand2="0x55c5aace4db0"/>
+    <token id="0x55c5ab0afd70" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="23" str="(" scope="0x55c5aacdac20" link="0x55c5aace4a50"/>
+    <token id="0x55c5ab0afe90" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="24" str="funct3" scope="0x55c5aacdac20" type="name" varId="11" variable="0x55c5ab070110" astParent="0x55c5ab0affb0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab0affb0" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="31" str="&amp;" scope="0x55c5aacdac20" type="op" astParent="0x55c5aace4b70" astOperand1="0x55c5ab0afe90" astOperand2="0x55c5aace4930" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace4930" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="33" str="3" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aac748b0" astParent="0x55c5ab0affb0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace4a50" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="34" str=")" scope="0x55c5aacdac20" link="0x55c5ab0afd70"/>
+    <token id="0x55c5aace4b70" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="36" str="==" scope="0x55c5aacdac20" type="op" isComparisonOp="True" astParent="0x55c5aace4db0" astOperand1="0x55c5ab0affb0" astOperand2="0x55c5aace4c90" valueType-type="bool"/>
+    <token id="0x55c5aace4c90" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="39" str="0" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aac74890" astParent="0x55c5aace4b70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace4db0" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="43" str="?" scope="0x55c5aacdac20" values="0x55c5aad44f60" astParent="0x55c5ab0afc50" astOperand1="0x55c5aace4b70" astOperand2="0x55c5aace4ff0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace4ed0" file="src/arch/riscv/sync_exceptions.c" linenr="65" column="45" str="1" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5ab0b3e40" astParent="0x55c5aace4ff0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace4ff0" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="23" str=":" scope="0x55c5aacdac20" values="0x55c5aad45170" astParent="0x55c5aace4db0" astOperand1="0x55c5aace4ed0" astOperand2="0x55c5aace58f0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5110" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="25" str="(" scope="0x55c5aacdac20" link="0x55c5aace5590"/>
+    <token id="0x55c5aace5230" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="26" str="funct3" scope="0x55c5aacdac20" type="name" varId="11" variable="0x55c5ab070110" astParent="0x55c5aace5350" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5350" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="33" str="&amp;" scope="0x55c5aacdac20" type="op" astParent="0x55c5aace56b0" astOperand1="0x55c5aace5230" astOperand2="0x55c5aace5470" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5470" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="35" str="3" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aac64750" astParent="0x55c5aace5350" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5590" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="36" str=")" scope="0x55c5aacdac20" link="0x55c5aace5110"/>
+    <token id="0x55c5aace56b0" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="38" str="==" scope="0x55c5aacdac20" type="op" isComparisonOp="True" astParent="0x55c5aace58f0" astOperand1="0x55c5aace5350" astOperand2="0x55c5aace57d0" valueType-type="bool"/>
+    <token id="0x55c5aace57d0" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="41" str="1" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aafac9b0" astParent="0x55c5aace56b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace58f0" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="43" str="?" scope="0x55c5aacdac20" values="0x55c5aad45380" astParent="0x55c5aace4ff0" astOperand1="0x55c5aace56b0" astOperand2="0x55c5aace5b30" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5a10" file="src/arch/riscv/sync_exceptions.c" linenr="66" column="45" str="2" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aace2730" astParent="0x55c5aace5b30" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5b30" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="23" str=":" scope="0x55c5aacdac20" values="0x55c5aace0590" astParent="0x55c5aace58f0" astOperand1="0x55c5aace5a10" astOperand2="0x55c5aaca0010" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace5c50" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="25" str="(" scope="0x55c5aacdac20" link="0x55c5aac9fcb0"/>
+    <token id="0x55c5aac9f950" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="26" str="funct3" scope="0x55c5aacdac20" type="name" varId="11" variable="0x55c5ab070110" astParent="0x55c5aac9fa70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac9fa70" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="33" str="&amp;" scope="0x55c5aacdac20" type="op" astParent="0x55c5aac9fdd0" astOperand1="0x55c5aac9f950" astOperand2="0x55c5aac9fb90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac9fb90" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="35" str="3" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aac798a0" astParent="0x55c5aac9fa70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac9fcb0" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="36" str=")" scope="0x55c5aacdac20" link="0x55c5aace5c50"/>
+    <token id="0x55c5aac9fdd0" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="38" str="==" scope="0x55c5aacdac20" type="op" isComparisonOp="True" astParent="0x55c5aaca0010" astOperand1="0x55c5aac9fa70" astOperand2="0x55c5aac9fef0" valueType-type="bool"/>
+    <token id="0x55c5aac9fef0" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="41" str="2" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5ab0acf80" astParent="0x55c5aac9fdd0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca0010" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="43" str="?" scope="0x55c5aacdac20" values="0x55c5aac7bbe0" astParent="0x55c5aace5b30" astOperand1="0x55c5aac9fdd0" astOperand2="0x55c5aaca0250" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca0130" file="src/arch/riscv/sync_exceptions.c" linenr="67" column="45" str="4" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5ab0acd70" astParent="0x55c5aaca0250" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca0250" file="src/arch/riscv/sync_exceptions.c" linenr="68" column="43" str=":" scope="0x55c5aacdac20" values="0x55c5aaca1c40" astParent="0x55c5aaca0010" astOperand1="0x55c5aaca0130" astOperand2="0x55c5aaca0370" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca0370" file="src/arch/riscv/sync_exceptions.c" linenr="68" column="45" str="8" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aacdbc50" astParent="0x55c5aaca0250" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca0490" file="src/arch/riscv/sync_exceptions.c" linenr="68" column="46" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5aaca05b0" file="src/arch/riscv/sync_exceptions.c" linenr="69" column="9" str="emul" scope="0x55c5aacdac20" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aaca06d0"/>
+    <token id="0x55c5aaca06d0" file="src/arch/riscv/sync_exceptions.c" linenr="69" column="13" str="." scope="0x55c5aacdac20" astParent="0x55c5aaca0910" astOperand1="0x55c5aaca05b0" astOperand2="0x55c5aaca07f0" originalName="->"/>
+    <token id="0x55c5aaca07f0" file="src/arch/riscv/sync_exceptions.c" linenr="69" column="15" str="reg_width" scope="0x55c5aacdac20" type="name" varId="7" astParent="0x55c5aaca06d0"/>
+    <token id="0x55c5aaca0910" file="src/arch/riscv/sync_exceptions.c" linenr="69" column="25" str="=" scope="0x55c5aacdac20" type="op" isAssignmentOp="True" astOperand1="0x55c5aaca06d0" astOperand2="0x55c5aaca0a30"/>
+    <token id="0x55c5aaca0a30" file="src/arch/riscv/sync_exceptions.c" linenr="69" column="27" str="REGLEN" scope="0x55c5aacdac20" type="name" astParent="0x55c5aaca0910"/>
+    <token id="0x55c5aaca0b50" file="src/arch/riscv/sync_exceptions.c" linenr="69" column="33" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5aaca0c70" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="9" str="emul" scope="0x55c5aacdac20" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aaca0cd0"/>
+    <token id="0x55c5aaca0cd0" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="13" str="." scope="0x55c5aacdac20" astParent="0x55c5aaf6d6c0" astOperand1="0x55c5aaca0c70" astOperand2="0x55c5aaf6d5a0" originalName="->"/>
+    <token id="0x55c5aaf6d5a0" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="15" str="write" scope="0x55c5aacdac20" type="name" varId="8" astParent="0x55c5aaca0cd0"/>
+    <token id="0x55c5aaf6d6c0" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="21" str="=" scope="0x55c5aacdac20" type="op" isAssignmentOp="True" astOperand1="0x55c5aaca0cd0" astOperand2="0x55c5aaf6dd80"/>
+    <token id="0x55c5aaf6d7e0" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="24" str="INS_OPCODE" scope="0x55c5aacdac20" type="name" astParent="0x55c5aaf6da20"/>
+    <token id="0x55c5aaf6da20" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="34" str="(" scope="0x55c5aacdac20" link="0x55c5aaf6dc60" astParent="0x55c5aaf6dd80" astOperand1="0x55c5aaf6d7e0" astOperand2="0x55c5aaf6db40"/>
+    <token id="0x55c5aaf6db40" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="35" str="ins" scope="0x55c5aacdac20" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aaf6da20" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aaf6dc60" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="38" str=")" scope="0x55c5aacdac20" link="0x55c5aaf6da20"/>
+    <token id="0x55c5aaf6dd80" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="40" str="==" scope="0x55c5aacdac20" type="op" isComparisonOp="True" astParent="0x55c5aaf6d6c0" astOperand1="0x55c5aaf6da20" astOperand2="0x55c5aaf6dea0" valueType-type="bool"/>
+    <token id="0x55c5aaf6dea0" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="43" str="MATCH_STORE" scope="0x55c5aacdac20" type="name" astParent="0x55c5aaf6dd80"/>
+    <token id="0x55c5aaf6dfc0" file="src/arch/riscv/sync_exceptions.c" linenr="70" column="55" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5aaf6e200" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="9" str="emul" scope="0x55c5aacdac20" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aaf6e320"/>
+    <token id="0x55c5aaf6e320" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="13" str="." scope="0x55c5aacdac20" astParent="0x55c5aaf6e560" astOperand1="0x55c5aaf6e200" astOperand2="0x55c5aaf6e440" originalName="->"/>
+    <token id="0x55c5aaf6e440" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="15" str="reg" scope="0x55c5aacdac20" type="name" varId="9" astParent="0x55c5aaf6e320"/>
+    <token id="0x55c5aaf6e560" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="19" str="=" scope="0x55c5aacdac20" type="op" isAssignmentOp="True" astOperand1="0x55c5aaf6e320" astOperand2="0x55c5aad46d20"/>
+    <token id="0x55c5aaf6e680" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="21" str="emul" scope="0x55c5aacdac20" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aaf6e7a0"/>
+    <token id="0x55c5aaf6e7a0" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="25" str="." scope="0x55c5aacdac20" astParent="0x55c5aad46d20" astOperand1="0x55c5aaf6e680" astOperand2="0x55c5ab0aee80" originalName="->"/>
+    <token id="0x55c5ab0aee80" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="27" str="write" scope="0x55c5aacdac20" type="name" varId="8" astParent="0x55c5aaf6e7a0"/>
+    <token id="0x55c5aad46d20" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="33" str="?" scope="0x55c5aacdac20" astParent="0x55c5aaf6e560" astOperand1="0x55c5aaf6e7a0" astOperand2="0x55c5aad472c0"/>
+    <token id="0x55c5aad46e40" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="35" str="INS_RS2" scope="0x55c5aacdac20" type="name" astParent="0x55c5aad46f60"/>
+    <token id="0x55c5aad46f60" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="42" str="(" scope="0x55c5aacdac20" link="0x55c5aad471a0" astParent="0x55c5aad472c0" astOperand1="0x55c5aad46e40" astOperand2="0x55c5aad47080"/>
+    <token id="0x55c5aad47080" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="43" str="ins" scope="0x55c5aacdac20" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aad46f60" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad471a0" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="46" str=")" scope="0x55c5aacdac20" link="0x55c5aad46f60"/>
+    <token id="0x55c5aad472c0" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="48" str=":" scope="0x55c5aacdac20" astParent="0x55c5aad46d20" astOperand1="0x55c5aad46f60" astOperand2="0x55c5aad47500"/>
+    <token id="0x55c5aad473e0" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="50" str="INS_RD" scope="0x55c5aacdac20" type="name" astParent="0x55c5aad47500"/>
+    <token id="0x55c5aad47500" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="56" str="(" scope="0x55c5aacdac20" link="0x55c5aad47740" astParent="0x55c5aad472c0" astOperand1="0x55c5aad473e0" astOperand2="0x55c5aad47620"/>
+    <token id="0x55c5aad47620" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="57" str="ins" scope="0x55c5aacdac20" type="name" varId="4" variable="0x55c5ab0708f0" astParent="0x55c5aad47500" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad47740" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="60" str=")" scope="0x55c5aacdac20" link="0x55c5aad47500"/>
+    <token id="0x55c5aad47860" file="src/arch/riscv/sync_exceptions.c" linenr="71" column="61" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5aad47980" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="9" str="emul" scope="0x55c5aacdac20" type="name" varId="5" variable="0x55c5ab0709d0" astParent="0x55c5aad47aa0"/>
+    <token id="0x55c5aad47aa0" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="13" str="." scope="0x55c5aacdac20" astParent="0x55c5aad47ce0" astOperand1="0x55c5aad47980" astOperand2="0x55c5aad47bc0" originalName="->"/>
+    <token id="0x55c5aad47bc0" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="15" str="sign_ext" scope="0x55c5aacdac20" type="name" varId="10" astParent="0x55c5aad47aa0"/>
+    <token id="0x55c5aad47ce0" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="24" str="=" scope="0x55c5aacdac20" type="op" isAssignmentOp="True" astOperand1="0x55c5aad47aa0" astOperand2="0x55c5aad47e00"/>
+    <token id="0x55c5aad47e00" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="26" str="!" scope="0x55c5aacdac20" type="op" isLogicalOp="True" values="0x55c5aaccdf50" astParent="0x55c5aad47ce0" astOperand1="0x55c5aad48160" valueType-type="bool"/>
+    <token id="0x55c5aad47f20" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="27" str="(" scope="0x55c5aacdac20" link="0x55c5aac5ec30"/>
+    <token id="0x55c5aad48040" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="28" str="funct3" scope="0x55c5aacdac20" type="name" varId="11" variable="0x55c5ab070110" astParent="0x55c5aad48160" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad48160" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="35" str="&amp;" scope="0x55c5aacdac20" type="op" values="0x55c5aaccde90" astParent="0x55c5aad47e00" astOperand1="0x55c5aad48040" astOperand2="0x55c5aac5eb10" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5eb10" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="37" str="4" scope="0x55c5aacdac20" type="number" isInt="True" values="0x55c5aad1f6d0" astParent="0x55c5aad48160" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5ec30" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="40" str=")" scope="0x55c5aacdac20" link="0x55c5aad47f20"/>
+    <token id="0x55c5aac5ed50" file="src/arch/riscv/sync_exceptions.c" linenr="72" column="41" str=";" scope="0x55c5aacdac20"/>
+    <token id="0x55c5aac5ee70" file="src/arch/riscv/sync_exceptions.c" linenr="73" column="5" str="}" scope="0x55c5aacdac20" link="0x55c5aacb9680"/>
+    <token id="0x55c5aac5ef90" file="src/arch/riscv/sync_exceptions.c" linenr="75" column="5" str="return" scope="0x55c5aac781c0" type="name" astOperand1="0x55c5aac5f0b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5f0b0" file="src/arch/riscv/sync_exceptions.c" linenr="75" column="12" str="0" scope="0x55c5aac781c0" type="number" isInt="True" values="0x55c5aad1ce90" astParent="0x55c5aac5ef90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac5f1d0" file="src/arch/riscv/sync_exceptions.c" linenr="75" column="13" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac5f2f0" file="src/arch/riscv/sync_exceptions.c" linenr="76" column="1" str="}" scope="0x55c5aac781c0" link="0x55c5aad3b5f0"/>
+    <token id="0x55c5aac5f410" file="src/arch/riscv/sync_exceptions.c" linenr="78" column="1" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5aac5f530" file="src/arch/riscv/sync_exceptions.c" linenr="78" column="8" str="guest_page_fault_handler" scope="0x55c5aac785a0" type="name" function="0x55c5aafaabd0" astParent="0x55c5aac5f650"/>
+    <token id="0x55c5aac5f650" file="src/arch/riscv/sync_exceptions.c" linenr="78" column="32" str="(" scope="0x55c5aac785a0" link="0x55c5aac5f770" astOperand1="0x55c5aac5f530" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac5f770" file="src/arch/riscv/sync_exceptions.c" linenr="78" column="33" str=")" scope="0x55c5aac785a0" link="0x55c5aac5f650"/>
+    <token id="0x55c5aac5f890" file="src/arch/riscv/sync_exceptions.c" linenr="79" column="1" str="{" scope="0x55c5aacdaf00" link="0x55c5aacbb1a0"/>
+    <token id="0x55c5aac5f9b0" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="5" str="if" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac5fad0"/>
+    <token id="0x55c5aac5fad0" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="8" str="(" scope="0x55c5aacdaf00" link="0x55c5aad49480" astOperand1="0x55c5aac5f9b0" astOperand2="0x55c5aac5fbf0"/>
+    <token id="0x55c5aac5fbf0" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="9" str="!" scope="0x55c5aacdaf00" type="op" isLogicalOp="True" astParent="0x55c5aac5fad0" astOperand1="0x55c5aad49120" valueType-type="bool"/>
+    <token id="0x55c5aac5fd10" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="10" str="(" scope="0x55c5aacdaf00" link="0x55c5aad49360"/>
+    <token id="0x55c5aac5fe30" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="11" str="CSRR" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac5ff50"/>
+    <token id="0x55c5aac5ff50" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="15" str="(" scope="0x55c5aacdaf00" link="0x55c5aad49000" astParent="0x55c5aad49120" astOperand1="0x55c5aac5fe30" astOperand2="0x55c5aad48ee0"/>
+    <token id="0x55c5aad48ee0" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="16" str="CSR_HSTATUS" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac5ff50"/>
+    <token id="0x55c5aad49000" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="27" str=")" scope="0x55c5aacdaf00" link="0x55c5aac5ff50"/>
+    <token id="0x55c5aad49120" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="29" str="&amp;" scope="0x55c5aacdaf00" type="op" astParent="0x55c5aac5fbf0" astOperand1="0x55c5aac5ff50" astOperand2="0x55c5aad49240"/>
+    <token id="0x55c5aad49240" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="31" str="HSTATUS_SPV" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aad49120"/>
+    <token id="0x55c5aad49360" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="42" str=")" scope="0x55c5aacdaf00" link="0x55c5aac5fd10"/>
+    <token id="0x55c5aad49480" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="43" str=")" scope="0x55c5aacdaf00" link="0x55c5aac5fad0"/>
+    <token id="0x55c5aad495a0" file="src/arch/riscv/sync_exceptions.c" linenr="86" column="45" str="{" scope="0x55c5aacdb070" link="0x55c5aad4a320"/>
+    <token id="0x55c5aad496c0" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="9" str="cpu" scope="0x55c5aacdb070" type="name" astParent="0x55c5aad497e0"/>
+    <token id="0x55c5aad497e0" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="12" str="." scope="0x55c5aacdb070" astParent="0x55c5aad49a20" astOperand1="0x55c5aad496c0" astOperand2="0x55c5aad49900"/>
+    <token id="0x55c5aad49900" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="13" str="arch" scope="0x55c5aacdb070" type="name" astParent="0x55c5aad497e0"/>
+    <token id="0x55c5aad49a20" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="17" str="." scope="0x55c5aacdb070" astParent="0x55c5aad49c60" astOperand1="0x55c5aad497e0" astOperand2="0x55c5aad49b40"/>
+    <token id="0x55c5aad49b40" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="18" str="hlv_except" scope="0x55c5aacdb070" type="name" astParent="0x55c5aad49a20"/>
+    <token id="0x55c5aad49c60" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="29" str="=" scope="0x55c5aacdb070" type="op" isAssignmentOp="True" astOperand1="0x55c5aad49a20" astOperand2="0x55c5aad49d80"/>
+    <token id="0x55c5aad49d80" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="31" str="true" scope="0x55c5aacdb070" type="name" astParent="0x55c5aad49c60" valueType-type="bool"/>
+    <token id="0x55c5aad49ea0" file="src/arch/riscv/sync_exceptions.c" linenr="87" column="35" str=";" scope="0x55c5aacdb070"/>
+    <token id="0x55c5aad49fc0" file="src/arch/riscv/sync_exceptions.c" linenr="88" column="9" str="return" scope="0x55c5aacdb070" type="name" astOperand1="0x55c5aad4a0e0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aad4a0e0" file="src/arch/riscv/sync_exceptions.c" linenr="88" column="16" str="4" scope="0x55c5aacdb070" type="number" isInt="True" values="0x55c5aac6d990" astParent="0x55c5aad49fc0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aad4a200" file="src/arch/riscv/sync_exceptions.c" linenr="88" column="17" str=";" scope="0x55c5aacdb070"/>
+    <token id="0x55c5aad4a320" file="src/arch/riscv/sync_exceptions.c" linenr="89" column="5" str="}" scope="0x55c5aacdb070" link="0x55c5aad495a0"/>
+    <token id="0x55c5aad4a440" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="5" str="long" scope="0x55c5aacdaf00" type="name" isUnsigned="true" originalName="uintptr_t"/>
+    <token id="0x55c5aad4a560" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="15" str="addr" scope="0x55c5aacdaf00" type="name" varId="12" variable="0x55c5ab0701f0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac54040" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="20" str=";" scope="0x55c5aacdaf00"/>
+    <token id="0x55c5aacc1c00" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="15" str="addr" scope="0x55c5aacdaf00" type="name" varId="12" variable="0x55c5ab0701f0" astParent="0x55c5aacc1c60" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aacc1c60" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="20" str="=" scope="0x55c5aacdaf00" type="op" isAssignmentOp="True" astOperand1="0x55c5aacc1c00" astOperand2="0x55c5aac545e0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac54160" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="22" str="CSRR" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac54280"/>
+    <token id="0x55c5aac54280" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="26" str="(" scope="0x55c5aacdaf00" link="0x55c5aac544c0" astParent="0x55c5aac545e0" astOperand1="0x55c5aac54160" astOperand2="0x55c5aac543a0"/>
+    <token id="0x55c5aac543a0" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="27" str="CSR_HTVAL" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac54280"/>
+    <token id="0x55c5aac544c0" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="36" str=")" scope="0x55c5aacdaf00" link="0x55c5aac54280"/>
+    <token id="0x55c5aac545e0" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="38" str="&lt;&lt;" scope="0x55c5aacdaf00" type="op" isArithmeticalOp="True" astParent="0x55c5aacc1c60" astOperand1="0x55c5aac54280" astOperand2="0x55c5aac54700"/>
+    <token id="0x55c5aac54700" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="41" str="2" scope="0x55c5aacdaf00" type="number" isInt="True" values="0x55c5aacba040" astParent="0x55c5aac545e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac54820" file="src/arch/riscv/sync_exceptions.c" linenr="91" column="42" str=";" scope="0x55c5aacdaf00"/>
+    <token id="0x55c5aac54940" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="5" str="emul_handler_t" scope="0x55c5aacdaf00" type="name"/>
+    <token id="0x55c5aac54a60" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="20" str="handler" scope="0x55c5aacdaf00" type="name" varId="13" variable="0x55c5ab0702d0"/>
+    <token id="0x55c5aac54b80" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="28" str=";" scope="0x55c5aacdaf00"/>
+    <token id="0x55c5aacd9650" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="20" str="handler" scope="0x55c5aacdaf00" type="name" varId="13" variable="0x55c5ab0702d0" astParent="0x55c5aacd9770"/>
+    <token id="0x55c5aacd9770" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="28" str="=" scope="0x55c5aacdaf00" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd9650" astOperand2="0x55c5aac54dc0"/>
+    <token id="0x55c5aac54ca0" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="30" str="vm_emul_get_mem" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac54dc0"/>
+    <token id="0x55c5aac54dc0" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="45" str="(" scope="0x55c5aacdaf00" link="0x55c5aac556c0" values="0x55c5aaccdf90" astParent="0x55c5aacd9770" astOperand1="0x55c5aac54ca0" astOperand2="0x55c5aac55480"/>
+    <token id="0x55c5aac54ee0" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="46" str="cpu" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac55000"/>
+    <token id="0x55c5aac55000" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="49" str="." scope="0x55c5aacdaf00" astParent="0x55c5aac55240" astOperand1="0x55c5aac54ee0" astOperand2="0x55c5aac55120"/>
+    <token id="0x55c5aac55120" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="50" str="vcpu" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac55000"/>
+    <token id="0x55c5aac55240" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="54" str="." scope="0x55c5aacdaf00" astParent="0x55c5aac55480" astOperand1="0x55c5aac55000" astOperand2="0x55c5aac55360" originalName="->"/>
+    <token id="0x55c5aac55360" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="56" str="vm" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aac55240"/>
+    <token id="0x55c5aac55480" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="58" str="," scope="0x55c5aacdaf00" astParent="0x55c5aac54dc0" astOperand1="0x55c5aac55240" astOperand2="0x55c5aac555a0"/>
+    <token id="0x55c5aac555a0" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="60" str="addr" scope="0x55c5aacdaf00" type="name" varId="12" variable="0x55c5ab0701f0" astParent="0x55c5aac55480" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac556c0" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="64" str=")" scope="0x55c5aacdaf00" link="0x55c5aac54dc0"/>
+    <token id="0x55c5aad1b570" file="src/arch/riscv/sync_exceptions.c" linenr="93" column="65" str=";" scope="0x55c5aacdaf00"/>
+    <token id="0x55c5aad1b690" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="5" str="if" scope="0x55c5aacdaf00" type="name" astParent="0x55c5aad1b7b0"/>
+    <token id="0x55c5aad1b7b0" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="8" str="(" scope="0x55c5aacdaf00" link="0x55c5aad1bc30" astOperand1="0x55c5aad1b690" astOperand2="0x55c5aad1b9f0"/>
+    <token id="0x55c5aad1b8d0" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="9" str="handler" scope="0x55c5aacdaf00" type="name" varId="13" variable="0x55c5ab0702d0" values="0x55c5aacce140" astParent="0x55c5aad1b9f0"/>
+    <token id="0x55c5aad1b9f0" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="17" str="!=" scope="0x55c5aacdaf00" type="op" isComparisonOp="True" values="0x55c5aacce160" astParent="0x55c5aad1b7b0" astOperand1="0x55c5aad1b8d0" astOperand2="0x55c5aad1bb10" valueType-type="bool"/>
+    <token id="0x55c5aad1bb10" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="20" str="NULL" scope="0x55c5aacdaf00" type="name" values="0x55c5aaf6e8c0" astParent="0x55c5aad1b9f0"/>
+    <token id="0x55c5aad1bc30" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="24" str=")" scope="0x55c5aacdaf00" link="0x55c5aad1b7b0"/>
+    <token id="0x55c5aad1bd50" file="src/arch/riscv/sync_exceptions.c" linenr="94" column="26" str="{" scope="0x55c5aacdb1e0" link="0x55c5aac63900"/>
+    <token id="0x55c5aad1be70" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="9" str="long" scope="0x55c5aacdb1e0" type="name" isUnsigned="true" originalName="uintptr_t"/>
+    <token id="0x55c5aad1bf90" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="19" str="ins_addr" scope="0x55c5aacdb1e0" type="name" varId="14" variable="0x55c5ab0703b0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad1c0b0" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="28" str=";" scope="0x55c5aacdb1e0"/>
+    <token id="0x55c5aacd9890" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="19" str="ins_addr" scope="0x55c5aacdb1e0" type="name" varId="14" variable="0x55c5ab0703b0" astParent="0x55c5aacd99b0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aacd99b0" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="28" str="=" scope="0x55c5aacdb1e0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd9890" astOperand2="0x55c5aad1c2f0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad1c1d0" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="30" str="CSRR" scope="0x55c5aacdb1e0" type="name" astParent="0x55c5aad1c2f0"/>
+    <token id="0x55c5aad1c2f0" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="34" str="(" scope="0x55c5aacdb1e0" link="0x55c5aad1c530" astParent="0x55c5aacd99b0" astOperand1="0x55c5aad1c1d0" astOperand2="0x55c5aad1c410"/>
+    <token id="0x55c5aad1c410" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="35" str="sepc" scope="0x55c5aacdb1e0" type="name" astParent="0x55c5aad1c2f0"/>
+    <token id="0x55c5aad1c530" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="39" str=")" scope="0x55c5aacdb1e0" link="0x55c5aad1c2f0"/>
+    <token id="0x55c5aad1c650" file="src/arch/riscv/sync_exceptions.c" linenr="95" column="40" str=";" scope="0x55c5aacdb1e0"/>
+    <token id="0x55c5aad1c770" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="18" str="long" scope="0x55c5aacdb1e0" type="name" isUnsigned="true"/>
+    <token id="0x55c5aad1c9b0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="23" str="ins" scope="0x55c5aacdb1e0" type="name" varId="15" variable="0x55c5ab070490" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aad1cad0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="27" str=";" scope="0x55c5aacdb1e0"/>
+    <token id="0x55c5aacd9ad0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="23" str="ins" scope="0x55c5aacdb1e0" type="name" varId="15" variable="0x55c5ab070490" astParent="0x55c5aacd9bf0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd9bf0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="27" str="=" scope="0x55c5aacdb1e0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd9ad0" astOperand2="0x55c5aad1cd10" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aad1cbf0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="29" str="read_ins" scope="0x55c5aacdb1e0" type="name" function="0x55c5ab0b0ec0" astParent="0x55c5aad1cd10"/>
+    <token id="0x55c5aad1cd10" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="37" str="(" scope="0x55c5aacdb1e0" link="0x55c5aac6bfb0" astParent="0x55c5aacd9bf0" astOperand1="0x55c5aad1cbf0" astOperand2="0x55c5aacb9fe0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacb9fe0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="38" str="ins_addr" scope="0x55c5aacdb1e0" type="name" varId="14" variable="0x55c5ab0703b0" astParent="0x55c5aad1cd10" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac6bfb0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="46" str=")" scope="0x55c5aacdb1e0" link="0x55c5aad1cd10"/>
+    <token id="0x55c5aac6c0d0" file="src/arch/riscv/sync_exceptions.c" linenr="96" column="47" str=";" scope="0x55c5aacdb1e0"/>
+    <token id="0x55c5aac6c1f0" file="src/arch/riscv/sync_exceptions.c" linenr="98" column="9" str="emul_access_t" scope="0x55c5aacdb1e0" type="name"/>
+    <token id="0x55c5aac6c310" file="src/arch/riscv/sync_exceptions.c" linenr="98" column="23" str="emul" scope="0x55c5aacdb1e0" type="name" varId="16" variable="0x55c5ab070570"/>
+    <token id="0x55c5aac6c430" file="src/arch/riscv/sync_exceptions.c" linenr="98" column="27" str=";" scope="0x55c5aacdb1e0"/>
+    <token id="0x55c5aac6c550" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="9" str="if" scope="0x55c5aacdb1e0" type="name" astParent="0x55c5aac6c670"/>
+    <token id="0x55c5aac6c670" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="12" str="(" scope="0x55c5aacdb1e0" link="0x55c5aac6d1b0" astOperand1="0x55c5aac6c550" astOperand2="0x55c5aac6cf70"/>
+    <token id="0x55c5aac6c790" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="13" str="ins_ldst_decode" scope="0x55c5aacdb1e0" type="name" function="0x55c5aafac4b0" astParent="0x55c5aac6c8b0"/>
+    <token id="0x55c5aac6c8b0" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="28" str="(" scope="0x55c5aacdb1e0" link="0x55c5aac6ce50" astParent="0x55c5aac6cf70" astOperand1="0x55c5aac6c790" astOperand2="0x55c5aac6caf0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6c9d0" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="29" str="ins" scope="0x55c5aacdb1e0" type="name" varId="15" variable="0x55c5ab070490" astParent="0x55c5aac6caf0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6caf0" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="32" str="," scope="0x55c5aacdb1e0" astParent="0x55c5aac6c8b0" astOperand1="0x55c5aac6c9d0" astOperand2="0x55c5aac6cc10"/>
+    <token id="0x55c5aac6cc10" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="34" str="&amp;" scope="0x55c5aacdb1e0" type="op" values="0x55c5aaccde30" astParent="0x55c5aac6caf0" astOperand1="0x55c5aac6cd30"/>
+    <token id="0x55c5aac6cd30" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="35" str="emul" scope="0x55c5aacdb1e0" type="name" varId="16" variable="0x55c5ab070570" astParent="0x55c5aac6cc10"/>
+    <token id="0x55c5aac6ce50" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="39" str=")" scope="0x55c5aacdb1e0" link="0x55c5aac6c8b0"/>
+    <token id="0x55c5aac6cf70" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="41" str="&lt;" scope="0x55c5aacdb1e0" type="op" isComparisonOp="True" astParent="0x55c5aac6c670" astOperand1="0x55c5aac6c8b0" astOperand2="0x55c5aac6d090" valueType-type="bool"/>
+    <token id="0x55c5aac6d090" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="43" str="0" scope="0x55c5aacdb1e0" type="number" isInt="True" values="0x55c5aad11110" astParent="0x55c5aac6cf70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6d1b0" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="44" str=")" scope="0x55c5aacdb1e0" link="0x55c5aac6c670"/>
+    <token id="0x55c5aac6d2d0" file="src/arch/riscv/sync_exceptions.c" linenr="99" column="46" str="{" scope="0x55c5aacdb350" link="0x55c5aad1ce30"/>
+    <token id="0x55c5aac6d3f0" file="src/arch/riscv/sync_exceptions.c" linenr="100" column="13" str="ERROR" scope="0x55c5aacdb350" type="name" astParent="0x55c5aac6d510"/>
+    <token id="0x55c5aac6d510" file="src/arch/riscv/sync_exceptions.c" linenr="100" column="18" str="(" scope="0x55c5aacdb350" link="0x55c5aac6d750" astOperand1="0x55c5aac6d3f0" astOperand2="0x55c5aac6d630"/>
+    <token id="0x55c5aac6d630" file="src/arch/riscv/sync_exceptions.c" linenr="100" column="19" str="&quot;cant decode ld/st instruction&quot;" scope="0x55c5aacdb350" type="string" strlen="29" values="0x55c5aaccdd50" astParent="0x55c5aac6d510" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac6d750" file="src/arch/riscv/sync_exceptions.c" linenr="100" column="50" str=")" scope="0x55c5aacdb350" link="0x55c5aac6d510"/>
+    <token id="0x55c5aac6d870" file="src/arch/riscv/sync_exceptions.c" linenr="100" column="51" str=";" scope="0x55c5aacdb350"/>
+    <token id="0x55c5aad1ce30" file="src/arch/riscv/sync_exceptions.c" linenr="101" column="9" str="}" scope="0x55c5aacdb350" link="0x55c5aac6d2d0"/>
+    <token id="0x55c5aad1dc30" file="src/arch/riscv/sync_exceptions.c" linenr="102" column="9" str="emul" scope="0x55c5aacdb1e0" type="name" varId="16" variable="0x55c5ab070570" astParent="0x55c5aad1dd50"/>
+    <token id="0x55c5aad1dd50" file="src/arch/riscv/sync_exceptions.c" linenr="102" column="13" str="." scope="0x55c5aacdb1e0" astParent="0x55c5aad1df90" astOperand1="0x55c5aad1dc30" astOperand2="0x55c5aad1de70"/>
+    <token id="0x55c5aad1de70" file="src/arch/riscv/sync_exceptions.c" linenr="102" column="14" str="addr" scope="0x55c5aacdb1e0" type="name" varId="17" astParent="0x55c5aad1dd50"/>
+    <token id="0x55c5aad1df90" file="src/arch/riscv/sync_exceptions.c" linenr="102" column="19" str="=" scope="0x55c5aacdb1e0" type="op" isAssignmentOp="True" astOperand1="0x55c5aad1dd50" astOperand2="0x55c5aad1e0b0"/>
+    <token id="0x55c5aad1e0b0" file="src/arch/riscv/sync_exceptions.c" linenr="102" column="21" str="addr" scope="0x55c5aacdb1e0" type="name" varId="12" variable="0x55c5ab0701f0" astParent="0x55c5aad1df90" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aad1e1d0" file="src/arch/riscv/sync_exceptions.c" linenr="102" column="25" str=";" scope="0x55c5aacdb1e0"/>
+    <token id="0x55c5aad1e2f0" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="9" str="if" scope="0x55c5aacdb1e0" type="name" astParent="0x55c5aad1e410"/>
+    <token id="0x55c5aad1e410" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="12" str="(" scope="0x55c5aacdb1e0" link="0x55c5aad1ead0" astOperand1="0x55c5aad1e2f0" astOperand2="0x55c5aad1e650"/>
+    <token id="0x55c5aad1e530" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="13" str="handler" scope="0x55c5aacdb1e0" type="name" varId="13" variable="0x55c5ab0702d0" astParent="0x55c5aad1e650"/>
+    <token id="0x55c5aad1e650" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="20" str="(" scope="0x55c5aacdb1e0" link="0x55c5aad1e9b0" astParent="0x55c5aad1e410" astOperand1="0x55c5aad1e530" astOperand2="0x55c5aad1e770"/>
+    <token id="0x55c5aad1e770" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="21" str="&amp;" scope="0x55c5aacdb1e0" type="op" values="0x55c5aaccde50" astParent="0x55c5aad1e650" astOperand1="0x55c5aad1e890"/>
+    <token id="0x55c5aad1e890" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="22" str="emul" scope="0x55c5aacdb1e0" type="name" varId="16" variable="0x55c5ab070570" astParent="0x55c5aad1e770"/>
+    <token id="0x55c5aad1e9b0" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="26" str=")" scope="0x55c5aacdb1e0" link="0x55c5aad1e650"/>
+    <token id="0x55c5aad1ead0" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="27" str=")" scope="0x55c5aacdb1e0" link="0x55c5aad1e410"/>
+    <token id="0x55c5aad1ebf0" file="src/arch/riscv/sync_exceptions.c" linenr="109" column="29" str="{" scope="0x55c5aacdb4c0" link="0x55c5aad1f3d0"/>
+    <token id="0x55c5aad1ed10" file="src/arch/riscv/sync_exceptions.c" linenr="110" column="13" str="return" scope="0x55c5aacdb4c0" type="name" astOperand1="0x55c5aad1ef50" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aad1ee30" file="src/arch/riscv/sync_exceptions.c" linenr="110" column="20" str="INS_SIZE" scope="0x55c5aacdb4c0" type="name" astParent="0x55c5aad1ef50"/>
+    <token id="0x55c5aad1ef50" file="src/arch/riscv/sync_exceptions.c" linenr="110" column="28" str="(" scope="0x55c5aacdb4c0" link="0x55c5aad1f190" astParent="0x55c5aad1ed10" astOperand1="0x55c5aad1ee30" astOperand2="0x55c5aad1f070"/>
+    <token id="0x55c5aad1f070" file="src/arch/riscv/sync_exceptions.c" linenr="110" column="29" str="ins" scope="0x55c5aacdb4c0" type="name" varId="15" variable="0x55c5ab070490" astParent="0x55c5aad1ef50" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aad1f190" file="src/arch/riscv/sync_exceptions.c" linenr="110" column="32" str=")" scope="0x55c5aacdb4c0" link="0x55c5aad1ef50"/>
+    <token id="0x55c5aad1f2b0" file="src/arch/riscv/sync_exceptions.c" linenr="110" column="33" str=";" scope="0x55c5aacdb4c0"/>
+    <token id="0x55c5aad1f3d0" file="src/arch/riscv/sync_exceptions.c" linenr="111" column="9" str="}" scope="0x55c5aacdb4c0" link="0x55c5aad1ebf0"/>
+    <token id="0x55c5aad1f4f0" file="src/arch/riscv/sync_exceptions.c" linenr="111" column="11" str="else" scope="0x55c5aacdb1e0" type="name"/>
+    <token id="0x55c5aad1f610" file="src/arch/riscv/sync_exceptions.c" linenr="111" column="16" str="{" scope="0x55c5aacdb630" link="0x55c5aac637e0"/>
+    <token id="0x55c5aac62a60" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="13" str="ERROR" scope="0x55c5aacdb630" type="name" astParent="0x55c5aac62b80"/>
+    <token id="0x55c5aac62b80" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="18" str="(" scope="0x55c5aacdb630" link="0x55c5aac635a0" astOperand1="0x55c5aac62a60" astOperand2="0x55c5aac63000"/>
+    <token id="0x55c5aac62ca0" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="19" str="&quot;emulation handler failed (0x%x at 0x%x)&quot;" scope="0x55c5aacdb630" type="string" strlen="39" values="0x55c5aaccdd70" astParent="0x55c5aac62dc0" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac62dc0" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="60" str="," scope="0x55c5aacdb630" astParent="0x55c5aac63000" astOperand1="0x55c5aac62ca0" astOperand2="0x55c5aac62ee0"/>
+    <token id="0x55c5aac62ee0" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="62" str="addr" scope="0x55c5aacdb630" type="name" varId="12" variable="0x55c5ab0701f0" astParent="0x55c5aac62dc0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac63000" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="66" str="," scope="0x55c5aacdb630" astParent="0x55c5aac62b80" astOperand1="0x55c5aac62dc0" astOperand2="0x55c5aac63240"/>
+    <token id="0x55c5aac63120" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="68" str="CSRR" scope="0x55c5aacdb630" type="name" astParent="0x55c5aac63240"/>
+    <token id="0x55c5aac63240" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="72" str="(" scope="0x55c5aacdb630" link="0x55c5aac63480" astParent="0x55c5aac63000" astOperand1="0x55c5aac63120" astOperand2="0x55c5aac63360"/>
+    <token id="0x55c5aac63360" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="73" str="sepc" scope="0x55c5aacdb630" type="name" astParent="0x55c5aac63240"/>
+    <token id="0x55c5aac63480" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="77" str=")" scope="0x55c5aacdb630" link="0x55c5aac63240"/>
+    <token id="0x55c5aac635a0" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="78" str=")" scope="0x55c5aacdb630" link="0x55c5aac62b80"/>
+    <token id="0x55c5aac636c0" file="src/arch/riscv/sync_exceptions.c" linenr="112" column="79" str=";" scope="0x55c5aacdb630"/>
+    <token id="0x55c5aac637e0" file="src/arch/riscv/sync_exceptions.c" linenr="113" column="9" str="}" scope="0x55c5aacdb630" link="0x55c5aad1f610"/>
+    <token id="0x55c5aac63900" file="src/arch/riscv/sync_exceptions.c" linenr="114" column="5" str="}" scope="0x55c5aacdb1e0" link="0x55c5aad1bd50"/>
+    <token id="0x55c5aac63a20" file="src/arch/riscv/sync_exceptions.c" linenr="114" column="7" str="else" scope="0x55c5aacdaf00" type="name"/>
+    <token id="0x55c5aac63b40" file="src/arch/riscv/sync_exceptions.c" linenr="114" column="12" str="{" scope="0x55c5aacdb7a0" link="0x55c5aacbb080"/>
+    <token id="0x55c5aac63c60" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="9" str="ERROR" scope="0x55c5aacdb7a0" type="name" astParent="0x55c5aac63d80"/>
+    <token id="0x55c5aac63d80" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="14" str="(" scope="0x55c5aacdb7a0" link="0x55c5aacbae40" astOperand1="0x55c5aac63c60" astOperand2="0x55c5aac64200"/>
+    <token id="0x55c5aac63ea0" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="15" str="&quot;no emulation handler for abort(0x%x at 0x%x)&quot;" scope="0x55c5aacdb7a0" type="string" strlen="44" values="0x55c5aaccdd90" astParent="0x55c5aac63fc0" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac63fc0" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="61" str="," scope="0x55c5aacdb7a0" astParent="0x55c5aac64200" astOperand1="0x55c5aac63ea0" astOperand2="0x55c5aac640e0"/>
+    <token id="0x55c5aac640e0" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="63" str="addr" scope="0x55c5aacdb7a0" type="name" varId="12" variable="0x55c5ab0701f0" astParent="0x55c5aac63fc0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="uintptr_t"/>
+    <token id="0x55c5aac64200" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="67" str="," scope="0x55c5aacdb7a0" astParent="0x55c5aac63d80" astOperand1="0x55c5aac63fc0" astOperand2="0x55c5aac64440"/>
+    <token id="0x55c5aac64320" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="69" str="CSRR" scope="0x55c5aacdb7a0" type="name" astParent="0x55c5aac64440"/>
+    <token id="0x55c5aac64440" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="73" str="(" scope="0x55c5aacdb7a0" link="0x55c5aac64680" astParent="0x55c5aac64200" astOperand1="0x55c5aac64320" astOperand2="0x55c5aac64560"/>
+    <token id="0x55c5aac64560" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="74" str="sepc" scope="0x55c5aacdb7a0" type="name" astParent="0x55c5aac64440"/>
+    <token id="0x55c5aac64680" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="78" str=")" scope="0x55c5aacdb7a0" link="0x55c5aac64440"/>
+    <token id="0x55c5aacbae40" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="79" str=")" scope="0x55c5aacdb7a0" link="0x55c5aac63d80"/>
+    <token id="0x55c5aacbaf60" file="src/arch/riscv/sync_exceptions.c" linenr="115" column="80" str=";" scope="0x55c5aacdb7a0"/>
+    <token id="0x55c5aacbb080" file="src/arch/riscv/sync_exceptions.c" linenr="116" column="5" str="}" scope="0x55c5aacdb7a0" link="0x55c5aac63b40"/>
+    <token id="0x55c5aacbb1a0" file="src/arch/riscv/sync_exceptions.c" linenr="117" column="1" str="}" scope="0x55c5aacdaf00" link="0x55c5aac5f890"/>
+    <token id="0x55c5aacbb2c0" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="1" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" astParent="0x55c5aacda190" originalName="size_t"/>
+    <token id="0x55c5aacda190" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="0" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aacbb740" astOperand1="0x55c5aacbb2c0" astOperand2="0x55c5aacda3d0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacbb3e0" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="16" str="sync_handler_table" scope="0x55c5aac785a0" type="name" varId="18" variable="0x55c5ab0a5240" astParent="0x55c5aacda3d0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacda3d0" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="34" str="[" scope="0x55c5aac785a0" link="0x55c5aacbb620" astParent="0x55c5aacda190" astOperand1="0x55c5aacbb3e0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacbb620" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="35" str="]" scope="0x55c5aac785a0" link="0x55c5aacda3d0"/>
+    <token id="0x55c5aacbb740" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="37" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacda190" astOperand2="0x55c5aacbb860" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacbb860" file="src/arch/riscv/sync_exceptions.c" linenr="119" column="39" str="{" scope="0x55c5aac785a0" link="0x55c5ab0a5ea0" astParent="0x55c5aacbb740" astOperand1="0x55c5aacbc5e0"/>
+    <token id="0x55c5aacbb980" file="src/arch/riscv/sync_exceptions.c" linenr="120" column="5" str="[" scope="0x55c5aac785a0" link="0x55c5aacbbbc0" astParent="0x55c5aacbbce0" astOperand1="0x55c5aacbbaa0"/>
+    <token id="0x55c5aacbbaa0" file="src/arch/riscv/sync_exceptions.c" linenr="120" column="6" str="SCAUSE_CODE_ECV" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbb980"/>
+    <token id="0x55c5aacbbbc0" file="src/arch/riscv/sync_exceptions.c" linenr="120" column="21" str="]" scope="0x55c5aac785a0" link="0x55c5aacbb980"/>
+    <token id="0x55c5aacbbce0" file="src/arch/riscv/sync_exceptions.c" linenr="120" column="23" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astParent="0x55c5aacbbf20" astOperand1="0x55c5aacbb980" astOperand2="0x55c5aacbbe00"/>
+    <token id="0x55c5aacbbe00" file="src/arch/riscv/sync_exceptions.c" linenr="120" column="25" str="sbi_vs_handler" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbbce0"/>
+    <token id="0x55c5aacbbf20" file="src/arch/riscv/sync_exceptions.c" linenr="120" column="39" str="," scope="0x55c5aac785a0" astParent="0x55c5aacbc5e0" astOperand1="0x55c5aacbbce0" astOperand2="0x55c5aacbc3a0"/>
+    <token id="0x55c5aacbc040" file="src/arch/riscv/sync_exceptions.c" linenr="121" column="5" str="[" scope="0x55c5aac785a0" link="0x55c5aacbc280" astParent="0x55c5aacbc3a0" astOperand1="0x55c5aacbc160"/>
+    <token id="0x55c5aacbc160" file="src/arch/riscv/sync_exceptions.c" linenr="121" column="6" str="SCAUSE_CODE_LGPF" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbc040"/>
+    <token id="0x55c5aacbc280" file="src/arch/riscv/sync_exceptions.c" linenr="121" column="22" str="]" scope="0x55c5aac785a0" link="0x55c5aacbc040"/>
+    <token id="0x55c5aacbc3a0" file="src/arch/riscv/sync_exceptions.c" linenr="121" column="24" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astParent="0x55c5aacbbf20" astOperand1="0x55c5aacbc040" astOperand2="0x55c5aacbc4c0"/>
+    <token id="0x55c5aacbc4c0" file="src/arch/riscv/sync_exceptions.c" linenr="121" column="26" str="guest_page_fault_handler" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbc3a0"/>
+    <token id="0x55c5aacbc5e0" file="src/arch/riscv/sync_exceptions.c" linenr="121" column="50" str="," scope="0x55c5aac785a0" astParent="0x55c5aacbb860" astOperand1="0x55c5aacbbf20" astOperand2="0x55c5aacbca60"/>
+    <token id="0x55c5aacbc700" file="src/arch/riscv/sync_exceptions.c" linenr="122" column="5" str="[" scope="0x55c5aac785a0" link="0x55c5aacbc940" astParent="0x55c5aacbca60" astOperand1="0x55c5aacbc820"/>
+    <token id="0x55c5aacbc820" file="src/arch/riscv/sync_exceptions.c" linenr="122" column="6" str="SCAUSE_CODE_SGPF" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbc700"/>
+    <token id="0x55c5aacbc940" file="src/arch/riscv/sync_exceptions.c" linenr="122" column="22" str="]" scope="0x55c5aac785a0" link="0x55c5aacbc700"/>
+    <token id="0x55c5aacbca60" file="src/arch/riscv/sync_exceptions.c" linenr="122" column="24" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astParent="0x55c5aacbc5e0" astOperand1="0x55c5aacbc700" astOperand2="0x55c5aad1f670"/>
+    <token id="0x55c5aad1f670" file="src/arch/riscv/sync_exceptions.c" linenr="122" column="26" str="guest_page_fault_handler" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbca60"/>
+    <token id="0x55c5ab0a5d80" file="src/arch/riscv/sync_exceptions.c" linenr="122" column="50" str="," scope="0x55c5aac785a0"/>
+    <token id="0x55c5ab0a5ea0" file="src/arch/riscv/sync_exceptions.c" linenr="123" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aacbb860"/>
+    <token id="0x55c5ab0a5fc0" file="src/arch/riscv/sync_exceptions.c" linenr="123" column="2" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5ab0a60e0" file="src/arch/riscv/sync_exceptions.c" linenr="125" column="1" str="static" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5ab0a6200" file="src/arch/riscv/sync_exceptions.c" linenr="125" column="8" str="const" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5ab0a6320" file="src/arch/riscv/sync_exceptions.c" linenr="125" column="14" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5ab0a6440" file="src/arch/riscv/sync_exceptions.c" linenr="125" column="21" str="sync_handler_table_size" scope="0x55c5aac785a0" type="name" varId="19" variable="0x55c5aac89c20" astParent="0x55c5ab0a6560" valueType-type="long" valueType-sign="unsigned" valueType-constness="1" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a6560" file="src/arch/riscv/sync_exceptions.c" linenr="125" column="45" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0a6440" astOperand2="0x55c5ab0a6b00" valueType-type="long" valueType-sign="unsigned" valueType-constness="1" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a6680" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="5" str="sizeof" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab0a67a0"/>
+    <token id="0x55c5ab0a67a0" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="11" str="(" scope="0x55c5aac785a0" link="0x55c5ab0a69e0" astParent="0x55c5ab0a6b00" astOperand1="0x55c5ab0a6680" astOperand2="0x55c5ab0a68c0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a68c0" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="12" str="sync_handler_table" scope="0x55c5aac785a0" type="name" varId="18" variable="0x55c5ab0a5240" astParent="0x55c5ab0a67a0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a69e0" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="30" str=")" scope="0x55c5aac785a0" link="0x55c5ab0a67a0"/>
+    <token id="0x55c5ab0a6b00" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="32" str="/" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5ab0a6560" astOperand1="0x55c5ab0a67a0" astOperand2="0x55c5ab0a6d40" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a6c20" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="34" str="sizeof" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab0a6d40"/>
+    <token id="0x55c5ab0a6d40" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="40" str="(" scope="0x55c5aac785a0" link="0x55c5ab0a6f80" values="0x55c5aad0a090" astParent="0x55c5ab0a6b00" astOperand1="0x55c5ab0a6c20" astOperand2="0x55c5ab0a6e60" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a6e60" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="41" str="long" scope="0x55c5aac785a0" type="name" isUnsigned="true" astParent="0x55c5ab0a6d40" originalName="size_t" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacda850" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="0" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5ab0a6f80" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="55" str=")" scope="0x55c5aac785a0" link="0x55c5ab0a6d40"/>
+    <token id="0x55c5ab0a70a0" file="src/arch/riscv/sync_exceptions.c" linenr="126" column="56" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5ab0a71c0" file="src/arch/riscv/sync_exceptions.c" linenr="128" column="1" str="void" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5ab0a72e0" file="src/arch/riscv/sync_exceptions.c" linenr="128" column="6" str="sync_exception_handler" scope="0x55c5aac785a0" type="name" function="0x55c5aafac550" astParent="0x55c5ab0a7400"/>
+    <token id="0x55c5ab0a7400" file="src/arch/riscv/sync_exceptions.c" linenr="128" column="28" str="(" scope="0x55c5aac785a0" link="0x55c5ab0a7520" astOperand1="0x55c5ab0a72e0" valueType-type="void"/>
+    <token id="0x55c5ab0a7520" file="src/arch/riscv/sync_exceptions.c" linenr="128" column="29" str=")" scope="0x55c5aac785a0" link="0x55c5ab0a7400"/>
+    <token id="0x55c5ab0a7640" file="src/arch/riscv/sync_exceptions.c" linenr="129" column="1" str="{" scope="0x55c5aacdb910" link="0x55c5aacc0d80"/>
+    <token id="0x55c5ab0a7760" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="5" str="long" scope="0x55c5aacdb910" type="name" isUnsigned="true" originalName="size_t"/>
+    <token id="0x55c5ab0a7880" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="12" str="pc_step" scope="0x55c5aacdb910" type="name" varId="20" variable="0x55c5ab070650" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5ab0a79a0" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="20" str=";" scope="0x55c5aacdb910"/>
+    <token id="0x55c5aacd9d10" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="12" str="pc_step" scope="0x55c5aacdb910" type="name" varId="20" variable="0x55c5ab070650" astParent="0x55c5aacd9e30" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacd9e30" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="20" str="=" scope="0x55c5aacdb910" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd9d10" astOperand2="0x55c5aac55720" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac55720" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="22" str="0" scope="0x55c5aacdb910" type="number" isInt="True" values="0x55c5ab0726a0" astParent="0x55c5aacd9e30" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacdbdc0" file="src/arch/riscv/sync_exceptions.c" linenr="130" column="23" str=";" scope="0x55c5aacdb910"/>
+    <token id="0x55c5aacdbee0" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="14" str="long" scope="0x55c5aacdb910" type="name" isUnsigned="true"/>
+    <token id="0x55c5aacdc120" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="19" str="_scause" scope="0x55c5aacdb910" type="name" varId="21" variable="0x55c5ab070730" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdc240" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="27" str=";" scope="0x55c5aacdb910"/>
+    <token id="0x55c5aacd9f50" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="19" str="_scause" scope="0x55c5aacdb910" type="name" varId="21" variable="0x55c5ab070730" astParent="0x55c5aacda070" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacda070" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="27" str="=" scope="0x55c5aacdb910" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd9f50" astOperand2="0x55c5aacdc480" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdc360" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="29" str="CSRR" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacdc480"/>
+    <token id="0x55c5aacdc480" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="33" str="(" scope="0x55c5aacdb910" link="0x55c5aacdc6c0" astParent="0x55c5aacda070" astOperand1="0x55c5aacdc360" astOperand2="0x55c5aacdc5a0"/>
+    <token id="0x55c5aacdc5a0" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="34" str="scause" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacdc480"/>
+    <token id="0x55c5aacdc6c0" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="40" str=")" scope="0x55c5aacdb910" link="0x55c5aacdc480"/>
+    <token id="0x55c5aacdc7e0" file="src/arch/riscv/sync_exceptions.c" linenr="131" column="41" str=";" scope="0x55c5aacdb910"/>
+    <token id="0x55c5aacdc900" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="5" str="if" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacdca20"/>
+    <token id="0x55c5aacdca20" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="8" str="(" scope="0x55c5aacdb910" link="0x55c5aacdd440" astOperand1="0x55c5aacdc900" astOperand2="0x55c5aacdcea0"/>
+    <token id="0x55c5aacdcb40" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="9" str="_scause" scope="0x55c5aacdb910" type="name" varId="21" variable="0x55c5ab070730" astParent="0x55c5aacdcc60" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdcc60" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="17" str="&lt;" scope="0x55c5aacdb910" type="op" isComparisonOp="True" astParent="0x55c5aacdcea0" astOperand1="0x55c5aacdcb40" astOperand2="0x55c5aacdcd80" valueType-type="bool"/>
+    <token id="0x55c5aacdcd80" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="19" str="sync_handler_table_size" scope="0x55c5aacdb910" type="name" varId="19" variable="0x55c5aac89c20" astParent="0x55c5aacdcc60" valueType-type="long" valueType-sign="unsigned" valueType-constness="1" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacdcea0" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="43" str="&amp;&amp;" scope="0x55c5aacdb910" type="op" isLogicalOp="True" astParent="0x55c5aacdca20" astOperand1="0x55c5aacdcc60" astOperand2="0x55c5aacdd0e0" valueType-type="bool"/>
+    <token id="0x55c5aacdcfc0" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="46" str="sync_handler_table" scope="0x55c5aacdb910" type="name" varId="18" variable="0x55c5ab0a5240" values="0x55c5aaccde10" astParent="0x55c5aacdd0e0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacdd0e0" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="64" str="[" scope="0x55c5aacdb910" link="0x55c5aacdd320" astParent="0x55c5aacdcea0" astOperand1="0x55c5aacdcfc0" astOperand2="0x55c5aacdd200" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacdd200" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="65" str="_scause" scope="0x55c5aacdb910" type="name" varId="21" variable="0x55c5ab070730" astParent="0x55c5aacdd0e0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdd320" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="72" str="]" scope="0x55c5aacdb910" link="0x55c5aacdd0e0"/>
+    <token id="0x55c5aacdd440" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="73" str=")" scope="0x55c5aacdb910" link="0x55c5aacdca20"/>
+    <token id="0x55c5aacdd560" file="src/arch/riscv/sync_exceptions.c" linenr="136" column="75" str="{" scope="0x55c5aacdba80" link="0x55c5aacde0a0"/>
+    <token id="0x55c5aacdd680" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="9" str="pc_step" scope="0x55c5aacdba80" type="name" varId="20" variable="0x55c5ab070650" astParent="0x55c5aacdd7a0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacdd7a0" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="17" str="=" scope="0x55c5aacdba80" type="op" isAssignmentOp="True" astOperand1="0x55c5aacdd680" astOperand2="0x55c5aacddd40" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacdd8c0" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="19" str="sync_handler_table" scope="0x55c5aacdba80" type="name" varId="18" variable="0x55c5ab0a5240" values="0x55c5aaccde70" astParent="0x55c5aacdd9e0" valueType-type="long" valueType-sign="unsigned" valueType-pointer="2" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacdd9e0" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="37" str="[" scope="0x55c5aacdba80" link="0x55c5aacddc20" astParent="0x55c5aacddd40" astOperand1="0x55c5aacdd8c0" astOperand2="0x55c5aacddb00" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacddb00" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="38" str="_scause" scope="0x55c5aacdba80" type="name" varId="21" variable="0x55c5ab070730" astParent="0x55c5aacdd9e0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacddc20" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="45" str="]" scope="0x55c5aacdba80" link="0x55c5aacdd9e0"/>
+    <token id="0x55c5aacddd40" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="46" str="(" scope="0x55c5aacdba80" link="0x55c5aacdde60" astParent="0x55c5aacdd7a0" astOperand1="0x55c5aacdd9e0"/>
+    <token id="0x55c5aacdde60" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="47" str=")" scope="0x55c5aacdba80" link="0x55c5aacddd40"/>
+    <token id="0x55c5aacddf80" file="src/arch/riscv/sync_exceptions.c" linenr="137" column="48" str=";" scope="0x55c5aacdba80"/>
+    <token id="0x55c5aacde0a0" file="src/arch/riscv/sync_exceptions.c" linenr="138" column="5" str="}" scope="0x55c5aacdba80" link="0x55c5aacdd560"/>
+    <token id="0x55c5aacbf700" file="src/arch/riscv/sync_exceptions.c" linenr="138" column="7" str="else" scope="0x55c5aacdb910" type="name"/>
+    <token id="0x55c5aacbf820" file="src/arch/riscv/sync_exceptions.c" linenr="138" column="12" str="{" scope="0x55c5ab06ff30" link="0x55c5aacc0120"/>
+    <token id="0x55c5aacbf940" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="9" str="ERROR" scope="0x55c5ab06ff30" type="name" astParent="0x55c5aacbfa60"/>
+    <token id="0x55c5aacbfa60" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="14" str="(" scope="0x55c5ab06ff30" link="0x55c5aacbfee0" astOperand1="0x55c5aacbf940" astOperand2="0x55c5aacbfca0"/>
+    <token id="0x55c5aacbfb80" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="15" str="&quot;unkown synchronous exception (%d)&quot;" scope="0x55c5ab06ff30" type="string" strlen="33" values="0x55c5aaccddb0" astParent="0x55c5aacbfca0" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aacbfca0" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="50" str="," scope="0x55c5ab06ff30" astParent="0x55c5aacbfa60" astOperand1="0x55c5aacbfb80" astOperand2="0x55c5aacbfdc0"/>
+    <token id="0x55c5aacbfdc0" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="52" str="_scause" scope="0x55c5ab06ff30" type="name" varId="21" variable="0x55c5ab070730" astParent="0x55c5aacbfca0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacbfee0" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="59" str=")" scope="0x55c5ab06ff30" link="0x55c5aacbfa60"/>
+    <token id="0x55c5aacc0000" file="src/arch/riscv/sync_exceptions.c" linenr="139" column="60" str=";" scope="0x55c5ab06ff30"/>
+    <token id="0x55c5aacc0120" file="src/arch/riscv/sync_exceptions.c" linenr="140" column="5" str="}" scope="0x55c5ab06ff30" link="0x55c5aacbf820"/>
+    <token id="0x55c5aacc0240" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="5" str="cpu" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacc0360"/>
+    <token id="0x55c5aacc0360" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="8" str="." scope="0x55c5aacdb910" astParent="0x55c5aacc05a0" astOperand1="0x55c5aacc0240" astOperand2="0x55c5aacc0480"/>
+    <token id="0x55c5aacc0480" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="9" str="vcpu" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacc0360"/>
+    <token id="0x55c5aacc05a0" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="13" str="." scope="0x55c5aacdb910" astParent="0x55c5aacc07e0" astOperand1="0x55c5aacc0360" astOperand2="0x55c5aacc06c0" originalName="->"/>
+    <token id="0x55c5aacc06c0" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="15" str="regs" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacc05a0"/>
+    <token id="0x55c5aacc07e0" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="19" str="." scope="0x55c5aacdb910" astParent="0x55c5aacc0a20" astOperand1="0x55c5aacc05a0" astOperand2="0x55c5aacc0900" originalName="->"/>
+    <token id="0x55c5aacc0900" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="21" str="sepc" scope="0x55c5aacdb910" type="name" astParent="0x55c5aacc07e0"/>
+    <token id="0x55c5aacc0a20" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="26" str="+=" scope="0x55c5aacdb910" type="op" isAssignmentOp="True" astOperand1="0x55c5aacc07e0" astOperand2="0x55c5aacc0b40"/>
+    <token id="0x55c5aacc0b40" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="29" str="pc_step" scope="0x55c5aacdb910" type="name" varId="20" variable="0x55c5ab070650" values="0x55c5aacce180" astParent="0x55c5aacc0a20" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aacc0c60" file="src/arch/riscv/sync_exceptions.c" linenr="142" column="36" str=";" scope="0x55c5aacdb910"/>
+    <token id="0x55c5aacc0d80" file="src/arch/riscv/sync_exceptions.c" linenr="143" column="1" str="}" scope="0x55c5aacdb910" link="0x55c5ab0a7640"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac785a0" type="Global">
+      <functionList>
+        <function id="0x55c5ab0b0ec0" tokenDef="0x55c5ab0a1e00" name="read_ins" type="Function" isStatic="true">
+          <arg nr="1" variable="0x55c5ab070810"/>
+        </function>
+        <function id="0x55c5aafac070" tokenDef="0x55c5aac5b430" name="sbi_vs_handler" type="Function"/>
+        <function id="0x55c5aafac4b0" tokenDef="0x55c5aac5bc10" name="ins_ldst_decode" type="Function" isStatic="true">
+          <arg nr="1" variable="0x55c5ab0708f0"/>
+          <arg nr="2" variable="0x55c5ab0709d0"/>
+        </function>
+        <function id="0x55c5aafaabd0" tokenDef="0x55c5aac5f530" name="guest_page_fault_handler" type="Function"/>
+        <function id="0x55c5aafac550" tokenDef="0x55c5ab0a72e0" name="sync_exception_handler" type="Function"/>
+      </functionList>
+      <varlist>
+        <var id="0x55c5ab0a5240"/>
+        <var id="0x55c5aac89c20"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac783b0" type="Function" className="read_ins" bodyStart="0x55c5aad48d80" bodyEnd="0x55c5aac6e070" nestedIn="0x55c5aac785a0" function="0x55c5ab0b0ec0">
+      <varlist>
+        <var id="0x55c5aafabd00"/>
+        <var id="0x55c5aafac9e0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac76850" type="If" bodyStart="0x55c5aad09550" bodyEnd="0x55c5aac66ba0" nestedIn="0x55c5aac783b0"/>
+    <scope id="0x55c5aac7b730" type="If" bodyStart="0x55c5aac67260" bodyEnd="0x55c5aac6dbf0" nestedIn="0x55c5aac783b0"/>
+    <scope id="0x55c5aac781c0" type="Function" className="ins_ldst_decode" bodyStart="0x55c5aad3b5f0" bodyEnd="0x55c5aac5f2f0" nestedIn="0x55c5aac785a0" function="0x55c5aafac4b0"/>
+    <scope id="0x55c5aac789a0" type="If" bodyStart="0x55c5aad10690" bodyEnd="0x55c5aacb9440" nestedIn="0x55c5aac781c0"/>
+    <scope id="0x55c5aac75e20" type="If" bodyStart="0x55c5ab0ab780" bodyEnd="0x55c5ab0abd20" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5aacdac20" type="Else" bodyStart="0x55c5aacb9680" bodyEnd="0x55c5aac5ee70" nestedIn="0x55c5aac781c0">
+      <varlist>
+        <var id="0x55c5ab070110"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aacdad90" type="If" bodyStart="0x55c5ab0ae880" bodyEnd="0x55c5ab0aee20" nestedIn="0x55c5aacdac20"/>
+    <scope id="0x55c5aacdaf00" type="Function" className="guest_page_fault_handler" bodyStart="0x55c5aac5f890" bodyEnd="0x55c5aacbb1a0" nestedIn="0x55c5aac785a0" function="0x55c5aafaabd0">
+      <varlist>
+        <var id="0x55c5ab0701f0"/>
+        <var id="0x55c5ab0702d0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aacdb070" type="If" bodyStart="0x55c5aad495a0" bodyEnd="0x55c5aad4a320" nestedIn="0x55c5aacdaf00"/>
+    <scope id="0x55c5aacdb1e0" type="If" bodyStart="0x55c5aad1bd50" bodyEnd="0x55c5aac63900" nestedIn="0x55c5aacdaf00">
+      <varlist>
+        <var id="0x55c5ab0703b0"/>
+        <var id="0x55c5ab070490"/>
+        <var id="0x55c5ab070570"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aacdb350" type="If" bodyStart="0x55c5aac6d2d0" bodyEnd="0x55c5aad1ce30" nestedIn="0x55c5aacdb1e0"/>
+    <scope id="0x55c5aacdb4c0" type="If" bodyStart="0x55c5aad1ebf0" bodyEnd="0x55c5aad1f3d0" nestedIn="0x55c5aacdb1e0"/>
+    <scope id="0x55c5aacdb630" type="Else" bodyStart="0x55c5aad1f610" bodyEnd="0x55c5aac637e0" nestedIn="0x55c5aacdb1e0"/>
+    <scope id="0x55c5aacdb7a0" type="Else" bodyStart="0x55c5aac63b40" bodyEnd="0x55c5aacbb080" nestedIn="0x55c5aacdaf00"/>
+    <scope id="0x55c5aacdb910" type="Function" className="sync_exception_handler" bodyStart="0x55c5ab0a7640" bodyEnd="0x55c5aacc0d80" nestedIn="0x55c5aac785a0" function="0x55c5aafac550">
+      <varlist>
+        <var id="0x55c5ab070650"/>
+        <var id="0x55c5ab070730"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aacdba80" type="If" bodyStart="0x55c5aacdd560" bodyEnd="0x55c5aacde0a0" nestedIn="0x55c5aacdb910"/>
+    <scope id="0x55c5ab06ff30" type="Else" bodyStart="0x55c5aacbf820" bodyEnd="0x55c5aacc0120" nestedIn="0x55c5aacdb910"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac89c20" nameToken="0x55c5ab0a6440" typeStartToken="0x55c5ab0a6320" typeEndToken="0x55c5ab0a6320" access="Global" scope="0x55c5aac785a0" constness="1" isArgument="false" isArray="false" isClass="false" isConst="true" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="true"/>
+    <var id="0x55c5aafabd00" nameToken="0x55c5ab0aaa30" typeStartToken="0x55c5aafab4e0" typeEndToken="0x55c5aafab4e0" access="Local" scope="0x55c5aac783b0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aafac9e0" nameToken="0x55c5aac5e950" typeStartToken="0x55c5aacdf3c0" typeEndToken="0x55c5aacdf3c0" access="Local" scope="0x55c5aac783b0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab070110" nameToken="0x55c5ab0af110" typeStartToken="0x55c5ab0aeff0" typeEndToken="0x55c5ab0aeff0" access="Local" scope="0x55c5aacdac20" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0701f0" nameToken="0x55c5aad4a560" typeStartToken="0x55c5aad4a440" typeEndToken="0x55c5aad4a440" access="Local" scope="0x55c5aacdaf00" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0702d0" nameToken="0x55c5aac54a60" typeStartToken="0x55c5aac54940" typeEndToken="0x55c5aac54940" access="Local" scope="0x55c5aacdaf00" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0703b0" nameToken="0x55c5aad1bf90" typeStartToken="0x55c5aad1be70" typeEndToken="0x55c5aad1be70" access="Local" scope="0x55c5aacdb1e0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab070490" nameToken="0x55c5aad1c9b0" typeStartToken="0x55c5aad1c770" typeEndToken="0x55c5aad1c770" access="Local" scope="0x55c5aacdb1e0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab070570" nameToken="0x55c5aac6c310" typeStartToken="0x55c5aac6c1f0" typeEndToken="0x55c5aac6c1f0" access="Local" scope="0x55c5aacdb1e0" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab070650" nameToken="0x55c5ab0a7880" typeStartToken="0x55c5ab0a7760" typeEndToken="0x55c5ab0a7760" access="Local" scope="0x55c5aacdb910" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab070730" nameToken="0x55c5aacdc120" typeStartToken="0x55c5aacdbee0" typeEndToken="0x55c5aacdbee0" access="Local" scope="0x55c5aacdb910" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab070810" nameToken="0x55c5aad24280" typeStartToken="0x55c5aaca1c60" typeEndToken="0x55c5aaca1c60" access="Argument" scope="0x55c5aac783b0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0708f0" nameToken="0x55c5aad3af30" typeStartToken="0x55c5aad3ae10" typeEndToken="0x55c5aad3ae10" access="Argument" scope="0x55c5aac781c0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0709d0" nameToken="0x55c5aad3b3b0" typeStartToken="0x55c5aad3b170" typeEndToken="0x55c5aad3b290" access="Argument" scope="0x55c5aac781c0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0a5240" nameToken="0x55c5aacbb3e0" typeStartToken="0x55c5aacbb2c0" typeEndToken="0x55c5aacda190" access="Global" scope="0x55c5aac785a0" constness="0" isArgument="false" isArray="true" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aaf88420">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aaccdf70">
+      <value intvalue="0" condition-line="27" possible="true"/>
+    </values>
+    <values id="0x55c5aaccddd0">
+      <value lifetime="0x55c5aaca16d0" possible="true"/>
+    </values>
+    <values id="0x55c5aacce020">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aad18730">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0x55c5aacce040">
+      <value intvalue="0" condition-line="27" possible="true"/>
+    </values>
+    <values id="0x55c5ab09e850">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0x55c5aac4bf40">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0x55c5aaccddf0">
+      <value lifetime="0x55c5aae55a80" possible="true"/>
+    </values>
+    <values id="0x55c5aae56570">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5aacce120">
+      <value intvalue="1" condition-line="27" possible="true"/>
+    </values>
+    <values id="0x55c5aacce060">
+      <value intvalue="0" condition-line="27" possible="true"/>
+    </values>
+    <values id="0x55c5aaccdd30">
+      <value tokvalue="0x55c5aac675c0" known="true"/>
+    </values>
+    <values id="0x55c5aac64d70">
+      <value intvalue="-1" known="true"/>
+    </values>
+    <values id="0x55c5ab0aab80">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5aafac100">
+      <value intvalue="8" known="true"/>
+    </values>
+    <values id="0x55c5ab0b11a0">
+      <value intvalue="-1" known="true"/>
+    </values>
+    <values id="0x55c5aac748b0">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0x55c5aac74890">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aad44f60">
+      <value intvalue="1" possible="true"/>
+    </values>
+    <values id="0x55c5ab0b3e40">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aad45170">
+      <value intvalue="1" known="true"/>
+      <value intvalue="2" possible="true"/>
+    </values>
+    <values id="0x55c5aac64750">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0x55c5aafac9b0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aad45380">
+      <value intvalue="2" possible="true"/>
+    </values>
+    <values id="0x55c5aace2730">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0x55c5aace0590">
+      <value intvalue="2" known="true"/>
+      <value intvalue="4" possible="true"/>
+      <value intvalue="8" possible="true"/>
+    </values>
+    <values id="0x55c5aac798a0">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0x55c5ab0acf80">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0x55c5aac7bbe0">
+      <value intvalue="4" possible="true"/>
+      <value intvalue="8" possible="true"/>
+    </values>
+    <values id="0x55c5ab0acd70">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5aaca1c40">
+      <value intvalue="8" known="true"/>
+    </values>
+    <values id="0x55c5aacdbc50">
+      <value intvalue="8" known="true"/>
+    </values>
+    <values id="0x55c5aaccdf50">
+      <value intvalue="1" possible="true"/>
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0x55c5aaccde90">
+      <value intvalue="0" possible="true"/>
+      <value intvalue="4" possible="true"/>
+    </values>
+    <values id="0x55c5aad1f6d0">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5aad1ce90">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac6d990">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5aacba040">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0x55c5aaccdf90">
+      <value intvalue="0" condition-line="94" possible="true"/>
+    </values>
+    <values id="0x55c5aacce140">
+      <value intvalue="0" condition-line="94" possible="true"/>
+    </values>
+    <values id="0x55c5aacce160">
+      <value intvalue="0" condition-line="94" possible="true"/>
+    </values>
+    <values id="0x55c5aaf6e8c0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aaccde30">
+      <value lifetime="0x55c5aac6cd30" possible="true"/>
+    </values>
+    <values id="0x55c5aad11110">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aaccdd50">
+      <value tokvalue="0x55c5aac6d630" known="true"/>
+    </values>
+    <values id="0x55c5aaccde50">
+      <value lifetime="0x55c5aad1e890" possible="true"/>
+    </values>
+    <values id="0x55c5aaccdd70">
+      <value tokvalue="0x55c5aac62ca0" known="true"/>
+    </values>
+    <values id="0x55c5aaccdd90">
+      <value tokvalue="0x55c5aac63ea0" known="true"/>
+    </values>
+    <values id="0x55c5aad0a090">
+      <value intvalue="8" known="true"/>
+    </values>
+    <values id="0x55c5ab0726a0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aaccde10">
+      <value lifetime="0x55c5aacbb3e0" possible="true"/>
+    </values>
+    <values id="0x55c5aaccde70">
+      <value lifetime="0x55c5aacbb3e0" possible="true"/>
+    </values>
+    <values id="0x55c5aaccddb0">
+      <value tokvalue="0x55c5aacbfb80" known="true"/>
+    </values>
+    <values id="0x55c5aacce180">
+      <value intvalue="0" possible="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

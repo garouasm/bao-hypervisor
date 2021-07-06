@@ -216,7 +216,7 @@ static bool pp_alloc(page_pool_t *pool, size_t n, bool aligned,
      *  If we need a contigous segment aligned to its size, lets start
      * at an already aligned index.
      */
-    size_t start = aligned ?  n - (pool->base / PAGE_SIZE % n) : 0;
+    size_t start = aligned ? n - (pool->base / PAGE_SIZE % n) : 0;
     size_t curr = pool->last + ((pool->last + start) % n);
 
     /**
@@ -304,7 +304,8 @@ static inline pte_t *mem_alloc_pt(addr_space_t *as, pte_t *parent, uint64_t lvl,
 {
     /* Must have lock on as and va section to call */
     size_t ptsize = pt_size(&as->pt, lvl) / PAGE_SIZE;
-    ppages_t ppage = mem_alloc_ppages(as->colors, ptsize, ptsize > 1 ? true : false);
+    ppages_t ppage =
+        mem_alloc_ppages(as->colors, ptsize, ptsize > 1 ? true : false);
     if (ppage.size == 0) return NULL;
     pte_set(parent, ppage.base, PTE_TABLE, PTE_HYP_FLAGS);
     fence_sync_write();
@@ -447,16 +448,16 @@ void *mem_alloc_vpage(addr_space_t *as, enum AS_SEC section, void *at, size_t n)
         lvlsze = pt_lvlsize(&as->pt, lvl);
 
         while ((entry < nentries) && (count < n) && !failed) {
-            if(pte_check_rsw(pte, PTE_RSW_RSRV) || 
-              (pte_valid(pte) && !pte_table(&as->pt, pte, lvl))) {
+            if (pte_check_rsw(pte, PTE_RSW_RSRV) ||
+                (pte_valid(pte) && !pte_table(&as->pt, pte, lvl))) {
                 count = 0;
                 vpage = NULL;
                 if (at != NULL) {
                     failed = true;
                     break;
                 }
-            } else if(!pte_valid(pte)) {
-                if(pte_allocable(as, pte, lvl, n - count, (uint64_t)addr)) {
+            } else if (!pte_valid(pte)) {
+                if (pte_allocable(as, pte, lvl, n - count, (uint64_t)addr)) {
                     if (count == 0) vpage = (void *)addr;
                     count += (lvlsze / PAGE_SIZE);
                 } else {
@@ -466,7 +467,7 @@ void *mem_alloc_vpage(addr_space_t *as, enum AS_SEC section, void *at, size_t n)
                 }
             }
 
-            if(pte_table(&as->pt, pte, lvl)) {
+            if (pte_table(&as->pt, pte, lvl)) {
                 lvl++;
                 break;
             } else {
@@ -476,7 +477,7 @@ void *mem_alloc_vpage(addr_space_t *as, enum AS_SEC section, void *at, size_t n)
                     lvl = 0;
                     break;
                 }
-            }   
+            }
         }
     }
 
@@ -694,7 +695,7 @@ int mem_map_reclr(addr_space_t *as, void *va, ppages_t *ppages, size_t n,
             reclrd_num++;
     }
 
-   /**
+    /**
      * If the address space was not assigned any specific color,
      * or there are no pages to recolor defer to vanilla mapping.
      */
@@ -761,10 +762,7 @@ int mem_map_reclr(addr_space_t *as, void *va, ppages_t *ppages, size_t n,
      * Free the uncolored pages of the original image.
      */
     ppages_t unused_pages = {
-        .base = ppages->base,
-        .size = reclrd_num,
-        .colors = ~as->colors
-    };
+        .base = ppages->base, .size = reclrd_num, .colors = ~as->colors};
     mem_free_ppages(&unused_pages);
 
     mem_free_vpage(&cpu.as, reclrd_va_base, reclrd_num, false);
@@ -1004,12 +1002,12 @@ bool mem_reserve_vm_cfg(page_pool_t *pool)
 
     for (int i = 0; i < vm_config_ptr->shmemlist_size; i++) {
         shmem_t *shmem = &vm_config_ptr->shmemlist[i];
-        if(shmem->place_phys) {
+        if (shmem->place_phys) {
             size_t n_pg = NUM_PAGES(shmem->size);
             ppages_t ppages = mem_ppages_get(shmem->phys, n_pg);
             if (!mem_reserve_ppool_ppages(pool, &ppages)) {
                 return false;
-            }           
+            }
             shmem->phys = ppages.base;
         }
     }
@@ -1063,8 +1061,8 @@ bool mem_map_vm_config(uint64_t config_addr)
     ppages_t pages = mem_ppages_get(config_addr, 1);
     mem_map(&cpu.as, vm_config_ptr, &pages, 1, PTE_HYP_FLAGS);
     if (vm_config_ptr->config_header_size > PAGE_SIZE) {
-        size_t n =
-            NUM_PAGES(((uint64_t)vm_config_ptr->config_header_size) - PAGE_SIZE);
+        size_t n = NUM_PAGES(((uint64_t)vm_config_ptr->config_header_size) -
+                             PAGE_SIZE);
         void *va = mem_alloc_vpage(&cpu.as, SEC_HYP_GLOBAL,
                                    vm_config_ptr + PAGE_SIZE, n);
         if (va == NULL) return false;
@@ -1199,14 +1197,15 @@ void color_hypervisor(const uint64_t load_addr, const uint64_t config_addr)
         if (va != &_image_start)
             ERROR("Can't allocate virtual address for Bao Image");
 
-        mem_map(&cpu_new->as, va, &p_image,
-                NUM_PAGES(image_size), PTE_HYP_FLAGS);
+        mem_map(&cpu_new->as, va, &p_image, NUM_PAGES(image_size),
+                PTE_HYP_FLAGS);
         shared_pte = pte_addr(pt_get_pte(&cpu_new->as.pt, 0, &_image_start));
     } else {
         pte_t *image_pte = pt_get_pte(&cpu_new->as.pt, 0, &_image_start);
 
         /* Wait for CPU_MASTER to get image page table entry */
-        while (shared_pte == 0);
+        while (shared_pte == 0)
+            ;
         pte_set(image_pte, shared_pte, PTE_TABLE, PTE_HYP_FLAGS);
     }
 
@@ -1217,20 +1216,17 @@ void color_hypervisor(const uint64_t load_addr, const uint64_t config_addr)
      */
     uint64_t p_intferface_addr;
     mem_translate(&cpu.as, &cpu_new->interface, &p_intferface_addr);
-    p_interface = mem_ppages_get(
-        p_intferface_addr,
-        NUM_PAGES(sizeof(cpu_new->interface)));
-    va = mem_alloc_vpage(
-        &cpu_new->as, SEC_HYP_GLOBAL,
-        &_cpu_if_base + (cpu.id * sizeof(cpu_new->interface)),
-        NUM_PAGES(sizeof(cpu_new->interface)));
+    p_interface = mem_ppages_get(p_intferface_addr,
+                                 NUM_PAGES(sizeof(cpu_new->interface)));
+    va = mem_alloc_vpage(&cpu_new->as, SEC_HYP_GLOBAL,
+                         &_cpu_if_base + (cpu.id * sizeof(cpu_new->interface)),
+                         NUM_PAGES(sizeof(cpu_new->interface)));
 
     if (va != &_cpu_if_base + (cpu.id * sizeof(cpu_new->interface)))
         ERROR("Can't allocate address for cpu interface");
 
     mem_map(&cpu_new->as, va, &p_interface,
-            NUM_PAGES(sizeof(cpu_new->interface)),
-            PTE_HYP_FLAGS);
+            NUM_PAGES(sizeof(cpu_new->interface)), PTE_HYP_FLAGS);
     cpu_sync_barrier(&cpu_glb_sync);
 
     /*
@@ -1251,14 +1247,13 @@ void color_hypervisor(const uint64_t load_addr, const uint64_t config_addr)
         /* Copy root pool bitmap */
         copy_space(root_pool.bitmap, bitmap_size, &p_bitmap);
         va = mem_alloc_vpage(&cpu_new->as, SEC_HYP_GLOBAL,
-                             (void *)root_pool.bitmap,
-                             NUM_PAGES(bitmap_size));
+                             (void *)root_pool.bitmap, NUM_PAGES(bitmap_size));
 
         if (va != (void *)root_pool.bitmap)
             ERROR("Can't allocate address for cpu interface");
 
-        mem_map(&cpu_new->as, va, &p_bitmap,
-                NUM_PAGES(bitmap_size), PTE_HYP_FLAGS);
+        mem_map(&cpu_new->as, va, &p_bitmap, NUM_PAGES(bitmap_size),
+                PTE_HYP_FLAGS);
     }
     cpu_sync_barrier(&cpu_glb_sync);
 
@@ -1287,7 +1282,8 @@ void color_hypervisor(const uint64_t load_addr, const uint64_t config_addr)
         cpu_sync_init(&cpu_glb_sync, platform.cpu_num);
         shared_pte = 0;
     } else {
-        while (shared_pte != 0);
+        while (shared_pte != 0)
+            ;
     }
 
     as_init(&cpu.as, AS_HYP, 0, (pte_t *)cpu.root_pt, colors);
@@ -1337,8 +1333,9 @@ void as_init(addr_space_t *as, enum AS_TYPE type, uint64_t id, void *root_pt,
 
     if (root_pt == NULL) {
         size_t n = pt_size(&as->pt, 0) / PAGE_SIZE;
-        root_pt = mem_alloc_page(n, 
-            type == AS_HYP || type == AS_HYP_CPY ? SEC_HYP_PRIVATE : SEC_HYP_VM, 
+        root_pt = mem_alloc_page(
+            n,
+            type == AS_HYP || type == AS_HYP_CPY ? SEC_HYP_PRIVATE : SEC_HYP_VM,
             true);
         memset(root_pt, 0, n * PAGE_SIZE);
     }

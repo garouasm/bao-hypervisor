@@ -25,7 +25,7 @@ typedef struct ipc {
     size_t size;
     uint64_t shmem_id;
     size_t interrupt_num;
-    uint64_t *interrupts;
+    uint64_t* interrupts;
 } ipc_t;
 
 typedef struct vm_config vm_config_t;

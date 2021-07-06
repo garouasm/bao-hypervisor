@@ -16,10 +16,7 @@
 #ifndef HYPERCALL_H
 #define HYPERCALL_H
 
-enum {
-    HC_INVAL = 0,
-    HC_IPC = 1
-};
+enum { HC_INVAL = 0, HC_IPC = 1 };
 
 enum {
     HC_E_SUCCESS = 0,
@@ -28,6 +25,7 @@ enum {
     HC_E_INVAL_ARGS = 3
 };
 
-typedef int64_t (*hypercall_handler)(uint64_t arg0, uint64_t arg1, uint64_t arg2);
+typedef int64_t (*hypercall_handler)(uint64_t arg0, uint64_t arg1,
+                                     uint64_t arg2);
 
 #endif /* HYPERCALL_H */

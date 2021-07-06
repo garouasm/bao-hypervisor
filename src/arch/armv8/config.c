@@ -18,6 +18,6 @@
 void config_arch_adjust_to_va(struct config *config, uint64_t phys)
 {
     for (int i = 0; i < config->vmlist_size; i++) {
-	    adjust_ptr(config->vmlist[i].platform.arch.smmu.smmu_groups, config);
+        adjust_ptr(config->vmlist[i].platform.arch.smmu.smmu_groups, config);
     }
 }

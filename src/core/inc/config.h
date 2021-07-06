@@ -27,32 +27,40 @@ extern uint8_t _config_end, _images_end;
 #define VM_IMAGE_OFFSET(vm_name) ((uint64_t)&_##vm_name##_vm_beg)
 #define VM_IMAGE_SIZE(vm_name) ((size_t)&_##vm_name##_vm_size)
 
-#define VM_IMAGE(vm_name, image)                                            \
-    extern uint64_t _##vm_name##_vm_size;                                   \
-    extern uint64_t _##vm_name##_vm_beg;                                    \
-    asm(".pushsection .vm_image_" XSTR(vm_name) ", \"a\"\n\t"               \
-        ".global _" XSTR(vm_name) "_vm_beg\n\t"                             \
-        "_" XSTR(vm_name) "_vm_beg:\n\t"                                    \
-        ".incbin " XSTR(image) "\n\t"                                       \
-        "_" XSTR(vm_name) "_vm_end:\n\t"                                    \
-        ".global _" XSTR(vm_name) "_vm_size\n\t"                            \
-        ".set _" XSTR(vm_name) "_vm_size,  (_" XSTR(vm_name) "_vm_end - _"  \
-        #vm_name "_vm_beg)\n\t"                                             \
-        ".popsection");
+#define VM_IMAGE(vm_name, image)                                                                                             \
+    extern uint64_t _##vm_name##_vm_size;                                                                                    \
+    extern uint64_t _##vm_name##_vm_beg;                                                                                     \
+    asm(".pushsection .vm_image_" XSTR(                                                                                      \
+        vm_name) ", \"a\"\n\t"                                                                                               \
+                 ".global _" XSTR(                                                                                           \
+                     vm_name) "_vm_beg\n\t"                                                                                  \
+                              "_" XSTR(                                                                                      \
+                                  vm_name) "_vm_beg:\n\t"                                                                    \
+                                           ".incbin " XSTR(                                                                  \
+                                               image) "\n\t"                                                                 \
+                                                      "_" XSTR(                                                              \
+                                                          vm_name) "_vm_end:"                                                \
+                                                                   "\n\t"                                                    \
+                                                                   ".global "                                                \
+                                                                   "_" XSTR(                                                 \
+                                                                       vm_name) "_vm_size\n\t"                               \
+                                                                                ".set _" XSTR(vm_name) "_vm_size,  (_" XSTR( \
+                                                                                    vm_name) "_vm_end - _" #vm_name          \
+                                                                                             "_vm_beg)\n\t"                  \
+                                                                                             ".popsection");
 
-#define CONFIG_HEADER                              \
-    .fdt_header =                                  \
-        {                                          \
-            .magic = 0xedfe0dd0,                   \
-            .totalsize = 0x28000000,               \
-            .off_dt_struct = 0x28000000,           \
-            .off_dt_strings = 0x28000000,          \
-            .version = 0x11000000,                 \
-            .last_comp_version = 0x2000000,        \
-            .off_mem_rsvmap = 0x28000000,          \
-    },                                             \
-    .config_header_size = CONFIG_HEADER_SIZE, \
-    .config_size = CONFIG_SIZE,
+#define CONFIG_HEADER                       \
+    .fdt_header =                           \
+        {                                   \
+            .magic = 0xedfe0dd0,            \
+            .totalsize = 0x28000000,        \
+            .off_dt_struct = 0x28000000,    \
+            .off_dt_strings = 0x28000000,   \
+            .version = 0x11000000,          \
+            .last_comp_version = 0x2000000, \
+            .off_mem_rsvmap = 0x28000000,   \
+    },                                      \
+    .config_header_size = CONFIG_HEADER_SIZE, .config_size = CONFIG_SIZE,
 
 typedef struct vm_config {
     struct {
@@ -132,7 +140,7 @@ void config_adjust_to_va(struct config *config, uint64_t phys);
 void config_arch_adjust_to_va(struct config *config, uint64_t phys);
 bool config_is_builtin();
 
-#define adjust_ptr(p, o)\
-    ((p) = (p) ? (typeof(p))(  (void*)(p) + (uint64_t)(o)) : (p))
+#define adjust_ptr(p, o) \
+    ((p) = (p) ? (typeof(p))((void *)(p) + (uint64_t)(o)) : (p))
 
 #endif /* __CONFIG_H__ */

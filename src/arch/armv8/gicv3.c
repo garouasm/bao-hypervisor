@@ -41,23 +41,40 @@ inline uint64_t gich_read_lr(size_t i)
     }
 
     switch (i) {
-        case 0: return MRS(ICH_LR0_EL2);
-        case 1: return MRS(ICH_LR1_EL2);
-        case 2: return MRS(ICH_LR2_EL2);
-        case 3: return MRS(ICH_LR3_EL2);
-        case 4: return MRS(ICH_LR4_EL2);
-        case 5: return MRS(ICH_LR5_EL2);
-        case 6: return MRS(ICH_LR6_EL2);
-        case 7: return MRS(ICH_LR7_EL2);
-        case 8: return MRS(ICH_LR8_EL2);
-        case 9: return MRS(ICH_LR9_EL2);
-        case 10: return MRS(ICH_LR10_EL2);
-        case 11: return MRS(ICH_LR11_EL2);
-        case 12: return MRS(ICH_LR12_EL2);
-        case 13: return MRS(ICH_LR13_EL2);
-        case 14: return MRS(ICH_LR14_EL2);
-        case 15: return MRS(ICH_LR15_EL2);
-        default: return 0;
+        case 0:
+            return MRS(ICH_LR0_EL2);
+        case 1:
+            return MRS(ICH_LR1_EL2);
+        case 2:
+            return MRS(ICH_LR2_EL2);
+        case 3:
+            return MRS(ICH_LR3_EL2);
+        case 4:
+            return MRS(ICH_LR4_EL2);
+        case 5:
+            return MRS(ICH_LR5_EL2);
+        case 6:
+            return MRS(ICH_LR6_EL2);
+        case 7:
+            return MRS(ICH_LR7_EL2);
+        case 8:
+            return MRS(ICH_LR8_EL2);
+        case 9:
+            return MRS(ICH_LR9_EL2);
+        case 10:
+            return MRS(ICH_LR10_EL2);
+        case 11:
+            return MRS(ICH_LR11_EL2);
+        case 12:
+            return MRS(ICH_LR12_EL2);
+        case 13:
+            return MRS(ICH_LR13_EL2);
+        case 14:
+            return MRS(ICH_LR14_EL2);
+        case 15:
+            return MRS(ICH_LR15_EL2);
+        default:
+            return 0;
     }
 }
 
@@ -68,22 +85,54 @@ inline void gich_write_lr(size_t i, uint64_t val)
     }
 
     switch (i) {
-        case 0: MSR(ICH_LR0_EL2, val);   break;        
-        case 1: MSR(ICH_LR1_EL2, val);   break;         
-        case 2: MSR(ICH_LR2_EL2, val);   break;         
-        case 3: MSR(ICH_LR3_EL2, val);   break;         
-        case 4: MSR(ICH_LR4_EL2, val);   break;         
-        case 5: MSR(ICH_LR5_EL2, val);   break;         
-        case 6: MSR(ICH_LR6_EL2, val);   break;         
-        case 7: MSR(ICH_LR7_EL2, val);   break;         
-        case 8: MSR(ICH_LR8_EL2, val);   break;         
-        case 9: MSR(ICH_LR9_EL2, val);   break;         
-        case 10: MSR(ICH_LR10_EL2, val); break;           
-        case 11: MSR(ICH_LR11_EL2, val); break;           
-        case 12: MSR(ICH_LR12_EL2, val); break;           
-        case 13: MSR(ICH_LR13_EL2, val); break;           
-        case 14: MSR(ICH_LR14_EL2, val); break;           
-        case 15: MSR(ICH_LR15_EL2, val); break;
+        case 0:
+            MSR(ICH_LR0_EL2, val);
+            break;
+        case 1:
+            MSR(ICH_LR1_EL2, val);
+            break;
+        case 2:
+            MSR(ICH_LR2_EL2, val);
+            break;
+        case 3:
+            MSR(ICH_LR3_EL2, val);
+            break;
+        case 4:
+            MSR(ICH_LR4_EL2, val);
+            break;
+        case 5:
+            MSR(ICH_LR5_EL2, val);
+            break;
+        case 6:
+            MSR(ICH_LR6_EL2, val);
+            break;
+        case 7:
+            MSR(ICH_LR7_EL2, val);
+            break;
+        case 8:
+            MSR(ICH_LR8_EL2, val);
+            break;
+        case 9:
+            MSR(ICH_LR9_EL2, val);
+            break;
+        case 10:
+            MSR(ICH_LR10_EL2, val);
+            break;
+        case 11:
+            MSR(ICH_LR11_EL2, val);
+            break;
+        case 12:
+            MSR(ICH_LR12_EL2, val);
+            break;
+        case 13:
+            MSR(ICH_LR13_EL2, val);
+            break;
+        case 14:
+            MSR(ICH_LR14_EL2, val);
+            break;
+        case 15:
+            MSR(ICH_LR15_EL2, val);
+            break;
     }
 }
 
@@ -190,15 +239,18 @@ void gic_map_mmio()
     mem_map_dev(&cpu.as, (void *)gicr, platform.arch.gic.gicr_addr, gicr_size);
 }
 
-uint32_t gicc_iar() {
+uint32_t gicc_iar()
+{
     return MRS(ICC_IAR1_EL1);
 }
 
-void gicc_eoir(uint32_t eoir) {
+void gicc_eoir(uint32_t eoir)
+{
     MSR(ICC_EOIR1_EL1, eoir);
 }
 
-void gicc_dir(uint32_t dir) {
+void gicc_dir(uint32_t dir)
+{
     MSR(ICC_DIR_EL1, dir);
 }
 
@@ -322,7 +374,7 @@ void gic_send_sgi(uint64_t cpu_target, uint64_t sgi_num)
         /* We only support two affinity levels */
         uint64_t sgi = (MPIDR_AFF_LVL(mpidr, 1) << ICC_SGIR_AFF1_OFFSET) |
                        (1UL << MPIDR_AFF_LVL(mpidr, 0)) |
-                       (sgi_num << ICC_SGIR_SGIINTID_OFF);             
+                       (sgi_num << ICC_SGIR_SGIINTID_OFF);
         MSR(ICC_SGI1R_EL1, sgi);
     }
 }

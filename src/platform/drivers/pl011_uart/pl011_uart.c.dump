@@ -1,0 +1,897 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/platform/drivers/pl011_uart/pl011_uart.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Sandro Pinto &lt;sandro.pinto@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;drivers/pl011_uart.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="void"/>
+    <tok fileIndex="0" linenr="18" column="6" str="uart_disable"/>
+    <tok fileIndex="0" linenr="18" column="18" str="("/>
+    <tok fileIndex="0" linenr="18" column="19" str="volatile"/>
+    <tok fileIndex="0" linenr="18" column="28" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="18" column="39" str="*"/>
+    <tok fileIndex="0" linenr="18" column="40" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="18" column="48" str=")"/>
+    <tok fileIndex="0" linenr="19" column="1" str="{"/>
+    <tok fileIndex="0" linenr="20" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="20" column="14" str="ctrl_reg"/>
+    <tok fileIndex="0" linenr="20" column="23" str="="/>
+    <tok fileIndex="0" linenr="20" column="25" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="20" column="33" str="-&gt;"/>
+    <tok fileIndex="0" linenr="20" column="35" str="control"/>
+    <tok fileIndex="0" linenr="20" column="42" str=";"/>
+    <tok fileIndex="0" linenr="21" column="5" str="ctrl_reg"/>
+    <tok fileIndex="0" linenr="21" column="14" str="&amp;="/>
+    <tok fileIndex="0" linenr="21" column="17" str="("/>
+    <tok fileIndex="0" linenr="21" column="18" str="("/>
+    <tok fileIndex="0" linenr="21" column="19" str="~"/>
+    <tok fileIndex="0" linenr="21" column="20" str="UART_CR_UARTEN"/>
+    <tok fileIndex="0" linenr="21" column="34" str=")"/>
+    <tok fileIndex="0" linenr="21" column="36" str="|"/>
+    <tok fileIndex="0" linenr="21" column="38" str="("/>
+    <tok fileIndex="0" linenr="21" column="39" str="~"/>
+    <tok fileIndex="0" linenr="21" column="40" str="UART_CR_TXE"/>
+    <tok fileIndex="0" linenr="21" column="51" str=")"/>
+    <tok fileIndex="0" linenr="21" column="53" str="|"/>
+    <tok fileIndex="0" linenr="21" column="55" str="("/>
+    <tok fileIndex="0" linenr="21" column="56" str="~"/>
+    <tok fileIndex="0" linenr="21" column="57" str="UART_CR_RXE"/>
+    <tok fileIndex="0" linenr="21" column="68" str=")"/>
+    <tok fileIndex="0" linenr="21" column="69" str=")"/>
+    <tok fileIndex="0" linenr="21" column="70" str=";"/>
+    <tok fileIndex="0" linenr="22" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="22" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="22" column="15" str="control"/>
+    <tok fileIndex="0" linenr="22" column="23" str="="/>
+    <tok fileIndex="0" linenr="22" column="25" str="ctrl_reg"/>
+    <tok fileIndex="0" linenr="22" column="33" str=";"/>
+    <tok fileIndex="0" linenr="23" column="1" str="}"/>
+    <tok fileIndex="0" linenr="25" column="1" str="void"/>
+    <tok fileIndex="0" linenr="25" column="6" str="uart_enable"/>
+    <tok fileIndex="0" linenr="25" column="17" str="("/>
+    <tok fileIndex="0" linenr="25" column="18" str="volatile"/>
+    <tok fileIndex="0" linenr="25" column="27" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="25" column="38" str="*"/>
+    <tok fileIndex="0" linenr="25" column="39" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="25" column="47" str=")"/>
+    <tok fileIndex="0" linenr="26" column="1" str="{"/>
+    <tok fileIndex="0" linenr="27" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="27" column="14" str="ctrl_reg"/>
+    <tok fileIndex="0" linenr="27" column="23" str="="/>
+    <tok fileIndex="0" linenr="27" column="25" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="27" column="33" str="-&gt;"/>
+    <tok fileIndex="0" linenr="27" column="35" str="control"/>
+    <tok fileIndex="0" linenr="27" column="42" str=";"/>
+    <tok fileIndex="0" linenr="28" column="5" str="ctrl_reg"/>
+    <tok fileIndex="0" linenr="28" column="14" str="|="/>
+    <tok fileIndex="0" linenr="28" column="17" str="("/>
+    <tok fileIndex="0" linenr="28" column="18" str="UART_CR_UARTEN"/>
+    <tok fileIndex="0" linenr="28" column="33" str="|"/>
+    <tok fileIndex="0" linenr="28" column="35" str="UART_CR_TXE"/>
+    <tok fileIndex="0" linenr="28" column="47" str="|"/>
+    <tok fileIndex="0" linenr="28" column="49" str="UART_CR_RXE"/>
+    <tok fileIndex="0" linenr="28" column="60" str=")"/>
+    <tok fileIndex="0" linenr="28" column="61" str=";"/>
+    <tok fileIndex="0" linenr="29" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="29" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="29" column="15" str="control"/>
+    <tok fileIndex="0" linenr="29" column="23" str="="/>
+    <tok fileIndex="0" linenr="29" column="25" str="ctrl_reg"/>
+    <tok fileIndex="0" linenr="29" column="33" str=";"/>
+    <tok fileIndex="0" linenr="30" column="1" str="}"/>
+    <tok fileIndex="0" linenr="32" column="1" str="void"/>
+    <tok fileIndex="0" linenr="32" column="6" str="uart_set_baud_rate"/>
+    <tok fileIndex="0" linenr="32" column="24" str="("/>
+    <tok fileIndex="0" linenr="32" column="25" str="volatile"/>
+    <tok fileIndex="0" linenr="32" column="34" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="32" column="45" str="*"/>
+    <tok fileIndex="0" linenr="32" column="46" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="32" column="54" str=","/>
+    <tok fileIndex="0" linenr="32" column="56" str="uint32_t"/>
+    <tok fileIndex="0" linenr="32" column="65" str="baud_rate"/>
+    <tok fileIndex="0" linenr="32" column="74" str=")"/>
+    <tok fileIndex="0" linenr="33" column="1" str="{"/>
+    <tok fileIndex="0" linenr="34" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="34" column="14" str="temp"/>
+    <tok fileIndex="0" linenr="34" column="18" str=";"/>
+    <tok fileIndex="0" linenr="35" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="35" column="14" str="ibrd"/>
+    <tok fileIndex="0" linenr="35" column="18" str=";"/>
+    <tok fileIndex="0" linenr="36" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="36" column="14" str="mod"/>
+    <tok fileIndex="0" linenr="36" column="17" str=";"/>
+    <tok fileIndex="0" linenr="37" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="37" column="14" str="fbrd"/>
+    <tok fileIndex="0" linenr="37" column="18" str=";"/>
+    <tok fileIndex="0" linenr="39" column="5" str="if"/>
+    <tok fileIndex="0" linenr="39" column="8" str="("/>
+    <tok fileIndex="0" linenr="39" column="9" str="baud_rate"/>
+    <tok fileIndex="0" linenr="39" column="19" str="=="/>
+    <tok fileIndex="0" linenr="39" column="22" str="0"/>
+    <tok fileIndex="0" linenr="39" column="23" str=")"/>
+    <tok fileIndex="0" linenr="39" column="25" str="{"/>
+    <tok fileIndex="0" linenr="40" column="9" str="baud_rate"/>
+    <tok fileIndex="0" linenr="40" column="19" str="="/>
+    <tok fileIndex="0" linenr="40" column="21" str="UART_BAUD_RATE"/>
+    <tok fileIndex="0" linenr="40" column="35" str=";"/>
+    <tok fileIndex="0" linenr="41" column="5" str="}"/>
+    <tok fileIndex="0" linenr="43" column="5" str="/* Set baud rate, IBRD = UART_CLK / (16 * BAUD_RATE)x    FBRD = ROUND((64 * MOD(UART_CLK,(16 * BAUD_RATE))) / (16 * BAUD_RATE)) */"/>
+    <tok fileIndex="0" linenr="45" column="5" str="temp"/>
+    <tok fileIndex="0" linenr="45" column="10" str="="/>
+    <tok fileIndex="0" linenr="45" column="12" str="16"/>
+    <tok fileIndex="0" linenr="45" column="15" str="*"/>
+    <tok fileIndex="0" linenr="45" column="17" str="baud_rate"/>
+    <tok fileIndex="0" linenr="45" column="26" str=";"/>
+    <tok fileIndex="0" linenr="46" column="5" str="ibrd"/>
+    <tok fileIndex="0" linenr="46" column="10" str="="/>
+    <tok fileIndex="0" linenr="46" column="12" str="UART_CLK"/>
+    <tok fileIndex="0" linenr="46" column="21" str="/"/>
+    <tok fileIndex="0" linenr="46" column="23" str="temp"/>
+    <tok fileIndex="0" linenr="46" column="27" str=";"/>
+    <tok fileIndex="0" linenr="47" column="5" str="mod"/>
+    <tok fileIndex="0" linenr="47" column="9" str="="/>
+    <tok fileIndex="0" linenr="47" column="11" str="UART_CLK"/>
+    <tok fileIndex="0" linenr="47" column="20" str="%"/>
+    <tok fileIndex="0" linenr="47" column="22" str="temp"/>
+    <tok fileIndex="0" linenr="47" column="26" str=";"/>
+    <tok fileIndex="0" linenr="48" column="5" str="fbrd"/>
+    <tok fileIndex="0" linenr="48" column="10" str="="/>
+    <tok fileIndex="0" linenr="48" column="12" str="("/>
+    <tok fileIndex="0" linenr="48" column="13" str="4"/>
+    <tok fileIndex="0" linenr="48" column="15" str="*"/>
+    <tok fileIndex="0" linenr="48" column="17" str="mod"/>
+    <tok fileIndex="0" linenr="48" column="20" str=")"/>
+    <tok fileIndex="0" linenr="48" column="22" str="/"/>
+    <tok fileIndex="0" linenr="48" column="24" str="baud_rate"/>
+    <tok fileIndex="0" linenr="48" column="33" str=";"/>
+    <tok fileIndex="0" linenr="50" column="5" str="/* Set the values of the baudrate divisors */"/>
+    <tok fileIndex="0" linenr="51" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="51" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="51" column="15" str="integer_br"/>
+    <tok fileIndex="0" linenr="51" column="26" str="="/>
+    <tok fileIndex="0" linenr="51" column="28" str="ibrd"/>
+    <tok fileIndex="0" linenr="51" column="32" str=";"/>
+    <tok fileIndex="0" linenr="52" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="52" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="52" column="15" str="fractional_br"/>
+    <tok fileIndex="0" linenr="52" column="29" str="="/>
+    <tok fileIndex="0" linenr="52" column="31" str="fbrd"/>
+    <tok fileIndex="0" linenr="52" column="35" str=";"/>
+    <tok fileIndex="0" linenr="53" column="1" str="}"/>
+    <tok fileIndex="0" linenr="55" column="1" str="void"/>
+    <tok fileIndex="0" linenr="55" column="6" str="uart_init"/>
+    <tok fileIndex="0" linenr="55" column="15" str="("/>
+    <tok fileIndex="0" linenr="55" column="16" str="volatile"/>
+    <tok fileIndex="0" linenr="55" column="25" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="55" column="36" str="*"/>
+    <tok fileIndex="0" linenr="55" column="37" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="55" column="46" str="/*, uint32_t baud_rate*/"/>
+    <tok fileIndex="0" linenr="55" column="70" str=")"/>
+    <tok fileIndex="0" linenr="56" column="1" str="{"/>
+    <tok fileIndex="0" linenr="57" column="5" str="int"/>
+    <tok fileIndex="0" linenr="57" column="9" str="lcrh_reg"/>
+    <tok fileIndex="0" linenr="57" column="17" str=";"/>
+    <tok fileIndex="0" linenr="59" column="5" str="/* First, disable everything */"/>
+    <tok fileIndex="0" linenr="60" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="60" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="60" column="15" str="control"/>
+    <tok fileIndex="0" linenr="60" column="23" str="="/>
+    <tok fileIndex="0" linenr="60" column="25" str="0x0"/>
+    <tok fileIndex="0" linenr="60" column="28" str=";"/>
+    <tok fileIndex="0" linenr="62" column="5" str="/* Disable FIFOs */"/>
+    <tok fileIndex="0" linenr="63" column="5" str="lcrh_reg"/>
+    <tok fileIndex="0" linenr="63" column="14" str="="/>
+    <tok fileIndex="0" linenr="63" column="16" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="63" column="24" str="-&gt;"/>
+    <tok fileIndex="0" linenr="63" column="26" str="line_control"/>
+    <tok fileIndex="0" linenr="63" column="38" str=";"/>
+    <tok fileIndex="0" linenr="64" column="5" str="lcrh_reg"/>
+    <tok fileIndex="0" linenr="64" column="14" str="&amp;="/>
+    <tok fileIndex="0" linenr="64" column="17" str="~"/>
+    <tok fileIndex="0" linenr="64" column="18" str="UART_LCR_FEN"/>
+    <tok fileIndex="0" linenr="64" column="30" str=";"/>
+    <tok fileIndex="0" linenr="65" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="65" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="65" column="15" str="line_control"/>
+    <tok fileIndex="0" linenr="65" column="28" str="="/>
+    <tok fileIndex="0" linenr="65" column="30" str="lcrh_reg"/>
+    <tok fileIndex="0" linenr="65" column="38" str=";"/>
+    <tok fileIndex="0" linenr="67" column="5" str="/* Default baudrate = 115200 */"/>
+    <tok fileIndex="0" linenr="68" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="68" column="14" str="baud_rate"/>
+    <tok fileIndex="0" linenr="68" column="24" str="="/>
+    <tok fileIndex="0" linenr="68" column="26" str="UART_BAUD_RATE"/>
+    <tok fileIndex="0" linenr="68" column="40" str=";"/>
+    <tok fileIndex="0" linenr="69" column="5" str="uart_set_baud_rate"/>
+    <tok fileIndex="0" linenr="69" column="23" str="("/>
+    <tok fileIndex="0" linenr="69" column="24" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="69" column="32" str=","/>
+    <tok fileIndex="0" linenr="69" column="34" str="baud_rate"/>
+    <tok fileIndex="0" linenr="69" column="43" str=")"/>
+    <tok fileIndex="0" linenr="69" column="44" str=";"/>
+    <tok fileIndex="0" linenr="71" column="5" str="/* Set the UART to be 8 bits, 1 stop bit and no parity, FIFOs enable*/"/>
+    <tok fileIndex="0" linenr="72" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="72" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="72" column="15" str="line_control"/>
+    <tok fileIndex="0" linenr="72" column="28" str="="/>
+    <tok fileIndex="0" linenr="72" column="30" str="("/>
+    <tok fileIndex="0" linenr="72" column="31" str="UART_LCR_WLEN_8"/>
+    <tok fileIndex="0" linenr="72" column="47" str="|"/>
+    <tok fileIndex="0" linenr="72" column="49" str="UART_LCR_FEN"/>
+    <tok fileIndex="0" linenr="72" column="61" str=")"/>
+    <tok fileIndex="0" linenr="72" column="62" str=";"/>
+    <tok fileIndex="0" linenr="74" column="5" str="/* Enable the UART, enable TX and enable loop back*/"/>
+    <tok fileIndex="0" linenr="75" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="75" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="75" column="15" str="control"/>
+    <tok fileIndex="0" linenr="75" column="23" str="="/>
+    <tok fileIndex="0" linenr="75" column="25" str="("/>
+    <tok fileIndex="0" linenr="75" column="26" str="UART_CR_UARTEN"/>
+    <tok fileIndex="0" linenr="75" column="41" str="|"/>
+    <tok fileIndex="0" linenr="75" column="43" str="UART_CR_TXE"/>
+    <tok fileIndex="0" linenr="75" column="55" str="|"/>
+    <tok fileIndex="0" linenr="75" column="57" str="UART_CR_LBE"/>
+    <tok fileIndex="0" linenr="75" column="68" str=")"/>
+    <tok fileIndex="0" linenr="75" column="69" str=";"/>
+    <tok fileIndex="0" linenr="77" column="5" str="/* Set the receive interrupt FIFO level to 1/2 full */"/>
+    <tok fileIndex="0" linenr="78" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="78" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="78" column="15" str="isr_fifo_level_sel"/>
+    <tok fileIndex="0" linenr="78" column="34" str="="/>
+    <tok fileIndex="0" linenr="78" column="36" str="UART_IFLS_RXIFLSEL_1_2"/>
+    <tok fileIndex="0" linenr="78" column="58" str=";"/>
+    <tok fileIndex="0" linenr="80" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="80" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="80" column="15" str="data"/>
+    <tok fileIndex="0" linenr="80" column="20" str="="/>
+    <tok fileIndex="0" linenr="80" column="22" str="0x0"/>
+    <tok fileIndex="0" linenr="80" column="25" str=";"/>
+    <tok fileIndex="0" linenr="81" column="5" str="while"/>
+    <tok fileIndex="0" linenr="81" column="11" str="("/>
+    <tok fileIndex="0" linenr="81" column="12" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="81" column="20" str="-&gt;"/>
+    <tok fileIndex="0" linenr="81" column="22" str="flag"/>
+    <tok fileIndex="0" linenr="81" column="27" str="&amp;"/>
+    <tok fileIndex="0" linenr="81" column="29" str="UART_FR_BUSY"/>
+    <tok fileIndex="0" linenr="81" column="41" str=")"/>
+    <tok fileIndex="0" linenr="82" column="9" str=";"/>
+    <tok fileIndex="0" linenr="84" column="5" str="/* Enable RX */"/>
+    <tok fileIndex="0" linenr="85" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="85" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="85" column="15" str="control"/>
+    <tok fileIndex="0" linenr="85" column="23" str="="/>
+    <tok fileIndex="0" linenr="85" column="25" str="("/>
+    <tok fileIndex="0" linenr="85" column="26" str="UART_CR_UARTEN"/>
+    <tok fileIndex="0" linenr="85" column="41" str="|"/>
+    <tok fileIndex="0" linenr="85" column="43" str="UART_CR_RXE"/>
+    <tok fileIndex="0" linenr="85" column="55" str="|"/>
+    <tok fileIndex="0" linenr="85" column="57" str="UART_CR_TXE"/>
+    <tok fileIndex="0" linenr="85" column="68" str=")"/>
+    <tok fileIndex="0" linenr="85" column="69" str=";"/>
+    <tok fileIndex="0" linenr="87" column="5" str="/* Clear interrupts */"/>
+    <tok fileIndex="0" linenr="88" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="88" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="88" column="15" str="isr_clear"/>
+    <tok fileIndex="0" linenr="88" column="25" str="="/>
+    <tok fileIndex="0" linenr="89" column="9" str="("/>
+    <tok fileIndex="0" linenr="89" column="10" str="UART_ICR_OEIC"/>
+    <tok fileIndex="0" linenr="89" column="24" str="|"/>
+    <tok fileIndex="0" linenr="89" column="26" str="UART_ICR_BEIC"/>
+    <tok fileIndex="0" linenr="89" column="40" str="|"/>
+    <tok fileIndex="0" linenr="89" column="42" str="UART_ICR_PEIC"/>
+    <tok fileIndex="0" linenr="89" column="56" str="|"/>
+    <tok fileIndex="0" linenr="89" column="58" str="UART_ICR_FEIC"/>
+    <tok fileIndex="0" linenr="89" column="71" str=")"/>
+    <tok fileIndex="0" linenr="89" column="72" str=";"/>
+    <tok fileIndex="0" linenr="91" column="5" str="/* Enable receive and receive timeout interrupts */"/>
+    <tok fileIndex="0" linenr="92" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="92" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="92" column="15" str="isr_mask"/>
+    <tok fileIndex="0" linenr="92" column="24" str="="/>
+    <tok fileIndex="0" linenr="92" column="26" str="("/>
+    <tok fileIndex="0" linenr="92" column="27" str="UART_MIS_RXMIS"/>
+    <tok fileIndex="0" linenr="92" column="42" str="|"/>
+    <tok fileIndex="0" linenr="92" column="44" str="UART_MIS_RTMIS"/>
+    <tok fileIndex="0" linenr="92" column="58" str=")"/>
+    <tok fileIndex="0" linenr="92" column="59" str=";"/>
+    <tok fileIndex="0" linenr="93" column="1" str="}"/>
+    <tok fileIndex="0" linenr="95" column="1" str="uint32_t"/>
+    <tok fileIndex="0" linenr="95" column="10" str="uart_getc"/>
+    <tok fileIndex="0" linenr="95" column="19" str="("/>
+    <tok fileIndex="0" linenr="95" column="20" str="volatile"/>
+    <tok fileIndex="0" linenr="95" column="29" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="95" column="40" str="*"/>
+    <tok fileIndex="0" linenr="95" column="41" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="95" column="49" str=")"/>
+    <tok fileIndex="0" linenr="96" column="1" str="{"/>
+    <tok fileIndex="0" linenr="97" column="5" str="uint32_t"/>
+    <tok fileIndex="0" linenr="97" column="14" str="data"/>
+    <tok fileIndex="0" linenr="97" column="19" str="="/>
+    <tok fileIndex="0" linenr="97" column="21" str="0"/>
+    <tok fileIndex="0" linenr="97" column="22" str=";"/>
+    <tok fileIndex="0" linenr="99" column="5" str="// wait until there is data in FIFO"/>
+    <tok fileIndex="0" linenr="100" column="5" str="while"/>
+    <tok fileIndex="0" linenr="100" column="11" str="("/>
+    <tok fileIndex="0" linenr="100" column="12" str="!"/>
+    <tok fileIndex="0" linenr="100" column="13" str="("/>
+    <tok fileIndex="0" linenr="100" column="14" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="100" column="22" str="-&gt;"/>
+    <tok fileIndex="0" linenr="100" column="24" str="flag"/>
+    <tok fileIndex="0" linenr="100" column="29" str="&amp;"/>
+    <tok fileIndex="0" linenr="100" column="31" str="UART_FR_RXFE"/>
+    <tok fileIndex="0" linenr="100" column="43" str=")"/>
+    <tok fileIndex="0" linenr="100" column="44" str=")"/>
+    <tok fileIndex="0" linenr="101" column="9" str=";"/>
+    <tok fileIndex="0" linenr="103" column="5" str="data"/>
+    <tok fileIndex="0" linenr="103" column="10" str="="/>
+    <tok fileIndex="0" linenr="103" column="12" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="103" column="20" str="-&gt;"/>
+    <tok fileIndex="0" linenr="103" column="22" str="data"/>
+    <tok fileIndex="0" linenr="103" column="26" str=";"/>
+    <tok fileIndex="0" linenr="104" column="5" str="return"/>
+    <tok fileIndex="0" linenr="104" column="12" str="data"/>
+    <tok fileIndex="0" linenr="104" column="16" str=";"/>
+    <tok fileIndex="0" linenr="105" column="1" str="}"/>
+    <tok fileIndex="0" linenr="107" column="1" str="void"/>
+    <tok fileIndex="0" linenr="107" column="6" str="uart_putc"/>
+    <tok fileIndex="0" linenr="107" column="15" str="("/>
+    <tok fileIndex="0" linenr="107" column="16" str="volatile"/>
+    <tok fileIndex="0" linenr="107" column="25" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="107" column="36" str="*"/>
+    <tok fileIndex="0" linenr="107" column="37" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="107" column="45" str=","/>
+    <tok fileIndex="0" linenr="107" column="47" str="int8_t"/>
+    <tok fileIndex="0" linenr="107" column="54" str="c"/>
+    <tok fileIndex="0" linenr="107" column="55" str=")"/>
+    <tok fileIndex="0" linenr="108" column="1" str="{"/>
+    <tok fileIndex="0" linenr="109" column="5" str="// wait until txFIFO is not full"/>
+    <tok fileIndex="0" linenr="110" column="5" str="while"/>
+    <tok fileIndex="0" linenr="110" column="11" str="("/>
+    <tok fileIndex="0" linenr="110" column="12" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="110" column="20" str="-&gt;"/>
+    <tok fileIndex="0" linenr="110" column="22" str="flag"/>
+    <tok fileIndex="0" linenr="110" column="27" str="&amp;"/>
+    <tok fileIndex="0" linenr="110" column="29" str="UART_FR_TXFF"/>
+    <tok fileIndex="0" linenr="110" column="41" str=")"/>
+    <tok fileIndex="0" linenr="111" column="9" str=";"/>
+    <tok fileIndex="0" linenr="113" column="5" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="113" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="113" column="15" str="data"/>
+    <tok fileIndex="0" linenr="113" column="20" str="="/>
+    <tok fileIndex="0" linenr="113" column="22" str="c"/>
+    <tok fileIndex="0" linenr="113" column="23" str=";"/>
+    <tok fileIndex="0" linenr="114" column="1" str="}"/>
+    <tok fileIndex="0" linenr="116" column="1" str="void"/>
+    <tok fileIndex="0" linenr="116" column="6" str="uart_puts"/>
+    <tok fileIndex="0" linenr="116" column="15" str="("/>
+    <tok fileIndex="0" linenr="116" column="16" str="volatile"/>
+    <tok fileIndex="0" linenr="116" column="25" str="Pl011_Uart"/>
+    <tok fileIndex="0" linenr="116" column="36" str="*"/>
+    <tok fileIndex="0" linenr="116" column="37" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="116" column="45" str=","/>
+    <tok fileIndex="0" linenr="116" column="47" str="const"/>
+    <tok fileIndex="0" linenr="116" column="53" str="char"/>
+    <tok fileIndex="0" linenr="116" column="58" str="*"/>
+    <tok fileIndex="0" linenr="116" column="59" str="s"/>
+    <tok fileIndex="0" linenr="116" column="60" str=")"/>
+    <tok fileIndex="0" linenr="117" column="1" str="{"/>
+    <tok fileIndex="0" linenr="118" column="5" str="while"/>
+    <tok fileIndex="0" linenr="118" column="11" str="("/>
+    <tok fileIndex="0" linenr="118" column="12" str="*"/>
+    <tok fileIndex="0" linenr="118" column="13" str="s"/>
+    <tok fileIndex="0" linenr="118" column="14" str=")"/>
+    <tok fileIndex="0" linenr="118" column="16" str="{"/>
+    <tok fileIndex="0" linenr="119" column="9" str="uart_putc"/>
+    <tok fileIndex="0" linenr="119" column="18" str="("/>
+    <tok fileIndex="0" linenr="119" column="19" str="ptr_uart"/>
+    <tok fileIndex="0" linenr="119" column="27" str=","/>
+    <tok fileIndex="0" linenr="119" column="29" str="*"/>
+    <tok fileIndex="0" linenr="119" column="30" str="s"/>
+    <tok fileIndex="0" linenr="119" column="31" str="++"/>
+    <tok fileIndex="0" linenr="119" column="33" str=")"/>
+    <tok fileIndex="0" linenr="119" column="34" str=";"/>
+    <tok fileIndex="0" linenr="120" column="5" str="}"/>
+    <tok fileIndex="0" linenr="121" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="16" str="#include &lt;drivers/pl011_uart.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aac6f480" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5ab1d33a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="6" str="uart_disable" scope="0x55c5aacbc050" type="name" function="0x55c5aac698e0" astParent="0x55c5aace3aa0"/>
+    <token id="0x55c5aace3aa0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="18" str="(" scope="0x55c5aacbc050" link="0x55c5ab0b1160" astOperand1="0x55c5ab1d33a0" astOperand2="0x55c5ab0b2c10" valueType-type="void"/>
+    <token id="0x55c5aac75260" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="19" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5ab0b2bb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="28" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5ab0b2c10"/>
+    <token id="0x55c5ab0b2c10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="39" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aace3aa0" astOperand1="0x55c5ab0b2bb0" astOperand2="0x55c5ab0b2c70"/>
+    <token id="0x55c5ab0b2c70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="40" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="1" variable="0x55c5aaf6d310" astParent="0x55c5ab0b2c10"/>
+    <token id="0x55c5ab0b1160" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="18" column="48" str=")" scope="0x55c5aacbc050" link="0x55c5aace3aa0"/>
+    <token id="0x55c5aac7bba0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="19" column="1" str="{" scope="0x55c5aac76850" link="0x55c5aaca2940"/>
+    <token id="0x55c5ab1d11e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="5" str="uint32_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacc3ee0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="14" str="ctrl_reg" scope="0x55c5aac76850" type="name" varId="2" variable="0x55c5aac750b0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aad45740" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="23" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aace3070" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="14" str="ctrl_reg" scope="0x55c5aac76850" type="name" varId="2" variable="0x55c5aac750b0" astParent="0x55c5aace3190" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aace3190" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="23" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aace3070" astOperand2="0x55c5aace2980" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac7b6c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="25" str="ptr_uart" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aaf6d310" astParent="0x55c5aace2980"/>
+    <token id="0x55c5aace2980" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="33" str="." scope="0x55c5aac76850" astParent="0x55c5aace3190" astOperand1="0x55c5aac7b6c0" astOperand2="0x55c5aace26f0" originalName="->"/>
+    <token id="0x55c5aace26f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="35" str="control" scope="0x55c5aac76850" type="name" varId="3" astParent="0x55c5aace2980"/>
+    <token id="0x55c5aafacdf0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="20" column="42" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5cb40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="5" str="ctrl_reg" scope="0x55c5aac76850" type="name" varId="2" variable="0x55c5aac750b0" astParent="0x55c5aaf883e0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaf883e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="14" str="&amp;=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aac5cb40" astOperand2="0x55c5aaca8290" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6b950" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="17" str="(" scope="0x55c5aac76850" link="0x55c5aacdf900"/>
+    <token id="0x55c5aac78c00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="18" str="(" scope="0x55c5aac76850" link="0x55c5aace2460"/>
+    <token id="0x55c5aaca2c70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="19" str="~" scope="0x55c5aac76850" type="op" astParent="0x55c5aac5ad40" astOperand1="0x55c5aac69870"/>
+    <token id="0x55c5aac69870" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="20" str="UART_CR_UARTEN" scope="0x55c5aac76850" type="name" astParent="0x55c5aaca2c70"/>
+    <token id="0x55c5aace2460" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="34" str=")" scope="0x55c5aac76850" link="0x55c5aac78c00"/>
+    <token id="0x55c5aac5ad40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="36" str="|" scope="0x55c5aac76850" type="op" astParent="0x55c5aaca8290" astOperand1="0x55c5aaca2c70" astOperand2="0x55c5aac529c0"/>
+    <token id="0x55c5ab0b2830" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="38" str="(" scope="0x55c5aac76850" link="0x55c5aac66020"/>
+    <token id="0x55c5aac529c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="39" str="~" scope="0x55c5aac76850" type="op" astParent="0x55c5aac5ad40" astOperand1="0x55c5aac733d0"/>
+    <token id="0x55c5aac733d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="40" str="UART_CR_TXE" scope="0x55c5aac76850" type="name" astParent="0x55c5aac529c0"/>
+    <token id="0x55c5aac66020" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="51" str=")" scope="0x55c5aac76850" link="0x55c5ab0b2830"/>
+    <token id="0x55c5aaca8290" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="53" str="|" scope="0x55c5aac76850" type="op" astParent="0x55c5aaf883e0" astOperand1="0x55c5aac5ad40" astOperand2="0x55c5ab0aaa30"/>
+    <token id="0x55c5ab1c12b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="55" str="(" scope="0x55c5aac76850" link="0x55c5aafade70"/>
+    <token id="0x55c5ab0aaa30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="56" str="~" scope="0x55c5aac76850" type="op" astParent="0x55c5aaca8290" astOperand1="0x55c5aace6b10"/>
+    <token id="0x55c5aace6b10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="57" str="UART_CR_RXE" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0aaa30"/>
+    <token id="0x55c5aafade70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="68" str=")" scope="0x55c5aac76850" link="0x55c5ab1c12b0"/>
+    <token id="0x55c5aacdf900" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="69" str=")" scope="0x55c5aac76850" link="0x55c5aac6b950"/>
+    <token id="0x55c5aad42ea0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="21" column="70" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0aad50" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="22" column="5" str="ptr_uart" scope="0x55c5aac76850" type="name" varId="1" variable="0x55c5aaf6d310" astParent="0x55c5aac6eb70"/>
+    <token id="0x55c5aac6eb70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="22" column="13" str="." scope="0x55c5aac76850" astParent="0x55c5aac78520" astOperand1="0x55c5ab0aad50" astOperand2="0x55c5aaccb540" originalName="->"/>
+    <token id="0x55c5aaccb540" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="22" column="15" str="control" scope="0x55c5aac76850" type="name" varId="3" astParent="0x55c5aac6eb70"/>
+    <token id="0x55c5aac78520" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="22" column="23" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aac6eb70" astOperand2="0x55c5aac78080"/>
+    <token id="0x55c5aac78080" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="22" column="25" str="ctrl_reg" scope="0x55c5aac76850" type="name" varId="2" variable="0x55c5aac750b0" astParent="0x55c5aac78520" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aae49b60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="22" column="33" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aaca2940" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="23" column="1" str="}" scope="0x55c5aac76850" link="0x55c5aac7bba0"/>
+    <token id="0x55c5ab1d39c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac5ff70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="6" str="uart_enable" scope="0x55c5aacbc050" type="name" function="0x55c5aac69ce0" astParent="0x55c5aace0120"/>
+    <token id="0x55c5aace0120" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="17" str="(" scope="0x55c5aacbc050" link="0x55c5aaca2a00" astOperand1="0x55c5aac5ff70" astOperand2="0x55c5ab0adbc0" valueType-type="void"/>
+    <token id="0x55c5aad45370" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="18" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac79cb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="27" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5ab0adbc0"/>
+    <token id="0x55c5ab0adbc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="38" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aace0120" astOperand1="0x55c5aac79cb0" astOperand2="0x55c5aace6600"/>
+    <token id="0x55c5aace6600" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="39" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="4" variable="0x55c5aae55cd0" astParent="0x55c5ab0adbc0"/>
+    <token id="0x55c5aaca2a00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="25" column="47" str=")" scope="0x55c5aacbc050" link="0x55c5aace0120"/>
+    <token id="0x55c5aaca2a60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="26" column="1" str="{" scope="0x55c5aac7b730" link="0x55c5ab0ac390"/>
+    <token id="0x55c5aac599b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="5" str="uint32_t" scope="0x55c5aac7b730" type="name"/>
+    <token id="0x55c5aac59a10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="14" str="ctrl_reg" scope="0x55c5aac7b730" type="name" varId="5" variable="0x55c5aac75190" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac66a30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="23" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aace32b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="14" str="ctrl_reg" scope="0x55c5aac7b730" type="name" varId="5" variable="0x55c5aac75190" astParent="0x55c5aace33d0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aace33d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="23" str="=" scope="0x55c5aac7b730" type="op" isAssignmentOp="True" astOperand1="0x55c5aace32b0" astOperand2="0x55c5aac741f0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac5d6c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="25" str="ptr_uart" scope="0x55c5aac7b730" type="name" varId="4" variable="0x55c5aae55cd0" astParent="0x55c5aac741f0"/>
+    <token id="0x55c5aac741f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="33" str="." scope="0x55c5aac7b730" astParent="0x55c5aace33d0" astOperand1="0x55c5aac5d6c0" astOperand2="0x55c5aac74310" originalName="->"/>
+    <token id="0x55c5aac74310" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="35" str="control" scope="0x55c5aac7b730" type="name" varId="6" astParent="0x55c5aac741f0"/>
+    <token id="0x55c5aac74370" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="27" column="42" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aaccc2c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="5" str="ctrl_reg" scope="0x55c5aac7b730" type="name" varId="5" variable="0x55c5aac75190" astParent="0x55c5aaccc3e0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaccc3e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="14" str="|=" scope="0x55c5aac7b730" type="op" isAssignmentOp="True" astOperand1="0x55c5aaccc2c0" astOperand2="0x55c5aac5a360" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaccc500" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="17" str="(" scope="0x55c5aac7b730" link="0x55c5aac5a5a0"/>
+    <token id="0x55c5aaccc620" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="18" str="UART_CR_UARTEN" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac5a120"/>
+    <token id="0x55c5aac5a120" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="33" str="|" scope="0x55c5aac7b730" type="op" astParent="0x55c5aac5a360" astOperand1="0x55c5aaccc620" astOperand2="0x55c5aac5a240"/>
+    <token id="0x55c5aac5a240" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="35" str="UART_CR_TXE" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac5a120"/>
+    <token id="0x55c5aac5a360" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="47" str="|" scope="0x55c5aac7b730" type="op" astParent="0x55c5aaccc3e0" astOperand1="0x55c5aac5a120" astOperand2="0x55c5aac5a480"/>
+    <token id="0x55c5aac5a480" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="49" str="UART_CR_RXE" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac5a360"/>
+    <token id="0x55c5aac5a5a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="60" str=")" scope="0x55c5aac7b730" link="0x55c5aaccc500"/>
+    <token id="0x55c5aac5a6c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="28" column="61" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac5a7e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="29" column="5" str="ptr_uart" scope="0x55c5aac7b730" type="name" varId="4" variable="0x55c5aae55cd0" astParent="0x55c5ab0abdf0"/>
+    <token id="0x55c5ab0abdf0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="29" column="13" str="." scope="0x55c5aac7b730" astParent="0x55c5ab0ac030" astOperand1="0x55c5aac5a7e0" astOperand2="0x55c5ab0abf10" originalName="->"/>
+    <token id="0x55c5ab0abf10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="29" column="15" str="control" scope="0x55c5aac7b730" type="name" varId="6" astParent="0x55c5ab0abdf0"/>
+    <token id="0x55c5ab0ac030" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="29" column="23" str="=" scope="0x55c5aac7b730" type="op" isAssignmentOp="True" astOperand1="0x55c5ab0abdf0" astOperand2="0x55c5ab0ac150"/>
+    <token id="0x55c5ab0ac150" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="29" column="25" str="ctrl_reg" scope="0x55c5aac7b730" type="name" varId="5" variable="0x55c5aac75190" astParent="0x55c5ab0ac030" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0ac270" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="29" column="33" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0ac390" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="30" column="1" str="}" scope="0x55c5aac7b730" link="0x55c5aaca2a60"/>
+    <token id="0x55c5ab0ac4b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aacab860" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="6" str="uart_set_baud_rate" scope="0x55c5aacbc050" type="name" function="0x55c5ab1d3430" astParent="0x55c5aacab980"/>
+    <token id="0x55c5aacab980" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="24" str="(" scope="0x55c5aacbc050" link="0x55c5aad464f0" astOperand1="0x55c5aacab860" astOperand2="0x55c5aacabf20" valueType-type="void"/>
+    <token id="0x55c5aacabaa0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="25" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aacabbc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="34" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5aacabce0"/>
+    <token id="0x55c5aacabce0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="45" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aacabf20" astOperand1="0x55c5aacabbc0" astOperand2="0x55c5aacabe00"/>
+    <token id="0x55c5aacabe00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="46" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="7" variable="0x55c5aac5ae00" astParent="0x55c5aacabce0"/>
+    <token id="0x55c5aacabf20" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="54" str="," scope="0x55c5aacbc050" astParent="0x55c5aacab980" astOperand1="0x55c5aacabce0" astOperand2="0x55c5aad463d0"/>
+    <token id="0x55c5aacac040" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="56" str="uint32_t" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aad463d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="65" str="baud_rate" scope="0x55c5aacbc050" type="name" varId="8" variable="0x55c5aac5aee0" astParent="0x55c5aacabf20" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aad464f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="32" column="74" str=")" scope="0x55c5aacbc050" link="0x55c5aacab980"/>
+    <token id="0x55c5aad46610" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="33" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aafac4a0"/>
+    <token id="0x55c5aad46730" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="34" column="5" str="uint32_t" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aad46850" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="34" column="14" str="temp" scope="0x55c5aac785a0" type="name" varId="9" variable="0x55c5aaca2500" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aad46970" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="34" column="18" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aad46a90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="35" column="5" str="uint32_t" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aacac0a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="35" column="14" str="ibrd" scope="0x55c5aac785a0" type="name" varId="10" variable="0x55c5aaf6cdd0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac60db0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="35" column="18" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac60ed0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="36" column="5" str="uint32_t" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac60ff0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="36" column="14" str="mod" scope="0x55c5aac785a0" type="name" varId="11" variable="0x55c5aaf6ceb0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac61110" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="36" column="17" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac61230" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="37" column="5" str="uint32_t" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac61350" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="37" column="14" str="fbrd" scope="0x55c5aac785a0" type="name" varId="12" variable="0x55c5aaf6cf90" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aac61470" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="37" column="18" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aad46bb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="5" str="if" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab1d54c0"/>
+    <token id="0x55c5ab1d54c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="8" str="(" scope="0x55c5aac785a0" link="0x55c5ab1d5940" astOperand1="0x55c5aad46bb0" astOperand2="0x55c5ab1d5700"/>
+    <token id="0x55c5ab1d55e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="9" str="baud_rate" scope="0x55c5aac785a0" type="name" varId="8" variable="0x55c5aac5aee0" astParent="0x55c5ab1d5700" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d5700" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="19" str="==" scope="0x55c5aac785a0" type="op" isComparisonOp="True" astParent="0x55c5ab1d54c0" astOperand1="0x55c5ab1d55e0" astOperand2="0x55c5ab1d5820" valueType-type="bool"/>
+    <token id="0x55c5ab1d5820" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="22" str="0" scope="0x55c5aac785a0" type="number" isInt="True" values="0x55c5aac64d70" astParent="0x55c5ab1d5700" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab1d5940" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="23" str=")" scope="0x55c5aac785a0" link="0x55c5ab1d54c0"/>
+    <token id="0x55c5ab1d5a60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="39" column="25" str="{" scope="0x55c5aac75e20" link="0x55c5aaca3000"/>
+    <token id="0x55c5ab1d5b80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="40" column="9" str="baud_rate" scope="0x55c5aac75e20" type="name" varId="8" variable="0x55c5aac5aee0" astParent="0x55c5ab1d5ca0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d5ca0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="40" column="19" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" astOperand1="0x55c5ab1d5b80" astOperand2="0x55c5aaca2dc0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca2dc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="40" column="21" str="UART_BAUD_RATE" scope="0x55c5aac75e20" type="name" astParent="0x55c5ab1d5ca0"/>
+    <token id="0x55c5aaca2ee0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="40" column="35" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aaca3000" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="41" column="5" str="}" scope="0x55c5aac75e20" link="0x55c5ab1d5a60"/>
+    <token id="0x55c5aaca3120" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="45" column="5" str="temp" scope="0x55c5aac785a0" type="name" varId="9" variable="0x55c5aaca2500" astParent="0x55c5aaca3240" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca3240" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="45" column="10" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aaca3120" astOperand2="0x55c5aaca3480" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca3360" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="45" column="12" str="16" scope="0x55c5aac785a0" type="number" isInt="True" values="0x55c5aacdbcb0" astParent="0x55c5aaca3480" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaca3480" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="45" column="15" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aaca3240" astOperand1="0x55c5aaca3360" astOperand2="0x55c5aaca35a0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca35a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="45" column="17" str="baud_rate" scope="0x55c5aac785a0" type="name" varId="8" variable="0x55c5aac5aee0" astParent="0x55c5aaca3480" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd9590" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="45" column="26" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aacd96b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="46" column="5" str="ibrd" scope="0x55c5aac785a0" type="name" varId="10" variable="0x55c5aaf6cdd0" astParent="0x55c5aacd97d0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd97d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="46" column="10" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd96b0" astOperand2="0x55c5aacd9a10" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd98f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="46" column="12" str="UART_CLK" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacd9a10"/>
+    <token id="0x55c5aacd9a10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="46" column="21" str="/" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aacd97d0" astOperand1="0x55c5aacd98f0" astOperand2="0x55c5aacd9b30"/>
+    <token id="0x55c5aacd9b30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="46" column="23" str="temp" scope="0x55c5aac785a0" type="name" varId="9" variable="0x55c5aaca2500" astParent="0x55c5aacd9a10" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd9c50" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="46" column="27" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aacd9d70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="47" column="5" str="mod" scope="0x55c5aac785a0" type="name" varId="11" variable="0x55c5aaf6ceb0" astParent="0x55c5ab1d3c40" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d3c40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="47" column="9" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd9d70" astOperand2="0x55c5ab1d3e80" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d3d60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="47" column="11" str="UART_CLK" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab1d3e80"/>
+    <token id="0x55c5ab1d3e80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="47" column="20" str="%" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5ab1d3c40" astOperand1="0x55c5ab1d3d60" astOperand2="0x55c5ab1d3fa0"/>
+    <token id="0x55c5ab1d3fa0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="47" column="22" str="temp" scope="0x55c5aac785a0" type="name" varId="9" variable="0x55c5aaca2500" astParent="0x55c5ab1d3e80" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d40c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="47" column="26" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5ab1d41e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="5" str="fbrd" scope="0x55c5aac785a0" type="name" varId="12" variable="0x55c5aaf6cf90" astParent="0x55c5ab1d4300" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d4300" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="10" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab1d41e0" astOperand2="0x55c5aaccccf0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1d4420" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="12" str="(" scope="0x55c5aac785a0" link="0x55c5aacccbd0"/>
+    <token id="0x55c5aaccc870" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="13" str="4" scope="0x55c5aac785a0" type="number" isInt="True" values="0x55c5aad42fa0" astParent="0x55c5aaccc990" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aaccc990" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="15" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aaccccf0" astOperand1="0x55c5aaccc870" astOperand2="0x55c5aacccab0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacccab0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="17" str="mod" scope="0x55c5aac785a0" type="name" varId="11" variable="0x55c5aaf6ceb0" astParent="0x55c5aaccc990" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacccbd0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="20" str=")" scope="0x55c5aac785a0" link="0x55c5ab1d4420"/>
+    <token id="0x55c5aaccccf0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="22" str="/" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5ab1d4300" astOperand1="0x55c5aaccc990" astOperand2="0x55c5aaccce10" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aaccce10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="24" str="baud_rate" scope="0x55c5aac785a0" type="name" varId="8" variable="0x55c5aac5aee0" astParent="0x55c5aaccccf0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacccf30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="48" column="33" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aaccd050" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="51" column="5" str="ptr_uart" scope="0x55c5aac785a0" type="name" varId="7" variable="0x55c5aac5ae00" astParent="0x55c5aacac200"/>
+    <token id="0x55c5aacac200" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="51" column="13" str="." scope="0x55c5aac785a0" astParent="0x55c5aacac440" astOperand1="0x55c5aaccd050" astOperand2="0x55c5aacac320" originalName="->"/>
+    <token id="0x55c5aacac320" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="51" column="15" str="integer_br" scope="0x55c5aac785a0" type="name" varId="13" astParent="0x55c5aacac200"/>
+    <token id="0x55c5aacac440" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="51" column="26" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacac200" astOperand2="0x55c5aacac560"/>
+    <token id="0x55c5aacac560" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="51" column="28" str="ibrd" scope="0x55c5aac785a0" type="name" varId="10" variable="0x55c5aaf6cdd0" astParent="0x55c5aacac440" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacac680" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="51" column="32" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aacac7a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="52" column="5" str="ptr_uart" scope="0x55c5aac785a0" type="name" varId="7" variable="0x55c5aac5ae00" astParent="0x55c5aacac8c0"/>
+    <token id="0x55c5aacac8c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="52" column="13" str="." scope="0x55c5aac785a0" astParent="0x55c5aacacb00" astOperand1="0x55c5aacac7a0" astOperand2="0x55c5aacac9e0" originalName="->"/>
+    <token id="0x55c5aacac9e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="52" column="15" str="fractional_br" scope="0x55c5aac785a0" type="name" varId="14" astParent="0x55c5aacac8c0"/>
+    <token id="0x55c5aacacb00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="52" column="29" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacac8c0" astOperand2="0x55c5aafac260"/>
+    <token id="0x55c5aafac260" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="52" column="31" str="fbrd" scope="0x55c5aac785a0" type="name" varId="12" variable="0x55c5aaf6cf90" astParent="0x55c5aacacb00" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aafac380" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="52" column="35" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aafac4a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="53" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aad46610"/>
+    <token id="0x55c5aafac5c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aafac6e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="6" str="uart_init" scope="0x55c5aacbc050" type="name" function="0x55c5aac69e20" astParent="0x55c5aafac800"/>
+    <token id="0x55c5aafac800" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="15" str="(" scope="0x55c5aacbc050" link="0x55c5aafe2fa0" astOperand1="0x55c5aafac6e0" astOperand2="0x55c5aafacb60" valueType-type="void"/>
+    <token id="0x55c5aafac920" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="16" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aafaca40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="25" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5aafacb60"/>
+    <token id="0x55c5aafacb60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="36" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aafac800" astOperand1="0x55c5aafaca40" astOperand2="0x55c5aafe2e80"/>
+    <token id="0x55c5aafe2e80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="37" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aafacb60"/>
+    <token id="0x55c5aafe2fa0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="55" column="70" str=")" scope="0x55c5aacbc050" link="0x55c5aafac800"/>
+    <token id="0x55c5aafe30c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="56" column="1" str="{" scope="0x55c5aac789a0" link="0x55c5aae55ea0"/>
+    <token id="0x55c5aafe31e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="57" column="5" str="int" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aafe3300" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="57" column="9" str="lcrh_reg" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aaf6d070" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aafe3420" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="57" column="17" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aafe3540" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="60" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aafe3660"/>
+    <token id="0x55c5aafe3660" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="60" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aafe37e0" astOperand1="0x55c5aafe3540" astOperand2="0x55c5aafe3780" originalName="->"/>
+    <token id="0x55c5aafe3780" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="60" column="15" str="control" scope="0x55c5aac789a0" type="name" varId="17" astParent="0x55c5aafe3660"/>
+    <token id="0x55c5aafe37e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="60" column="23" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aafe3660" astOperand2="0x55c5aac73730"/>
+    <token id="0x55c5aac73730" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="60" column="25" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5ab0b0e00" astParent="0x55c5aafe37e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac73850" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="60" column="28" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac73970" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="63" column="5" str="lcrh_reg" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aaf6d070" astParent="0x55c5aac73a90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac73a90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="63" column="14" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac73970" astOperand2="0x55c5aac73cd0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac73bb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="63" column="16" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aac73cd0"/>
+    <token id="0x55c5aac73cd0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="63" column="24" str="." scope="0x55c5aac789a0" astParent="0x55c5aac73a90" astOperand1="0x55c5aac73bb0" astOperand2="0x55c5aac73df0" originalName="->"/>
+    <token id="0x55c5aac73df0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="63" column="26" str="line_control" scope="0x55c5aac789a0" type="name" varId="18" astParent="0x55c5aac73cd0"/>
+    <token id="0x55c5aac73f10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="63" column="38" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac61590" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="64" column="5" str="lcrh_reg" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aaf6d070" astParent="0x55c5aace0c70" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace0c70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="64" column="14" str="&amp;=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac61590" astOperand2="0x55c5aace0d90" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aace0d90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="64" column="17" str="~" scope="0x55c5aac789a0" type="op" astParent="0x55c5aace0c70" astOperand1="0x55c5aace0eb0"/>
+    <token id="0x55c5aace0eb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="64" column="18" str="UART_LCR_FEN" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace0d90"/>
+    <token id="0x55c5aace0fd0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="64" column="30" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aace10f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="65" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aace1210"/>
+    <token id="0x55c5aace1210" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="65" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aace1450" astOperand1="0x55c5aace10f0" astOperand2="0x55c5aace1330" originalName="->"/>
+    <token id="0x55c5aace1330" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="65" column="15" str="line_control" scope="0x55c5aac789a0" type="name" varId="18" astParent="0x55c5aace1210"/>
+    <token id="0x55c5aace1450" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="65" column="28" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aace1210" astOperand2="0x55c5aace1570"/>
+    <token id="0x55c5aace1570" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="65" column="30" str="lcrh_reg" scope="0x55c5aac789a0" type="name" varId="16" variable="0x55c5aaf6d070" astParent="0x55c5aace1450" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5ab1bfc00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="65" column="38" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5ab1bfd20" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="5" str="uint32_t" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5ab1bfe40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="14" str="baud_rate" scope="0x55c5aac789a0" type="name" varId="19" variable="0x55c5aaf6d150" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1bff60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="24" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aace34f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="14" str="baud_rate" scope="0x55c5aac789a0" type="name" varId="19" variable="0x55c5aaf6d150" astParent="0x55c5aace3610" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aace3610" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="24" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aace34f0" astOperand2="0x55c5ab1c0080" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1c0080" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="26" str="UART_BAUD_RATE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace3610"/>
+    <token id="0x55c5ab1c01a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="68" column="40" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5ab1c02c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="5" str="uart_set_baud_rate" scope="0x55c5aac789a0" type="name" function="0x55c5ab1d3430" astParent="0x55c5ab1c03e0"/>
+    <token id="0x55c5ab1c03e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="23" str="(" scope="0x55c5aac789a0" link="0x55c5ab1c0910" astOperand1="0x55c5ab1c02c0" astOperand2="0x55c5ab1c06d0" valueType-type="void"/>
+    <token id="0x55c5ab1c0500" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="24" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5ab1c06d0"/>
+    <token id="0x55c5ab1c06d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="32" str="," scope="0x55c5aac789a0" astParent="0x55c5ab1c03e0" astOperand1="0x55c5ab1c0500" astOperand2="0x55c5ab1c07f0"/>
+    <token id="0x55c5ab1c07f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="34" str="baud_rate" scope="0x55c5aac789a0" type="name" varId="19" variable="0x55c5aaf6d150" astParent="0x55c5ab1c06d0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab1c0910" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="43" str=")" scope="0x55c5aac789a0" link="0x55c5ab1c03e0"/>
+    <token id="0x55c5ab1c0a30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="69" column="44" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5ab1c0b50" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5ab1c0c70"/>
+    <token id="0x55c5ab1c0c70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5ab1c0eb0" astOperand1="0x55c5ab1c0b50" astOperand2="0x55c5ab1c0d90" originalName="->"/>
+    <token id="0x55c5ab1c0d90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="15" str="line_control" scope="0x55c5aac789a0" type="name" varId="18" astParent="0x55c5ab1c0c70"/>
+    <token id="0x55c5ab1c0eb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="28" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab1c0c70" astOperand2="0x55c5aac60280"/>
+    <token id="0x55c5ab1c0fd0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="31" str="UART_LCR_WLEN_8" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac60280"/>
+    <token id="0x55c5aac60280" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="47" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5ab1c0eb0" astOperand1="0x55c5ab1c0fd0" astOperand2="0x55c5aac603a0"/>
+    <token id="0x55c5aac603a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="49" str="UART_LCR_FEN" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac60280"/>
+    <token id="0x55c5aac604c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="72" column="62" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac60700" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aac60820"/>
+    <token id="0x55c5aac60820" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac60a60" astOperand1="0x55c5aac60700" astOperand2="0x55c5aac60940" originalName="->"/>
+    <token id="0x55c5aac60940" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="15" str="control" scope="0x55c5aac789a0" type="name" varId="17" astParent="0x55c5aac60820"/>
+    <token id="0x55c5aac60a60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="23" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac60820" astOperand2="0x55c5aaf6d960"/>
+    <token id="0x55c5aaf6d4e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="26" str="UART_CR_UARTEN" scope="0x55c5aac789a0" type="name" astParent="0x55c5aaf6d720"/>
+    <token id="0x55c5aaf6d720" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="41" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aaf6d960" astOperand1="0x55c5aaf6d4e0" astOperand2="0x55c5aaf6d840"/>
+    <token id="0x55c5aaf6d840" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="43" str="UART_CR_TXE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aaf6d720"/>
+    <token id="0x55c5aaf6d960" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="55" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aac60a60" astOperand1="0x55c5aaf6d720" astOperand2="0x55c5aaf6da80"/>
+    <token id="0x55c5aaf6da80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="57" str="UART_CR_LBE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aaf6d960"/>
+    <token id="0x55c5aaf6dba0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="75" column="69" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aaf6dde0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="78" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aaca3600"/>
+    <token id="0x55c5aaca3600" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="78" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac61880" astOperand1="0x55c5aaf6dde0" astOperand2="0x55c5aac61760" originalName="->"/>
+    <token id="0x55c5aac61760" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="78" column="15" str="isr_fifo_level_sel" scope="0x55c5aac789a0" type="name" varId="20" astParent="0x55c5aaca3600"/>
+    <token id="0x55c5aac61880" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="78" column="34" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aaca3600" astOperand2="0x55c5aac619a0"/>
+    <token id="0x55c5aac619a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="78" column="36" str="UART_IFLS_RXIFLSEL_1_2" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac61880"/>
+    <token id="0x55c5aac61ac0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="78" column="58" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac61be0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="80" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aac61d00"/>
+    <token id="0x55c5aac61d00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="80" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac61f40" astOperand1="0x55c5aac61be0" astOperand2="0x55c5aac61e20" originalName="->"/>
+    <token id="0x55c5aac61e20" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="80" column="15" str="data" scope="0x55c5aac789a0" type="name" varId="21" astParent="0x55c5aac61d00"/>
+    <token id="0x55c5aac61f40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="80" column="20" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac61d00" astOperand2="0x55c5aac62060"/>
+    <token id="0x55c5aac62060" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="80" column="22" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5aae2a3b0" astParent="0x55c5aac61f40" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacd9dd0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="80" column="25" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac5bf10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="5" str="while" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac5c030"/>
+    <token id="0x55c5aac5c030" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="11" str="(" scope="0x55c5aac789a0" link="0x55c5aac5c6f0" astOperand1="0x55c5aac5bf10" astOperand2="0x55c5aac5c4b0"/>
+    <token id="0x55c5aac5c150" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="12" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aac5c270"/>
+    <token id="0x55c5aac5c270" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="20" str="." scope="0x55c5aac789a0" astParent="0x55c5aac5c4b0" astOperand1="0x55c5aac5c150" astOperand2="0x55c5aac5c390" originalName="->"/>
+    <token id="0x55c5aac5c390" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="22" str="flag" scope="0x55c5aac789a0" type="name" varId="22" astParent="0x55c5aac5c270"/>
+    <token id="0x55c5aac5c4b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="27" str="&amp;" scope="0x55c5aac789a0" type="op" astParent="0x55c5aac5c030" astOperand1="0x55c5aac5c270" astOperand2="0x55c5aac5c5d0"/>
+    <token id="0x55c5aac5c5d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="29" str="UART_FR_BUSY" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac5c4b0"/>
+    <token id="0x55c5aac5c6f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="41" str=")" scope="0x55c5aac789a0" link="0x55c5aac5c030"/>
+    <token id="0x55c5aac60b10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="81" column="0" str="{" scope="0x55c5aac781c0" link="0x55c5aaccd100"/>
+    <token id="0x55c5aac5c810" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="82" column="9" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aaccd100" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="82" column="0" str="}" scope="0x55c5aac781c0" link="0x55c5aac60b10"/>
+    <token id="0x55c5ab1d4480" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aacd5e70"/>
+    <token id="0x55c5aacd5e70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aacd60b0" astOperand1="0x55c5ab1d4480" astOperand2="0x55c5aacd5f90" originalName="->"/>
+    <token id="0x55c5aacd5f90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="15" str="control" scope="0x55c5aac789a0" type="name" varId="17" astParent="0x55c5aacd5e70"/>
+    <token id="0x55c5aacd60b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="23" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd5e70" astOperand2="0x55c5aacd6650"/>
+    <token id="0x55c5aacd61d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="26" str="UART_CR_UARTEN" scope="0x55c5aac789a0" type="name" astParent="0x55c5aacd6410"/>
+    <token id="0x55c5aacd6410" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="41" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aacd6650" astOperand1="0x55c5aacd61d0" astOperand2="0x55c5aacd6530"/>
+    <token id="0x55c5aacd6530" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="43" str="UART_CR_RXE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aacd6410"/>
+    <token id="0x55c5aacd6650" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="55" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aacd60b0" astOperand1="0x55c5aacd6410" astOperand2="0x55c5aacd6770"/>
+    <token id="0x55c5aacd6770" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="57" str="UART_CR_TXE" scope="0x55c5aac789a0" type="name" astParent="0x55c5aacd6650"/>
+    <token id="0x55c5aacd6890" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="85" column="69" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac5e030" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="88" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aac5e150"/>
+    <token id="0x55c5aac5e150" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="88" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aac5e390" astOperand1="0x55c5aac5e030" astOperand2="0x55c5aac5e270" originalName="->"/>
+    <token id="0x55c5aac5e270" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="88" column="15" str="isr_clear" scope="0x55c5aac789a0" type="name" varId="23" astParent="0x55c5aac5e150"/>
+    <token id="0x55c5aac5e390" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="88" column="25" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac5e150" astOperand2="0x55c5aad3bee0"/>
+    <token id="0x55c5aac5e4b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="10" str="UART_ICR_OEIC" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac5e6f0"/>
+    <token id="0x55c5aac5e6f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="24" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aac5e930" astOperand1="0x55c5aac5e4b0" astOperand2="0x55c5aac5e810"/>
+    <token id="0x55c5aac5e810" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="26" str="UART_ICR_BEIC" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac5e6f0"/>
+    <token id="0x55c5aac5e930" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="40" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aad3bee0" astOperand1="0x55c5aac5e6f0" astOperand2="0x55c5aad3bdc0"/>
+    <token id="0x55c5aad3bdc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="42" str="UART_ICR_PEIC" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac5e930"/>
+    <token id="0x55c5aad3bee0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="56" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aac5e390" astOperand1="0x55c5aac5e930" astOperand2="0x55c5aad3c000"/>
+    <token id="0x55c5aad3c000" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="58" str="UART_ICR_FEIC" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad3bee0"/>
+    <token id="0x55c5aad3c120" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="89" column="72" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aad3c360" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="5" str="ptr_uart" scope="0x55c5aac789a0" type="name" varId="15" variable="0x55c5aac5afc0" astParent="0x55c5aad3c480"/>
+    <token id="0x55c5aad3c480" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="13" str="." scope="0x55c5aac789a0" astParent="0x55c5aad3c6c0" astOperand1="0x55c5aad3c360" astOperand2="0x55c5aad3c5a0" originalName="->"/>
+    <token id="0x55c5aad3c5a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="15" str="isr_mask" scope="0x55c5aac789a0" type="name" varId="24" astParent="0x55c5aad3c480"/>
+    <token id="0x55c5aad3c6c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="24" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aad3c480" astOperand2="0x55c5aae55a20"/>
+    <token id="0x55c5aad3c7e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="27" str="UART_MIS_RXMIS" scope="0x55c5aac789a0" type="name" astParent="0x55c5aae55a20"/>
+    <token id="0x55c5aae55a20" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="42" str="|" scope="0x55c5aac789a0" type="op" astParent="0x55c5aad3c6c0" astOperand1="0x55c5aad3c7e0" astOperand2="0x55c5aae55b40"/>
+    <token id="0x55c5aae55b40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="44" str="UART_MIS_RTMIS" scope="0x55c5aac789a0" type="name" astParent="0x55c5aae55a20"/>
+    <token id="0x55c5aae55c60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="92" column="59" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aae55ea0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="93" column="1" str="}" scope="0x55c5aac789a0" link="0x55c5aafe30c0"/>
+    <token id="0x55c5aae55fc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="1" str="uint32_t" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aae560e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="10" str="uart_getc" scope="0x55c5aacbc050" type="name" function="0x55c5aac541b0" astParent="0x55c5aae56200"/>
+    <token id="0x55c5aae56200" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="19" str="(" scope="0x55c5aacbc050" link="0x55c5aacd5470" astOperand1="0x55c5aae560e0" astOperand2="0x55c5aacd5230" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aae56320" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="20" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aace15d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="29" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5aacd5230"/>
+    <token id="0x55c5aacd5230" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="40" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aae56200" astOperand1="0x55c5aace15d0" astOperand2="0x55c5aacd5350"/>
+    <token id="0x55c5aacd5350" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="41" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="25" variable="0x55c5aac5b0a0" astParent="0x55c5aacd5230"/>
+    <token id="0x55c5aacd5470" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="95" column="49" str=")" scope="0x55c5aacbc050" link="0x55c5aae56200"/>
+    <token id="0x55c5aacd5590" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="96" column="1" str="{" scope="0x55c5aaf6c530" link="0x55c5ab0abad0"/>
+    <token id="0x55c5aacd56b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="5" str="uint32_t" scope="0x55c5aaf6c530" type="name"/>
+    <token id="0x55c5aacd57d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="14" str="data" scope="0x55c5aaf6c530" type="name" varId="26" variable="0x55c5aaf6d230" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd58f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="19" str=";" scope="0x55c5aaf6c530"/>
+    <token id="0x55c5aace3730" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="14" str="data" scope="0x55c5aaf6c530" type="name" varId="26" variable="0x55c5aaf6d230" astParent="0x55c5aace3850" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aace3850" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="19" str="=" scope="0x55c5aaf6c530" type="op" isAssignmentOp="True" astOperand1="0x55c5aace3730" astOperand2="0x55c5aacd5a10" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd5a10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="21" str="0" scope="0x55c5aaf6c530" type="number" isInt="True" values="0x55c5aace6f50" astParent="0x55c5aace3850" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacd5b30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="97" column="22" str=";" scope="0x55c5aaf6c530"/>
+    <token id="0x55c5aacd5c50" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="5" str="while" scope="0x55c5aaf6c530" type="name" astParent="0x55c5ab1c0560"/>
+    <token id="0x55c5ab1c0560" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="11" str="(" scope="0x55c5aaf6c530" link="0x55c5aac63360" astOperand1="0x55c5aacd5c50" astOperand2="0x55c5aac62a60"/>
+    <token id="0x55c5aac62a60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="12" str="!" scope="0x55c5aaf6c530" type="op" isLogicalOp="True" astParent="0x55c5ab1c0560" astOperand1="0x55c5aac63000" valueType-type="bool"/>
+    <token id="0x55c5aac62b80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="13" str="(" scope="0x55c5aaf6c530" link="0x55c5aac63240"/>
+    <token id="0x55c5aac62ca0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="14" str="ptr_uart" scope="0x55c5aaf6c530" type="name" varId="25" variable="0x55c5aac5b0a0" astParent="0x55c5aac62dc0"/>
+    <token id="0x55c5aac62dc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="22" str="." scope="0x55c5aaf6c530" astParent="0x55c5aac63000" astOperand1="0x55c5aac62ca0" astOperand2="0x55c5aac62ee0" originalName="->"/>
+    <token id="0x55c5aac62ee0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="24" str="flag" scope="0x55c5aaf6c530" type="name" varId="27" astParent="0x55c5aac62dc0"/>
+    <token id="0x55c5aac63000" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="29" str="&amp;" scope="0x55c5aaf6c530" type="op" astParent="0x55c5aac62a60" astOperand1="0x55c5aac62dc0" astOperand2="0x55c5aac63120"/>
+    <token id="0x55c5aac63120" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="31" str="UART_FR_RXFE" scope="0x55c5aaf6c530" type="name" astParent="0x55c5aac63000"/>
+    <token id="0x55c5aac63240" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="43" str=")" scope="0x55c5aaf6c530" link="0x55c5aac62b80"/>
+    <token id="0x55c5aac63360" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="44" str=")" scope="0x55c5aaf6c530" link="0x55c5ab1c0560"/>
+    <token id="0x55c5aace2bf0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="100" column="0" str="{" scope="0x55c5aaf6c6a0" link="0x55c5aace2d10"/>
+    <token id="0x55c5aac63480" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="101" column="9" str=";" scope="0x55c5aaf6c6a0"/>
+    <token id="0x55c5aace2d10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="101" column="0" str="}" scope="0x55c5aaf6c6a0" link="0x55c5aace2bf0"/>
+    <token id="0x55c5ab1c1030" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="103" column="5" str="data" scope="0x55c5aaf6c530" type="name" varId="26" variable="0x55c5aaf6d230" astParent="0x55c5ab0ab1d0" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0ab1d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="103" column="10" str="=" scope="0x55c5aaf6c530" type="op" isAssignmentOp="True" astOperand1="0x55c5ab1c1030" astOperand2="0x55c5ab0ab410" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0ab2f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="103" column="12" str="ptr_uart" scope="0x55c5aaf6c530" type="name" varId="25" variable="0x55c5aac5b0a0" astParent="0x55c5ab0ab410"/>
+    <token id="0x55c5ab0ab410" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="103" column="20" str="." scope="0x55c5aaf6c530" astParent="0x55c5ab0ab1d0" astOperand1="0x55c5ab0ab2f0" astOperand2="0x55c5ab0ab530" originalName="->"/>
+    <token id="0x55c5ab0ab530" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="103" column="22" str="data" scope="0x55c5aaf6c530" type="name" varId="28" astParent="0x55c5ab0ab410"/>
+    <token id="0x55c5ab0ab650" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="103" column="26" str=";" scope="0x55c5aaf6c530"/>
+    <token id="0x55c5ab0ab770" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="104" column="5" str="return" scope="0x55c5aaf6c530" type="name" astOperand1="0x55c5ab0ab890" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0ab890" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="104" column="12" str="data" scope="0x55c5aaf6c530" type="name" varId="26" variable="0x55c5aaf6d230" astParent="0x55c5ab0ab770" valueType-type="int" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0ab9b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="104" column="16" str=";" scope="0x55c5aaf6c530"/>
+    <token id="0x55c5ab0abad0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="105" column="1" str="}" scope="0x55c5aaf6c530" link="0x55c5aacd5590"/>
+    <token id="0x55c5ab0abbf0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5ab0abd10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="6" str="uart_putc" scope="0x55c5aacbc050" type="name" function="0x55c5aac54250" astParent="0x55c5aac66c60"/>
+    <token id="0x55c5aac66c60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="15" str="(" scope="0x55c5aacbc050" link="0x55c5aac67560" astOperand1="0x55c5ab0abd10" astOperand2="0x55c5aac67200" valueType-type="void"/>
+    <token id="0x55c5aac66d80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="16" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac66ea0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="25" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5aac66fc0"/>
+    <token id="0x55c5aac66fc0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="36" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aac67200" astOperand1="0x55c5aac66ea0" astOperand2="0x55c5aac670e0"/>
+    <token id="0x55c5aac670e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="37" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="29" variable="0x55c5aac5b180" astParent="0x55c5aac66fc0"/>
+    <token id="0x55c5aac67200" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="45" str="," scope="0x55c5aacbc050" astParent="0x55c5aac66c60" astOperand1="0x55c5aac66fc0" astOperand2="0x55c5aac67440"/>
+    <token id="0x55c5aac67320" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="47" str="int8_t" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac67440" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="54" str="c" scope="0x55c5aacbc050" type="name" varId="30" variable="0x55c5aac5b260" astParent="0x55c5aac67200" valueType-type="char" valueType-sign="signed"/>
+    <token id="0x55c5aac67560" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="107" column="55" str=")" scope="0x55c5aacbc050" link="0x55c5aac66c60"/>
+    <token id="0x55c5aac67680" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="108" column="1" str="{" scope="0x55c5aaf6c810" link="0x55c5aac6de30"/>
+    <token id="0x55c5aac677a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="5" str="while" scope="0x55c5aaf6c810" type="name" astParent="0x55c5aac67800"/>
+    <token id="0x55c5aac67800" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="11" str="(" scope="0x55c5aaf6c810" link="0x55c5aafad5f0" astOperand1="0x55c5aac677a0" astOperand2="0x55c5aafad3b0"/>
+    <token id="0x55c5aafad050" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="12" str="ptr_uart" scope="0x55c5aaf6c810" type="name" varId="29" variable="0x55c5aac5b180" astParent="0x55c5aafad170"/>
+    <token id="0x55c5aafad170" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="20" str="." scope="0x55c5aaf6c810" astParent="0x55c5aafad3b0" astOperand1="0x55c5aafad050" astOperand2="0x55c5aafad290" originalName="->"/>
+    <token id="0x55c5aafad290" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="22" str="flag" scope="0x55c5aaf6c810" type="name" varId="31" astParent="0x55c5aafad170"/>
+    <token id="0x55c5aafad3b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="27" str="&amp;" scope="0x55c5aaf6c810" type="op" astParent="0x55c5aac67800" astOperand1="0x55c5aafad170" astOperand2="0x55c5aafad4d0"/>
+    <token id="0x55c5aafad4d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="29" str="UART_FR_TXFF" scope="0x55c5aaf6c810" type="name" astParent="0x55c5aafad3b0"/>
+    <token id="0x55c5aafad5f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="41" str=")" scope="0x55c5aaf6c810" link="0x55c5aac67800"/>
+    <token id="0x55c5aace2e30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="110" column="0" str="{" scope="0x55c5aaf6c980" link="0x55c5aace2f50"/>
+    <token id="0x55c5aafad710" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="111" column="9" str=";" scope="0x55c5aaf6c980"/>
+    <token id="0x55c5aace2f50" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="111" column="0" str="}" scope="0x55c5aaf6c980" link="0x55c5aace2e30"/>
+    <token id="0x55c5aafad830" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="113" column="5" str="ptr_uart" scope="0x55c5aaf6c810" type="name" varId="29" variable="0x55c5aac5b180" astParent="0x55c5aafad950"/>
+    <token id="0x55c5aafad950" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="113" column="13" str="." scope="0x55c5aaf6c810" astParent="0x55c5aafadb90" astOperand1="0x55c5aafad830" astOperand2="0x55c5aafada70" originalName="->"/>
+    <token id="0x55c5aafada70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="113" column="15" str="data" scope="0x55c5aaf6c810" type="name" varId="32" astParent="0x55c5aafad950"/>
+    <token id="0x55c5aafadb90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="113" column="20" str="=" scope="0x55c5aaf6c810" type="op" isAssignmentOp="True" astOperand1="0x55c5aafad950" astOperand2="0x55c5aac6dbf0"/>
+    <token id="0x55c5aac6dbf0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="113" column="22" str="c" scope="0x55c5aaf6c810" type="name" varId="30" variable="0x55c5aac5b260" astParent="0x55c5aafadb90" valueType-type="char" valueType-sign="signed"/>
+    <token id="0x55c5aac6dd10" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="113" column="23" str=";" scope="0x55c5aaf6c810"/>
+    <token id="0x55c5aac6de30" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="114" column="1" str="}" scope="0x55c5aaf6c810" link="0x55c5aac67680"/>
+    <token id="0x55c5aac6df50" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="1" str="void" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac6e070" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="6" str="uart_puts" scope="0x55c5aacbc050" type="name" function="0x55c5aac542f0" astParent="0x55c5aac6e190"/>
+    <token id="0x55c5aac6e190" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="15" str="(" scope="0x55c5aacbc050" link="0x55c5aac7a6a0" astOperand1="0x55c5aac6e070" astOperand2="0x55c5aac6e730" valueType-type="void"/>
+    <token id="0x55c5aac6e2b0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="16" str="volatile" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac6e3d0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="25" str="Pl011_Uart" scope="0x55c5aacbc050" type="name" astParent="0x55c5aac6e4f0"/>
+    <token id="0x55c5aac6e4f0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="36" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aac6e730" astOperand1="0x55c5aac6e3d0" astOperand2="0x55c5aac6e610"/>
+    <token id="0x55c5aac6e610" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="37" str="ptr_uart" scope="0x55c5aacbc050" type="name" varId="33" variable="0x55c5aac5b340" astParent="0x55c5aac6e4f0"/>
+    <token id="0x55c5aac6e730" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="45" str="," scope="0x55c5aacbc050" astParent="0x55c5aac6e190" astOperand1="0x55c5aac6e4f0" astOperand2="0x55c5aac7a460"/>
+    <token id="0x55c5aac6e850" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="47" str="const" scope="0x55c5aacbc050" type="name"/>
+    <token id="0x55c5aac7a340" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="53" str="char" scope="0x55c5aacbc050" type="name" astParent="0x55c5aac7a460"/>
+    <token id="0x55c5aac7a460" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="58" str="*" scope="0x55c5aacbc050" type="op" isArithmeticalOp="True" astParent="0x55c5aac6e730" astOperand1="0x55c5aac7a340" astOperand2="0x55c5aac7a580"/>
+    <token id="0x55c5aac7a580" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="59" str="s" scope="0x55c5aacbc050" type="name" varId="34" variable="0x55c5aac5b420" astParent="0x55c5aac7a460" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac7a6a0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="116" column="60" str=")" scope="0x55c5aacbc050" link="0x55c5aac6e190"/>
+    <token id="0x55c5aac7a7c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="117" column="1" str="{" scope="0x55c5aaf6caf0" link="0x55c5aad26250"/>
+    <token id="0x55c5aac7a8e0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="118" column="5" str="while" scope="0x55c5aaf6caf0" type="name" astParent="0x55c5aac7aa00"/>
+    <token id="0x55c5aac7aa00" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="118" column="11" str="(" scope="0x55c5aaf6caf0" link="0x55c5aac7ad60" astOperand1="0x55c5aac7a8e0" astOperand2="0x55c5aac7ab20"/>
+    <token id="0x55c5aac7ab20" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="118" column="12" str="*" scope="0x55c5aaf6caf0" type="op" isArithmeticalOp="True" astParent="0x55c5aac7aa00" astOperand1="0x55c5aac7ac40" valueType-type="char" valueType-sign="signed" valueType-constness="1"/>
+    <token id="0x55c5aac7ac40" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="118" column="13" str="s" scope="0x55c5aaf6caf0" type="name" varId="34" variable="0x55c5aac5b420" astParent="0x55c5aac7ab20" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac7ad60" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="118" column="14" str=")" scope="0x55c5aaf6caf0" link="0x55c5aac7aa00"/>
+    <token id="0x55c5aac7ae80" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="118" column="16" str="{" scope="0x55c5aaf6cc60" link="0x55c5aad26130"/>
+    <token id="0x55c5aac7afa0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="9" str="uart_putc" scope="0x55c5aaf6cc60" type="name" function="0x55c5aac54250" astParent="0x55c5aac7b0c0"/>
+    <token id="0x55c5aac7b0c0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="18" str="(" scope="0x55c5aaf6cc60" link="0x55c5aad25ef0" astOperand1="0x55c5aac7afa0" astOperand2="0x55c5aad25a70" valueType-type="void"/>
+    <token id="0x55c5aad25950" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="19" str="ptr_uart" scope="0x55c5aaf6cc60" type="name" varId="33" variable="0x55c5aac5b340" astParent="0x55c5aad25a70"/>
+    <token id="0x55c5aad25a70" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="27" str="," scope="0x55c5aaf6cc60" astParent="0x55c5aac7b0c0" astOperand1="0x55c5aad25950" astOperand2="0x55c5aad25b90"/>
+    <token id="0x55c5aad25b90" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="29" str="*" scope="0x55c5aaf6cc60" type="op" isArithmeticalOp="True" astParent="0x55c5aad25a70" astOperand1="0x55c5aad25dd0" valueType-type="char" valueType-sign="signed" valueType-constness="1"/>
+    <token id="0x55c5aad25cb0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="30" str="s" scope="0x55c5aaf6cc60" type="name" varId="34" variable="0x55c5aac5b420" astParent="0x55c5aad25dd0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aad25dd0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="31" str="++" scope="0x55c5aaf6cc60" type="op" astParent="0x55c5aad25b90" astOperand1="0x55c5aad25cb0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aad25ef0" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="33" str=")" scope="0x55c5aaf6cc60" link="0x55c5aac7b0c0"/>
+    <token id="0x55c5aad26010" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="119" column="34" str=";" scope="0x55c5aaf6cc60"/>
+    <token id="0x55c5aad26130" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="120" column="5" str="}" scope="0x55c5aaf6cc60" link="0x55c5aac7ae80"/>
+    <token id="0x55c5aad26250" file="src/platform/drivers/pl011_uart/pl011_uart.c" linenr="121" column="1" str="}" scope="0x55c5aaf6caf0" link="0x55c5aac7a7c0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aacbc050" type="Global">
+      <functionList>
+        <function id="0x55c5aac698e0" tokenDef="0x55c5ab1d33a0" name="uart_disable" type="Function">
+          <arg nr="1" variable="0x55c5aaf6d310"/>
+        </function>
+        <function id="0x55c5aac69ce0" tokenDef="0x55c5aac5ff70" name="uart_enable" type="Function">
+          <arg nr="1" variable="0x55c5aae55cd0"/>
+        </function>
+        <function id="0x55c5ab1d3430" tokenDef="0x55c5aacab860" name="uart_set_baud_rate" type="Function">
+          <arg nr="1" variable="0x55c5aac5ae00"/>
+          <arg nr="2" variable="0x55c5aac5aee0"/>
+        </function>
+        <function id="0x55c5aac69e20" tokenDef="0x55c5aafac6e0" name="uart_init" type="Function">
+          <arg nr="1" variable="0x55c5aac5afc0"/>
+        </function>
+        <function id="0x55c5aac541b0" tokenDef="0x55c5aae560e0" name="uart_getc" type="Function">
+          <arg nr="1" variable="0x55c5aac5b0a0"/>
+        </function>
+        <function id="0x55c5aac54250" tokenDef="0x55c5ab0abd10" name="uart_putc" type="Function">
+          <arg nr="1" variable="0x55c5aac5b180"/>
+          <arg nr="2" variable="0x55c5aac5b260"/>
+        </function>
+        <function id="0x55c5aac542f0" tokenDef="0x55c5aac6e070" name="uart_puts" type="Function">
+          <arg nr="1" variable="0x55c5aac5b340"/>
+          <arg nr="2" variable="0x55c5aac5b420"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac76850" type="Function" className="uart_disable" bodyStart="0x55c5aac7bba0" bodyEnd="0x55c5aaca2940" nestedIn="0x55c5aacbc050" function="0x55c5aac698e0">
+      <varlist>
+        <var id="0x55c5aac750b0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac7b730" type="Function" className="uart_enable" bodyStart="0x55c5aaca2a60" bodyEnd="0x55c5ab0ac390" nestedIn="0x55c5aacbc050" function="0x55c5aac69ce0">
+      <varlist>
+        <var id="0x55c5aac75190"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac785a0" type="Function" className="uart_set_baud_rate" bodyStart="0x55c5aad46610" bodyEnd="0x55c5aafac4a0" nestedIn="0x55c5aacbc050" function="0x55c5ab1d3430">
+      <varlist>
+        <var id="0x55c5aaca2500"/>
+        <var id="0x55c5aaf6cdd0"/>
+        <var id="0x55c5aaf6ceb0"/>
+        <var id="0x55c5aaf6cf90"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac75e20" type="If" bodyStart="0x55c5ab1d5a60" bodyEnd="0x55c5aaca3000" nestedIn="0x55c5aac785a0"/>
+    <scope id="0x55c5aac789a0" type="Function" className="uart_init" bodyStart="0x55c5aafe30c0" bodyEnd="0x55c5aae55ea0" nestedIn="0x55c5aacbc050" function="0x55c5aac69e20">
+      <varlist>
+        <var id="0x55c5aaf6d070"/>
+        <var id="0x55c5aaf6d150"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac781c0" type="While" bodyStart="0x55c5aac60b10" bodyEnd="0x55c5aaccd100" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5aaf6c530" type="Function" className="uart_getc" bodyStart="0x55c5aacd5590" bodyEnd="0x55c5ab0abad0" nestedIn="0x55c5aacbc050" function="0x55c5aac541b0">
+      <varlist>
+        <var id="0x55c5aaf6d230"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aaf6c6a0" type="While" bodyStart="0x55c5aace2bf0" bodyEnd="0x55c5aace2d10" nestedIn="0x55c5aaf6c530"/>
+    <scope id="0x55c5aaf6c810" type="Function" className="uart_putc" bodyStart="0x55c5aac67680" bodyEnd="0x55c5aac6de30" nestedIn="0x55c5aacbc050" function="0x55c5aac54250"/>
+    <scope id="0x55c5aaf6c980" type="While" bodyStart="0x55c5aace2e30" bodyEnd="0x55c5aace2f50" nestedIn="0x55c5aaf6c810"/>
+    <scope id="0x55c5aaf6caf0" type="Function" className="uart_puts" bodyStart="0x55c5aac7a7c0" bodyEnd="0x55c5aad26250" nestedIn="0x55c5aacbc050" function="0x55c5aac542f0"/>
+    <scope id="0x55c5aaf6cc60" type="While" bodyStart="0x55c5aac7ae80" bodyEnd="0x55c5aad26130" nestedIn="0x55c5aaf6caf0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac5ae00" nameToken="0x55c5aacabe00" typeStartToken="0x55c5aacabbc0" typeEndToken="0x55c5aacabce0" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5aee0" nameToken="0x55c5aad463d0" typeStartToken="0x55c5aacac040" typeEndToken="0x55c5aacac040" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5afc0" nameToken="0x55c5aafe2e80" typeStartToken="0x55c5aafaca40" typeEndToken="0x55c5aafacb60" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b0a0" nameToken="0x55c5aacd5350" typeStartToken="0x55c5aace15d0" typeEndToken="0x55c5aacd5230" access="Argument" scope="0x55c5aaf6c530" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b180" nameToken="0x55c5aac670e0" typeStartToken="0x55c5aac66ea0" typeEndToken="0x55c5aac66fc0" access="Argument" scope="0x55c5aaf6c810" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b260" nameToken="0x55c5aac67440" typeStartToken="0x55c5aac67320" typeEndToken="0x55c5aac67320" access="Argument" scope="0x55c5aaf6c810" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b340" nameToken="0x55c5aac6e610" typeStartToken="0x55c5aac6e3d0" typeEndToken="0x55c5aac6e4f0" access="Argument" scope="0x55c5aaf6caf0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b420" nameToken="0x55c5aac7a580" typeStartToken="0x55c5aac7a340" typeEndToken="0x55c5aac7a460" access="Argument" scope="0x55c5aaf6caf0" constness="1" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac750b0" nameToken="0x55c5aacc3ee0" typeStartToken="0x55c5ab1d11e0" typeEndToken="0x55c5ab1d11e0" access="Local" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac75190" nameToken="0x55c5aac59a10" typeStartToken="0x55c5aac599b0" typeEndToken="0x55c5aac599b0" access="Local" scope="0x55c5aac7b730" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaca2500" nameToken="0x55c5aad46850" typeStartToken="0x55c5aad46730" typeEndToken="0x55c5aad46730" access="Local" scope="0x55c5aac785a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aae55cd0" nameToken="0x55c5aace6600" typeStartToken="0x55c5aac79cb0" typeEndToken="0x55c5ab0adbc0" access="Argument" scope="0x55c5aac7b730" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6cdd0" nameToken="0x55c5aacac0a0" typeStartToken="0x55c5aad46a90" typeEndToken="0x55c5aad46a90" access="Local" scope="0x55c5aac785a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6ceb0" nameToken="0x55c5aac60ff0" typeStartToken="0x55c5aac60ed0" typeEndToken="0x55c5aac60ed0" access="Local" scope="0x55c5aac785a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6cf90" nameToken="0x55c5aac61350" typeStartToken="0x55c5aac61230" typeEndToken="0x55c5aac61230" access="Local" scope="0x55c5aac785a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6d070" nameToken="0x55c5aafe3300" typeStartToken="0x55c5aafe31e0" typeEndToken="0x55c5aafe31e0" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6d150" nameToken="0x55c5ab1bfe40" typeStartToken="0x55c5ab1bfd20" typeEndToken="0x55c5ab1bfd20" access="Local" scope="0x55c5aac789a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6d230" nameToken="0x55c5aacd57d0" typeStartToken="0x55c5aacd56b0" typeEndToken="0x55c5aacd56b0" access="Local" scope="0x55c5aaf6c530" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaf6d310" nameToken="0x55c5ab0b2c70" typeStartToken="0x55c5ab0b2bb0" typeEndToken="0x55c5ab0b2c10" access="Argument" scope="0x55c5aac76850" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aac64d70">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aacdbcb0">
+      <value intvalue="16" known="true"/>
+    </values>
+    <values id="0x55c5aad42fa0">
+      <value intvalue="4" known="true"/>
+    </values>
+    <values id="0x55c5ab0b0e00">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aae2a3b0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aace6f50">
+      <value intvalue="0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

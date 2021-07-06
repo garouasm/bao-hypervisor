@@ -20,7 +20,9 @@ uint64_t platform_arch_cpuid_to_mpdir(const struct platform_desc* plat,
                                       uint64_t cpuid)
 {
     if (cpuid > plat->cpu_num) {
-        return ~(~MPIDR_RES1 & MPIDR_RES0_MSK); //return an invlid mpidr by inverting res bits
+        return ~(
+            ~MPIDR_RES1 &
+            MPIDR_RES0_MSK);  // return an invlid mpidr by inverting res bits
     }
 
     uint64_t mpidr = 0;
@@ -55,18 +57,19 @@ uint64_t platform_arch_cpuid_to_mpdir(const struct platform_desc* plat,
 }
 
 int64_t platform_arch_mpidr_to_cpuid(const struct platform_desc* plat,
-                                      uint64_t mpidr){
-    int64_t cpuid = 0; 
+                                     uint64_t mpidr)
+{
+    int64_t cpuid = 0;
     int i = 0;
-    for(i = 0; i < ((mpidr >> 8) & 0xff) && i < plat->arch.clusters.num; i++){
+    for (i = 0; i < ((mpidr >> 8) & 0xff) && i < plat->arch.clusters.num; i++) {
         cpuid = plat->arch.clusters.core_num[i];
     }
 
-    if(i < plat->arch.clusters.num){
+    if (i < plat->arch.clusters.num) {
         cpuid += plat->arch.clusters.core_num[i];
     } else {
         cpuid = -1;
     }
-    
+
     return cpuid;
-} 
+}

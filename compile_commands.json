@@ -20,227 +20,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/vgic.o",
-            "src/arch/armv8/vgic.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/bitmap.o",
+            "src/lib/bitmap.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/vgic.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/printk.o",
-            "src/lib/printk.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/lib/printk.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/vm.o",
-            "src/arch/armv8/vm.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/vm.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/ipc.o",
-            "src/core/ipc.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/ipc.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/mem.o",
-            "src/core/mem.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/mem.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/string.o",
-            "src/lib/string.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/lib/string.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/iommu.o",
-            "src/arch/armv8/iommu.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/iommu.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/platform.o",
-            "src/arch/armv8/platform.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/platform.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/vm.o",
-            "src/core/vm.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/vm.c"
+        "file": "src/lib/bitmap.c"
     },
     {
         "arguments": [
@@ -290,11 +74,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/cpu.o",
-            "src/core/cpu.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/config.o",
+            "src/core/config.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/cpu.c"
+        "file": "src/core/config.c"
     },
     {
         "arguments": [
@@ -317,11 +101,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/iommu.o",
-            "src/core/iommu.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/string.o",
+            "src/lib/string.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/iommu.c"
+        "file": "src/lib/string.c"
     },
     {
         "arguments": [
@@ -344,11 +128,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/bit.o",
-            "src/lib/bit.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/platform.o",
+            "src/arch/armv8/platform.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/lib/bit.c"
+        "file": "src/arch/armv8/platform.c"
     },
     {
         "arguments": [
@@ -371,11 +155,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/platform/qemu-aarch64-virt/virt_desc.o",
-            "src/platform/qemu-aarch64-virt/virt_desc.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/cache.o",
+            "src/core/cache.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/platform/qemu-aarch64-virt/virt_desc.c"
+        "file": "src/core/cache.c"
     },
     {
         "arguments": [
@@ -398,11 +182,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/objcache.o",
-            "src/core/objcache.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/interrupts.o",
+            "src/core/interrupts.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/objcache.c"
+        "file": "src/core/interrupts.c"
     },
     {
         "arguments": [
@@ -425,38 +209,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/cpu.o",
-            "src/arch/armv8/cpu.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/init.o",
+            "src/core/init.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/cpu.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/interrupts.o",
-            "src/arch/armv8/interrupts.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/interrupts.c"
+        "file": "src/core/init.c"
     },
     {
         "arguments": [
@@ -506,173 +263,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/cache.o",
-            "src/arch/armv8/cache.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/iommu.o",
+            "src/arch/armv8/iommu.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/cache.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/psci.o",
-            "src/arch/armv8/psci.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/psci.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/config.o",
-            "src/core/config.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/config.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/smmuv2.o",
-            "src/arch/armv8/smmuv2.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/smmuv2.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/mem.o",
-            "src/arch/armv8/mem.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/mem.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/smc.o",
-            "src/arch/armv8/smc.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/arch/armv8/smc.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/vmm.o",
-            "src/core/vmm.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/vmm.c"
+        "file": "src/arch/armv8/iommu.c"
     },
     {
         "arguments": [
@@ -722,38 +317,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/console.o",
-            "src/core/console.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/ipc.o",
+            "src/core/ipc.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/console.c"
-    },
-    {
-        "arguments": [
-            "cc",
-            "-c",
-            "-O2",
-            "-Wall",
-            "-Werror",
-            "-ffreestanding",
-            "-std=gnu11",
-            "-mcmodel=large",
-            "-mgeneral-regs-only",
-            "-mcpu=cortex-a53",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
-            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
-            "-DGIC_VERSION=GICV3",
-            "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/bitmap.o",
-            "src/lib/bitmap.c"
-        ],
-        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/lib/bitmap.c"
+        "file": "src/core/ipc.c"
     },
     {
         "arguments": [
@@ -803,11 +371,92 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/cache.o",
-            "src/core/cache.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/vgic.o",
+            "src/arch/armv8/vgic.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/cache.c"
+        "file": "src/arch/armv8/vgic.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/cpu.o",
+            "src/arch/armv8/cpu.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/cpu.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/cache.o",
+            "src/arch/armv8/cache.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/cache.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/interrupts.o",
+            "src/arch/armv8/interrupts.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/interrupts.c"
     },
     {
         "arguments": [
@@ -884,11 +533,11 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/init.o",
-            "src/core/init.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/vmm.o",
+            "src/core/vmm.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/init.c"
+        "file": "src/core/vmm.c"
     },
     {
         "arguments": [
@@ -911,11 +560,173 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/interrupts.o",
-            "src/core/interrupts.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/objcache.o",
+            "src/core/objcache.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/core/interrupts.c"
+        "file": "src/core/objcache.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/console.o",
+            "src/core/console.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/core/console.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/platform/qemu-aarch64-virt/virt_desc.o",
+            "src/platform/qemu-aarch64-virt/virt_desc.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/platform/qemu-aarch64-virt/virt_desc.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/platform/drivers/pl011_uart/pl011_uart.o",
+            "src/platform/drivers/pl011_uart/pl011_uart.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/platform/drivers/pl011_uart/pl011_uart.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/vm.o",
+            "src/arch/armv8/vm.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/vm.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/bit.o",
+            "src/lib/bit.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/lib/bit.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/smc.o",
+            "src/arch/armv8/smc.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/smc.c"
     },
     {
         "arguments": [
@@ -965,10 +776,199 @@
             "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
             "-DGIC_VERSION=GICV3",
             "-o",
-            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/platform/drivers/pl011_uart/pl011_uart.o",
-            "src/platform/drivers/pl011_uart/pl011_uart.c"
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/vm.o",
+            "src/core/vm.c"
         ],
         "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
-        "file": "src/platform/drivers/pl011_uart/pl011_uart.c"
+        "file": "src/core/vm.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/iommu.o",
+            "src/core/iommu.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/core/iommu.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/psci.o",
+            "src/arch/armv8/psci.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/psci.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/mem.o",
+            "src/arch/armv8/mem.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/mem.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/smmuv2.o",
+            "src/arch/armv8/smmuv2.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/arch/armv8/smmuv2.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/cpu.o",
+            "src/core/cpu.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/core/cpu.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/core/mem.o",
+            "src/core/mem.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/core/mem.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-O2",
+            "-Wall",
+            "-Werror",
+            "-ffreestanding",
+            "-std=gnu11",
+            "-mcmodel=large",
+            "-mgeneral-regs-only",
+            "-mcpu=cortex-a53",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/arch/armv8/impl/cortex-a53/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/lib/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/core/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/qemu-aarch64-virt/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/src/platform/drivers/pl011_uart/inc",
+            "-I/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/arch/armv8/inc",
+            "-DGIC_VERSION=GICV3",
+            "-o",
+            "/home/sam/Desktop/baoCI/bao-hypervisor/build/qemu-aarch64-virt/lib/printk.o",
+            "src/lib/printk.c"
+        ],
+        "directory": "/home/sam/Desktop/baoCI/bao-hypervisor",
+        "file": "src/lib/printk.c"
     }
 ]

@@ -1,5 +1,5 @@
-/** 
- * Bao, a Lightweight Static Partitioning Hypervisor 
+/**
+ * Bao, a Lightweight Static Partitioning Hypervisor
  *
  * Copyright (c) Bao Project (www.bao-project.org), 2019-
  *
@@ -11,7 +11,7 @@
  * Bao is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License version 2 as published by the Free
  * Software Foundation, with a special exception exempting guest code from such
- * license. See the COPYING file in the top-level directory for details. 
+ * license. See the COPYING file in the top-level directory for details.
  *
  */
 
@@ -307,10 +307,10 @@ bool smmu_compatible_sme_exists(uint16_t mask, uint16_t id, uint32_t ctx,
 
         if (!diff_id) {
             /* Only group-to-group or device-to-group can be merged */
-            if ((group || (smmu_sme_is_group(sme) &&
-                (mask_r == mask || mask_r == sme_mask)) ||
-                (ctx == smmu_sme_get_ctx(sme)))) {
-
+            if ((group ||
+                 (smmu_sme_is_group(sme) &&
+                  (mask_r == mask || mask_r == sme_mask)) ||
+                 (ctx == smmu_sme_get_ctx(sme)))) {
                 /* Compatible entry found.
                  *
                  * If the new entry includes an existing one, there is the

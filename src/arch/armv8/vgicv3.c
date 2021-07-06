@@ -71,8 +71,7 @@ bool vgic_int_set_route(vcpu_t *vcpu, vgic_int_t *interrupt, uint64_t route)
     if (route & GICD_IROUTER_IRM_BIT) {
         phys_route = cpu_id_to_mpidr(vcpu->phys_id);
     } else {
-        vcpu_t *tvcpu =
-            vm_get_vcpu_by_mpidr(vcpu->vm, route & MPIDR_AFF_MSK);
+        vcpu_t *tvcpu = vm_get_vcpu_by_mpidr(vcpu->vm, route & MPIDR_AFF_MSK);
         if (tvcpu != NULL) {
             phys_route = cpu_id_to_mpidr(tvcpu->phys_id) & MPIDR_AFF_MSK;
         } else {
@@ -332,7 +331,7 @@ void vgic_cpu_init(vcpu_t *vcpu)
         vcpu->arch.vgic_priv.interrupts[i].prio = GIC_LOWEST_PRIO;
         vcpu->arch.vgic_priv.interrupts[i].cfg = 0;
         vcpu->arch.vgic_priv.interrupts[i].route = GICD_IROUTER_INV;
-        vcpu->arch.vgic_priv.interrupts[i].phys.redist = vcpu->phys_id;                              
+        vcpu->arch.vgic_priv.interrupts[i].phys.redist = vcpu->phys_id;
         vcpu->arch.vgic_priv.interrupts[i].hw = false;
         vcpu->arch.vgic_priv.interrupts[i].in_lr = false;
         vcpu->arch.vgic_priv.interrupts[i].enabled = false;

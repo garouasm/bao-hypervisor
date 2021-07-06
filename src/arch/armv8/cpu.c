@@ -24,14 +24,14 @@ uint64_t CPU_MASTER __attribute__((section(".data")));
 
 /* Perform architecture dependent cpu cores initializations */
 void cpu_arch_init(uint64_t cpuid, uint64_t load_addr)
-{   
+{
     cpu.arch.mpidr = MRS(MPIDR_EL1);
     if (cpuid == CPU_MASTER) {
         /* power on necessary, but still sleeping, secondary cpu cores
          * Assumes CPU zero is doing this */
         for (int cpu_core_id = 0; cpu_core_id < platform.cpu_num;
              cpu_core_id++) {
-            if(cpu_core_id == cpuid) continue;
+            if (cpu_core_id == cpuid) continue;
             uint64_t mpdir = cpu_id_to_mpidr(cpu_core_id);
             // TODO: pass config addr in contextid (x0 register)
             int result = psci_cpu_on(mpdir, load_addr, 0);
@@ -47,26 +47,26 @@ uint64_t cpu_id_to_mpidr(uint64_t id)
     return platform_arch_cpuid_to_mpdir(&platform, id);
 }
 
-
 int64_t cpu_mpidr_to_id(uint64_t mpidr)
 {
     return platform_arch_mpidr_to_cpuid(&platform, mpidr);
 }
-    
 
 void cpu_arch_idle()
 {
     int64_t err = psci_power_down(PSCI_WAKEUP_IDLE);
-    if(err) {
+    if (err) {
         switch (err) {
             case PSCI_E_NOT_SUPPORTED:
                 /**
-                 * If power down is not supported let's just wait for an interrupt
+                 * If power down is not supported let's just wait for an
+                 * interrupt
                  */
                 asm volatile("wfi");
                 break;
             default:
-                ERROR("PSCI cpu%d power down failed with error %ld", cpu.id, err);
+                ERROR("PSCI cpu%d power down failed with error %ld", cpu.id,
+                      err);
         }
     }
 

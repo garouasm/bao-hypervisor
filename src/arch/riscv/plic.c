@@ -19,8 +19,7 @@
 
 int PLIC_IMPL_INTERRUPTS;
 
-volatile plic_global_t plic_global
-    __attribute__((section(".devices")));
+volatile plic_global_t plic_global __attribute__((section(".devices")));
 
 volatile plic_hart_t plic_hart[PLIC_PLAT_CNTXT_NUM]
     __attribute__((section(".devices")));
@@ -60,7 +59,8 @@ void plic_cpu_init()
     plic_hart[cpu.arch.plic_cntxt].threshold = 0;
 }
 
-bool plic_cntxt_valid(unsigned cntxt_id) {
+bool plic_cntxt_valid(unsigned cntxt_id)
+{
     plic_cntxt_t cntxt = plic_plat_id_to_cntxt(cntxt_id);
     return (cntxt_id < PLIC_PLAT_CNTXT_NUM) && (cntxt.mode <= PRIV_S);
 }
@@ -70,8 +70,7 @@ void plic_set_enbl(unsigned cntxt, unsigned int_id, bool en)
     int reg_ind = int_id / (sizeof(uint32_t) * 8);
     uint32_t mask = 1U << (int_id % (sizeof(uint32_t) * 8));
 
-    
-    if (int_id <= PLIC_IMPL_INTERRUPTS && plic_cntxt_valid(cntxt)) { 
+    if (int_id <= PLIC_IMPL_INTERRUPTS && plic_cntxt_valid(cntxt)) {
         if (en) {
             plic_global.enbl[cntxt][reg_ind] |= mask;
         } else {
@@ -119,7 +118,7 @@ bool plic_get_pend(unsigned int_id)
 
 void plic_set_threshold(unsigned cntxt, uint32_t threshold)
 {
-    if(plic_cntxt_valid(cntxt)) {
+    if (plic_cntxt_valid(cntxt)) {
         plic_hart[cntxt].threshold = threshold;
     }
 }
@@ -127,7 +126,7 @@ void plic_set_threshold(unsigned cntxt, uint32_t threshold)
 uint32_t plic_get_thrshold(unsigned cntxt)
 {
     uint32_t threshold = 0;
-    if(plic_cntxt_valid(cntxt)) {
+    if (plic_cntxt_valid(cntxt)) {
         threshold = plic_hart[cntxt].threshold;
     }
     return threshold;
@@ -144,22 +143,22 @@ void plic_handle()
 }
 
 /**
- * Context organization is spec-out by the vendor, this is the default 
+ * Context organization is spec-out by the vendor, this is the default
  * mapping found in sifive's plic.
  */
 
-__attribute__((weak))
-int plic_plat_cntxt_to_id(plic_cntxt_t cntxt){
-    if(cntxt.mode != PRIV_M && cntxt.mode != PRIV_S) return -1;
-    return (cntxt.hart_id*2) + (cntxt.mode == PRIV_M ? 0 : 1);
+__attribute__((weak)) int plic_plat_cntxt_to_id(plic_cntxt_t cntxt)
+{
+    if (cntxt.mode != PRIV_M && cntxt.mode != PRIV_S) return -1;
+    return (cntxt.hart_id * 2) + (cntxt.mode == PRIV_M ? 0 : 1);
 }
 
-__attribute__((weak))
-plic_cntxt_t plic_plat_id_to_cntxt(int id){
+__attribute__((weak)) plic_cntxt_t plic_plat_id_to_cntxt(int id)
+{
     plic_cntxt_t cntxt;
-    if(id < PLIC_PLAT_CNTXT_NUM){
-        cntxt.hart_id = id/2;
-        cntxt.mode = (id%2) == 0 ? PRIV_M : PRIV_S; 
+    if (id < PLIC_PLAT_CNTXT_NUM) {
+        cntxt.hart_id = id / 2;
+        cntxt.mode = (id % 2) == 0 ? PRIV_M : PRIV_S;
     } else {
         return (plic_cntxt_t){-1};
     }

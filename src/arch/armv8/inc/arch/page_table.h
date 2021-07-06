@@ -26,11 +26,9 @@
 #define PTE_INDEX(LEVEL, ADDR) ((ADDR >> PTE_INDEX_SHIFT(LEVEL)) & (0x1FF))
 
 #ifdef __ASSEMBLER__
-.macro PTE_INDEX_ASM	index, addr, level
-	lsr \index, \addr, #PTE_INDEX_SHIFT(\level) 
-	and \index, \index, #0x1ff
-	lsl \index, \index, #3
-.endm
+.macro PTE_INDEX_ASM index, addr, level lsr \index, \addr,
+#PTE_INDEX_SHIFT(\level) and \index, \index, #0x1ff lsl \index, \index,
+# 3.endm
 #endif
 
 #define ADDR_MSK(MSB, LSB) (((1UL << (MSB + 1)) - 1) & ~((1UL << (LSB)) - 1))

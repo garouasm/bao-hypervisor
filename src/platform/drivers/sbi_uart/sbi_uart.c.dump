@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/platform/drivers/sbi_uart/sbi_uart.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="#"/>
+    <tok fileIndex="0" linenr="1" column="2" str="include"/>
+    <tok fileIndex="0" linenr="1" column="10" str="&lt;drivers/sbi_uart.h&gt;"/>
+    <tok fileIndex="0" linenr="2" column="1" str="#"/>
+    <tok fileIndex="0" linenr="2" column="2" str="include"/>
+    <tok fileIndex="0" linenr="2" column="10" str="&lt;arch/sbi.h&gt;"/>
+    <tok fileIndex="0" linenr="4" column="1" str="bool"/>
+    <tok fileIndex="0" linenr="4" column="6" str="uart_init"/>
+    <tok fileIndex="0" linenr="4" column="15" str="("/>
+    <tok fileIndex="0" linenr="4" column="16" str="bao_uart_t"/>
+    <tok fileIndex="0" linenr="4" column="26" str="*"/>
+    <tok fileIndex="0" linenr="4" column="28" str="uart"/>
+    <tok fileIndex="0" linenr="4" column="32" str=")"/>
+    <tok fileIndex="0" linenr="5" column="1" str="{"/>
+    <tok fileIndex="0" linenr="6" column="5" str="return"/>
+    <tok fileIndex="0" linenr="6" column="12" str="true"/>
+    <tok fileIndex="0" linenr="6" column="16" str=";"/>
+    <tok fileIndex="0" linenr="7" column="1" str="}"/>
+    <tok fileIndex="0" linenr="8" column="1" str="void"/>
+    <tok fileIndex="0" linenr="8" column="6" str="uart_enable"/>
+    <tok fileIndex="0" linenr="8" column="17" str="("/>
+    <tok fileIndex="0" linenr="8" column="18" str="bao_uart_t"/>
+    <tok fileIndex="0" linenr="8" column="28" str="*"/>
+    <tok fileIndex="0" linenr="8" column="30" str="uart"/>
+    <tok fileIndex="0" linenr="8" column="34" str=")"/>
+    <tok fileIndex="0" linenr="8" column="36" str="{"/>
+    <tok fileIndex="0" linenr="8" column="37" str="}"/>
+    <tok fileIndex="0" linenr="10" column="1" str="void"/>
+    <tok fileIndex="0" linenr="10" column="6" str="uart_puts"/>
+    <tok fileIndex="0" linenr="10" column="15" str="("/>
+    <tok fileIndex="0" linenr="10" column="16" str="bao_uart_t"/>
+    <tok fileIndex="0" linenr="10" column="26" str="*"/>
+    <tok fileIndex="0" linenr="10" column="28" str="uart"/>
+    <tok fileIndex="0" linenr="10" column="32" str=","/>
+    <tok fileIndex="0" linenr="10" column="34" str="char"/>
+    <tok fileIndex="0" linenr="10" column="39" str="const"/>
+    <tok fileIndex="0" linenr="10" column="44" str="*"/>
+    <tok fileIndex="0" linenr="10" column="46" str="const"/>
+    <tok fileIndex="0" linenr="10" column="52" str="str"/>
+    <tok fileIndex="0" linenr="10" column="55" str=")"/>
+    <tok fileIndex="0" linenr="11" column="1" str="{"/>
+    <tok fileIndex="0" linenr="12" column="5" str="char"/>
+    <tok fileIndex="0" linenr="12" column="10" str="const"/>
+    <tok fileIndex="0" linenr="12" column="15" str="*"/>
+    <tok fileIndex="0" linenr="12" column="17" str="ptr"/>
+    <tok fileIndex="0" linenr="12" column="21" str="="/>
+    <tok fileIndex="0" linenr="12" column="23" str="str"/>
+    <tok fileIndex="0" linenr="12" column="26" str=";"/>
+    <tok fileIndex="0" linenr="13" column="5" str="while"/>
+    <tok fileIndex="0" linenr="13" column="11" str="("/>
+    <tok fileIndex="0" linenr="13" column="12" str="*"/>
+    <tok fileIndex="0" linenr="13" column="13" str="ptr"/>
+    <tok fileIndex="0" linenr="13" column="16" str=")"/>
+    <tok fileIndex="0" linenr="13" column="18" str="sbi_console_putchar"/>
+    <tok fileIndex="0" linenr="13" column="37" str="("/>
+    <tok fileIndex="0" linenr="13" column="38" str="*"/>
+    <tok fileIndex="0" linenr="13" column="39" str="ptr"/>
+    <tok fileIndex="0" linenr="13" column="42" str="++"/>
+    <tok fileIndex="0" linenr="13" column="44" str=")"/>
+    <tok fileIndex="0" linenr="13" column="45" str=";"/>
+    <tok fileIndex="0" linenr="14" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="1" str="#include &lt;drivers/sbi_uart.h&gt;"/>
+    <directive file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="2" str="#include &lt;arch/sbi.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aace2590" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="1" str="bool" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab1d2b00" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="6" str="uart_init" scope="0x55c5aac781c0" type="name" function="0x55c5aac541b0" astParent="0x55c5ab0b37e0"/>
+    <token id="0x55c5ab0b37e0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="15" str="(" scope="0x55c5aac781c0" link="0x55c5aac605e0" astOperand1="0x55c5ab1d2b00" astOperand2="0x55c5aaf6dcc0" valueType-type="bool"/>
+    <token id="0x55c5aaf6d600" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="16" str="bao_uart_t" scope="0x55c5aac781c0" type="name" astParent="0x55c5aaf6dcc0"/>
+    <token id="0x55c5aaf6dcc0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="26" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5ab0b37e0" astOperand1="0x55c5aaf6d600" astOperand2="0x55c5aac60160"/>
+    <token id="0x55c5aac60160" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="28" str="uart" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5aac5b6c0" astParent="0x55c5aaf6dcc0"/>
+    <token id="0x55c5aac605e0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="4" column="32" str=")" scope="0x55c5aac781c0" link="0x55c5ab0b37e0"/>
+    <token id="0x55c5ab0b0c40" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="5" column="1" str="{" scope="0x55c5aac789a0" link="0x55c5ab0b1610"/>
+    <token id="0x55c5ab1d78e0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="6" column="5" str="return" scope="0x55c5aac789a0" type="name" astOperand1="0x55c5aac76020" valueType-type="bool"/>
+    <token id="0x55c5aac76020" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="6" column="12" str="true" scope="0x55c5aac789a0" type="name" astParent="0x55c5ab1d78e0" valueType-type="bool"/>
+    <token id="0x55c5aac991b0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="6" column="16" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5ab0b1610" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="7" column="1" str="}" scope="0x55c5aac789a0" link="0x55c5ab0b0c40"/>
+    <token id="0x55c5aac78c00" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aace2980" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="6" str="uart_enable" scope="0x55c5aac781c0" type="name" function="0x55c5aac69e20" astParent="0x55c5aaca7900"/>
+    <token id="0x55c5aaca7900" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="17" str="(" scope="0x55c5aac781c0" link="0x55c5ab0b23a0" astOperand1="0x55c5aace2980" astOperand2="0x55c5aaca8290" valueType-type="void"/>
+    <token id="0x55c5aae56710" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="18" str="bao_uart_t" scope="0x55c5aac781c0" type="name" astParent="0x55c5aaca8290"/>
+    <token id="0x55c5aaca8290" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="28" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aaca7900" astOperand1="0x55c5aae56710" astOperand2="0x55c5ab0b0a60"/>
+    <token id="0x55c5ab0b0a60" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="30" str="uart" scope="0x55c5aac781c0" type="name" varId="2" variable="0x55c5aac5b7a0" astParent="0x55c5aaca8290"/>
+    <token id="0x55c5ab0b23a0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="34" str=")" scope="0x55c5aac781c0" link="0x55c5aaca7900"/>
+    <token id="0x55c5aac7bb90" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="36" str="{" scope="0x55c5aac75e20" link="0x55c5aac6b940"/>
+    <token id="0x55c5aac6b940" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="8" column="37" str="}" scope="0x55c5aac75e20" link="0x55c5aac7bb90"/>
+    <token id="0x55c5aacc3ed0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aae49b60" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="6" str="uart_puts" scope="0x55c5aac781c0" type="name" function="0x55c5ab1d3430" astParent="0x55c5aac78080"/>
+    <token id="0x55c5aac78080" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="15" str="(" scope="0x55c5aac781c0" link="0x55c5ab1d2470" astOperand1="0x55c5aae49b60" astOperand2="0x55c5aae3b890" valueType-type="void"/>
+    <token id="0x55c5aac78520" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="16" str="bao_uart_t" scope="0x55c5aac781c0" type="name" astParent="0x55c5aace6600"/>
+    <token id="0x55c5aace6600" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="26" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aae3b890" astOperand1="0x55c5aac78520" astOperand2="0x55c5aac59ed0"/>
+    <token id="0x55c5aac59ed0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="28" str="uart" scope="0x55c5aac781c0" type="name" varId="3" variable="0x55c5ab1cfa90" astParent="0x55c5aace6600"/>
+    <token id="0x55c5aae3b890" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="32" str="," scope="0x55c5aac781c0" astParent="0x55c5aac78080" astOperand1="0x55c5aace6600" astOperand2="0x55c5aac6ed70"/>
+    <token id="0x55c5aacbab40" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="0" str="const" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0b0720" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="34" str="char" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6ed70"/>
+    <token id="0x55c5aac6ed70" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="44" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aae3b890" astOperand1="0x55c5ab0b0720" astOperand2="0x55c5ab1d2410"/>
+    <token id="0x55c5ab0ad370" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="46" str="const" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab1d2410" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="52" str="str" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aae56990" astParent="0x55c5aac6ed70" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="3"/>
+    <token id="0x55c5ab1d2470" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="10" column="55" str=")" scope="0x55c5aac781c0" link="0x55c5aac78080"/>
+    <token id="0x55c5aac55ed0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="11" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aae54a60"/>
+    <token id="0x55c5aac69bd0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="0" str="const" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac55f30" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="5" str="char" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac69c30"/>
+    <token id="0x55c5aac69c30" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="15" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astOperand1="0x55c5aac55f30" astOperand2="0x55c5aad45720"/>
+    <token id="0x55c5aad45720" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="17" str="ptr" scope="0x55c5aac785a0" type="name" varId="5" variable="0x55c5aac5b5e0" astParent="0x55c5aac69c30" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac5cfe0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="21" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5ab1c1610" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="17" str="ptr" scope="0x55c5aac785a0" type="name" varId="5" variable="0x55c5aac5b5e0" astParent="0x55c5aae567f0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aae567f0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="21" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5ab1c1610" astOperand2="0x55c5aace7a80" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aace7a80" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="23" str="str" scope="0x55c5aac785a0" type="name" varId="4" variable="0x55c5aae56990" astParent="0x55c5aae567f0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="3"/>
+    <token id="0x55c5aac67970" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="12" column="26" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aad18840" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="5" str="while" scope="0x55c5aac785a0" type="name" astParent="0x55c5aace3a70"/>
+    <token id="0x55c5aace3a70" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="11" str="(" scope="0x55c5aac785a0" link="0x55c5aaf883a0" astOperand1="0x55c5aad18840" astOperand2="0x55c5ab1d11a0"/>
+    <token id="0x55c5ab1d11a0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="12" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aace3a70" astOperand1="0x55c5aac6f440" valueType-type="char" valueType-sign="signed" valueType-constness="1"/>
+    <token id="0x55c5aac6f440" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="13" str="ptr" scope="0x55c5aac785a0" type="name" varId="5" variable="0x55c5aac5b5e0" astParent="0x55c5ab1d11a0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aaf883a0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="16" str=")" scope="0x55c5aac785a0" link="0x55c5aace3a70"/>
+    <token id="0x55c5aae55050" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="0" str="{" scope="0x55c5aac7b730" link="0x55c5aae55170"/>
+    <token id="0x55c5aac755c0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="18" str="sbi_console_putchar" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac75620"/>
+    <token id="0x55c5aac75620" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="37" str="(" scope="0x55c5aac7b730" link="0x55c5aac69a90" astOperand1="0x55c5aac755c0" astOperand2="0x55c5aace72d0"/>
+    <token id="0x55c5aace72d0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="38" str="*" scope="0x55c5aac7b730" type="op" isArithmeticalOp="True" astParent="0x55c5aac75620" astOperand1="0x55c5aac69a30" valueType-type="char" valueType-sign="signed" valueType-constness="1"/>
+    <token id="0x55c5aace73f0" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="39" str="ptr" scope="0x55c5aac7b730" type="name" varId="5" variable="0x55c5aac5b5e0" astParent="0x55c5aac69a30" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac69a30" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="42" str="++" scope="0x55c5aac7b730" type="op" astParent="0x55c5aace72d0" astOperand1="0x55c5aace73f0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac69a90" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="44" str=")" scope="0x55c5aac7b730" link="0x55c5aac75620"/>
+    <token id="0x55c5aae54940" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="45" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aae55170" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="13" column="0" str="}" scope="0x55c5aac7b730" link="0x55c5aae55050"/>
+    <token id="0x55c5aae54a60" file="src/platform/drivers/sbi_uart/sbi_uart.c" linenr="14" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5aac55ed0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac781c0" type="Global">
+      <functionList>
+        <function id="0x55c5aac541b0" tokenDef="0x55c5ab1d2b00" name="uart_init" type="Function">
+          <arg nr="1" variable="0x55c5aac5b6c0"/>
+        </function>
+        <function id="0x55c5aac69e20" tokenDef="0x55c5aace2980" name="uart_enable" type="Function">
+          <arg nr="1" variable="0x55c5aac5b7a0"/>
+        </function>
+        <function id="0x55c5ab1d3430" tokenDef="0x55c5aae49b60" name="uart_puts" type="Function">
+          <arg nr="1" variable="0x55c5ab1cfa90"/>
+          <arg nr="2" variable="0x55c5aae56990"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac789a0" type="Function" className="uart_init" bodyStart="0x55c5ab0b0c40" bodyEnd="0x55c5ab0b1610" nestedIn="0x55c5aac781c0" function="0x55c5aac541b0"/>
+    <scope id="0x55c5aac75e20" type="Function" className="uart_enable" bodyStart="0x55c5aac7bb90" bodyEnd="0x55c5aac6b940" nestedIn="0x55c5aac781c0" function="0x55c5aac69e20"/>
+    <scope id="0x55c5aac785a0" type="Function" className="uart_puts" bodyStart="0x55c5aac55ed0" bodyEnd="0x55c5aae54a60" nestedIn="0x55c5aac781c0" function="0x55c5ab1d3430">
+      <varlist>
+        <var id="0x55c5aac5b5e0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac7b730" type="While" bodyStart="0x55c5aae55050" bodyEnd="0x55c5aae55170" nestedIn="0x55c5aac785a0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac5b5e0" nameToken="0x55c5aad45720" typeStartToken="0x55c5aac55f30" typeEndToken="0x55c5aac69c30" access="Local" scope="0x55c5aac785a0" constness="1" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b6c0" nameToken="0x55c5aac60160" typeStartToken="0x55c5aaf6d600" typeEndToken="0x55c5aaf6dcc0" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aac5b7a0" nameToken="0x55c5ab0b0a60" typeStartToken="0x55c5aae56710" typeEndToken="0x55c5aaca8290" access="Argument" scope="0x55c5aac75e20" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aae56990" nameToken="0x55c5ab1d2410" typeStartToken="0x55c5ab0b0720" typeEndToken="0x55c5aac6ed70" access="Argument" scope="0x55c5aac785a0" constness="3" isArgument="true" isArray="false" isClass="false" isConst="true" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab1cfa90" nameToken="0x55c5aac59ed0" typeStartToken="0x55c5aac78520" typeEndToken="0x55c5aace6600" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+  </valueflow>
+</dump>
+</dumps>

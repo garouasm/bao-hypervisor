@@ -1,0 +1,1094 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/arch/riscv/interrupts.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="include"/>
+    <tok fileIndex="0" linenr="16" column="10" str="&lt;bao.h&gt;"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;interrupts.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="include"/>
+    <tok fileIndex="0" linenr="19" column="10" str="&lt;arch/plic.h&gt;"/>
+    <tok fileIndex="0" linenr="20" column="1" str="#"/>
+    <tok fileIndex="0" linenr="20" column="2" str="include"/>
+    <tok fileIndex="0" linenr="20" column="10" str="&lt;arch/sbi.h&gt;"/>
+    <tok fileIndex="0" linenr="21" column="1" str="#"/>
+    <tok fileIndex="0" linenr="21" column="2" str="include"/>
+    <tok fileIndex="0" linenr="21" column="10" str="&lt;cpu.h&gt;"/>
+    <tok fileIndex="0" linenr="22" column="1" str="#"/>
+    <tok fileIndex="0" linenr="22" column="2" str="include"/>
+    <tok fileIndex="0" linenr="22" column="10" str="&lt;mem.h&gt;"/>
+    <tok fileIndex="0" linenr="23" column="1" str="#"/>
+    <tok fileIndex="0" linenr="23" column="2" str="include"/>
+    <tok fileIndex="0" linenr="23" column="10" str="&lt;platform.h&gt;"/>
+    <tok fileIndex="0" linenr="24" column="1" str="#"/>
+    <tok fileIndex="0" linenr="24" column="2" str="include"/>
+    <tok fileIndex="0" linenr="24" column="10" str="&lt;vm.h&gt;"/>
+    <tok fileIndex="0" linenr="25" column="1" str="#"/>
+    <tok fileIndex="0" linenr="25" column="2" str="include"/>
+    <tok fileIndex="0" linenr="25" column="10" str="&lt;arch/csrs.h&gt;"/>
+    <tok fileIndex="0" linenr="26" column="1" str="#"/>
+    <tok fileIndex="0" linenr="26" column="2" str="include"/>
+    <tok fileIndex="0" linenr="26" column="10" str="&lt;fences.h&gt;"/>
+    <tok fileIndex="0" linenr="28" column="1" str="void"/>
+    <tok fileIndex="0" linenr="28" column="6" str="interrupts_arch_init"/>
+    <tok fileIndex="0" linenr="28" column="26" str="("/>
+    <tok fileIndex="0" linenr="28" column="27" str=")"/>
+    <tok fileIndex="0" linenr="29" column="1" str="{"/>
+    <tok fileIndex="0" linenr="30" column="5" str="if"/>
+    <tok fileIndex="0" linenr="30" column="8" str="("/>
+    <tok fileIndex="0" linenr="30" column="9" str="cpu"/>
+    <tok fileIndex="0" linenr="30" column="12" str="."/>
+    <tok fileIndex="0" linenr="30" column="13" str="id"/>
+    <tok fileIndex="0" linenr="30" column="16" str="=="/>
+    <tok fileIndex="0" linenr="30" column="19" str="CPU_MASTER"/>
+    <tok fileIndex="0" linenr="30" column="29" str=")"/>
+    <tok fileIndex="0" linenr="30" column="31" str="{"/>
+    <tok fileIndex="0" linenr="31" column="9" str="mem_map_dev"/>
+    <tok fileIndex="0" linenr="31" column="20" str="("/>
+    <tok fileIndex="0" linenr="31" column="21" str="&amp;"/>
+    <tok fileIndex="0" linenr="31" column="22" str="cpu"/>
+    <tok fileIndex="0" linenr="31" column="25" str="."/>
+    <tok fileIndex="0" linenr="31" column="26" str="as"/>
+    <tok fileIndex="0" linenr="31" column="28" str=","/>
+    <tok fileIndex="0" linenr="31" column="30" str="("/>
+    <tok fileIndex="0" linenr="31" column="31" str="void"/>
+    <tok fileIndex="0" linenr="31" column="36" str="*"/>
+    <tok fileIndex="0" linenr="31" column="37" str=")"/>
+    <tok fileIndex="0" linenr="31" column="38" str="&amp;"/>
+    <tok fileIndex="0" linenr="31" column="39" str="plic_global"/>
+    <tok fileIndex="0" linenr="31" column="50" str=","/>
+    <tok fileIndex="0" linenr="31" column="52" str="platform"/>
+    <tok fileIndex="0" linenr="31" column="60" str="."/>
+    <tok fileIndex="0" linenr="31" column="61" str="arch"/>
+    <tok fileIndex="0" linenr="31" column="65" str="."/>
+    <tok fileIndex="0" linenr="31" column="66" str="plic_base"/>
+    <tok fileIndex="0" linenr="31" column="75" str=","/>
+    <tok fileIndex="0" linenr="32" column="21" str="ALIGN"/>
+    <tok fileIndex="0" linenr="32" column="26" str="("/>
+    <tok fileIndex="0" linenr="32" column="27" str="sizeof"/>
+    <tok fileIndex="0" linenr="32" column="33" str="("/>
+    <tok fileIndex="0" linenr="32" column="34" str="plic_global"/>
+    <tok fileIndex="0" linenr="32" column="45" str=")"/>
+    <tok fileIndex="0" linenr="32" column="46" str=","/>
+    <tok fileIndex="0" linenr="32" column="48" str="PAGE_SIZE"/>
+    <tok fileIndex="0" linenr="32" column="57" str=")"/>
+    <tok fileIndex="0" linenr="32" column="59" str="/"/>
+    <tok fileIndex="0" linenr="32" column="61" str="PAGE_SIZE"/>
+    <tok fileIndex="0" linenr="32" column="70" str=")"/>
+    <tok fileIndex="0" linenr="32" column="71" str=";"/>
+    <tok fileIndex="0" linenr="34" column="9" str="mem_map_dev"/>
+    <tok fileIndex="0" linenr="34" column="20" str="("/>
+    <tok fileIndex="0" linenr="34" column="21" str="&amp;"/>
+    <tok fileIndex="0" linenr="34" column="22" str="cpu"/>
+    <tok fileIndex="0" linenr="34" column="25" str="."/>
+    <tok fileIndex="0" linenr="34" column="26" str="as"/>
+    <tok fileIndex="0" linenr="34" column="28" str=","/>
+    <tok fileIndex="0" linenr="34" column="30" str="("/>
+    <tok fileIndex="0" linenr="34" column="31" str="void"/>
+    <tok fileIndex="0" linenr="34" column="36" str="*"/>
+    <tok fileIndex="0" linenr="34" column="37" str=")"/>
+    <tok fileIndex="0" linenr="34" column="38" str="plic_hart"/>
+    <tok fileIndex="0" linenr="34" column="47" str=","/>
+    <tok fileIndex="0" linenr="35" column="21" str="platform"/>
+    <tok fileIndex="0" linenr="35" column="29" str="."/>
+    <tok fileIndex="0" linenr="35" column="30" str="arch"/>
+    <tok fileIndex="0" linenr="35" column="34" str="."/>
+    <tok fileIndex="0" linenr="35" column="35" str="plic_base"/>
+    <tok fileIndex="0" linenr="35" column="45" str="+"/>
+    <tok fileIndex="0" linenr="35" column="47" str="PLIC_CLAIMCMPLT_OFF"/>
+    <tok fileIndex="0" linenr="35" column="66" str=","/>
+    <tok fileIndex="0" linenr="36" column="21" str="ALIGN"/>
+    <tok fileIndex="0" linenr="36" column="26" str="("/>
+    <tok fileIndex="0" linenr="36" column="27" str="sizeof"/>
+    <tok fileIndex="0" linenr="36" column="33" str="("/>
+    <tok fileIndex="0" linenr="36" column="34" str="plic_hart"/>
+    <tok fileIndex="0" linenr="36" column="43" str=")"/>
+    <tok fileIndex="0" linenr="36" column="44" str=","/>
+    <tok fileIndex="0" linenr="36" column="46" str="PAGE_SIZE"/>
+    <tok fileIndex="0" linenr="36" column="55" str=")"/>
+    <tok fileIndex="0" linenr="36" column="57" str="/"/>
+    <tok fileIndex="0" linenr="36" column="59" str="PAGE_SIZE"/>
+    <tok fileIndex="0" linenr="36" column="68" str=")"/>
+    <tok fileIndex="0" linenr="36" column="69" str=";"/>
+    <tok fileIndex="0" linenr="38" column="9" str="fence_sync"/>
+    <tok fileIndex="0" linenr="38" column="19" str="("/>
+    <tok fileIndex="0" linenr="38" column="20" str=")"/>
+    <tok fileIndex="0" linenr="38" column="21" str=";"/>
+    <tok fileIndex="0" linenr="40" column="9" str="plic_init"/>
+    <tok fileIndex="0" linenr="40" column="18" str="("/>
+    <tok fileIndex="0" linenr="40" column="19" str=")"/>
+    <tok fileIndex="0" linenr="40" column="20" str=";"/>
+    <tok fileIndex="0" linenr="41" column="5" str="}"/>
+    <tok fileIndex="0" linenr="43" column="5" str="/* Wait for master hart to finish plic initialization */"/>
+    <tok fileIndex="0" linenr="44" column="5" str="cpu_sync_barrier"/>
+    <tok fileIndex="0" linenr="44" column="21" str="("/>
+    <tok fileIndex="0" linenr="44" column="22" str="&amp;"/>
+    <tok fileIndex="0" linenr="44" column="23" str="cpu_glb_sync"/>
+    <tok fileIndex="0" linenr="44" column="35" str=")"/>
+    <tok fileIndex="0" linenr="44" column="36" str=";"/>
+    <tok fileIndex="0" linenr="46" column="5" str="plic_cpu_init"/>
+    <tok fileIndex="0" linenr="46" column="18" str="("/>
+    <tok fileIndex="0" linenr="46" column="19" str=")"/>
+    <tok fileIndex="0" linenr="46" column="20" str=";"/>
+    <tok fileIndex="0" linenr="48" column="5" str="/**x     * Enable external interrupts.x     */"/>
+    <tok fileIndex="0" linenr="51" column="5" str="CSRS"/>
+    <tok fileIndex="0" linenr="51" column="9" str="("/>
+    <tok fileIndex="0" linenr="51" column="10" str="sie"/>
+    <tok fileIndex="0" linenr="51" column="13" str=","/>
+    <tok fileIndex="0" linenr="51" column="15" str="SIE_SEIE"/>
+    <tok fileIndex="0" linenr="51" column="23" str=")"/>
+    <tok fileIndex="0" linenr="51" column="24" str=";"/>
+    <tok fileIndex="0" linenr="52" column="1" str="}"/>
+    <tok fileIndex="0" linenr="54" column="1" str="void"/>
+    <tok fileIndex="0" linenr="54" column="6" str="interrupts_arch_ipi_send"/>
+    <tok fileIndex="0" linenr="54" column="30" str="("/>
+    <tok fileIndex="0" linenr="54" column="31" str="uint64_t"/>
+    <tok fileIndex="0" linenr="54" column="40" str="target_cpu"/>
+    <tok fileIndex="0" linenr="54" column="50" str=","/>
+    <tok fileIndex="0" linenr="54" column="52" str="uint64_t"/>
+    <tok fileIndex="0" linenr="54" column="61" str="ipi_id"/>
+    <tok fileIndex="0" linenr="54" column="67" str=")"/>
+    <tok fileIndex="0" linenr="55" column="1" str="{"/>
+    <tok fileIndex="0" linenr="56" column="5" str="sbi_send_ipi"/>
+    <tok fileIndex="0" linenr="56" column="17" str="("/>
+    <tok fileIndex="0" linenr="56" column="18" str="1ULL"/>
+    <tok fileIndex="0" linenr="56" column="23" str="&lt;&lt;"/>
+    <tok fileIndex="0" linenr="56" column="26" str="target_cpu"/>
+    <tok fileIndex="0" linenr="56" column="36" str=","/>
+    <tok fileIndex="0" linenr="56" column="38" str="0"/>
+    <tok fileIndex="0" linenr="56" column="39" str=")"/>
+    <tok fileIndex="0" linenr="56" column="40" str=";"/>
+    <tok fileIndex="0" linenr="57" column="1" str="}"/>
+    <tok fileIndex="0" linenr="59" column="1" str="void"/>
+    <tok fileIndex="0" linenr="59" column="6" str="interrupts_arch_cpu_enable"/>
+    <tok fileIndex="0" linenr="59" column="32" str="("/>
+    <tok fileIndex="0" linenr="59" column="33" str="bool"/>
+    <tok fileIndex="0" linenr="59" column="38" str="en"/>
+    <tok fileIndex="0" linenr="59" column="40" str=")"/>
+    <tok fileIndex="0" linenr="60" column="1" str="{"/>
+    <tok fileIndex="0" linenr="61" column="5" str="if"/>
+    <tok fileIndex="0" linenr="61" column="8" str="("/>
+    <tok fileIndex="0" linenr="61" column="9" str="en"/>
+    <tok fileIndex="0" linenr="61" column="11" str=")"/>
+    <tok fileIndex="0" linenr="61" column="13" str="{"/>
+    <tok fileIndex="0" linenr="62" column="9" str="CSRS"/>
+    <tok fileIndex="0" linenr="62" column="13" str="("/>
+    <tok fileIndex="0" linenr="62" column="14" str="sstatus"/>
+    <tok fileIndex="0" linenr="62" column="21" str=","/>
+    <tok fileIndex="0" linenr="62" column="23" str="SSTATUS_SIE_BIT"/>
+    <tok fileIndex="0" linenr="62" column="38" str=")"/>
+    <tok fileIndex="0" linenr="62" column="39" str=";"/>
+    <tok fileIndex="0" linenr="63" column="5" str="}"/>
+    <tok fileIndex="0" linenr="63" column="7" str="else"/>
+    <tok fileIndex="0" linenr="63" column="12" str="{"/>
+    <tok fileIndex="0" linenr="64" column="9" str="CSRC"/>
+    <tok fileIndex="0" linenr="64" column="13" str="("/>
+    <tok fileIndex="0" linenr="64" column="14" str="sstatus"/>
+    <tok fileIndex="0" linenr="64" column="21" str=","/>
+    <tok fileIndex="0" linenr="64" column="23" str="SSTATUS_SIE_BIT"/>
+    <tok fileIndex="0" linenr="64" column="38" str=")"/>
+    <tok fileIndex="0" linenr="64" column="39" str=";"/>
+    <tok fileIndex="0" linenr="65" column="5" str="}"/>
+    <tok fileIndex="0" linenr="66" column="1" str="}"/>
+    <tok fileIndex="0" linenr="68" column="1" str="void"/>
+    <tok fileIndex="0" linenr="68" column="6" str="interrupts_arch_enable"/>
+    <tok fileIndex="0" linenr="68" column="28" str="("/>
+    <tok fileIndex="0" linenr="68" column="29" str="uint64_t"/>
+    <tok fileIndex="0" linenr="68" column="38" str="int_id"/>
+    <tok fileIndex="0" linenr="68" column="44" str=","/>
+    <tok fileIndex="0" linenr="68" column="46" str="bool"/>
+    <tok fileIndex="0" linenr="68" column="51" str="en"/>
+    <tok fileIndex="0" linenr="68" column="53" str=")"/>
+    <tok fileIndex="0" linenr="69" column="1" str="{"/>
+    <tok fileIndex="0" linenr="70" column="5" str="if"/>
+    <tok fileIndex="0" linenr="70" column="8" str="("/>
+    <tok fileIndex="0" linenr="70" column="9" str="int_id"/>
+    <tok fileIndex="0" linenr="70" column="16" str="=="/>
+    <tok fileIndex="0" linenr="70" column="19" str="SOFT_INT_ID"/>
+    <tok fileIndex="0" linenr="70" column="30" str=")"/>
+    <tok fileIndex="0" linenr="70" column="32" str="{"/>
+    <tok fileIndex="0" linenr="71" column="9" str="if"/>
+    <tok fileIndex="0" linenr="71" column="12" str="("/>
+    <tok fileIndex="0" linenr="71" column="13" str="en"/>
+    <tok fileIndex="0" linenr="71" column="15" str=")"/>
+    <tok fileIndex="0" linenr="72" column="13" str="CSRS"/>
+    <tok fileIndex="0" linenr="72" column="17" str="("/>
+    <tok fileIndex="0" linenr="72" column="18" str="sie"/>
+    <tok fileIndex="0" linenr="72" column="21" str=","/>
+    <tok fileIndex="0" linenr="72" column="23" str="SIE_SSIE"/>
+    <tok fileIndex="0" linenr="72" column="31" str=")"/>
+    <tok fileIndex="0" linenr="72" column="32" str=";"/>
+    <tok fileIndex="0" linenr="73" column="9" str="else"/>
+    <tok fileIndex="0" linenr="74" column="13" str="CSRC"/>
+    <tok fileIndex="0" linenr="74" column="17" str="("/>
+    <tok fileIndex="0" linenr="74" column="18" str="sie"/>
+    <tok fileIndex="0" linenr="74" column="21" str=","/>
+    <tok fileIndex="0" linenr="74" column="23" str="SIE_SSIE"/>
+    <tok fileIndex="0" linenr="74" column="31" str=")"/>
+    <tok fileIndex="0" linenr="74" column="32" str=";"/>
+    <tok fileIndex="0" linenr="75" column="5" str="}"/>
+    <tok fileIndex="0" linenr="75" column="7" str="else"/>
+    <tok fileIndex="0" linenr="75" column="12" str="if"/>
+    <tok fileIndex="0" linenr="75" column="15" str="("/>
+    <tok fileIndex="0" linenr="75" column="16" str="int_id"/>
+    <tok fileIndex="0" linenr="75" column="23" str="=="/>
+    <tok fileIndex="0" linenr="75" column="26" str="TIMR_INT_ID"/>
+    <tok fileIndex="0" linenr="75" column="37" str=")"/>
+    <tok fileIndex="0" linenr="75" column="39" str="{"/>
+    <tok fileIndex="0" linenr="76" column="9" str="if"/>
+    <tok fileIndex="0" linenr="76" column="12" str="("/>
+    <tok fileIndex="0" linenr="76" column="13" str="en"/>
+    <tok fileIndex="0" linenr="76" column="15" str=")"/>
+    <tok fileIndex="0" linenr="77" column="13" str="CSRS"/>
+    <tok fileIndex="0" linenr="77" column="17" str="("/>
+    <tok fileIndex="0" linenr="77" column="18" str="sie"/>
+    <tok fileIndex="0" linenr="77" column="21" str=","/>
+    <tok fileIndex="0" linenr="77" column="23" str="SIE_STIE"/>
+    <tok fileIndex="0" linenr="77" column="31" str=")"/>
+    <tok fileIndex="0" linenr="77" column="32" str=";"/>
+    <tok fileIndex="0" linenr="78" column="9" str="else"/>
+    <tok fileIndex="0" linenr="79" column="13" str="CSRC"/>
+    <tok fileIndex="0" linenr="79" column="17" str="("/>
+    <tok fileIndex="0" linenr="79" column="18" str="sie"/>
+    <tok fileIndex="0" linenr="79" column="21" str=","/>
+    <tok fileIndex="0" linenr="79" column="23" str="SIE_STIE"/>
+    <tok fileIndex="0" linenr="79" column="31" str=")"/>
+    <tok fileIndex="0" linenr="79" column="32" str=";"/>
+    <tok fileIndex="0" linenr="80" column="5" str="}"/>
+    <tok fileIndex="0" linenr="80" column="7" str="else"/>
+    <tok fileIndex="0" linenr="80" column="12" str="{"/>
+    <tok fileIndex="0" linenr="81" column="9" str="plic_set_enbl"/>
+    <tok fileIndex="0" linenr="81" column="22" str="("/>
+    <tok fileIndex="0" linenr="81" column="23" str="cpu"/>
+    <tok fileIndex="0" linenr="81" column="26" str="."/>
+    <tok fileIndex="0" linenr="81" column="27" str="arch"/>
+    <tok fileIndex="0" linenr="81" column="31" str="."/>
+    <tok fileIndex="0" linenr="81" column="32" str="plic_cntxt"/>
+    <tok fileIndex="0" linenr="81" column="42" str=","/>
+    <tok fileIndex="0" linenr="81" column="44" str="int_id"/>
+    <tok fileIndex="0" linenr="81" column="50" str=","/>
+    <tok fileIndex="0" linenr="81" column="52" str="en"/>
+    <tok fileIndex="0" linenr="81" column="54" str=")"/>
+    <tok fileIndex="0" linenr="81" column="55" str=";"/>
+    <tok fileIndex="0" linenr="82" column="9" str="plic_set_prio"/>
+    <tok fileIndex="0" linenr="82" column="22" str="("/>
+    <tok fileIndex="0" linenr="82" column="23" str="int_id"/>
+    <tok fileIndex="0" linenr="82" column="29" str=","/>
+    <tok fileIndex="0" linenr="82" column="31" str="0xFE"/>
+    <tok fileIndex="0" linenr="82" column="35" str=")"/>
+    <tok fileIndex="0" linenr="82" column="36" str=";"/>
+    <tok fileIndex="0" linenr="83" column="5" str="}"/>
+    <tok fileIndex="0" linenr="84" column="1" str="}"/>
+    <tok fileIndex="0" linenr="86" column="1" str="void"/>
+    <tok fileIndex="0" linenr="86" column="6" str="interrupts_arch_handle"/>
+    <tok fileIndex="0" linenr="86" column="28" str="("/>
+    <tok fileIndex="0" linenr="86" column="29" str=")"/>
+    <tok fileIndex="0" linenr="87" column="1" str="{"/>
+    <tok fileIndex="0" linenr="88" column="5" str="unsigned"/>
+    <tok fileIndex="0" linenr="88" column="14" str="long"/>
+    <tok fileIndex="0" linenr="88" column="19" str="_scause"/>
+    <tok fileIndex="0" linenr="88" column="27" str="="/>
+    <tok fileIndex="0" linenr="88" column="29" str="CSRR"/>
+    <tok fileIndex="0" linenr="88" column="33" str="("/>
+    <tok fileIndex="0" linenr="88" column="34" str="scause"/>
+    <tok fileIndex="0" linenr="88" column="40" str=")"/>
+    <tok fileIndex="0" linenr="88" column="41" str=";"/>
+    <tok fileIndex="0" linenr="90" column="5" str="switch"/>
+    <tok fileIndex="0" linenr="90" column="12" str="("/>
+    <tok fileIndex="0" linenr="90" column="13" str="_scause"/>
+    <tok fileIndex="0" linenr="90" column="20" str=")"/>
+    <tok fileIndex="0" linenr="90" column="22" str="{"/>
+    <tok fileIndex="0" linenr="91" column="9" str="case"/>
+    <tok fileIndex="0" linenr="91" column="14" str="SCAUSE_CODE_SSI"/>
+    <tok fileIndex="0" linenr="91" column="29" str=":"/>
+    <tok fileIndex="0" linenr="92" column="13" str="interrupts_handle"/>
+    <tok fileIndex="0" linenr="92" column="30" str="("/>
+    <tok fileIndex="0" linenr="92" column="31" str="SOFT_INT_ID"/>
+    <tok fileIndex="0" linenr="92" column="42" str=")"/>
+    <tok fileIndex="0" linenr="92" column="43" str=";"/>
+    <tok fileIndex="0" linenr="93" column="13" str="CSRC"/>
+    <tok fileIndex="0" linenr="93" column="17" str="("/>
+    <tok fileIndex="0" linenr="93" column="18" str="sip"/>
+    <tok fileIndex="0" linenr="93" column="21" str=","/>
+    <tok fileIndex="0" linenr="93" column="23" str="SIP_SSIP"/>
+    <tok fileIndex="0" linenr="93" column="31" str=")"/>
+    <tok fileIndex="0" linenr="93" column="32" str=";"/>
+    <tok fileIndex="0" linenr="94" column="13" str="break"/>
+    <tok fileIndex="0" linenr="94" column="18" str=";"/>
+    <tok fileIndex="0" linenr="95" column="9" str="case"/>
+    <tok fileIndex="0" linenr="95" column="14" str="SCAUSE_CODE_STI"/>
+    <tok fileIndex="0" linenr="95" column="29" str=":"/>
+    <tok fileIndex="0" linenr="96" column="13" str="interrupts_handle"/>
+    <tok fileIndex="0" linenr="96" column="30" str="("/>
+    <tok fileIndex="0" linenr="96" column="31" str="TIMR_INT_ID"/>
+    <tok fileIndex="0" linenr="96" column="42" str=")"/>
+    <tok fileIndex="0" linenr="96" column="43" str=";"/>
+    <tok fileIndex="0" linenr="97" column="13" str="/**x             * Clearing the timer pending bit actually has nox             * effect. We should call sbi_set_timer(-1), but atx             * the moment this is having no effect on opensbi/qemu.x             */"/>
+    <tok fileIndex="0" linenr="102" column="13" str="// CSRC(sip, SIP_STIP);"/>
+    <tok fileIndex="0" linenr="103" column="13" str="// sbi_set_timer(-1);"/>
+    <tok fileIndex="0" linenr="104" column="13" str="break"/>
+    <tok fileIndex="0" linenr="104" column="18" str=";"/>
+    <tok fileIndex="0" linenr="105" column="9" str="case"/>
+    <tok fileIndex="0" linenr="105" column="14" str="SCAUSE_CODE_SEI"/>
+    <tok fileIndex="0" linenr="105" column="29" str=":"/>
+    <tok fileIndex="0" linenr="106" column="13" str="plic_handle"/>
+    <tok fileIndex="0" linenr="106" column="24" str="("/>
+    <tok fileIndex="0" linenr="106" column="25" str=")"/>
+    <tok fileIndex="0" linenr="106" column="26" str=";"/>
+    <tok fileIndex="0" linenr="107" column="13" str="break"/>
+    <tok fileIndex="0" linenr="107" column="18" str=";"/>
+    <tok fileIndex="0" linenr="108" column="9" str="default"/>
+    <tok fileIndex="0" linenr="108" column="16" str=":"/>
+    <tok fileIndex="0" linenr="109" column="13" str="// WARNING(&quot;unkown interrupt&quot;);"/>
+    <tok fileIndex="0" linenr="110" column="13" str="break"/>
+    <tok fileIndex="0" linenr="110" column="18" str=";"/>
+    <tok fileIndex="0" linenr="111" column="5" str="}"/>
+    <tok fileIndex="0" linenr="112" column="1" str="}"/>
+    <tok fileIndex="0" linenr="114" column="1" str="bool"/>
+    <tok fileIndex="0" linenr="114" column="6" str="interrupts_arch_check"/>
+    <tok fileIndex="0" linenr="114" column="27" str="("/>
+    <tok fileIndex="0" linenr="114" column="28" str="uint64_t"/>
+    <tok fileIndex="0" linenr="114" column="37" str="int_id"/>
+    <tok fileIndex="0" linenr="114" column="43" str=")"/>
+    <tok fileIndex="0" linenr="115" column="1" str="{"/>
+    <tok fileIndex="0" linenr="116" column="5" str="if"/>
+    <tok fileIndex="0" linenr="116" column="8" str="("/>
+    <tok fileIndex="0" linenr="116" column="9" str="int_id"/>
+    <tok fileIndex="0" linenr="116" column="16" str="=="/>
+    <tok fileIndex="0" linenr="116" column="19" str="SOFT_INT_ID"/>
+    <tok fileIndex="0" linenr="116" column="30" str=")"/>
+    <tok fileIndex="0" linenr="116" column="32" str="{"/>
+    <tok fileIndex="0" linenr="117" column="9" str="return"/>
+    <tok fileIndex="0" linenr="117" column="16" str="CSRR"/>
+    <tok fileIndex="0" linenr="117" column="20" str="("/>
+    <tok fileIndex="0" linenr="117" column="21" str="sip"/>
+    <tok fileIndex="0" linenr="117" column="24" str=")"/>
+    <tok fileIndex="0" linenr="117" column="26" str="&amp;"/>
+    <tok fileIndex="0" linenr="117" column="28" str="SIP_SSIP"/>
+    <tok fileIndex="0" linenr="117" column="36" str=";"/>
+    <tok fileIndex="0" linenr="118" column="5" str="}"/>
+    <tok fileIndex="0" linenr="118" column="7" str="else"/>
+    <tok fileIndex="0" linenr="118" column="12" str="if"/>
+    <tok fileIndex="0" linenr="118" column="15" str="("/>
+    <tok fileIndex="0" linenr="118" column="16" str="int_id"/>
+    <tok fileIndex="0" linenr="118" column="23" str="=="/>
+    <tok fileIndex="0" linenr="118" column="26" str="TIMR_INT_ID"/>
+    <tok fileIndex="0" linenr="118" column="37" str=")"/>
+    <tok fileIndex="0" linenr="118" column="39" str="{"/>
+    <tok fileIndex="0" linenr="119" column="9" str="return"/>
+    <tok fileIndex="0" linenr="119" column="16" str="CSRR"/>
+    <tok fileIndex="0" linenr="119" column="20" str="("/>
+    <tok fileIndex="0" linenr="119" column="21" str="sip"/>
+    <tok fileIndex="0" linenr="119" column="24" str=")"/>
+    <tok fileIndex="0" linenr="119" column="26" str="&amp;"/>
+    <tok fileIndex="0" linenr="119" column="28" str="SIP_STIP"/>
+    <tok fileIndex="0" linenr="119" column="36" str=";"/>
+    <tok fileIndex="0" linenr="120" column="5" str="}"/>
+    <tok fileIndex="0" linenr="120" column="7" str="else"/>
+    <tok fileIndex="0" linenr="120" column="12" str="{"/>
+    <tok fileIndex="0" linenr="121" column="9" str="return"/>
+    <tok fileIndex="0" linenr="121" column="16" str="plic_get_pend"/>
+    <tok fileIndex="0" linenr="121" column="29" str="("/>
+    <tok fileIndex="0" linenr="121" column="30" str="int_id"/>
+    <tok fileIndex="0" linenr="121" column="36" str=")"/>
+    <tok fileIndex="0" linenr="121" column="37" str=";"/>
+    <tok fileIndex="0" linenr="122" column="5" str="}"/>
+    <tok fileIndex="0" linenr="123" column="1" str="}"/>
+    <tok fileIndex="0" linenr="125" column="1" str="void"/>
+    <tok fileIndex="0" linenr="125" column="6" str="interrupts_arch_clear"/>
+    <tok fileIndex="0" linenr="125" column="27" str="("/>
+    <tok fileIndex="0" linenr="125" column="28" str="uint64_t"/>
+    <tok fileIndex="0" linenr="125" column="37" str="int_id"/>
+    <tok fileIndex="0" linenr="125" column="43" str=")"/>
+    <tok fileIndex="0" linenr="126" column="1" str="{"/>
+    <tok fileIndex="0" linenr="127" column="5" str="if"/>
+    <tok fileIndex="0" linenr="127" column="8" str="("/>
+    <tok fileIndex="0" linenr="127" column="9" str="int_id"/>
+    <tok fileIndex="0" linenr="127" column="16" str="=="/>
+    <tok fileIndex="0" linenr="127" column="19" str="SOFT_INT_ID"/>
+    <tok fileIndex="0" linenr="127" column="30" str=")"/>
+    <tok fileIndex="0" linenr="127" column="32" str="{"/>
+    <tok fileIndex="0" linenr="128" column="9" str="CSRC"/>
+    <tok fileIndex="0" linenr="128" column="13" str="("/>
+    <tok fileIndex="0" linenr="128" column="14" str="sip"/>
+    <tok fileIndex="0" linenr="128" column="17" str=","/>
+    <tok fileIndex="0" linenr="128" column="19" str="SIP_SSIP"/>
+    <tok fileIndex="0" linenr="128" column="27" str=")"/>
+    <tok fileIndex="0" linenr="128" column="28" str=";"/>
+    <tok fileIndex="0" linenr="129" column="5" str="}"/>
+    <tok fileIndex="0" linenr="129" column="7" str="else"/>
+    <tok fileIndex="0" linenr="129" column="12" str="{"/>
+    <tok fileIndex="0" linenr="130" column="9" str="/**x         * It is not actually possible to clear timerx         * or external interrupt pending bits by software.x         */"/>
+    <tok fileIndex="0" linenr="134" column="9" str="WARNING"/>
+    <tok fileIndex="0" linenr="134" column="16" str="("/>
+    <tok fileIndex="0" linenr="134" column="17" str="&quot;trying to clear timer or external interrupt&quot;"/>
+    <tok fileIndex="0" linenr="134" column="62" str=")"/>
+    <tok fileIndex="0" linenr="134" column="63" str=";"/>
+    <tok fileIndex="0" linenr="135" column="5" str="}"/>
+    <tok fileIndex="0" linenr="136" column="1" str="}"/>
+    <tok fileIndex="0" linenr="138" column="1" str="inline"/>
+    <tok fileIndex="0" linenr="138" column="8" str="bool"/>
+    <tok fileIndex="0" linenr="138" column="13" str="interrupts_arch_conflict"/>
+    <tok fileIndex="0" linenr="138" column="37" str="("/>
+    <tok fileIndex="0" linenr="138" column="38" str="bitmap_t"/>
+    <tok fileIndex="0" linenr="138" column="47" str="interrupt_bitmap"/>
+    <tok fileIndex="0" linenr="138" column="63" str=","/>
+    <tok fileIndex="0" linenr="138" column="65" str="uint64_t"/>
+    <tok fileIndex="0" linenr="138" column="74" str="int_id"/>
+    <tok fileIndex="0" linenr="138" column="80" str=")"/>
+    <tok fileIndex="0" linenr="139" column="1" str="{"/>
+    <tok fileIndex="0" linenr="140" column="5" str="return"/>
+    <tok fileIndex="0" linenr="140" column="12" str="bitmap_get"/>
+    <tok fileIndex="0" linenr="140" column="22" str="("/>
+    <tok fileIndex="0" linenr="140" column="23" str="interrupt_bitmap"/>
+    <tok fileIndex="0" linenr="140" column="39" str=","/>
+    <tok fileIndex="0" linenr="140" column="41" str="int_id"/>
+    <tok fileIndex="0" linenr="140" column="47" str=")"/>
+    <tok fileIndex="0" linenr="140" column="48" str=";"/>
+    <tok fileIndex="0" linenr="141" column="1" str="}"/>
+    <tok fileIndex="0" linenr="143" column="1" str="void"/>
+    <tok fileIndex="0" linenr="143" column="6" str="interrupts_arch_vm_assign"/>
+    <tok fileIndex="0" linenr="143" column="31" str="("/>
+    <tok fileIndex="0" linenr="143" column="32" str="vm_t"/>
+    <tok fileIndex="0" linenr="143" column="37" str="*"/>
+    <tok fileIndex="0" linenr="143" column="38" str="vm"/>
+    <tok fileIndex="0" linenr="143" column="40" str=","/>
+    <tok fileIndex="0" linenr="143" column="42" str="uint64_t"/>
+    <tok fileIndex="0" linenr="143" column="51" str="id"/>
+    <tok fileIndex="0" linenr="143" column="53" str=")"/>
+    <tok fileIndex="0" linenr="144" column="1" str="{"/>
+    <tok fileIndex="0" linenr="145" column="5" str="vplic_set_hw"/>
+    <tok fileIndex="0" linenr="145" column="17" str="("/>
+    <tok fileIndex="0" linenr="145" column="18" str="vm"/>
+    <tok fileIndex="0" linenr="145" column="20" str=","/>
+    <tok fileIndex="0" linenr="145" column="22" str="id"/>
+    <tok fileIndex="0" linenr="145" column="24" str=")"/>
+    <tok fileIndex="0" linenr="145" column="25" str=";"/>
+    <tok fileIndex="0" linenr="146" column="1" str="}"/>
+    <tok fileIndex="0" linenr="148" column="1" str="void"/>
+    <tok fileIndex="0" linenr="148" column="6" str="interrupts_arch_vm_inject"/>
+    <tok fileIndex="0" linenr="148" column="31" str="("/>
+    <tok fileIndex="0" linenr="148" column="32" str="vm_t"/>
+    <tok fileIndex="0" linenr="148" column="37" str="*"/>
+    <tok fileIndex="0" linenr="148" column="38" str="vm"/>
+    <tok fileIndex="0" linenr="148" column="40" str=","/>
+    <tok fileIndex="0" linenr="148" column="42" str="uint64_t"/>
+    <tok fileIndex="0" linenr="148" column="51" str="id"/>
+    <tok fileIndex="0" linenr="148" column="53" str=")"/>
+    <tok fileIndex="0" linenr="149" column="1" str="{"/>
+    <tok fileIndex="0" linenr="150" column="5" str="vplic_inject"/>
+    <tok fileIndex="0" linenr="150" column="17" str="("/>
+    <tok fileIndex="0" linenr="150" column="18" str="cpu"/>
+    <tok fileIndex="0" linenr="150" column="21" str="."/>
+    <tok fileIndex="0" linenr="150" column="22" str="vcpu"/>
+    <tok fileIndex="0" linenr="150" column="26" str=","/>
+    <tok fileIndex="0" linenr="150" column="28" str="id"/>
+    <tok fileIndex="0" linenr="150" column="30" str=")"/>
+    <tok fileIndex="0" linenr="150" column="31" str=";"/>
+    <tok fileIndex="0" linenr="151" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/arch/riscv/interrupts.c" linenr="16" str="#include &lt;bao.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="17" str="#include &lt;interrupts.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="19" str="#include &lt;arch/plic.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="20" str="#include &lt;arch/sbi.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="21" str="#include &lt;cpu.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="22" str="#include &lt;mem.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="23" str="#include &lt;platform.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="24" str="#include &lt;vm.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="25" str="#include &lt;arch/csrs.h&gt;"/>
+    <directive file="src/arch/riscv/interrupts.c" linenr="26" str="#include &lt;fences.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5aaca2ee0" file="src/arch/riscv/interrupts.c" linenr="28" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac77000" file="src/arch/riscv/interrupts.c" linenr="28" column="6" str="interrupts_arch_init" scope="0x55c5aac781c0" type="name" function="0x55c5aace5d50" astParent="0x55c5aad45740"/>
+    <token id="0x55c5aad45740" file="src/arch/riscv/interrupts.c" linenr="28" column="26" str="(" scope="0x55c5aac781c0" link="0x55c5aac7bba0" astOperand1="0x55c5aac77000" valueType-type="void"/>
+    <token id="0x55c5aac7bba0" file="src/arch/riscv/interrupts.c" linenr="28" column="27" str=")" scope="0x55c5aac781c0" link="0x55c5aad45740"/>
+    <token id="0x55c5aac660a0" file="src/arch/riscv/interrupts.c" linenr="29" column="1" str="{" scope="0x55c5aac7b730" link="0x55c5aac55360"/>
+    <token id="0x55c5aac7b6c0" file="src/arch/riscv/interrupts.c" linenr="30" column="5" str="if" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac5dca0"/>
+    <token id="0x55c5aac5dca0" file="src/arch/riscv/interrupts.c" linenr="30" column="8" str="(" scope="0x55c5aac7b730" link="0x55c5aace38a0" astOperand1="0x55c5aac7b6c0" astOperand2="0x55c5aac73fd0"/>
+    <token id="0x55c5aaca3000" file="src/arch/riscv/interrupts.c" linenr="30" column="9" str="cpu" scope="0x55c5aac7b730" type="name" astParent="0x55c5aaca2f40"/>
+    <token id="0x55c5aaca2f40" file="src/arch/riscv/interrupts.c" linenr="30" column="12" str="." scope="0x55c5aac7b730" astParent="0x55c5aac73fd0" astOperand1="0x55c5aaca3000" astOperand2="0x55c5aaca2fa0"/>
+    <token id="0x55c5aaca2fa0" file="src/arch/riscv/interrupts.c" linenr="30" column="13" str="id" scope="0x55c5aac7b730" type="name" astParent="0x55c5aaca2f40"/>
+    <token id="0x55c5aac73fd0" file="src/arch/riscv/interrupts.c" linenr="30" column="16" str="==" scope="0x55c5aac7b730" type="op" isComparisonOp="True" astParent="0x55c5aac5dca0" astOperand1="0x55c5aaca2f40" astOperand2="0x55c5aaca0cd0" valueType-type="bool"/>
+    <token id="0x55c5aaca0cd0" file="src/arch/riscv/interrupts.c" linenr="30" column="19" str="CPU_MASTER" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac73fd0"/>
+    <token id="0x55c5aace38a0" file="src/arch/riscv/interrupts.c" linenr="30" column="29" str=")" scope="0x55c5aac7b730" link="0x55c5aac5dca0"/>
+    <token id="0x55c5aaf6d300" file="src/arch/riscv/interrupts.c" linenr="30" column="31" str="{" scope="0x55c5aac76850" link="0x55c5aac5ff50"/>
+    <token id="0x55c5aad46310" file="src/arch/riscv/interrupts.c" linenr="31" column="9" str="mem_map_dev" scope="0x55c5aac76850" type="name" astParent="0x55c5aad46370"/>
+    <token id="0x55c5aad46370" file="src/arch/riscv/interrupts.c" linenr="31" column="20" str="(" scope="0x55c5aac76850" link="0x55c5aace55a0" astOperand1="0x55c5aad46310" astOperand2="0x55c5aac535a0"/>
+    <token id="0x55c5aae55e10" file="src/arch/riscv/interrupts.c" linenr="31" column="21" str="&amp;" scope="0x55c5aac76850" type="op" values="0x55c5aacd5690" astParent="0x55c5aac5c750" astOperand1="0x55c5aae56000"/>
+    <token id="0x55c5aae55e70" file="src/arch/riscv/interrupts.c" linenr="31" column="22" str="cpu" scope="0x55c5aac76850" type="name" astParent="0x55c5aae56000"/>
+    <token id="0x55c5aae56000" file="src/arch/riscv/interrupts.c" linenr="31" column="25" str="." scope="0x55c5aac76850" astParent="0x55c5aae55e10" astOperand1="0x55c5aae55e70" astOperand2="0x55c5aae56060"/>
+    <token id="0x55c5aae56060" file="src/arch/riscv/interrupts.c" linenr="31" column="26" str="as" scope="0x55c5aac76850" type="name" astParent="0x55c5aae56000"/>
+    <token id="0x55c5aac5c750" file="src/arch/riscv/interrupts.c" linenr="31" column="28" str="," scope="0x55c5aac76850" astParent="0x55c5aac5a180" astOperand1="0x55c5aae55e10" astOperand2="0x55c5aac5c7b0"/>
+    <token id="0x55c5aac5c7b0" file="src/arch/riscv/interrupts.c" linenr="31" column="30" str="(" scope="0x55c5aac76850" link="0x55c5aafe3320" astParent="0x55c5aac5c750" astOperand1="0x55c5aafe3380" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aafe3510" file="src/arch/riscv/interrupts.c" linenr="31" column="31" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aafe3570" file="src/arch/riscv/interrupts.c" linenr="31" column="36" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aafe3320" file="src/arch/riscv/interrupts.c" linenr="31" column="37" str=")" scope="0x55c5aac76850" link="0x55c5aac5c7b0"/>
+    <token id="0x55c5aafe3380" file="src/arch/riscv/interrupts.c" linenr="31" column="38" str="&amp;" scope="0x55c5aac76850" type="op" values="0x55c5aacd5480" astParent="0x55c5aac5c7b0" astOperand1="0x55c5aac5a120"/>
+    <token id="0x55c5aac5a120" file="src/arch/riscv/interrupts.c" linenr="31" column="39" str="plic_global" scope="0x55c5aac76850" type="name" astParent="0x55c5aafe3380"/>
+    <token id="0x55c5aac5a180" file="src/arch/riscv/interrupts.c" linenr="31" column="50" str="," scope="0x55c5aac76850" astParent="0x55c5aac535a0" astOperand1="0x55c5aac5c750" astOperand2="0x55c5aac52e40"/>
+    <token id="0x55c5aad45c60" file="src/arch/riscv/interrupts.c" linenr="31" column="52" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aad45cc0"/>
+    <token id="0x55c5aad45cc0" file="src/arch/riscv/interrupts.c" linenr="31" column="60" str="." scope="0x55c5aac76850" astParent="0x55c5aac52e40" astOperand1="0x55c5aad45c60" astOperand2="0x55c5aac52de0"/>
+    <token id="0x55c5aac52de0" file="src/arch/riscv/interrupts.c" linenr="31" column="61" str="arch" scope="0x55c5aac76850" type="name" astParent="0x55c5aad45cc0"/>
+    <token id="0x55c5aac52e40" file="src/arch/riscv/interrupts.c" linenr="31" column="65" str="." scope="0x55c5aac76850" astParent="0x55c5aac5a180" astOperand1="0x55c5aad45cc0" astOperand2="0x55c5aac53540"/>
+    <token id="0x55c5aac53540" file="src/arch/riscv/interrupts.c" linenr="31" column="66" str="plic_base" scope="0x55c5aac76850" type="name" astParent="0x55c5aac52e40"/>
+    <token id="0x55c5aac535a0" file="src/arch/riscv/interrupts.c" linenr="31" column="75" str="," scope="0x55c5aac76850" astParent="0x55c5aad46370" astOperand1="0x55c5aac5a180" astOperand2="0x55c5aafe37c0"/>
+    <token id="0x55c5ab0ac270" file="src/arch/riscv/interrupts.c" linenr="32" column="21" str="ALIGN" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0ac2d0"/>
+    <token id="0x55c5ab0ac2d0" file="src/arch/riscv/interrupts.c" linenr="32" column="26" str="(" scope="0x55c5aac76850" link="0x55c5aad46bb0" astParent="0x55c5aafe37c0" astOperand1="0x55c5ab0ac270" astOperand2="0x55c5aac78ea0"/>
+    <token id="0x55c5aac53730" file="src/arch/riscv/interrupts.c" linenr="32" column="27" str="sizeof" scope="0x55c5aac76850" type="name" astParent="0x55c5aac53790"/>
+    <token id="0x55c5aac53790" file="src/arch/riscv/interrupts.c" linenr="32" column="33" str="(" scope="0x55c5aac76850" link="0x55c5aac53980" astParent="0x55c5aac78ea0" astOperand1="0x55c5aac53730" astOperand2="0x55c5aac53920" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac53920" file="src/arch/riscv/interrupts.c" linenr="32" column="34" str="plic_global" scope="0x55c5aac76850" type="name" astParent="0x55c5aac53790"/>
+    <token id="0x55c5aac53980" file="src/arch/riscv/interrupts.c" linenr="32" column="45" str=")" scope="0x55c5aac76850" link="0x55c5aac53790"/>
+    <token id="0x55c5aac78ea0" file="src/arch/riscv/interrupts.c" linenr="32" column="46" str="," scope="0x55c5aac76850" astParent="0x55c5ab0ac2d0" astOperand1="0x55c5aac53790" astOperand2="0x55c5aac78f00"/>
+    <token id="0x55c5aac78f00" file="src/arch/riscv/interrupts.c" linenr="32" column="48" str="PAGE_SIZE" scope="0x55c5aac76850" type="name" astParent="0x55c5aac78ea0"/>
+    <token id="0x55c5aad46bb0" file="src/arch/riscv/interrupts.c" linenr="32" column="57" str=")" scope="0x55c5aac76850" link="0x55c5ab0ac2d0"/>
+    <token id="0x55c5aafe37c0" file="src/arch/riscv/interrupts.c" linenr="32" column="59" str="/" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aac535a0" astOperand1="0x55c5ab0ac2d0" astOperand2="0x55c5aac78c80"/>
+    <token id="0x55c5aac78c80" file="src/arch/riscv/interrupts.c" linenr="32" column="61" str="PAGE_SIZE" scope="0x55c5aac76850" type="name" astParent="0x55c5aafe37c0"/>
+    <token id="0x55c5aace55a0" file="src/arch/riscv/interrupts.c" linenr="32" column="70" str=")" scope="0x55c5aac76850" link="0x55c5aad46370"/>
+    <token id="0x55c5aace56c0" file="src/arch/riscv/interrupts.c" linenr="32" column="71" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aace57e0" file="src/arch/riscv/interrupts.c" linenr="34" column="9" str="mem_map_dev" scope="0x55c5aac76850" type="name" astParent="0x55c5aace5900"/>
+    <token id="0x55c5aace5900" file="src/arch/riscv/interrupts.c" linenr="34" column="20" str="(" scope="0x55c5aac76850" link="0x55c5aac5f410" astOperand1="0x55c5aace57e0" astOperand2="0x55c5aac61240"/>
+    <token id="0x55c5aace5a20" file="src/arch/riscv/interrupts.c" linenr="34" column="21" str="&amp;" scope="0x55c5aac76850" type="op" values="0x55c5aacd5270" astParent="0x55c5aac60280" astOperand1="0x55c5aace5c60"/>
+    <token id="0x55c5aace5b40" file="src/arch/riscv/interrupts.c" linenr="34" column="22" str="cpu" scope="0x55c5aac76850" type="name" astParent="0x55c5aace5c60"/>
+    <token id="0x55c5aace5c60" file="src/arch/riscv/interrupts.c" linenr="34" column="25" str="." scope="0x55c5aac76850" astParent="0x55c5aace5a20" astOperand1="0x55c5aace5b40" astOperand2="0x55c5aac60160"/>
+    <token id="0x55c5aac60160" file="src/arch/riscv/interrupts.c" linenr="34" column="26" str="as" scope="0x55c5aac76850" type="name" astParent="0x55c5aace5c60"/>
+    <token id="0x55c5aac60280" file="src/arch/riscv/interrupts.c" linenr="34" column="28" str="," scope="0x55c5aac76850" astParent="0x55c5aac60940" astOperand1="0x55c5aace5a20" astOperand2="0x55c5aac603a0"/>
+    <token id="0x55c5aac603a0" file="src/arch/riscv/interrupts.c" linenr="34" column="30" str="(" scope="0x55c5aac76850" link="0x55c5aac60700" astParent="0x55c5aac60280" astOperand1="0x55c5aac60820" valueType-type="void" valueType-pointer="1"/>
+    <token id="0x55c5aac604c0" file="src/arch/riscv/interrupts.c" linenr="34" column="31" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac605e0" file="src/arch/riscv/interrupts.c" linenr="34" column="36" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aac60700" file="src/arch/riscv/interrupts.c" linenr="34" column="37" str=")" scope="0x55c5aac76850" link="0x55c5aac603a0"/>
+    <token id="0x55c5aac60820" file="src/arch/riscv/interrupts.c" linenr="34" column="38" str="plic_hart" scope="0x55c5aac76850" type="name" astParent="0x55c5aac603a0"/>
+    <token id="0x55c5aac60940" file="src/arch/riscv/interrupts.c" linenr="34" column="47" str="," scope="0x55c5aac76850" astParent="0x55c5aac61240" astOperand1="0x55c5aac60280" astOperand2="0x55c5aac61000"/>
+    <token id="0x55c5aac60a60" file="src/arch/riscv/interrupts.c" linenr="35" column="21" str="platform" scope="0x55c5aac76850" type="name" astParent="0x55c5aac60b80"/>
+    <token id="0x55c5aac60b80" file="src/arch/riscv/interrupts.c" linenr="35" column="29" str="." scope="0x55c5aac76850" astParent="0x55c5aac60dc0" astOperand1="0x55c5aac60a60" astOperand2="0x55c5aac60ca0"/>
+    <token id="0x55c5aac60ca0" file="src/arch/riscv/interrupts.c" linenr="35" column="30" str="arch" scope="0x55c5aac76850" type="name" astParent="0x55c5aac60b80"/>
+    <token id="0x55c5aac60dc0" file="src/arch/riscv/interrupts.c" linenr="35" column="34" str="." scope="0x55c5aac76850" astParent="0x55c5aac61000" astOperand1="0x55c5aac60b80" astOperand2="0x55c5aac60ee0"/>
+    <token id="0x55c5aac60ee0" file="src/arch/riscv/interrupts.c" linenr="35" column="35" str="plic_base" scope="0x55c5aac76850" type="name" astParent="0x55c5aac60dc0"/>
+    <token id="0x55c5aac61000" file="src/arch/riscv/interrupts.c" linenr="35" column="45" str="+" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aac60940" astOperand1="0x55c5aac60dc0" astOperand2="0x55c5aac61120"/>
+    <token id="0x55c5aac61120" file="src/arch/riscv/interrupts.c" linenr="35" column="47" str="PLIC_CLAIMCMPLT_OFF" scope="0x55c5aac76850" type="name" astParent="0x55c5aac61000"/>
+    <token id="0x55c5aac61240" file="src/arch/riscv/interrupts.c" linenr="35" column="66" str="," scope="0x55c5aac76850" astParent="0x55c5aace5900" astOperand1="0x55c5aac60940" astOperand2="0x55c5aac5f1d0"/>
+    <token id="0x55c5aac61360" file="src/arch/riscv/interrupts.c" linenr="36" column="21" str="ALIGN" scope="0x55c5aac76850" type="name" astParent="0x55c5aac61480"/>
+    <token id="0x55c5aac61480" file="src/arch/riscv/interrupts.c" linenr="36" column="26" str="(" scope="0x55c5aac76850" link="0x55c5aac5f0b0" astParent="0x55c5aac5f1d0" astOperand1="0x55c5aac61360" astOperand2="0x55c5aac5ee70"/>
+    <token id="0x55c5aac615a0" file="src/arch/riscv/interrupts.c" linenr="36" column="27" str="sizeof" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5eb10"/>
+    <token id="0x55c5aac5eb10" file="src/arch/riscv/interrupts.c" linenr="36" column="33" str="(" scope="0x55c5aac76850" link="0x55c5aac5ed50" astParent="0x55c5aac5ee70" astOperand1="0x55c5aac615a0" astOperand2="0x55c5aac5ec30" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac5ec30" file="src/arch/riscv/interrupts.c" linenr="36" column="34" str="plic_hart" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5eb10"/>
+    <token id="0x55c5aac5ed50" file="src/arch/riscv/interrupts.c" linenr="36" column="43" str=")" scope="0x55c5aac76850" link="0x55c5aac5eb10"/>
+    <token id="0x55c5aac5ee70" file="src/arch/riscv/interrupts.c" linenr="36" column="44" str="," scope="0x55c5aac76850" astParent="0x55c5aac61480" astOperand1="0x55c5aac5eb10" astOperand2="0x55c5aac5ef90"/>
+    <token id="0x55c5aac5ef90" file="src/arch/riscv/interrupts.c" linenr="36" column="46" str="PAGE_SIZE" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5ee70"/>
+    <token id="0x55c5aac5f0b0" file="src/arch/riscv/interrupts.c" linenr="36" column="55" str=")" scope="0x55c5aac76850" link="0x55c5aac61480"/>
+    <token id="0x55c5aac5f1d0" file="src/arch/riscv/interrupts.c" linenr="36" column="57" str="/" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aac61240" astOperand1="0x55c5aac61480" astOperand2="0x55c5aac5f2f0"/>
+    <token id="0x55c5aac5f2f0" file="src/arch/riscv/interrupts.c" linenr="36" column="59" str="PAGE_SIZE" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5f1d0"/>
+    <token id="0x55c5aac5f410" file="src/arch/riscv/interrupts.c" linenr="36" column="68" str=")" scope="0x55c5aac76850" link="0x55c5aace5900"/>
+    <token id="0x55c5aac5f530" file="src/arch/riscv/interrupts.c" linenr="36" column="69" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5f650" file="src/arch/riscv/interrupts.c" linenr="38" column="9" str="fence_sync" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5f770"/>
+    <token id="0x55c5aac5f770" file="src/arch/riscv/interrupts.c" linenr="38" column="19" str="(" scope="0x55c5aac76850" link="0x55c5aac5f890" astOperand1="0x55c5aac5f650"/>
+    <token id="0x55c5aac5f890" file="src/arch/riscv/interrupts.c" linenr="38" column="20" str=")" scope="0x55c5aac76850" link="0x55c5aac5f770"/>
+    <token id="0x55c5aac5f9b0" file="src/arch/riscv/interrupts.c" linenr="38" column="21" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5fad0" file="src/arch/riscv/interrupts.c" linenr="40" column="9" str="plic_init" scope="0x55c5aac76850" type="name" astParent="0x55c5aac5fbf0"/>
+    <token id="0x55c5aac5fbf0" file="src/arch/riscv/interrupts.c" linenr="40" column="18" str="(" scope="0x55c5aac76850" link="0x55c5aac5fd10" astOperand1="0x55c5aac5fad0"/>
+    <token id="0x55c5aac5fd10" file="src/arch/riscv/interrupts.c" linenr="40" column="19" str=")" scope="0x55c5aac76850" link="0x55c5aac5fbf0"/>
+    <token id="0x55c5aac5fe30" file="src/arch/riscv/interrupts.c" linenr="40" column="20" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5ff50" file="src/arch/riscv/interrupts.c" linenr="41" column="5" str="}" scope="0x55c5aac76850" link="0x55c5aaf6d300"/>
+    <token id="0x55c5aac54040" file="src/arch/riscv/interrupts.c" linenr="44" column="5" str="cpu_sync_barrier" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac54160"/>
+    <token id="0x55c5aac54160" file="src/arch/riscv/interrupts.c" linenr="44" column="21" str="(" scope="0x55c5aac7b730" link="0x55c5aac544c0" astOperand1="0x55c5aac54040" astOperand2="0x55c5aac54280"/>
+    <token id="0x55c5aac54280" file="src/arch/riscv/interrupts.c" linenr="44" column="22" str="&amp;" scope="0x55c5aac7b730" type="op" values="0x55c5aad468e0" astParent="0x55c5aac54160" astOperand1="0x55c5aac543a0"/>
+    <token id="0x55c5aac543a0" file="src/arch/riscv/interrupts.c" linenr="44" column="23" str="cpu_glb_sync" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac54280"/>
+    <token id="0x55c5aac544c0" file="src/arch/riscv/interrupts.c" linenr="44" column="35" str=")" scope="0x55c5aac7b730" link="0x55c5aac54160"/>
+    <token id="0x55c5aac545e0" file="src/arch/riscv/interrupts.c" linenr="44" column="36" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac54700" file="src/arch/riscv/interrupts.c" linenr="46" column="5" str="plic_cpu_init" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac54820"/>
+    <token id="0x55c5aac54820" file="src/arch/riscv/interrupts.c" linenr="46" column="18" str="(" scope="0x55c5aac7b730" link="0x55c5aac54940" astOperand1="0x55c5aac54700"/>
+    <token id="0x55c5aac54940" file="src/arch/riscv/interrupts.c" linenr="46" column="19" str=")" scope="0x55c5aac7b730" link="0x55c5aac54820"/>
+    <token id="0x55c5aac54a60" file="src/arch/riscv/interrupts.c" linenr="46" column="20" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac54b80" file="src/arch/riscv/interrupts.c" linenr="51" column="5" str="CSRS" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac54ca0"/>
+    <token id="0x55c5aac54ca0" file="src/arch/riscv/interrupts.c" linenr="51" column="9" str="(" scope="0x55c5aac7b730" link="0x55c5aac55120" astOperand1="0x55c5aac54b80" astOperand2="0x55c5aac54ee0"/>
+    <token id="0x55c5aac54dc0" file="src/arch/riscv/interrupts.c" linenr="51" column="10" str="sie" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac54ee0"/>
+    <token id="0x55c5aac54ee0" file="src/arch/riscv/interrupts.c" linenr="51" column="13" str="," scope="0x55c5aac7b730" astParent="0x55c5aac54ca0" astOperand1="0x55c5aac54dc0" astOperand2="0x55c5aac55000"/>
+    <token id="0x55c5aac55000" file="src/arch/riscv/interrupts.c" linenr="51" column="15" str="SIE_SEIE" scope="0x55c5aac7b730" type="name" astParent="0x55c5aac54ee0"/>
+    <token id="0x55c5aac55120" file="src/arch/riscv/interrupts.c" linenr="51" column="23" str=")" scope="0x55c5aac7b730" link="0x55c5aac54ca0"/>
+    <token id="0x55c5aac55240" file="src/arch/riscv/interrupts.c" linenr="51" column="24" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac55360" file="src/arch/riscv/interrupts.c" linenr="52" column="1" str="}" scope="0x55c5aac7b730" link="0x55c5aac660a0"/>
+    <token id="0x55c5aac55480" file="src/arch/riscv/interrupts.c" linenr="54" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac555a0" file="src/arch/riscv/interrupts.c" linenr="54" column="6" str="interrupts_arch_ipi_send" scope="0x55c5aac781c0" type="name" function="0x55c5aace63e0" astParent="0x55c5aac556c0"/>
+    <token id="0x55c5aac556c0" file="src/arch/riscv/interrupts.c" linenr="54" column="30" str="(" scope="0x55c5aac781c0" link="0x55c5aac63000" astOperand1="0x55c5aac555a0" astOperand2="0x55c5aac62ca0" valueType-type="void"/>
+    <token id="0x55c5aac62a60" file="src/arch/riscv/interrupts.c" linenr="54" column="31" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac62b80" file="src/arch/riscv/interrupts.c" linenr="54" column="40" str="target_cpu" scope="0x55c5aac781c0" type="name" varId="1" variable="0x55c5ab0acdd0" astParent="0x55c5aac62ca0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac62ca0" file="src/arch/riscv/interrupts.c" linenr="54" column="50" str="," scope="0x55c5aac781c0" astParent="0x55c5aac556c0" astOperand1="0x55c5aac62b80" astOperand2="0x55c5aac62ee0"/>
+    <token id="0x55c5aac62dc0" file="src/arch/riscv/interrupts.c" linenr="54" column="52" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac62ee0" file="src/arch/riscv/interrupts.c" linenr="54" column="61" str="ipi_id" scope="0x55c5aac781c0" type="name" varId="2" variable="0x55c5ab0ad010" astParent="0x55c5aac62ca0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac63000" file="src/arch/riscv/interrupts.c" linenr="54" column="67" str=")" scope="0x55c5aac781c0" link="0x55c5aac556c0"/>
+    <token id="0x55c5aac63120" file="src/arch/riscv/interrupts.c" linenr="55" column="1" str="{" scope="0x55c5aac75e20" link="0x55c5aac63c60"/>
+    <token id="0x55c5aac63240" file="src/arch/riscv/interrupts.c" linenr="56" column="5" str="sbi_send_ipi" scope="0x55c5aac75e20" type="name" astParent="0x55c5aac63360"/>
+    <token id="0x55c5aac63360" file="src/arch/riscv/interrupts.c" linenr="56" column="17" str="(" scope="0x55c5aac75e20" link="0x55c5aac63a20" astOperand1="0x55c5aac63240" astOperand2="0x55c5aac637e0"/>
+    <token id="0x55c5aac63480" file="src/arch/riscv/interrupts.c" linenr="56" column="18" str="1ULL" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5aafe30d0" astParent="0x55c5aac635a0" valueType-type="long long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac635a0" file="src/arch/riscv/interrupts.c" linenr="56" column="23" str="&lt;&lt;" scope="0x55c5aac75e20" type="op" isArithmeticalOp="True" astParent="0x55c5aac637e0" astOperand1="0x55c5aac63480" astOperand2="0x55c5aac636c0" valueType-type="long long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac636c0" file="src/arch/riscv/interrupts.c" linenr="56" column="26" str="target_cpu" scope="0x55c5aac75e20" type="name" varId="1" variable="0x55c5ab0acdd0" astParent="0x55c5aac635a0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac637e0" file="src/arch/riscv/interrupts.c" linenr="56" column="36" str="," scope="0x55c5aac75e20" astParent="0x55c5aac63360" astOperand1="0x55c5aac635a0" astOperand2="0x55c5aac63900"/>
+    <token id="0x55c5aac63900" file="src/arch/riscv/interrupts.c" linenr="56" column="38" str="0" scope="0x55c5aac75e20" type="number" isInt="True" values="0x55c5aafe30b0" astParent="0x55c5aac637e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac63a20" file="src/arch/riscv/interrupts.c" linenr="56" column="39" str=")" scope="0x55c5aac75e20" link="0x55c5aac63360"/>
+    <token id="0x55c5aac63b40" file="src/arch/riscv/interrupts.c" linenr="56" column="40" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aac63c60" file="src/arch/riscv/interrupts.c" linenr="57" column="1" str="}" scope="0x55c5aac75e20" link="0x55c5aac63120"/>
+    <token id="0x55c5aac63d80" file="src/arch/riscv/interrupts.c" linenr="59" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac63ea0" file="src/arch/riscv/interrupts.c" linenr="59" column="6" str="interrupts_arch_cpu_enable" scope="0x55c5aac781c0" type="name" function="0x55c5ab0b0ec0" astParent="0x55c5aac63fc0"/>
+    <token id="0x55c5aac63fc0" file="src/arch/riscv/interrupts.c" linenr="59" column="32" str="(" scope="0x55c5aac781c0" link="0x55c5aac64320" astOperand1="0x55c5aac63ea0" astOperand2="0x55c5aac64200" valueType-type="void"/>
+    <token id="0x55c5aac640e0" file="src/arch/riscv/interrupts.c" linenr="59" column="33" str="bool" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac64200" file="src/arch/riscv/interrupts.c" linenr="59" column="38" str="en" scope="0x55c5aac781c0" type="name" varId="3" variable="0x55c5ab0ad250" astParent="0x55c5aac63fc0" valueType-type="bool"/>
+    <token id="0x55c5aac64320" file="src/arch/riscv/interrupts.c" linenr="59" column="40" str=")" scope="0x55c5aac781c0" link="0x55c5aac63fc0"/>
+    <token id="0x55c5aac64440" file="src/arch/riscv/interrupts.c" linenr="60" column="1" str="{" scope="0x55c5aac789a0" link="0x55c5aacbc5e0"/>
+    <token id="0x55c5aac64560" file="src/arch/riscv/interrupts.c" linenr="61" column="5" str="if" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac64680"/>
+    <token id="0x55c5aac64680" file="src/arch/riscv/interrupts.c" linenr="61" column="8" str="(" scope="0x55c5aac789a0" link="0x55c5aacbaf60" astOperand1="0x55c5aac64560" astOperand2="0x55c5aacbae40"/>
+    <token id="0x55c5aacbae40" file="src/arch/riscv/interrupts.c" linenr="61" column="9" str="en" scope="0x55c5aac789a0" type="name" varId="3" variable="0x55c5ab0ad250" astParent="0x55c5aac64680" valueType-type="bool"/>
+    <token id="0x55c5aacbaf60" file="src/arch/riscv/interrupts.c" linenr="61" column="11" str=")" scope="0x55c5aac789a0" link="0x55c5aac64680"/>
+    <token id="0x55c5aacbb080" file="src/arch/riscv/interrupts.c" linenr="61" column="13" str="{" scope="0x55c5aac785a0" link="0x55c5aacbb980"/>
+    <token id="0x55c5aacbb1a0" file="src/arch/riscv/interrupts.c" linenr="62" column="9" str="CSRS" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbb2c0"/>
+    <token id="0x55c5aacbb2c0" file="src/arch/riscv/interrupts.c" linenr="62" column="13" str="(" scope="0x55c5aac785a0" link="0x55c5aacbb740" astOperand1="0x55c5aacbb1a0" astOperand2="0x55c5aacbb500"/>
+    <token id="0x55c5aacbb3e0" file="src/arch/riscv/interrupts.c" linenr="62" column="14" str="sstatus" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbb500"/>
+    <token id="0x55c5aacbb500" file="src/arch/riscv/interrupts.c" linenr="62" column="21" str="," scope="0x55c5aac785a0" astParent="0x55c5aacbb2c0" astOperand1="0x55c5aacbb3e0" astOperand2="0x55c5aacbb620"/>
+    <token id="0x55c5aacbb620" file="src/arch/riscv/interrupts.c" linenr="62" column="23" str="SSTATUS_SIE_BIT" scope="0x55c5aac785a0" type="name" astParent="0x55c5aacbb500"/>
+    <token id="0x55c5aacbb740" file="src/arch/riscv/interrupts.c" linenr="62" column="38" str=")" scope="0x55c5aac785a0" link="0x55c5aacbb2c0"/>
+    <token id="0x55c5aacbb860" file="src/arch/riscv/interrupts.c" linenr="62" column="39" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aacbb980" file="src/arch/riscv/interrupts.c" linenr="63" column="5" str="}" scope="0x55c5aac785a0" link="0x55c5aacbb080"/>
+    <token id="0x55c5aacbbaa0" file="src/arch/riscv/interrupts.c" linenr="63" column="7" str="else" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aacbbbc0" file="src/arch/riscv/interrupts.c" linenr="63" column="12" str="{" scope="0x55c5aac783b0" link="0x55c5aacbc4c0"/>
+    <token id="0x55c5aacbbce0" file="src/arch/riscv/interrupts.c" linenr="64" column="9" str="CSRC" scope="0x55c5aac783b0" type="name" astParent="0x55c5aacbbe00"/>
+    <token id="0x55c5aacbbe00" file="src/arch/riscv/interrupts.c" linenr="64" column="13" str="(" scope="0x55c5aac783b0" link="0x55c5aacbc280" astOperand1="0x55c5aacbbce0" astOperand2="0x55c5aacbc040"/>
+    <token id="0x55c5aacbbf20" file="src/arch/riscv/interrupts.c" linenr="64" column="14" str="sstatus" scope="0x55c5aac783b0" type="name" astParent="0x55c5aacbc040"/>
+    <token id="0x55c5aacbc040" file="src/arch/riscv/interrupts.c" linenr="64" column="21" str="," scope="0x55c5aac783b0" astParent="0x55c5aacbbe00" astOperand1="0x55c5aacbbf20" astOperand2="0x55c5aacbc160"/>
+    <token id="0x55c5aacbc160" file="src/arch/riscv/interrupts.c" linenr="64" column="23" str="SSTATUS_SIE_BIT" scope="0x55c5aac783b0" type="name" astParent="0x55c5aacbc040"/>
+    <token id="0x55c5aacbc280" file="src/arch/riscv/interrupts.c" linenr="64" column="38" str=")" scope="0x55c5aac783b0" link="0x55c5aacbbe00"/>
+    <token id="0x55c5aacbc3a0" file="src/arch/riscv/interrupts.c" linenr="64" column="39" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aacbc4c0" file="src/arch/riscv/interrupts.c" linenr="65" column="5" str="}" scope="0x55c5aac783b0" link="0x55c5aacbbbc0"/>
+    <token id="0x55c5aacbc5e0" file="src/arch/riscv/interrupts.c" linenr="66" column="1" str="}" scope="0x55c5aac789a0" link="0x55c5aac64440"/>
+    <token id="0x55c5aacbc700" file="src/arch/riscv/interrupts.c" linenr="68" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aacbc820" file="src/arch/riscv/interrupts.c" linenr="68" column="6" str="interrupts_arch_enable" scope="0x55c5aac781c0" type="name" function="0x55c5ab0b1800" astParent="0x55c5aacbc940"/>
+    <token id="0x55c5aacbc940" file="src/arch/riscv/interrupts.c" linenr="68" column="28" str="(" scope="0x55c5aac781c0" link="0x55c5ab0a60e0" astOperand1="0x55c5aacbc820" astOperand2="0x55c5ab0a5d80" valueType-type="void"/>
+    <token id="0x55c5aacbca60" file="src/arch/riscv/interrupts.c" linenr="68" column="29" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aace5cc0" file="src/arch/riscv/interrupts.c" linenr="68" column="38" str="int_id" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aacd6460" astParent="0x55c5ab0a5d80" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0a5d80" file="src/arch/riscv/interrupts.c" linenr="68" column="44" str="," scope="0x55c5aac781c0" astParent="0x55c5aacbc940" astOperand1="0x55c5aace5cc0" astOperand2="0x55c5ab0a5fc0"/>
+    <token id="0x55c5ab0a5ea0" file="src/arch/riscv/interrupts.c" linenr="68" column="46" str="bool" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0a5fc0" file="src/arch/riscv/interrupts.c" linenr="68" column="51" str="en" scope="0x55c5aac781c0" type="name" varId="5" variable="0x55c5aacd6540" astParent="0x55c5ab0a5d80" valueType-type="bool"/>
+    <token id="0x55c5ab0a60e0" file="src/arch/riscv/interrupts.c" linenr="68" column="53" str=")" scope="0x55c5aac781c0" link="0x55c5aacbc940"/>
+    <token id="0x55c5ab0a6200" file="src/arch/riscv/interrupts.c" linenr="69" column="1" str="{" scope="0x55c5aad6b790" link="0x55c5aacdae50"/>
+    <token id="0x55c5ab0a6320" file="src/arch/riscv/interrupts.c" linenr="70" column="5" str="if" scope="0x55c5aad6b790" type="name" astParent="0x55c5ab0a6440"/>
+    <token id="0x55c5ab0a6440" file="src/arch/riscv/interrupts.c" linenr="70" column="8" str="(" scope="0x55c5aad6b790" link="0x55c5ab0a68c0" astOperand1="0x55c5ab0a6320" astOperand2="0x55c5ab0a6680"/>
+    <token id="0x55c5ab0a6560" file="src/arch/riscv/interrupts.c" linenr="70" column="9" str="int_id" scope="0x55c5aad6b790" type="name" varId="4" variable="0x55c5aacd6460" astParent="0x55c5ab0a6680" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0a6680" file="src/arch/riscv/interrupts.c" linenr="70" column="16" str="==" scope="0x55c5aad6b790" type="op" isComparisonOp="True" astParent="0x55c5ab0a6440" astOperand1="0x55c5ab0a6560" astOperand2="0x55c5ab0a67a0" valueType-type="bool"/>
+    <token id="0x55c5ab0a67a0" file="src/arch/riscv/interrupts.c" linenr="70" column="19" str="SOFT_INT_ID" scope="0x55c5aad6b790" type="name" astParent="0x55c5ab0a6680"/>
+    <token id="0x55c5ab0a68c0" file="src/arch/riscv/interrupts.c" linenr="70" column="30" str=")" scope="0x55c5aad6b790" link="0x55c5ab0a6440"/>
+    <token id="0x55c5ab0a69e0" file="src/arch/riscv/interrupts.c" linenr="70" column="32" str="{" scope="0x55c5aad6b900" link="0x55c5aacbfb80"/>
+    <token id="0x55c5ab0a6b00" file="src/arch/riscv/interrupts.c" linenr="71" column="9" str="if" scope="0x55c5aad6b900" type="name" astParent="0x55c5ab0a6c20"/>
+    <token id="0x55c5ab0a6c20" file="src/arch/riscv/interrupts.c" linenr="71" column="12" str="(" scope="0x55c5aad6b900" link="0x55c5ab0a6e60" astOperand1="0x55c5ab0a6b00" astOperand2="0x55c5ab0a6d40"/>
+    <token id="0x55c5ab0a6d40" file="src/arch/riscv/interrupts.c" linenr="71" column="13" str="en" scope="0x55c5aad6b900" type="name" varId="5" variable="0x55c5aacd6540" astParent="0x55c5ab0a6c20" valueType-type="bool"/>
+    <token id="0x55c5ab0a6e60" file="src/arch/riscv/interrupts.c" linenr="71" column="15" str=")" scope="0x55c5aad6b900" link="0x55c5ab0a6c20"/>
+    <token id="0x55c5aad6a580" file="src/arch/riscv/interrupts.c" linenr="71" column="0" str="{" scope="0x55c5aad6ba70" link="0x55c5aad6a6a0"/>
+    <token id="0x55c5ab0a6f80" file="src/arch/riscv/interrupts.c" linenr="72" column="13" str="CSRS" scope="0x55c5aad6ba70" type="name" astParent="0x55c5ab0a70a0"/>
+    <token id="0x55c5ab0a70a0" file="src/arch/riscv/interrupts.c" linenr="72" column="17" str="(" scope="0x55c5aad6ba70" link="0x55c5ab0a7520" astOperand1="0x55c5ab0a6f80" astOperand2="0x55c5ab0a72e0"/>
+    <token id="0x55c5ab0a71c0" file="src/arch/riscv/interrupts.c" linenr="72" column="18" str="sie" scope="0x55c5aad6ba70" type="name" astParent="0x55c5ab0a72e0"/>
+    <token id="0x55c5ab0a72e0" file="src/arch/riscv/interrupts.c" linenr="72" column="21" str="," scope="0x55c5aad6ba70" astParent="0x55c5ab0a70a0" astOperand1="0x55c5ab0a71c0" astOperand2="0x55c5ab0a7400"/>
+    <token id="0x55c5ab0a7400" file="src/arch/riscv/interrupts.c" linenr="72" column="23" str="SIE_SSIE" scope="0x55c5aad6ba70" type="name" astParent="0x55c5ab0a72e0"/>
+    <token id="0x55c5ab0a7520" file="src/arch/riscv/interrupts.c" linenr="72" column="31" str=")" scope="0x55c5aad6ba70" link="0x55c5ab0a70a0"/>
+    <token id="0x55c5ab0a7640" file="src/arch/riscv/interrupts.c" linenr="72" column="32" str=";" scope="0x55c5aad6ba70"/>
+    <token id="0x55c5aad6a6a0" file="src/arch/riscv/interrupts.c" linenr="72" column="0" str="}" scope="0x55c5aad6ba70" link="0x55c5aad6a580"/>
+    <token id="0x55c5ab0a7760" file="src/arch/riscv/interrupts.c" linenr="73" column="9" str="else" scope="0x55c5aad6b900" type="name"/>
+    <token id="0x55c5aad6a7c0" file="src/arch/riscv/interrupts.c" linenr="73" column="0" str="{" scope="0x55c5aad6bbe0" link="0x55c5aad6a8e0"/>
+    <token id="0x55c5ab0a7880" file="src/arch/riscv/interrupts.c" linenr="74" column="13" str="CSRC" scope="0x55c5aad6bbe0" type="name" astParent="0x55c5ab0a79a0"/>
+    <token id="0x55c5ab0a79a0" file="src/arch/riscv/interrupts.c" linenr="74" column="17" str="(" scope="0x55c5aad6bbe0" link="0x55c5aacbf940" astOperand1="0x55c5ab0a7880" astOperand2="0x55c5aacbf700"/>
+    <token id="0x55c5aac55720" file="src/arch/riscv/interrupts.c" linenr="74" column="18" str="sie" scope="0x55c5aad6bbe0" type="name" astParent="0x55c5aacbf700"/>
+    <token id="0x55c5aacbf700" file="src/arch/riscv/interrupts.c" linenr="74" column="21" str="," scope="0x55c5aad6bbe0" astParent="0x55c5ab0a79a0" astOperand1="0x55c5aac55720" astOperand2="0x55c5aacbf820"/>
+    <token id="0x55c5aacbf820" file="src/arch/riscv/interrupts.c" linenr="74" column="23" str="SIE_SSIE" scope="0x55c5aad6bbe0" type="name" astParent="0x55c5aacbf700"/>
+    <token id="0x55c5aacbf940" file="src/arch/riscv/interrupts.c" linenr="74" column="31" str=")" scope="0x55c5aad6bbe0" link="0x55c5ab0a79a0"/>
+    <token id="0x55c5aacbfa60" file="src/arch/riscv/interrupts.c" linenr="74" column="32" str=";" scope="0x55c5aad6bbe0"/>
+    <token id="0x55c5aad6a8e0" file="src/arch/riscv/interrupts.c" linenr="74" column="0" str="}" scope="0x55c5aad6bbe0" link="0x55c5aad6a7c0"/>
+    <token id="0x55c5aacbfb80" file="src/arch/riscv/interrupts.c" linenr="75" column="5" str="}" scope="0x55c5aad6b900" link="0x55c5ab0a69e0"/>
+    <token id="0x55c5aacbfca0" file="src/arch/riscv/interrupts.c" linenr="75" column="7" str="else" scope="0x55c5aad6b790" type="name"/>
+    <token id="0x55c5aacdb630" file="src/arch/riscv/interrupts.c" linenr="75" column="0" str="{" scope="0x55c5aad6bd50" link="0x55c5aad6b420"/>
+    <token id="0x55c5aacbfdc0" file="src/arch/riscv/interrupts.c" linenr="75" column="12" str="if" scope="0x55c5aad6bd50" type="name" astParent="0x55c5aacbfee0"/>
+    <token id="0x55c5aacbfee0" file="src/arch/riscv/interrupts.c" linenr="75" column="15" str="(" scope="0x55c5aad6bd50" link="0x55c5aacc0360" astOperand1="0x55c5aacbfdc0" astOperand2="0x55c5aacc0120"/>
+    <token id="0x55c5aacc0000" file="src/arch/riscv/interrupts.c" linenr="75" column="16" str="int_id" scope="0x55c5aad6bd50" type="name" varId="4" variable="0x55c5aacd6460" astParent="0x55c5aacc0120" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacc0120" file="src/arch/riscv/interrupts.c" linenr="75" column="23" str="==" scope="0x55c5aad6bd50" type="op" isComparisonOp="True" astParent="0x55c5aacbfee0" astOperand1="0x55c5aacc0000" astOperand2="0x55c5aacc0240" valueType-type="bool"/>
+    <token id="0x55c5aacc0240" file="src/arch/riscv/interrupts.c" linenr="75" column="26" str="TIMR_INT_ID" scope="0x55c5aad6bd50" type="name" astParent="0x55c5aacc0120"/>
+    <token id="0x55c5aacc0360" file="src/arch/riscv/interrupts.c" linenr="75" column="37" str=")" scope="0x55c5aad6bd50" link="0x55c5aacbfee0"/>
+    <token id="0x55c5aacc0480" file="src/arch/riscv/interrupts.c" linenr="75" column="39" str="{" scope="0x55c5aad6bec0" link="0x55c5aacc1b00"/>
+    <token id="0x55c5aacc05a0" file="src/arch/riscv/interrupts.c" linenr="76" column="9" str="if" scope="0x55c5aad6bec0" type="name" astParent="0x55c5aacc06c0"/>
+    <token id="0x55c5aacc06c0" file="src/arch/riscv/interrupts.c" linenr="76" column="12" str="(" scope="0x55c5aad6bec0" link="0x55c5aacc0900" astOperand1="0x55c5aacc05a0" astOperand2="0x55c5aacc07e0"/>
+    <token id="0x55c5aacc07e0" file="src/arch/riscv/interrupts.c" linenr="76" column="13" str="en" scope="0x55c5aad6bec0" type="name" varId="5" variable="0x55c5aacd6540" astParent="0x55c5aacc06c0" valueType-type="bool"/>
+    <token id="0x55c5aacc0900" file="src/arch/riscv/interrupts.c" linenr="76" column="15" str=")" scope="0x55c5aad6bec0" link="0x55c5aacc06c0"/>
+    <token id="0x55c5aad6aa00" file="src/arch/riscv/interrupts.c" linenr="76" column="0" str="{" scope="0x55c5aad6c030" link="0x55c5aad6ab20"/>
+    <token id="0x55c5aacc0a20" file="src/arch/riscv/interrupts.c" linenr="77" column="13" str="CSRS" scope="0x55c5aad6c030" type="name" astParent="0x55c5aacc0b40"/>
+    <token id="0x55c5aacc0b40" file="src/arch/riscv/interrupts.c" linenr="77" column="17" str="(" scope="0x55c5aad6c030" link="0x55c5aacc0fc0" astOperand1="0x55c5aacc0a20" astOperand2="0x55c5aacc0d80"/>
+    <token id="0x55c5aacc0c60" file="src/arch/riscv/interrupts.c" linenr="77" column="18" str="sie" scope="0x55c5aad6c030" type="name" astParent="0x55c5aacc0d80"/>
+    <token id="0x55c5aacc0d80" file="src/arch/riscv/interrupts.c" linenr="77" column="21" str="," scope="0x55c5aad6c030" astParent="0x55c5aacc0b40" astOperand1="0x55c5aacc0c60" astOperand2="0x55c5aacc0ea0"/>
+    <token id="0x55c5aacc0ea0" file="src/arch/riscv/interrupts.c" linenr="77" column="23" str="SIE_STIE" scope="0x55c5aad6c030" type="name" astParent="0x55c5aacc0d80"/>
+    <token id="0x55c5aacc0fc0" file="src/arch/riscv/interrupts.c" linenr="77" column="31" str=")" scope="0x55c5aad6c030" link="0x55c5aacc0b40"/>
+    <token id="0x55c5aacc10e0" file="src/arch/riscv/interrupts.c" linenr="77" column="32" str=";" scope="0x55c5aad6c030"/>
+    <token id="0x55c5aad6ab20" file="src/arch/riscv/interrupts.c" linenr="77" column="0" str="}" scope="0x55c5aad6c030" link="0x55c5aad6aa00"/>
+    <token id="0x55c5aacc1200" file="src/arch/riscv/interrupts.c" linenr="78" column="9" str="else" scope="0x55c5aad6bec0" type="name"/>
+    <token id="0x55c5aad6ac40" file="src/arch/riscv/interrupts.c" linenr="78" column="0" str="{" scope="0x55c5aad6c1a0" link="0x55c5aad6ad60"/>
+    <token id="0x55c5aacc1320" file="src/arch/riscv/interrupts.c" linenr="79" column="13" str="CSRC" scope="0x55c5aad6c1a0" type="name" astParent="0x55c5aacc1440"/>
+    <token id="0x55c5aacc1440" file="src/arch/riscv/interrupts.c" linenr="79" column="17" str="(" scope="0x55c5aad6c1a0" link="0x55c5aacc18c0" astOperand1="0x55c5aacc1320" astOperand2="0x55c5aacc1680"/>
+    <token id="0x55c5aacc1560" file="src/arch/riscv/interrupts.c" linenr="79" column="18" str="sie" scope="0x55c5aad6c1a0" type="name" astParent="0x55c5aacc1680"/>
+    <token id="0x55c5aacc1680" file="src/arch/riscv/interrupts.c" linenr="79" column="21" str="," scope="0x55c5aad6c1a0" astParent="0x55c5aacc1440" astOperand1="0x55c5aacc1560" astOperand2="0x55c5aacc17a0"/>
+    <token id="0x55c5aacc17a0" file="src/arch/riscv/interrupts.c" linenr="79" column="23" str="SIE_STIE" scope="0x55c5aad6c1a0" type="name" astParent="0x55c5aacc1680"/>
+    <token id="0x55c5aacc18c0" file="src/arch/riscv/interrupts.c" linenr="79" column="31" str=")" scope="0x55c5aad6c1a0" link="0x55c5aacc1440"/>
+    <token id="0x55c5aacc19e0" file="src/arch/riscv/interrupts.c" linenr="79" column="32" str=";" scope="0x55c5aad6c1a0"/>
+    <token id="0x55c5aad6ad60" file="src/arch/riscv/interrupts.c" linenr="79" column="0" str="}" scope="0x55c5aad6c1a0" link="0x55c5aad6ac40"/>
+    <token id="0x55c5aacc1b00" file="src/arch/riscv/interrupts.c" linenr="80" column="5" str="}" scope="0x55c5aad6bec0" link="0x55c5aacc0480"/>
+    <token id="0x55c5aacc1c20" file="src/arch/riscv/interrupts.c" linenr="80" column="7" str="else" scope="0x55c5aad6bd50" type="name"/>
+    <token id="0x55c5aacd9590" file="src/arch/riscv/interrupts.c" linenr="80" column="12" str="{" scope="0x55c5aad6c310" link="0x55c5aacdad30"/>
+    <token id="0x55c5aacd96b0" file="src/arch/riscv/interrupts.c" linenr="81" column="9" str="plic_set_enbl" scope="0x55c5aad6c310" type="name" astParent="0x55c5aacd97d0"/>
+    <token id="0x55c5aacd97d0" file="src/arch/riscv/interrupts.c" linenr="81" column="22" str="(" scope="0x55c5aad6c310" link="0x55c5aacda310" astOperand1="0x55c5aacd96b0" astOperand2="0x55c5aacda0d0"/>
+    <token id="0x55c5aacd98f0" file="src/arch/riscv/interrupts.c" linenr="81" column="23" str="cpu" scope="0x55c5aad6c310" type="name" astParent="0x55c5aacd9a10"/>
+    <token id="0x55c5aacd9a10" file="src/arch/riscv/interrupts.c" linenr="81" column="26" str="." scope="0x55c5aad6c310" astParent="0x55c5aacd9c50" astOperand1="0x55c5aacd98f0" astOperand2="0x55c5aacd9b30"/>
+    <token id="0x55c5aacd9b30" file="src/arch/riscv/interrupts.c" linenr="81" column="27" str="arch" scope="0x55c5aad6c310" type="name" astParent="0x55c5aacd9a10"/>
+    <token id="0x55c5aacd9c50" file="src/arch/riscv/interrupts.c" linenr="81" column="31" str="." scope="0x55c5aad6c310" astParent="0x55c5aacd9e90" astOperand1="0x55c5aacd9a10" astOperand2="0x55c5aacd9d70"/>
+    <token id="0x55c5aacd9d70" file="src/arch/riscv/interrupts.c" linenr="81" column="32" str="plic_cntxt" scope="0x55c5aad6c310" type="name" astParent="0x55c5aacd9c50"/>
+    <token id="0x55c5aacd9e90" file="src/arch/riscv/interrupts.c" linenr="81" column="42" str="," scope="0x55c5aad6c310" astParent="0x55c5aacda0d0" astOperand1="0x55c5aacd9c50" astOperand2="0x55c5aacd9fb0"/>
+    <token id="0x55c5aacd9fb0" file="src/arch/riscv/interrupts.c" linenr="81" column="44" str="int_id" scope="0x55c5aad6c310" type="name" varId="4" variable="0x55c5aacd6460" astParent="0x55c5aacd9e90" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacda0d0" file="src/arch/riscv/interrupts.c" linenr="81" column="50" str="," scope="0x55c5aad6c310" astParent="0x55c5aacd97d0" astOperand1="0x55c5aacd9e90" astOperand2="0x55c5aacda1f0"/>
+    <token id="0x55c5aacda1f0" file="src/arch/riscv/interrupts.c" linenr="81" column="52" str="en" scope="0x55c5aad6c310" type="name" varId="5" variable="0x55c5aacd6540" astParent="0x55c5aacda0d0" valueType-type="bool"/>
+    <token id="0x55c5aacda310" file="src/arch/riscv/interrupts.c" linenr="81" column="54" str=")" scope="0x55c5aad6c310" link="0x55c5aacd97d0"/>
+    <token id="0x55c5aacda430" file="src/arch/riscv/interrupts.c" linenr="81" column="55" str=";" scope="0x55c5aad6c310"/>
+    <token id="0x55c5aacda550" file="src/arch/riscv/interrupts.c" linenr="82" column="9" str="plic_set_prio" scope="0x55c5aad6c310" type="name" astParent="0x55c5aacda670"/>
+    <token id="0x55c5aacda670" file="src/arch/riscv/interrupts.c" linenr="82" column="22" str="(" scope="0x55c5aad6c310" link="0x55c5aacdaaf0" astOperand1="0x55c5aacda550" astOperand2="0x55c5aacda8b0"/>
+    <token id="0x55c5aacda790" file="src/arch/riscv/interrupts.c" linenr="82" column="23" str="int_id" scope="0x55c5aad6c310" type="name" varId="4" variable="0x55c5aacd6460" astParent="0x55c5aacda8b0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacda8b0" file="src/arch/riscv/interrupts.c" linenr="82" column="29" str="," scope="0x55c5aad6c310" astParent="0x55c5aacda670" astOperand1="0x55c5aacda790" astOperand2="0x55c5aacda9d0"/>
+    <token id="0x55c5aacda9d0" file="src/arch/riscv/interrupts.c" linenr="82" column="31" str="254" scope="0x55c5aad6c310" type="number" isInt="True" values="0x55c5aacd58a0" astParent="0x55c5aacda8b0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aacdaaf0" file="src/arch/riscv/interrupts.c" linenr="82" column="35" str=")" scope="0x55c5aad6c310" link="0x55c5aacda670"/>
+    <token id="0x55c5aacdac10" file="src/arch/riscv/interrupts.c" linenr="82" column="36" str=";" scope="0x55c5aad6c310"/>
+    <token id="0x55c5aacdad30" file="src/arch/riscv/interrupts.c" linenr="83" column="5" str="}" scope="0x55c5aad6c310" link="0x55c5aacd9590"/>
+    <token id="0x55c5aad6b420" file="src/arch/riscv/interrupts.c" linenr="83" column="0" str="}" scope="0x55c5aad6bd50" link="0x55c5aacdb630"/>
+    <token id="0x55c5aacdae50" file="src/arch/riscv/interrupts.c" linenr="84" column="1" str="}" scope="0x55c5aad6b790" link="0x55c5ab0a6200"/>
+    <token id="0x55c5aacdaf70" file="src/arch/riscv/interrupts.c" linenr="86" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aacdb090" file="src/arch/riscv/interrupts.c" linenr="86" column="6" str="interrupts_arch_handle" scope="0x55c5aac781c0" type="name" function="0x55c5ab0b01c0" astParent="0x55c5aacdb1b0"/>
+    <token id="0x55c5aacdb1b0" file="src/arch/riscv/interrupts.c" linenr="86" column="28" str="(" scope="0x55c5aac781c0" link="0x55c5aacdb2d0" astOperand1="0x55c5aacdb090" valueType-type="void"/>
+    <token id="0x55c5aacdb2d0" file="src/arch/riscv/interrupts.c" linenr="86" column="29" str=")" scope="0x55c5aac781c0" link="0x55c5aacdb1b0"/>
+    <token id="0x55c5aacdb3f0" file="src/arch/riscv/interrupts.c" linenr="87" column="1" str="{" scope="0x55c5aad6c480" link="0x55c5aacbdb10"/>
+    <token id="0x55c5aacdb510" file="src/arch/riscv/interrupts.c" linenr="88" column="14" str="long" scope="0x55c5aad6c480" type="name" isUnsigned="true"/>
+    <token id="0x55c5aacdb750" file="src/arch/riscv/interrupts.c" linenr="88" column="19" str="_scause" scope="0x55c5aad6c480" type="name" varId="6" variable="0x55c5aac5e640" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdb870" file="src/arch/riscv/interrupts.c" linenr="88" column="27" str=";" scope="0x55c5aad6c480"/>
+    <token id="0x55c5aad6b1e0" file="src/arch/riscv/interrupts.c" linenr="88" column="19" str="_scause" scope="0x55c5aad6c480" type="name" varId="6" variable="0x55c5aac5e640" astParent="0x55c5aad6b300" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aad6b300" file="src/arch/riscv/interrupts.c" linenr="88" column="27" str="=" scope="0x55c5aad6c480" type="op" isAssignmentOp="True" astOperand1="0x55c5aad6b1e0" astOperand2="0x55c5aacdbab0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacdb990" file="src/arch/riscv/interrupts.c" linenr="88" column="29" str="CSRR" scope="0x55c5aad6c480" type="name" astParent="0x55c5aacdbab0"/>
+    <token id="0x55c5aacdbab0" file="src/arch/riscv/interrupts.c" linenr="88" column="33" str="(" scope="0x55c5aad6c480" link="0x55c5ab06ffe0" astParent="0x55c5aad6b300" astOperand1="0x55c5aacdb990" astOperand2="0x55c5aacdbbd0"/>
+    <token id="0x55c5aacdbbd0" file="src/arch/riscv/interrupts.c" linenr="88" column="34" str="scause" scope="0x55c5aad6c480" type="name" astParent="0x55c5aacdbab0"/>
+    <token id="0x55c5ab06ffe0" file="src/arch/riscv/interrupts.c" linenr="88" column="40" str=")" scope="0x55c5aad6c480" link="0x55c5aacdbab0"/>
+    <token id="0x55c5ab070100" file="src/arch/riscv/interrupts.c" linenr="88" column="41" str=";" scope="0x55c5aad6c480"/>
+    <token id="0x55c5ab070220" file="src/arch/riscv/interrupts.c" linenr="90" column="5" str="switch" scope="0x55c5aad6c480" type="name" astParent="0x55c5ab070340"/>
+    <token id="0x55c5ab070340" file="src/arch/riscv/interrupts.c" linenr="90" column="12" str="(" scope="0x55c5aad6c480" link="0x55c5ab070580" astOperand1="0x55c5ab070220" astOperand2="0x55c5ab070460"/>
+    <token id="0x55c5ab070460" file="src/arch/riscv/interrupts.c" linenr="90" column="13" str="_scause" scope="0x55c5aad6c480" type="name" varId="6" variable="0x55c5aac5e640" astParent="0x55c5ab070340" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab070580" file="src/arch/riscv/interrupts.c" linenr="90" column="20" str=")" scope="0x55c5aad6c480" link="0x55c5ab070340"/>
+    <token id="0x55c5ab0706a0" file="src/arch/riscv/interrupts.c" linenr="90" column="22" str="{" scope="0x55c5aad6c5f0" link="0x55c5aacbd9f0"/>
+    <token id="0x55c5ab0707c0" file="src/arch/riscv/interrupts.c" linenr="91" column="9" str="case" scope="0x55c5aad6c5f0" type="name" astOperand1="0x55c5ab0708e0"/>
+    <token id="0x55c5ab0708e0" file="src/arch/riscv/interrupts.c" linenr="91" column="14" str="SCAUSE_CODE_SSI" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab0707c0"/>
+    <token id="0x55c5ab070a00" file="src/arch/riscv/interrupts.c" linenr="91" column="29" str=":" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab0a9080" file="src/arch/riscv/interrupts.c" linenr="91" column="0" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab070b20" file="src/arch/riscv/interrupts.c" linenr="92" column="13" str="interrupts_handle" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab070c40"/>
+    <token id="0x55c5ab070c40" file="src/arch/riscv/interrupts.c" linenr="92" column="30" str="(" scope="0x55c5aad6c5f0" link="0x55c5ab070e80" astOperand1="0x55c5ab070b20" astOperand2="0x55c5ab070d60"/>
+    <token id="0x55c5ab070d60" file="src/arch/riscv/interrupts.c" linenr="92" column="31" str="SOFT_INT_ID" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab070c40"/>
+    <token id="0x55c5ab070e80" file="src/arch/riscv/interrupts.c" linenr="92" column="42" str=")" scope="0x55c5aad6c5f0" link="0x55c5ab070c40"/>
+    <token id="0x55c5ab070fa0" file="src/arch/riscv/interrupts.c" linenr="92" column="43" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab0710c0" file="src/arch/riscv/interrupts.c" linenr="93" column="13" str="CSRC" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab0711e0"/>
+    <token id="0x55c5ab0711e0" file="src/arch/riscv/interrupts.c" linenr="93" column="17" str="(" scope="0x55c5aad6c5f0" link="0x55c5ab071660" astOperand1="0x55c5ab0710c0" astOperand2="0x55c5ab071420"/>
+    <token id="0x55c5ab071300" file="src/arch/riscv/interrupts.c" linenr="93" column="18" str="sip" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab071420"/>
+    <token id="0x55c5ab071420" file="src/arch/riscv/interrupts.c" linenr="93" column="21" str="," scope="0x55c5aad6c5f0" astParent="0x55c5ab0711e0" astOperand1="0x55c5ab071300" astOperand2="0x55c5ab071540"/>
+    <token id="0x55c5ab071540" file="src/arch/riscv/interrupts.c" linenr="93" column="23" str="SIP_SSIP" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab071420"/>
+    <token id="0x55c5ab071660" file="src/arch/riscv/interrupts.c" linenr="93" column="31" str=")" scope="0x55c5aad6c5f0" link="0x55c5ab0711e0"/>
+    <token id="0x55c5ab071780" file="src/arch/riscv/interrupts.c" linenr="93" column="32" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab0718a0" file="src/arch/riscv/interrupts.c" linenr="94" column="13" str="break" scope="0x55c5aad6c5f0" type="name"/>
+    <token id="0x55c5ab0719c0" file="src/arch/riscv/interrupts.c" linenr="94" column="18" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab071ae0" file="src/arch/riscv/interrupts.c" linenr="95" column="9" str="case" scope="0x55c5aad6c5f0" type="name" astOperand1="0x55c5ab071c00"/>
+    <token id="0x55c5ab071c00" file="src/arch/riscv/interrupts.c" linenr="95" column="14" str="SCAUSE_CODE_STI" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab071ae0"/>
+    <token id="0x55c5ab071d20" file="src/arch/riscv/interrupts.c" linenr="95" column="29" str=":" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aad6ae80" file="src/arch/riscv/interrupts.c" linenr="95" column="0" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab071e40" file="src/arch/riscv/interrupts.c" linenr="96" column="13" str="interrupts_handle" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab071f60"/>
+    <token id="0x55c5ab071f60" file="src/arch/riscv/interrupts.c" linenr="96" column="30" str="(" scope="0x55c5aad6c5f0" link="0x55c5ab0721a0" astOperand1="0x55c5ab071e40" astOperand2="0x55c5ab072080"/>
+    <token id="0x55c5ab072080" file="src/arch/riscv/interrupts.c" linenr="96" column="31" str="TIMR_INT_ID" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab071f60"/>
+    <token id="0x55c5ab0721a0" file="src/arch/riscv/interrupts.c" linenr="96" column="42" str=")" scope="0x55c5aad6c5f0" link="0x55c5ab071f60"/>
+    <token id="0x55c5ab0722c0" file="src/arch/riscv/interrupts.c" linenr="96" column="43" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab0723e0" file="src/arch/riscv/interrupts.c" linenr="104" column="13" str="break" scope="0x55c5aad6c5f0" type="name"/>
+    <token id="0x55c5ab072500" file="src/arch/riscv/interrupts.c" linenr="104" column="18" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5ab072620" file="src/arch/riscv/interrupts.c" linenr="105" column="9" str="case" scope="0x55c5aad6c5f0" type="name" astOperand1="0x55c5aacbcc70"/>
+    <token id="0x55c5aacbcc70" file="src/arch/riscv/interrupts.c" linenr="105" column="14" str="SCAUSE_CODE_SEI" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5ab072620"/>
+    <token id="0x55c5aacbcd90" file="src/arch/riscv/interrupts.c" linenr="105" column="29" str=":" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aad6afa0" file="src/arch/riscv/interrupts.c" linenr="105" column="0" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aacbceb0" file="src/arch/riscv/interrupts.c" linenr="106" column="13" str="plic_handle" scope="0x55c5aad6c5f0" type="name" astParent="0x55c5aacbcfd0"/>
+    <token id="0x55c5aacbcfd0" file="src/arch/riscv/interrupts.c" linenr="106" column="24" str="(" scope="0x55c5aad6c5f0" link="0x55c5aacbd0f0" astOperand1="0x55c5aacbceb0"/>
+    <token id="0x55c5aacbd0f0" file="src/arch/riscv/interrupts.c" linenr="106" column="25" str=")" scope="0x55c5aad6c5f0" link="0x55c5aacbcfd0"/>
+    <token id="0x55c5aacbd210" file="src/arch/riscv/interrupts.c" linenr="106" column="26" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aacbd330" file="src/arch/riscv/interrupts.c" linenr="107" column="13" str="break" scope="0x55c5aad6c5f0" type="name"/>
+    <token id="0x55c5aacbd450" file="src/arch/riscv/interrupts.c" linenr="107" column="18" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aacbd570" file="src/arch/riscv/interrupts.c" linenr="108" column="9" str="default" scope="0x55c5aad6c5f0" type="name"/>
+    <token id="0x55c5aacbd690" file="src/arch/riscv/interrupts.c" linenr="108" column="16" str=":" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aad6b0c0" file="src/arch/riscv/interrupts.c" linenr="108" column="0" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aacbd7b0" file="src/arch/riscv/interrupts.c" linenr="110" column="13" str="break" scope="0x55c5aad6c5f0" type="name"/>
+    <token id="0x55c5aacbd8d0" file="src/arch/riscv/interrupts.c" linenr="110" column="18" str=";" scope="0x55c5aad6c5f0"/>
+    <token id="0x55c5aacbd9f0" file="src/arch/riscv/interrupts.c" linenr="111" column="5" str="}" scope="0x55c5aad6c5f0" link="0x55c5ab0706a0"/>
+    <token id="0x55c5aacbdb10" file="src/arch/riscv/interrupts.c" linenr="112" column="1" str="}" scope="0x55c5aad6c480" link="0x55c5aacdb3f0"/>
+    <token id="0x55c5aacbdc30" file="src/arch/riscv/interrupts.c" linenr="114" column="1" str="bool" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aacbdd50" file="src/arch/riscv/interrupts.c" linenr="114" column="6" str="interrupts_arch_check" scope="0x55c5aac781c0" type="name" function="0x55c5ab0b1b20" astParent="0x55c5aacbde70"/>
+    <token id="0x55c5aacbde70" file="src/arch/riscv/interrupts.c" linenr="114" column="27" str="(" scope="0x55c5aac781c0" link="0x55c5aacbe1d0" astOperand1="0x55c5aacbdd50" astOperand2="0x55c5aacbe0b0" valueType-type="bool"/>
+    <token id="0x55c5aacbdf90" file="src/arch/riscv/interrupts.c" linenr="114" column="28" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aacbe0b0" file="src/arch/riscv/interrupts.c" linenr="114" column="37" str="int_id" scope="0x55c5aac781c0" type="name" varId="7" variable="0x55c5aacd6620" astParent="0x55c5aacbde70" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacbe1d0" file="src/arch/riscv/interrupts.c" linenr="114" column="43" str=")" scope="0x55c5aac781c0" link="0x55c5aacbde70"/>
+    <token id="0x55c5aacbe2f0" file="src/arch/riscv/interrupts.c" linenr="115" column="1" str="{" scope="0x55c5aad6c760" link="0x55c5aac6d930"/>
+    <token id="0x55c5aacbe410" file="src/arch/riscv/interrupts.c" linenr="116" column="5" str="if" scope="0x55c5aad6c760" type="name" astParent="0x55c5aacbe530"/>
+    <token id="0x55c5aacbe530" file="src/arch/riscv/interrupts.c" linenr="116" column="8" str="(" scope="0x55c5aad6c760" link="0x55c5aacbe9b0" astOperand1="0x55c5aacbe410" astOperand2="0x55c5aacbe770"/>
+    <token id="0x55c5aacbe650" file="src/arch/riscv/interrupts.c" linenr="116" column="9" str="int_id" scope="0x55c5aad6c760" type="name" varId="7" variable="0x55c5aacd6620" astParent="0x55c5aacbe770" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacbe770" file="src/arch/riscv/interrupts.c" linenr="116" column="16" str="==" scope="0x55c5aad6c760" type="op" isComparisonOp="True" astParent="0x55c5aacbe530" astOperand1="0x55c5aacbe650" astOperand2="0x55c5aacbe890" valueType-type="bool"/>
+    <token id="0x55c5aacbe890" file="src/arch/riscv/interrupts.c" linenr="116" column="19" str="SOFT_INT_ID" scope="0x55c5aad6c760" type="name" astParent="0x55c5aacbe770"/>
+    <token id="0x55c5aacbe9b0" file="src/arch/riscv/interrupts.c" linenr="116" column="30" str=")" scope="0x55c5aad6c760" link="0x55c5aacbe530"/>
+    <token id="0x55c5aacbead0" file="src/arch/riscv/interrupts.c" linenr="116" column="32" str="{" scope="0x55c5aad6c8d0" link="0x55c5aacbf4f0"/>
+    <token id="0x55c5aacbebf0" file="src/arch/riscv/interrupts.c" linenr="117" column="9" str="return" scope="0x55c5aad6c8d0" type="name" astOperand1="0x55c5aacbf190" valueType-type="bool"/>
+    <token id="0x55c5aacbed10" file="src/arch/riscv/interrupts.c" linenr="117" column="16" str="CSRR" scope="0x55c5aad6c8d0" type="name" astParent="0x55c5aacbee30"/>
+    <token id="0x55c5aacbee30" file="src/arch/riscv/interrupts.c" linenr="117" column="20" str="(" scope="0x55c5aad6c8d0" link="0x55c5aacbf070" astParent="0x55c5aacbf190" astOperand1="0x55c5aacbed10" astOperand2="0x55c5aacbef50"/>
+    <token id="0x55c5aacbef50" file="src/arch/riscv/interrupts.c" linenr="117" column="21" str="sip" scope="0x55c5aad6c8d0" type="name" astParent="0x55c5aacbee30"/>
+    <token id="0x55c5aacbf070" file="src/arch/riscv/interrupts.c" linenr="117" column="24" str=")" scope="0x55c5aad6c8d0" link="0x55c5aacbee30"/>
+    <token id="0x55c5aacbf190" file="src/arch/riscv/interrupts.c" linenr="117" column="26" str="&amp;" scope="0x55c5aad6c8d0" type="op" astParent="0x55c5aacbebf0" astOperand1="0x55c5aacbee30" astOperand2="0x55c5aacbf2b0"/>
+    <token id="0x55c5aacbf2b0" file="src/arch/riscv/interrupts.c" linenr="117" column="28" str="SIP_SSIP" scope="0x55c5aad6c8d0" type="name" astParent="0x55c5aacbf190"/>
+    <token id="0x55c5aacbf3d0" file="src/arch/riscv/interrupts.c" linenr="117" column="36" str=";" scope="0x55c5aad6c8d0"/>
+    <token id="0x55c5aacbf4f0" file="src/arch/riscv/interrupts.c" linenr="118" column="5" str="}" scope="0x55c5aad6c8d0" link="0x55c5aacbead0"/>
+    <token id="0x55c5aac6bbf0" file="src/arch/riscv/interrupts.c" linenr="118" column="7" str="else" scope="0x55c5aad6c760" type="name"/>
+    <token id="0x55c5aad6b540" file="src/arch/riscv/interrupts.c" linenr="118" column="0" str="{" scope="0x55c5aad6ca40" link="0x55c5aad6b660"/>
+    <token id="0x55c5aac6bd10" file="src/arch/riscv/interrupts.c" linenr="118" column="12" str="if" scope="0x55c5aad6ca40" type="name" astParent="0x55c5aac6be30"/>
+    <token id="0x55c5aac6be30" file="src/arch/riscv/interrupts.c" linenr="118" column="15" str="(" scope="0x55c5aad6ca40" link="0x55c5aac6c2b0" astOperand1="0x55c5aac6bd10" astOperand2="0x55c5aac6c070"/>
+    <token id="0x55c5aac6bf50" file="src/arch/riscv/interrupts.c" linenr="118" column="16" str="int_id" scope="0x55c5aad6ca40" type="name" varId="7" variable="0x55c5aacd6620" astParent="0x55c5aac6c070" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6c070" file="src/arch/riscv/interrupts.c" linenr="118" column="23" str="==" scope="0x55c5aad6ca40" type="op" isComparisonOp="True" astParent="0x55c5aac6be30" astOperand1="0x55c5aac6bf50" astOperand2="0x55c5aac6c190" valueType-type="bool"/>
+    <token id="0x55c5aac6c190" file="src/arch/riscv/interrupts.c" linenr="118" column="26" str="TIMR_INT_ID" scope="0x55c5aad6ca40" type="name" astParent="0x55c5aac6c070"/>
+    <token id="0x55c5aac6c2b0" file="src/arch/riscv/interrupts.c" linenr="118" column="37" str=")" scope="0x55c5aad6ca40" link="0x55c5aac6be30"/>
+    <token id="0x55c5aac6c3d0" file="src/arch/riscv/interrupts.c" linenr="118" column="39" str="{" scope="0x55c5aad6cbb0" link="0x55c5aac6cdf0"/>
+    <token id="0x55c5aac6c4f0" file="src/arch/riscv/interrupts.c" linenr="119" column="9" str="return" scope="0x55c5aad6cbb0" type="name" astOperand1="0x55c5aac6ca90" valueType-type="bool"/>
+    <token id="0x55c5aac6c610" file="src/arch/riscv/interrupts.c" linenr="119" column="16" str="CSRR" scope="0x55c5aad6cbb0" type="name" astParent="0x55c5aac6c730"/>
+    <token id="0x55c5aac6c730" file="src/arch/riscv/interrupts.c" linenr="119" column="20" str="(" scope="0x55c5aad6cbb0" link="0x55c5aac6c970" astParent="0x55c5aac6ca90" astOperand1="0x55c5aac6c610" astOperand2="0x55c5aac6c850"/>
+    <token id="0x55c5aac6c850" file="src/arch/riscv/interrupts.c" linenr="119" column="21" str="sip" scope="0x55c5aad6cbb0" type="name" astParent="0x55c5aac6c730"/>
+    <token id="0x55c5aac6c970" file="src/arch/riscv/interrupts.c" linenr="119" column="24" str=")" scope="0x55c5aad6cbb0" link="0x55c5aac6c730"/>
+    <token id="0x55c5aac6ca90" file="src/arch/riscv/interrupts.c" linenr="119" column="26" str="&amp;" scope="0x55c5aad6cbb0" type="op" astParent="0x55c5aac6c4f0" astOperand1="0x55c5aac6c730" astOperand2="0x55c5aac6cbb0"/>
+    <token id="0x55c5aac6cbb0" file="src/arch/riscv/interrupts.c" linenr="119" column="28" str="SIP_STIP" scope="0x55c5aad6cbb0" type="name" astParent="0x55c5aac6ca90"/>
+    <token id="0x55c5aac6ccd0" file="src/arch/riscv/interrupts.c" linenr="119" column="36" str=";" scope="0x55c5aad6cbb0"/>
+    <token id="0x55c5aac6cdf0" file="src/arch/riscv/interrupts.c" linenr="120" column="5" str="}" scope="0x55c5aad6cbb0" link="0x55c5aac6c3d0"/>
+    <token id="0x55c5aac6cf10" file="src/arch/riscv/interrupts.c" linenr="120" column="7" str="else" scope="0x55c5aad6ca40" type="name"/>
+    <token id="0x55c5aac6d030" file="src/arch/riscv/interrupts.c" linenr="120" column="12" str="{" scope="0x55c5aad6cd20" link="0x55c5aac6d810"/>
+    <token id="0x55c5aac6d150" file="src/arch/riscv/interrupts.c" linenr="121" column="9" str="return" scope="0x55c5aad6cd20" type="name" astOperand1="0x55c5aac6d390" valueType-type="bool"/>
+    <token id="0x55c5aac6d270" file="src/arch/riscv/interrupts.c" linenr="121" column="16" str="plic_get_pend" scope="0x55c5aad6cd20" type="name" astParent="0x55c5aac6d390"/>
+    <token id="0x55c5aac6d390" file="src/arch/riscv/interrupts.c" linenr="121" column="29" str="(" scope="0x55c5aad6cd20" link="0x55c5aac6d5d0" astParent="0x55c5aac6d150" astOperand1="0x55c5aac6d270" astOperand2="0x55c5aac6d4b0"/>
+    <token id="0x55c5aac6d4b0" file="src/arch/riscv/interrupts.c" linenr="121" column="30" str="int_id" scope="0x55c5aad6cd20" type="name" varId="7" variable="0x55c5aacd6620" astParent="0x55c5aac6d390" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6d5d0" file="src/arch/riscv/interrupts.c" linenr="121" column="36" str=")" scope="0x55c5aad6cd20" link="0x55c5aac6d390"/>
+    <token id="0x55c5aac6d6f0" file="src/arch/riscv/interrupts.c" linenr="121" column="37" str=";" scope="0x55c5aad6cd20"/>
+    <token id="0x55c5aac6d810" file="src/arch/riscv/interrupts.c" linenr="122" column="5" str="}" scope="0x55c5aad6cd20" link="0x55c5aac6d030"/>
+    <token id="0x55c5aad6b660" file="src/arch/riscv/interrupts.c" linenr="122" column="0" str="}" scope="0x55c5aad6ca40" link="0x55c5aad6b540"/>
+    <token id="0x55c5aac6d930" file="src/arch/riscv/interrupts.c" linenr="123" column="1" str="}" scope="0x55c5aad6c760" link="0x55c5aacbe2f0"/>
+    <token id="0x55c5aac6da50" file="src/arch/riscv/interrupts.c" linenr="125" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac6db70" file="src/arch/riscv/interrupts.c" linenr="125" column="6" str="interrupts_arch_clear" scope="0x55c5aac781c0" type="name" function="0x55c5aac64d00" astParent="0x55c5aac6dc90"/>
+    <token id="0x55c5aac6dc90" file="src/arch/riscv/interrupts.c" linenr="125" column="27" str="(" scope="0x55c5aac781c0" link="0x55c5aac6dff0" astOperand1="0x55c5aac6db70" astOperand2="0x55c5aac6ded0" valueType-type="void"/>
+    <token id="0x55c5aac6ddb0" file="src/arch/riscv/interrupts.c" linenr="125" column="28" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac6ded0" file="src/arch/riscv/interrupts.c" linenr="125" column="37" str="int_id" scope="0x55c5aac781c0" type="name" varId="8" variable="0x55c5aacd6700" astParent="0x55c5aac6dc90" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6dff0" file="src/arch/riscv/interrupts.c" linenr="125" column="43" str=")" scope="0x55c5aac781c0" link="0x55c5aac6dc90"/>
+    <token id="0x55c5aac6e110" file="src/arch/riscv/interrupts.c" linenr="126" column="1" str="{" scope="0x55c5aad6ce90" link="0x55c5ab0a8e40"/>
+    <token id="0x55c5aac6e230" file="src/arch/riscv/interrupts.c" linenr="127" column="5" str="if" scope="0x55c5aad6ce90" type="name" astParent="0x55c5aac6e350"/>
+    <token id="0x55c5aac6e350" file="src/arch/riscv/interrupts.c" linenr="127" column="8" str="(" scope="0x55c5aad6ce90" link="0x55c5aac6e7d0" astOperand1="0x55c5aac6e230" astOperand2="0x55c5aac6e590"/>
+    <token id="0x55c5aac6e470" file="src/arch/riscv/interrupts.c" linenr="127" column="9" str="int_id" scope="0x55c5aad6ce90" type="name" varId="8" variable="0x55c5aacd6700" astParent="0x55c5aac6e590" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6e590" file="src/arch/riscv/interrupts.c" linenr="127" column="16" str="==" scope="0x55c5aad6ce90" type="op" isComparisonOp="True" astParent="0x55c5aac6e350" astOperand1="0x55c5aac6e470" astOperand2="0x55c5aac6e6b0" valueType-type="bool"/>
+    <token id="0x55c5aac6e6b0" file="src/arch/riscv/interrupts.c" linenr="127" column="19" str="SOFT_INT_ID" scope="0x55c5aad6ce90" type="name" astParent="0x55c5aac6e590"/>
+    <token id="0x55c5aac6e7d0" file="src/arch/riscv/interrupts.c" linenr="127" column="30" str=")" scope="0x55c5aad6ce90" link="0x55c5aac6e350"/>
+    <token id="0x55c5ab0a7b20" file="src/arch/riscv/interrupts.c" linenr="127" column="32" str="{" scope="0x55c5aad6d000" link="0x55c5ab0a8420"/>
+    <token id="0x55c5ab0a7c40" file="src/arch/riscv/interrupts.c" linenr="128" column="9" str="CSRC" scope="0x55c5aad6d000" type="name" astParent="0x55c5ab0a7d60"/>
+    <token id="0x55c5ab0a7d60" file="src/arch/riscv/interrupts.c" linenr="128" column="13" str="(" scope="0x55c5aad6d000" link="0x55c5ab0a81e0" astOperand1="0x55c5ab0a7c40" astOperand2="0x55c5ab0a7fa0"/>
+    <token id="0x55c5ab0a7e80" file="src/arch/riscv/interrupts.c" linenr="128" column="14" str="sip" scope="0x55c5aad6d000" type="name" astParent="0x55c5ab0a7fa0"/>
+    <token id="0x55c5ab0a7fa0" file="src/arch/riscv/interrupts.c" linenr="128" column="17" str="," scope="0x55c5aad6d000" astParent="0x55c5ab0a7d60" astOperand1="0x55c5ab0a7e80" astOperand2="0x55c5ab0a80c0"/>
+    <token id="0x55c5ab0a80c0" file="src/arch/riscv/interrupts.c" linenr="128" column="19" str="SIP_SSIP" scope="0x55c5aad6d000" type="name" astParent="0x55c5ab0a7fa0"/>
+    <token id="0x55c5ab0a81e0" file="src/arch/riscv/interrupts.c" linenr="128" column="27" str=")" scope="0x55c5aad6d000" link="0x55c5ab0a7d60"/>
+    <token id="0x55c5ab0a8300" file="src/arch/riscv/interrupts.c" linenr="128" column="28" str=";" scope="0x55c5aad6d000"/>
+    <token id="0x55c5ab0a8420" file="src/arch/riscv/interrupts.c" linenr="129" column="5" str="}" scope="0x55c5aad6d000" link="0x55c5ab0a7b20"/>
+    <token id="0x55c5ab0a8540" file="src/arch/riscv/interrupts.c" linenr="129" column="7" str="else" scope="0x55c5aad6ce90" type="name"/>
+    <token id="0x55c5ab0a8660" file="src/arch/riscv/interrupts.c" linenr="129" column="12" str="{" scope="0x55c5aad6d170" link="0x55c5ab0a8d20"/>
+    <token id="0x55c5ab0a8780" file="src/arch/riscv/interrupts.c" linenr="134" column="9" str="WARNING" scope="0x55c5aad6d170" type="name" astParent="0x55c5ab0a88a0"/>
+    <token id="0x55c5ab0a88a0" file="src/arch/riscv/interrupts.c" linenr="134" column="16" str="(" scope="0x55c5aad6d170" link="0x55c5ab0a8ae0" astOperand1="0x55c5ab0a8780" astOperand2="0x55c5ab0a89c0"/>
+    <token id="0x55c5ab0a89c0" file="src/arch/riscv/interrupts.c" linenr="134" column="17" str="&quot;trying to clear timer or external interrupt&quot;" scope="0x55c5aad6d170" type="string" strlen="43" values="0x55c5aac5ab50" astParent="0x55c5ab0a88a0" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5ab0a8ae0" file="src/arch/riscv/interrupts.c" linenr="134" column="62" str=")" scope="0x55c5aad6d170" link="0x55c5ab0a88a0"/>
+    <token id="0x55c5ab0a8c00" file="src/arch/riscv/interrupts.c" linenr="134" column="63" str=";" scope="0x55c5aad6d170"/>
+    <token id="0x55c5ab0a8d20" file="src/arch/riscv/interrupts.c" linenr="135" column="5" str="}" scope="0x55c5aad6d170" link="0x55c5ab0a8660"/>
+    <token id="0x55c5ab0a8e40" file="src/arch/riscv/interrupts.c" linenr="136" column="1" str="}" scope="0x55c5aad6ce90" link="0x55c5aac6e110"/>
+    <token id="0x55c5ab0a8f60" file="src/arch/riscv/interrupts.c" linenr="138" column="8" str="bool" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0a91a0" file="src/arch/riscv/interrupts.c" linenr="138" column="13" str="interrupts_arch_conflict" scope="0x55c5aac781c0" type="name" function="0x55c5aacd5dc0" astParent="0x55c5ab0a92c0"/>
+    <token id="0x55c5ab0a92c0" file="src/arch/riscv/interrupts.c" linenr="138" column="37" str="(" scope="0x55c5aac781c0" link="0x55c5ab0a9980" astOperand1="0x55c5ab0a91a0" astOperand2="0x55c5ab0a9620" valueType-type="bool"/>
+    <token id="0x55c5ab0a93e0" file="src/arch/riscv/interrupts.c" linenr="138" column="38" str="bitmap_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0a9500" file="src/arch/riscv/interrupts.c" linenr="138" column="47" str="interrupt_bitmap" scope="0x55c5aac781c0" type="name" varId="9" variable="0x55c5aacd67e0" astParent="0x55c5ab0a9620"/>
+    <token id="0x55c5ab0a9620" file="src/arch/riscv/interrupts.c" linenr="138" column="63" str="," scope="0x55c5aac781c0" astParent="0x55c5ab0a92c0" astOperand1="0x55c5ab0a9500" astOperand2="0x55c5ab0a9860"/>
+    <token id="0x55c5ab0a9740" file="src/arch/riscv/interrupts.c" linenr="138" column="65" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0a9860" file="src/arch/riscv/interrupts.c" linenr="138" column="74" str="int_id" scope="0x55c5aac781c0" type="name" varId="10" variable="0x55c5aacd68c0" astParent="0x55c5ab0a9620" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0a9980" file="src/arch/riscv/interrupts.c" linenr="138" column="80" str=")" scope="0x55c5aac781c0" link="0x55c5ab0a92c0"/>
+    <token id="0x55c5ab0a9aa0" file="src/arch/riscv/interrupts.c" linenr="139" column="1" str="{" scope="0x55c5aacd5e60" link="0x55c5ab0aa4c0"/>
+    <token id="0x55c5ab0a9bc0" file="src/arch/riscv/interrupts.c" linenr="140" column="5" str="return" scope="0x55c5aacd5e60" type="name" astOperand1="0x55c5ab0a9e00" valueType-type="bool"/>
+    <token id="0x55c5ab0a9ce0" file="src/arch/riscv/interrupts.c" linenr="140" column="12" str="bitmap_get" scope="0x55c5aacd5e60" type="name" astParent="0x55c5ab0a9e00"/>
+    <token id="0x55c5ab0a9e00" file="src/arch/riscv/interrupts.c" linenr="140" column="22" str="(" scope="0x55c5aacd5e60" link="0x55c5ab0aa280" astParent="0x55c5ab0a9bc0" astOperand1="0x55c5ab0a9ce0" astOperand2="0x55c5ab0aa040"/>
+    <token id="0x55c5ab0a9f20" file="src/arch/riscv/interrupts.c" linenr="140" column="23" str="interrupt_bitmap" scope="0x55c5aacd5e60" type="name" varId="9" variable="0x55c5aacd67e0" astParent="0x55c5ab0aa040"/>
+    <token id="0x55c5ab0aa040" file="src/arch/riscv/interrupts.c" linenr="140" column="39" str="," scope="0x55c5aacd5e60" astParent="0x55c5ab0a9e00" astOperand1="0x55c5ab0a9f20" astOperand2="0x55c5ab0aa160"/>
+    <token id="0x55c5ab0aa160" file="src/arch/riscv/interrupts.c" linenr="140" column="41" str="int_id" scope="0x55c5aacd5e60" type="name" varId="10" variable="0x55c5aacd68c0" astParent="0x55c5ab0aa040" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5ab0aa280" file="src/arch/riscv/interrupts.c" linenr="140" column="47" str=")" scope="0x55c5aacd5e60" link="0x55c5ab0a9e00"/>
+    <token id="0x55c5ab0aa3a0" file="src/arch/riscv/interrupts.c" linenr="140" column="48" str=";" scope="0x55c5aacd5e60"/>
+    <token id="0x55c5ab0aa4c0" file="src/arch/riscv/interrupts.c" linenr="141" column="1" str="}" scope="0x55c5aacd5e60" link="0x55c5ab0a9aa0"/>
+    <token id="0x55c5ab0aa5e0" file="src/arch/riscv/interrupts.c" linenr="143" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5ab0aa700" file="src/arch/riscv/interrupts.c" linenr="143" column="6" str="interrupts_arch_vm_assign" scope="0x55c5aac781c0" type="name" function="0x55c5aacd5fd0" astParent="0x55c5ab0aa820"/>
+    <token id="0x55c5ab0aa820" file="src/arch/riscv/interrupts.c" linenr="143" column="31" str="(" scope="0x55c5aac781c0" link="0x55c5aac6fe40" astOperand1="0x55c5ab0aa700" astOperand2="0x55c5aac6fae0" valueType-type="void"/>
+    <token id="0x55c5aac6f780" file="src/arch/riscv/interrupts.c" linenr="143" column="32" str="vm_t" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac6f8a0"/>
+    <token id="0x55c5aac6f8a0" file="src/arch/riscv/interrupts.c" linenr="143" column="37" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aac6fae0" astOperand1="0x55c5aac6f780" astOperand2="0x55c5aac6f9c0"/>
+    <token id="0x55c5aac6f9c0" file="src/arch/riscv/interrupts.c" linenr="143" column="38" str="vm" scope="0x55c5aac781c0" type="name" varId="11" variable="0x55c5aacd69a0" astParent="0x55c5aac6f8a0"/>
+    <token id="0x55c5aac6fae0" file="src/arch/riscv/interrupts.c" linenr="143" column="40" str="," scope="0x55c5aac781c0" astParent="0x55c5ab0aa820" astOperand1="0x55c5aac6f8a0" astOperand2="0x55c5aac6fd20"/>
+    <token id="0x55c5aac6fc00" file="src/arch/riscv/interrupts.c" linenr="143" column="42" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac6fd20" file="src/arch/riscv/interrupts.c" linenr="143" column="51" str="id" scope="0x55c5aac781c0" type="name" varId="12" variable="0x55c5aacd6a80" astParent="0x55c5aac6fae0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6fe40" file="src/arch/riscv/interrupts.c" linenr="143" column="53" str=")" scope="0x55c5aac781c0" link="0x55c5ab0aa820"/>
+    <token id="0x55c5aac6ff60" file="src/arch/riscv/interrupts.c" linenr="144" column="1" str="{" scope="0x55c5aacd6070" link="0x55c5aac70860"/>
+    <token id="0x55c5aac70080" file="src/arch/riscv/interrupts.c" linenr="145" column="5" str="vplic_set_hw" scope="0x55c5aacd6070" type="name" astParent="0x55c5aac701a0"/>
+    <token id="0x55c5aac701a0" file="src/arch/riscv/interrupts.c" linenr="145" column="17" str="(" scope="0x55c5aacd6070" link="0x55c5aac70620" astOperand1="0x55c5aac70080" astOperand2="0x55c5aac703e0"/>
+    <token id="0x55c5aac702c0" file="src/arch/riscv/interrupts.c" linenr="145" column="18" str="vm" scope="0x55c5aacd6070" type="name" varId="11" variable="0x55c5aacd69a0" astParent="0x55c5aac703e0"/>
+    <token id="0x55c5aac703e0" file="src/arch/riscv/interrupts.c" linenr="145" column="20" str="," scope="0x55c5aacd6070" astParent="0x55c5aac701a0" astOperand1="0x55c5aac702c0" astOperand2="0x55c5aac70500"/>
+    <token id="0x55c5aac70500" file="src/arch/riscv/interrupts.c" linenr="145" column="22" str="id" scope="0x55c5aacd6070" type="name" varId="12" variable="0x55c5aacd6a80" astParent="0x55c5aac703e0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac70620" file="src/arch/riscv/interrupts.c" linenr="145" column="24" str=")" scope="0x55c5aacd6070" link="0x55c5aac701a0"/>
+    <token id="0x55c5aac70740" file="src/arch/riscv/interrupts.c" linenr="145" column="25" str=";" scope="0x55c5aacd6070"/>
+    <token id="0x55c5aac70860" file="src/arch/riscv/interrupts.c" linenr="146" column="1" str="}" scope="0x55c5aacd6070" link="0x55c5aac6ff60"/>
+    <token id="0x55c5aac70980" file="src/arch/riscv/interrupts.c" linenr="148" column="1" str="void" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac70aa0" file="src/arch/riscv/interrupts.c" linenr="148" column="6" str="interrupts_arch_vm_inject" scope="0x55c5aac781c0" type="name" function="0x55c5aacd61e0" astParent="0x55c5aac70bc0"/>
+    <token id="0x55c5aac70bc0" file="src/arch/riscv/interrupts.c" linenr="148" column="31" str="(" scope="0x55c5aac781c0" link="0x55c5aac713a0" astOperand1="0x55c5aac70aa0" astOperand2="0x55c5aac71040" valueType-type="void"/>
+    <token id="0x55c5aac70ce0" file="src/arch/riscv/interrupts.c" linenr="148" column="32" str="vm_t" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac70e00"/>
+    <token id="0x55c5aac70e00" file="src/arch/riscv/interrupts.c" linenr="148" column="37" str="*" scope="0x55c5aac781c0" type="op" isArithmeticalOp="True" astParent="0x55c5aac71040" astOperand1="0x55c5aac70ce0" astOperand2="0x55c5aac70f20"/>
+    <token id="0x55c5aac70f20" file="src/arch/riscv/interrupts.c" linenr="148" column="38" str="vm" scope="0x55c5aac781c0" type="name" varId="13" variable="0x55c5aacd6b60" astParent="0x55c5aac70e00"/>
+    <token id="0x55c5aac71040" file="src/arch/riscv/interrupts.c" linenr="148" column="40" str="," scope="0x55c5aac781c0" astParent="0x55c5aac70bc0" astOperand1="0x55c5aac70e00" astOperand2="0x55c5aac71280"/>
+    <token id="0x55c5aac71160" file="src/arch/riscv/interrupts.c" linenr="148" column="42" str="uint64_t" scope="0x55c5aac781c0" type="name"/>
+    <token id="0x55c5aac71280" file="src/arch/riscv/interrupts.c" linenr="148" column="51" str="id" scope="0x55c5aac781c0" type="name" varId="14" variable="0x55c5aacd6c40" astParent="0x55c5aac71040" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac713a0" file="src/arch/riscv/interrupts.c" linenr="148" column="53" str=")" scope="0x55c5aac781c0" link="0x55c5aac70bc0"/>
+    <token id="0x55c5aac714c0" file="src/arch/riscv/interrupts.c" linenr="149" column="1" str="{" scope="0x55c5aacd6280" link="0x55c5aac72000"/>
+    <token id="0x55c5aac715e0" file="src/arch/riscv/interrupts.c" linenr="150" column="5" str="vplic_inject" scope="0x55c5aacd6280" type="name" astParent="0x55c5aac71700"/>
+    <token id="0x55c5aac71700" file="src/arch/riscv/interrupts.c" linenr="150" column="17" str="(" scope="0x55c5aacd6280" link="0x55c5aac71dc0" astOperand1="0x55c5aac715e0" astOperand2="0x55c5aac71b80"/>
+    <token id="0x55c5aac71820" file="src/arch/riscv/interrupts.c" linenr="150" column="18" str="cpu" scope="0x55c5aacd6280" type="name" astParent="0x55c5aac71940"/>
+    <token id="0x55c5aac71940" file="src/arch/riscv/interrupts.c" linenr="150" column="21" str="." scope="0x55c5aacd6280" astParent="0x55c5aac71b80" astOperand1="0x55c5aac71820" astOperand2="0x55c5aac71a60"/>
+    <token id="0x55c5aac71a60" file="src/arch/riscv/interrupts.c" linenr="150" column="22" str="vcpu" scope="0x55c5aacd6280" type="name" astParent="0x55c5aac71940"/>
+    <token id="0x55c5aac71b80" file="src/arch/riscv/interrupts.c" linenr="150" column="26" str="," scope="0x55c5aacd6280" astParent="0x55c5aac71700" astOperand1="0x55c5aac71940" astOperand2="0x55c5aac71ca0"/>
+    <token id="0x55c5aac71ca0" file="src/arch/riscv/interrupts.c" linenr="150" column="28" str="id" scope="0x55c5aacd6280" type="name" varId="14" variable="0x55c5aacd6c40" astParent="0x55c5aac71b80" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac71dc0" file="src/arch/riscv/interrupts.c" linenr="150" column="30" str=")" scope="0x55c5aacd6280" link="0x55c5aac71700"/>
+    <token id="0x55c5aac71ee0" file="src/arch/riscv/interrupts.c" linenr="150" column="31" str=";" scope="0x55c5aacd6280"/>
+    <token id="0x55c5aac72000" file="src/arch/riscv/interrupts.c" linenr="151" column="1" str="}" scope="0x55c5aacd6280" link="0x55c5aac714c0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac781c0" type="Global">
+      <functionList>
+        <function id="0x55c5aace5d50" tokenDef="0x55c5aac77000" name="interrupts_arch_init" type="Function"/>
+        <function id="0x55c5aace63e0" tokenDef="0x55c5aac555a0" name="interrupts_arch_ipi_send" type="Function">
+          <arg nr="1" variable="0x55c5ab0acdd0"/>
+          <arg nr="2" variable="0x55c5ab0ad010"/>
+        </function>
+        <function id="0x55c5ab0b0ec0" tokenDef="0x55c5aac63ea0" name="interrupts_arch_cpu_enable" type="Function">
+          <arg nr="1" variable="0x55c5ab0ad250"/>
+        </function>
+        <function id="0x55c5ab0b1800" tokenDef="0x55c5aacbc820" name="interrupts_arch_enable" type="Function">
+          <arg nr="1" variable="0x55c5aacd6460"/>
+          <arg nr="2" variable="0x55c5aacd6540"/>
+        </function>
+        <function id="0x55c5ab0b01c0" tokenDef="0x55c5aacdb090" name="interrupts_arch_handle" type="Function"/>
+        <function id="0x55c5ab0b1b20" tokenDef="0x55c5aacbdd50" name="interrupts_arch_check" type="Function">
+          <arg nr="1" variable="0x55c5aacd6620"/>
+        </function>
+        <function id="0x55c5aac64d00" tokenDef="0x55c5aac6db70" name="interrupts_arch_clear" type="Function">
+          <arg nr="1" variable="0x55c5aacd6700"/>
+        </function>
+        <function id="0x55c5aacd5dc0" tokenDef="0x55c5ab0a91a0" name="interrupts_arch_conflict" type="Function">
+          <arg nr="1" variable="0x55c5aacd67e0"/>
+          <arg nr="2" variable="0x55c5aacd68c0"/>
+        </function>
+        <function id="0x55c5aacd5fd0" tokenDef="0x55c5ab0aa700" name="interrupts_arch_vm_assign" type="Function">
+          <arg nr="1" variable="0x55c5aacd69a0"/>
+          <arg nr="2" variable="0x55c5aacd6a80"/>
+        </function>
+        <function id="0x55c5aacd61e0" tokenDef="0x55c5aac70aa0" name="interrupts_arch_vm_inject" type="Function">
+          <arg nr="1" variable="0x55c5aacd6b60"/>
+          <arg nr="2" variable="0x55c5aacd6c40"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x55c5aac7b730" type="Function" className="interrupts_arch_init" bodyStart="0x55c5aac660a0" bodyEnd="0x55c5aac55360" nestedIn="0x55c5aac781c0" function="0x55c5aace5d50"/>
+    <scope id="0x55c5aac76850" type="If" bodyStart="0x55c5aaf6d300" bodyEnd="0x55c5aac5ff50" nestedIn="0x55c5aac7b730"/>
+    <scope id="0x55c5aac75e20" type="Function" className="interrupts_arch_ipi_send" bodyStart="0x55c5aac63120" bodyEnd="0x55c5aac63c60" nestedIn="0x55c5aac781c0" function="0x55c5aace63e0"/>
+    <scope id="0x55c5aac789a0" type="Function" className="interrupts_arch_cpu_enable" bodyStart="0x55c5aac64440" bodyEnd="0x55c5aacbc5e0" nestedIn="0x55c5aac781c0" function="0x55c5ab0b0ec0"/>
+    <scope id="0x55c5aac785a0" type="If" bodyStart="0x55c5aacbb080" bodyEnd="0x55c5aacbb980" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5aac783b0" type="Else" bodyStart="0x55c5aacbbbc0" bodyEnd="0x55c5aacbc4c0" nestedIn="0x55c5aac789a0"/>
+    <scope id="0x55c5aad6b790" type="Function" className="interrupts_arch_enable" bodyStart="0x55c5ab0a6200" bodyEnd="0x55c5aacdae50" nestedIn="0x55c5aac781c0" function="0x55c5ab0b1800"/>
+    <scope id="0x55c5aad6b900" type="If" bodyStart="0x55c5ab0a69e0" bodyEnd="0x55c5aacbfb80" nestedIn="0x55c5aad6b790"/>
+    <scope id="0x55c5aad6ba70" type="If" bodyStart="0x55c5aad6a580" bodyEnd="0x55c5aad6a6a0" nestedIn="0x55c5aad6b900"/>
+    <scope id="0x55c5aad6bbe0" type="Else" bodyStart="0x55c5aad6a7c0" bodyEnd="0x55c5aad6a8e0" nestedIn="0x55c5aad6b900"/>
+    <scope id="0x55c5aad6bd50" type="Else" bodyStart="0x55c5aacdb630" bodyEnd="0x55c5aad6b420" nestedIn="0x55c5aad6b790"/>
+    <scope id="0x55c5aad6bec0" type="If" bodyStart="0x55c5aacc0480" bodyEnd="0x55c5aacc1b00" nestedIn="0x55c5aad6bd50"/>
+    <scope id="0x55c5aad6c030" type="If" bodyStart="0x55c5aad6aa00" bodyEnd="0x55c5aad6ab20" nestedIn="0x55c5aad6bec0"/>
+    <scope id="0x55c5aad6c1a0" type="Else" bodyStart="0x55c5aad6ac40" bodyEnd="0x55c5aad6ad60" nestedIn="0x55c5aad6bec0"/>
+    <scope id="0x55c5aad6c310" type="Else" bodyStart="0x55c5aacd9590" bodyEnd="0x55c5aacdad30" nestedIn="0x55c5aad6bd50"/>
+    <scope id="0x55c5aad6c480" type="Function" className="interrupts_arch_handle" bodyStart="0x55c5aacdb3f0" bodyEnd="0x55c5aacbdb10" nestedIn="0x55c5aac781c0" function="0x55c5ab0b01c0">
+      <varlist>
+        <var id="0x55c5aac5e640"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aad6c5f0" type="Switch" bodyStart="0x55c5ab0706a0" bodyEnd="0x55c5aacbd9f0" nestedIn="0x55c5aad6c480"/>
+    <scope id="0x55c5aad6c760" type="Function" className="interrupts_arch_check" bodyStart="0x55c5aacbe2f0" bodyEnd="0x55c5aac6d930" nestedIn="0x55c5aac781c0" function="0x55c5ab0b1b20"/>
+    <scope id="0x55c5aad6c8d0" type="If" bodyStart="0x55c5aacbead0" bodyEnd="0x55c5aacbf4f0" nestedIn="0x55c5aad6c760"/>
+    <scope id="0x55c5aad6ca40" type="Else" bodyStart="0x55c5aad6b540" bodyEnd="0x55c5aad6b660" nestedIn="0x55c5aad6c760"/>
+    <scope id="0x55c5aad6cbb0" type="If" bodyStart="0x55c5aac6c3d0" bodyEnd="0x55c5aac6cdf0" nestedIn="0x55c5aad6ca40"/>
+    <scope id="0x55c5aad6cd20" type="Else" bodyStart="0x55c5aac6d030" bodyEnd="0x55c5aac6d810" nestedIn="0x55c5aad6ca40"/>
+    <scope id="0x55c5aad6ce90" type="Function" className="interrupts_arch_clear" bodyStart="0x55c5aac6e110" bodyEnd="0x55c5ab0a8e40" nestedIn="0x55c5aac781c0" function="0x55c5aac64d00"/>
+    <scope id="0x55c5aad6d000" type="If" bodyStart="0x55c5ab0a7b20" bodyEnd="0x55c5ab0a8420" nestedIn="0x55c5aad6ce90"/>
+    <scope id="0x55c5aad6d170" type="Else" bodyStart="0x55c5ab0a8660" bodyEnd="0x55c5ab0a8d20" nestedIn="0x55c5aad6ce90"/>
+    <scope id="0x55c5aacd5e60" type="Function" className="interrupts_arch_conflict" bodyStart="0x55c5ab0a9aa0" bodyEnd="0x55c5ab0aa4c0" nestedIn="0x55c5aac781c0" function="0x55c5aacd5dc0"/>
+    <scope id="0x55c5aacd6070" type="Function" className="interrupts_arch_vm_assign" bodyStart="0x55c5aac6ff60" bodyEnd="0x55c5aac70860" nestedIn="0x55c5aac781c0" function="0x55c5aacd5fd0"/>
+    <scope id="0x55c5aacd6280" type="Function" className="interrupts_arch_vm_inject" bodyStart="0x55c5aac714c0" bodyEnd="0x55c5aac72000" nestedIn="0x55c5aac781c0" function="0x55c5aacd61e0"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac5e640" nameToken="0x55c5aacdb750" typeStartToken="0x55c5aacdb510" typeEndToken="0x55c5aacdb510" access="Local" scope="0x55c5aad6c480" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6460" nameToken="0x55c5aace5cc0" typeStartToken="0x55c5aacbca60" typeEndToken="0x55c5aacbca60" access="Argument" scope="0x55c5aad6b790" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6540" nameToken="0x55c5ab0a5fc0" typeStartToken="0x55c5ab0a5ea0" typeEndToken="0x55c5ab0a5ea0" access="Argument" scope="0x55c5aad6b790" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6620" nameToken="0x55c5aacbe0b0" typeStartToken="0x55c5aacbdf90" typeEndToken="0x55c5aacbdf90" access="Argument" scope="0x55c5aad6c760" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6700" nameToken="0x55c5aac6ded0" typeStartToken="0x55c5aac6ddb0" typeEndToken="0x55c5aac6ddb0" access="Argument" scope="0x55c5aad6ce90" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd67e0" nameToken="0x55c5ab0a9500" typeStartToken="0x55c5ab0a93e0" typeEndToken="0x55c5ab0a93e0" access="Argument" scope="0x55c5aacd5e60" constness="0" isArgument="true" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd68c0" nameToken="0x55c5ab0a9860" typeStartToken="0x55c5ab0a9740" typeEndToken="0x55c5ab0a9740" access="Argument" scope="0x55c5aacd5e60" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd69a0" nameToken="0x55c5aac6f9c0" typeStartToken="0x55c5aac6f780" typeEndToken="0x55c5aac6f8a0" access="Argument" scope="0x55c5aacd6070" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6a80" nameToken="0x55c5aac6fd20" typeStartToken="0x55c5aac6fc00" typeEndToken="0x55c5aac6fc00" access="Argument" scope="0x55c5aacd6070" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6b60" nameToken="0x55c5aac70f20" typeStartToken="0x55c5aac70ce0" typeEndToken="0x55c5aac70e00" access="Argument" scope="0x55c5aacd6280" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacd6c40" nameToken="0x55c5aac71280" typeStartToken="0x55c5aac71160" typeEndToken="0x55c5aac71160" access="Argument" scope="0x55c5aacd6280" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0acdd0" nameToken="0x55c5aac62b80" typeStartToken="0x55c5aac62a60" typeEndToken="0x55c5aac62a60" access="Argument" scope="0x55c5aac75e20" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0ad010" nameToken="0x55c5aac62ee0" typeStartToken="0x55c5aac62dc0" typeEndToken="0x55c5aac62dc0" access="Argument" scope="0x55c5aac75e20" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0ad250" nameToken="0x55c5aac64200" typeStartToken="0x55c5aac640e0" typeEndToken="0x55c5aac640e0" access="Argument" scope="0x55c5aac789a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aacd5690">
+      <value lifetime="0x55c5aae56060" possible="true"/>
+    </values>
+    <values id="0x55c5aacd5480">
+      <value lifetime="0x55c5aac5a120" possible="true"/>
+    </values>
+    <values id="0x55c5aacd5270">
+      <value lifetime="0x55c5aac60160" possible="true"/>
+    </values>
+    <values id="0x55c5aad468e0">
+      <value lifetime="0x55c5aac543a0" possible="true"/>
+    </values>
+    <values id="0x55c5aafe30d0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0x55c5aafe30b0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aacd58a0">
+      <value intvalue="254" known="true"/>
+    </values>
+    <values id="0x55c5aac5ab50">
+      <value tokvalue="0x55c5ab0a89c0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

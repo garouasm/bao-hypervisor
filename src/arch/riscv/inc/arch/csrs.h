@@ -203,12 +203,11 @@
 
 #ifndef __ASSEMBLER__
 
-#define CSRR(csr)                                     \
-    ({                                                \
-        uint64_t _temp;                               \
-        asm volatile("csrr  %0, " XSTR(csr) "\n\r" \
-                     : "=r"(_temp)::"memory");        \
-        _temp;                                        \
+#define CSRR(csr)                                                            \
+    ({                                                                       \
+        uint64_t _temp;                                                      \
+        asm volatile("csrr  %0, " XSTR(csr) "\n\r" : "=r"(_temp)::"memory"); \
+        _temp;                                                               \
     })
 
 #define CSRW(csr, rs) \

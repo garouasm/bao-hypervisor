@@ -24,9 +24,9 @@ void vmm_arch_init()
      * IPA size. Patch 2-stage page table descriptors if this forces
      * the initial lookup to level 1.
      *
-     * In multi-cluster heterogenous we only support the minimum parange 
+     * In multi-cluster heterogenous we only support the minimum parange
      * for a vm's physicall adress space.
-     * TODO: we could make this more dynamic and adapt it to each virtual 
+     * TODO: we could make this more dynamic and adapt it to each virtual
      * machine.
      */
 
@@ -35,7 +35,7 @@ void vmm_arch_init()
 
     uint64_t temp_parange = MRS(ID_AA64MMFR0_EL1) & ID_AA64MMFR0_PAR_MSK;
     spin_lock(&lock);
-    if(temp_parange < min_parange) {
+    if (temp_parange < min_parange) {
         min_parange = temp_parange;
     }
     spin_unlock(&lock);

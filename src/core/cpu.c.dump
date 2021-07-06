@@ -1,0 +1,1048 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="src/core/cpu.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x * Bao, a Lightweight Static Partitioning Hypervisorx *x * Copyright (c) Bao Project (www.bao-project.org), 2019-x *x * Authors:x *      Jose Martins &lt;jose.martins@bao-project.org&gt;x *      Sandro Pinto &lt;sandro.pinto@bao-project.org&gt;x *x * Bao is free software; you can redistribute it and/or modify it under thex * terms of the GNU General Public License version 2 as published by the Freex * Software Foundation, with a special exception exempting guest code from suchx * license. See the COPYING file in the top-level directory for details.x *x */"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="include"/>
+    <tok fileIndex="0" linenr="17" column="10" str="&lt;cpu.h&gt;"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="include"/>
+    <tok fileIndex="0" linenr="18" column="10" str="&lt;interrupts.h&gt;"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="include"/>
+    <tok fileIndex="0" linenr="19" column="10" str="&lt;platform.h&gt;"/>
+    <tok fileIndex="0" linenr="20" column="1" str="#"/>
+    <tok fileIndex="0" linenr="20" column="2" str="include"/>
+    <tok fileIndex="0" linenr="20" column="10" str="&lt;objcache.h&gt;"/>
+    <tok fileIndex="0" linenr="21" column="1" str="#"/>
+    <tok fileIndex="0" linenr="21" column="2" str="include"/>
+    <tok fileIndex="0" linenr="21" column="10" str="&lt;vm.h&gt;"/>
+    <tok fileIndex="0" linenr="22" column="1" str="#"/>
+    <tok fileIndex="0" linenr="22" column="2" str="include"/>
+    <tok fileIndex="0" linenr="22" column="10" str="&lt;fences.h&gt;"/>
+    <tok fileIndex="0" linenr="24" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="24" column="9" str="struct"/>
+    <tok fileIndex="0" linenr="24" column="16" str="{"/>
+    <tok fileIndex="0" linenr="25" column="5" str="node_t"/>
+    <tok fileIndex="0" linenr="25" column="12" str="node"/>
+    <tok fileIndex="0" linenr="25" column="16" str=";"/>
+    <tok fileIndex="0" linenr="26" column="5" str="cpu_msg_t"/>
+    <tok fileIndex="0" linenr="26" column="15" str="msg"/>
+    <tok fileIndex="0" linenr="26" column="18" str=";"/>
+    <tok fileIndex="0" linenr="27" column="1" str="}"/>
+    <tok fileIndex="0" linenr="27" column="3" str="cpu_msg_node_t"/>
+    <tok fileIndex="0" linenr="27" column="17" str=";"/>
+    <tok fileIndex="0" linenr="29" column="1" str="cpu_t"/>
+    <tok fileIndex="0" linenr="29" column="7" str="cpu"/>
+    <tok fileIndex="0" linenr="29" column="11" str="__attribute__"/>
+    <tok fileIndex="0" linenr="29" column="24" str="("/>
+    <tok fileIndex="0" linenr="29" column="25" str="("/>
+    <tok fileIndex="0" linenr="29" column="26" str="section"/>
+    <tok fileIndex="0" linenr="29" column="33" str="("/>
+    <tok fileIndex="0" linenr="29" column="34" str="&quot;.cpu_private&quot;"/>
+    <tok fileIndex="0" linenr="29" column="48" str=")"/>
+    <tok fileIndex="0" linenr="29" column="49" str=")"/>
+    <tok fileIndex="0" linenr="29" column="50" str=")"/>
+    <tok fileIndex="0" linenr="29" column="51" str=";"/>
+    <tok fileIndex="0" linenr="31" column="1" str="cpu_synctoken_t"/>
+    <tok fileIndex="0" linenr="31" column="17" str="cpu_glb_sync"/>
+    <tok fileIndex="0" linenr="31" column="30" str="="/>
+    <tok fileIndex="0" linenr="31" column="32" str="{"/>
+    <tok fileIndex="0" linenr="31" column="33" str="."/>
+    <tok fileIndex="0" linenr="31" column="34" str="ready"/>
+    <tok fileIndex="0" linenr="31" column="40" str="="/>
+    <tok fileIndex="0" linenr="31" column="42" str="false"/>
+    <tok fileIndex="0" linenr="31" column="47" str="}"/>
+    <tok fileIndex="0" linenr="31" column="48" str=";"/>
+    <tok fileIndex="0" linenr="33" column="1" str="objcache_t"/>
+    <tok fileIndex="0" linenr="33" column="12" str="msg_cache"/>
+    <tok fileIndex="0" linenr="33" column="21" str=";"/>
+    <tok fileIndex="0" linenr="34" column="1" str="extern"/>
+    <tok fileIndex="0" linenr="34" column="8" str="cpu_msg_handler_t"/>
+    <tok fileIndex="0" linenr="34" column="26" str="_ipi_cpumsg_handlers_start"/>
+    <tok fileIndex="0" linenr="34" column="52" str=";"/>
+    <tok fileIndex="0" linenr="35" column="1" str="extern"/>
+    <tok fileIndex="0" linenr="35" column="8" str="uint64_t"/>
+    <tok fileIndex="0" linenr="35" column="17" str="_ipi_cpumsg_handlers_size"/>
+    <tok fileIndex="0" linenr="35" column="42" str=","/>
+    <tok fileIndex="0" linenr="35" column="44" str="_ipi_cpumsg_handlers_id_start"/>
+    <tok fileIndex="0" linenr="35" column="73" str=";"/>
+    <tok fileIndex="0" linenr="36" column="1" str="cpu_msg_handler_t"/>
+    <tok fileIndex="0" linenr="36" column="19" str="*"/>
+    <tok fileIndex="0" linenr="36" column="20" str="ipi_cpumsg_handlers"/>
+    <tok fileIndex="0" linenr="36" column="39" str=";"/>
+    <tok fileIndex="0" linenr="37" column="1" str="uint64_t"/>
+    <tok fileIndex="0" linenr="37" column="10" str="ipi_cpumsg_handler_num"/>
+    <tok fileIndex="0" linenr="37" column="32" str=";"/>
+    <tok fileIndex="0" linenr="39" column="1" str="void"/>
+    <tok fileIndex="0" linenr="39" column="6" str="cpu_init"/>
+    <tok fileIndex="0" linenr="39" column="14" str="("/>
+    <tok fileIndex="0" linenr="39" column="15" str="uint64_t"/>
+    <tok fileIndex="0" linenr="39" column="24" str="cpu_id"/>
+    <tok fileIndex="0" linenr="39" column="30" str=","/>
+    <tok fileIndex="0" linenr="39" column="32" str="uint64_t"/>
+    <tok fileIndex="0" linenr="39" column="41" str="load_addr"/>
+    <tok fileIndex="0" linenr="39" column="50" str=")"/>
+    <tok fileIndex="0" linenr="40" column="1" str="{"/>
+    <tok fileIndex="0" linenr="41" column="5" str="cpu_arch_init"/>
+    <tok fileIndex="0" linenr="41" column="18" str="("/>
+    <tok fileIndex="0" linenr="41" column="19" str="cpu_id"/>
+    <tok fileIndex="0" linenr="41" column="25" str=","/>
+    <tok fileIndex="0" linenr="41" column="27" str="load_addr"/>
+    <tok fileIndex="0" linenr="41" column="36" str=")"/>
+    <tok fileIndex="0" linenr="41" column="37" str=";"/>
+    <tok fileIndex="0" linenr="43" column="5" str="cpu"/>
+    <tok fileIndex="0" linenr="43" column="8" str="."/>
+    <tok fileIndex="0" linenr="43" column="9" str="id"/>
+    <tok fileIndex="0" linenr="43" column="12" str="="/>
+    <tok fileIndex="0" linenr="43" column="14" str="cpu_id"/>
+    <tok fileIndex="0" linenr="43" column="20" str=";"/>
+    <tok fileIndex="0" linenr="44" column="5" str="list_init"/>
+    <tok fileIndex="0" linenr="44" column="14" str="("/>
+    <tok fileIndex="0" linenr="44" column="15" str="&amp;"/>
+    <tok fileIndex="0" linenr="44" column="16" str="cpu"/>
+    <tok fileIndex="0" linenr="44" column="19" str="."/>
+    <tok fileIndex="0" linenr="44" column="20" str="interface"/>
+    <tok fileIndex="0" linenr="44" column="29" str="."/>
+    <tok fileIndex="0" linenr="44" column="30" str="event_list"/>
+    <tok fileIndex="0" linenr="44" column="40" str=")"/>
+    <tok fileIndex="0" linenr="44" column="41" str=";"/>
+    <tok fileIndex="0" linenr="46" column="5" str="if"/>
+    <tok fileIndex="0" linenr="46" column="8" str="("/>
+    <tok fileIndex="0" linenr="46" column="9" str="cpu"/>
+    <tok fileIndex="0" linenr="46" column="12" str="."/>
+    <tok fileIndex="0" linenr="46" column="13" str="id"/>
+    <tok fileIndex="0" linenr="46" column="16" str="=="/>
+    <tok fileIndex="0" linenr="46" column="19" str="CPU_MASTER"/>
+    <tok fileIndex="0" linenr="46" column="29" str=")"/>
+    <tok fileIndex="0" linenr="46" column="31" str="{"/>
+    <tok fileIndex="0" linenr="47" column="9" str="cpu_sync_init"/>
+    <tok fileIndex="0" linenr="47" column="22" str="("/>
+    <tok fileIndex="0" linenr="47" column="23" str="&amp;"/>
+    <tok fileIndex="0" linenr="47" column="24" str="cpu_glb_sync"/>
+    <tok fileIndex="0" linenr="47" column="36" str=","/>
+    <tok fileIndex="0" linenr="47" column="38" str="platform"/>
+    <tok fileIndex="0" linenr="47" column="46" str="."/>
+    <tok fileIndex="0" linenr="47" column="47" str="cpu_num"/>
+    <tok fileIndex="0" linenr="47" column="54" str=")"/>
+    <tok fileIndex="0" linenr="47" column="55" str=";"/>
+    <tok fileIndex="0" linenr="48" column="9" str="objcache_init"/>
+    <tok fileIndex="0" linenr="48" column="22" str="("/>
+    <tok fileIndex="0" linenr="48" column="23" str="&amp;"/>
+    <tok fileIndex="0" linenr="48" column="24" str="msg_cache"/>
+    <tok fileIndex="0" linenr="48" column="33" str=","/>
+    <tok fileIndex="0" linenr="48" column="35" str="sizeof"/>
+    <tok fileIndex="0" linenr="48" column="41" str="("/>
+    <tok fileIndex="0" linenr="48" column="42" str="cpu_msg_node_t"/>
+    <tok fileIndex="0" linenr="48" column="56" str=")"/>
+    <tok fileIndex="0" linenr="48" column="57" str=","/>
+    <tok fileIndex="0" linenr="48" column="59" str="SEC_HYP_GLOBAL"/>
+    <tok fileIndex="0" linenr="48" column="73" str=","/>
+    <tok fileIndex="0" linenr="49" column="23" str="false"/>
+    <tok fileIndex="0" linenr="49" column="28" str=")"/>
+    <tok fileIndex="0" linenr="49" column="29" str=";"/>
+    <tok fileIndex="0" linenr="51" column="9" str="ipi_cpumsg_handlers"/>
+    <tok fileIndex="0" linenr="51" column="29" str="="/>
+    <tok fileIndex="0" linenr="51" column="31" str="&amp;"/>
+    <tok fileIndex="0" linenr="51" column="32" str="_ipi_cpumsg_handlers_start"/>
+    <tok fileIndex="0" linenr="51" column="58" str=";"/>
+    <tok fileIndex="0" linenr="52" column="9" str="ipi_cpumsg_handler_num"/>
+    <tok fileIndex="0" linenr="52" column="32" str="="/>
+    <tok fileIndex="0" linenr="53" column="13" str="("/>
+    <tok fileIndex="0" linenr="53" column="14" str="("/>
+    <tok fileIndex="0" linenr="53" column="15" str="uint64_t"/>
+    <tok fileIndex="0" linenr="53" column="23" str=")"/>
+    <tok fileIndex="0" linenr="53" column="24" str="&amp;"/>
+    <tok fileIndex="0" linenr="53" column="25" str="_ipi_cpumsg_handlers_size"/>
+    <tok fileIndex="0" linenr="53" column="50" str=")"/>
+    <tok fileIndex="0" linenr="53" column="52" str="/"/>
+    <tok fileIndex="0" linenr="53" column="54" str="sizeof"/>
+    <tok fileIndex="0" linenr="53" column="60" str="("/>
+    <tok fileIndex="0" linenr="53" column="61" str="cpu_msg_handler_t"/>
+    <tok fileIndex="0" linenr="53" column="78" str=")"/>
+    <tok fileIndex="0" linenr="53" column="79" str=";"/>
+    <tok fileIndex="0" linenr="54" column="9" str="for"/>
+    <tok fileIndex="0" linenr="54" column="13" str="("/>
+    <tok fileIndex="0" linenr="54" column="14" str="int"/>
+    <tok fileIndex="0" linenr="54" column="18" str="i"/>
+    <tok fileIndex="0" linenr="54" column="20" str="="/>
+    <tok fileIndex="0" linenr="54" column="22" str="0"/>
+    <tok fileIndex="0" linenr="54" column="23" str=";"/>
+    <tok fileIndex="0" linenr="54" column="25" str="i"/>
+    <tok fileIndex="0" linenr="54" column="27" str="&lt;"/>
+    <tok fileIndex="0" linenr="54" column="29" str="ipi_cpumsg_handler_num"/>
+    <tok fileIndex="0" linenr="54" column="51" str=";"/>
+    <tok fileIndex="0" linenr="54" column="53" str="i"/>
+    <tok fileIndex="0" linenr="54" column="54" str="++"/>
+    <tok fileIndex="0" linenr="54" column="56" str=")"/>
+    <tok fileIndex="0" linenr="54" column="58" str="{"/>
+    <tok fileIndex="0" linenr="55" column="13" str="("/>
+    <tok fileIndex="0" linenr="55" column="14" str="&amp;"/>
+    <tok fileIndex="0" linenr="55" column="15" str="_ipi_cpumsg_handlers_id_start"/>
+    <tok fileIndex="0" linenr="55" column="44" str=")"/>
+    <tok fileIndex="0" linenr="55" column="45" str="["/>
+    <tok fileIndex="0" linenr="55" column="46" str="i"/>
+    <tok fileIndex="0" linenr="55" column="47" str="]"/>
+    <tok fileIndex="0" linenr="55" column="49" str="="/>
+    <tok fileIndex="0" linenr="55" column="51" str="i"/>
+    <tok fileIndex="0" linenr="55" column="52" str=";"/>
+    <tok fileIndex="0" linenr="56" column="9" str="}"/>
+    <tok fileIndex="0" linenr="57" column="5" str="}"/>
+    <tok fileIndex="0" linenr="59" column="5" str="cpu_sync_barrier"/>
+    <tok fileIndex="0" linenr="59" column="21" str="("/>
+    <tok fileIndex="0" linenr="59" column="22" str="&amp;"/>
+    <tok fileIndex="0" linenr="59" column="23" str="cpu_glb_sync"/>
+    <tok fileIndex="0" linenr="59" column="35" str=")"/>
+    <tok fileIndex="0" linenr="59" column="36" str=";"/>
+    <tok fileIndex="0" linenr="60" column="1" str="}"/>
+    <tok fileIndex="0" linenr="62" column="1" str="void"/>
+    <tok fileIndex="0" linenr="62" column="6" str="cpu_send_msg"/>
+    <tok fileIndex="0" linenr="62" column="18" str="("/>
+    <tok fileIndex="0" linenr="62" column="19" str="uint64_t"/>
+    <tok fileIndex="0" linenr="62" column="28" str="trgtcpu"/>
+    <tok fileIndex="0" linenr="62" column="35" str=","/>
+    <tok fileIndex="0" linenr="62" column="37" str="cpu_msg_t"/>
+    <tok fileIndex="0" linenr="62" column="47" str="*"/>
+    <tok fileIndex="0" linenr="62" column="48" str="msg"/>
+    <tok fileIndex="0" linenr="62" column="51" str=")"/>
+    <tok fileIndex="0" linenr="63" column="1" str="{"/>
+    <tok fileIndex="0" linenr="64" column="5" str="cpu_msg_node_t"/>
+    <tok fileIndex="0" linenr="64" column="20" str="*"/>
+    <tok fileIndex="0" linenr="64" column="21" str="node"/>
+    <tok fileIndex="0" linenr="64" column="26" str="="/>
+    <tok fileIndex="0" linenr="64" column="28" str="objcache_alloc"/>
+    <tok fileIndex="0" linenr="64" column="42" str="("/>
+    <tok fileIndex="0" linenr="64" column="43" str="&amp;"/>
+    <tok fileIndex="0" linenr="64" column="44" str="msg_cache"/>
+    <tok fileIndex="0" linenr="64" column="53" str=")"/>
+    <tok fileIndex="0" linenr="64" column="54" str=";"/>
+    <tok fileIndex="0" linenr="65" column="5" str="if"/>
+    <tok fileIndex="0" linenr="65" column="8" str="("/>
+    <tok fileIndex="0" linenr="65" column="9" str="node"/>
+    <tok fileIndex="0" linenr="65" column="14" str="=="/>
+    <tok fileIndex="0" linenr="65" column="17" str="NULL"/>
+    <tok fileIndex="0" linenr="65" column="21" str=")"/>
+    <tok fileIndex="0" linenr="65" column="23" str="ERROR"/>
+    <tok fileIndex="0" linenr="65" column="28" str="("/>
+    <tok fileIndex="0" linenr="65" column="29" str="&quot;cant allocate msg node&quot;"/>
+    <tok fileIndex="0" linenr="65" column="53" str=")"/>
+    <tok fileIndex="0" linenr="65" column="54" str=";"/>
+    <tok fileIndex="0" linenr="66" column="5" str="node"/>
+    <tok fileIndex="0" linenr="66" column="9" str="-&gt;"/>
+    <tok fileIndex="0" linenr="66" column="11" str="msg"/>
+    <tok fileIndex="0" linenr="66" column="15" str="="/>
+    <tok fileIndex="0" linenr="66" column="17" str="*"/>
+    <tok fileIndex="0" linenr="66" column="18" str="msg"/>
+    <tok fileIndex="0" linenr="66" column="21" str=";"/>
+    <tok fileIndex="0" linenr="67" column="5" str="list_push"/>
+    <tok fileIndex="0" linenr="67" column="14" str="("/>
+    <tok fileIndex="0" linenr="67" column="15" str="&amp;"/>
+    <tok fileIndex="0" linenr="67" column="16" str="cpu_if"/>
+    <tok fileIndex="0" linenr="67" column="22" str="("/>
+    <tok fileIndex="0" linenr="67" column="23" str="trgtcpu"/>
+    <tok fileIndex="0" linenr="67" column="30" str=")"/>
+    <tok fileIndex="0" linenr="67" column="31" str="-&gt;"/>
+    <tok fileIndex="0" linenr="67" column="33" str="event_list"/>
+    <tok fileIndex="0" linenr="67" column="43" str=","/>
+    <tok fileIndex="0" linenr="67" column="45" str="("/>
+    <tok fileIndex="0" linenr="67" column="46" str="node_t"/>
+    <tok fileIndex="0" linenr="67" column="53" str="*"/>
+    <tok fileIndex="0" linenr="67" column="54" str=")"/>
+    <tok fileIndex="0" linenr="67" column="55" str="node"/>
+    <tok fileIndex="0" linenr="67" column="59" str=")"/>
+    <tok fileIndex="0" linenr="67" column="60" str=";"/>
+    <tok fileIndex="0" linenr="68" column="5" str="fence_sync_write"/>
+    <tok fileIndex="0" linenr="68" column="21" str="("/>
+    <tok fileIndex="0" linenr="68" column="22" str=")"/>
+    <tok fileIndex="0" linenr="68" column="23" str=";"/>
+    <tok fileIndex="0" linenr="69" column="5" str="interrupts_cpu_sendipi"/>
+    <tok fileIndex="0" linenr="69" column="27" str="("/>
+    <tok fileIndex="0" linenr="69" column="28" str="trgtcpu"/>
+    <tok fileIndex="0" linenr="69" column="35" str=","/>
+    <tok fileIndex="0" linenr="69" column="37" str="IPI_CPU_MSG"/>
+    <tok fileIndex="0" linenr="69" column="48" str=")"/>
+    <tok fileIndex="0" linenr="69" column="49" str=";"/>
+    <tok fileIndex="0" linenr="70" column="1" str="}"/>
+    <tok fileIndex="0" linenr="72" column="1" str="bool"/>
+    <tok fileIndex="0" linenr="72" column="6" str="cpu_get_msg"/>
+    <tok fileIndex="0" linenr="72" column="17" str="("/>
+    <tok fileIndex="0" linenr="72" column="18" str="cpu_msg_t"/>
+    <tok fileIndex="0" linenr="72" column="28" str="*"/>
+    <tok fileIndex="0" linenr="72" column="29" str="msg"/>
+    <tok fileIndex="0" linenr="72" column="32" str=")"/>
+    <tok fileIndex="0" linenr="73" column="1" str="{"/>
+    <tok fileIndex="0" linenr="74" column="5" str="cpu_msg_node_t"/>
+    <tok fileIndex="0" linenr="74" column="20" str="*"/>
+    <tok fileIndex="0" linenr="74" column="21" str="node"/>
+    <tok fileIndex="0" linenr="74" column="26" str="="/>
+    <tok fileIndex="0" linenr="74" column="28" str="NULL"/>
+    <tok fileIndex="0" linenr="74" column="32" str=";"/>
+    <tok fileIndex="0" linenr="75" column="5" str="if"/>
+    <tok fileIndex="0" linenr="75" column="8" str="("/>
+    <tok fileIndex="0" linenr="75" column="9" str="("/>
+    <tok fileIndex="0" linenr="75" column="10" str="node"/>
+    <tok fileIndex="0" linenr="75" column="15" str="="/>
+    <tok fileIndex="0" linenr="75" column="17" str="("/>
+    <tok fileIndex="0" linenr="75" column="18" str="cpu_msg_node_t"/>
+    <tok fileIndex="0" linenr="75" column="33" str="*"/>
+    <tok fileIndex="0" linenr="75" column="34" str=")"/>
+    <tok fileIndex="0" linenr="75" column="35" str="list_pop"/>
+    <tok fileIndex="0" linenr="75" column="43" str="("/>
+    <tok fileIndex="0" linenr="75" column="44" str="&amp;"/>
+    <tok fileIndex="0" linenr="75" column="45" str="cpu"/>
+    <tok fileIndex="0" linenr="75" column="48" str="."/>
+    <tok fileIndex="0" linenr="75" column="49" str="interface"/>
+    <tok fileIndex="0" linenr="75" column="58" str="."/>
+    <tok fileIndex="0" linenr="75" column="59" str="event_list"/>
+    <tok fileIndex="0" linenr="75" column="69" str=")"/>
+    <tok fileIndex="0" linenr="75" column="70" str=")"/>
+    <tok fileIndex="0" linenr="75" column="72" str="!="/>
+    <tok fileIndex="0" linenr="76" column="9" str="NULL"/>
+    <tok fileIndex="0" linenr="76" column="13" str=")"/>
+    <tok fileIndex="0" linenr="76" column="15" str="{"/>
+    <tok fileIndex="0" linenr="77" column="9" str="*"/>
+    <tok fileIndex="0" linenr="77" column="10" str="msg"/>
+    <tok fileIndex="0" linenr="77" column="14" str="="/>
+    <tok fileIndex="0" linenr="77" column="16" str="node"/>
+    <tok fileIndex="0" linenr="77" column="20" str="-&gt;"/>
+    <tok fileIndex="0" linenr="77" column="22" str="msg"/>
+    <tok fileIndex="0" linenr="77" column="25" str=";"/>
+    <tok fileIndex="0" linenr="78" column="9" str="objcache_free"/>
+    <tok fileIndex="0" linenr="78" column="22" str="("/>
+    <tok fileIndex="0" linenr="78" column="23" str="&amp;"/>
+    <tok fileIndex="0" linenr="78" column="24" str="msg_cache"/>
+    <tok fileIndex="0" linenr="78" column="33" str=","/>
+    <tok fileIndex="0" linenr="78" column="35" str="node"/>
+    <tok fileIndex="0" linenr="78" column="39" str=")"/>
+    <tok fileIndex="0" linenr="78" column="40" str=";"/>
+    <tok fileIndex="0" linenr="79" column="9" str="return"/>
+    <tok fileIndex="0" linenr="79" column="16" str="true"/>
+    <tok fileIndex="0" linenr="79" column="20" str=";"/>
+    <tok fileIndex="0" linenr="80" column="5" str="}"/>
+    <tok fileIndex="0" linenr="81" column="5" str="return"/>
+    <tok fileIndex="0" linenr="81" column="12" str="false"/>
+    <tok fileIndex="0" linenr="81" column="17" str=";"/>
+    <tok fileIndex="0" linenr="82" column="1" str="}"/>
+    <tok fileIndex="0" linenr="84" column="1" str="void"/>
+    <tok fileIndex="0" linenr="84" column="6" str="cpu_msg_handler"/>
+    <tok fileIndex="0" linenr="84" column="21" str="("/>
+    <tok fileIndex="0" linenr="84" column="22" str=")"/>
+    <tok fileIndex="0" linenr="85" column="1" str="{"/>
+    <tok fileIndex="0" linenr="86" column="5" str="cpu_msg_t"/>
+    <tok fileIndex="0" linenr="86" column="15" str="msg"/>
+    <tok fileIndex="0" linenr="86" column="18" str=";"/>
+    <tok fileIndex="0" linenr="87" column="5" str="while"/>
+    <tok fileIndex="0" linenr="87" column="11" str="("/>
+    <tok fileIndex="0" linenr="87" column="12" str="cpu_get_msg"/>
+    <tok fileIndex="0" linenr="87" column="23" str="("/>
+    <tok fileIndex="0" linenr="87" column="24" str="&amp;"/>
+    <tok fileIndex="0" linenr="87" column="25" str="msg"/>
+    <tok fileIndex="0" linenr="87" column="28" str=")"/>
+    <tok fileIndex="0" linenr="87" column="29" str=")"/>
+    <tok fileIndex="0" linenr="87" column="31" str="{"/>
+    <tok fileIndex="0" linenr="88" column="9" str="if"/>
+    <tok fileIndex="0" linenr="88" column="12" str="("/>
+    <tok fileIndex="0" linenr="88" column="13" str="msg"/>
+    <tok fileIndex="0" linenr="88" column="16" str="."/>
+    <tok fileIndex="0" linenr="88" column="17" str="handler"/>
+    <tok fileIndex="0" linenr="88" column="25" str="&lt;"/>
+    <tok fileIndex="0" linenr="88" column="27" str="ipi_cpumsg_handler_num"/>
+    <tok fileIndex="0" linenr="88" column="50" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="89" column="13" str="ipi_cpumsg_handlers"/>
+    <tok fileIndex="0" linenr="89" column="32" str="["/>
+    <tok fileIndex="0" linenr="89" column="33" str="msg"/>
+    <tok fileIndex="0" linenr="89" column="36" str="."/>
+    <tok fileIndex="0" linenr="89" column="37" str="handler"/>
+    <tok fileIndex="0" linenr="89" column="44" str="]"/>
+    <tok fileIndex="0" linenr="89" column="45" str=")"/>
+    <tok fileIndex="0" linenr="89" column="47" str="{"/>
+    <tok fileIndex="0" linenr="90" column="13" str="ipi_cpumsg_handlers"/>
+    <tok fileIndex="0" linenr="90" column="32" str="["/>
+    <tok fileIndex="0" linenr="90" column="33" str="msg"/>
+    <tok fileIndex="0" linenr="90" column="36" str="."/>
+    <tok fileIndex="0" linenr="90" column="37" str="handler"/>
+    <tok fileIndex="0" linenr="90" column="44" str="]"/>
+    <tok fileIndex="0" linenr="90" column="45" str="("/>
+    <tok fileIndex="0" linenr="90" column="46" str="msg"/>
+    <tok fileIndex="0" linenr="90" column="49" str="."/>
+    <tok fileIndex="0" linenr="90" column="50" str="event"/>
+    <tok fileIndex="0" linenr="90" column="55" str=","/>
+    <tok fileIndex="0" linenr="90" column="57" str="msg"/>
+    <tok fileIndex="0" linenr="90" column="60" str="."/>
+    <tok fileIndex="0" linenr="90" column="61" str="data"/>
+    <tok fileIndex="0" linenr="90" column="65" str=")"/>
+    <tok fileIndex="0" linenr="90" column="66" str=";"/>
+    <tok fileIndex="0" linenr="91" column="9" str="}"/>
+    <tok fileIndex="0" linenr="92" column="5" str="}"/>
+    <tok fileIndex="0" linenr="93" column="1" str="}"/>
+    <tok fileIndex="0" linenr="95" column="1" str="void"/>
+    <tok fileIndex="0" linenr="95" column="6" str="cpu_idle"/>
+    <tok fileIndex="0" linenr="95" column="14" str="("/>
+    <tok fileIndex="0" linenr="95" column="15" str=")"/>
+    <tok fileIndex="0" linenr="96" column="1" str="{"/>
+    <tok fileIndex="0" linenr="97" column="5" str="cpu_arch_idle"/>
+    <tok fileIndex="0" linenr="97" column="18" str="("/>
+    <tok fileIndex="0" linenr="97" column="19" str=")"/>
+    <tok fileIndex="0" linenr="97" column="20" str=";"/>
+    <tok fileIndex="0" linenr="99" column="5" str="/**x     * Should not return here.x     * cpu should &quot;wake up&quot; from idle in cpu_idle_wakeupx     * with a rewinded stack.x     */"/>
+    <tok fileIndex="0" linenr="104" column="5" str="ERROR"/>
+    <tok fileIndex="0" linenr="104" column="10" str="("/>
+    <tok fileIndex="0" linenr="104" column="11" str="&quot;Spurious idle wake up&quot;"/>
+    <tok fileIndex="0" linenr="104" column="34" str=")"/>
+    <tok fileIndex="0" linenr="104" column="35" str=";"/>
+    <tok fileIndex="0" linenr="105" column="1" str="}"/>
+    <tok fileIndex="0" linenr="107" column="1" str="void"/>
+    <tok fileIndex="0" linenr="107" column="6" str="cpu_idle_wakeup"/>
+    <tok fileIndex="0" linenr="107" column="21" str="("/>
+    <tok fileIndex="0" linenr="107" column="22" str=")"/>
+    <tok fileIndex="0" linenr="108" column="1" str="{"/>
+    <tok fileIndex="0" linenr="109" column="5" str="if"/>
+    <tok fileIndex="0" linenr="109" column="8" str="("/>
+    <tok fileIndex="0" linenr="109" column="9" str="interrupts_check"/>
+    <tok fileIndex="0" linenr="109" column="25" str="("/>
+    <tok fileIndex="0" linenr="109" column="26" str="IPI_CPU_MSG"/>
+    <tok fileIndex="0" linenr="109" column="37" str=")"/>
+    <tok fileIndex="0" linenr="109" column="38" str=")"/>
+    <tok fileIndex="0" linenr="109" column="40" str="{"/>
+    <tok fileIndex="0" linenr="110" column="9" str="interrupts_clear"/>
+    <tok fileIndex="0" linenr="110" column="25" str="("/>
+    <tok fileIndex="0" linenr="110" column="26" str="IPI_CPU_MSG"/>
+    <tok fileIndex="0" linenr="110" column="37" str=")"/>
+    <tok fileIndex="0" linenr="110" column="38" str=";"/>
+    <tok fileIndex="0" linenr="111" column="9" str="cpu_msg_handler"/>
+    <tok fileIndex="0" linenr="111" column="24" str="("/>
+    <tok fileIndex="0" linenr="111" column="25" str=")"/>
+    <tok fileIndex="0" linenr="111" column="26" str=";"/>
+    <tok fileIndex="0" linenr="112" column="5" str="}"/>
+    <tok fileIndex="0" linenr="114" column="5" str="if"/>
+    <tok fileIndex="0" linenr="114" column="8" str="("/>
+    <tok fileIndex="0" linenr="114" column="9" str="cpu"/>
+    <tok fileIndex="0" linenr="114" column="12" str="."/>
+    <tok fileIndex="0" linenr="114" column="13" str="vcpu"/>
+    <tok fileIndex="0" linenr="114" column="18" str="!="/>
+    <tok fileIndex="0" linenr="114" column="21" str="NULL"/>
+    <tok fileIndex="0" linenr="114" column="25" str=")"/>
+    <tok fileIndex="0" linenr="114" column="27" str="{"/>
+    <tok fileIndex="0" linenr="115" column="9" str="vcpu_run"/>
+    <tok fileIndex="0" linenr="115" column="17" str="("/>
+    <tok fileIndex="0" linenr="115" column="18" str="cpu"/>
+    <tok fileIndex="0" linenr="115" column="21" str="."/>
+    <tok fileIndex="0" linenr="115" column="22" str="vcpu"/>
+    <tok fileIndex="0" linenr="115" column="26" str=")"/>
+    <tok fileIndex="0" linenr="115" column="27" str=";"/>
+    <tok fileIndex="0" linenr="116" column="5" str="}"/>
+    <tok fileIndex="0" linenr="116" column="7" str="else"/>
+    <tok fileIndex="0" linenr="116" column="12" str="{"/>
+    <tok fileIndex="0" linenr="117" column="9" str="cpu_idle"/>
+    <tok fileIndex="0" linenr="117" column="17" str="("/>
+    <tok fileIndex="0" linenr="117" column="18" str=")"/>
+    <tok fileIndex="0" linenr="117" column="19" str=";"/>
+    <tok fileIndex="0" linenr="118" column="5" str="}"/>
+    <tok fileIndex="0" linenr="119" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="src/core/cpu.c" linenr="17" str="#include &lt;cpu.h&gt;"/>
+    <directive file="src/core/cpu.c" linenr="18" str="#include &lt;interrupts.h&gt;"/>
+    <directive file="src/core/cpu.c" linenr="19" str="#include &lt;platform.h&gt;"/>
+    <directive file="src/core/cpu.c" linenr="20" str="#include &lt;objcache.h&gt;"/>
+    <directive file="src/core/cpu.c" linenr="21" str="#include &lt;vm.h&gt;"/>
+    <directive file="src/core/cpu.c" linenr="22" str="#include &lt;fences.h&gt;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x55c5ab0acc80" file="src/core/cpu.c" linenr="24" column="9" str="struct" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac63800" file="src/core/cpu.c" linenr="24" column="0" str="cpu_msg_node_t" scope="0x55c5aac76850" type="name" type-scope="0x55c5aac7b730"/>
+    <token id="0x55c5aad6a120" file="src/core/cpu.c" linenr="24" column="16" str="{" scope="0x55c5aac7b730" link="0x55c5aac79260"/>
+    <token id="0x55c5aad24280" file="src/core/cpu.c" linenr="25" column="5" str="node_t" scope="0x55c5aac7b730" type="name"/>
+    <token id="0x55c5ab0b2830" file="src/core/cpu.c" linenr="25" column="12" str="node" scope="0x55c5aac7b730" type="name" varId="1" variable="0x55c5aacdacd0"/>
+    <token id="0x55c5aac664c0" file="src/core/cpu.c" linenr="25" column="16" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aace0130" file="src/core/cpu.c" linenr="26" column="5" str="cpu_msg_t" scope="0x55c5aac7b730" type="name"/>
+    <token id="0x55c5aaca3620" file="src/core/cpu.c" linenr="26" column="15" str="msg" scope="0x55c5aac7b730" type="name" varId="2" variable="0x55c5aacdadb0"/>
+    <token id="0x55c5aace2060" file="src/core/cpu.c" linenr="26" column="18" str=";" scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac79260" file="src/core/cpu.c" linenr="27" column="1" str="}" scope="0x55c5aac7b730" link="0x55c5aad6a120"/>
+    <token id="0x55c5aac63920" file="src/core/cpu.c" linenr="27" column="0" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5e8f0" file="src/core/cpu.c" linenr="29" column="1" str="cpu_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacbab60" file="src/core/cpu.c" linenr="29" column="7" str="cpu" scope="0x55c5aac76850" type="name" varId="3" variable="0x55c5aafadf10"/>
+    <token id="0x55c5aace4090" file="src/core/cpu.c" linenr="29" column="51" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac52fb0" file="src/core/cpu.c" linenr="31" column="1" str="cpu_synctoken_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aae552c0" file="src/core/cpu.c" linenr="31" column="17" str="cpu_glb_sync" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac74ba0"/>
+    <token id="0x55c5aae55320" file="src/core/cpu.c" linenr="31" column="30" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5b1d0" file="src/core/cpu.c" linenr="31" column="17" str="cpu_glb_sync" scope="0x55c5aac76850" type="name" varId="4" variable="0x55c5aac74ba0" astParent="0x55c5aad24000"/>
+    <token id="0x55c5aad24000" file="src/core/cpu.c" linenr="31" column="30" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astOperand1="0x55c5aac5b1d0" astOperand2="0x55c5aaca24f0"/>
+    <token id="0x55c5aaca24f0" file="src/core/cpu.c" linenr="31" column="32" str="{" scope="0x55c5aac76850" link="0x55c5aac5dbd0" astParent="0x55c5aad24000" astOperand1="0x55c5ab0b16f0"/>
+    <token id="0x55c5aaca2550" file="src/core/cpu.c" linenr="31" column="33" str="." scope="0x55c5aac76850" astParent="0x55c5ab0b16f0" astOperand1="0x55c5ab0b1690"/>
+    <token id="0x55c5ab0b1690" file="src/core/cpu.c" linenr="31" column="34" str="ready" scope="0x55c5aac76850" type="name" varId="5" astParent="0x55c5aaca2550"/>
+    <token id="0x55c5ab0b16f0" file="src/core/cpu.c" linenr="31" column="40" str="=" scope="0x55c5aac76850" type="op" isAssignmentOp="True" astParent="0x55c5aaca24f0" astOperand1="0x55c5aaca2550" astOperand2="0x55c5aac5db70"/>
+    <token id="0x55c5aac5db70" file="src/core/cpu.c" linenr="31" column="42" str="false" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0b16f0" valueType-type="bool"/>
+    <token id="0x55c5aac5dbd0" file="src/core/cpu.c" linenr="31" column="47" str="}" scope="0x55c5aac76850" link="0x55c5aaca24f0"/>
+    <token id="0x55c5ab0af1a0" file="src/core/cpu.c" linenr="31" column="48" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5ab0af200" file="src/core/cpu.c" linenr="33" column="1" str="objcache_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac5cb30" file="src/core/cpu.c" linenr="33" column="12" str="msg_cache" scope="0x55c5aac76850" type="name" varId="6" variable="0x55c5aace62b0"/>
+    <token id="0x55c5aac5cb90" file="src/core/cpu.c" linenr="33" column="21" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac5cd20" file="src/core/cpu.c" linenr="34" column="1" str="extern" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac5cd80" file="src/core/cpu.c" linenr="34" column="8" str="cpu_msg_handler_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aae54b00" file="src/core/cpu.c" linenr="34" column="26" str="_ipi_cpumsg_handlers_start" scope="0x55c5aac76850" type="name" varId="7" variable="0x55c5ab0ad170"/>
+    <token id="0x55c5ab0b1b30" file="src/core/cpu.c" linenr="34" column="52" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aac74a50" file="src/core/cpu.c" linenr="35" column="1" str="extern" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aae55760" file="src/core/cpu.c" linenr="35" column="8" str="uint64_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac75220" file="src/core/cpu.c" linenr="35" column="17" str="_ipi_cpumsg_handlers_size" scope="0x55c5aac76850" type="name" varId="8" variable="0x55c5aacda950" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac62660" file="src/core/cpu.c" linenr="35" column="42" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aad23fa0" file="src/core/cpu.c" linenr="35" column="1" str="extern" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac74800" file="src/core/cpu.c" linenr="35" column="8" str="uint64_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac626c0" file="src/core/cpu.c" linenr="35" column="44" str="_ipi_cpumsg_handlers_id_start" scope="0x55c5aac76850" type="name" varId="9" variable="0x55c5aacdaa30" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca28e0" file="src/core/cpu.c" linenr="35" column="73" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aafe2f00" file="src/core/cpu.c" linenr="36" column="1" str="cpu_msg_handler_t" scope="0x55c5aac76850" type="name" astParent="0x55c5aafe3020"/>
+    <token id="0x55c5aafe3020" file="src/core/cpu.c" linenr="36" column="19" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astOperand1="0x55c5aafe2f00" astOperand2="0x55c5aafe3140"/>
+    <token id="0x55c5aafe3140" file="src/core/cpu.c" linenr="36" column="20" str="ipi_cpumsg_handlers" scope="0x55c5aac76850" type="name" varId="10" variable="0x55c5aacdab10" astParent="0x55c5aafe3020"/>
+    <token id="0x55c5aafe3260" file="src/core/cpu.c" linenr="36" column="39" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aafe3380" file="src/core/cpu.c" linenr="37" column="1" str="uint64_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aafe34a0" file="src/core/cpu.c" linenr="37" column="10" str="ipi_cpumsg_handler_num" scope="0x55c5aac76850" type="name" varId="11" variable="0x55c5aacdabf0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aafe35c0" file="src/core/cpu.c" linenr="37" column="32" str=";" scope="0x55c5aac76850"/>
+    <token id="0x55c5aafe36e0" file="src/core/cpu.c" linenr="39" column="1" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aae54b60" file="src/core/cpu.c" linenr="39" column="6" str="cpu_init" scope="0x55c5aac76850" type="name" function="0x55c5aacca2f0" astParent="0x55c5aacac200"/>
+    <token id="0x55c5aacac200" file="src/core/cpu.c" linenr="39" column="14" str="(" scope="0x55c5aac76850" link="0x55c5aacac8c0" astOperand1="0x55c5aae54b60" astOperand2="0x55c5aacac560" valueType-type="void"/>
+    <token id="0x55c5aacac320" file="src/core/cpu.c" linenr="39" column="15" str="uint64_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacac440" file="src/core/cpu.c" linenr="39" column="24" str="cpu_id" scope="0x55c5aac76850" type="name" varId="12" variable="0x55c5aacdb130" astParent="0x55c5aacac560" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacac560" file="src/core/cpu.c" linenr="39" column="30" str="," scope="0x55c5aac76850" astParent="0x55c5aacac200" astOperand1="0x55c5aacac440" astOperand2="0x55c5aacac7a0"/>
+    <token id="0x55c5aacac680" file="src/core/cpu.c" linenr="39" column="32" str="uint64_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacac7a0" file="src/core/cpu.c" linenr="39" column="41" str="load_addr" scope="0x55c5aac76850" type="name" varId="13" variable="0x55c5aacdb210" astParent="0x55c5aacac560" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacac8c0" file="src/core/cpu.c" linenr="39" column="50" str=")" scope="0x55c5aac76850" link="0x55c5aacac200"/>
+    <token id="0x55c5aacac9e0" file="src/core/cpu.c" linenr="40" column="1" str="{" scope="0x55c5aac781c0" link="0x55c5aaf6cbe0"/>
+    <token id="0x55c5aacacb00" file="src/core/cpu.c" linenr="41" column="5" str="cpu_arch_init" scope="0x55c5aac781c0" type="name" astParent="0x55c5aace0c70"/>
+    <token id="0x55c5aace0c70" file="src/core/cpu.c" linenr="41" column="18" str="(" scope="0x55c5aac781c0" link="0x55c5aace10f0" astOperand1="0x55c5aacacb00" astOperand2="0x55c5aace0eb0"/>
+    <token id="0x55c5aace0d90" file="src/core/cpu.c" linenr="41" column="19" str="cpu_id" scope="0x55c5aac781c0" type="name" varId="12" variable="0x55c5aacdb130" astParent="0x55c5aace0eb0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aace0eb0" file="src/core/cpu.c" linenr="41" column="25" str="," scope="0x55c5aac781c0" astParent="0x55c5aace0c70" astOperand1="0x55c5aace0d90" astOperand2="0x55c5aace0fd0"/>
+    <token id="0x55c5aace0fd0" file="src/core/cpu.c" linenr="41" column="27" str="load_addr" scope="0x55c5aac781c0" type="name" varId="13" variable="0x55c5aacdb210" astParent="0x55c5aace0eb0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aace10f0" file="src/core/cpu.c" linenr="41" column="36" str=")" scope="0x55c5aac781c0" link="0x55c5aace0c70"/>
+    <token id="0x55c5aace1210" file="src/core/cpu.c" linenr="41" column="37" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aace1330" file="src/core/cpu.c" linenr="43" column="5" str="cpu" scope="0x55c5aac781c0" type="name" varId="3" variable="0x55c5aafadf10" astParent="0x55c5aace1450"/>
+    <token id="0x55c5aace1450" file="src/core/cpu.c" linenr="43" column="8" str="." scope="0x55c5aac781c0" astParent="0x55c5aac60160" astOperand1="0x55c5aace1330" astOperand2="0x55c5aace1570"/>
+    <token id="0x55c5aace1570" file="src/core/cpu.c" linenr="43" column="9" str="id" scope="0x55c5aac781c0" type="name" varId="14" astParent="0x55c5aace1450"/>
+    <token id="0x55c5aac60160" file="src/core/cpu.c" linenr="43" column="12" str="=" scope="0x55c5aac781c0" type="op" isAssignmentOp="True" astOperand1="0x55c5aace1450" astOperand2="0x55c5aac60280"/>
+    <token id="0x55c5aac60280" file="src/core/cpu.c" linenr="43" column="14" str="cpu_id" scope="0x55c5aac781c0" type="name" varId="12" variable="0x55c5aacdb130" astParent="0x55c5aac60160" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac603a0" file="src/core/cpu.c" linenr="43" column="20" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac604c0" file="src/core/cpu.c" linenr="44" column="5" str="list_init" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac605e0"/>
+    <token id="0x55c5aac605e0" file="src/core/cpu.c" linenr="44" column="14" str="(" scope="0x55c5aac781c0" link="0x55c5aac619a0" astOperand1="0x55c5aac604c0" astOperand2="0x55c5aac60700"/>
+    <token id="0x55c5aac60700" file="src/core/cpu.c" linenr="44" column="15" str="&amp;" scope="0x55c5aac781c0" type="op" values="0x55c5aaca80b0" astParent="0x55c5aac605e0" astOperand1="0x55c5aac61760"/>
+    <token id="0x55c5aac60820" file="src/core/cpu.c" linenr="44" column="16" str="cpu" scope="0x55c5aac781c0" type="name" varId="3" variable="0x55c5aafadf10" astParent="0x55c5aac60940"/>
+    <token id="0x55c5aac60940" file="src/core/cpu.c" linenr="44" column="19" str="." scope="0x55c5aac781c0" astParent="0x55c5aac61760" astOperand1="0x55c5aac60820" astOperand2="0x55c5aac60a60"/>
+    <token id="0x55c5aac60a60" file="src/core/cpu.c" linenr="44" column="20" str="interface" scope="0x55c5aac781c0" type="name" varId="15" astParent="0x55c5aac60940"/>
+    <token id="0x55c5aac61760" file="src/core/cpu.c" linenr="44" column="29" str="." scope="0x55c5aac781c0" astParent="0x55c5aac60700" astOperand1="0x55c5aac60940" astOperand2="0x55c5aac61880"/>
+    <token id="0x55c5aac61880" file="src/core/cpu.c" linenr="44" column="30" str="event_list" scope="0x55c5aac781c0" type="name" varId="16" astParent="0x55c5aac61760"/>
+    <token id="0x55c5aac619a0" file="src/core/cpu.c" linenr="44" column="40" str=")" scope="0x55c5aac781c0" link="0x55c5aac605e0"/>
+    <token id="0x55c5aac61ac0" file="src/core/cpu.c" linenr="44" column="41" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aac61be0" file="src/core/cpu.c" linenr="46" column="5" str="if" scope="0x55c5aac781c0" type="name" astParent="0x55c5aac61d00"/>
+    <token id="0x55c5aac61d00" file="src/core/cpu.c" linenr="46" column="8" str="(" scope="0x55c5aac781c0" link="0x55c5aac5c030" astOperand1="0x55c5aac61be0" astOperand2="0x55c5aacacb60"/>
+    <token id="0x55c5aac61e20" file="src/core/cpu.c" linenr="46" column="9" str="cpu" scope="0x55c5aac781c0" type="name" varId="3" variable="0x55c5aafadf10" astParent="0x55c5aac61f40"/>
+    <token id="0x55c5aac61f40" file="src/core/cpu.c" linenr="46" column="12" str="." scope="0x55c5aac781c0" astParent="0x55c5aacacb60" astOperand1="0x55c5aac61e20" astOperand2="0x55c5aac62060"/>
+    <token id="0x55c5aac62060" file="src/core/cpu.c" linenr="46" column="13" str="id" scope="0x55c5aac781c0" type="name" varId="14" astParent="0x55c5aac61f40"/>
+    <token id="0x55c5aacacb60" file="src/core/cpu.c" linenr="46" column="16" str="==" scope="0x55c5aac781c0" type="op" isComparisonOp="True" astParent="0x55c5aac61d00" astOperand1="0x55c5aac61f40" astOperand2="0x55c5aac5bf10" valueType-type="bool"/>
+    <token id="0x55c5aac5bf10" file="src/core/cpu.c" linenr="46" column="19" str="CPU_MASTER" scope="0x55c5aac781c0" type="name" astParent="0x55c5aacacb60"/>
+    <token id="0x55c5aac5c030" file="src/core/cpu.c" linenr="46" column="29" str=")" scope="0x55c5aac781c0" link="0x55c5aac61d00"/>
+    <token id="0x55c5aac5c150" file="src/core/cpu.c" linenr="46" column="31" str="{" scope="0x55c5aac789a0" link="0x55c5aac6e850"/>
+    <token id="0x55c5aac5c270" file="src/core/cpu.c" linenr="47" column="9" str="cpu_sync_init" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac5c390"/>
+    <token id="0x55c5aac5c390" file="src/core/cpu.c" linenr="47" column="22" str="(" scope="0x55c5aac789a0" link="0x55c5aad3bee0" astOperand1="0x55c5aac5c270" astOperand2="0x55c5aac5c6f0"/>
+    <token id="0x55c5aac5c4b0" file="src/core/cpu.c" linenr="47" column="23" str="&amp;" scope="0x55c5aac789a0" type="op" values="0x55c5ab0af390" astParent="0x55c5aac5c6f0" astOperand1="0x55c5aac5c5d0"/>
+    <token id="0x55c5aac5c5d0" file="src/core/cpu.c" linenr="47" column="24" str="cpu_glb_sync" scope="0x55c5aac789a0" type="name" varId="4" variable="0x55c5aac74ba0" astParent="0x55c5aac5c4b0"/>
+    <token id="0x55c5aac5c6f0" file="src/core/cpu.c" linenr="47" column="36" str="," scope="0x55c5aac789a0" astParent="0x55c5aac5c390" astOperand1="0x55c5aac5c4b0" astOperand2="0x55c5aace15d0"/>
+    <token id="0x55c5aac5c810" file="src/core/cpu.c" linenr="47" column="38" str="platform" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace15d0"/>
+    <token id="0x55c5aace15d0" file="src/core/cpu.c" linenr="47" column="46" str="." scope="0x55c5aac789a0" astParent="0x55c5aac5c6f0" astOperand1="0x55c5aac5c810" astOperand2="0x55c5aad3bdc0"/>
+    <token id="0x55c5aad3bdc0" file="src/core/cpu.c" linenr="47" column="47" str="cpu_num" scope="0x55c5aac789a0" type="name" astParent="0x55c5aace15d0"/>
+    <token id="0x55c5aad3bee0" file="src/core/cpu.c" linenr="47" column="54" str=")" scope="0x55c5aac789a0" link="0x55c5aac5c390"/>
+    <token id="0x55c5aad3c000" file="src/core/cpu.c" linenr="47" column="55" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aad3c120" file="src/core/cpu.c" linenr="48" column="9" str="objcache_init" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad3c240"/>
+    <token id="0x55c5aad3c240" file="src/core/cpu.c" linenr="48" column="22" str="(" scope="0x55c5aac789a0" link="0x55c5aac67320" astOperand1="0x55c5aad3c120" astOperand2="0x55c5aac670e0"/>
+    <token id="0x55c5aad3c360" file="src/core/cpu.c" linenr="48" column="23" str="&amp;" scope="0x55c5aac789a0" type="op" values="0x55c5aace7220" astParent="0x55c5aad3c5a0" astOperand1="0x55c5aad3c480"/>
+    <token id="0x55c5aad3c480" file="src/core/cpu.c" linenr="48" column="24" str="msg_cache" scope="0x55c5aac789a0" type="name" varId="6" variable="0x55c5aace62b0" astParent="0x55c5aad3c360"/>
+    <token id="0x55c5aad3c5a0" file="src/core/cpu.c" linenr="48" column="33" str="," scope="0x55c5aac789a0" astParent="0x55c5aac66ea0" astOperand1="0x55c5aad3c360" astOperand2="0x55c5aad3c7e0"/>
+    <token id="0x55c5aad3c6c0" file="src/core/cpu.c" linenr="48" column="35" str="sizeof" scope="0x55c5aac789a0" type="name" astParent="0x55c5aad3c7e0"/>
+    <token id="0x55c5aad3c7e0" file="src/core/cpu.c" linenr="48" column="41" str="(" scope="0x55c5aac789a0" link="0x55c5aac66d80" astParent="0x55c5aad3c5a0" astOperand1="0x55c5aad3c6c0" astOperand2="0x55c5ab0b2ca0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aac66c60" file="src/core/cpu.c" linenr="48" column="42" str="struct" scope="0x55c5aac789a0" type="name" valueType-type="record" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0b2ca0" file="src/core/cpu.c" linenr="48" column="0" str="cpu_msg_node_t" scope="0x55c5aac789a0" type="name" type-scope="0x55c5aac7b730" astParent="0x55c5aad3c7e0"/>
+    <token id="0x55c5aac66d80" file="src/core/cpu.c" linenr="48" column="56" str=")" scope="0x55c5aac789a0" link="0x55c5aad3c7e0"/>
+    <token id="0x55c5aac66ea0" file="src/core/cpu.c" linenr="48" column="57" str="," scope="0x55c5aac789a0" astParent="0x55c5aac670e0" astOperand1="0x55c5aad3c5a0" astOperand2="0x55c5aac66fc0"/>
+    <token id="0x55c5aac66fc0" file="src/core/cpu.c" linenr="48" column="59" str="SEC_HYP_GLOBAL" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac66ea0"/>
+    <token id="0x55c5aac670e0" file="src/core/cpu.c" linenr="48" column="73" str="," scope="0x55c5aac789a0" astParent="0x55c5aad3c240" astOperand1="0x55c5aac66ea0" astOperand2="0x55c5aac67200"/>
+    <token id="0x55c5aac67200" file="src/core/cpu.c" linenr="49" column="23" str="false" scope="0x55c5aac789a0" type="name" astParent="0x55c5aac670e0" valueType-type="bool"/>
+    <token id="0x55c5aac67320" file="src/core/cpu.c" linenr="49" column="28" str=")" scope="0x55c5aac789a0" link="0x55c5aad3c240"/>
+    <token id="0x55c5aac67440" file="src/core/cpu.c" linenr="49" column="29" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aac67560" file="src/core/cpu.c" linenr="51" column="9" str="ipi_cpumsg_handlers" scope="0x55c5aac789a0" type="name" varId="10" variable="0x55c5aacdab10" astParent="0x55c5aac67680"/>
+    <token id="0x55c5aac67680" file="src/core/cpu.c" linenr="51" column="29" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac67560" astOperand2="0x55c5aacd5230"/>
+    <token id="0x55c5aacd5230" file="src/core/cpu.c" linenr="51" column="31" str="&amp;" scope="0x55c5aac789a0" type="op" values="0x55c5aacdf950" astParent="0x55c5aac67680" astOperand1="0x55c5aacd5350"/>
+    <token id="0x55c5aacd5350" file="src/core/cpu.c" linenr="51" column="32" str="_ipi_cpumsg_handlers_start" scope="0x55c5aac789a0" type="name" varId="7" variable="0x55c5ab0ad170" astParent="0x55c5aacd5230"/>
+    <token id="0x55c5aacd5470" file="src/core/cpu.c" linenr="51" column="58" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aacd5590" file="src/core/cpu.c" linenr="52" column="9" str="ipi_cpumsg_handler_num" scope="0x55c5aac789a0" type="name" varId="11" variable="0x55c5aacdabf0" astParent="0x55c5aacd56b0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd56b0" file="src/core/cpu.c" linenr="52" column="32" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aacd5590" astOperand2="0x55c5aafad240" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd57d0" file="src/core/cpu.c" linenr="53" column="13" str="(" scope="0x55c5aac789a0" link="0x55c5aafad120"/>
+    <token id="0x55c5aacd58f0" file="src/core/cpu.c" linenr="53" column="14" str="(" scope="0x55c5aac789a0" link="0x55c5aacd5b30" astParent="0x55c5aafad240" astOperand1="0x55c5aacd5c50" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacd5a10" file="src/core/cpu.c" linenr="53" column="15" str="uint64_t" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aacd5b30" file="src/core/cpu.c" linenr="53" column="23" str=")" scope="0x55c5aac789a0" link="0x55c5aacd58f0"/>
+    <token id="0x55c5aacd5c50" file="src/core/cpu.c" linenr="53" column="24" str="&amp;" scope="0x55c5aac789a0" type="op" values="0x55c5ab0a1b80" astParent="0x55c5aacd58f0" astOperand1="0x55c5aad3c840" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="0x55c5aad3c840" file="src/core/cpu.c" linenr="53" column="25" str="_ipi_cpumsg_handlers_size" scope="0x55c5aac789a0" type="name" varId="8" variable="0x55c5aacda950" astParent="0x55c5aacd5c50" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aafad120" file="src/core/cpu.c" linenr="53" column="50" str=")" scope="0x55c5aac789a0" link="0x55c5aacd57d0"/>
+    <token id="0x55c5aafad240" file="src/core/cpu.c" linenr="53" column="52" str="/" scope="0x55c5aac789a0" type="op" isArithmeticalOp="True" astParent="0x55c5aacd56b0" astOperand1="0x55c5aacd58f0" astOperand2="0x55c5aafad480" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafad360" file="src/core/cpu.c" linenr="53" column="54" str="sizeof" scope="0x55c5aac789a0" type="name" astParent="0x55c5aafad480"/>
+    <token id="0x55c5aafad480" file="src/core/cpu.c" linenr="53" column="60" str="(" scope="0x55c5aac789a0" link="0x55c5aafad6c0" astParent="0x55c5aafad240" astOperand1="0x55c5aafad360" astOperand2="0x55c5aafad5a0" valueType-type="long" valueType-sign="unsigned" valueType-originalTypeName="size_t"/>
+    <token id="0x55c5aafad5a0" file="src/core/cpu.c" linenr="53" column="61" str="cpu_msg_handler_t" scope="0x55c5aac789a0" type="name" astParent="0x55c5aafad480"/>
+    <token id="0x55c5aafad6c0" file="src/core/cpu.c" linenr="53" column="78" str=")" scope="0x55c5aac789a0" link="0x55c5aafad480"/>
+    <token id="0x55c5aafad7e0" file="src/core/cpu.c" linenr="53" column="79" str=";" scope="0x55c5aac789a0"/>
+    <token id="0x55c5aafad900" file="src/core/cpu.c" linenr="54" column="9" str="for" scope="0x55c5aac789a0" type="name" astParent="0x55c5aafada20"/>
+    <token id="0x55c5aafada20" file="src/core/cpu.c" linenr="54" column="13" str="(" scope="0x55c5aac789a0" link="0x55c5aae56320" astOperand1="0x55c5aafad900" astOperand2="0x55c5aae55b40"/>
+    <token id="0x55c5aafadb40" file="src/core/cpu.c" linenr="54" column="14" str="int" scope="0x55c5aac789a0" type="name"/>
+    <token id="0x55c5aac60ac0" file="src/core/cpu.c" linenr="54" column="18" str="i" scope="0x55c5aac789a0" type="name" varId="17" variable="0x55c5aaca2950" astParent="0x55c5aae55900" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae55900" file="src/core/cpu.c" linenr="54" column="20" str="=" scope="0x55c5aac789a0" type="op" isAssignmentOp="True" astParent="0x55c5aae55b40" astOperand1="0x55c5aac60ac0" astOperand2="0x55c5aae55a20" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae55a20" file="src/core/cpu.c" linenr="54" column="22" str="0" scope="0x55c5aac789a0" type="number" isInt="True" values="0x55c5ab0aaa80" astParent="0x55c5aae55900" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae55b40" file="src/core/cpu.c" linenr="54" column="23" str=";" scope="0x55c5aac789a0" astParent="0x55c5aafada20" astOperand1="0x55c5aae55900" astOperand2="0x55c5aae55fc0"/>
+    <token id="0x55c5aae55c60" file="src/core/cpu.c" linenr="54" column="25" str="i" scope="0x55c5aac789a0" type="name" varId="17" variable="0x55c5aaca2950" astParent="0x55c5aae55d80" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae55d80" file="src/core/cpu.c" linenr="54" column="27" str="&lt;" scope="0x55c5aac789a0" type="op" isComparisonOp="True" astParent="0x55c5aae55fc0" astOperand1="0x55c5aae55c60" astOperand2="0x55c5aae55ea0" valueType-type="bool"/>
+    <token id="0x55c5aae55ea0" file="src/core/cpu.c" linenr="54" column="29" str="ipi_cpumsg_handler_num" scope="0x55c5aac789a0" type="name" varId="11" variable="0x55c5aacdabf0" astParent="0x55c5aae55d80" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aae55fc0" file="src/core/cpu.c" linenr="54" column="51" str=";" scope="0x55c5aac789a0" astParent="0x55c5aae55b40" astOperand1="0x55c5aae55d80" astOperand2="0x55c5aae56200"/>
+    <token id="0x55c5aae560e0" file="src/core/cpu.c" linenr="54" column="53" str="i" scope="0x55c5aac789a0" type="name" varId="17" variable="0x55c5aaca2950" astParent="0x55c5aae56200" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae56200" file="src/core/cpu.c" linenr="54" column="54" str="++" scope="0x55c5aac789a0" type="op" astParent="0x55c5aae55fc0" astOperand1="0x55c5aae560e0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aae56320" file="src/core/cpu.c" linenr="54" column="56" str=")" scope="0x55c5aac789a0" link="0x55c5aafada20"/>
+    <token id="0x55c5aae56440" file="src/core/cpu.c" linenr="54" column="58" str="{" scope="0x55c5aac75e20" link="0x55c5aac6e730"/>
+    <token id="0x55c5aac6dbf0" file="src/core/cpu.c" linenr="55" column="13" str="(" scope="0x55c5aac75e20" link="0x55c5aac6df50"/>
+    <token id="0x55c5aac6dd10" file="src/core/cpu.c" linenr="55" column="14" str="&amp;" scope="0x55c5aac75e20" type="op" values="0x55c5aac7b700" astParent="0x55c5aac6e070" astOperand1="0x55c5aac6de30" valueType-type="long" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="0x55c5aac6de30" file="src/core/cpu.c" linenr="55" column="15" str="_ipi_cpumsg_handlers_id_start" scope="0x55c5aac75e20" type="name" varId="9" variable="0x55c5aacdaa30" astParent="0x55c5aac6dd10" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6df50" file="src/core/cpu.c" linenr="55" column="44" str=")" scope="0x55c5aac75e20" link="0x55c5aac6dbf0"/>
+    <token id="0x55c5aac6e070" file="src/core/cpu.c" linenr="55" column="45" str="[" scope="0x55c5aac75e20" link="0x55c5aac6e2b0" astParent="0x55c5aac6e3d0" astOperand1="0x55c5aac6dd10" astOperand2="0x55c5aac6e190" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6e190" file="src/core/cpu.c" linenr="55" column="46" str="i" scope="0x55c5aac75e20" type="name" varId="17" variable="0x55c5aaca2950" astParent="0x55c5aac6e070" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6e2b0" file="src/core/cpu.c" linenr="55" column="47" str="]" scope="0x55c5aac75e20" link="0x55c5aac6e070"/>
+    <token id="0x55c5aac6e3d0" file="src/core/cpu.c" linenr="55" column="49" str="=" scope="0x55c5aac75e20" type="op" isAssignmentOp="True" astOperand1="0x55c5aac6e070" astOperand2="0x55c5aac6e4f0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac6e4f0" file="src/core/cpu.c" linenr="55" column="51" str="i" scope="0x55c5aac75e20" type="name" varId="17" variable="0x55c5aaca2950" astParent="0x55c5aac6e3d0" valueType-type="int" valueType-sign="signed"/>
+    <token id="0x55c5aac6e610" file="src/core/cpu.c" linenr="55" column="52" str=";" scope="0x55c5aac75e20"/>
+    <token id="0x55c5aac6e730" file="src/core/cpu.c" linenr="56" column="9" str="}" scope="0x55c5aac75e20" link="0x55c5aae56440"/>
+    <token id="0x55c5aac6e850" file="src/core/cpu.c" linenr="57" column="5" str="}" scope="0x55c5aac789a0" link="0x55c5aac5c150"/>
+    <token id="0x55c5aaf6c520" file="src/core/cpu.c" linenr="59" column="5" str="cpu_sync_barrier" scope="0x55c5aac781c0" type="name" astParent="0x55c5aaf6c640"/>
+    <token id="0x55c5aaf6c640" file="src/core/cpu.c" linenr="59" column="21" str="(" scope="0x55c5aac781c0" link="0x55c5aaf6c9a0" astOperand1="0x55c5aaf6c520" astOperand2="0x55c5aaf6c760"/>
+    <token id="0x55c5aaf6c760" file="src/core/cpu.c" linenr="59" column="22" str="&amp;" scope="0x55c5aac781c0" type="op" values="0x55c5aac5db50" astParent="0x55c5aaf6c640" astOperand1="0x55c5aaf6c880"/>
+    <token id="0x55c5aaf6c880" file="src/core/cpu.c" linenr="59" column="23" str="cpu_glb_sync" scope="0x55c5aac781c0" type="name" varId="4" variable="0x55c5aac74ba0" astParent="0x55c5aaf6c760"/>
+    <token id="0x55c5aaf6c9a0" file="src/core/cpu.c" linenr="59" column="35" str=")" scope="0x55c5aac781c0" link="0x55c5aaf6c640"/>
+    <token id="0x55c5aaf6cac0" file="src/core/cpu.c" linenr="59" column="36" str=";" scope="0x55c5aac781c0"/>
+    <token id="0x55c5aaf6cbe0" file="src/core/cpu.c" linenr="60" column="1" str="}" scope="0x55c5aac781c0" link="0x55c5aacac9e0"/>
+    <token id="0x55c5aaf6cd00" file="src/core/cpu.c" linenr="62" column="1" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaf6ce20" file="src/core/cpu.c" linenr="62" column="6" str="cpu_send_msg" scope="0x55c5aac76850" type="name" function="0x55c5aacca390" astParent="0x55c5aaf6cf40"/>
+    <token id="0x55c5aaf6cf40" file="src/core/cpu.c" linenr="62" column="18" str="(" scope="0x55c5aac76850" link="0x55c5ab0ab300" astOperand1="0x55c5aaf6ce20" astOperand2="0x55c5aac676e0" valueType-type="void"/>
+    <token id="0x55c5aaf6d060" file="src/core/cpu.c" linenr="62" column="19" str="uint64_t" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaf6d180" file="src/core/cpu.c" linenr="62" column="28" str="trgtcpu" scope="0x55c5aac76850" type="name" varId="18" variable="0x55c5aacdb2f0" astParent="0x55c5aac676e0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aac676e0" file="src/core/cpu.c" linenr="62" column="35" str="," scope="0x55c5aac76850" astParent="0x55c5aaf6cf40" astOperand1="0x55c5aaf6d180" astOperand2="0x55c5ab0ab0c0"/>
+    <token id="0x55c5ab0aafa0" file="src/core/cpu.c" linenr="62" column="37" str="cpu_msg_t" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0ab0c0"/>
+    <token id="0x55c5ab0ab0c0" file="src/core/cpu.c" linenr="62" column="47" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aac676e0" astOperand1="0x55c5ab0aafa0" astOperand2="0x55c5ab0ab1e0"/>
+    <token id="0x55c5ab0ab1e0" file="src/core/cpu.c" linenr="62" column="48" str="msg" scope="0x55c5aac76850" type="name" varId="19" variable="0x55c5aacdb3d0" astParent="0x55c5ab0ab0c0"/>
+    <token id="0x55c5ab0ab300" file="src/core/cpu.c" linenr="62" column="51" str=")" scope="0x55c5aac76850" link="0x55c5aaf6cf40"/>
+    <token id="0x55c5ab0ab420" file="src/core/cpu.c" linenr="63" column="1" str="{" scope="0x55c5aac785a0" link="0x55c5aaccdc70"/>
+    <token id="0x55c5ab0ab540" file="src/core/cpu.c" linenr="64" column="5" str="struct" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aac63da0" file="src/core/cpu.c" linenr="64" column="0" str="cpu_msg_node_t" scope="0x55c5aac785a0" type="name" type-scope="0x55c5aac7b730" astParent="0x55c5ab0ab660"/>
+    <token id="0x55c5ab0ab660" file="src/core/cpu.c" linenr="64" column="20" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astOperand1="0x55c5aac63da0" astOperand2="0x55c5ab0ab780"/>
+    <token id="0x55c5ab0ab780" file="src/core/cpu.c" linenr="64" column="21" str="node" scope="0x55c5aac785a0" type="name" varId="20" variable="0x55c5aacdae90" astParent="0x55c5ab0ab660" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0ab8a0" file="src/core/cpu.c" linenr="64" column="26" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac747a0" file="src/core/cpu.c" linenr="64" column="21" str="node" scope="0x55c5aac785a0" type="name" varId="20" variable="0x55c5aacdae90" astParent="0x55c5aac52f50" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac52f50" file="src/core/cpu.c" linenr="64" column="26" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aac747a0" astOperand2="0x55c5ab0abae0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0ab9c0" file="src/core/cpu.c" linenr="64" column="28" str="objcache_alloc" scope="0x55c5aac785a0" type="name" astParent="0x55c5ab0abae0"/>
+    <token id="0x55c5ab0abae0" file="src/core/cpu.c" linenr="64" column="42" str="(" scope="0x55c5aac785a0" link="0x55c5aac7a340" values="0x55c5aac6d990" astParent="0x55c5aac52f50" astOperand1="0x55c5ab0ab9c0" astOperand2="0x55c5ab0abc00"/>
+    <token id="0x55c5ab0abc00" file="src/core/cpu.c" linenr="64" column="43" str="&amp;" scope="0x55c5aac785a0" type="op" values="0x55c5ab0ac9f0" astParent="0x55c5ab0abae0" astOperand1="0x55c5ab0abd20"/>
+    <token id="0x55c5ab0abd20" file="src/core/cpu.c" linenr="64" column="44" str="msg_cache" scope="0x55c5aac785a0" type="name" varId="6" variable="0x55c5aace62b0" astParent="0x55c5ab0abc00"/>
+    <token id="0x55c5aac7a340" file="src/core/cpu.c" linenr="64" column="53" str=")" scope="0x55c5aac785a0" link="0x55c5ab0abae0"/>
+    <token id="0x55c5aac7a460" file="src/core/cpu.c" linenr="64" column="54" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aac7a580" file="src/core/cpu.c" linenr="65" column="5" str="if" scope="0x55c5aac785a0" type="name" astParent="0x55c5aac7a6a0"/>
+    <token id="0x55c5aac7a6a0" file="src/core/cpu.c" linenr="65" column="8" str="(" scope="0x55c5aac785a0" link="0x55c5aac7ab20" astOperand1="0x55c5aac7a580" astOperand2="0x55c5aac7a8e0"/>
+    <token id="0x55c5aac7a7c0" file="src/core/cpu.c" linenr="65" column="9" str="node" scope="0x55c5aac785a0" type="name" varId="20" variable="0x55c5aacdae90" values="0x55c5ab0b33d0" astParent="0x55c5aac7a8e0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac7a8e0" file="src/core/cpu.c" linenr="65" column="14" str="==" scope="0x55c5aac785a0" type="op" isComparisonOp="True" values="0x55c5aad1ce90" astParent="0x55c5aac7a6a0" astOperand1="0x55c5aac7a7c0" astOperand2="0x55c5aac7aa00" valueType-type="bool"/>
+    <token id="0x55c5aac7aa00" file="src/core/cpu.c" linenr="65" column="17" str="NULL" scope="0x55c5aac785a0" type="name" values="0x55c5aac78c40" astParent="0x55c5aac7a8e0"/>
+    <token id="0x55c5aac7ab20" file="src/core/cpu.c" linenr="65" column="21" str=")" scope="0x55c5aac785a0" link="0x55c5aac7a6a0"/>
+    <token id="0x55c5aaca7e40" file="src/core/cpu.c" linenr="65" column="0" str="{" scope="0x55c5aac783b0" link="0x55c5aac5b230"/>
+    <token id="0x55c5aac7ac40" file="src/core/cpu.c" linenr="65" column="23" str="ERROR" scope="0x55c5aac783b0" type="name" astParent="0x55c5aac7ad60"/>
+    <token id="0x55c5aac7ad60" file="src/core/cpu.c" linenr="65" column="28" str="(" scope="0x55c5aac783b0" link="0x55c5aac7afa0" astOperand1="0x55c5aac7ac40" astOperand2="0x55c5aac7ae80"/>
+    <token id="0x55c5aac7ae80" file="src/core/cpu.c" linenr="65" column="29" str="&quot;cant allocate msg node&quot;" scope="0x55c5aac783b0" type="string" strlen="22" values="0x55c5aace7c00" astParent="0x55c5aac7ad60" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac7afa0" file="src/core/cpu.c" linenr="65" column="53" str=")" scope="0x55c5aac783b0" link="0x55c5aac7ad60"/>
+    <token id="0x55c5aac7b0c0" file="src/core/cpu.c" linenr="65" column="54" str=";" scope="0x55c5aac783b0"/>
+    <token id="0x55c5aac5b230" file="src/core/cpu.c" linenr="65" column="0" str="}" scope="0x55c5aac783b0" link="0x55c5aaca7e40"/>
+    <token id="0x55c5aace2ae0" file="src/core/cpu.c" linenr="66" column="5" str="node" scope="0x55c5aac785a0" type="name" varId="20" variable="0x55c5aacdae90" astParent="0x55c5aace2c00" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aace2c00" file="src/core/cpu.c" linenr="66" column="9" str="." scope="0x55c5aac785a0" astParent="0x55c5aace2e40" astOperand1="0x55c5aace2ae0" astOperand2="0x55c5aace2d20" originalName="->"/>
+    <token id="0x55c5aace2d20" file="src/core/cpu.c" linenr="66" column="11" str="msg" scope="0x55c5aac785a0" type="name" varId="21" variable="0x55c5aacdadb0" astParent="0x55c5aace2c00"/>
+    <token id="0x55c5aace2e40" file="src/core/cpu.c" linenr="66" column="15" str="=" scope="0x55c5aac785a0" type="op" isAssignmentOp="True" astOperand1="0x55c5aace2c00" astOperand2="0x55c5aace2f60"/>
+    <token id="0x55c5aace2f60" file="src/core/cpu.c" linenr="66" column="17" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True" astParent="0x55c5aace2e40" astOperand1="0x55c5aace3080"/>
+    <token id="0x55c5aace3080" file="src/core/cpu.c" linenr="66" column="18" str="msg" scope="0x55c5aac785a0" type="name" varId="19" variable="0x55c5aacdb3d0" astParent="0x55c5aace2f60"/>
+    <token id="0x55c5aace31a0" file="src/core/cpu.c" linenr="66" column="21" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aace32c0" file="src/core/cpu.c" linenr="67" column="5" str="list_push" scope="0x55c5aac785a0" type="name" astParent="0x55c5aace33e0"/>
+    <token id="0x55c5aace33e0" file="src/core/cpu.c" linenr="67" column="14" str="(" scope="0x55c5aac785a0" link="0x55c5aaccaf00" astOperand1="0x55c5aace32c0" astOperand2="0x55c5aacca840"/>
+    <token id="0x55c5aace3500" file="src/core/cpu.c" linenr="67" column="15" str="&amp;" scope="0x55c5aac785a0" type="op" values="0x55c5aace6450" astParent="0x55c5aacca840" astOperand1="0x55c5aacca600"/>
+    <token id="0x55c5aace3620" file="src/core/cpu.c" linenr="67" column="16" str="cpu_if" scope="0x55c5aac785a0" type="name" astParent="0x55c5aace3740"/>
+    <token id="0x55c5aace3740" file="src/core/cpu.c" linenr="67" column="22" str="(" scope="0x55c5aac785a0" link="0x55c5aacca4e0" astParent="0x55c5aacca600" astOperand1="0x55c5aace3620" astOperand2="0x55c5aace3860"/>
+    <token id="0x55c5aace3860" file="src/core/cpu.c" linenr="67" column="23" str="trgtcpu" scope="0x55c5aac785a0" type="name" varId="18" variable="0x55c5aacdb2f0" astParent="0x55c5aace3740" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aacca4e0" file="src/core/cpu.c" linenr="67" column="30" str=")" scope="0x55c5aac785a0" link="0x55c5aace3740"/>
+    <token id="0x55c5aacca600" file="src/core/cpu.c" linenr="67" column="31" str="." scope="0x55c5aac785a0" astParent="0x55c5aace3500" astOperand1="0x55c5aace3740" astOperand2="0x55c5aacca720" originalName="->"/>
+    <token id="0x55c5aacca720" file="src/core/cpu.c" linenr="67" column="33" str="event_list" scope="0x55c5aac785a0" type="name" varId="22" astParent="0x55c5aacca600"/>
+    <token id="0x55c5aacca840" file="src/core/cpu.c" linenr="67" column="43" str="," scope="0x55c5aac785a0" astParent="0x55c5aace33e0" astOperand1="0x55c5aace3500" astOperand2="0x55c5aacca960"/>
+    <token id="0x55c5aacca960" file="src/core/cpu.c" linenr="67" column="45" str="(" scope="0x55c5aac785a0" link="0x55c5aaccacc0" astParent="0x55c5aacca840" astOperand1="0x55c5aaccade0"/>
+    <token id="0x55c5aaccaa80" file="src/core/cpu.c" linenr="67" column="46" str="node_t" scope="0x55c5aac785a0" type="name"/>
+    <token id="0x55c5aaccaba0" file="src/core/cpu.c" linenr="67" column="53" str="*" scope="0x55c5aac785a0" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aaccacc0" file="src/core/cpu.c" linenr="67" column="54" str=")" scope="0x55c5aac785a0" link="0x55c5aacca960"/>
+    <token id="0x55c5aaccade0" file="src/core/cpu.c" linenr="67" column="55" str="node" scope="0x55c5aac785a0" type="name" varId="20" variable="0x55c5aacdae90" astParent="0x55c5aacca960" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aaccaf00" file="src/core/cpu.c" linenr="67" column="59" str=")" scope="0x55c5aac785a0" link="0x55c5aace33e0"/>
+    <token id="0x55c5aaccb020" file="src/core/cpu.c" linenr="67" column="60" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aaccb140" file="src/core/cpu.c" linenr="68" column="5" str="fence_sync_write" scope="0x55c5aac785a0" type="name" astParent="0x55c5aaccb260"/>
+    <token id="0x55c5aaccb260" file="src/core/cpu.c" linenr="68" column="21" str="(" scope="0x55c5aac785a0" link="0x55c5aaccd250" astOperand1="0x55c5aaccb140"/>
+    <token id="0x55c5aaccd250" file="src/core/cpu.c" linenr="68" column="22" str=")" scope="0x55c5aac785a0" link="0x55c5aaccb260"/>
+    <token id="0x55c5aaccd370" file="src/core/cpu.c" linenr="68" column="23" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aaccd490" file="src/core/cpu.c" linenr="69" column="5" str="interrupts_cpu_sendipi" scope="0x55c5aac785a0" type="name" astParent="0x55c5aaccd5b0"/>
+    <token id="0x55c5aaccd5b0" file="src/core/cpu.c" linenr="69" column="27" str="(" scope="0x55c5aac785a0" link="0x55c5aaccda30" astOperand1="0x55c5aaccd490" astOperand2="0x55c5aaccd7f0"/>
+    <token id="0x55c5aaccd6d0" file="src/core/cpu.c" linenr="69" column="28" str="trgtcpu" scope="0x55c5aac785a0" type="name" varId="18" variable="0x55c5aacdb2f0" astParent="0x55c5aaccd7f0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaccd7f0" file="src/core/cpu.c" linenr="69" column="35" str="," scope="0x55c5aac785a0" astParent="0x55c5aaccd5b0" astOperand1="0x55c5aaccd6d0" astOperand2="0x55c5aaccd910"/>
+    <token id="0x55c5aaccd910" file="src/core/cpu.c" linenr="69" column="37" str="IPI_CPU_MSG" scope="0x55c5aac785a0" type="name" astParent="0x55c5aaccd7f0"/>
+    <token id="0x55c5aaccda30" file="src/core/cpu.c" linenr="69" column="48" str=")" scope="0x55c5aac785a0" link="0x55c5aaccd5b0"/>
+    <token id="0x55c5aaccdb50" file="src/core/cpu.c" linenr="69" column="49" str=";" scope="0x55c5aac785a0"/>
+    <token id="0x55c5aaccdc70" file="src/core/cpu.c" linenr="70" column="1" str="}" scope="0x55c5aac785a0" link="0x55c5ab0ab420"/>
+    <token id="0x55c5aaccdd90" file="src/core/cpu.c" linenr="72" column="1" str="bool" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aaccdeb0" file="src/core/cpu.c" linenr="72" column="6" str="cpu_get_msg" scope="0x55c5aac76850" type="name" function="0x55c5aafac070" astParent="0x55c5aaccdfd0"/>
+    <token id="0x55c5aaccdfd0" file="src/core/cpu.c" linenr="72" column="17" str="(" scope="0x55c5aac76850" link="0x55c5ab0ae1c0" astOperand1="0x55c5aaccdeb0" astOperand2="0x55c5ab0adf80" valueType-type="bool"/>
+    <token id="0x55c5aacce0f0" file="src/core/cpu.c" linenr="72" column="18" str="cpu_msg_t" scope="0x55c5aac76850" type="name" astParent="0x55c5ab0adf80"/>
+    <token id="0x55c5ab0adf80" file="src/core/cpu.c" linenr="72" column="28" str="*" scope="0x55c5aac76850" type="op" isArithmeticalOp="True" astParent="0x55c5aaccdfd0" astOperand1="0x55c5aacce0f0" astOperand2="0x55c5ab0ae0a0"/>
+    <token id="0x55c5ab0ae0a0" file="src/core/cpu.c" linenr="72" column="29" str="msg" scope="0x55c5aac76850" type="name" varId="23" variable="0x55c5aacdb4b0" astParent="0x55c5ab0adf80"/>
+    <token id="0x55c5ab0ae1c0" file="src/core/cpu.c" linenr="72" column="32" str=")" scope="0x55c5aac76850" link="0x55c5aaccdfd0"/>
+    <token id="0x55c5ab0ae2e0" file="src/core/cpu.c" linenr="73" column="1" str="{" scope="0x55c5aac64290" link="0x55c5aace5230"/>
+    <token id="0x55c5ab0ae400" file="src/core/cpu.c" linenr="74" column="5" str="struct" scope="0x55c5aac64290" type="name"/>
+    <token id="0x55c5aac63ec0" file="src/core/cpu.c" linenr="74" column="0" str="cpu_msg_node_t" scope="0x55c5aac64290" type="name" type-scope="0x55c5aac7b730" astParent="0x55c5ab0ae520"/>
+    <token id="0x55c5ab0ae520" file="src/core/cpu.c" linenr="74" column="20" str="*" scope="0x55c5aac64290" type="op" isArithmeticalOp="True" astOperand1="0x55c5aac63ec0" astOperand2="0x55c5ab0ae640"/>
+    <token id="0x55c5ab0ae640" file="src/core/cpu.c" linenr="74" column="21" str="node" scope="0x55c5aac64290" type="name" varId="24" variable="0x55c5aacdaf70" astParent="0x55c5ab0ae520" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0ae760" file="src/core/cpu.c" linenr="74" column="26" str=";" scope="0x55c5aac64290"/>
+    <token id="0x55c5aaca7ea0" file="src/core/cpu.c" linenr="74" column="21" str="node" scope="0x55c5aac64290" type="name" varId="24" variable="0x55c5aacdaf70" astParent="0x55c5aaccb2c0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aaccb2c0" file="src/core/cpu.c" linenr="74" column="26" str="=" scope="0x55c5aac64290" type="op" isAssignmentOp="True" astOperand1="0x55c5aaca7ea0" astOperand2="0x55c5ab0ae880" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5ab0ae880" file="src/core/cpu.c" linenr="74" column="28" str="NULL" scope="0x55c5aac64290" type="name" values="0x55c5aac664a0" astParent="0x55c5aaccb2c0"/>
+    <token id="0x55c5ab0ae9a0" file="src/core/cpu.c" linenr="74" column="32" str=";" scope="0x55c5aac64290"/>
+    <token id="0x55c5ab0aeac0" file="src/core/cpu.c" linenr="75" column="5" str="if" scope="0x55c5aac64290" type="name" astParent="0x55c5ab0aebe0"/>
+    <token id="0x55c5ab0aebe0" file="src/core/cpu.c" linenr="75" column="8" str="(" scope="0x55c5aac64290" link="0x55c5aac5ee10" astOperand1="0x55c5ab0aeac0" astOperand2="0x55c5aac983a0"/>
+    <token id="0x55c5ab0aed00" file="src/core/cpu.c" linenr="75" column="9" str="(" scope="0x55c5aac64290" link="0x55c5aac98280"/>
+    <token id="0x55c5ab0aee20" file="src/core/cpu.c" linenr="75" column="10" str="node" scope="0x55c5aac64290" type="name" varId="24" variable="0x55c5aacdaf70" astParent="0x55c5aac972c0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac972c0" file="src/core/cpu.c" linenr="75" column="15" str="=" scope="0x55c5aac64290" type="op" isAssignmentOp="True" astParent="0x55c5aac983a0" astOperand1="0x55c5ab0aee20" astOperand2="0x55c5aac973e0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac973e0" file="src/core/cpu.c" linenr="75" column="17" str="(" scope="0x55c5aac64290" link="0x55c5aac97740" astParent="0x55c5aac972c0" astOperand1="0x55c5aac97980" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac97500" file="src/core/cpu.c" linenr="75" column="18" str="struct" scope="0x55c5aac64290" type="name"/>
+    <token id="0x55c5aac63fe0" file="src/core/cpu.c" linenr="75" column="0" str="cpu_msg_node_t" scope="0x55c5aac64290" type="name" type-scope="0x55c5aac7b730"/>
+    <token id="0x55c5aac97620" file="src/core/cpu.c" linenr="75" column="33" str="*" scope="0x55c5aac64290" type="op" isArithmeticalOp="True"/>
+    <token id="0x55c5aac97740" file="src/core/cpu.c" linenr="75" column="34" str=")" scope="0x55c5aac64290" link="0x55c5aac973e0"/>
+    <token id="0x55c5aac97860" file="src/core/cpu.c" linenr="75" column="35" str="list_pop" scope="0x55c5aac64290" type="name" astParent="0x55c5aac97980"/>
+    <token id="0x55c5aac97980" file="src/core/cpu.c" linenr="75" column="43" str="(" scope="0x55c5aac64290" link="0x55c5aac98160" astParent="0x55c5aac973e0" astOperand1="0x55c5aac97860" astOperand2="0x55c5aac97aa0"/>
+    <token id="0x55c5aac97aa0" file="src/core/cpu.c" linenr="75" column="44" str="&amp;" scope="0x55c5aac64290" type="op" values="0x55c5aac53240" astParent="0x55c5aac97980" astOperand1="0x55c5aac97f20"/>
+    <token id="0x55c5aac97bc0" file="src/core/cpu.c" linenr="75" column="45" str="cpu" scope="0x55c5aac64290" type="name" varId="3" variable="0x55c5aafadf10" astParent="0x55c5aac97ce0"/>
+    <token id="0x55c5aac97ce0" file="src/core/cpu.c" linenr="75" column="48" str="." scope="0x55c5aac64290" astParent="0x55c5aac97f20" astOperand1="0x55c5aac97bc0" astOperand2="0x55c5aac97e00"/>
+    <token id="0x55c5aac97e00" file="src/core/cpu.c" linenr="75" column="49" str="interface" scope="0x55c5aac64290" type="name" varId="15" astParent="0x55c5aac97ce0"/>
+    <token id="0x55c5aac97f20" file="src/core/cpu.c" linenr="75" column="58" str="." scope="0x55c5aac64290" astParent="0x55c5aac97aa0" astOperand1="0x55c5aac97ce0" astOperand2="0x55c5aac98040"/>
+    <token id="0x55c5aac98040" file="src/core/cpu.c" linenr="75" column="59" str="event_list" scope="0x55c5aac64290" type="name" varId="16" astParent="0x55c5aac97f20"/>
+    <token id="0x55c5aac98160" file="src/core/cpu.c" linenr="75" column="69" str=")" scope="0x55c5aac64290" link="0x55c5aac97980"/>
+    <token id="0x55c5aac98280" file="src/core/cpu.c" linenr="75" column="70" str=")" scope="0x55c5aac64290" link="0x55c5ab0aed00"/>
+    <token id="0x55c5aac983a0" file="src/core/cpu.c" linenr="75" column="72" str="!=" scope="0x55c5aac64290" type="op" isComparisonOp="True" astParent="0x55c5ab0aebe0" astOperand1="0x55c5aac972c0" astOperand2="0x55c5aac5ecf0" valueType-type="bool"/>
+    <token id="0x55c5aac5ecf0" file="src/core/cpu.c" linenr="76" column="9" str="NULL" scope="0x55c5aac64290" type="name" values="0x55c5ab0adc30" astParent="0x55c5aac983a0"/>
+    <token id="0x55c5aac5ee10" file="src/core/cpu.c" linenr="76" column="13" str=")" scope="0x55c5aac64290" link="0x55c5ab0aebe0"/>
+    <token id="0x55c5aac5ef30" file="src/core/cpu.c" linenr="76" column="15" str="{" scope="0x55c5aac64400" link="0x55c5aace4db0"/>
+    <token id="0x55c5aac5f050" file="src/core/cpu.c" linenr="77" column="9" str="*" scope="0x55c5aac64400" type="op" isArithmeticalOp="True" astParent="0x55c5aac5f290" astOperand1="0x55c5aac5f170"/>
+    <token id="0x55c5aac5f170" file="src/core/cpu.c" linenr="77" column="10" str="msg" scope="0x55c5aac64400" type="name" varId="23" variable="0x55c5aacdb4b0" astParent="0x55c5aac5f050"/>
+    <token id="0x55c5aac5f290" file="src/core/cpu.c" linenr="77" column="14" str="=" scope="0x55c5aac64400" type="op" isAssignmentOp="True" astOperand1="0x55c5aac5f050" astOperand2="0x55c5aac5f4d0"/>
+    <token id="0x55c5aac5f3b0" file="src/core/cpu.c" linenr="77" column="16" str="node" scope="0x55c5aac64400" type="name" varId="24" variable="0x55c5aacdaf70" values="0x55c5aac74ab0" astParent="0x55c5aac5f4d0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac5f4d0" file="src/core/cpu.c" linenr="77" column="20" str="." scope="0x55c5aac64400" astParent="0x55c5aac5f290" astOperand1="0x55c5aac5f3b0" astOperand2="0x55c5aac5f5f0" originalName="->"/>
+    <token id="0x55c5aac5f5f0" file="src/core/cpu.c" linenr="77" column="22" str="msg" scope="0x55c5aac64400" type="name" varId="25" variable="0x55c5aacdadb0" astParent="0x55c5aac5f4d0"/>
+    <token id="0x55c5aac5f710" file="src/core/cpu.c" linenr="77" column="25" str=";" scope="0x55c5aac64400"/>
+    <token id="0x55c5aac5f830" file="src/core/cpu.c" linenr="78" column="9" str="objcache_free" scope="0x55c5aac64400" type="name" astParent="0x55c5aac5f950"/>
+    <token id="0x55c5aac5f950" file="src/core/cpu.c" linenr="78" column="22" str="(" scope="0x55c5aac64400" link="0x55c5aac5fef0" astOperand1="0x55c5aac5f830" astOperand2="0x55c5aac5fcb0"/>
+    <token id="0x55c5aac5fa70" file="src/core/cpu.c" linenr="78" column="23" str="&amp;" scope="0x55c5aac64400" type="op" values="0x55c5ab09e850" astParent="0x55c5aac5fcb0" astOperand1="0x55c5aac5fb90"/>
+    <token id="0x55c5aac5fb90" file="src/core/cpu.c" linenr="78" column="24" str="msg_cache" scope="0x55c5aac64400" type="name" varId="6" variable="0x55c5aace62b0" astParent="0x55c5aac5fa70"/>
+    <token id="0x55c5aac5fcb0" file="src/core/cpu.c" linenr="78" column="33" str="," scope="0x55c5aac64400" astParent="0x55c5aac5f950" astOperand1="0x55c5aac5fa70" astOperand2="0x55c5aac5fdd0"/>
+    <token id="0x55c5aac5fdd0" file="src/core/cpu.c" linenr="78" column="35" str="node" scope="0x55c5aac64400" type="name" varId="24" variable="0x55c5aacdaf70" values="0x55c5aacbbf00" astParent="0x55c5aac5fcb0" valueType-type="record" valueType-pointer="1" valueType-typeScope="0x55c5aac7b730"/>
+    <token id="0x55c5aac5fef0" file="src/core/cpu.c" linenr="78" column="39" str=")" scope="0x55c5aac64400" link="0x55c5aac5f950"/>
+    <token id="0x55c5aace4930" file="src/core/cpu.c" linenr="78" column="40" str=";" scope="0x55c5aac64400"/>
+    <token id="0x55c5aace4a50" file="src/core/cpu.c" linenr="79" column="9" str="return" scope="0x55c5aac64400" type="name" astOperand1="0x55c5aace4b70" valueType-type="bool"/>
+    <token id="0x55c5aace4b70" file="src/core/cpu.c" linenr="79" column="16" str="true" scope="0x55c5aac64400" type="name" astParent="0x55c5aace4a50" valueType-type="bool"/>
+    <token id="0x55c5aace4c90" file="src/core/cpu.c" linenr="79" column="20" str=";" scope="0x55c5aac64400"/>
+    <token id="0x55c5aace4db0" file="src/core/cpu.c" linenr="80" column="5" str="}" scope="0x55c5aac64400" link="0x55c5aac5ef30"/>
+    <token id="0x55c5aace4ed0" file="src/core/cpu.c" linenr="81" column="5" str="return" scope="0x55c5aac64290" type="name" astOperand1="0x55c5aace4ff0" valueType-type="bool"/>
+    <token id="0x55c5aace4ff0" file="src/core/cpu.c" linenr="81" column="12" str="false" scope="0x55c5aac64290" type="name" astParent="0x55c5aace4ed0" valueType-type="bool"/>
+    <token id="0x55c5aace5110" file="src/core/cpu.c" linenr="81" column="17" str=";" scope="0x55c5aac64290"/>
+    <token id="0x55c5aace5230" file="src/core/cpu.c" linenr="82" column="1" str="}" scope="0x55c5aac64290" link="0x55c5ab0ae2e0"/>
+    <token id="0x55c5aace5350" file="src/core/cpu.c" linenr="84" column="1" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aace5470" file="src/core/cpu.c" linenr="84" column="6" str="cpu_msg_handler" scope="0x55c5aac76850" type="name" function="0x55c5aac96f10" astParent="0x55c5aace5590"/>
+    <token id="0x55c5aace5590" file="src/core/cpu.c" linenr="84" column="21" str="(" scope="0x55c5aac76850" link="0x55c5aace56b0" astOperand1="0x55c5aace5470" valueType-type="void"/>
+    <token id="0x55c5aace56b0" file="src/core/cpu.c" linenr="84" column="22" str=")" scope="0x55c5aac76850" link="0x55c5aace5590"/>
+    <token id="0x55c5aace57d0" file="src/core/cpu.c" linenr="85" column="1" str="{" scope="0x55c5aac64570" link="0x55c5aac545e0"/>
+    <token id="0x55c5aace58f0" file="src/core/cpu.c" linenr="86" column="5" str="cpu_msg_t" scope="0x55c5aac64570" type="name"/>
+    <token id="0x55c5aace5a10" file="src/core/cpu.c" linenr="86" column="15" str="msg" scope="0x55c5aac64570" type="name" varId="26" variable="0x55c5aacdb050"/>
+    <token id="0x55c5aace5b30" file="src/core/cpu.c" linenr="86" column="18" str=";" scope="0x55c5aac64570"/>
+    <token id="0x55c5aace5c50" file="src/core/cpu.c" linenr="87" column="5" str="while" scope="0x55c5aac64570" type="name" astParent="0x55c5aac9f950"/>
+    <token id="0x55c5aac9f950" file="src/core/cpu.c" linenr="87" column="11" str="(" scope="0x55c5aac64570" link="0x55c5aaca0010" astOperand1="0x55c5aace5c50" astOperand2="0x55c5aac9fb90"/>
+    <token id="0x55c5aac9fa70" file="src/core/cpu.c" linenr="87" column="12" str="cpu_get_msg" scope="0x55c5aac64570" type="name" function="0x55c5aafac070" astParent="0x55c5aac9fb90"/>
+    <token id="0x55c5aac9fb90" file="src/core/cpu.c" linenr="87" column="23" str="(" scope="0x55c5aac64570" link="0x55c5aac9fef0" astParent="0x55c5aac9f950" astOperand1="0x55c5aac9fa70" astOperand2="0x55c5aac9fcb0" valueType-type="bool"/>
+    <token id="0x55c5aac9fcb0" file="src/core/cpu.c" linenr="87" column="24" str="&amp;" scope="0x55c5aac64570" type="op" values="0x55c5ab0b1b90" astParent="0x55c5aac9fb90" astOperand1="0x55c5aac9fdd0"/>
+    <token id="0x55c5aac9fdd0" file="src/core/cpu.c" linenr="87" column="25" str="msg" scope="0x55c5aac64570" type="name" varId="26" variable="0x55c5aacdb050" astParent="0x55c5aac9fcb0"/>
+    <token id="0x55c5aac9fef0" file="src/core/cpu.c" linenr="87" column="28" str=")" scope="0x55c5aac64570" link="0x55c5aac9fb90"/>
+    <token id="0x55c5aaca0010" file="src/core/cpu.c" linenr="87" column="29" str=")" scope="0x55c5aac64570" link="0x55c5aac9f950"/>
+    <token id="0x55c5aaca0130" file="src/core/cpu.c" linenr="87" column="31" str="{" scope="0x55c5aacd9ed0" link="0x55c5aac544c0"/>
+    <token id="0x55c5aaca0250" file="src/core/cpu.c" linenr="88" column="9" str="if" scope="0x55c5aacd9ed0" type="name" astParent="0x55c5aaca0370"/>
+    <token id="0x55c5aaca0370" file="src/core/cpu.c" linenr="88" column="12" str="(" scope="0x55c5aacd9ed0" link="0x55c5aaf6d900" astOperand1="0x55c5aaca0250" astOperand2="0x55c5aaca0a30"/>
+    <token id="0x55c5aaca0490" file="src/core/cpu.c" linenr="88" column="13" str="msg" scope="0x55c5aacd9ed0" type="name" varId="26" variable="0x55c5aacdb050" astParent="0x55c5aaca05b0"/>
+    <token id="0x55c5aaca05b0" file="src/core/cpu.c" linenr="88" column="16" str="." scope="0x55c5aacd9ed0" astParent="0x55c5aaca07f0" astOperand1="0x55c5aaca0490" astOperand2="0x55c5aaca06d0"/>
+    <token id="0x55c5aaca06d0" file="src/core/cpu.c" linenr="88" column="17" str="handler" scope="0x55c5aacd9ed0" type="name" varId="27" astParent="0x55c5aaca05b0"/>
+    <token id="0x55c5aaca07f0" file="src/core/cpu.c" linenr="88" column="25" str="&lt;" scope="0x55c5aacd9ed0" type="op" isComparisonOp="True" astParent="0x55c5aaca0a30" astOperand1="0x55c5aaca05b0" astOperand2="0x55c5aaca0910" valueType-type="bool"/>
+    <token id="0x55c5aaca0910" file="src/core/cpu.c" linenr="88" column="27" str="ipi_cpumsg_handler_num" scope="0x55c5aacd9ed0" type="name" varId="11" variable="0x55c5aacdabf0" astParent="0x55c5aaca07f0" valueType-type="long" valueType-sign="unsigned"/>
+    <token id="0x55c5aaca0a30" file="src/core/cpu.c" linenr="88" column="50" str="&amp;&amp;" scope="0x55c5aacd9ed0" type="op" isLogicalOp="True" astParent="0x55c5aaca0370" astOperand1="0x55c5aaca07f0" astOperand2="0x55c5aaca0c70" valueType-type="bool"/>
+    <token id="0x55c5aaca0b50" file="src/core/cpu.c" linenr="89" column="13" str="ipi_cpumsg_handlers" scope="0x55c5aacd9ed0" type="name" varId="10" variable="0x55c5aacdab10" astParent="0x55c5aaca0c70"/>
+    <token id="0x55c5aaca0c70" file="src/core/cpu.c" linenr="89" column="32" str="[" scope="0x55c5aacd9ed0" link="0x55c5aaf6d7e0" astParent="0x55c5aaca0a30" astOperand1="0x55c5aaca0b50" astOperand2="0x55c5aaf6d5a0"/>
+    <token id="0x55c5aaca0cd0" file="src/core/cpu.c" linenr="89" column="33" str="msg" scope="0x55c5aacd9ed0" type="name" varId="26" variable="0x55c5aacdb050" astParent="0x55c5aaf6d5a0"/>
+    <token id="0x55c5aaf6d5a0" file="src/core/cpu.c" linenr="89" column="36" str="." scope="0x55c5aacd9ed0" astParent="0x55c5aaca0c70" astOperand1="0x55c5aaca0cd0" astOperand2="0x55c5aaf6d6c0"/>
+    <token id="0x55c5aaf6d6c0" file="src/core/cpu.c" linenr="89" column="37" str="handler" scope="0x55c5aacd9ed0" type="name" varId="27" astParent="0x55c5aaf6d5a0"/>
+    <token id="0x55c5aaf6d7e0" file="src/core/cpu.c" linenr="89" column="44" str="]" scope="0x55c5aacd9ed0" link="0x55c5aaca0c70"/>
+    <token id="0x55c5aaf6d900" file="src/core/cpu.c" linenr="89" column="45" str=")" scope="0x55c5aacd9ed0" link="0x55c5aaca0370"/>
+    <token id="0x55c5aaf6da20" file="src/core/cpu.c" linenr="89" column="47" str="{" scope="0x55c5aacda040" link="0x55c5aac543a0"/>
+    <token id="0x55c5aaf6db40" file="src/core/cpu.c" linenr="90" column="13" str="ipi_cpumsg_handlers" scope="0x55c5aacda040" type="name" varId="10" variable="0x55c5aacdab10" astParent="0x55c5aaf6dc60"/>
+    <token id="0x55c5aaf6dc60" file="src/core/cpu.c" linenr="90" column="32" str="[" scope="0x55c5aacda040" link="0x55c5aaf6e0e0" astParent="0x55c5aaf6e200" astOperand1="0x55c5aaf6db40" astOperand2="0x55c5aaf6dea0"/>
+    <token id="0x55c5aaf6dd80" file="src/core/cpu.c" linenr="90" column="33" str="msg" scope="0x55c5aacda040" type="name" varId="26" variable="0x55c5aacdb050" astParent="0x55c5aaf6dea0"/>
+    <token id="0x55c5aaf6dea0" file="src/core/cpu.c" linenr="90" column="36" str="." scope="0x55c5aacda040" astParent="0x55c5aaf6dc60" astOperand1="0x55c5aaf6dd80" astOperand2="0x55c5aaf6dfc0"/>
+    <token id="0x55c5aaf6dfc0" file="src/core/cpu.c" linenr="90" column="37" str="handler" scope="0x55c5aacda040" type="name" varId="27" astParent="0x55c5aaf6dea0"/>
+    <token id="0x55c5aaf6e0e0" file="src/core/cpu.c" linenr="90" column="44" str="]" scope="0x55c5aacda040" link="0x55c5aaf6dc60"/>
+    <token id="0x55c5aaf6e200" file="src/core/cpu.c" linenr="90" column="45" str="(" scope="0x55c5aacda040" link="0x55c5aac54160" astOperand1="0x55c5aaf6dc60" astOperand2="0x55c5aaf6e680"/>
+    <token id="0x55c5aaf6e320" file="src/core/cpu.c" linenr="90" column="46" str="msg" scope="0x55c5aacda040" type="name" varId="26" variable="0x55c5aacdb050" astParent="0x55c5aaf6e440"/>
+    <token id="0x55c5aaf6e440" file="src/core/cpu.c" linenr="90" column="49" str="." scope="0x55c5aacda040" astParent="0x55c5aaf6e680" astOperand1="0x55c5aaf6e320" astOperand2="0x55c5aaf6e560"/>
+    <token id="0x55c5aaf6e560" file="src/core/cpu.c" linenr="90" column="50" str="event" scope="0x55c5aacda040" type="name" varId="28" astParent="0x55c5aaf6e440"/>
+    <token id="0x55c5aaf6e680" file="src/core/cpu.c" linenr="90" column="55" str="," scope="0x55c5aacda040" astParent="0x55c5aaf6e200" astOperand1="0x55c5aaf6e440" astOperand2="0x55c5ab0aee80"/>
+    <token id="0x55c5aaf6e7a0" file="src/core/cpu.c" linenr="90" column="57" str="msg" scope="0x55c5aacda040" type="name" varId="26" variable="0x55c5aacdb050" astParent="0x55c5ab0aee80"/>
+    <token id="0x55c5ab0aee80" file="src/core/cpu.c" linenr="90" column="60" str="." scope="0x55c5aacda040" astParent="0x55c5aaf6e680" astOperand1="0x55c5aaf6e7a0" astOperand2="0x55c5aac54040"/>
+    <token id="0x55c5aac54040" file="src/core/cpu.c" linenr="90" column="61" str="data" scope="0x55c5aacda040" type="name" varId="29" astParent="0x55c5ab0aee80"/>
+    <token id="0x55c5aac54160" file="src/core/cpu.c" linenr="90" column="65" str=")" scope="0x55c5aacda040" link="0x55c5aaf6e200"/>
+    <token id="0x55c5aac54280" file="src/core/cpu.c" linenr="90" column="66" str=";" scope="0x55c5aacda040"/>
+    <token id="0x55c5aac543a0" file="src/core/cpu.c" linenr="91" column="9" str="}" scope="0x55c5aacda040" link="0x55c5aaf6da20"/>
+    <token id="0x55c5aac544c0" file="src/core/cpu.c" linenr="92" column="5" str="}" scope="0x55c5aacd9ed0" link="0x55c5aaca0130"/>
+    <token id="0x55c5aac545e0" file="src/core/cpu.c" linenr="93" column="1" str="}" scope="0x55c5aac64570" link="0x55c5aace57d0"/>
+    <token id="0x55c5aac54700" file="src/core/cpu.c" linenr="95" column="1" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aac54820" file="src/core/cpu.c" linenr="95" column="6" str="cpu_idle" scope="0x55c5aac76850" type="name" function="0x55c5aac96fb0" astParent="0x55c5aac54940"/>
+    <token id="0x55c5aac54940" file="src/core/cpu.c" linenr="95" column="14" str="(" scope="0x55c5aac76850" link="0x55c5aac54a60" astOperand1="0x55c5aac54820" valueType-type="void"/>
+    <token id="0x55c5aac54a60" file="src/core/cpu.c" linenr="95" column="15" str=")" scope="0x55c5aac76850" link="0x55c5aac54940"/>
+    <token id="0x55c5aac54b80" file="src/core/cpu.c" linenr="96" column="1" str="{" scope="0x55c5aacda1b0" link="0x55c5aac556c0"/>
+    <token id="0x55c5aac54ca0" file="src/core/cpu.c" linenr="97" column="5" str="cpu_arch_idle" scope="0x55c5aacda1b0" type="name" astParent="0x55c5aac54dc0"/>
+    <token id="0x55c5aac54dc0" file="src/core/cpu.c" linenr="97" column="18" str="(" scope="0x55c5aacda1b0" link="0x55c5aac54ee0" astOperand1="0x55c5aac54ca0"/>
+    <token id="0x55c5aac54ee0" file="src/core/cpu.c" linenr="97" column="19" str=")" scope="0x55c5aacda1b0" link="0x55c5aac54dc0"/>
+    <token id="0x55c5aac55000" file="src/core/cpu.c" linenr="97" column="20" str=";" scope="0x55c5aacda1b0"/>
+    <token id="0x55c5aac55120" file="src/core/cpu.c" linenr="104" column="5" str="ERROR" scope="0x55c5aacda1b0" type="name" astParent="0x55c5aac55240"/>
+    <token id="0x55c5aac55240" file="src/core/cpu.c" linenr="104" column="10" str="(" scope="0x55c5aacda1b0" link="0x55c5aac55480" astOperand1="0x55c5aac55120" astOperand2="0x55c5aac55360"/>
+    <token id="0x55c5aac55360" file="src/core/cpu.c" linenr="104" column="11" str="&quot;Spurious idle wake up&quot;" scope="0x55c5aacda1b0" type="string" strlen="21" values="0x55c5ab0b0d20" astParent="0x55c5aac55240" valueType-type="char" valueType-pointer="1" valueType-constness="1"/>
+    <token id="0x55c5aac55480" file="src/core/cpu.c" linenr="104" column="34" str=")" scope="0x55c5aacda1b0" link="0x55c5aac55240"/>
+    <token id="0x55c5aac555a0" file="src/core/cpu.c" linenr="104" column="35" str=";" scope="0x55c5aacda1b0"/>
+    <token id="0x55c5aac556c0" file="src/core/cpu.c" linenr="105" column="1" str="}" scope="0x55c5aacda1b0" link="0x55c5aac54b80"/>
+    <token id="0x55c5aacce280" file="src/core/cpu.c" linenr="107" column="1" str="void" scope="0x55c5aac76850" type="name"/>
+    <token id="0x55c5aacce3a0" file="src/core/cpu.c" linenr="107" column="6" str="cpu_idle_wakeup" scope="0x55c5aac76850" type="name" function="0x55c5aac970d0" astParent="0x55c5aacce4c0"/>
+    <token id="0x55c5aacce4c0" file="src/core/cpu.c" linenr="107" column="21" str="(" scope="0x55c5aac76850" link="0x55c5aacce5e0" astOperand1="0x55c5aacce3a0" valueType-type="void"/>
+    <token id="0x55c5aacce5e0" file="src/core/cpu.c" linenr="107" column="22" str=")" scope="0x55c5aac76850" link="0x55c5aacce4c0"/>
+    <token id="0x55c5aacce700" file="src/core/cpu.c" linenr="108" column="1" str="{" scope="0x55c5aacda320" link="0x55c5aac62b80"/>
+    <token id="0x55c5aacce820" file="src/core/cpu.c" linenr="109" column="5" str="if" scope="0x55c5aacda320" type="name" astParent="0x55c5aacce940"/>
+    <token id="0x55c5aacce940" file="src/core/cpu.c" linenr="109" column="8" str="(" scope="0x55c5aacda320" link="0x55c5aacceee0" astOperand1="0x55c5aacce820" astOperand2="0x55c5aacceb80"/>
+    <token id="0x55c5aaccea60" file="src/core/cpu.c" linenr="109" column="9" str="interrupts_check" scope="0x55c5aacda320" type="name" astParent="0x55c5aacceb80"/>
+    <token id="0x55c5aacceb80" file="src/core/cpu.c" linenr="109" column="25" str="(" scope="0x55c5aacda320" link="0x55c5aaccedc0" astParent="0x55c5aacce940" astOperand1="0x55c5aaccea60" astOperand2="0x55c5aacceca0"/>
+    <token id="0x55c5aacceca0" file="src/core/cpu.c" linenr="109" column="26" str="IPI_CPU_MSG" scope="0x55c5aacda320" type="name" astParent="0x55c5aacceb80"/>
+    <token id="0x55c5aaccedc0" file="src/core/cpu.c" linenr="109" column="37" str=")" scope="0x55c5aacda320" link="0x55c5aacceb80"/>
+    <token id="0x55c5aacceee0" file="src/core/cpu.c" linenr="109" column="38" str=")" scope="0x55c5aacda320" link="0x55c5aacce940"/>
+    <token id="0x55c5aaccf000" file="src/core/cpu.c" linenr="109" column="40" str="{" scope="0x55c5aacda490" link="0x55c5aac98400"/>
+    <token id="0x55c5aaccf120" file="src/core/cpu.c" linenr="110" column="9" str="interrupts_clear" scope="0x55c5aacda490" type="name" astParent="0x55c5aaccf240"/>
+    <token id="0x55c5aaccf240" file="src/core/cpu.c" linenr="110" column="25" str="(" scope="0x55c5aacda490" link="0x55c5aaccf480" astOperand1="0x55c5aaccf120" astOperand2="0x55c5aaccf360"/>
+    <token id="0x55c5aaccf360" file="src/core/cpu.c" linenr="110" column="26" str="IPI_CPU_MSG" scope="0x55c5aacda490" type="name" astParent="0x55c5aaccf240"/>
+    <token id="0x55c5aaccf480" file="src/core/cpu.c" linenr="110" column="37" str=")" scope="0x55c5aacda490" link="0x55c5aaccf240"/>
+    <token id="0x55c5aaccf5a0" file="src/core/cpu.c" linenr="110" column="38" str=";" scope="0x55c5aacda490"/>
+    <token id="0x55c5aaccf6c0" file="src/core/cpu.c" linenr="111" column="9" str="cpu_msg_handler" scope="0x55c5aacda490" type="name" function="0x55c5aac96f10" astParent="0x55c5aaccf7e0"/>
+    <token id="0x55c5aaccf7e0" file="src/core/cpu.c" linenr="111" column="24" str="(" scope="0x55c5aacda490" link="0x55c5aaccf900" astOperand1="0x55c5aaccf6c0" valueType-type="void"/>
+    <token id="0x55c5aaccf900" file="src/core/cpu.c" linenr="111" column="25" str=")" scope="0x55c5aacda490" link="0x55c5aaccf7e0"/>
+    <token id="0x55c5aaccfa20" file="src/core/cpu.c" linenr="111" column="26" str=";" scope="0x55c5aacda490"/>
+    <token id="0x55c5aac98400" file="src/core/cpu.c" linenr="112" column="5" str="}" scope="0x55c5aacda490" link="0x55c5aaccf000"/>
+    <token id="0x55c5aad1b570" file="src/core/cpu.c" linenr="114" column="5" str="if" scope="0x55c5aacda320" type="name" astParent="0x55c5aad1b690"/>
+    <token id="0x55c5aad1b690" file="src/core/cpu.c" linenr="114" column="8" str="(" scope="0x55c5aacda320" link="0x55c5aad1bd50" astOperand1="0x55c5aad1b570" astOperand2="0x55c5aad1bb10"/>
+    <token id="0x55c5aad1b7b0" file="src/core/cpu.c" linenr="114" column="9" str="cpu" scope="0x55c5aacda320" type="name" varId="3" variable="0x55c5aafadf10" astParent="0x55c5aad1b8d0"/>
+    <token id="0x55c5aad1b8d0" file="src/core/cpu.c" linenr="114" column="12" str="." scope="0x55c5aacda320" astParent="0x55c5aad1bb10" astOperand1="0x55c5aad1b7b0" astOperand2="0x55c5aad1b9f0"/>
+    <token id="0x55c5aad1b9f0" file="src/core/cpu.c" linenr="114" column="13" str="vcpu" scope="0x55c5aacda320" type="name" varId="30" astParent="0x55c5aad1b8d0"/>
+    <token id="0x55c5aad1bb10" file="src/core/cpu.c" linenr="114" column="18" str="!=" scope="0x55c5aacda320" type="op" isComparisonOp="True" astParent="0x55c5aad1b690" astOperand1="0x55c5aad1b8d0" astOperand2="0x55c5aad1bc30" valueType-type="bool"/>
+    <token id="0x55c5aad1bc30" file="src/core/cpu.c" linenr="114" column="21" str="NULL" scope="0x55c5aacda320" type="name" values="0x55c5ab0b11a0" astParent="0x55c5aad1bb10"/>
+    <token id="0x55c5aad1bd50" file="src/core/cpu.c" linenr="114" column="25" str=")" scope="0x55c5aacda320" link="0x55c5aad1b690"/>
+    <token id="0x55c5aad1be70" file="src/core/cpu.c" linenr="114" column="27" str="{" scope="0x55c5aacda600" link="0x55c5aad1c770"/>
+    <token id="0x55c5aad1bf90" file="src/core/cpu.c" linenr="115" column="9" str="vcpu_run" scope="0x55c5aacda600" type="name" astParent="0x55c5aad1c0b0"/>
+    <token id="0x55c5aad1c0b0" file="src/core/cpu.c" linenr="115" column="17" str="(" scope="0x55c5aacda600" link="0x55c5aad1c530" astOperand1="0x55c5aad1bf90" astOperand2="0x55c5aad1c2f0"/>
+    <token id="0x55c5aad1c1d0" file="src/core/cpu.c" linenr="115" column="18" str="cpu" scope="0x55c5aacda600" type="name" varId="3" variable="0x55c5aafadf10" astParent="0x55c5aad1c2f0"/>
+    <token id="0x55c5aad1c2f0" file="src/core/cpu.c" linenr="115" column="21" str="." scope="0x55c5aacda600" astParent="0x55c5aad1c0b0" astOperand1="0x55c5aad1c1d0" astOperand2="0x55c5aad1c410"/>
+    <token id="0x55c5aad1c410" file="src/core/cpu.c" linenr="115" column="22" str="vcpu" scope="0x55c5aacda600" type="name" varId="30" astParent="0x55c5aad1c2f0"/>
+    <token id="0x55c5aad1c530" file="src/core/cpu.c" linenr="115" column="26" str=")" scope="0x55c5aacda600" link="0x55c5aad1c0b0"/>
+    <token id="0x55c5aad1c650" file="src/core/cpu.c" linenr="115" column="27" str=";" scope="0x55c5aacda600"/>
+    <token id="0x55c5aad1c770" file="src/core/cpu.c" linenr="116" column="5" str="}" scope="0x55c5aacda600" link="0x55c5aad1be70"/>
+    <token id="0x55c5aad1c890" file="src/core/cpu.c" linenr="116" column="7" str="else" scope="0x55c5aacda320" type="name"/>
+    <token id="0x55c5aad1c9b0" file="src/core/cpu.c" linenr="116" column="12" str="{" scope="0x55c5aacda770" link="0x55c5aac62a60"/>
+    <token id="0x55c5aad1cad0" file="src/core/cpu.c" linenr="117" column="9" str="cpu_idle" scope="0x55c5aacda770" type="name" function="0x55c5aac96fb0" astParent="0x55c5aad1cbf0"/>
+    <token id="0x55c5aad1cbf0" file="src/core/cpu.c" linenr="117" column="17" str="(" scope="0x55c5aacda770" link="0x55c5aad1cd10" astOperand1="0x55c5aad1cad0" valueType-type="void"/>
+    <token id="0x55c5aad1cd10" file="src/core/cpu.c" linenr="117" column="18" str=")" scope="0x55c5aacda770" link="0x55c5aad1cbf0"/>
+    <token id="0x55c5aad1ce30" file="src/core/cpu.c" linenr="117" column="19" str=";" scope="0x55c5aacda770"/>
+    <token id="0x55c5aac62a60" file="src/core/cpu.c" linenr="118" column="5" str="}" scope="0x55c5aacda770" link="0x55c5aad1c9b0"/>
+    <token id="0x55c5aac62b80" file="src/core/cpu.c" linenr="119" column="1" str="}" scope="0x55c5aacda320" link="0x55c5aacce700"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x55c5aac76850" type="Global">
+      <functionList>
+        <function id="0x55c5aacca2f0" tokenDef="0x55c5aae54b60" name="cpu_init" type="Function">
+          <arg nr="1" variable="0x55c5aacdb130"/>
+          <arg nr="2" variable="0x55c5aacdb210"/>
+        </function>
+        <function id="0x55c5aacca390" tokenDef="0x55c5aaf6ce20" name="cpu_send_msg" type="Function">
+          <arg nr="1" variable="0x55c5aacdb2f0"/>
+          <arg nr="2" variable="0x55c5aacdb3d0"/>
+        </function>
+        <function id="0x55c5aafac070" tokenDef="0x55c5aaccdeb0" name="cpu_get_msg" type="Function">
+          <arg nr="1" variable="0x55c5aacdb4b0"/>
+        </function>
+        <function id="0x55c5aac96f10" tokenDef="0x55c5aace5470" name="cpu_msg_handler" type="Function"/>
+        <function id="0x55c5aac96fb0" tokenDef="0x55c5aac54820" name="cpu_idle" type="Function"/>
+        <function id="0x55c5aac970d0" tokenDef="0x55c5aacce3a0" name="cpu_idle_wakeup" type="Function"/>
+      </functionList>
+      <varlist>
+        <var id="0x55c5aafadf10"/>
+        <var id="0x55c5aac74ba0"/>
+        <var id="0x55c5aace62b0"/>
+        <var id="0x55c5ab0ad170"/>
+        <var id="0x55c5aacda950"/>
+        <var id="0x55c5aacdaa30"/>
+        <var id="0x55c5aacdab10"/>
+        <var id="0x55c5aacdabf0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac7b730" type="Struct" className="cpu_msg_node_t" bodyStart="0x55c5aad6a120" bodyEnd="0x55c5aac79260" nestedIn="0x55c5aac76850">
+      <varlist>
+        <var id="0x55c5aacdacd0"/>
+        <var id="0x55c5aacdadb0"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac781c0" type="Function" className="cpu_init" bodyStart="0x55c5aacac9e0" bodyEnd="0x55c5aaf6cbe0" nestedIn="0x55c5aac76850" function="0x55c5aacca2f0"/>
+    <scope id="0x55c5aac789a0" type="If" bodyStart="0x55c5aac5c150" bodyEnd="0x55c5aac6e850" nestedIn="0x55c5aac781c0"/>
+    <scope id="0x55c5aac75e20" type="For" bodyStart="0x55c5aae56440" bodyEnd="0x55c5aac6e730" nestedIn="0x55c5aac789a0">
+      <varlist>
+        <var id="0x55c5aaca2950"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac785a0" type="Function" className="cpu_send_msg" bodyStart="0x55c5ab0ab420" bodyEnd="0x55c5aaccdc70" nestedIn="0x55c5aac76850" function="0x55c5aacca390">
+      <varlist>
+        <var id="0x55c5aacdae90"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac783b0" type="If" bodyStart="0x55c5aaca7e40" bodyEnd="0x55c5aac5b230" nestedIn="0x55c5aac785a0"/>
+    <scope id="0x55c5aac64290" type="Function" className="cpu_get_msg" bodyStart="0x55c5ab0ae2e0" bodyEnd="0x55c5aace5230" nestedIn="0x55c5aac76850" function="0x55c5aafac070">
+      <varlist>
+        <var id="0x55c5aacdaf70"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aac64400" type="If" bodyStart="0x55c5aac5ef30" bodyEnd="0x55c5aace4db0" nestedIn="0x55c5aac64290"/>
+    <scope id="0x55c5aac64570" type="Function" className="cpu_msg_handler" bodyStart="0x55c5aace57d0" bodyEnd="0x55c5aac545e0" nestedIn="0x55c5aac76850" function="0x55c5aac96f10">
+      <varlist>
+        <var id="0x55c5aacdb050"/>
+      </varlist>
+    </scope>
+    <scope id="0x55c5aacd9ed0" type="While" bodyStart="0x55c5aaca0130" bodyEnd="0x55c5aac544c0" nestedIn="0x55c5aac64570"/>
+    <scope id="0x55c5aacda040" type="If" bodyStart="0x55c5aaf6da20" bodyEnd="0x55c5aac543a0" nestedIn="0x55c5aacd9ed0"/>
+    <scope id="0x55c5aacda1b0" type="Function" className="cpu_idle" bodyStart="0x55c5aac54b80" bodyEnd="0x55c5aac556c0" nestedIn="0x55c5aac76850" function="0x55c5aac96fb0"/>
+    <scope id="0x55c5aacda320" type="Function" className="cpu_idle_wakeup" bodyStart="0x55c5aacce700" bodyEnd="0x55c5aac62b80" nestedIn="0x55c5aac76850" function="0x55c5aac970d0"/>
+    <scope id="0x55c5aacda490" type="If" bodyStart="0x55c5aaccf000" bodyEnd="0x55c5aac98400" nestedIn="0x55c5aacda320"/>
+    <scope id="0x55c5aacda600" type="If" bodyStart="0x55c5aad1be70" bodyEnd="0x55c5aad1c770" nestedIn="0x55c5aacda320"/>
+    <scope id="0x55c5aacda770" type="Else" bodyStart="0x55c5aad1c9b0" bodyEnd="0x55c5aac62a60" nestedIn="0x55c5aacda320"/>
+  </scopes>
+  <variables>
+    <var id="0x55c5aac74ba0" nameToken="0x55c5aae552c0" typeStartToken="0x55c5aac52fb0" typeEndToken="0x55c5aac52fb0" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aaca2950" nameToken="0x55c5aac60ac0" typeStartToken="0x55c5aafadb40" typeEndToken="0x55c5aafadb40" access="Local" scope="0x55c5aac75e20" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacda950" nameToken="0x55c5aac75220" typeStartToken="0x55c5aae55760" typeEndToken="0x55c5aae55760" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="true" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdaa30" nameToken="0x55c5aac626c0" typeStartToken="0x55c5aac74800" typeEndToken="0x55c5aac74800" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="true" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdab10" nameToken="0x55c5aafe3140" typeStartToken="0x55c5aafe2f00" typeEndToken="0x55c5aafe3020" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdabf0" nameToken="0x55c5aafe34a0" typeStartToken="0x55c5aafe3380" typeEndToken="0x55c5aafe3380" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdacd0" nameToken="0x55c5ab0b2830" typeStartToken="0x55c5aad24280" typeEndToken="0x55c5aad24280" access="Public" scope="0x55c5aac7b730" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdadb0" nameToken="0x55c5aaca3620" typeStartToken="0x55c5aace0130" typeEndToken="0x55c5aace0130" access="Public" scope="0x55c5aac7b730" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdae90" nameToken="0x55c5ab0ab780" typeStartToken="0x55c5aac63da0" typeEndToken="0x55c5ab0ab660" access="Local" scope="0x55c5aac785a0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdaf70" nameToken="0x55c5ab0ae640" typeStartToken="0x55c5aac63ec0" typeEndToken="0x55c5ab0ae520" access="Local" scope="0x55c5aac64290" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdb050" nameToken="0x55c5aace5a10" typeStartToken="0x55c5aace58f0" typeEndToken="0x55c5aace58f0" access="Local" scope="0x55c5aac64570" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdb130" nameToken="0x55c5aacac440" typeStartToken="0x55c5aacac320" typeEndToken="0x55c5aacac320" access="Argument" scope="0x55c5aac781c0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdb210" nameToken="0x55c5aacac7a0" typeStartToken="0x55c5aacac680" typeEndToken="0x55c5aacac680" access="Argument" scope="0x55c5aac781c0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdb2f0" nameToken="0x55c5aaf6d180" typeStartToken="0x55c5aaf6d060" typeEndToken="0x55c5aaf6d060" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdb3d0" nameToken="0x55c5ab0ab1e0" typeStartToken="0x55c5ab0aafa0" typeEndToken="0x55c5ab0ab0c0" access="Argument" scope="0x55c5aac785a0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aacdb4b0" nameToken="0x55c5ab0ae0a0" typeStartToken="0x55c5aacce0f0" typeEndToken="0x55c5ab0adf80" access="Argument" scope="0x55c5aac64290" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0x55c5aace62b0" nameToken="0x55c5aac5cb30" typeStartToken="0x55c5ab0af200" typeEndToken="0x55c5ab0af200" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5aafadf10" nameToken="0x55c5aacbab60" typeStartToken="0x55c5aac5e8f0" typeEndToken="0x55c5aac5e8f0" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0x55c5ab0ad170" nameToken="0x55c5aae54b00" typeStartToken="0x55c5aac5cd80" typeEndToken="0x55c5aac5cd80" access="Global" scope="0x55c5aac76850" constness="0" isArgument="false" isArray="false" isClass="true" isConst="false" isExtern="true" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x55c5aaca80b0">
+      <value lifetime="0x55c5aac61880" possible="true"/>
+    </values>
+    <values id="0x55c5ab0af390">
+      <value lifetime="0x55c5aac5c5d0" possible="true"/>
+    </values>
+    <values id="0x55c5aace7220">
+      <value lifetime="0x55c5aad3c480" possible="true"/>
+    </values>
+    <values id="0x55c5aacdf950">
+      <value tokvalue="0x55c5aacd5230" possible="true"/>
+      <value lifetime="0x55c5aacd5350" possible="true"/>
+    </values>
+    <values id="0x55c5ab0a1b80">
+      <value lifetime="0x55c5aad3c840" possible="true"/>
+    </values>
+    <values id="0x55c5ab0aaa80">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac7b700">
+      <value lifetime="0x55c5aac6de30" possible="true"/>
+    </values>
+    <values id="0x55c5aac5db50">
+      <value lifetime="0x55c5aaf6c880" possible="true"/>
+    </values>
+    <values id="0x55c5aac6d990">
+      <value intvalue="0" condition-line="65" possible="true"/>
+    </values>
+    <values id="0x55c5ab0ac9f0">
+      <value lifetime="0x55c5ab0abd20" possible="true"/>
+    </values>
+    <values id="0x55c5ab0b33d0">
+      <value intvalue="0" condition-line="65" possible="true"/>
+    </values>
+    <values id="0x55c5aad1ce90">
+      <value intvalue="1" condition-line="65" possible="true"/>
+    </values>
+    <values id="0x55c5aac78c40">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aace7c00">
+      <value tokvalue="0x55c5aac7ae80" known="true"/>
+    </values>
+    <values id="0x55c5aace6450">
+      <value lifetime="0x55c5aacca600" possible="true"/>
+    </values>
+    <values id="0x55c5aac664a0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac53240">
+      <value lifetime="0x55c5aac98040" possible="true"/>
+    </values>
+    <values id="0x55c5ab0adc30">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0x55c5aac74ab0">
+      <value intvalue="0" condition-line="75" impossible="true"/>
+    </values>
+    <values id="0x55c5ab09e850">
+      <value lifetime="0x55c5aac5fb90" possible="true"/>
+    </values>
+    <values id="0x55c5aacbbf00">
+      <value intvalue="0" condition-line="75" impossible="true"/>
+    </values>
+    <values id="0x55c5ab0b1b90">
+      <value lifetime="0x55c5aac9fdd0" possible="true"/>
+    </values>
+    <values id="0x55c5ab0b0d20">
+      <value tokvalue="0x55c5aac55360" known="true"/>
+    </values>
+    <values id="0x55c5ab0b11a0">
+      <value intvalue="0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>
